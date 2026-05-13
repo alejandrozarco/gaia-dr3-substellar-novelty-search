@@ -79,6 +79,14 @@ Confirmation of the tentative candidates listed in `novelty_candidates.csv` woul
 
 The pipeline scripts expect catalog files to be present at a location set via the `GAIA_NOVELTY_DATA_ROOT` environment variable. The required catalogs are listed in `CATALOG_DEPENDENCIES.md` along with their public access URLs. The catalogs themselves are not redistributed in this repository.
 
+Python package dependencies are listed in `requirements.txt`. Install with `pip install -r requirements.txt`.
+
+## Reproducibility status
+
+This repository is **not a turn-key reproduction package.** The pipeline source code is included, but the input data (Gaia DR3 NSS tables, HGCA, Kervella, Penoyre, Tokovinin MSC, NASA Exoplanet Archive, WDS, HARPS RVBank, HIRES, APOGEE, GALAH, LAMOST, etc.) totals roughly 100–200 GB of public catalog downloads that are not bundled here. Each catalog is listed in `CATALOG_DEPENDENCIES.md` with its public download URL.
+
+The final candidate output (`novelty_candidates.csv`) is the result of multiple iterative passes, manual deep-dive verifications, and methodology refinements rather than a single automated pipeline run. Running the scripts blindly on a fresh catalog cache may produce a candidate list that differs from this CSV. See `REPRODUCIBILITY.md` for the full scope statement, script ordering notes, and known reproducibility caveats.
+
 ## A note on tone
 
 The methodology lessons and filter rules in this repository were accumulated through iterative deep-dive analysis of individual sources, many of which turned out to be stellar in the end. The lessons themselves are heuristic and have not been independently validated. The pipeline is intended as a tool for examining Gaia DR3 NSS data systematically, not as a confirmed discovery system.

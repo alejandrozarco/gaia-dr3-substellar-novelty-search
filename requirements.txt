@@ -1,0 +1,20 @@
+# Python package dependencies for the scripts in this repository.
+# Tested versions; other versions may work but have not been verified.
+# Install with: pip install -r requirements.txt
+
+# Core dependencies (used by all 8 scripts in this repository)
+polars>=1.30,<2.0
+numpy>=2.0,<3.0
+scipy>=1.15,<2.0
+astropy>=7.0,<8.0
+dynesty>=3.0,<4.0
+
+# Optional dependencies used only by deeper analysis scripts that are
+# described in REPORT.md but not included in this `scripts/` selection.
+# Install if you intend to extend the pipeline beyond what is included here:
+#
+#   orvara==1.1.4       # joint HGCA + RV astrometric fits (Brandt 2021)
+#   astroquery>=0.4.10  # SIMBAD, Vizier, MAST, ESO TAP queries
+#   lightkurve>=2.5     # TESS light curve download and processing
+#   pypdf>=4.0          # literature PDF text extraction
+#   matplotlib>=3.7     # diagnostic plot generation
