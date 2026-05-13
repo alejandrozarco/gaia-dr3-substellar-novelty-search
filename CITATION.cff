@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "Gaia DR3 NSS substellar candidate mining pipeline + tentative-candidate list"
+message: "If you use this pipeline or the tentative-candidate list in your research, please cite the Zenodo DOI (auto-generated per release) and this GitHub repository."
+type: software
+authors:
+  - given-names: "Alejandro"
+    family-names: "Zarco"
+    alias: "alejandrozarco"
+repository-code: "https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search"
+abstract: >-
+  An archival filter-cascade pipeline that cross-correlates Gaia DR3
+  Non-Single-Star (NSS) Orbital and Acceleration tables against 30+ public
+  literature catalogs and archival radial-velocity time-series. The pipeline
+  identifies candidate substellar (13-80 M_J) companions to bright nearby
+  stars (V < 12, d < 200 pc) that have not been claimed in published
+  companion catalogs. After applying ~27 sequential filters (including
+  conditional RUWE per NSS solution_type, HGCA Brandt 2024 chi-squared
+  tier filtering, exoplanet.eu coord-match, and the Gaia DR3 documented
+  false-positive list), the pipeline produces a list of 11 tentative
+  substellar candidates. None are confirmed by independent orbital
+  characterization. Status is experimental archival mining; confirmation
+  requires Gaia DR4 (Dec 2026 expected) or new ground-based RV
+  observations.
+keywords:
+  - "Gaia DR3"
+  - "non-single stars"
+  - "brown dwarfs"
+  - "substellar companions"
+  - "astrometric binaries"
+  - "Hipparcos-Gaia proper motion anomaly"
+  - "filter cascade"
+  - "tentative candidate"
+license: "CC-BY-4.0"
+version: "1.0.0"
+date-released: "2026-05-13"
