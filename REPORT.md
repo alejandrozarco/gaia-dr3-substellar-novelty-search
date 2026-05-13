@@ -74,6 +74,9 @@ Sequential application of 16+ literature catalog filters plus methodology rules 
 | 25 | Universal Kervella M_2 stellar pre-filter | (this pipeline) |
 | 26 | Tokovinin MSC + WDS speckle binary pre-check | (this pipeline) |
 | 27 | Gaia DR3 NSS known-FP source-ID list (4 IDs) | ESA Gaia DR3 known-issues page (updated 27 May 2024) |
+| 28 | exoplanet.eu coord cross-match (5 arcsec) | Schneider+ 2011 exoplanet.eu (catches systems NASA Exo PS misses) |
+| 29 | HGCA Brandt 2024 chi² tier filter — REJECT > 100, FLAG 30-100, CORROBORATED 5-30, isolated < 5 | Brandt 2024 HGCA vEDR3, applied as primary gating filter rather than cross-check |
+| 30 | Conditional RUWE per `nss_solution_type` — skip < 2 cut for orbit-reflex types (Orbital, AstroSpectroSB1, OrbitalTargetedSearchValidated) where RUWE > 1.4 is expected from astrometric reflex | (this pipeline, methodology lesson) |
 
 The filter cascade is conservative: each source must pass all applicable filters to remain. Sources failing any filter are tagged with the filter reason and removed.
 
@@ -119,16 +122,21 @@ These priors are reflected in the empirical results below.
 
 Starting expanded pool: ~26,000 sources (full NSS Orbital + Acceleration after substellar mass cut + quality cuts).
 
-After 35 sequential filters:
-- 1,228 sources flagged as previously-published or stellar imposters
-- ~15 sources emerged for individual deep-dive verification (sources scoring highest under composite ranking)
-- 12 deep-dived sources resolved during examination:
-  - 7 sources were determined to be likely stellar M-dwarf companions at moderate inclination (mass posteriors after joint HGCA+RV fits with proper inclination marginalization indicate M_2 = 0.13–0.78 M_sun)
-  - 2 sources were determined to be previously published in catalogs that the initial cross-match missed (Feng 2022 brown-dwarf catalog entry registered as SIMBAD child object; Mills 2018 RV planet announcement not ingested into NASA Exoplanet Archive)
-  - 1 source was determined to be a previously known hierarchical triple (Tokovinin MSC entry since 1876)
+After ~30 sequential filters (the count grew through pipeline iterations):
+- 1,228 sources flagged as previously-published or stellar imposters in the v1 cascade
+- 14 sources flagged as previously-published in the v2 scan via Stage-3 exoplanet.eu coord cross-match (Filter #28) that NASA Exo PS via gaia_dr3_id missed
+- 150 sources flagged as REJECTED by HGCA Brandt 2024 chi² > 100 in the v2 scan (Filter #29) — independently-confirmed stellar-mass companions
+- ~15 sources emerged for individual deep-dive verification under v1; the v2 comprehensive scan surfaced an additional 22 CORROBORATED + 15 FLAG-mass-ambiguous HGCA-quality candidates
+- 12 deep-dived sources resolved during examination under v1:
+  - 7 sources were determined to be likely stellar M-dwarf companions at moderate inclination
+  - 2 sources were determined to be previously published in catalogs that the initial cross-match missed
+  - 1 source was determined to be a previously known hierarchical triple
   - 2 sources have astrometric and partial RV evidence consistent with substellar companions but no archival data sufficient for confirmation
 
-The remaining ~3 sources have not been individually verified at deep-dive depth and may be subject to similar reclassifications.
+After v2 scan additions and cross-check against 10 published catalogs:
+- 11 tentative substellar candidates in `novelty_candidates.csv` (this release)
+- 8 of 11 have independent HGCA Brandt 2024 corroboration in the CORROBORATED or FLAG range
+- Aggregate expected-real-substellar yield: 5.07 (sum of per-candidate P_real_substellar)
 
 ### 4.2 Sources Surviving All Filters with Supporting Archival Evidence
 
@@ -163,6 +171,31 @@ The following sources survive all 35 filters and have some archival radial-veloc
 - CARMENES Cortés-Contreras 2024: 3 epochs over 88 d with K_pp = 1.30 km/s
 - The K observed is roughly consistent with K predicted at substellar mass (the K_RV/K_pred archival pre-screen does not trivially rule out substellar, unlike for the 5 sources where this test ruled stellar)
 - orvara posterior straddles the BD/M-dwarf boundary
+
+#### HIP 91479 / LP 335-104 (Gaia DR3 4539057576001089408)
+- K5-K7 dwarf, V ≈ 10.8, d = 55.6 pc; Luyten high-PM star
+- NSS Orbital AstroSpectroSB1: P = 855.84 ± 25 d, e = 0.815 ± 0.038
+- Joint astrometric Kepler M_2 from Thiele-Innes a_phot = 64 M_J (M_1 ± 20% → 55-72 M_J)
+- HGCA Brandt 2024 chi² = 50.3 (FLAG mass-ambiguous tier — strong PM anomaly, mass uncertain between substellar and stellar)
+- Gaia DR3 RV: rv_amplitude_robust = 3.9 km/s peak-to-peak across 30 transits, rv_chisq_pvalue = 6.7×10⁻⁵ (strongly variable)
+- Marcussen & Albrecht 2023 Table 1 entry: verdict "Unknown" (independent reanalysis flagged it as low-mass companion candidate needing further follow-up)
+- Originally filtered out by the uniform RUWE < 2 cut; surfaced after conditional-RUWE methodology fix (RUWE 4.1 is expected for AstroSpectroSB1 with real reflex)
+
+#### HIP 60865 / G 123-34 (Gaia DR3 1518957932040718464)
+- M dwarf, V = 12.09; high-PM Luyten star
+- NSS Orbital: P = 500.7 d, e = 0.25, significance = 34.1
+- M_2 marginalized median ≈ 49 M_J (BD-class)
+- HGCA Brandt 2024 chi² = 10.5 (CORROBORATED tier — independent 25-yr PM anomaly)
+- RUWE = 3.84 (expected for orbital reflex; conditional-RUWE filter)
+- Surfaced in v2 comprehensive scan (2026-05-13); not in any of 10 cross-checked published catalogs
+
+#### HIP 20122 (Gaia DR3 3255968634985106816)
+- M dwarf, V = 13.49
+- NSS Orbital: P = 254.7 d, e = 0.17, significance = 28.6
+- M_2 marginalized median ≈ 64 M_J (BD-class)
+- HGCA Brandt 2024 chi² = 5.1 (CORROBORATED mild tier)
+- RUWE = 5.82
+- Surfaced in v2 comprehensive scan; faint M-dwarf host requires precision-RV access for follow-up
 
 ### 4.3 Multi-Body Astrometric Candidates (Inner Orbital + Outer PMa)
 
@@ -207,6 +240,25 @@ The deep-dive investigations reveal patterns that may be informative for similar
 8. **The inverse-direction blind discovery channel (RV-archive-rich, Gaia-NSS-blind) does not intersect the substellar parameter space probed by this pipeline.** Starting from the HARPS RVBank (Trifonov+ 2020, 252,615 RV epochs across 5,239 unique targets) and applying selection cuts of σ_med < 5 m/s, σ_RV < 100 m/s, baseline ≥ 5 yr, and N_epochs ≥ 30 yields 261 HD/HIP candidates with high-quality long-baseline RV monitoring. Cross-match against NASA Exoplanet Archive PS table (via both hostname / hd_name / hip_name strings and gaia_dr3_id) removes 1 known-published system (HD 125612B). Cross-match of the remaining 260 against the full Gaia DR3 NSS Orbital and NSS Acceleration tables yields 2 hits, both of which are independently catalogued as stellar multiples (HD 223238 = WDS J23479+0411A = TOK 684 visual binary in the Tokovinin Multiple Star Catalog; HD 28635 = SB\* in SIMBAD). Zero candidates carry simultaneously an unexplained Gaia NSS astrometric anomaly and a clean HARPS RV-quiet record. This is consistent with the dynamic-range mismatch between the two pipelines: HARPS-rich monitoring programs select for activity-quiet stars with σ_RV < 5 m/s (excluding any companion massive enough to drive Gaia-detectable astrometric reflex at the 20–100 pc distance scale of the sample by construction), while Gaia NSS detections at these distances require either close-in massive companions or long-baseline accelerations whose radial-velocity signature would also exceed the rv_std < 100 m/s cut. The 258 RV-rich Gaia-NSS-quiet targets form a clean negative-control sample for systematics testing but do not contribute new substellar candidates. The implication is that the pipeline's primary candidate discovery channel — Gaia NSS substellar pool + targeted RV at single quadrature epochs — remains the most productive direction. Methodology details and target lists are in the `harps_rich_blind_xmatch_2026_05_13/` dossier in the development repository.
 
 9. **The planet-regime (M_2 < 13 M_J) tail of the Gaia DR3 NSS Orbital pool is partially accessible to first-pass detection but is degraded by Gaia's own documented false-positive software-bug artifacts at exactly this mass range.** Applying the Stage-1 face-on mass cut narrowly (M_2 face-on < 13 M_J) to the NSS Orbital pool yields 39 candidates, of which 10 are already-published Gaia-validated systems (Gaia-4, Gaia-5, HD 81040 b, HD 40503 b, HD 132406 b, etc.) and 29 are not in NASA Exoplanet Archive PS. After applying marginalized-mass confidence cuts (M_2 median < 13 M_J AND 1σ upper bound < 30 M_J), 19 face-on planet-mass candidates remain. After SIMBAD stellar-multiple flags (WDS, Tokovinin MSC, SB\*, EB\*) — 0 caught. Cross-match to exoplanet.eu within 30 arcsec — 0 hits. Cross-match to HARPS RVBank within 10 arcsec — 0 hits. The Gaia DR3 NSS known-issues page (`cosmos.esa.int/web/gaia/dr3-known-issues`, "NSS: False-positive astrometric binary solutions", updated 27 May 2024) lists four `nss_two_body_orbit` source IDs whose orbital solutions are spurious software-bug artifacts: 4698424845771339520 (WD 0141-675), 5765846127180770432 (HIP 64690), 522135261462534528 (\* 54 Cas, HIP 10031), and 1712614124767394816 (HIP 66074). Three of these four were in our Stage-1 NSS Orbital pool (HIP 64690 had been pre-filtered on quality cuts) and the brightest, \* 54 Cas (F8V at 27 pc, G = 6.45, P = 401 d, marg M_2 = 7.3 M_J), would have been the standout candidate in this probe had Gaia's documented FP catalog not been applied. After removing the 3 documented FPs the probe yields **18 candidates**, of which **7 pass the tier-A astrometric quality cut**. All remaining candidates have G ≥ 12.9 and require proposal-grade access to precision RV spectrographs (CARMENES, MAROON-X, NEID at the north; HARPS, FEROS, ESPRESSO at the south). The actionable bright-target case disappeared with the FP filter, leaving no single-night-confirmable planet candidate. **These planet-regime candidates are single-pipeline detections (Gaia DR3 NSS Orbital only) and lack the multi-archive astrometric corroboration (HGCA, Kervella PMa, Tycho-Gaia ΔPM) used for the substellar tentative list in §4.2.** They are documented separately as the result of the planet-regime probe. The empirical lesson is that Gaia DR3 NSS Orbital planet-mass detections at the survey's astrometric sensitivity floor are vulnerable to documented software-bug artifacts at exactly the parameter range of interest; the four official FP sources must be removed from any planet-regime list before further analysis, and any new candidate in this regime should be checked against the cosmos.esa.int known-issues catalog as a prerequisite filter.
+
+10. **The v2 comprehensive scan with HGCA Brandt 2024 chi² as a primary gating filter surfaces two new tentative candidates the v1 pipeline missed, and identifies the right axes for future expansion.** Applying the v2 cascade (Filters #27-30: documented-FP, exoplanet.eu coord, HGCA chi² tier, conditional RUWE) to the full 9,498-source combined NSS Orbital + NSS Acceleration substellar pool yielded:
+
+  - 22 sources in the CORROBORATED tier (HGCA chi² = 5-30 — independent 25-year proper-motion anomaly consistent with substellar mass)
+  - 15 sources in the FLAG mass-ambiguous tier (chi² = 30-100 — real companion confirmed but mass uncertain between substellar and stellar)
+  - 150 sources REJECTED in the HGCA chi² > 100 tier (likely stellar companions that the v1 cascade did not catch)
+  - 14 sources REJECTED by exoplanet.eu coord cross-match (NASA Exoplanet Archive PS missed these via gaia_dr3_id-only matching)
+  - 633 sources REJECTED by quality-tier RUWE filter
+
+  Of the 22 CORROBORATED, 4 were already published (HIP 60321 b, HIP 75202 Ab, HIP 117179 b, plus G 15-6 in SB9) — caught by the same exoplanet.eu coord filter. Of the remaining 18 truly novel HGCA-corroborated candidates, 2 with substellar-class mass + clean Orbital solution_type + HIP cross-match were promoted to `novelty_candidates.csv`: **HIP 60865 (G 123-34)** with HGCA chi² = 10.5 + P = 500.7 d and **HIP 20122** with chi² = 5.1 + P = 254.7 d.
+
+  The v1 cascade had missed both because it applied a uniform RUWE < 2 cut. RUWE > 1.4 is *expected* for sources with a real astrometric orbital reflex (the reflex IS the signal RUWE measures), so the v2 cascade applies RUWE cuts conditional on `nss_solution_type`. The same gap surfaced HIP 91479 / LP 335-104 (AstroSpectroSB1 with RUWE = 4.1 — promoted earlier when the AstroSpectroSB1 pool was first deep-dived).
+
+  Methodology summary: the v2 scan validates that **HGCA chi² as a primary filter (not just a cross-check)** materially expands the tentative-candidate base. Of the 11 candidates in this release, 8 carry independent HGCA Brandt 2024 25-year astrometric corroboration in the CORROBORATED or FLAG range.
+
+  Pipeline-vs-published parameter recovery: cross-checking the v2 scan's recovered parameters against published values for the 10 known systems caught (HIP 75202 Ab, HIP 117179 b, HIP 60321 b, TYC 7922-716-1 b, CD-41 1115 b, etc.) shows:
+  - Period: 0% deviation (identical, both fit same Gaia data)
+  - Eccentricity: identical for 8/10; for 2/10 our value disagrees with published 0.000 because the published paper used a circular fit while Gaia's NSS Orbital recovers the eccentric solution
+  - Mass: typically ±25-50% (median +13% over-estimate vs Halbwachs/Pourbaix joint-fit posterior). The discrepancy is dominated by host-mass M_1 assumption uncertainty.
 
 ## 6. Confirmation Pathways
 

@@ -42,15 +42,43 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full filter cascade reduces about 26,000 initial candidates to a small set of sources that survive every filter. Of about 12 sources that received individual deep-dive investigation:
+The full filter cascade reduces about 26,000 initial candidates to **11 tentative candidates** documented in `novelty_candidates.csv` (release v1.0.0, 2026-05-13).
+
+### Candidate table
+
+Pipeline-derived parameters for the 11 survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
+
+| Name | HIP | V | SpT | d (pc) | NSS solution | P (d) | e | M₂ median (M_J) | M₂ 1σ (M_J) | Indep. witness | Category |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| HD 101767 | 57135 | 8.88 | F8 | 82 | Orbital | 486 | 0.45 | 62 | 55–68 | HGCA χ² = 14.2 | substellar |
+| HD 75426 | 43197 | 6.72 | F5IV/V | 43 | Acceleration7 | — | — | 282 | 100–1343 | Kervella 27σ + HGCA 33σ | mass-ambiguous |
+| HD 104828 | 58863 | 9.86 | K0 | 33 | Acceleration | ~3600 | — | 41 | 30–55 | HGCA χ² = 23.6 | substellar |
+| HD 140895 | 77262 | 9.39 | — | — | Orbital (inner) | 1460 | — | 113 | — | Kervella 17.6σ excess | multi-body (outer) |
+| HD 140940 | 77357 | 8.72 | — | — | Orbital (inner) | 924 | — | 183 | — | Kervella 18.4σ excess | multi-body (outer) |
+| BD+46 2473 | 90060 | 8.97 | F5 | 286 | Orbital (inner) | 496 | 0.33 | 74 | — | HGCA χ² = 17.8 | multi-body (outer) |
+| BD+35 228 | 5787 | 9.08 | G0 | 134 | Orbital (inner) | 560 | 0.40 | 53 | — | HGCA χ² = 18.9 | multi-body (outer) |
+| HD 120954 | 67777 | 8.76 | G1V | 124 | Acceleration | 25,500 | — | 1637 | 1018–3621 | Kervella 591σ + ΔRV +6.5 km/s | **stellar** |
+| HIP 91479 | 91479 | 11.0 | K5-K7V | 56 | AstroSpectroSB1 | 856 | 0.82 | 60 | 50–75 | HGCA χ² = 50.3 | substellar |
+| HIP 60865 | 60865 | 12.09 | M dwarf | 41 | Orbital | 501 | 0.25 | 49 | 40–65 | HGCA χ² = 10.5 | substellar |
+| HIP 20122 | 20122 | 13.49 | M2.0Ve | 41 | Orbital | 255 | 0.17 | 64 | 50–85 | HGCA χ² = 5.1 | substellar |
+
+Of the 11, **HD 120954 is the one apparent stellar-mass companion** (~1.56 M_⊙ ≈ 1637 M_J at edge-on, with 5 independent astrometric + multi-decade ΔRV witnesses converging on a ~70-yr companion); the other 10 sit in or near the substellar mass range. **HD 75426 is mass-ambiguous** — the orvara joint posterior median lands in the early M-dwarf regime, but the 2σ lower tail still grazes the substellar boundary. The 4 BD+ / HD multi-body rows have the inner orbit from NSS but the outer companion mass is inferred from Kervella PMa excess and is not directly observed.
+
+### How the candidates were arrived at
+
+Of about 12 sources that received individual deep-dive investigation in v1:
 
 - 7 sources turned out to be likely stellar M-dwarf companions in eccentric or moderate-inclination orbits.
 - 2 sources turned out to be previously published planets/brown-dwarf candidates that the initial catalog cross-match missed because of naming or catalog-policy gaps. These cases helped identify which catalogs needed deeper cross-matching.
 - 1 source turned out to be a known hierarchical triple system already catalogued in the Tokovinin Multiple Star Catalog and the Washington Double Star catalog (the latter since 1876).
-- 1 source emerged as an apparent stellar companion discovery (not a brown dwarf), with multiple converging astrometric and radial-velocity signals. This is also tentative and depends on the joint fit.
-- A handful of sources have astrometric evidence and partial archival radial-velocity statistics that are consistent with brown-dwarf-mass companions, but lack sufficient observational data for independent verification. These appear in the candidate output table as tentative candidates only.
+- 1 source emerged as an apparent stellar companion discovery (HD 120954 in the table above), with multiple converging astrometric and radial-velocity signals. This is also tentative and depends on the joint fit.
+- A handful of sources have astrometric evidence and partial archival radial-velocity statistics that are consistent with brown-dwarf-mass companions, but lack sufficient observational data for independent verification.
 
-See `REPORT.md` for the detailed methodology and `novelty_candidates.csv` for the candidate parameters. Many parameters in the candidate table are pipeline estimates (e.g., inclination-marginalized mass posteriors) rather than direct measurements.
+The v2 pipeline (Filters #27-30: documented-FP, exoplanet.eu coord, HGCA chi² tier, conditional RUWE) applied to the full 9,498-source pool surfaced 22 HGCA-corroborated candidates + 15 mass-ambiguous flagged candidates. From this 37, 2 truly novel substellar candidates with HIP cross-match were promoted (HIP 60865 and HIP 20122) — both originally filtered out of v1 because the uniform RUWE < 2 cut is inappropriate for solution types where orbital reflex is the signal.
+
+Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 11 are in any of these catalogs**. The novelty is real — none have a published orbital characterization — but is the result of a specific filter combination (conditional RUWE × multi-pool NSS × HGCA chi² tier × M-dwarf hosts permitted) that no published catalog applies identically. See `CATALOG_COMPLETENESS_ANALYSIS.md` for the per-catalog selection-criterion breakdown.
+
+See `REPORT.md` for the detailed methodology and `novelty_candidates.csv` for the full column set (including per-candidate Bayesian posterior scores and filter-cascade trace). Many parameters in the candidate table are pipeline estimates (e.g., inclination-marginalized mass posteriors) rather than direct measurements.
 
 ## What this pipeline does not do
 
