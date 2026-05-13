@@ -80,3 +80,45 @@ These are bright HIP stars (V ≈ 8–9) with inner short-period BD candidate co
 - `pool_survivors_ranked.csv` — 88 surviving (post-exoplanet.eu filter)
 - `top27_vetted.csv` — 27 TIER1+TIER2 with SIMBAD attempt (SIMBAD service outage; columns empty)
 - `final_27_tiered.csv` — 27 candidates organized by final tier (1A / 1B / 2A / 2C)
+
+
+## 2026-05-13 HGCA addendum
+
+SIMBAD service was unreachable, so an alternative independent vetting was
+performed using the HGCA Brandt 2024 catalog (Hipparcos-Gaia astrometric
+chi-square anomaly, 25-yr baseline) for the 9 HIP-named candidates among
+the top 27. This is an INDEPENDENT astrometric corroboration channel
+(uses Hipparcos 1991 + Gaia DR3 2016 long-baseline arc, NOT the Gaia DR3
+NSS Orbital fit that originally surfaced these candidates).
+
+| HIP | Pool/Tier | HGCA chisq | Verdict |
+|---:|---|---:|---|
+| 15783 | TIER 2C SB1+Kervella | **147.3** | **REJECTED — likely stellar companion** |
+| 91479 | TIER 1A AstroSpectroSB1 (LP 335-104) | 50.3 | FLAG — strong companion confirmed, mass ambiguous |
+| 44680 | TIER 2C SB1+Kervella | 5.2 | mild — consistent with BD or low-mass companion |
+| 17154 | TIER 2A SB1+Kervella | 4.3 | mild |
+| 113692 | TIER 2C AstroSpectroSB1 | 3.3 | mild |
+| 105567 | TIER 2A SB1+Kervella | 2.9 | low |
+| 21449 | TIER 2A SB1+Kervella | 2.1 | low |
+| 91656 | TIER 2C SB1+Kervella | 1.0 | low |
+| 77373 | TIER 2C SB1+Kervella | 0.7 | low |
+
+Hipparcos van Leeuwen 2007 reduction shows all 9 with Sn=5 (single-star
+solution accepted by Hipparcos itself). The HGCA anomaly therefore comes
+from comparing Hipparcos 1991 position with Gaia DR3 2016 position over the
+25-yr baseline, not from any internal Hipparcos multi-star fit.
+
+### Post-HGCA candidate inventory
+
+| Bucket | Count |
+|---|---:|
+| REJECTED via HGCA chisq > 100 (HIP 15783) | 1 |
+| FLAG mass-ambiguous (HIP 91479, chisq=50) | 1 |
+| CONFIRMED real companion via HGCA (chisq > 5, HIP 44680) | 1 |
+| 6 HIP candidates with chisq < 5 (no strong outer body) | 6 |
+| 18 anonymous Gaia DR3 candidates (no HGCA cross-match available) | 18 |
+
+The SIMBAD object_type vetting remains pending — SIMBAD TAP and CGI were
+both unreachable during this audit. When SIMBAD comes back online, the
+27 candidates should be checked for SB*, EB*, **, WDS J* identifiers
+which would catch additional stellar-multiple imposters.
