@@ -78,9 +78,17 @@ regime, with moderate (not extreme) inclination.
 
 - rv_amplitude_robust = 3.90 km/s (peak-to-peak across 30 transits)
 - rv_chisq_pvalue = 6.75e−5 → strongly variable
-- Predicted K_1 from orbit parameters: ~1.95 km/s
-- Predicted peak-to-peak for e=0.81: 2 × K_1 = 3.9 km/s — **EXACT MATCH** with observed
-- This is independent confirmation: Gaia RV time-series shows the right amplitude
+- Predicted K_1 from C, H Thiele-Innes (Pourbaix formula): 574 m/s
+- K_1 inferred from observed rv_amplitude_robust ÷ 2: ~1948 m/s
+- **3.4× discrepancy** — the Gaia-published spec Thiele-Innes K_1 prediction does
+  not match the observed RV scatter. **ERRATUM**: an earlier version of this
+  dossier claimed an "exact match" — that was wrong; the prediction was off by 3.4×.
+  The same 3-42× discrepancy is present for all 5 AstroSpectroSB1 candidates in
+  our supplementary pool, suggesting a normalization issue with the Pourbaix
+  C, H formula OR systematic issues in Gaia's AstroSpectroSB1 fits at high RUWE.
+  **The astrometric M_2 = 64 M_J from a_phot + Kepler remains valid** because it
+  does not depend on K_1. The spectroscopic mass interpretation should be
+  considered tentative.
 
 ## Quality flags
 
