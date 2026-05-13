@@ -75,6 +75,7 @@ Confirmation of the tentative candidates listed in `novelty_candidates.csv` woul
 - `scripts/` — pipeline source code (Python; uses `polars`, `numpy`, `astropy`, `dynesty`, `orvara`)
 - `CATALOG_DEPENDENCIES.md` — list of external catalogs the scripts assume are locally cached, with URLs for download
 - `CANDIDATE_FP_AUDIT.md` — per-candidate audit against Gaia DR3 documented false-positive sources (cosmos.esa.int/web/gaia/dr3-known-issues) and independent vetting catalogs (Sahlmann 2025, Stefansson 2025, Tokovinin MSC). Adds an `fp_risk_tier` column to `novelty_candidates.csv`.
+- `candidate_bayesian_scores.csv` — per-candidate Bayesian confidence score consolidating all diagnostics. Columns include `P_real_companion`, `P_substellar_given_real`, `P_real_substellar`, and the log-odds contributions from each evidence factor (significance, solution_type, baselines, RV, RUWE, etc.). The same probabilities are mirrored into `novelty_candidates.csv`.
 
 ## Setup notes
 
