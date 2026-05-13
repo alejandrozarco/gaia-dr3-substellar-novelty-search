@@ -76,6 +76,9 @@ Confirmation of the tentative candidates listed in `novelty_candidates.csv` woul
 - `CATALOG_DEPENDENCIES.md` — list of external catalogs the scripts assume are locally cached, with URLs for download
 - `CANDIDATE_FP_AUDIT.md` — per-candidate audit against Gaia DR3 documented false-positive sources (cosmos.esa.int/web/gaia/dr3-known-issues) and independent vetting catalogs (Sahlmann 2025, Stefansson 2025, Tokovinin MSC). Adds an `fp_risk_tier` column to `novelty_candidates.csv`.
 - `candidate_bayesian_scores.csv` — per-candidate Bayesian confidence score consolidating all diagnostics. Columns include `P_real_companion`, `P_substellar_given_real`, `P_real_substellar`, and the log-odds contributions from each evidence factor (significance, solution_type, baselines, RV, RUWE, etc.). The same probabilities are mirrored into `novelty_candidates.csv`.
+- `EXPANSION_AUDIT.md` — exploration of additional archival directions: AstroSpectroSB1 deep-dive (37 BD candidates with joint astro+spec orbit detection), CPM wide-companion check (0 contamination for our 8), cluster-member cross-match (none in Hunt+Reffert 2023), TESS long-period transit search for HD 101767 / HD 104828 (no transit signal), SB1+Kervella PMa hierarchical-triple expansion (61 candidates).
+- `astrospectrosb1_candidates_supplementary.csv` — 37 AstroSpectroSB1 candidates surfaced by the expansion audit. NOT promoted to `novelty_candidates.csv` because they need further per-candidate vetting; documented as a separate supplementary pool.
+- `sb1_kervella_hierarchical_triple_candidates_supplementary.csv` — 61 NSS SB1 sources with substellar K1 and Kervella PMa cross-match (potential hierarchical triples). NOT promoted to `novelty_candidates.csv`; documented as a supplementary expansion of the multi-body candidate category.
 
 ## Setup notes
 
