@@ -42,7 +42,7 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full filter cascade reduces about 26,000 initial candidates to **11 tentative candidates** documented in `novelty_candidates.csv` (release v1.0.0, 2026-05-13).
+The full 30-filter cascade reduces about 26,000 initial candidates to **11 tentative candidates** documented in `novelty_candidates.csv` (latest release v1.1.0, 2026-05-13). Of the 11, 9 are substellar candidates, 1 is mass-ambiguous on the substellar/stellar boundary (HD 75426), and 1 is an apparent stellar-mass companion discovery (HD 120954).
 
 ### Candidate table
 
