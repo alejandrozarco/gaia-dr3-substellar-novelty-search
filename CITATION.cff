@@ -6,6 +6,7 @@ authors:
   - given-names: "Alejandro"
     family-names: "Zarco"
     alias: "alejandrozarco"
+    email: "alejandro.zarcos@gmail.com"
 repository-code: "https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search"
 abstract: >-
   An archival filter-cascade pipeline that cross-correlates Gaia DR3

@@ -123,3 +123,13 @@ The final candidate output (`novelty_candidates.csv`) is the result of multiple 
 ## A note on tone
 
 The methodology lessons and filter rules in this repository were accumulated through iterative deep-dive analysis of individual sources, many of which turned out to be stellar in the end. The lessons themselves are heuristic and have not been independently validated. The pipeline is intended as a tool for examining Gaia DR3 NSS data systematically, not as a confirmed discovery system.
+
+## Contact
+
+For questions about specific candidates, the filter cascade, the v2 scan methodology, or anything else in this repository:
+
+- **GitHub Issues** — [open an issue](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/issues) for technical bugs, candidate-parameter clarifications, or specific cross-reference requests.
+- **GitHub Discussions** — [start a discussion](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/discussions) for open-ended threads: "anyone planning RV follow-up on candidate X?", methodology-question threads, etc.
+- **Email** — `alejandro.zarcos@gmail.com` for things that don't fit a public thread (e.g., in-prep papers that overlap with a candidate, private Gaia DPAC follow-up status, coordinated submissions).
+
+If you publish a confirmation, falsification, or independent re-analysis of any candidate in `novelty_candidates.csv`, please cite this repository's Zenodo DOI (see `CITATION.cff` for the concept DOI and version-specific DOIs).
