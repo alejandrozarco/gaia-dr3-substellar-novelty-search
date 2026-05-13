@@ -14,6 +14,7 @@ Pipeline:
 
 Reference: extends rv_bayesian_fitter.py (single-planet) to nested 2-Kep model.
 """
+import os
 from __future__ import annotations
 
 import json
@@ -29,7 +30,7 @@ import polars as pl
 warnings.filterwarnings("ignore")
 
 # Project root
-ROOT = Path("/Users/legbatterij/claude_projects/ostinato")
+ROOT = Path(os.environ.get("GAIA_NOVELTY_DATA_ROOT", str(Path(__file__).resolve().parent.parent)))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import dynesty  # noqa: E402

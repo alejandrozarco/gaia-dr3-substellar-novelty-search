@@ -1,107 +1,84 @@
-# Looking for Brown Dwarfs Around Nearby Stars
+# Filter-Cascade Pipeline for Substellar Tertiary Candidates from Gaia DR3 NSS Data
 
-This repository contains a software pipeline that searches public astronomical data for **brown dwarfs** — objects more massive than planets but less massive than stars — orbiting nearby Sun-like stars.
+> **This work is experimental and exploratory.** Nothing in this repository has been observationally confirmed. The candidate list is the output of an automated filter cascade applied to public archival data; surviving candidates are tentative and may turn out to be stellar binaries, photometric/activity artifacts, or already-published systems that the literature cross-match missed. No claims of discovery are made.
 
-## What is a brown dwarf?
+## What this is
 
-A brown dwarf is an object whose mass is between roughly 13 and 80 times the mass of Jupiter. Brown dwarfs form like stars (collapse of gas clouds) but never reach enough mass to ignite hydrogen fusion and become true stars. They sit "in between" planets and stars in the size and mass hierarchy.
+A software pipeline that searches public Gaia DR3 Non-Single-Star (NSS) data for stars showing astrometric wobbles consistent with brown-dwarf-mass companions (roughly 13 to 80 times the mass of Jupiter), then applies a long sequence of filters to remove sources that are likely stellar binaries, already published, or affected by other systematics.
 
-Finding brown dwarfs around other stars is hard because:
-- They are very faint compared to the stars they orbit (factor 10⁴–10⁶ dimmer in visible light)
-- They reveal themselves mainly through their gravitational pull, which makes the host star wobble back and forth
-- The wobble is tiny — typically a few milliarcseconds on the sky, or a few hundred meters per second in line-of-sight velocity
+## A short description of brown dwarfs
 
-## How the pipeline works
+Brown dwarfs are objects whose mass falls between approximately 13 and 80 times the mass of Jupiter. They form through gas-cloud collapse like stars do, but they never reach the mass threshold required for hydrogen fusion. They sit between planets and stars in the mass hierarchy.
 
-The European Space Agency's **Gaia satellite** measured precise positions of more than 1 billion stars between 2014 and 2017. When a star has a brown dwarf companion, the star wobbles slightly in a circle as both objects orbit their common center of mass. Gaia's third data release (DR3, published 2022) identified about 440,000 stars showing such wobbles in two complementary catalogs:
+Finding brown dwarfs in orbit around nearby stars is difficult because:
+- They are much fainter than the stars they orbit (a factor of 10⁴ to 10⁶ in visible light).
+- Their presence is mainly revealed by their gravitational tug, which makes the host star wobble by a tiny amount.
+- The wobble is small — typically a few milliarcseconds on the sky, or a few hundred meters per second in line-of-sight velocity.
 
-- **NSS Orbital**: stars where Gaia detected a full orbital cycle in 3 years of data, with measured period, eccentricity, and Thiele-Innes geometric elements
-- **NSS Acceleration**: stars where Gaia detected only the curvature of the wobble (because the orbit is longer than 3 years), with measured acceleration components
+## How the pipeline operates
 
-This pipeline starts from those Gaia detections and applies a long sequence of filters to remove false positives, leaving the genuine new candidates.
+The European Space Agency's Gaia satellite measured the precise positions of more than one billion stars between 2014 and 2017. When a star has a brown-dwarf companion, both objects orbit a common center of mass, and the host star traces a small ellipse on the sky. Gaia's third data release (DR3, published in 2022) identified roughly 440,000 stars showing such wobbles, distributed across two complementary tables:
 
-### The filters
+- **NSS Orbital**: stars where Gaia detected a full orbital cycle in the 3-year observing window, with measured period, eccentricity, and orbital geometry.
+- **NSS Acceleration**: stars where Gaia detected only the curvature of the wobble (because the orbit is longer than 3 years), with measured acceleration components but not the full orbit.
 
-1. **Stellar parameter assumptions**: Pull the host star's mass from independent catalogs (TIC v8.2, APOGEE, GALAH, LAMOST). Apply the formula relating the measured wobble amplitude and orbital period to the companion mass, marginalizing over all possible orbital inclinations.
+This pipeline starts from those Gaia detections and applies the following sequence:
 
-2. **Already-published systems**: Cross-reference against:
-   - NASA Exoplanet Archive (all confirmed planets/BDs since 1995)
-   - exoplanet.eu European catalog
-   - 30+ specialized literature catalogs (Sahlmann 2011 BDs, Barbato 2023 CORALIE survey, Unger 2023 Gaia validation, Mills 2018 cold-Jupiter survey, Feng 2022 with 230 companions, etc.)
-   - SIMBAD database with child-object cone search
+### Stage 1 — Candidate selection
+Apply a broad substellar mass cut (under 200 Jupiter masses at face-on minimum) plus quality cuts on parallax, astrometric residuals, and detection significance. This yields about 26,000 candidate sources.
 
-3. **Stellar binary impostors**: Stars with M-dwarf companions can mimic brown-dwarf signatures when the orbit is at moderate inclination (i = 30–60°). Filter via:
-   - Hipparcos-Gaia long-baseline proper motion anomaly (Brandt 2024, Kervella 2022)
-   - Tokovinin Multiple Star Catalog (known hierarchical triples/quadruples)
-   - Washington Double Star catalog (visual binaries within 15 arcseconds)
-   - SB9 spectroscopic binary catalog (known orbits with K > 5 km/s)
-   - GALAH SB2 cross-correlation flag (detected two sets of spectral lines)
-   - Trifonov 2025 HIRES SB_flag (radial-velocity-variable host stars)
-   - APOGEE STARFLAGS MULTIPLE_SUSPECT (auto-detected SB2)
+### Stage 2 — Inclination-marginalized mass estimates
+For NSS Orbital sources, derive a mass posterior from the published orbital geometry plus assumed host mass. For NSS Acceleration sources, marginalize over an isotropic inclination prior and a log-uniform period prior. These posteriors are pipeline-derived ranking signals and depend on prior assumptions, not direct mass measurements.
 
-4. **Activity impostors**: A rotating star with magnetic spots can produce a small astrometric wobble that mimics a companion (the photocentric position drifts as spots come into and out of view). Filter via:
-   - TESS Lomb-Scargle rotation-period search at the candidate orbital period
-   - Gaia DR3 vari_classifier_result (variable-star classification)
-   - Gaia DR3 vbroad (projected rotational broadening)
+### Stage 3 — Filter cascade
+Cross-reference against 30+ public catalogs and surveys to filter out:
+- Already-published companions (NASA Exoplanet Archive, exoplanet.eu, SIMBAD, plus specialized BD literature: Sahlmann 2011, Barbato 2023, Unger 2023, Mills 2018, Feng 2022)
+- Known stellar binaries (Hipparcos-Gaia long-baseline proper-motion anomaly via Brandt 2024 and Kervella 2022, Washington Double Star catalog, SB9 spectroscopic binaries, Tokovinin Multiple Star Catalog, GALAH SB2 cross-correlation flag, Trifonov 2025 HIRES RV-variable flag)
+- Activity-driven false signals (TESS rotation period matching the NSS period, Gaia variability classifier, Gaia rotational broadening)
+- Specific candidates already identified by the pipeline as imposters during earlier deep-dive examination
 
-5. **Radial-velocity reality check**: For each candidate, compute the expected radial-velocity amplitude (K_pred) assuming the orbit is real and substellar. Cross-check against any archival radial-velocity time-series (HARPS, HIRES, APOGEE, GALAH, NASA Exoplanet Archive, CARMENES, ESO Archive). If the observed velocity span exceeds 2× the prediction, the system is more massive than substellar — likely a stellar M-dwarf at moderate inclination.
+### Stage 4 — Multi-archive radial-velocity joint Bayesian analysis
+For candidates with sparse RV measurements across multiple archives (HARPS, HIRES, APOGEE, GALAH, NASA Exoplanet Archive, CARMENES), combine the data into a joint Keplerian fit with per-instrument zero-point offsets and per-instrument jitter. This can sometimes reveal signals invisible to any single survey alone. The fit is run with the `dynesty` nested sampler.
 
-6. **Multi-archive joint Bayesian analysis**: For candidates with sparse RV coverage across multiple archives (e.g., 3 HARPS epochs + 5 APOGEE + 1 GALAH), combine all data into a joint Keplerian fit using nested sampling with per-instrument zero-point offsets. This recovers periodic signals invisible to any single survey alone.
+## Results
 
-7. **The 34 methodology lessons**: During pipeline development, every individual deep dive on a candidate that turned out to be stellar produced a new filtering insight. Each was captured as a numbered "lesson" and added retroactively to the cascade. Examples:
-   - **Lesson #22**: NASA Exoplanet Archive excludes objects above 13 Jupiter masses as "non-planetary," creating systematic gaps. Cross-match must use the Gaia source ID, not host names.
-   - **Lesson #29**: Some confirmed planets are registered in SIMBAD as child objects (e.g., "HIP 26196b" instead of under the host name). Must do a 1-arcsecond cone search with planet/BD type filter.
-   - **Lesson #33**: Gaia DR3 Acceleration9 sources with jerk-derived periods are mathematically degenerate between face-on short-period planets and edge-on long-period stellar binaries. The face-on assumption systematically biases toward planet-mass artifacts.
+The full filter cascade reduces about 26,000 initial candidates to a small set of sources that survive every filter. Of about 12 sources that received individual deep-dive investigation:
 
-### What's left after filtering
+- 7 sources turned out to be likely stellar M-dwarf companions in eccentric or moderate-inclination orbits.
+- 2 sources turned out to be previously published planets/brown-dwarf candidates that the initial catalog cross-match missed because of naming or catalog-policy gaps. These cases helped identify which catalogs needed deeper cross-matching.
+- 1 source turned out to be a known hierarchical triple system already catalogued in the Tokovinin Multiple Star Catalog and the Washington Double Star catalog (the latter since 1876).
+- 1 source emerged as an apparent stellar companion discovery (not a brown dwarf), with multiple converging astrometric and radial-velocity signals. This is also tentative and depends on the joint fit.
+- A handful of sources have astrometric evidence and partial archival radial-velocity statistics that are consistent with brown-dwarf-mass companions, but lack sufficient observational data for independent verification. These appear in the candidate output table as tentative candidates only.
 
-Starting from ~26,000 expanded candidates, the cascade removes about 99.5% as either previously known, stellar M-dwarf in disguise, activity-driven, or otherwise refuted. After 11 detailed deep-dive investigations and applying all 34 methodology lessons, **two truly novel substellar candidates** remain:
+See `REPORT.md` for the detailed methodology and `novelty_candidates.csv` for the candidate parameters. Many parameters in the candidate table are pipeline estimates (e.g., inclination-marginalized mass posteriors) rather than direct measurements.
 
-| Target | Spectral type | Apparent magnitude | Orbital period | Mass estimate | Status |
-|---|---|---|---|---|---|
-| HD 101767 | F8 dwarf | V = 8.88 | 486 days | ~62 Jupiter masses | passes all filters + Gaia rv_amplitude_robust = 3 km/s confirms wobble at predicted level |
-| HD 104828 | K0 dwarf | V = 9.86, d = 33 pc | ~10 years | ~41 Jupiter masses | CARMENES archival RV (3 epochs) consistent with predicted amplitude |
+## What this pipeline does not do
 
-Plus **four novel multi-body astrometric candidates** where Gaia detected an inner orbit and the long-baseline Hipparcos-Gaia proper-motion anomaly shows an additional outer companion:
+- It does not propose or carry out new observations. All data come from public archives.
+- It does not make discovery claims. Surviving candidates may be stellar at moderate inclinations, may be affected by systematics not captured by current filters, or may be pre-published in sources not in the cross-match.
+- It does not provide definitive mass measurements. The reported masses are pipeline-derived from astrometric geometry plus prior assumptions on inclination and period.
+- It has not been peer-reviewed.
 
-| Target | Inner period | Inner mass | Outer/Inner mass ratio |
-|---|---|---|---|
-| HD 140895 | 1460 days | 113 M_J | 1.17 |
-| HD 140940 | 924 days | 183 M_J | 0.86 |
-| BD+46 2473 | 496 days | 74 M_J | 0.68 |
-| BD+35 228 | 560 days | 53 M_J | 0.53 |
+## Paths forward for the tentative candidates
 
-And **one novel stellar binary discovery** (a real companion, but stellar rather than substellar — methodologically interesting because five independent signals converged):
+Confirmation of the tentative candidates listed in `novelty_candidates.csv` would require either:
 
-| Target | Mass | Orbital period | Status |
-|---|---|---|---|
-| HD 120954 | 1.56 solar masses (K-dwarf) | 70 years | edge-on; directly imageable at SPHERE / MagAO-X at 0.19 arcsecond separation |
+1. **Gaia DR4** (currently scheduled for December 2026 with public release expected in early 2027). DR4 will publish per-transit radial velocities and intermediate astrometric data for all sources, which can resolve the inclination–mass degeneracy through joint epoch-level inference. This costs nothing and requires no new telescope time. For HD 101767, for instance, the 21 individual radial-velocity epochs that produced the summary `rv_amplitude_robust = 3.0 km/s` will become public.
 
-## How to confirm the candidates
-
-The two truly novel substellar candidates need additional observations:
-
-### Option 1: Wait for Gaia DR4 (free, public, no telescope time)
-
-Gaia's next data release in **December 2026** will publish per-transit radial velocities for all stars (currently only released for ~370k pulsator variable stars). The 21 individual radial velocities that produced the summary `rv_amplitude_robust = 3.0 km/s` for HD 101767 will become public, sufficient to fully characterize its orbit. The same applies to HD 104828.
-
-### Option 2: New radial-velocity observations
-
-For HD 101767 at V = 8.88, declination +55°: 6 epochs at HARPS-N (Telescopio Nazionale Galileo, La Palma), SOPHIE (Observatoire de Haute-Provence, France), or NEID (WIYN 3.5m, Arizona). About 2 nights of queue time total. Predicted radial-velocity amplitude is 1–1.6 km/s, easily detected at sub-100 m/s precision.
-
-For HD 104828 at V = 9.86, declination +9°: 2–3 epochs at TRES (Fred L. Whipple Observatory), FIES (Nordic Optical Telescope), or CHIRON (SMARTS) at orbital quadrature spacing. Predicted amplitude similar to above.
-
-The multi-body candidates and HD 120954 each have specific follow-up paths described in `REPORT.md`.
+2. **Targeted radial-velocity observations** with northern small-aperture spectrographs (TRES at Whipple, FIES at Nordic Optical Telescope, SOPHIE at Observatoire de Haute-Provence, HARPS-N at Telescopio Nazionale Galileo) or southern equivalents (CHIRON at SMARTS, FEROS at MPG 2.2m). Typically 2–6 epochs at orbital quadrature spacing per target. This requires telescope-allocation proposals that this archival-only pipeline does not address.
 
 ## Repository contents
 
-- `README.md` — this file (layman's explanation)
-- `REPORT.md` — technical writeup with full methodology and results
-- `novelty_candidates.csv` — final candidate list with parameters
-- `scripts/` — reproducible pipeline source code (Python; uses polars dataframe library, dynesty nested sampling, orvara joint astrometric fitter)
+- `README.md` — this file (non-technical introduction)
+- `REPORT.md` — technical methodology and results in more detail
+- `novelty_candidates.csv` — tentative candidate list with pipeline-derived parameters
+- `scripts/` — pipeline source code (Python; uses `polars`, `numpy`, `astropy`, `dynesty`, `orvara`)
+- `CATALOG_DEPENDENCIES.md` — list of external catalogs the scripts assume are locally cached, with URLs for download
 
-## Methodological caveat
+## Setup notes
 
-This is an archival data-mining study. None of the candidates have been confirmed by new observations. The pipeline applies a deliberately strict filter cascade — false positives have been the dominant failure mode of similar published searches, so the methodology emphasizes rejection over discovery.
+The pipeline scripts expect catalog files to be present at a location set via the `GAIA_NOVELTY_DATA_ROOT` environment variable. The required catalogs are listed in `CATALOG_DEPENDENCIES.md` along with their public access URLs. The catalogs themselves are not redistributed in this repository.
 
-The pipeline's most significant empirical finding may be that the high-significance Gaia DR3 acceleration signatures preferred by previous publications (Hipparcos-Gaia signal-to-noise > 100) systematically select **stellar M-dwarf companions** at moderate inclinations rather than substellar companions. Substellar discoveries appear to live in the moderate signal-to-noise regime (5–30) combined with multi-axis independent confirmation.
+## A note on tone
+
+The methodology lessons and filter rules in this repository were accumulated through iterative deep-dive analysis of individual sources, many of which turned out to be stellar in the end. The lessons themselves are heuristic and have not been independently validated. The pipeline is intended as a tool for examining Gaia DR3 NSS data systematically, not as a confirmed discovery system.

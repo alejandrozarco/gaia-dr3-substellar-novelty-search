@@ -1,8 +1,14 @@
-# Substellar Tertiary Candidates from Gaia DR3 NSS: A Multi-Pipeline Filter Cascade Analysis
+# Filter-Cascade Pipeline for Substellar Tertiary Candidates in Gaia DR3 NSS Data
+
+## Status
+
+**This work is experimental and exploratory.** All results in this report are preliminary and based on archival analysis only. No new observations have been carried out. None of the candidates have been observationally confirmed. The pipeline applies a sequence of filters to public archival data and identifies a small number of sources that survive all filters; surviving sources are described here as "tentative candidates," not as discoveries.
+
+The methodology lessons accumulated through this pipeline are themselves experimental and have not been independently validated.
 
 ## Abstract
 
-A pipeline cross-correlates Gaia DR3 Non-Single-Star (NSS) Orbital and Acceleration tables (443,205 + 338,215 sources) against 30+ literature catalogs and archival radial-velocity time-series to identify novel substellar (13–80 M_J) companion candidates to bright nearby stars (V < 12, d < 200 pc). After applying 34 sequential filter cascades, ~99.5% of the initial pool is removed, leaving **two truly novel substellar candidates** (HD 101767 and HD 104828) and **four novel multi-body astrometric systems** that require confirmation by radial-velocity follow-up or Gaia DR4 epoch astrometry (Dec 2026 release).
+A software pipeline cross-correlates Gaia DR3 Non-Single-Star (NSS) Orbital and Acceleration tables (443,205 + 338,215 sources) against 30+ public literature catalogs and archival radial-velocity time-series. The goal is to identify candidate substellar (13–80 M_J) companions to bright nearby stars (V < 12, d < 200 pc) that have not been claimed in published companion catalogs. After applying 35 sequential filter cascades, ~99.5% of an initial expanded candidate pool is removed. A small number of sources survive all filters and are presented here as tentative candidates for future follow-up; these have not been verified by new observations and may turn out to be either stellar binaries at moderate inclination, photometric/activity false positives not caught by the current filters, or already-published systems that the pipeline's literature cross-match missed.
 
 ## 1. Pipeline Overview
 
@@ -12,191 +18,203 @@ The pipeline operates in four stages.
 
 Input data: Gaia DR3 `nss_two_body_orbit` (443,205 sources, mix of Orbital, SB1, SB2, AstroSpectroSB1, EclipsingBinary, EclipsingSpectro, Acceleration7, Acceleration9 solution types) and `nss_acceleration_astro` (338,215 sources, 7-parameter or 9-parameter astrometric solutions).
 
-Substellar mass cut: M_2 < 200 M_J at face-on (sin i = 1) minimum. This is intentionally broader than the canonical 80 M_J brown-dwarf upper limit because moderate-inclination orbits (i = 30–60°) can have true M_2 a factor of 1.5–3× larger than the face-on minimum.
+Substellar mass cut applied: M_2 < 200 M_J at face-on (sin i = 1) minimum. This is broader than the canonical 80 M_J brown-dwarf upper limit because moderate-inclination orbits (i = 30–60°) can have true M_2 a factor of 1.5–3× larger than the face-on minimum.
 
 Quality cuts: parallax > 5 mas (within 200 pc), RUWE < 5, NSS significance > 10.
 
-Output: expanded candidate pool of 26,263 sources.
+Output: expanded candidate pool of ~26,000 sources.
 
 ### 1.2 Stage 2 — Inclination-Marginalized Mass Posterior
 
-For NSS Orbital sources, M_2 is derived from the Thiele-Innes elements (A, B, F, G) plus parallax plus host mass M_1 (from TIC v8.2 catalog or Pecaut-Mamajek spectral-type → mass mapping):
+For NSS Orbital sources, M_2 is derived from the Thiele-Innes elements (A, B, F, G) plus parallax plus assumed host mass M_1 (from TIC v8.2 catalog or Pecaut-Mamajek spectral-type → mass mapping):
 
   M_2 / (M_1 + M_2)^(2/3) × P^(2/3) = a_phot / parallax
 
-The Thiele-Innes a_phot is already deprojected from the projected ellipse axis ratio, so for well-determined orbits M_2 is recoverable directly.
-
 For NSS Acceleration sources, P_orb is unknown — only the per-source acceleration magnitude and direction are constrained. The pipeline marginalizes over:
 - Isotropic inclination prior P(i) ∝ sin(i)
-- Log-uniform period prior P ∈ [3, 30] yr (or [1, 25] yr per source)
+- Log-uniform period prior P ∈ [3, 30] yr
 - Kipping 2013 Beta(0.867, 3.03) eccentricity prior
 
-For NSS Acceleration9 (9-parameter) sources, the additional jerk constraints give a factor-of-2 P_orb estimate via |jerk|/|accel| ≈ 2π/P, but this estimate must be marginalized over inclination (a face-on assumption systematically biases toward low M_2 / short P; see Lesson #33).
+For NSS Acceleration9 (9-parameter) sources, the additional jerk constraints give a factor-of-2 P_orb estimate via |jerk|/|accel| ≈ 2π/P, but this estimate is degenerate with inclination and must also be marginalized.
 
-Per-source outputs: M_2 median, 1σ and 2σ bounds, P_substellar = Prob(M_2 < 80 M_J | data, priors).
+Per-source outputs: M_2 median, 1σ and 2σ bounds, P_substellar = fraction of marginalized samples with M_2 < 80 M_J.
+
+These mass posteriors are pipeline-derived and depend on prior choices (inclination distribution, period distribution). They are intended as relative ranking signals, not as definitive mass measurements.
 
 ### 1.3 Stage 3 — Filter Cascade
 
-Sequential application of 16+ literature catalog filters plus 18 methodology lessons (#17–#34) emerging from candidate-by-candidate deep dives during pipeline development:
+Sequential application of 16+ literature catalog filters plus methodology rules accumulated during pipeline development:
 
-| # | Filter | Reference | Catch type |
-|---|---|---|---|
-| 1 | Sahlmann ML imposter labels | Sahlmann & Gomez 2025 | NSS-derived BD imposters |
-| 2 | HGCA Brandt 2024 snrPMa | Brandt 2024 ApJS | Hipparcos-Gaia 25-yr Δμ |
-| 3 | Penoyre 2022 RUWE | Penoyre+ 2022 MNRAS | Unresolved binary residual |
-| 4 | Kervella 2022 PMa M_2 (universal) | Kervella+ 2022 A&A | Independent PMa M_2 |
-| 5 | Tokovinin MSC subcomponent | Tokovinin 2018 | Hierarchical multiples |
-| 6 | GALAH DR4 SB2 cross-correlation | Buder+ 2024 GALAH | Spectroscopic doubles |
-| 7 | Barbato 2023 CORALIE M_true > 80 M_J | Barbato+ 2023 A&A 674 A114 | Joint Gaia+RV stellar M-dwarfs |
-| 8 | Marcussen 2023 SB2 spectroscopic vetting | Marcussen & Albrecht 2023 AJ 165 266 | Spectroscopic imposters |
-| 9 | SB9 Pourbaix K_1 > 5 km/s | Pourbaix 2004–2025 | Known spectroscopic binaries |
-| 10 | Unger 2023 joint Gaia+RV stellar verdicts | Unger+ 2023 A&A 680 A16 | Reclassified Sahlmann 2011 BDs |
-| 11 | Arenou 2023 multiplicity table | Gaia Collab. 2023b A&A 674 A34 | Published BD/planet table |
-| 12 | Trifonov 2025 HIRES sb_flag | Trifonov+ 2025 | RV-variable host stars |
-| 13 | WDS visual companion within 15" | USNO | Wide visual binaries contributing reflex |
-| 14 | Gaia DR3 vari_classifier_result | Gaia DR3 vari pipeline | Photometric variability (SOLAR_LIKE rotators) |
-| 15 | Gaia DR3 vbroad > 15 km/s | Gaia DR3 main | Fast rotators |
-| 16 | NSS dual-classification | Gaia DR3 NSS | Sources with both Orbital and SB1/SB2 fits |
-| 17 | NASA Exoplanet Archive via gaia_dr3_id | Akeson+ 2013 | Published systems |
-| 18 | SIMBAD child-object cone search (1") | Wenger+ 2000 SIMBAD | Planets registered as child objects |
-| 19 | TESS BLS rotation = NSS period | MAST | Activity-imposter rejection |
-| 20 | APOGEE STARFLAGS MULTIPLE_SUSPECT | APOGEE DR17 | SB2 imposters |
-| 21 | Cross-survey stellar parameter consistency | TIC+APOGEE+LAMOST+GALAH | SB2 composite SED |
-| 22 | K_RV / K_pred pre-screen (Lesson #17) | This work | Stellar M-dwarf imposters |
-| 23 | Moderate-snrPMa scoring (Lesson #20) | This work | High-snrPMa stellar bias |
-| 24 | Inclination-marginalized A9 jerk (Lesson #33) | This work | A9 face-on planet-mass artifact |
-| 25 | Universal Kervella M_2 (Lesson #34) | This work | All-pool stellar pre-filter |
+| # | Filter | Reference |
+|---|---|---|
+| 1 | Sahlmann ML imposter labels | Sahlmann & Gomez 2025 |
+| 2 | HGCA Brandt 2024 snrPMa | Brandt 2024 ApJS |
+| 3 | Penoyre 2022 RUWE | Penoyre+ 2022 MNRAS |
+| 4 | Kervella 2022 PMa M_2 (applied to all pools) | Kervella+ 2022 A&A |
+| 5 | Tokovinin MSC subcomponent | Tokovinin 2018 |
+| 6 | GALAH DR4 SB2 cross-correlation | Buder+ 2024 GALAH |
+| 7 | Barbato 2023 CORALIE M_true > 80 M_J | Barbato+ 2023 A&A 674 A114 |
+| 8 | Marcussen 2023 SB2 spectroscopic vetting | Marcussen & Albrecht 2023 AJ 165 266 |
+| 9 | SB9 Pourbaix K_1 > 5 km/s | Pourbaix 2004–2025 |
+| 10 | Unger 2023 joint Gaia+RV stellar verdicts | Unger+ 2023 A&A 680 A16 |
+| 11 | Arenou 2023 multiplicity table | Gaia Collab. 2023b A&A 674 A34 |
+| 12 | Trifonov 2025 HIRES sb_flag | Trifonov+ 2025 |
+| 13 | WDS visual companion within 15" | USNO |
+| 14 | Gaia DR3 vari_classifier_result | Gaia DR3 vari pipeline |
+| 15 | Gaia DR3 vbroad > 15 km/s | Gaia DR3 main |
+| 16 | NSS dual-classification | Gaia DR3 NSS |
+| 17 | NASA Exoplanet Archive via gaia_dr3_id | Akeson+ 2013 |
+| 18 | SIMBAD child-object cone search (1") | Wenger+ 2000 SIMBAD |
+| 19 | TESS BLS rotation matches NSS period | MAST |
+| 20 | APOGEE STARFLAGS MULTIPLE_SUSPECT | APOGEE DR17 |
+| 21 | Cross-survey stellar parameter consistency | TIC+APOGEE+LAMOST+GALAH |
+| 22 | K_RV / K_pred archival pre-screen | (this pipeline) |
+| 23 | Moderate-snrPMa composite scoring | (this pipeline) |
+| 24 | Inclination-marginalized A9 jerk re-evaluation | (this pipeline) |
+| 25 | Universal Kervella M_2 stellar pre-filter | (this pipeline) |
+| 26 | Tokovinin MSC + WDS speckle binary pre-check | (this pipeline) |
+
+The filter cascade is conservative: each source must pass all applicable filters to remain. Sources failing any filter are tagged with the filter reason and removed.
 
 ### 1.4 Stage 4 — Multi-Archive RV Joint Bayesian Analysis
 
 For candidates with multi-archive RV coverage (HARPS RVBank Trifonov 2020, HIRES Trifonov 2025, APOGEE DR17, GALAH DR4, NASA Exoplanet Archive, CARMENES DR1, ESO archive):
 
 - Combine RVs into single time-series with per-instrument γ offsets and per-instrument jitter σ_inst as nuisance parameters
-- Run 0-, 1-, and 2-Keplerian Bayesian fits via dynesty NestedSampler (nlive = 400–600)
-- Outer Keplerian: P prior centered on NSS-fitted value
-- Inner Keplerian: P ∈ [1, 100 d] log-uniform, K ∈ [10, 500] m/s log-uniform, Kipping eccentricity prior
+- Run 0-, 1-, and 2-Keplerian Bayesian fits via dynesty NestedSampler
 - Compute log10 Bayes factor BF(2-Kep vs 1-Kep)
-- Apply 3-diagnostic gate (Lesson #24): BF > 1.0 AND K_inner > 3σ_jitter AND inner phase-fold visibly coherent
+- Apply a 3-diagnostic gate: BF > 1.0 AND K_inner > 3σ_jitter AND inner phase-fold visibly coherent
 
-For HGCA-corroborated sources (Brandt 2024 HIP-matched), also run orvara joint HGCA + RV fit to localize M_2 + inclination + period using both the long-baseline H-G Δμ and the short-baseline RV.
+For HGCA-corroborated sources, also run orvara joint HGCA + RV fit using the orvara package (Brandt 2021).
 
-## 2. Methodology Lessons
+## 2. Pipeline Caveats
 
-The pipeline accumulated 34 methodology lessons through iterative deep-dive validation. Selected highlights:
+This pipeline has several known limitations:
 
-**Lesson #10 (Multi-body dual-pipeline detection)**: Gaia DR3 `nss_two_body_orbit` and `nss_acceleration_astro` are formally disjoint (each source has at most one solution_type). A hierarchical multi-body system appears in only one table — the inner companion dominates the orbital fit, the outer is "lost" from NSS. It is recovered by cross-matching NSS Orbital sources to Hipparcos-Gaia PMa catalogs (Kervella, Brandt). Excess observed dVt at ≥ 3σ above inner-orbit prediction is a positive outer-companion detection.
+1. **Posterior priors are assumptions, not measurements.** The isotropic inclination prior and log-uniform period prior in Stage 2 are standard choices, but actual distributions of orbital parameters in the substellar regime are unknown and may differ.
 
-**Lesson #20 (snrPMa stellar bias)**: Single-baseline acceleration metrics bias toward stellar M-dwarf companions because tangential acceleration scales with M_2. Hard cuts: 2 < snrPMa < 50 in candidate selection; composite score multiplied by (1/snrPMa)^α with α ∈ [0.3, 0.7].
+2. **Filter cascade is conservative but not complete.** The 35 filters do not exhaust possible imposter mechanisms. Sources surviving the cascade may still be stellar binaries at unusual inclinations, contaminated by background sources, or affected by photometric/activity systematics not captured by current filters.
 
-**Lesson #22 (NASA Exoplanet Archive gaia_id cross-match)**: NASA Exo PS table excludes M > 13 M_J as "non-planetary," creating systematic gaps for RV-discovered BDs. Cross-match must use `gaia_dr3_id`, not HD/HIP host names. The pipeline caught 15 published systems including HD 244957 = HIP 26196b (Feng 2022), HD 203473 b (Mills 2018), GJ 676 A 4-planet system, Gaia-4, Gaia-5, Gaia-6.
+3. **Literature catalog cross-match has gaps.** NASA Exoplanet Archive PS table excludes companions with M > 13 M_J as "non-planetary." Some published exoplanets are registered in SIMBAD as child objects (e.g., "HIP 26196b") that do not appear under host-name searches. Entire RV survey papers (Mills 2018 N2K, Feng 2022) have minimal catalog presence. The pipeline applies SIMBAD child-object cone searches and direct Gaia source_id cross-match to mitigate these gaps, but additional missed publications remain possible.
 
-**Lesson #29 (SIMBAD child-object cone search)**: Some published exoplanets are registered as SIMBAD child objects (e.g., "HIP 26196b") that do not appear under host-name SIMBAD queries. A 1" cone search with `type=Pl/BD*` filter catches them.
+4. **The orbital mass posteriors depend on the assumed host mass.** Host mass is taken from TIC v8.2 or Pecaut-Mamajek spectral-type mapping; both have uncertainties at the 10–20% level that propagate to companion mass.
 
-**Lesson #33 (Inclination-marginalized A9 jerk)**: The Acceleration9 relation R = |jerk|/|accel| ≈ 2π/P_orb is mathematically valid at any single phase, but the inferred mass depends on inclination. Face-on (sin i = 1) prior systematically biases toward planet-mass; the actual posterior must marginalize over isotropic P(i) ∝ sin(i). HD 120954's "M = 1.4 M_J at P = 0.63 yr face-on" was revealed to be M = 1.56 M_sun K-dwarf at P = 70 yr edge-on once properly marginalized.
+5. **The substellar mass cut at M_2 < 200 M_J face-on is permissive.** Sources with intrinsic M_2 > 200 M_J at edge-on (i = 90°) can still pass face-on selection if the orbit happens to be face-on. Stage 2 inclination marginalization addresses this, but the marginalized posterior depends on the prior.
 
-**Lesson #34 (Universal Kervella M_2 filter)**: The Kervella 2022 M_2(a) estimate at fixed semi-major axes (3, 5, 10, 30 AU) provides a model-independent stellar/substellar discriminator. The filter rule "M_2(5 AU) > 200 M_J face-on minimum = stellar" must apply to all pools, not just NSS Orbital. Retroactive application to NSS Acceleration caught 584 unique stellar imposters previously misclassified.
+6. **No new observations are performed.** All radial-velocity data come from public archives. For candidates with insufficient archival coverage, no statement about orbital character is possible.
 
-## 3. Empirical Results
+## 3. Observational Caveats on Sample
 
-### 3.1 Filter Cascade Attrition
+The Gaia DR3 NSS Orbital and Acceleration tables themselves have known systematic effects:
 
-Starting expanded pool: 26,263 sources (full NSS Orbital + Acceleration after substellar mass cut + quality cuts)
+- **An et al. 2025**: NSS Orbital periods exceeding the ~1095-day Gaia DR3 mission baseline are systematically biased toward longer (potentially spurious) periods.
+- **Sahlmann & Gomez 2025**: ~91% of Gaia astrometric exoplanet candidates with M < 30 M_J in their machine-learning classifier are likely imposters; the true brown-dwarf candidate yield is ~9%.
 
-After 34 sequential filters:
+These priors are reflected in the empirical results below.
+
+## 4. Empirical Results
+
+### 4.1 Filter Cascade Attrition
+
+Starting expanded pool: ~26,000 sources (full NSS Orbital + Acceleration after substellar mass cut + quality cuts).
+
+After 35 sequential filters:
 - 1,228 sources flagged as previously-published or stellar imposters
-- 11 candidates emerged for deep-dive investigation
-- 7 of 11 were refuted as stellar M-dwarf companions during deep dive
-- 2 of 11 were caught as published systems (Feng 2022 BD + Mills 2018 planet) by SIMBAD child-object + literature filters during deep dive
-- 2 of 11 survive as truly novel substellar candidates
+- ~15 sources emerged for individual deep-dive verification (sources scoring highest under composite ranking)
+- 12 deep-dived sources resolved during examination:
+  - 7 sources were determined to be likely stellar M-dwarf companions at moderate inclination (mass posteriors after joint HGCA+RV fits with proper inclination marginalization indicate M_2 = 0.13–0.78 M_sun)
+  - 2 sources were determined to be previously published in catalogs that the initial cross-match missed (Feng 2022 brown-dwarf catalog entry registered as SIMBAD child object; Mills 2018 RV planet announcement not ingested into NASA Exoplanet Archive)
+  - 1 source was determined to be a previously known hierarchical triple (Tokovinin MSC entry since 1876)
+  - 2 sources have astrometric and partial RV evidence consistent with substellar companions but no archival data sufficient for confirmation
 
-### 3.2 Truly Novel Substellar Candidates
+The remaining ~3 sources have not been individually verified at deep-dive depth and may be subject to similar reclassifications.
 
-| Property | HD 101767 | HD 104828 |
-|---|---|---|
-| Hipparcos ID | HIP 57135 | HIP 58863 |
-| Gaia DR3 source_id | 841536616165020416 | 3905850581902839168 |
-| RA (deg) | 175.7155 | 181.0710 |
-| Dec (deg) | +55.2925 | +9.1933 |
-| V magnitude | 8.88 | 9.86 |
-| Spectral type | F8 | K0 |
-| Distance (pc) | — | 33 |
-| NSS pool | Orbital | Acceleration |
-| NSS-derived P (d) | 486.0 | unknown (jerk-implied ~3600) |
-| M_2 inclination-marginalized (M_J) | 62 (1σ: 55–68) | 41 (1σ: 30–55) |
-| P_substellar | 0.9999 | 0.90 |
-| HGCA snrPMa | 2.79 | 23.6 |
-| Penoyre RUWE | 2.94 (confirmed) | 1.86 |
-| Kervella M_2(5 AU) M_J | 8.4 (low SNR ambiguous) | 4.2 (low SNR ambiguous) |
-| Archival RV | APOGEE 2 epochs over 27 d + Gaia DR3 rv_amplitude_robust = 3.0 km/s | CARMENES Cortés-Contreras 2024: 3 epochs over 88 d, K_pp = 1.30 km/s |
-| K_RV/K_pred check | K_obs ≈ 1.5 km/s vs K_pred ≈ 1.6 km/s → ratio 0.94 (consistent with substellar) | K_pp = 1.30 km/s consistent with K_pred 1–2 km/s at substellar mass |
-| TESS variability | Clean (P_rot = 2.74 d at 16 ppm amplitude, far too small to drive astrometric reflex) | — |
-| Gaia DR3 non_single_star flag | 1 | — |
-| Gaia DR3 rv_chisq_pvalue | 2.8 × 10⁻¹¹ | — |
-| Verdict | TRULY NOVEL CONFIRMED (passes all 34 filters + supporting RV evidence) | SUBSTELLAR COMPATIBLE (Lesson #17 not trivially demoting; needs more RV) |
-| Confirmation pathway | 6 RV epochs at HARPS-N / SOPHIE / NEID / TRES across 486 d period | 2–3 RV epochs at TRES / FIES / CHIRON at quadrature |
+### 4.2 Sources Surviving All Filters with Supporting Archival Evidence
 
-### 3.3 Multi-Body Astrometric Candidates (Pick #2 Sample)
+The following sources survive all 35 filters and have some archival radial-velocity statistic consistent with substellar mass at the NSS-derived orbital period. These are **tentative candidates only**. None have been observationally confirmed and any of them may turn out to be stellar binaries, activity false positives, or pre-published systems missed by the literature cross-match.
 
-Methodology: Cross-match NSS Orbital substellar candidates with Hipparcos-Gaia long-baseline PMa catalogs (Kervella 2022 + Brandt 2024). For each NSS Orbital source, predict the inner-orbit dVt leak (≈ K_⋆ × min(P_in / 25 yr, 1)). Observed Kervella dVt at ≥3σ above inner-only prediction = outer companion candidate.
+#### HD 101767 (HIP 57135, Gaia DR3 841536616165020416)
+- F8 dwarf, V = 8.88
+- NSS Orbital period 486 ± 2 d
+- Inclination-marginalized M_2 = 62 M_J at P_substellar = 0.9999 under the pipeline priors
+- HGCA snrPMa = 2.79; Penoyre RUWE = 2.94
+- Gaia DR3 rv_amplitude_robust = 3.0 km/s across 21 transits; rv_chisq_pvalue = 2.8 × 10⁻¹¹
+- APOGEE DR17: 2 epochs over 27 d, ΔV = 145 m/s (5.6% of orbital phase)
+- The ratio of Gaia-reported rv_amplitude/2 to predicted K at the NSS-marginalized mass and inclination is ≈ 0.94, which is consistent with but does not confirm the substellar interpretation
+- No published companion in any of 30+ checked catalogs
+- This source has no archival RV time-series sufficient to verify the orbit independently
 
-Pilot validation: **HD 128717 = Gaia-6** (HIP 71425, Gaia DR3 1610837178107032192) recovers Halbwachs+ 2022's published outer companion (M = 19.8 M_J, P = 3420 d, e = 0.85) at σ_excess = 7.87 from observed Kervella dVt = 145.0 ± 15.5 m/s versus inner-only prediction of 23.4 m/s. Kervella M_2(5 AU) = 16.9 M_J matches Gaia-6 b's published a = 4.85 AU mass within 17%. Independent validation of methodology.
+#### HD 75426 (HIP 43197, Gaia DR3 5328000290404075264)
+- F5IV/V (modern parameters indicate dwarf, not subgiant: Gaia logg = 4.12, TIC lumclass = DWARF)
+- V = 6.72, d = 43 pc
+- NSS Acceleration with significance = 60.3
+- HGCA χ² = 1115 (~33σ formal significance)
+- Kervella PMa M_2(5 AU) face-on minimum = 66 M_J; M_2(10 AU) = 76 M_J (both substellar)
+- orvara HGCA-only joint fit median M_2 = 164 M_J at 1σ range [78, 688] M_J (mass-ambiguous between brown dwarf and early M-dwarf)
+- Gaia DR3 rv_amplitude_robust = 1.92 km/s across 27 transits; rv_chisq_pvalue = 0.014 (statistically variable)
+- No archival RV time-series available
+- This source is mass-ambiguous: the orvara posterior allows both substellar and early-M-dwarf solutions
 
-The pipeline recovers all 10 known multi-companion / RV+astrometric systems in the 98 HIP-matched NSS Orbital substellar subset by name: HD 111232 b+c, HD 142 Ab/Ac/Ad, HD 91669, HD 30246, HD 68638, HD 175167, HD 128717.
+#### HD 104828 (HIP 58863, Gaia DR3 3905850581902839168)
+- K0 dwarf, V = 9.86, d = 33 pc
+- NSS Acceleration significance = 37.0; HGCA snrPMa = 23.6
+- Inclination-marginalized M_2 median = 41 M_J at P ≈ 10 yr (substellar range under marginalization priors)
+- CARMENES Cortés-Contreras 2024: 3 epochs over 88 d with K_pp = 1.30 km/s
+- The K observed is roughly consistent with K predicted at substellar mass (the K_RV/K_pred archival pre-screen does not trivially rule out substellar, unlike for the 5 sources where this test ruled stellar)
+- orvara posterior straddles the BD/M-dwarf boundary
 
-**Final clean sample after universal Kervella filter (Lesson #34): 11 systems**
+### 4.3 Multi-Body Astrometric Candidates (Inner Orbital + Outer PMa)
 
-TIER S Validators (7) — published inner companion + new outer-PMa evidence:
-- HD 142 (HIP 522) — F7V, V = 5.71, 3 known planets
-- HD 111232 (HIP 62534) — G8V, V = 7.62, 2 known planets
-- HD 175167 (HIP 93281) — G6IV/V, V = 8.01, 1 known planet
-- HD 91669 (HIP 51789) — K0/1III, V = 9.71, known BD inner
-- HD 128717 (HIP 71425) — F8, V = 8.30, Gaia-6 outer published
-- HD 40503 (HIP 28193) — K2/3V, V = 9.23, in Arenou 2023 BD table
-- HD 14717 (HIP 10538) — Sahlmann 2025 lower-confidence candidate
+Methodology: Cross-match NSS Orbital sources with Hipparcos-Gaia long-baseline PMa catalogs (Kervella 2022, Brandt 2024). For each NSS Orbital source, predict the inner-orbit dVt leak. Observed Kervella dVt at ≥3σ above inner-only prediction is treated as a possible outer companion signal.
 
-TIER A Novel (4) — no published companions, multi-axis astrometric evidence:
-- HD 140895 (HIP 77262) — inner P = 1460 d, M = 113 M_J, outer/inner mass ratio 1.17
-- HD 140940 (HIP 77357) — inner P = 924 d, M = 183 M_J, ratio 0.86
-- BD+46 2473 (HIP 90060) — inner P = 496 d, M = 74 M_J, ratio 0.68
-- BD+35 228 (HIP 5787) — inner P = 560 d, M = 53 M_J, ratio 0.53; orvara MARGINAL refutation for inner orbit
+Pilot test: HD 128717 (= Gaia-6, Halbwachs+ 2022 published outer companion M = 19.8 M_J at P = 3420 d) is recovered at σ_excess = 7.87. Kervella M_2(5 AU) = 16.9 M_J matches the published mass at a = 4.85 AU within ~17%.
 
-### 3.4 Novel Stellar Companion Discovery
+Sources flagged as tentative multi-body candidates (no published outer companion in checked catalogs, inner orbital + outer PMa excess ≥3σ, surviving the universal Kervella M_2 filter):
+- HD 140895 (HIP 77262)
+- HD 140940 (HIP 77357)
+- BD+46 2473 (HIP 90060)
+- BD+35 228 (HIP 5787, with caveats — the inner orbit's period is uncertain)
 
-**HD 120954** (HIP 67777, Gaia DR3 6287148057608953600, G1V, V = 8.76, d = 124 pc): emerged from inclination-marginalized A9 jerk inference as a putative planet-mass candidate (M = 1.4 M_J at P = 0.63 yr at sin i = 1 face-on). Joint orvara HGCA + 3-RV-epoch fit with proper marginalization revealed **M_2 = 1.56 ± 0.5 M_sun K-dwarf companion at P = 70 yr, e = 0.23, i = 87°** (edge-on).
+These are pipeline outputs only and require RV characterization of the inner orbit plus direct imaging or astrometric epoch data for the outer to verify.
 
-Five independent astrometric + RV signals converge:
-- HGCA Brandt 2021 EDR3 ΔPM = 16.81 ± 0.99 mas/yr (17σ)
-- Kervella 2022 PMa H2-EG3b = 4988 ± 49 m/s (102σ)
-- Tycho-Gaia 25-yr ΔPM = 12.3 ± 2.7 mas/yr (4.6σ)
-- Gaia DR3 NSS Acceleration9 significance = 33.08
-- ΔRV across 25 yr: Nordström 2004 GCS 31.6 km/s vs Gaia DR3 38.1 km/s = +6.5 km/s shift, fully consistent with K_pred = 6.28 km/s over the 24-yr / 0.34-cycle baseline
+### 4.4 Apparent Stellar Binary Detection (Methodology Side-Effect)
 
-Predicted directly imageable at SPHERE / MagAO-X with separation 0.19", ΔK ≈ 6 mag. Catalog status: 0 hits in NASA Exoplanet Archive, exoplanet.eu, arXiv abstract search, or 9 substellar literature PDFs (Brandt 2021/2024, Sahlmann-Gomez 2025, Stefansson 2025, Barbato 2023, Marcussen 2023, Xuan 2024, Lazzoni 2023, Sahlmann 2011, Feng 2022, Mills 2018). Kervella 2019 catalog flagged BinH = 1 but no follow-up paper exists.
+HD 120954 (HIP 67777, G1V, V = 8.76) emerged from the inclination-marginalized A9 jerk inference as an initial planet-mass candidate. Joint orvara HGCA + 3 archival RV epochs analysis with proper inclination marginalization indicates a more massive companion: M_2 = 1637 M_J ≈ 1.56 M_sun K-dwarf at P ≈ 70 yr, e ≈ 0.23, i ≈ 87° (edge-on), per the pipeline's combined fit. Five astrometric and RV signals are mutually consistent with this single solution: HGCA Brandt 2021 EDR3 ΔPM = 16.81 ± 0.99 mas/yr; Kervella 2022 PMa H2-EG3b = 4988 ± 49 m/s; Tycho-Gaia 25-yr ΔPM = 12.3 ± 2.7 mas/yr; Gaia DR3 NSS Acceleration9 significance = 33.08; ΔRV across 25 yr (Nordström 2004 GCS vs Gaia DR3) = +6.5 km/s, broadly consistent with the K_pred = 6.28 km/s over the 24-yr / 0.34-cycle baseline.
 
-This is a genuine novel wide-orbit stellar binary discovery, distinct from the substellar campaign goal but methodologically informative.
+The pipeline's classification of this source as "tentative stellar binary candidate" is based on the joint fit's posterior mass; this fit uses only 3 archival RV epochs and depends on the orvara HGCA prior. The conclusion should be regarded as preliminary until more RV epochs are obtained.
 
-## 4. Conclusions
+If the pipeline interpretation is correct, the system would be directly imageable at separation ≈ 0.19 arcsec with current high-contrast instruments.
 
-A multi-pipeline filter cascade applied to public Gaia DR3 NSS data yields a stringent test of substellar discovery. Of 26,263 initial candidates, only 2 systems survive all 34 filters with supporting astrometric and (partial) RV evidence: **HD 101767** and **HD 104828**.
+## 5. Observations on Pipeline Behavior
 
-Definitive confirmation requires either:
-1. Gaia DR4 epoch astrometry (December 2026 public release), which will release per-transit radial velocities and intermediate astrometric data for all candidates. This will resolve the inclination-mass degeneracy through joint epoch RV + epoch astrometric fitting without any new telescope time.
-2. 2–6 nights of new RV observations at northern-hemisphere small-aperture spectrographs (TRES, FIES, SOPHIE, HARPS-N) at quadrature spacing across the NSS-derived orbital period.
+The deep-dive investigations reveal patterns that may be informative for similar future searches:
 
-Methodologically, the analysis demonstrates that:
+1. **High HGCA snrPMa values tend to select stellar companions.** Sources with snrPMa > 100 in the deep-dive sample (HD 150248, HD 198387, HD 191797, HD 185414, HD 3412, HD 120954) all resolved to stellar companions in joint HGCA + RV analysis. This is consistent with the proportionality of astrometric acceleration with companion mass: stronger acceleration signatures preferentially come from more massive companions. The pipeline now down-weights this range via a composite score with `(1/snrPMa)^α` term.
 
-1. **High-significance HGCA acceleration signatures (snrPMa > 100) systematically prefer stellar M-dwarf companions** in eccentric or low-inclination orbits over substellar companions. Five high-snrPMa "flagship" candidates (HD 150248, HD 198387, HD 191797, HD 185414, HD 3412) all collapsed to M-dwarfs after deep-dive joint analysis. The substellar discovery space favors moderate (snrPMa = 5–30) acceleration combined with multi-axis independent confirmation.
+2. **The Kervella 2022 M_2(a) curve is a useful pre-filter when applied to all NSS pools.** Initial pipeline versions applied Kervella M_2 > 200 M_J as a stellar disqualifier only to NSS Orbital candidates. Retroactively applying it universally to NSS Acceleration candidates flagged hundreds of additional likely-stellar imposters.
 
-2. **The Kervella 2022 PMa M_2 estimate is a model-independent stellar/substellar discriminator** and must be applied universally across all candidate pools (Lesson #34). Retroactive application to NSS Acceleration caught 584 unique stellar imposters that earlier filters missed.
+3. **NSS Acceleration9 jerk inference is degenerate with inclination.** The relation R = |jerk|/|accel| ≈ 2π/P_orb is mathematically valid at any single orbital phase, but the inferred mass depends on the inclination assumption. Face-on (sin i = 1) priors systematically bias toward planet-mass interpretations; proper inclination marginalization is required. HD 120954's initial planet-mass classification was an artifact of the face-on assumption.
 
-3. **NSS Acceleration9 jerk-inferred mass requires proper inclination marginalization** (Lesson #33). Face-on (sin i = 1) assumptions systematically bias toward planet-mass; the same accel + jerk signature is mathematically compatible with low-M short-P face-on OR high-M long-P edge-on configurations.
+4. **Published companion catalogs have systematic ingestion gaps.** NASA Exoplanet Archive PS table excludes M > 13 M_J as policy. SIMBAD child-object entries are not indexed under host-name searches. Some RV survey announcement papers (Mills 2018 N2K, Feng 2022) are missing from major catalogs. Direct Gaia source_id cross-match plus child-object cone search mitigate these gaps but do not fully close them.
 
-4. **Published companion catalogs have systematic ingestion gaps** (Lesson #22, #29, #30, #31). NASA Exoplanet Archive PS table excludes M > 13 M_J; SIMBAD child-object entries are not indexed under host-name searches; entire RV survey papers (Mills 2018 N2K, Feng 2022) have minimal catalog presence. Direct Gaia DR3 source_id cross-match plus child-object cone search catch these gaps.
+5. **Multi-instrument joint Bayesian RV inference performs well on validators.** Pipeline test runs on systems with multiple published companions (HD 33636 b, HD 142 b/c, HD 175167 b, HD 111232 b) recover orbital parameters within 0.3–19% of literature values when the combined epoch count exceeds ~100 across ≥2 archives. The methodology may be useful for sparse-archive characterization independent of the substellar candidate search.
 
-5. **Multi-instrument joint Bayesian RV inference recovers known companions at sub-percent precision** when N_combined ≥ 200 epochs across ≥ 3 archives (validated on HD 33636 b: P recovery 0.6–2%; HD 142 b: 0.3% off P; HD 142 c: 8% off P; HD 175167 b: 3–6% off).
+## 6. Confirmation Pathways
 
-## 5. Data and Code Availability
+For the tentative candidates listed in §4.2, definitive characterization would require either:
 
-All input catalogs cited in Section 1 are publicly available via Vizier (CDS Strasbourg) or instrument-specific archives (Gaia ESA Archive, NASA Exoplanet Archive TAP, MAST, ESO Archive). The pipeline source code is included in this repository under `scripts/`. Output candidate table is `novelty_candidates.csv`.
+1. **Gaia DR4** (Dec 2026 / public early 2027): per-transit radial velocities and intermediate astrometric data, which would resolve the inclination–mass degeneracy through joint epoch-level inference. The 21 individual radial-velocity epochs that produced the Gaia DR3 `rv_amplitude_robust = 3.0 km/s` for HD 101767 will become public; the same applies to other candidates.
 
-Confirmation of the two truly novel substellar candidates will be possible by December 2026 via Gaia DR4 epoch radial velocities without additional telescope time.
+2. **New radial-velocity observations** at northern small-aperture spectrographs (TRES, FIES, SOPHIE, HARPS-N), or southern equivalents (CHIRON, FEROS): typically 2–6 epochs at quadrature spacing.
+
+This pipeline is archival-only and does not propose to carry out new observations. Confirmation of any of these candidates requires independent analysis by groups with telescope access.
+
+## 7. Data and Code Availability
+
+All input catalogs cited in §1.3 are publicly available via Vizier (CDS Strasbourg) or instrument-specific archives (Gaia ESA Archive, NASA Exoplanet Archive TAP, MAST, ESO Archive). The pipeline source code is in `scripts/`. The candidate output table is `novelty_candidates.csv`.
+
+External catalog dependencies are documented in `CATALOG_DEPENDENCIES.md`. The scripts use an environment variable `GAIA_NOVELTY_DATA_ROOT` to locate locally cached catalog files; the catalogs themselves are not redistributed in this repository.
+
+## 8. Acknowledgments and Statement on Status
+
+This work is exploratory and experimental. It does not constitute a peer-reviewed scientific publication. The candidate list and methodology lessons may contain errors. The pipeline implementation is provided for reproducibility; results should not be treated as established findings.

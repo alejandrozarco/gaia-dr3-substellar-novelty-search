@@ -10,6 +10,7 @@ Pilot case: HD 128717 (Gaia DR3 1610837178107032192)
   Gaia-6 b   : P=3420d (Halbwachs+ 2022 OrbitalTargetedSearch outer companion)
 """
 
+import os
 import polars as pl
 import numpy as np
 from pathlib import Path

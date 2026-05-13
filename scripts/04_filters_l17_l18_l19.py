@@ -16,6 +16,7 @@ L19: WDS within 15" companion check
     - find WDS rows within 15"
     - if WDS sep in 1-15" AND mag2 < 14 -> VISUAL_BINARY_OUTER
 """
+import os
 from __future__ import annotations
 
 import math
@@ -25,7 +26,7 @@ from pathlib import Path
 import numpy as np
 import polars as pl
 
-ROOT = Path("/Users/legbatterij/claude_projects/ostinato")
+ROOT = Path(os.environ.get("GAIA_NOVELTY_DATA_ROOT", str(Path(__file__).resolve().parent.parent)))
 OUT_DIR = ROOT / "data/candidate_dossiers/new_filters_l17_l19_2026_05_12"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

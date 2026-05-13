@@ -4,6 +4,7 @@ across ALL candidate pools.
 
 Output dir: data/candidate_dossiers/lessons_33_34_retroactive_2026_05_13/
 """
+import os
 from __future__ import annotations
 
 import math
@@ -16,7 +17,7 @@ import polars as pl
 # ---------------------------------------------------------------------------
 # Constants & I/O
 # ---------------------------------------------------------------------------
-ROOT = Path("/Users/legbatterij/claude_projects/ostinato")
+ROOT = Path(os.environ.get("GAIA_NOVELTY_DATA_ROOT", str(Path(__file__).resolve().parent.parent)))
 OUT = ROOT / "data/candidate_dossiers/lessons_33_34_retroactive_2026_05_13"
 OUT.mkdir(parents=True, exist_ok=True)
 

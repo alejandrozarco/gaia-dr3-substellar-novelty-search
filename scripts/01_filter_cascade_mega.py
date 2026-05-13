@@ -17,6 +17,7 @@ Background:
 
 Time budget: 60-90 min total. Use polars-native vectorized ops where possible.
 """
+import os
 from __future__ import annotations
 import json
 import math
@@ -26,7 +27,7 @@ from pathlib import Path
 import numpy as np
 import polars as pl
 
-ROOT = Path("/Users/legbatterij/claude_projects/ostinato")
+ROOT = Path(os.environ.get("GAIA_NOVELTY_DATA_ROOT", str(Path(__file__).resolve().parent.parent)))
 OUT = ROOT / "data/candidate_dossiers/mega_pipeline_2026_05_12"
 OUT.mkdir(parents=True, exist_ok=True)
 

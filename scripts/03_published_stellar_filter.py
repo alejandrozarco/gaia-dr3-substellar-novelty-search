@@ -18,6 +18,7 @@ Outputs per candidate pool:
   data/candidate_dossiers/published_stellar_filter_2026_05_12/imposter_summary.csv
   data/candidate_dossiers/published_stellar_filter_2026_05_12/FILTER_PASS_REPORT.md
 """
+import os
 from __future__ import annotations
 import json
 import math
@@ -26,7 +27,7 @@ from pathlib import Path
 
 import polars as pl
 
-ROOT = Path("/Users/legbatterij/claude_projects/ostinato")
+ROOT = Path(os.environ.get("GAIA_NOVELTY_DATA_ROOT", str(Path(__file__).resolve().parent.parent)))
 OUT = ROOT / "data/candidate_dossiers/published_stellar_filter_2026_05_12"
 OUT.mkdir(parents=True, exist_ok=True)
 
