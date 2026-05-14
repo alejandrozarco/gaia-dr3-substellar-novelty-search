@@ -80,6 +80,20 @@ Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs
 
 See `REPORT.md` for the detailed methodology and `novelty_candidates.csv` for the full column set (including per-candidate Bayesian posterior scores and filter-cascade trace). Many parameters in the candidate table are pipeline estimates (e.g., inclination-marginalized mass posteriors) rather than direct measurements.
 
+### Methodology validation
+
+The cascade has been benchmarked against a 71-entry truth set assembled from Sahlmann 2025 verdicts and the Gaia DR3 documented-FP list. Headline numbers:
+
+| Metric | v2 (released) | v3 (proposed tie-breaking) |
+|---|---|---|
+| In-pool novelty recall | 58.8% | 85.3% |
+| End-to-end specificity | 72.7% | 72.7% |
+| Documented-FP catch (Filter #27) | 100% | 100% |
+| Period recovery (median \|ΔP/P\|) | 0.005% | unchanged |
+| Mass recovery (median \|ΔM/M\|) | 6.5% | unchanged |
+
+See `BENCHMARK.md` for the full report (confusion matrix, per-filter destruction analysis, FP escapes, parameter-recovery table). The benchmark is reproducible from this repo with `make benchmark` once `config.yaml` is configured — see `REPRODUCIBILITY.md` for the quickstart.
+
 ## What this pipeline does not do
 
 - It does not propose or carry out new observations. All data come from public archives.

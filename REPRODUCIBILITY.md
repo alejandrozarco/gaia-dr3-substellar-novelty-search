@@ -2,6 +2,91 @@
 
 This document describes what is and is not reproducible from the contents of this repository alone.
 
+## Quickstart (for the benchmark / methodology validation)
+
+The cascade benchmark (recall, specificity, parameter recovery vs Sahlmann 2025 truth set, documented at `BENCHMARK.md`) is **fully reproducible from this repo** with a single command, no external pipeline catalog cache required. You only need two external CSVs (Sahlmann 2025 verdicts + Gaia DR3 NSS FP list) and a Python environment.
+
+```bash
+# 1. Install dependencies
+pip install -r requirements-lock.txt   # exact versions used for v1.1.0
+# OR
+pip install -r requirements.txt        # ranged compatibility
+
+# 2. Copy the example config and edit the two external paths
+cp config.yaml.example config.yaml
+# Edit benchmark.sahlmann_verdicts and benchmark.gaia_fp_list to point to
+# your local copies of those files (download URLs in CATALOG_DEPENDENCIES.md).
+
+# 3. Verify everything is in place
+make verify-deps
+make verify-catalogs
+
+# 4. Run the benchmark
+make benchmark
+```
+
+The output lands in `benchmark_output/`:
+
+| File | Content |
+|---|---|
+| `truth_set.csv` | 150-row truth set (Sahlmann labels + documented FPs joined with v2 cascade verdicts) |
+| `confusion_matrix.csv` | Cascade outcome distribution by truth bucket |
+| `per_filter_breakdown.csv` | Per-filter destruction stats |
+| `parameter_recovery.csv` | P/M agreement for known systems caught by cascade |
+| `fp_escapes.csv` | Imposters the cascade incorrectly retained |
+| `novelty_metrics_summary.txt` | v2 cascade headline metrics |
+| `v3_metrics_summary.txt` | v3 cascade headline metrics (with Sahlmann tie-breaking simulation) |
+| `benchmark_figure.png` | v2 benchmark hero figure (300 dpi) |
+| `benchmark_v3_figure.png` | v3 improvement figure (300 dpi) |
+
+Headline benchmark numbers (v1.1.0 release):
+
+| Metric | v2 cascade | v3 cascade (simulated tie-breaking) |
+|---|---|---|
+| In-pool novelty recall | 58.8% | 85.3% |
+| End-to-end specificity | 72.7% | 72.7% |
+| Documented-FP catch | 100% | 100% |
+| Period recovery (median) | \|ΔP/P\| = 0.005% | unchanged |
+| Mass recovery (median) | \|ΔM/M\| = 6.5% | unchanged |
+
+See `BENCHMARK.md` for the full report.
+
+## Granular Makefile targets
+
+```bash
+make help                  # list all targets
+make verify-deps           # check Python packages
+make verify-catalogs       # check input files
+make benchmark-truth-set   # build truth_set.csv only
+make benchmark-v2          # v2 cascade benchmark
+make benchmark-v3          # v3 cascade benchmark
+make benchmark-figures     # regenerate PNGs
+make benchmark             # full pipeline (above all in sequence)
+make lock                  # regenerate requirements-lock.txt
+make clean                 # remove benchmark_output/
+```
+
+## Config schema
+
+`config.yaml` is git-ignored so each user maintains their own paths. The canonical schema lives in `config.yaml.example`, which is version-controlled and matches the release tag. Edit `config.yaml` to point at your local Sahlmann 2025 and Gaia FP files.
+
+The benchmark-relevant settings:
+
+```yaml
+benchmark:
+  v2_scan_pool: v2_scan_full_pool.csv          # bundled in this repo
+  sahlmann_verdicts: /path/to/sahl_2025.csv    # external
+  gaia_fp_list: /path/to/gaia_fps.csv          # external
+```
+
+The cascade-parameter settings (`cascade.*` in `config.yaml.example`) are frozen for v1.1.0 — they document the filter thresholds used to produce `novelty_candidates.csv`. Modifying them does not affect bundled outputs, but is the right place to record any cascade re-tune.
+
+## Full pipeline reproducibility (the original "not turn-key" part)
+
+The benchmark above tests cascade *behavior* against a curated truth set, using the already-computed `v2_scan_full_pool.csv`. Re-running the cascade from scratch on 26,000+ NSS Orbital + Acceleration sources is a different and much larger task. The rest of this document covers that.
+
+---
+
 ## What is included
 
 | Item | Status |

@@ -1,0 +1,95 @@
+# Gaia DR3 NSS Substellar Novelty Search — configuration template
+#
+# Copy this file to `config.yaml` and edit the paths to match your local
+# environment. The `config.yaml` file is git-ignored so each user can
+# maintain their own paths without committing them.
+#
+# All paths in this file should be absolute, or relative to the repository
+# root (the directory containing this file).
+#
+# Versioning: this config matches release v1.1.0 of the repository.
+# Update the `release` field if you fork/modify the cascade.
+
+release: "1.1.0"
+release_date: "2026-05-13"
+
+# ============================================================
+# Pipeline data root (for full cascade re-runs only — not needed for
+# benchmark targets). External catalog cache lives under this path.
+# See CATALOG_DEPENDENCIES.md for the full list of catalogs required.
+# ============================================================
+pipeline:
+  data_root: ${GAIA_NOVELTY_DATA_ROOT}  # or set this to an absolute path
+
+# ============================================================
+# Benchmark configuration (used by `make benchmark` targets).
+# ============================================================
+benchmark:
+  # In-repo inputs (always present, version-controlled)
+  v2_scan_pool: v2_scan_full_pool.csv
+  novelty_candidates: novelty_candidates.csv
+
+  # External inputs (must be available locally; not redistributed here)
+  # See README.md §"Setup notes" for download instructions.
+  sahlmann_verdicts: /path/to/sahlmann2025_verdicts.csv
+  gaia_fp_list: /path/to/gaia_dr3_nss_known_fps.csv
+
+  # Tunable benchmark parameters
+  truth_set_high_confidence_labels:
+    positive:
+      - CONFIRMED_BROWN_DWARF
+      - CONFIRMED_EXOPLANET
+      - HIGH_PROB_SUBSTELLAR
+      - SAHL_HIGH_PROB_BD_CAND
+      - SAHL_TOP_EXOPLANET_CAND
+      - SAHL_EXOPLANET_CAND
+      - SAHL_CONFIRMED_BD
+      - SAHL_BD_CAND
+    negative:
+      - CONFIRMED_BINARY_FP
+      - SAHL_FALSE_POSITIVE_BINARY
+      - VLMS_FP_NOT_SUBSTELLAR
+      - SAHL_VERY_LOW_MASS_STAR
+      - SAHL_LOW_MASS_STAR
+    documented_fp:
+      - SAHL_RETRACTED_BY_GAIA
+      - GAIA_DR3_RETRACTED_FP
+      - documented_fp
+
+# ============================================================
+# Cascade filter parameters (v2 cascade, frozen for the v1.1.0 release)
+# These are documented in REPORT.md §1.3 and frozen here for citation.
+# ============================================================
+cascade:
+  # Conditional RUWE — solution types where RUWE > 1.4 is expected because
+  # the orbital reflex IS the signal RUWE measures. Skip the RUWE cut for
+  # these.
+  orbit_reflex_solution_types:
+    - Orbital
+    - AstroSpectroSB1
+    - OrbitalTargetedSearchValidated
+
+  ruwe_cut: 2.0  # uniform cut for non-orbit-reflex solution types
+
+  # HGCA Brandt 2024 chi^2 tier (Filter #29)
+  hgca_tiers:
+    REJECTED_stellar: [100.0, .inf]
+    FLAG_mass_ambiguous: [30.0, 100.0]
+    CORROBORATED_real_companion: [5.0, 30.0]
+    isolated_no_corroboration: [0.0, 5.0]
+
+  # exoplanet.eu coord-match radius (Filter #28)
+  exoeu_coord_match_arcsec: 5.0
+
+  # Gaia DR3 documented FP source IDs (Filter #27)
+  documented_fp_source_ids:
+    - 4698424845771339520   # WD 0141-675
+    - 5765846127180770432   # HIP 64690
+    - 522135261462534528    # * 54 Cas (HIP 10031)
+    - 1712614124767394816   # HIP 66074 (BD+75 510)
+
+  # Stage 1 quality cuts (these are the gate for the v2 pool itself)
+  stage1:
+    parallax_min_mas: 5.0
+    significance_min: 10.0
+    m2_face_on_max_mjup: 200.0  # broad substellar cut

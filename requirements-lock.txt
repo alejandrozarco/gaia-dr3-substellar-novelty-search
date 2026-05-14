@@ -1,0 +1,13 @@
+# Exact versions used to produce v1.1.0 release (2026-05-13).
+# Generated from the live ostinato venv (Python 3.12.11).
+# Use this lockfile for bit-reproducible benchmark runs:
+#     pip install -r requirements-lock.txt
+# For ranged compatibility, use requirements.txt instead.
+
+polars==1.40.1
+numpy==2.4.4
+scipy==1.17.1
+astropy==7.2.0
+dynesty==3.0.0
+matplotlib==3.10.9
+PyYAML==6.0.3

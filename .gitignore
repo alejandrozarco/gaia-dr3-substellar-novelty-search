@@ -1,0 +1,11 @@
+# User-specific config (each contributor maintains their own)
+config.yaml
+
+# Benchmark / pipeline outputs
+benchmark_output/
+*.pyc
+__pycache__/
+
+# OS metadata
+.DS_Store
+Thumbs.db
