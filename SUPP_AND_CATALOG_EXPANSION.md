@@ -21,10 +21,32 @@ OrbitalTargetedSearch yellow flag).
 
 Marcussen & Albrecht 2023 specifically lists this as needing further follow-up.
 Our v2 scan independently flagged it via HGCA chi^2 = 5.9 (CORROBORATED) +
-sig = 23.8. The two independent analyses agree: real companion, mass uncertain.
+sig = 23.8.
 
-**Recommendation**: Document in supplementary list with the Marcussen
-"Unknown" verdict. Do not promote.
+**UPDATE 2026-05-13 (post-benchmark)**: Sahlmann 2025 (Sahl_T4) labels
+this source as **CONFIRMED_BINARY_FP** — a deeper analysis flagging it
+as a stellar imposter, not a substellar companion. This downgrade was
+identified by our cascade-vs-Sahlmann benchmark (see notes in parent
+ostinato project, BENCHMARK.md 2026-05-13). The HD 185501 escape
+through our HGCA chi^2 = 5.9 CORROBORATED tier highlights a real gap:
+HGCA + NSS alone cannot distinguish this case from a true low-mass
+companion; Sahlmann's broader ML-based vetting catches it.
+
+**Three independent verdicts now stand on HD 185501**:
+1. Marcussen & Albrecht 2023: "Unknown" — needs more follow-up
+2. Our v2 cascade: CORROBORATED (real companion) — flagged for novel-candidate promotion
+3. Sahlmann 2025: CONFIRMED_BINARY_FP — stellar imposter
+
+The disagreement is not yet resolvable without an additional
+independent RV time series. Until that exists, **HD 185501 should be
+treated as a tentative candidate at best, with the explicit Sahlmann
+2025 "FP" verdict noted**.
+
+**Recommendation**: Document in supplementary list with all three
+verdicts above. **Do not promote** to `novelty_candidates.csv`. Future
+cascade revisions should add a Sahlmann-verdict-table look-up filter
+to catch this kind of cross-source disagreement before it surfaces as
+"CORROBORATED."
 
 ### HD 42606 (HIP 29330, Gaia DR3 2994437527894182272)
 
