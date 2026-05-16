@@ -42,11 +42,11 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full 30-filter cascade reduces about 26,000 initial candidates to **9 tentative substellar candidates** documented in `novelty_candidates.csv` plus **2 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.3.0, 2026-05-17).
+The full cascade reduces about 26,000 initial candidates to **8 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.5.0, 2026-05-17).
 
-### Candidate table — 9 substellar candidates
+### Candidate table — 8 substellar candidates
 
-Pipeline-derived parameters for the 9 substellar survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
+Pipeline-derived parameters for the 8 substellar survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
 
 | Name | HIP | V | SpT | d (pc) | NSS solution | P (d) | e | M₂ median (M_J) | M₂ 1σ (M_J) | Indep. witness | Category |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -56,7 +56,6 @@ Pipeline-derived parameters for the 9 substellar survivors. M₂ is the inclinat
 | HD 140940 | 77357 | 8.72 | — | — | Orbital (inner) | 924 | — | 183 | — | Kervella 18.4σ excess | multi-body (outer) |
 | BD+46 2473 | 90060 | 8.97 | F5 | 286 | Orbital (inner) | 496 | 0.33 | 74 | — | HGCA χ² = 17.8 | multi-body (outer) |
 | BD+35 228 | 5787 | 9.08 | G0 | 134 | Orbital (inner) | 560 | 0.40 | 53 | — | HGCA χ² = 18.9 | multi-body (outer) |
-| HIP 91479 | 91479 | 11.0 | K5-K7V | 56 | AstroSpectroSB1 | 856 | 0.82 | 60 | 50–75 | HGCA χ² = 50.3 | substellar |
 | HIP 60865 | 60865 | 12.09 | M dwarf | 41 | Orbital | 501 | 0.25 | 49 | 40–65 | HGCA χ² = 10.5 † | substellar |
 | HIP 20122 | 20122 | 13.49 | M2.0Ve | 41 | Orbital | 255 | 0.17 | 64 | 50–85 | HGCA χ² = 5.1 † | substellar |
 

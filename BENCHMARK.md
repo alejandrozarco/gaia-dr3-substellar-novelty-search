@@ -7,6 +7,40 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.5.0 (2026-05-17) — Filter #33 Halbwachs binary_masses cross-match
+
+The combined benchmark (v1.4.1) showed the cascade's specificity is actually ~40% with the bigger evidence base, not the 80% Marcussen-alone suggested. v1.5.0 adds a new filter to close most of that gap.
+
+### Filter #33 — Halbwachs/Gaia DR3 binary_masses cross-match
+
+**Conservative variant** (production default): REJECT if source is in I/360/binmass with a direct-method M₂ measurement ≥ 0.0764 M_☉ (80 M_J). Direct methods: `SB2+M1`, `AstroSpectroSB1+M1`, `EclipsingSpectro+M1`, `Orbital+SB2`, `Eclipsing+SB1+M1`, `Eclipsing+SB2`, `EclipsingSpectro(SB2)`. These use direct spectroscopic mass-ratio (K₁+K₂) — physics independent of our cascade's astrometric mass marginalization.
+
+**Aggressive variant** (`--aggressive` flag, not default): includes Halbwachs's *indirect* methods (`Orbital+M1`, `SB1+M1`, `Orbital+SB1+M1`). These use the same astrometric physics as our cascade but with DPAC's better M₁ priors and quality flags. Partly circular but documented as available.
+
+### v5 cascade headline numbers (with 95% Wilson CIs)
+
+| Metric | v4 cascade | **v5-conservative (production)** | v5-aggressive+stage1 |
+|---|---|---|---|
+| Sahlmann in-pool recall | 85.3% [70%, 94%] | **85.3% [70%, 94%]** | 85.3% [70%, 94%] |
+| Sahlmann E2E specificity | 90.9% [62%, 98%] | **90.9% [62%, 98%]** | 90.9% [62%, 98%] |
+| **Combined independent specificity** | **40.2% [31%, 51%]** | **50.6% [40%, 61%]** | **98.9% [94%, 99.8%]** |
+| Combined positives correctly handled | 87.9% [73%, 95%] | **87.9% [73%, 95%]** | 87.9% [73%, 95%] |
+| Documented-FP catch | 100% | **100%** | 100% |
+
+**Production choice**: v5-conservative — clean independent-physics filter, no circularity, +10pp specificity, recall preserved.
+
+The aggressive variant achieves 98.9% specificity but uses DPAC's indirect M₂ estimates which share astrometric physics with our cascade. Available as an opt-in via `--aggressive` flag for users who trust DPAC's M₁ priors over their own.
+
+### One candidate verdict change: HIP 91479 demoted
+
+Filter #33 caught **HIP 91479 / LP 335-104** as a likely stellar companion based on Halbwachs/DPAC's **AstroSpectroSB1+M1 joint fit**: M₂ = 0.197 ± 0.04 M_☉ = **206 M_J** (mid-M-dwarf range, not substellar).
+
+This contradicts our cascade's marginalized estimate of M₂ = 79 M_J (BD regime). DPAC's joint astrometric + spectroscopic fit has direct K₁+K₂ measurement and is more constraining than our isotropic-inclination marginalization. **DPAC's verdict supersedes ours.**
+
+This is consistent with Marcussen & Albrecht 2023's "Unknown" verdict on the same source (HARPS-N RV inconsistent with predicted K₁ at substellar mass).
+
+**Action taken**: HIP 91479 moved from `novelty_candidates.csv` (now 8 substellar) to `cascade_byproducts.csv` (now 3 by-products: HD 75426, HD 120954, HIP 91479).
+
 ## ⚠️ Headline result correction (v1.4.1, 2026-05-17): combined independent benchmark
 
 External feedback flagged that the Marcussen-only independent benchmark (n=5 negatives) had wide Wilson CIs, and the +60pp specificity gain from Filter #32 could be overfit to those 4 specific cases.
