@@ -7,6 +7,58 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.6.0 (2026-05-17) — Filter #35 Halbwachs FluxRatio + Filter #36 Trifonov RV-variable
+
+Two more independent-data filters added on top of v5's Halbwachs M₂ cross-match. Both target the SURVIVOR_no_hgca_corroboration false-positive pool.
+
+### Filter #35 — Halbwachs FluxRatio > 0.1 (photometric SB2 indicator)
+
+Halbwachs/Gaia DR3 binary_masses provides a photometric flux ratio L₂/L₁ for sources where DPAC's joint fit could decompose the photometry. **FluxRatio > 0.1 means the secondary is luminous enough to be detected — direct photometric SB2 indicator, INDEPENDENT of mass-ratio physics.**
+
+Empirical separation on combined truth set:
+- POSITIVES: **0/16** with FluxRatio > 0.1
+- NEGATIVES: **13/20** with FluxRatio > 0.1
+
+This is the cleanest single discriminator we've found.
+
+### Filter #36 — Trifonov 2025 HIRES RV-variable (rvc_std > 1000 m/s)
+
+For HIP-named sources in the Trifonov+ 2025 HIRES Levy DR1 survey (379 sources total), per-target RV scatter is measured to ~10 m/s precision. `rvc_std > 1000 m/s` indicates strong RV variability consistent with a stellar-mass companion.
+
+Only 20 v2 pool sources overlap with Trifonov coverage (HIP-named subset), so impact is modest but clean.
+
+### v6 cascade headline metrics
+
+| Metric | v4 | v5 | **v6 (production)** |
+|---|---|---|---|
+| Sahlmann in-pool recall | 85.3% | 85.3% | **85.3%** |
+| Sahlmann E2E specificity | 90.9% | 90.9% | **90.9%** |
+| **Combined independent specificity** | 40.2% [31%, 51%] | 50.6% [40%, 61%] | **59.8% [49%, 69%]** |
+| Combined positives correctly handled | 87.9% | 87.9% | **87.9%** |
+| Documented-FP catch | 100% | 100% | **100%** |
+
+**Net improvement v2 → v6**: combined-benchmark specificity goes from ~40% (v4) → **59.8%** (v6), all while preserving recall (87.9% pos correctly handled, all 8 substellar candidates retain CORROBORATED verdicts).
+
+### Effect on full pool
+
+- 25 sources rejected by Filter #33 (Halbwachs direct-method M₂)
+- 9 sources newly rejected by Filter #35 (Halbwachs FluxRatio > 0.1, weren't direct-method)
+- 0 additional rejections from Filter #36 in this pool (Trifonov overlap was already caught by other filters)
+- All 8 substellar candidates unchanged (CORROBORATED in 5 cases, multi-body manual override in 3)
+
+### What's still escaping
+
+After v6 the remaining 35 false-positive escapes are mostly cases where:
+- No Halbwachs entry (sub-set of Gaia DR3 NSS that wasn't in DPAC's binary_masses processing)
+- No HGCA detection (short-period orbits)
+- No Trifonov coverage (faint stars)
+- Mass-ratio close to 1 so the cascade can't tell stellar from substellar by face-on M_2
+
+The remaining gap likely requires either:
+- DR4 epoch-level data (Dec 2026) to refit individually
+- Targeted RV at the remaining suspicious sources
+- Cross-match against a larger spectroscopic SB2 catalog (GALAH/APOGEE bulk SB2 flags — would need a few hours of TAP work)
+
 ## v1.5.0 (2026-05-17) — Filter #33 Halbwachs binary_masses cross-match
 
 The combined benchmark (v1.4.1) showed the cascade's specificity is actually ~40% with the bigger evidence base, not the 80% Marcussen-alone suggested. v1.5.0 adds a new filter to close most of that gap.
