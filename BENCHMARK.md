@@ -7,6 +7,29 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## ⚠️ Headline result correction (v1.4.1, 2026-05-17): combined independent benchmark
+
+External feedback flagged that the Marcussen-only independent benchmark (n=5 negatives) had wide Wilson CIs, and the +60pp specificity gain from Filter #32 could be overfit to those 4 specific cases.
+
+To address this, we built a **combined independent truth set** using both Marcussen+Albrecht 2023 AND Halbwachs/Gaia DR3 binary_masses (I/360/binmass), neither of which feeds the cascade. The combined truth set has **n = 33 positives + n = 87 negatives** — about 10× larger than Marcussen alone.
+
+**v4 cascade on combined independent truth set:**
+
+| Metric | Value | 95% Wilson CI |
+|---|---|---|
+| Positives correctly handled | 29/33 = **87.9%** | [72.7%, 95.2%] |
+| Positives retained as novel (excluding rejected-as-published) | 21/25 = 84.0% | [65.3%, 93.6%] |
+| **Specificity** | **35/87 = 40.2%** | **[30.6%, 50.7%]** |
+| False positives (imposters escape) | 52/87 = 59.8% | — |
+
+**Honest finding**: the v4 specificity is **~40%, not the 80% the Marcussen-alone benchmark suggested.** The Marcussen +60pp jump (20% → 80%) was real for those 4 specific cases but doesn't generalize to the broader population of stellar imposters in Halbwachs.
+
+Filter #32 (SB2 low-face-on-mass) catches a narrow failure mode (4 specific Marcussen escapes in the face-on M₂ 14–21 M_J regime) but misses the much larger population of stellar binaries where face-on M₂ is already in the stellar regime (median 567 M_J among escapes) and HGCA chi² is < 5 (short-period orbits don't show 25-yr PM anomaly).
+
+The escapes (51 of 52 are SURVIVOR_no_hgca_corroboration) need a different filter — most plausibly a Halbwachs/Gaia DR3 binary_masses cross-match analogous to NASA Exo (treating DPAC's joint M₂ measurement as a published-companion filter). Deferred to v1.5.0.
+
+The 40% specificity on the combined benchmark is the **citable number for any future paper or RNAAS submission**, not the 80% Marcussen-alone number. The earlier reporting was correct as far as it went but the small sample masked the broader picture.
+
 ## Headline metrics — v2 / v3 / v4 cascade (with 95% Wilson CIs)
 
 | Metric | v2 cascade | v3 (Sahlmann tie-break) | **v4 (+ SB2-imposter filter)** | v2 → v4 Δ |
