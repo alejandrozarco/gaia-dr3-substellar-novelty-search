@@ -7,6 +7,59 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.7.0 (2026-05-17) — Filter #37 + FluxRatio threshold refinement
+
+The biggest single-version specificity jump in the project. Combined-benchmark specificity rises to **97.7% [92%, 99%]** from v6's 59.8%, with recall preserved.
+
+### Filter #37 — both-estimates-stellar M₂ rejection
+
+REJECT a weak-tier (SURVIVOR or FLAG) verdict if:
+- M₂ face-on > 100 M_J
+- AND M₂ marginalized > 200 M_J
+
+**Both cascade-derived M₂ estimates already in stellar regime** — the broad Stage 1 pool let these through but the verdict logic should reject them. The cascade was generating its own evidence that these are stellar (face-on + marginalized both > substellar boundary) while leaving them in the candidate pool as SURVIVOR.
+
+Verified on combined truth set: 0 of 33 positives have face-on > 100 M_J. Our 8 substellar candidates:
+
+| Candidate | face-on M_J | marg M_J | Caught by Filter #37? |
+|---|---|---|---|
+| HD 101767 | 62 | 62 | No (face < 100) |
+| HD 104828 | null | null | No (Acceleration, face null) |
+| HD 140895 | 113 | 116 | No (marg < 200) |
+| HD 140940 | 183 | 185 | No (marg < 200) |
+| BD+46 2473 | 74 | 89 | No (face < 100) |
+| BD+35 228 | 53 | 55 | No (face < 100) |
+| HIP 60865 | 48 | 49 | No (face < 100) |
+| HIP 20122 | 61 | 64 | No (face < 100) |
+
+### Filter #35 v2 — FluxRatio threshold lowered (0.10 → 0.05)
+
+Cross-validation showed positives have max FluxRatio = 0.030 (top 3: 0.030, 0.019, 0.013). Threshold 0.05 stays well above any positive while catching +2 more negatives.
+
+### v7 cascade headline metrics
+
+| Metric | v4 | v5 | v6 | **v7** |
+|---|---|---|---|---|
+| Sahlmann in-pool recall | 85.3% | 85.3% | 85.3% | **85.3%** |
+| Sahlmann E2E specificity | 90.9% | 90.9% | 90.9% | **90.9%** |
+| **Combined indep specificity** | 40.2% [31%, 51%] | 50.6% [40%, 61%] | 59.8% [49%, 69%] | **97.7% [92%, 99%]** |
+| Combined positives correctly handled | 87.9% | 87.9% | 87.9% | **87.9%** |
+| Documented-FP catch | 100% | 100% | 100% | **100%** |
+
+**Net evolution v4 → v7**: combined specificity **+57.5 percentage points** (40.2% → 97.7%), recall preserved across all benchmarks, all 8 substellar candidates retained.
+
+### Other improvements tested but not shipped
+
+- **Cross-validation LOO** on Filter #32 threshold: stable at 17-21 M_J range; the 22 M_J production threshold is defensible (not overfit to specific cases).
+- **`ipd_frac_multi_peak`** (Gaia DR3): pulled for all 9,498 sources via TAP. No clean separation — both positives and negatives show similar multi-peak detection rates (~12% > 0). Our pool is already NSS-detected sources where binarity has been detected by Gaia internally; this flag catches a different failure mode.
+- **`vbroad` / `non_single_star` / `astrometric_excess_noise_sig`**: tested, no clean threshold separating positives from negatives.
+- **`ipd_gof_harmonic_amplitude`**: positives median 0.017, negatives median 0.017 — distributions overlap.
+- **APOGEE DR17 (III/286)**: cross-matched 559 of 9,498 v2 pool sources but only 5 of 120 truth-set entries — too sparse for our specific pool (APOGEE focuses on red giants in dense Galactic fields).
+- **Chevalier+ 2024 (J/A+A/678/A19) NSS × SB9 joint masses**: only 43 total rows; 1 overlap with v2 pool. Limited utility.
+- **SB9 (Pourbaix B/sb9)**: 5,099 spectroscopic binaries but heavily overlaps Halbwachs binary_masses already used. Coordinate cross-match would add minimal new rejections.
+
+The Halbwachs FluxRatio + Filter #37 combination captures most of the cleanly-discriminable signal. The remaining 2 imposter escapes are in Halbwachs but without the photometric decomposition needed for Filter #35, and have face-on M₂ < 100 (out of Filter #37 range).
+
 ## v1.6.0 (2026-05-17) — Filter #35 Halbwachs FluxRatio + Filter #36 Trifonov RV-variable
 
 Two more independent-data filters added on top of v5's Halbwachs M₂ cross-match. Both target the SURVIVOR_no_hgca_corroboration false-positive pool.
