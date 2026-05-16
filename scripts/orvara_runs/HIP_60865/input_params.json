@@ -1,0 +1,23 @@
+{
+  "name": "HIP 60865 / G 123-34",
+  "HIP": 60865,
+  "gaia_dr3_id": 1518957932040718464,
+  "nss_solution_type": "Orbital",
+  "period_d": 500.6943853626754,
+  "eccentricity": 0.24846535143097565,
+  "significance": 34.114464,
+  "ruwe": 3.8422606,
+  "parallax_mas": 13.394981416004487,
+  "distance_pc": 74.6548254859979,
+  "phot_g_mean_mag": 11.622662,
+  "Vmag": 12.086,
+  "SpType": "M0",
+  "M_host_msun_used": 0.6359643201415197,
+  "M_host_prior_sigma": 0.06,
+  "hgca_chisq": 10.547319412231445,
+  "M_2_mjup_face_on": 48.262221922673824,
+  "M_2_mjup_marginalized": 48.76567072998029,
+  "expected_orvara_M2_change_pct": "moderate (15-30%) — chi² in mid-CORROBORATED range",
+  "archival_rv_epochs": [],
+  "rv_data_status": "no archival RV — recommend CARMENES/MAROON-X follow-up"
+}

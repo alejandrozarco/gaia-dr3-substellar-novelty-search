@@ -7,16 +7,20 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
-## Headline metrics — v2 vs v3 cascade
+## Headline metrics — v2 vs v3 cascade (with 95% Wilson CIs)
 
 | Metric | v2 cascade | v3 cascade (Sahlmann tie-breaking) | Δ |
 |---|---|---|---|
-| **In-pool novelty recall** | 58.8% (20/34) | **85.3% (29/34)** | **+26.5pp** |
-| End-to-end novelty recall | 42.6% (20/47) | **61.7% (29/47)** | **+19.1pp** |
-| End-to-end specificity | 72.7% (8/11) | 72.7% (8/11) | 0 (no precision loss) |
-| Documented-FP catch (Filter #27) | 100% (4/4) | 100% (4/4) | unchanged |
+| **In-pool novelty recall** | 58.8% (20/34) **[42.2%, 73.6%]** | **85.3% (29/34) [69.9%, 93.6%]** | **+26.5pp** |
+| End-to-end novelty recall | 42.6% (20/47) **[29.5%, 56.7%]** | **61.7% (29/47) [47.4%, 74.2%]** | **+19.1pp** |
+| End-to-end specificity | 72.7% (8/11) **[43.4%, 90.3%]** | 72.7% (8/11) [43.4%, 90.3%] | 0 (no precision loss) |
+| Documented-FP catch (Filter #27) | 100% (4/4) **[51.0%, 100%]** | 100% (4/4) [51.0%, 100%] | unchanged |
 | Period recovery (median) | \|dP/P\| = 0.005% | \|dP/P\| = 0.005% | unchanged |
 | Mass recovery (median) | \|dM/M\| = 6.5% | \|dM/M\| = 6.5% | unchanged |
+
+**⚠️ Sample-size caveat.** With only **n = 11 in-pool negatives** and **n = 34 in-pool positives** (or n = 47 end-to-end), the 95% Wilson CIs are wide. The end-to-end specificity CI of **[43%, 90%]** is particularly broad — it means "the cascade rejects most known imposters, but with only 11 examples we can't distinguish that from 'rejects somewhere between half and almost all of them'." The v3 recall CI of **[70%, 94%]** is tighter (4× more positive examples), but still bounded above by 94%.
+
+**⚠️ Truth-set independence caveat.** The truth set draws 67 of its 71 positive labels from Sahlmann 2025 (`sahlmann2025_verdicts.csv`). Sahlmann is *also* one of the cascade's filters (the ML imposter table is consulted at Stage 3). So the recall measurement is partly tautological — we're asking "does the cascade reproduce Sahlmann's own positive labels?" The 12 false-negatives identified are specifically the cross-table-disagreement cases (Sahlmann verdicts table says positive, Sahlmann ML imposter table says imposter); these don't double-count, but they're inside Sahlmann's curation universe. **For a truly independent recall test, see §"Independent truth set" below**, which uses non-Sahlmann positives (Marcussen & Albrecht 2023 HARPS-N confirmations + Brandt+Sosa 2025 156-companion validation). Those numbers should be the citable ones.
 
 **The v3 rule (added 2026-05-13)**: when a source is flagged by Sahlmann's
 ML imposter table BUT *also* appears in Sahlmann's verdicts table with a
@@ -35,6 +39,56 @@ reclassified:
 **The v3 cascade now scores at RNAAS-validation quality**: recall 85%,
 specificity 73%, FP catch 100%, period and mass recovery within
 documented bounds.
+
+> **⚠️ The above 85% recall is the Sahlmann-derived number and is partly
+> tautological** (see truth-set independence caveat). For an INDEPENDENT
+> benchmark using Marcussen & Albrecht 2023 vetting, see §"Independent
+> truth set" below — that gives different (and harder-hitting) results.
+
+## Independent truth set (v1.3.0, 2026-05-17)
+
+The original truth set draws 67/71 positive labels from Sahlmann 2025,
+which is also one of the cascade's filters. This makes the recall
+measurement partly tautological. To address this, we constructed a
+**fully independent** truth set from Marcussen & Albrecht 2023
+(AJ 165, 266) — a HARPS-N + literature-vetted catalog of Gaia DR3 NSS
+substellar candidates that has no overlap with Sahlmann's pipeline.
+
+**Independent truth set composition** (19 entries; n = 15 in v2 pool):
+
+| Bucket | n | Source labels |
+|---|---|---|
+| POSITIVE | 10 | CONFIRMED_PLANET (2) + CONFIRMED_BD (2) + PLANET_LIT_PRIOR (2) + PLANET_RV_INCONSISTENT (4) |
+| NEGATIVE | 5 | STELLAR_IMPOSTER (5) |
+| DOCUMENTED_FP | 4 | Gaia DR3 known-issues (same as Sahlmann benchmark) |
+
+**v2 cascade on independent truth set** (with 95% Wilson CIs):
+
+| Metric | v2 |
+|---|---|
+| Positives correctly handled (retained-novel OR rejected-as-published) | **8 / 10 = 80%** [49.0%, 94.3%] |
+| Positives wrongly rejected (false negatives) | 2 / 10 = 20% (both `REJECTED_sahlmann_ml_imposter` on Marcussen-CONFIRMED_BDs: HD 5433, BD−00 4475) |
+| Positives retained as novel | 0 / 10 (correctly — all 10 Marcussen positives are already-published) |
+| End-to-end specificity | **1 / 5 = 20.0%** [3.6%, 62.4%] |
+| Documented-FP catch | **4 / 4 = 100%** [51.0%, 100%] |
+
+**Reading the independent numbers:**
+
+- **80% positive-correctness rate.** The cascade correctly handled 8 of 10 published Marcussen positives — all 8 were rejected as `REJECTED_published_nasa_exo` (the right outcome for novelty mining, since they're not novel). 2 were wrongly rejected as `REJECTED_sahlmann_ml_imposter` — the same v3-fixable bug, except these 2 specific sources don't have positive Sahlmann labels so v3 tie-breaking doesn't help (they'd just hit `REJECTED_ruwe_quality` instead). The pipeline is doing the right thing on published-positive cases at 80% rate.
+
+- **20% specificity is the most concerning honest number.** Of 5 Marcussen-confirmed imposters in the v2 pool, only 1 was rejected; the other 4 escaped as `SURVIVOR_no_hgca_corroboration` (weak-tier retain — they're in the candidate pool but not corroborated). The wide Wilson CI [3.6%, 62.4%] reflects the small sample, but the point estimate is much worse than the Sahlmann-benchmark's 73% — because Marcussen negatives mostly *passed* Stage 1 quality cuts while Sahlmann negatives mostly didn't. Marcussen negatives are harder cases.
+
+- **Mitigating context**: none of the 4 escaped Marcussen imposters are in our headline `novelty_candidates.csv`. They're in the broader v2 pool but didn't survive human deep-dive curation. So the "20%" reflects cascade-only specificity, not final-candidate-list specificity.
+
+- **Documented-FP catch is unchanged at 100%** (Filter #27 is robust regardless of which truth set).
+
+- **v3 cascade does NOT improve the Marcussen positives.** The two false-negatives (HD 5433, BD-00 4475) are reclassified under v3 to `REJECTED_ruwe_quality` (OrbitalTargetedSearch + RUWE > 2 fails Filter #30) — different reason, same outcome. v3 only helps the Sahlmann-CONFIRMED_BD subset that the v2 Sahlmann benchmark measured against.
+
+**Honest interpretation**: on an independent test, the cascade is significantly weaker than the Sahlmann-derived numbers suggested. The 80% positive-handling rate is reasonable; the 20% specificity is the headline weakness. Future cascade revisions (v4+) should focus on specificity improvements — particularly on `SURVIVOR_no_hgca_corroboration` sources which currently slip through.
+
+**The citable numbers should be the independent ones.** Sahlmann-derived numbers are useful for measuring incremental cascade improvements (v2 → v3 → v4), but the independent Marcussen benchmark is what we'd report in a methodology paper.
+
+Files: `benchmark_output/truth_set_independent.csv`, `benchmark_output/independent_metrics_summary.txt`, `scripts/benchmark/build_independent_truth_set.py`.
 
 ## Reading both v2 and v3 columns
 

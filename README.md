@@ -42,27 +42,36 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full 30-filter cascade reduces about 26,000 initial candidates to **11 tentative candidates** documented in `novelty_candidates.csv` (latest release v1.1.0, 2026-05-13). Of the 11, 9 are substellar candidates, 1 is mass-ambiguous on the substellar/stellar boundary (HD 75426), and 1 is an apparent stellar-mass companion discovery (HD 120954).
+The full 30-filter cascade reduces about 26,000 initial candidates to **9 tentative substellar candidates** documented in `novelty_candidates.csv` plus **2 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.3.0, 2026-05-17).
 
-### Candidate table
+### Candidate table — 9 substellar candidates
 
-Pipeline-derived parameters for the 11 survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
+Pipeline-derived parameters for the 9 substellar survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
 
 | Name | HIP | V | SpT | d (pc) | NSS solution | P (d) | e | M₂ median (M_J) | M₂ 1σ (M_J) | Indep. witness | Category |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | HD 101767 | 57135 | 8.88 | F8 | 82 | Orbital | 486 | 0.45 | 62 | 55–68 | HGCA χ² = 14.2 | substellar |
-| HD 75426 | 43197 | 6.72 | F5IV/V | 43 | Acceleration7 | — | — | 282 | 100–1343 | Kervella 27σ + HGCA 33σ | mass-ambiguous |
 | HD 104828 | 58863 | 9.86 | K0 | 33 | Acceleration | ~3600 | — | 41 | 30–55 | HGCA χ² = 23.6 | substellar |
 | HD 140895 | 77262 | 9.39 | — | — | Orbital (inner) | 1460 | — | 113 | — | Kervella 17.6σ excess | multi-body (outer) |
 | HD 140940 | 77357 | 8.72 | — | — | Orbital (inner) | 924 | — | 183 | — | Kervella 18.4σ excess | multi-body (outer) |
 | BD+46 2473 | 90060 | 8.97 | F5 | 286 | Orbital (inner) | 496 | 0.33 | 74 | — | HGCA χ² = 17.8 | multi-body (outer) |
 | BD+35 228 | 5787 | 9.08 | G0 | 134 | Orbital (inner) | 560 | 0.40 | 53 | — | HGCA χ² = 18.9 | multi-body (outer) |
-| HD 120954 | 67777 | 8.76 | G1V | 124 | Acceleration | 25,500 | — | 1637 | 1018–3621 | Kervella 591σ + ΔRV +6.5 km/s | **stellar** |
 | HIP 91479 | 91479 | 11.0 | K5-K7V | 56 | AstroSpectroSB1 | 856 | 0.82 | 60 | 50–75 | HGCA χ² = 50.3 | substellar |
-| HIP 60865 | 60865 | 12.09 | M dwarf | 41 | Orbital | 501 | 0.25 | 49 | 40–65 | HGCA χ² = 10.5 | substellar |
-| HIP 20122 | 20122 | 13.49 | M2.0Ve | 41 | Orbital | 255 | 0.17 | 64 | 50–85 | HGCA χ² = 5.1 | substellar |
+| HIP 60865 | 60865 | 12.09 | M dwarf | 41 | Orbital | 501 | 0.25 | 49 | 40–65 | HGCA χ² = 10.5 † | substellar |
+| HIP 20122 | 20122 | 13.49 | M2.0Ve | 41 | Orbital | 255 | 0.17 | 64 | 50–85 | HGCA χ² = 5.1 † | substellar |
 
-Of the 11, **HD 120954 is the one apparent stellar-mass companion** (~1.56 M_⊙ ≈ 1637 M_J at edge-on, with 5 independent astrometric + multi-decade ΔRV witnesses converging on a ~70-yr companion); the other 10 sit in or near the substellar mass range. **HD 75426 is mass-ambiguous** — the orvara joint posterior median lands in the early M-dwarf regime, but the 2σ lower tail still grazes the substellar boundary. The 4 BD+ / HD multi-body rows have the inner orbit from NSS but the outer companion mass is inferred from Kervella PMa excess and is not directly observed.
+† **HIP 60865 and HIP 20122** have HGCA χ² values (10.5 and 5.1) at the bottom edge of the CORROBORATED tier (≥5). Their classification as corroborated is threshold-sensitive; pushing the threshold to χ² ≥ 8 would remove HIP 20122 and leave HIP 60865 marginal. These two are the weakest of the 8 HGCA-corroborated candidates. Joint orvara HGCA + Thiele-Innes posteriors (rather than the marginalized inclination prior used here) would tighten the verdict — pending in `scripts/orvara_runs/` for v1.4.0.
+
+### Cascade by-products (separate file: `cascade_byproducts.csv`)
+
+Two sources that surfaced through the cascade but **do not belong in the substellar-candidate list**:
+
+| Name | HIP | V | SpT | NSS solution | M₂ median (M_J) | M₂ 1σ (M_J) | Why moved to by-products |
+|---|---|---|---|---|---|---|---|
+| HD 75426 | 43197 | 6.72 | F5IV/V | Acceleration7 | 282 | 100–1343 | 1σ range wider than the BD/star boundary; median lands in early-M-dwarf regime. Mass-ambiguous, not substellar. |
+| HD 120954 | 67777 | 8.76 | G1V | Acceleration | 1637 | 1018–3621 | Pipeline itself classifies as stellar (~1.56 M_⊙). Genuinely interesting as a methodology by-product (5 independent witnesses converging on a ~70-yr stellar companion) but not a substellar candidate. |
+
+The 4 BD+ / HD multi-body rows in the substellar table have the inner orbit characterized from NSS but the outer companion mass is inferred from Kervella PMa excess and is not directly observed.
 
 ### How the candidates were arrived at
 
@@ -76,7 +85,9 @@ Of about 12 sources that received individual deep-dive investigation in v1:
 
 The v2 pipeline (Filters #27-30: documented-FP, exoplanet.eu coord, HGCA chi² tier, conditional RUWE) applied to the full 9,498-source pool surfaced 22 HGCA-corroborated candidates + 15 mass-ambiguous flagged candidates. From this 37, 2 truly novel substellar candidates with HIP cross-match were promoted (HIP 60865 and HIP 20122) — both originally filtered out of v1 because the uniform RUWE < 2 cut is inappropriate for solution types where orbital reflex is the signal.
 
-Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 11 are in any of these catalogs**. The novelty is real — none have a published orbital characterization — but is the result of a specific filter combination (conditional RUWE × multi-pool NSS × HGCA chi² tier × M-dwarf hosts permitted) that no published catalog applies identically. See `CATALOG_COMPLETENESS_ANALYSIS.md` for the per-catalog selection-criterion breakdown.
+Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 11 are in any of these catalogs**. None have a published orbital characterization.
+
+> **A note on what "novelty" means here.** Each of those 10 catalogs applies its own selection criteria (e.g., Kiefer 2025 *explicitly excludes* NSS-tagged sources; Brandt+Sosa 2025 requires archival RV; Halbwachs 2023 binary_masses requires spectroscopic K₁). Our 11 fall in the *intersection of selection-criterion gaps* across these catalogs — not in a region where someone looked and found nothing, but in a region no one's currently searching with the specific filter combination we use (conditional RUWE × multi-pool NSS × HGCA χ² tier × M-dwarf hosts permitted). Finding parameter-space regions other catalogs don't actively probe is **necessary** for novelty but not **sufficient** to claim real undiscovered companions. The candidates are tentative either way; the "novelty" label refers to the absence of prior published orbital characterization, not to evidence of intrinsic rarity. See `CATALOG_COMPLETENESS_ANALYSIS.md` for the per-catalog selection-criterion breakdown.
 
 See `REPORT.md` for the detailed methodology and `novelty_candidates.csv` for the full column set (including per-candidate Bayesian posterior scores and filter-cascade trace). Many parameters in the candidate table are pipeline estimates (e.g., inclination-marginalized mass posteriors) rather than direct measurements.
 
@@ -118,9 +129,12 @@ Confirmation of the tentative candidates listed in `novelty_candidates.csv` woul
 - `CATALOG_DEPENDENCIES.md` — list of external catalogs the scripts assume are locally cached, with URLs for download
 - `CANDIDATE_FP_AUDIT.md` — per-candidate audit against Gaia DR3 documented false-positive sources (cosmos.esa.int/web/gaia/dr3-known-issues) and independent vetting catalogs (Sahlmann 2025, Stefansson 2025, Tokovinin MSC). Adds an `fp_risk_tier` column to `novelty_candidates.csv`.
 - `candidate_bayesian_scores.csv` — per-candidate Bayesian confidence score consolidating all diagnostics. Columns include `P_real_companion`, `P_substellar_given_real`, `P_real_substellar`, and the log-odds contributions from each evidence factor (significance, solution_type, baselines, RV, RUWE, etc.). The same probabilities are mirrored into `novelty_candidates.csv`.
-- `EXPANSION_AUDIT.md` — exploration of additional archival directions: AstroSpectroSB1 deep-dive (37 BD candidates with joint astro+spec orbit detection), CPM wide-companion check (0 contamination for our 8), cluster-member cross-match (none in Hunt+Reffert 2023), TESS long-period transit search for HD 101767 / HD 104828 (no transit signal), SB1+Kervella PMa hierarchical-triple expansion (61 candidates).
-- `astrospectrosb1_candidates_supplementary.csv` — 37 AstroSpectroSB1 candidates surfaced by the expansion audit. NOT promoted to `novelty_candidates.csv` because they need further per-candidate vetting; documented as a separate supplementary pool.
-- `sb1_kervella_hierarchical_triple_candidates_supplementary.csv` — 61 NSS SB1 sources with substellar K1 and Kervella PMa cross-match (potential hierarchical triples). NOT promoted to `novelty_candidates.csv`; documented as a supplementary expansion of the multi-body candidate category.
+- `docs/dev_notes/EXPANSION_AUDIT.md` — exploration of additional archival directions: AstroSpectroSB1 deep-dive (37 BD candidates with joint astro+spec orbit detection), CPM wide-companion check (0 contamination for our 8), cluster-member cross-match (none in Hunt+Reffert 2023), TESS long-period transit search for HD 101767 / HD 104828 (no transit signal), SB1+Kervella PMa hierarchical-triple expansion (61 candidates).
+- `data/supplementary/astrospectrosb1_candidates_supplementary.csv` — 37 AstroSpectroSB1 candidates surfaced by the expansion audit. NOT promoted to `novelty_candidates.csv` because they need further per-candidate vetting; documented as a separate supplementary pool.
+- `data/supplementary/sb1_kervella_hierarchical_triple_candidates_supplementary.csv` — 61 NSS SB1 sources with substellar K1 and Kervella PMa cross-match (potential hierarchical triples). NOT promoted to `novelty_candidates.csv`; documented as a supplementary expansion of the multi-body candidate category.
+- `cascade_byproducts.csv` — 2 sources surfaced by the cascade that do **not** belong in the substellar-candidate list: HD 75426 (mass-ambiguous, posterior straddles BD/star boundary) and HD 120954 (apparent stellar-mass companion, methodology by-product).
+- `docs/dev_notes/` — iterative dev notes preserved as audit trail: V2_SCAN_REPORT, POOL_VETTING_REPORT, TASKS_A_F_REPORT, DECENT_CANDIDATES_CHECK, SUPP_AND_CATALOG_EXPANSION. Not load-bearing for the headline result; kept for reproducibility of the iteration history.
+- `data/intermediate/` — intermediate scan products (v2_scan_corroborated_22, v2_scan_flag_mass_ambiguous_15, v2_scan_published_systems_caught_via_exoeu_coord, multibody_v2_hgca_tier, decent_candidates_check, supplementary_pool_27_tiered). Used by the cascade run; not headline outputs.
 
 ## Setup notes
 

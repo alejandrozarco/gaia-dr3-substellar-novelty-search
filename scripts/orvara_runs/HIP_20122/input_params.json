@@ -1,0 +1,23 @@
+{
+  "name": "HIP 20122",
+  "HIP": 20122,
+  "gaia_dr3_id": 3255968634985106816,
+  "nss_solution_type": "Orbital",
+  "period_d": 254.7799875671601,
+  "eccentricity": 0.1725648808862512,
+  "significance": 28.550608,
+  "ruwe": 5.8155828,
+  "parallax_mas": 24.55330511983517,
+  "distance_pc": 40.72771446122579,
+  "phot_g_mean_mag": 11.335287,
+  "Vmag": 13.485,
+  "SpType": "M2.0Ve",
+  "M_host_msun_used": 0.48924936799701485,
+  "M_host_prior_sigma": 0.05,
+  "hgca_chisq": 5.1173200607299805,
+  "M_2_mjup_face_on": 60.98799202156225,
+  "M_2_mjup_marginalized": 64.04086928635516,
+  "expected_orvara_M2_change_pct": "small (< 15%) — chi² at lower tier",
+  "archival_rv_epochs": [],
+  "rv_data_status": "no archival RV — recommend CARMENES/MAROON-X follow-up"
+}

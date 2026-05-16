@@ -147,11 +147,23 @@ The following sources survive all 35 filters and have some archival radial-veloc
 - NSS Orbital period 486 ± 2 d
 - Inclination-marginalized M_2 = 62 M_J at P_substellar = 0.9999 under the pipeline priors
 - HGCA snrPMa = 2.79; Penoyre RUWE = 2.94
-- Gaia DR3 rv_amplitude_robust = 3.0 km/s across 21 transits; rv_chisq_pvalue = 2.8 × 10⁻¹¹
+- Gaia DR3 rv_amplitude_robust = 3.0 km/s across 21 transits; rv_chisq_pvalue = 2.8 × 10⁻¹¹ ⚠️ **see caveat**
 - APOGEE DR17: 2 epochs over 27 d, ΔV = 145 m/s (5.6% of orbital phase)
 - The ratio of Gaia-reported rv_amplitude/2 to predicted K at the NSS-marginalized mass and inclination is ≈ 0.94, which is consistent with but does not confirm the substellar interpretation
 - No published companion in any of 30+ checked catalogs
 - This source has no archival RV time-series sufficient to verify the orbit independently
+
+> **⚠️ Caveat on Gaia DR3 rv_chisq_pvalue (added v1.3.0, 2026-05-17)**: the
+> rv_chisq_pvalue = 2.8×10⁻¹¹ reported above is a low-information signal in
+> isolation. Gaia DR3's chi² test on RV transits is not calibrated specifically
+> for orbital reflex — it tests whether per-transit RV measurements scatter
+> more than expected, which can be driven by orbital motion, stellar activity,
+> contamination from a nearby source, or instrument-systematic effects.
+> Without epoch-level RVs (which Gaia DR4 will publish, expected 2026-12-02),
+> we cannot distinguish these. The value is consistent with — but does not
+> uniquely confirm — orbital motion. It should be read as "this source has
+> some kind of RV variability at high formal significance" rather than as
+> direct orbital-reflex confirmation.
 
 #### HD 75426 (HIP 43197, Gaia DR3 5328000290404075264)
 - F5IV/V (modern parameters indicate dwarf, not subgiant: Gaia logg = 4.12, TIC lumclass = DWARF)
