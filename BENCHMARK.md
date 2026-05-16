@@ -7,16 +7,39 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
-## Headline metrics — v2 vs v3 cascade (with 95% Wilson CIs)
+## Headline metrics — v2 / v3 / v4 cascade (with 95% Wilson CIs)
 
-| Metric | v2 cascade | v3 cascade (Sahlmann tie-breaking) | Δ |
-|---|---|---|---|
-| **In-pool novelty recall** | 58.8% (20/34) **[42.2%, 73.6%]** | **85.3% (29/34) [69.9%, 93.6%]** | **+26.5pp** |
-| End-to-end novelty recall | 42.6% (20/47) **[29.5%, 56.7%]** | **61.7% (29/47) [47.4%, 74.2%]** | **+19.1pp** |
-| End-to-end specificity | 72.7% (8/11) **[43.4%, 90.3%]** | 72.7% (8/11) [43.4%, 90.3%] | 0 (no precision loss) |
-| Documented-FP catch (Filter #27) | 100% (4/4) **[51.0%, 100%]** | 100% (4/4) [51.0%, 100%] | unchanged |
-| Period recovery (median) | \|dP/P\| = 0.005% | \|dP/P\| = 0.005% | unchanged |
-| Mass recovery (median) | \|dM/M\| = 6.5% | \|dM/M\| = 6.5% | unchanged |
+| Metric | v2 cascade | v3 (Sahlmann tie-break) | **v4 (+ SB2-imposter filter)** | v2 → v4 Δ |
+|---|---|---|---|---|
+| **In-pool novelty recall** | 58.8% (20/34) [42.2%, 73.6%] | 85.3% (29/34) [69.9%, 93.6%] | **85.3% (29/34) [69.9%, 93.6%]** | **+26.5pp** |
+| End-to-end novelty recall | 42.6% (20/47) [29.5%, 56.7%] | 61.7% (29/47) [47.4%, 74.2%] | **61.7% (29/47) [47.4%, 74.2%]** | **+19.1pp** |
+| End-to-end specificity | 72.7% (8/11) [43.4%, 90.3%] | 72.7% (8/11) [43.4%, 90.3%] | **90.9% (10/11) [62.3%, 98.4%]** | **+18.2pp** |
+| Documented-FP catch (Filter #27) | 100% (4/4) [51.0%, 100%] | 100% (4/4) | **100% (4/4)** | unchanged |
+| **Independent specificity (Marcussen)** | — | 20% (1/5) [3.6%, 62.4%] | **80% (4/5) [37.6%, 96.4%]** | **+60.0pp** |
+| Period recovery (median) | \|dP/P\| = 0.005% | unchanged | unchanged | unchanged |
+| Mass recovery (median) | \|dM/M\| = 6.5% | unchanged | unchanged | unchanged |
+
+**The v4 rule (added 2026-05-17, Filter #32)**: REJECT a weak-tier verdict
+(SURVIVOR or FLAG) if face-on M₂ < 22 M_J AND no HGCA corroboration
+(χ² < 5 or null) AND nss_solution_type is not OrbitalTargetedSearchValidated.
+
+This catches a specific failure mode identified by the independent
+benchmark: SB2 systems where Gaia DR3 NSS Orbital mis-fits K₁ (averaging
+mass-ratio-1 spectroscopic Doppler into an apparent SB1 K₁ ≈ K_true/2),
+producing artificially low face-on M₂ in the planet/BD-boundary regime.
+Without long-baseline HGCA corroboration to confirm transverse motion,
+these low-mass-no-corroboration sources are conservatively rejected.
+
+**Effect on v3 pool**: 92 sources newly rejected by v4. 89 of 92 were
+previously SURVIVOR_no_hgca_corroboration (weak retain); 0 were
+CORROBORATED or FLAG (preserved by HGCA exemption).
+
+**On the independent (Marcussen) truth set, v4 catches 4 of 4 SB2
+escapes** that v3 missed. The 1 remaining imposter that still escapes
+(HD 68638) does so as FLAG_hgca_mass_ambiguous — already weak-tier
+suspicious — and is the genuinely hardest of the 5 negatives because
+its HGCA χ² is 66 (FLAG tier, so HGCA corroboration exempts it from
+Filter #32).
 
 **⚠️ Sample-size caveat.** With only **n = 11 in-pool negatives** and **n = 34 in-pool positives** (or n = 47 end-to-end), the 95% Wilson CIs are wide. The end-to-end specificity CI of **[43%, 90%]** is particularly broad — it means "the cascade rejects most known imposters, but with only 11 examples we can't distinguish that from 'rejects somewhere between half and almost all of them'." The v3 recall CI of **[70%, 94%]** is tighter (4× more positive examples), but still bounded above by 94%.
 
