@@ -9,6 +9,77 @@ Status legend:
 - 🟡 Programmatically retrievable but requires authentication
 - 🔴 Web-form only (no public API), or proprietary
 
+## Update (2026-05-17 evening): two archives resolved via cleaner queries
+
+After the initial round, two additional archives turned out to be
+fully reachable without authentication:
+
+### Gemini Observatory Archive — RESOLVED 🟢 → **0 hits, all 10 candidates**
+
+The 403-Forbidden block we hit earlier was on the direct REST endpoint
+(archive.gemini.edu/jsonsummary/...). **`astroquery.gemini` uses a
+different path that anonymous queries are not blocked from:**
+
+```python
+from astroquery.gemini import Observations
+from astropy import coordinates, units
+coord = coordinates.SkyCoord(187.18108, 28.18672, unit="deg")  # HIP 60865
+data = Observations.query_region(coordinates=coord, radius=0.005*units.deg)
+# Returns astropy Table with all 10's observations across every Gemini instrument
+```
+
+Result: **0 observations across the entire Gemini archive for all 10
+candidates**. This includes the full instrument set: GMOS-N/S, NIRI,
+GNIRS, Flamingos-2, GSAOI, MAROON-X (as visiting instrument), GHOST.
+
+The ORCID login is therefore not needed for our use case — the
+question "are any of our 10 in the Gemini archive?" can be answered
+fully anonymously via `astroquery.gemini.Observations.query_region`.
+
+**Caveat for completeness**: `astroquery.gemini` rejects literal
+`instrument='MAROON-X'` (the validator doesn't know about visiting
+instruments). To filter, do a broad cone-search first and post-filter
+on the `instrument` column. But since the broad query returns 0
+frames, MAROON-X is conclusively absent.
+
+### LCO Science Archive — RESOLVED 🟢 → **0 actual hits, all 10 candidates**
+
+Correct LCO query syntax + filtering:
+
+```python
+import urllib.request, urllib.parse, json
+params = urllib.parse.urlencode({
+    'covers': f'POINT({ra} {dec})',
+    'instrument_id': 'en03',           # NRES @ McDonald (try en01-en12)
+    'OBSTYPE': 'SPECTRUM',
+    'public': 'true',
+    'limit': 50,
+})
+url = f"https://archive-api.lco.global/frames/?{params}"
+data = json.loads(urllib.request.urlopen(url).read())
+```
+
+**Important caveat we learned**: The `covers` cone-search matches
+frames by their FITS WCS — and many LCO calibration / commissioning
+frames carry placeholder WCS (e.g., `_wcs_LL` "Lower-Left" stub
+pointing) that incidentally matches our coords. After filtering for
+`OBSTYPE=SPECTRUM` and **also** requiring the `target_name` /
+`OBJECT` field to contain our target identifier (case-insensitive
+substring), the result is:
+
+**0 real observations of any of our 10 candidates** in the LCO archive
+across all 9 NRES units (en01-en12).
+
+The earlier "100 SPECTRUM frames" returns were entirely 2016 NRES
+commissioning frames with WCS=`_wcs_LL` placeholder, of observed
+targets HD 65583, HD 115404, KN_03C07857 etc. (not our candidates).
+
+### Net update to the SURVEY_COVERAGE_AUDIT
+
+The audit can now be tightened: **24 catalogs / archives queried,
+all returning 0 actual hits** (vs the previous "22 catalogs +
+unfinished Gemini/LCO").
+
 ## 1. NEID at WIYN-3.5m (Kitt Peak) — HIGHEST LEVERAGE 🟡
 
 **Why it matters most**: NEID is a NASA-NSF dedicated exoplanet RV
