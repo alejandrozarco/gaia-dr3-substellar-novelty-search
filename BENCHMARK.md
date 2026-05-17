@@ -7,6 +7,117 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.8.0 (2026-05-17) — Filter #28 silent-failure fix + two new candidates
+
+The hunt scan that surfaced novel candidates also uncovered a long-standing
+bug in Filter #28 (exoplanet.eu coord cross-match) that had been silently
+no-op-ing since v1.0.0.
+
+### Filter #28 bug — `ra`/`dec` missing from production candidate pool
+
+The v2 implementation was guarded:
+
+```python
+if "ra" in pool.columns and "dec" in pool.columns:
+    pool = filter_exoplanet_eu_coord(pool, radius_arcsec=5.0)
+else:
+    pool = pool.with_columns(pl.lit(False).alias("exoeu_match"))
+```
+
+The production v2 → v7 candidate pool never propagated `ra`/`dec` from
+the upstream Gaia DR3 tables, so the else-branch always fired and the
+coord-match returned `False` for every source. Filter #28 was a no-op
+from v1.0.0 to v1.7.0.
+
+### Filter #28 v2 — auto-fetch + PM-correction + 10″ radius
+
+The v8 fix (`scripts/pipeline_v8_filter28_fix_2026_05_17.py`):
+
+1. **Auto-fetches** `ra`, `dec`, `pmra`, `pmdec` from Gaia DR3 `gaia_source`
+   when missing from the input pool (batched ADQL via the Gaia TAP, 200 per
+   query).
+2. **PM-projects** the Gaia DR3 J2016.0 coords back to J2000.0 (since
+   exoplanet.eu catalog rows are at J2000) using a linear PM model.
+3. **Matches** at `min(sep_pm_corrected, sep_uncorrected) < 10″` so that
+   catalog rows with their own epoch ambiguity are still caught.
+
+The radius was broadened from v2's 5″ to 10″ to cover the worst observed
+offset (HD 33636: 9.7″ raw / 6.8″ PM-corrected, dominated by pmra ≈ 178
+mas yr⁻¹).
+
+### Newly rejected — 6 published companions in CORROBORATED/FLAG tiers
+
+| Name | HIP | v7 verdict | exoplanet.eu name | M (M_J) | P (d) | sep ″ (PM-corr) |
+|---|---|---|---|---|---|---|
+| BD+05 5218 | 117179 | CORROBORATED | HIP 117179 b | 44.20 ± 5.05 | 247.98 | 0.00 |
+| G 239-52 | 75202 | CORROBORATED | HIP 75202 Ab | 69.0 ± 10.5 | 591.46 | 0.00 |
+| HD 30246 | 22203 | FLAG (mass-ambig) | HD 30246 b | 42.18 ± 0.23 | 990.08 | 0.00 |
+| HD 33636 | 24205 | FLAG (mass-ambig) | HD 33636 b | 15.4 | 2828.0 | 6.76 |
+| HD 68638 | 40497 | FLAG (mass-ambig) | HD 68638 Ab | 35.10 | 240.70 | 0.00 |
+| L 194-115 | 60321 | FLAG (mass-ambig) | HIP 60321 b | 68.26 ± 10.1 | 530.17 | 0.00 |
+
+All 6 published-companion entries in exoplanet.eu match our v7 face-on /
+marginalized M₂ estimates within 1-30% — these are bona fide DPAC joint-fit
+companions that flowed through to exoplanet.eu but were missed by our
+NASA Exoplanet Archive source_id cross-match (Filter #29) and our broken
+Filter #28.
+
+### Newly rejected — 27 published companions in SURVIVOR / REJECTED_ruwe tiers
+
+A further 27 sources that had been classified `SURVIVOR_no_hgca_corroboration`
+(19 sources) or `REJECTED_ruwe_quality` (8 sources) by v7 also match
+exoplanet.eu coord at 10″ PM-corrected radius. These were not in our
+candidate promotion pool (lacking HGCA corroboration) but they're proper
+rejects for completeness of the published-systems statistics. Full list in
+`v8_scan_full_pool.csv` filtered to `v8_verdict ==
+REJECTED_published_exoplanet_eu_pm_corr`.
+
+### Two new substellar candidates promoted
+
+After Filter #28 fix, two v7-CORROBORATED-substellar sources that are not
+in any published companion catalog were promoted to `novelty_candidates.csv`:
+
+| Name | HIP | V | SpT | NSS | P (d) | M₂ marg (M_J) | HGCA χ² | Notes |
+|---|---|---|---|---|---|---|---|---|
+| HD 76078 | 43870 | 8.72 | G5 | Orbital | 275 | 77.8 | 9.4 | Borderline substellar (2σ_hi 121 M_J); SB* in SIMBAD; not in Halbwachs |
+| BD+56 1762 | 72389 | 10.03 | G5/G7 | Orbital | 197 | 69.1 | 10.3 | Em\* SIMBAD = activity-imposter caveat; in Halbwachs but no SB1/SB2 decomp |
+
+Both survive the full v8 cascade (35/35 filters + HGCA corroboration);
+both are absent from exoplanet.eu, NASA Exoplanet Archive, Sahlmann 2025
+G-ASOI, Halbwachs/Gaia DR3 binary_masses with photometric decomposition,
+Marcussen+Albrecht 2023, and the 7-check novelty-verification protocol.
+
+### v8 cascade headline metrics
+
+| Metric | v6 | v7 | **v8** |
+|---|---|---|---|
+| Substellar candidates retained | 8 | 8 | **10** |
+| Sahlmann in-pool recall | 85.3% | 85.3% | **85.3%** (unchanged) |
+| Sahlmann E2E specificity | 90.9% | 90.9% | **90.9%** (unchanged on Sahlmann set) |
+| Combined indep specificity | 59.8% | 97.7% | **97.7%** (Filter #28 catches don't overlap independent truth set) |
+| Documented-FP catch | 100% | 100% | **100%** |
+| Filter #28 v2 catches | 0 (no-op) | 0 (no-op) | **33 of 9498 sources** |
+| Of which were in CORROBORATED+FLAG | 0 | 0 | **6** |
+
+The combined-independent benchmark specificity does not change at v8
+because the independent truth set (Marcussen+Albrecht 2023 + Halbwachs
+DPAC) does not overlap exoplanet.eu's published systems for the 6 newly
+rejected sources. The Filter #28 fix has its primary impact on the
+candidate-promotion path rather than on the truth-set benchmark.
+
+### Methodology lesson
+
+A filter that depends on a column being present in the pool **must
+assert that column exists** at call time, not silently fall through to
+a no-op. The v8 implementation now always auto-fetches the required
+coords if missing rather than skipping the check.
+
+This is now a regression test in `scripts/benchmark/run_v5_full_benchmark.py`:
+the v8 reclassification of the v7 pool must produce ≥6 newly rejected
+sources with named exoplanet.eu counterparts. If any future cascade
+change causes Filter #28 to silently no-op again, the regression test
+will catch it.
+
 ## v1.7.0 (2026-05-17) — Filter #37 + FluxRatio threshold refinement
 
 The biggest single-version specificity jump in the project. Combined-benchmark specificity rises to **97.7% [92%, 99%]** from v6's 59.8%, with recall preserved.

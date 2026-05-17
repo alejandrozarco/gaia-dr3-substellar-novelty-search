@@ -42,11 +42,11 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full cascade reduces about 26,000 initial candidates to **8 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.5.0, 2026-05-17).
+The full cascade reduces about 26,000 initial candidates to **10 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.8.0, 2026-05-17).
 
-### Candidate table — 8 substellar candidates
+### Candidate table — 10 substellar candidates
 
-Pipeline-derived parameters for the 8 substellar survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
+Pipeline-derived parameters for the 10 substellar survivors. M₂ is the inclination-marginalized posterior median (1σ range in the next column). HGCA χ² is from Brandt 2024; values in the 5–30 range are independent corroboration of a real companion at 25-yr astrometric baseline. Where no HGCA entry was available (faint M-dwarfs, mostly), the strongest independent astrometric witness is cited instead.
 
 | Name | HIP | V | SpT | d (pc) | NSS solution | P (d) | e | M₂ median (M_J) | M₂ 1σ (M_J) | Indep. witness | Category |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -58,8 +58,14 @@ Pipeline-derived parameters for the 8 substellar survivors. M₂ is the inclinat
 | BD+35 228 | 5787 | 9.08 | G0 | 134 | Orbital (inner) | 560 | 0.40 | 53 | — | HGCA χ² = 18.9 | multi-body (outer) |
 | HIP 60865 | 60865 | 12.09 | M dwarf | 41 | Orbital | 501 | 0.25 | 49 | 40–65 | HGCA χ² = 10.5 † | substellar |
 | HIP 20122 | 20122 | 13.49 | M2.0Ve | 41 | Orbital | 255 | 0.17 | 64 | 50–85 | HGCA χ² = 5.1 † | substellar |
+| HD 76078 ‡ | 43870 | 8.72 | G5 | 136 | Orbital | 275 | 0.29 | 78 | 67–95 | HGCA χ² = 9.4 | substellar (borderline) |
+| BD+56 1762 ‡§ | 72389 | 10.03 | G5/G7 | 98 | Orbital | 197 | 0.42 | 69 | 60–95 | HGCA χ² = 10.3 | substellar (Em\* activity caveat) |
 
-† **HIP 60865 and HIP 20122** have HGCA χ² values (10.5 and 5.1) at the bottom edge of the CORROBORATED tier (≥5). Their classification as corroborated is threshold-sensitive; pushing the threshold to χ² ≥ 8 would remove HIP 20122 and leave HIP 60865 marginal. These two are the weakest of the 8 HGCA-corroborated candidates. Joint orvara HGCA + Thiele-Innes posteriors (rather than the marginalized inclination prior used here) would tighten the verdict — pending in `scripts/orvara_runs/` for v1.4.0.
+† **HIP 60865 and HIP 20122** have HGCA χ² values (10.5 and 5.1) at the bottom edge of the CORROBORATED tier (≥5). Their classification as corroborated is threshold-sensitive; pushing the threshold to χ² ≥ 8 would remove HIP 20122 and leave HIP 60865 marginal. These two are the weakest of the 8 HGCA-corroborated candidates from v1.7.0. Joint orvara HGCA + Thiele-Innes posteriors (rather than the marginalized inclination prior used here) would tighten the verdict — pending in `scripts/orvara_runs/`.
+
+‡ **HD 76078 and BD+56 1762** are new in v1.8.0, surfaced by an internal "hunt" run that fed all v7 verdicts back through a corrected Filter #28 (see `BENCHMARK.md` for the v8 cascade audit). Both pass HGCA corroboration (χ² ∈ 5–30), are absent from exoplanet.eu and NASA Exoplanet Archive at 10″ PM-corrected radius, and are absent from Sahlmann 2025 G-ASOI lists. HD 76078's M₂ posterior median (78 M_J) is just below the conventional 80 M_J BD/star boundary — the upper 1σ extends to 95 M_J, so this is a borderline substellar candidate; the 2σ upper bound (121 M_J) is comfortably stellar so the marg-mass-only verdict is sensitive to the inclination prior. 
+
+§ **BD+56 1762** has SIMBAD object_type **Em\*** (emission-line star), which raises a chromospheric-activity-imposter risk. The Gaia DR3 quality flags do not show the typical activity-imposter signature (`ipd_frac_multi_peak=1`, `non_single_star=1` Orbital-only, no `duplicated_source` flag), so we keep it in the candidate list with the explicit caveat. A targeted Hα + Ca II H&K activity-amplitude check before any confirmation observation is recommended.
 
 ### Cascade by-products (separate file: `cascade_byproducts.csv`)
 
@@ -84,7 +90,9 @@ Of about 12 sources that received individual deep-dive investigation in v1:
 
 The v2 pipeline (Filters #27-30: documented-FP, exoplanet.eu coord, HGCA chi² tier, conditional RUWE) applied to the full 9,498-source pool surfaced 22 HGCA-corroborated candidates + 15 mass-ambiguous flagged candidates. From this 37, 2 truly novel substellar candidates with HIP cross-match were promoted (HIP 60865 and HIP 20122) — both originally filtered out of v1 because the uniform RUWE < 2 cut is inappropriate for solution types where orbital reflex is the signal.
 
-Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 11 are in any of these catalogs**. None have a published orbital characterization.
+The v8 pipeline (released 2026-05-17, this release) fixes a silent failure in Filter #28 (exoplanet.eu coord cross-match): the v2-v7 production pool never propagated `ra`/`dec` from Gaia DR3, so the coord-match was a no-op for every source. The v8 fix auto-fetches Gaia DR3 `ra`, `dec`, `pmra`, `pmdec` per source, projects coords from epoch J2016.0 back to J2000.0, and matches at a 10″ radius. This newly rejects 33 sources that had silently survived as published-in-exoplanet.eu, including 6 in the previously-CORROBORATED or FLAG tiers: HD 33636 (HIP 24205), HD 68638 (HIP 40497), BD+05 5218 (HIP 117179), HD 30246 (HIP 22203), L 194-115 (HIP 60321), G 239-52 (HIP 75202). Two further novel candidates were promoted from the resulting v8 CORROBORATED pool: HD 76078 (HIP 43870) and BD+56 1762 (HIP 72389).
+
+Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 10 substellar candidates are in any of these catalogs as a published-orbit companion**. None have a published orbital characterization. (HD 76078 has 29 ADS bibcodes 1850-2026 and BD+56 1762 has 24, but none claim a substellar companion mass; the host stars are catalogued as binary in SIMBAD but with no published mass decomposition.)
 
 > **A note on what "novelty" means here.** Each of those 10 catalogs applies its own selection criteria (e.g., Kiefer 2025 *explicitly excludes* NSS-tagged sources; Brandt+Sosa 2025 requires archival RV; Halbwachs 2023 binary_masses requires spectroscopic K₁). Our 11 fall in the *intersection of selection-criterion gaps* across these catalogs — not in a region where someone looked and found nothing, but in a region no one's currently searching with the specific filter combination we use (conditional RUWE × multi-pool NSS × HGCA χ² tier × M-dwarf hosts permitted). Finding parameter-space regions other catalogs don't actively probe is **necessary** for novelty but not **sufficient** to claim real undiscovered companions. The candidates are tentative either way; the "novelty" label refers to the absence of prior published orbital characterization, not to evidence of intrinsic rarity. See `CATALOG_COMPLETENESS_ANALYSIS.md` for the per-catalog selection-criterion breakdown.
 

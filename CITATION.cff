@@ -14,10 +14,12 @@ abstract: >-
   literature catalogs and archival radial-velocity time-series. The pipeline
   identifies candidate substellar (13-80 M_J) companions to bright nearby
   stars (V < 12, d < 200 pc) that have not been claimed in published
-  companion catalogs. After applying ~27 sequential filters (including
+  companion catalogs. After applying ~28 sequential filters (including
   conditional RUWE per NSS solution_type, HGCA Brandt 2024 chi-squared
-  tier filtering, exoplanet.eu coord-match, and the Gaia DR3 documented
-  false-positive list), the pipeline produces a list of 11 tentative
+  tier filtering, proper-motion-corrected exoplanet.eu coord cross-match
+  at 10 arcsec radius (v8), Halbwachs FluxRatio + direct-method M_2,
+  both-estimates-stellar M_2 rejection, and the Gaia DR3 documented
+  false-positive list), the pipeline produces a list of 10 tentative
   substellar candidates. None are confirmed by independent orbital
   characterization. Status is experimental archival mining; confirmation
   requires Gaia DR4 (Dec 2026 expected) or new ground-based RV
@@ -32,5 +34,5 @@ keywords:
   - "filter cascade"
   - "tentative candidate"
 license: "CC-BY-4.0"
-version: "1.7.0"
+version: "1.8.0"
 date-released: "2026-05-17"
