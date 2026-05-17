@@ -42,7 +42,7 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full cascade reduces about 26,000 initial candidates to **10 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.9.0, 2026-05-17).
+The full cascade reduces about 26,000 initial candidates to **10 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.10.0, 2026-05-17). A separate **frontier supplementary list of 63 no-HIP candidates** is provided in `data/supplementary/no_hip_frontier_clean.csv` — these are sources without Hipparcos cross-match (so HGCA and Kervella corroboration are unavailable) but which pass the cascade with substellar mass + tight 2σ posterior + high NSS detection significance, and are absent from every external published catalog. The frontier list is a target catalog for future Gaia DR4 follow-up rather than a discovery claim. See BENCHMARK.md §v1.10.0 for details.
 
 ### Candidate table — 10 substellar candidates
 

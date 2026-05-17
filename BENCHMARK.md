@@ -7,6 +7,87 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.10.0 (2026-05-17) — No-HIP frontier supplementary list (63 candidates)
+
+The v9b cascade exposed a **structural blind spot**: HGCA and Kervella PMa
+both require Hipparcos cross-match (HIP entry), so the 9,031 of 9,498 v8 pool
+sources without HIP (95% of the pool) have **no external astrometric
+corroboration tool** available. Our headline list (`novelty_candidates.csv`,
+10 substellar candidates) is HGCA-corroborated by construction; it
+systematically excludes the no-HIP frontier.
+
+The v1.10.0 hunt explored what the cascade thinks about the no-HIP frontier
+when external corroboration is unavailable. Selection criteria:
+
+  * `HIP = null` (no Hipparcos entry → no HGCA / no Kervella)
+  * `sahl_verdict = null` (not even in Sahlmann 2025's wider preselection)
+  * `v9b_verdict = SURVIVOR_no_hgca_corroboration`
+  * Substellar mass: `M_2_face < 80 M_J` AND `M_2_marg < 80 M_J`
+  * Tight posterior: `M_2_2sigma_hi < 90 M_J` (stays substellar at 2σ_hi)
+  * Strong detection: `significance > 20`
+  * Reasonable RUWE: `ruwe < 4`
+  * Not in `exoplanet.eu` (PM-corrected coord) or `NASA Exo PS` (source_id)
+
+This identifies 64 sources with no external published claim and no Sahlmann
+candidate-tier tag. A SIMBAD visual-double check (`obj_type == '**'`,
+`WDS J...`, `** WSI/HJ/STF/...` identifiers) removes 1 visual hierarchical
+binary (L 387-102 / WDS J08272-4459 / ** JOD 5, d=13.7 pc) for the same
+reason HD 222805 was demoted in v1.9.0 — the resolved visual companion
+confounds the NSS-orbit substellar interpretation.
+
+### 63 frontier supplementary candidates — distribution
+
+| SIMBAD obj_type | n | Notes |
+|---|---|---|
+| (no SIMBAD entry, 0 bibcodes) | 28 | Completely unstudied; not even in SIMBAD's identifier list |
+| PM* (high proper motion) | 20 | Mostly faint M-dwarfs from Lépine/SCR/UCAC catalogs |
+| * (generic) | 12 | Gaia-only catalog entries, 1-2 SIMBAD identifiers |
+| SB* (spectroscopic binary) | 2 | Already-known SB1s, no published companion mass |
+| **WD* (white dwarf)** | **1** | **Post-common-envelope candidate** — Gaia 6422387644229686272, G=17.2, d=51 pc, P=416 d, M_2_marg = 34 M_J |
+
+The full list is in `data/supplementary/no_hip_frontier_clean.csv` with
+ranking by `promotability_score = significance / (M_2_2sigma_hi − M_2_face)`.
+
+### What the frontier list does not claim
+
+These candidates have **no independent astrometric corroboration** (no
+HGCA's 25-yr arc, no Kervella's Tycho-Gaia 10-yr arc, no Halbwachs DPAC
+joint photometric decomposition). They survive the v9b cascade by virtue
+of the NSS Orbital astrometric solution alone plus exclusion from all
+external published catalogs. Any of them could be:
+
+  1. Real substellar companions to faint nearby stars
+  2. NSS Orbital false positives (about 9% of NSS Orbital are false
+     positives by Gaia DR3 documentation; some at face-on inclination
+     where M_2 estimate is most uncertain)
+  3. Stellar binaries at near-face-on inclination
+
+The headline list (`novelty_candidates.csv`, 10 sources) requires at
+least one independent astrometric witness; the frontier list does not.
+The frontier list is published as a **target catalog for future Gaia
+DR4 follow-up** rather than as a discovery claim. Gaia DR4 (December
+2026) will publish per-transit RV and intermediate astrometric data for
+all 9,498 sources, which will resolve the inclination–mass degeneracy
+without needing an external 25-yr arc.
+
+### The WD candidate (Gaia 6422387644229686272)
+
+If real, this is scientifically novel: a brown dwarf companion to a
+white dwarf at P = 416 d would be a **wide post-common-envelope brown
+dwarf**, contributing to the small population (∼50 published systems)
+of WD+BD systems. Most known WD+BD are in close orbits (P < 1 d) from
+the CE survivors; a P = 416 d system would imply either (a) post-CE
+evolution with a much wider initial separation than current
+canonical models predict, or (b) a primordial wide companion that
+survived the AGB envelope ejection. The host is faint (G=17.2) and
+moderately close (d=51 pc); a 4-8m class spectroscopic follow-up
+(e.g., Magellan/IMACS or VLT/X-Shooter) could obtain ∼50 m/s RV
+precision in a single hour, sufficient to confirm or refute the
+predicted K ≈ 200 m/s at the v9b solution's e=0.10.
+
+This single candidate is the most actionable post-DR3 confirmation
+target in the full v1.10.0 release.
+
 ## v1.9.0 (2026-05-17) — Cascade recall improvements + methodology hygiene
 
 Triggered by a Sahlmann-disagreement audit during the v1.8.0 hunt. The audit
