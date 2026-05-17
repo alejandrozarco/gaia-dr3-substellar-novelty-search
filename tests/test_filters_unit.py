@@ -69,6 +69,27 @@ def test_conditional_ruwe_all_orbit_reflex_types_recognised():
     assert must_include.issubset(v2.ORBIT_REFLEX_SOLUTION_TYPES)
 
 
+def test_v10_acceleration_in_conditional_ruwe_set():
+    """Fix E (v1.15.0): Acceleration solution types must be in the
+    conditional-RUWE orbit-reflex set. Acceleration sources have the same
+    orbital-reflex cause of elevated RUWE as Orbital sources; treating
+    them with the strict RUWE < 2 cut was the v1.9.0 bug Fix E corrected.
+    """
+    import pipeline_v10_acceleration_ruwe_fix_2026_05_17 as v10
+
+    assert "Acceleration7" in v10.ORBIT_REFLEX_SOLUTION_TYPES_V10, (
+        "Acceleration7 must be in v10 conditional-RUWE set per Fix E"
+    )
+    assert "Acceleration9" in v10.ORBIT_REFLEX_SOLUTION_TYPES_V10, (
+        "Acceleration9 must be in v10 conditional-RUWE set per Fix E"
+    )
+    # Acceleration7 with ruwe=4.06 (HD 134574 has ruwe=2.09; pick higher to test the lax cut)
+    row = {"nss_solution_type": "Acceleration7", "ruwe": 4.06}
+    assert v10.reclass_ruwe_pass_v10(row) is True, (
+        "Acceleration7 with ruwe=4.06 should pass lax (Fix E)"
+    )
+
+
 # ---------------------------------------------------------------------------
 # Filter #28 — exoplanet.eu coord-match (PM-corrected, v1.8.0 fix)
 # ---------------------------------------------------------------------------

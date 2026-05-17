@@ -7,6 +7,109 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.15.0 (2026-05-17) — Fix E: conditional RUWE extended to Acceleration sources + 1 new candidate
+
+### The gap
+
+The v1.9.0 Fix C added a conditional RUWE rule: orbit-reflex solution
+types use the lax cut (RUWE < 7) instead of the strict cut (RUWE < 2),
+because orbital motion of the host around the system barycenter
+legitimately inflates RUWE. The orbit-reflex set was:
+
+  ORBIT_REFLEX_SOLUTION_TYPES = {
+      "Orbital", "AstroSpectroSB1",
+      "OrbitalTargetedSearchValidated", "OrbitalTargetedSearch", "SB1",
+  }
+
+This list omitted Acceleration7 and Acceleration9. Acceleration solutions
+detect the *curvature* of host motion around the barycenter when the
+orbit doesn't close in Gaia's 34-month observing window — physically the
+same orbital-reflex phenomenon that inflates RUWE in Orbital sources.
+
+The v9 cascade was applying the strict RUWE < 2 cut to Acceleration
+sources, rejecting them when their RUWE was elevated for legitimate
+orbital-reflex reasons.
+
+### Fix E
+
+Extend the conditional-RUWE solution-type set to include Acceleration7
+and Acceleration9:
+
+  ORBIT_REFLEX_SOLUTION_TYPES_V10 = previous ∪ {Acceleration7, Acceleration9}
+
+Re-derive v9b verdicts for any Acceleration source with v9b_verdict =
+REJECTED_ruwe_quality AND ruwe < 7. The cascade re-evaluates HGCA tier
++ Kervella + Sahlmann + Halbwachs for these recovered sources.
+
+### Impact
+
+Re-running the v9b pool through v10 (`scripts/pipeline_v10_acceleration_ruwe_fix_2026_05_17.py`):
+
+| v9b verdict | v10 verdict | n |
+|---|---|---|
+| REJECTED_ruwe_quality | REJECTED_hgca_stellar | 202 |
+| REJECTED_ruwe_quality | FLAG_hgca_mass_ambiguous | 4 |
+| REJECTED_ruwe_quality | SURVIVOR_no_hgca_corroboration | 3 |
+| REJECTED_ruwe_quality | CORROBORATED_real_companion | **3** |
+
+212 of 220 Acceleration sources marked REJECTED_ruwe_quality in v9b were
+mass-derivable; 202 were genuinely HGCA-stellar and correctly become
+REJECTED_hgca_stellar; 10 land in non-rejected tiers.
+
+Of the 3 newly CORROBORATED:
+
+| Source | HIP | V | SpT | M_2_marg (M_J) | M_2_2σ_hi | HGCA χ² | Substellar? |
+|---|---|---|---|---|---|---|---|
+| **HD 134574** | 74357 | 7.01 | G8III | **28.6** | 140 | 17.9 | Yes (mass-ambiguous at 2σ) |
+| BD+35 2873 | 82371 | 9.45 | — | 184 | 1173 | 12.8 | No (stellar at 1σ) |
+| HD 215522 | 112359 | 8.66 | — | 87 | 506 | 16.8 | No (stellar at 2σ) |
+
+**HD 134574 is the only Fix-E recovery that is substellar at the
+marginalized M_2 estimate.** Promoted to `novelty_candidates.csv` as
+the 11th headline candidate.
+
+### HD 134574 — the new candidate
+
+  * G8III giant at d=116 pc, V=7.0 (very bright — easy RV follow-up)
+  * Coords: RA=227.94, Dec=-33.64 (Southern, ESO/La Silla accessible)
+  * NSS Acceleration9 solution (P > 3 yr unconstrained)
+  * Cascade M_2_marg = 28.6 M_J, 2σ_hi = 140 M_J (mass-ambiguous at 2σ)
+  * HGCA Brandt 2024 χ² = 17.9 → independent 25-yr arc CORROBORATED
+  * Kervella H2G2 SNR = 1.26 → no Kervella corroboration
+  * SIMBAD: 15 bibcodes, all generic catalog references (no companion claim)
+  * Absent from 24-catalog cross-match (exoplanet.eu, NASA Exo, Sahlmann
+    2025, Halbwachs, Marcussen+Albrecht, Stefansson, Brandt+Sosa, Cooper,
+    Wallace, Trifonov HIRES, Kiefer, Halbwachs+Holl ML, APOGEE DR17,
+    RAVE, GALAH, LAMOST, CARMENES DR1, TESS TOI, Kirkpatrick UCD, ESO
+    archive, Kepler KOI, pscomppars, microlensing, Gemini archive)
+  * Sahlmann verdict = null (not in his preselection pipeline at all)
+
+The G8III host (M_star ≈ 2.24 M_☉) means the cascade-derived M_2 has
+larger uncertainty than the main-sequence Orbital candidates. The 2σ_hi
+extending to 140 M_J places the candidate in mass-ambiguous regime —
+this is a borderline substellar / low-mass stellar boundary case rather
+than a high-confidence substellar candidate.
+
+### v10 cascade headline metrics
+
+| Metric | v9b | **v10** |
+|---|---|---|
+| Substellar candidates | 10 | **11** |
+| Acceleration pool fully processed | partially | **yes** |
+| Sahlmann CONFIRMED_BD recall (in-pool) | 11/12 (92%) | 11/12 (92%) (unchanged) |
+| Combined indep specificity | 97.7% | unchanged (Fix E doesn't affect Sahlmann/Marcussen specificity benchmarks) |
+| Newly correctly REJECTED_hgca_stellar via Fix E | n/a | 202 (Acceleration sources that genuinely are stellar) |
+
+### Methodology lesson
+
+When introducing a conditional rule for one solution-type class
+(Orbital, with Fix C in v1.9.0), check whether the same rule applies
+to physically-analogous classes. Acceleration sources share the
+orbital-reflex physics with Orbital sources but were missed in the
+original conditional-RUWE rule. The cascade unit-test suite (v1.9b)
+should be extended with an assertion that the orbit-reflex set
+includes every NSS solution_type with documented orbital reflex.
+
 ## v1.14.0 (2026-05-17) — Activity-induced RV jitter quantification
 
 Follow-up to the v1.12.0 TESS analysis finding that BD+56 1762 shows a
