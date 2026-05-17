@@ -7,6 +7,104 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.14.0 (2026-05-17) — Activity-induced RV jitter quantification
+
+Follow-up to the v1.12.0 TESS analysis finding that BD+56 1762 shows a
+4.12-day photometric rotation period consistent with the SIMBAD Em\*
+classification. The v1.12.0 release flagged the activity but didn't
+quantify whether it would actually compromise an RV confirmation. v1.14.0
+runs the math.
+
+### Method (`scripts/activity_jitter_analysis_2026_05_17.py`)
+
+For each candidate with non-trivial TESS rotation signal:
+
+  1. Fetch and stitch TESS PDC light curves
+  2. Phase-fold at the v1.12.0 LS peak period; measure peak-to-peak
+     modulation amplitude in 20 phase bins (median per bin)
+  3. Convert photometric amplitude → expected RV jitter via Aigrain,
+     Pont & Zucker 2012 FF' formalism:
+       σ_RV ≈ (1/2) × ξ × A_phot × v_rot
+     with ξ ≈ 0.7 for mid-latitude spots / single dominant active
+     region, and v_rot = 2πR★/P_rot assuming R★ = 1 R_☉
+  4. Compare to predicted orbital K_1 at i=60° using cascade M_2_marg
+  5. Recommend confirmation strategy based on K_orb / σ_jitter ratio
+
+### Results
+
+| Candidate | P_rot (d) | A_ptp (ppt) | v_rot (km/s) | σ_jit (m/s) | K_orb (m/s) | K/σ | Strategy |
+|---|---|---|---|---|---|---|---|
+| **BD+56 1762** | **4.12** | **3.39** | **12.3** | **14.5** | **2099** | **144** | Single quadrature epoch |
+| HD 140895 | 20.71 | 11.12 | 2.4 | 9.5 | 1761 | 185 | Single quadrature epoch |
+| BD+46 2473 | 1.66 | 0.19 | 30.5 | 2.0 | 1956 | 967 | Single quadrature epoch |
+| HD 104828 | 14.66 | 0.20 | 3.5 | 0.2 | n/a | n/a | Acceleration (no P) |
+| HD 76078 | 0.12* | 0.06 | 422* | 9.5 | 2104 | 223 | Single quadrature epoch |
+
+*HD 76078's 0.12-d LS peak is likely a TESS sampling artifact, not real
+rotation — included as a quiet-control comparator.
+
+### Interpretation — the activity caveat is real but the orbital signal wins
+
+For **BD+56 1762** specifically:
+
+  * Confirmed rotation period: 4.12 days, A_ptp = 3.4 ppt (~0.34%
+    photometric modulation)
+  * Consistent with a young G5/G7 dwarf (age ~100-1000 Myr from
+    gyrochronology; the Sun rotates in 25 d at ~5 Gyr)
+  * Expected RV jitter from this activity: **σ_RV ≈ 14.5 m/s**
+  * Predicted orbital K_1 (M₂_marg = 69 M_J at i=60°): **2,099 m/s**
+  * **K_orbital / σ_jitter = 144** — the orbital amplitude is two
+    orders of magnitude larger than the expected activity-induced jitter
+
+For HD 140895, BD+46 2473, and HD 76078 the ratios are similar or
+better. **No candidate is at risk of being activity-dominated.**
+
+### Practical confirmation guidance
+
+| Telescope | Typical σ_RV per epoch | Cost |
+|---|---|---|
+| TRES (Whipple 1.5 m) | ~30 m/s | Routine |
+| FIES (Nordic Optical 2.6 m) | ~10 m/s | Easy |
+| SOPHIE (OHP 1.93 m) | ~5 m/s | Easy |
+| HARPS-N (TNG 3.6 m) | ~1 m/s | Modest |
+
+For an orbital K_1 ~ 2,000 m/s and a 30 m/s per-epoch precision (TRES):
+
+  * Single quadrature epoch SNR ≈ 60σ — **decisive on its own**
+  * Even ignoring activity entirely, the orbital signal is detectable
+  * With activity correction (e.g., simultaneous Ca II H&K monitoring
+    via the same spectrograph), residual systematic uncertainty drops
+    to a few m/s
+
+### When this matters
+
+For the most active candidates (e.g., the WD candidate demoted in
+v1.13.0, or hypothetical M-dwarf hosts at P_rot < 2 d), the same
+calculation could give K/σ ~ 1-5, where Gaussian-process modeling
+indexed by an activity proxy becomes essential. None of our 10
+headline candidates land in that regime.
+
+### Closing the activity-caveat loop on BD+56 1762
+
+The v1.8.0 promotion note for BD+56 1762 included the caveat:
+
+> CAVEAT: Em\* SIMBAD classification flags chromospheric/emission-line
+> activity; if RV jitter is large the inferred orbital amplitude may
+> be partially activity-driven.
+
+The v1.14.0 quantification settles this:
+
+  * Activity is real (rotation period quantified, modulation amplitude
+    measured)
+  * But "if RV jitter is large" turns out to be false — predicted
+    jitter is ~15 m/s vs orbital K_1 ~ 2,000 m/s
+  * Activity is not a confirmation-blocking concern; the orbital
+    signature is far above the activity floor
+
+The activity caveat now reads more like a note than a warning. A
+recommended-but-not-required precaution is to monitor Ca II H&K
+during any RV campaign.
+
 ## v1.13.0 (2026-05-17) — WD M_host correction + DR4 readiness predictor
 
 Two small closes to the session.
