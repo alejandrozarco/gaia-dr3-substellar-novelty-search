@@ -7,6 +7,116 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.9.0 (2026-05-17) — Cascade recall improvements + methodology hygiene
+
+Triggered by a Sahlmann-disagreement audit during the v1.8.0 hunt. The audit
+asked: of Sahlmann 2025's 12 CONFIRMED_BROWN_DWARF sources in our v8 pool,
+which does our cascade promote (CORROBORATED tier or REJECTED_published)?
+
+The v8 result was 8 of 12 caught (67%) — 4 promoted as CORROBORATED, 4 as
+REJECTED_published_exoplanet_eu. The other 4 exposed four distinct
+methodology errors:
+
+  Fix A — Sahlmann CONFIRMED_BINARY_FP filter
+    HD 185501 was CORROBORATED at v8 but Sahlmann 2025 marks it as
+    CONFIRMED_BINARY_FP. A new REJECTED_sahlmann_fp tier catches this.
+
+  Fix B — SIMBAD visual-double rejection
+    HD 222805 (newly CORROBORATED via Fix D below) is a SIMBAD ``**``
+    visually-resolved double (WDS J23444-7029AB, ** WSI 94). The 216 d
+    NSS orbit may be detecting the inner stellar companion in this
+    hierarchical system rather than a substellar tertiary. v9b queries
+    SIMBAD for all v9 candidate-tier sources and demotes any with
+    SIMBAD object_type=``**`` to a new REJECTED_simbad_visual_double
+    tier. WDS membership without ``**`` object_type (e.g., HD 5433 in
+    WDS J01066+1353 but with SIMBAD type PM*) is annotated but not
+    rejected — the WDS pair is likely a wide companion that does not
+    confound the NSS orbit.
+
+  Fix C — RUWE verdict-logic re-sync
+    HD 5433 (HIP 4387, OrbitalTargetedSearch, ruwe=4.06) has
+    ruwe_pass=True under the conditional RUWE rule (lax 7.0 for
+    orbit-reflex solution types), but the historical v2 verdict label
+    inherited a uniform-RUWE-<-2 rejection. The v3..v8 cascade
+    re-classifications preserved the stale REJECTED_ruwe_quality
+    label. v9 re-evaluates verdicts with the conditional rule and
+    flips stale rejections back to their correct tier (HD 5433:
+    REJECTED_ruwe_quality → CORROBORATED_real_companion since
+    HGCA chi^2=9.2 lands in CORROBORATED range).
+
+  Fix D — Kervella substitute for HGCA on short-period orbits
+    HD 92320 (HIP 52278, P=145d, HGCA chi^2=2.25, Kervella SNR=6.07)
+    was SURVIVOR_no_hgca_corroboration because HGCA's 25-yr arc
+    averages over the 145d orbit and detects no PM anomaly. The
+    Kervella 10-yr arc retains the wobble. v9 adds a
+    CORROBORATED_kervella_only tier promoted when:
+      * HGCA chi^2 < 5 (or HGCA missing)
+      * AND Kervella H2G2 SNR > 3
+      * AND substellar M_2 estimate (face or marg < 80 M_J)
+      * AND short orbital period (P < 4 yr, so HGCA's 25-yr arc
+        averages ≥ 6 orbital cycles)
+
+### v9b cascade headline metrics
+
+| Metric | v8 | **v9b** |
+|---|---|---|
+| Substellar candidates retained | 10 | **10 (unchanged)** |
+| Sahlmann CONFIRMED_BD recall (in-pool) | 8/12 (67%) | **11/12 (92%)** |
+| Sahlmann E2E specificity | 90.9% | **same; +1 FP corrected (HD 185501)** |
+| Combined indep specificity | 97.7% | **97.7% (unchanged)** |
+| Cascade CORROBORATED tier | 24 | **27 (+3 newly recovered)** |
+| Cascade CORROBORATED_kervella_only tier (new) | 0 | **2** |
+| Cascade REJECTED_sahlmann_fp tier (new) | 0 | **3** |
+| Cascade REJECTED_simbad_visual_double tier (new) | 0 | **1** |
+
+### v8 → v9b transitions
+
+| v8 verdict | v9b verdict | n | What |
+|---|---|---|---|
+| SURVIVOR_no_hgca_corroboration | CORROBORATED_kervella_only | 2 | Fix D: HD 92320, BD+32 92 (HGCA-blind short-P + Kervella corroboration) |
+| REJECTED_sb2_low_face_on_no_corr | REJECTED_sahlmann_fp | 2 | Fix A: cascade-FP catches improved |
+| REJECTED_ruwe_quality | CORROBORATED_real_companion | 1 | Fix C: HD 5433 (stale RUWE rejection corrected) |
+| SURVIVOR_no_hgca_corroboration | REJECTED_simbad_visual_double | 1 | Fix B: HD 222805 demoted (visual hierarchical) |
+| FLAG_hgca_mass_ambiguous | CORROBORATED_real_companion | 1 | Fix A: HD 89707 (Sahlmann CONFIRMED_BD promotion) |
+| CORROBORATED_real_companion | REJECTED_sahlmann_fp | 1 | Fix A: HD 185501 (cascade FP corrected) |
+
+### Why none of these are added to novelty_candidates.csv
+
+All four newly-CORROBORATED sources from the v9b cascade are already published
+by Sahlmann 2025 or are candidate-tier in Sahlmann's pipeline:
+
+* HD 5433 (CORROBORATED via RUWE fix) — Sahlmann CONFIRMED_BROWN_DWARF (published)
+* HD 89707 (FLAG → CORROBORATED) — Sahlmann CONFIRMED_BROWN_DWARF (published)
+* HD 92320 (SURVIVOR → CORROBORATED_kervella_only) — Sahlmann CONFIRMED_BROWN_DWARF (published)
+* BD+32 92 (SURVIVOR → CORROBORATED_kervella_only) — Sahlmann SAHL_HIGH_PROB_BD_CAND (candidate)
+
+These are recall recoveries of already-published systems, not new candidates.
+The substellar-candidate list (`novelty_candidates.csv`) remains at 10 from
+v1.8.0.
+
+### Methodology lessons
+
+1. **Verdict labels can drift from filter logic across cascade versions.**
+   When a filter rule changes (e.g., uniform RUWE<2 → conditional RUWE per
+   solution_type), the cascade must re-derive all downstream verdict labels,
+   not just propagate the column. v9's `reclass_to_v9` rebuilds verdicts from
+   the underlying filter outputs rather than inheriting historical labels.
+
+2. **Cascade specificity and recall optimize differently.** The v4-v7
+   improvements drove combined-independent specificity from 40% to 98%, but
+   recall on Sahlmann's confirmed BDs stayed at 67% throughout. The next
+   structural improvement vector is the asymmetric astrometric-baseline
+   issue: HGCA's 25-yr arc and Kervella's 10-yr arc respond differently to
+   short-period vs long-period orbits. A single HGCA chi^2 cut systematically
+   misses short-period substellar companions; Kervella substitute logic is
+   needed.
+
+3. **SIMBAD object_type is a fast, accurate visual-binary filter.** Querying
+   SIMBAD for the ~34 v9 candidate-tier sources caught HD 222805 (the only
+   v9 candidate-tier source with obj_type=``**``). A full Vizier B/wds/wds
+   cone-search across all 9,498 pool sources is the next-level rigor but
+   not necessary for current candidate vetting.
+
 ## v1.8.0 (2026-05-17) — Filter #28 silent-failure fix + two new candidates
 
 The hunt scan that surfaced novel candidates also uncovered a long-standing

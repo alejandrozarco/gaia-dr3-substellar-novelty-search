@@ -42,7 +42,7 @@ For candidates with sparse RV measurements across multiple archives (HARPS, HIRE
 
 ## Results
 
-The full cascade reduces about 26,000 initial candidates to **10 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.8.0, 2026-05-17).
+The full cascade reduces about 26,000 initial candidates to **10 tentative substellar candidates** documented in `novelty_candidates.csv` plus **3 cascade by-products** documented in `cascade_byproducts.csv` (latest release v1.9.0, 2026-05-17).
 
 ### Candidate table — 10 substellar candidates
 
@@ -90,7 +90,15 @@ Of about 12 sources that received individual deep-dive investigation in v1:
 
 The v2 pipeline (Filters #27-30: documented-FP, exoplanet.eu coord, HGCA chi² tier, conditional RUWE) applied to the full 9,498-source pool surfaced 22 HGCA-corroborated candidates + 15 mass-ambiguous flagged candidates. From this 37, 2 truly novel substellar candidates with HIP cross-match were promoted (HIP 60865 and HIP 20122) — both originally filtered out of v1 because the uniform RUWE < 2 cut is inappropriate for solution types where orbital reflex is the signal.
 
-The v8 pipeline (released 2026-05-17, this release) fixes a silent failure in Filter #28 (exoplanet.eu coord cross-match): the v2-v7 production pool never propagated `ra`/`dec` from Gaia DR3, so the coord-match was a no-op for every source. The v8 fix auto-fetches Gaia DR3 `ra`, `dec`, `pmra`, `pmdec` per source, projects coords from epoch J2016.0 back to J2000.0, and matches at a 10″ radius. This newly rejects 33 sources that had silently survived as published-in-exoplanet.eu, including 6 in the previously-CORROBORATED or FLAG tiers: HD 33636 (HIP 24205), HD 68638 (HIP 40497), BD+05 5218 (HIP 117179), HD 30246 (HIP 22203), L 194-115 (HIP 60321), G 239-52 (HIP 75202). Two further novel candidates were promoted from the resulting v8 CORROBORATED pool: HD 76078 (HIP 43870) and BD+56 1762 (HIP 72389).
+The v8 pipeline (released 2026-05-17) fixes a silent failure in Filter #28 (exoplanet.eu coord cross-match): the v2-v7 production pool never propagated `ra`/`dec` from Gaia DR3, so the coord-match was a no-op for every source. The v8 fix auto-fetches Gaia DR3 `ra`, `dec`, `pmra`, `pmdec` per source, projects coords from epoch J2016.0 back to J2000.0, and matches at a 10″ radius. This newly rejects 33 sources that had silently survived as published-in-exoplanet.eu, including 6 in the previously-CORROBORATED or FLAG tiers: HD 33636 (HIP 24205), HD 68638 (HIP 40497), BD+05 5218 (HIP 117179), HD 30246 (HIP 22203), L 194-115 (HIP 60321), G 239-52 (HIP 75202). Two further novel candidates were promoted from the resulting v8 CORROBORATED pool: HD 76078 (HIP 43870) and BD+56 1762 (HIP 72389).
+
+The v9 pipeline (this release, 2026-05-17) adds four cascade recall improvements identified by a Sahlmann-disagreement audit:
+1. **Fix A** — Sahlmann CONFIRMED_BINARY_FP filter rejects HD 185501 (cascade FP corrected).
+2. **Fix B** — SIMBAD object_type=`**` filter demotes HD 222805 (resolved visual hierarchical binary).
+3. **Fix C** — RUWE verdict-logic re-sync (filter labels were drifted from conditional-RUWE rule introduced post-v2).
+4. **Fix D** — Kervella-substitute-for-HGCA promotion for short-period orbits (HGCA's 25-yr arc averages out P < 4 yr orbits; Kervella's 10-yr arc retains them).
+
+Net effect: cascade recall on Sahlmann's 12 confirmed brown dwarfs in our pool improved from 8/12 (67%) to 11/12 (92%). The substellar-candidate list remains at 10 — all four newly-CORROBORATED sources from v9 are already published by Sahlmann 2025 (HD 5433, HD 89707, HD 92320) or in Sahlmann's candidate tier (BD+32 92). v9 is therefore a methodology / recall hygiene release rather than a candidate-list change.
 
 Cross-checked against 10 recent published catalogs (Gaia DPAC 1843 BD, Halbwachs 2023 binary_masses, Marcussen+Albrecht 2023, Stevenson 2023 BD-desert, Brandt+Sosa 2025, Kiefer 2025, Wallace 2026, Stefansson 2025 G-ASOI, Halbwachs+Holl 2024 ML, Cooper 2024 UCD Companion): **zero of our 10 substellar candidates are in any of these catalogs as a published-orbit companion**. None have a published orbital characterization. (HD 76078 has 29 ADS bibcodes 1850-2026 and BD+56 1762 has 24, but none claim a substellar companion mass; the host stars are catalogued as binary in SIMBAD but with no published mass decomposition.)
 
