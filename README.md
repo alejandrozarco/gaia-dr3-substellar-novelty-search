@@ -1,6 +1,6 @@
 # Filter-Cascade Pipeline for Substellar Tertiary Candidates from Gaia DR3 NSS Data
 
-> **This work is experimental and exploratory.** Nothing in this repository has been observationally confirmed. The candidate list is the output of an automated filter cascade applied to public archival data; surviving candidates are tentative and may turn out to be stellar binaries, photometric/activity artifacts, or already-published systems that the literature cross-match missed. No claims of discovery are made.
+> **This work is experimental and exploratory.** Nothing in this repository has been observationally confirmed. The candidate list is the output of an automated filter cascade applied to public archival data; surviving candidates are tentative and may turn out to be stellar binaries, photometric/activity artifacts, or already-published systems that the literature cross-match missed. **No claims of discovery are made. The pipeline does not detect companions — Gaia DR3 already did. See the "Detection vs. interpretation vs. curation" section below for the precise division of labor.**
 
 ## What this is
 
@@ -119,6 +119,59 @@ The cascade has been benchmarked against a 71-entry truth set assembled from Sah
 | Mass recovery (median \|ΔM/M\|) | 6.5% | unchanged |
 
 See `BENCHMARK.md` for the full report (confusion matrix, per-filter destruction analysis, FP escapes, parameter-recovery table). The benchmark is reproducible from this repo with `make benchmark` once `config.yaml` is configured — see `REPRODUCIBILITY.md` for the quickstart.
+
+## Detection vs. interpretation vs. curation — what is novel and what is not
+
+Reviewers and users sometimes ask: where exactly does the novelty in this repository sit, given that Gaia DR3 has already published orbital fits for every source we look at? The answer requires careful separation of three layers.
+
+### What Gaia DR3 already published (not novel to us)
+
+For every source in our candidate list, Gaia DR3 (June 2022) already published in the `nss_two_body_orbit` or `nss_acceleration_astro` tables:
+
+- The detection itself (i.e., "this source's residuals to a single-star astrometric model are statistically significant")
+- The orbital period, eccentricity, time of periastron, and Thiele-Innes geometric constants (when Orbital solution applies)
+- The photocenter semi-major axis (`a_phot`) and its uncertainty
+- The acceleration vector and its uncertainty (when Acceleration solution applies)
+- Internal quality and significance metrics
+
+For HIP-named sources, **Brandt 2021/2024 (HGCA)** independently published a Hipparcos-to-Gaia proper-motion-anomaly χ² statistic based on the 25-year arc between the Hipparcos catalog (epoch 1991) and Gaia DR3 (epoch 2016). For a subset of those, **Kervella+2022 (H2G2)** published a separate Tycho-Hipparcos-to-Gaia 10-year arc PMa SNR. Both are independent detections of the wobble, computed without using Gaia's internal NSS pipeline.
+
+For 5,099 NSS sources, the Gaia DPAC team also published in **`gaiadr3.binary_masses`** (Halbwachs+ 2023) a joint photometric+astrometric+spectroscopic decomposition that gives a direct M_2 measurement (where the geometry was solvable). That table is the closest thing Gaia DR3 has to a published mass.
+
+### What our pipeline derives (standard calculations on Gaia outputs)
+
+Given the published `a_phot`, period, eccentricity, and an assumed host mass M_1 (typically from Gaia BP-RP color and isochrone), we compute:
+
+- `M_2_face_on`: the lower bound on the companion mass, assuming inclination i = 90° (edge-on), via the Pourbaix mass function applied to `a_phot`
+- `M_2_marginalized`: the most-probable companion mass, marginalizing over an isotropic inclination prior
+
+These are standard derivations that anyone with the Gaia NSS catalog and a copy of the Pourbaix mass-function formula could reproduce.
+
+### What our pipeline actually contributes (the novelty layer)
+
+What is novel is the **cross-reference and curation layer**:
+
+1. **Mass interpretation as substellar.** For each Gaia NSS solution, the derived M_2 is checked against the substellar threshold (~80 M_J). The interpretive claim is "this NSS Orbital solution corresponds to a brown-dwarf-mass companion." Nobody in published literature has made this claim for the candidates in `novelty_candidates.csv`.
+
+2. **Cross-match against 30+ published catalogs.** We test whether each candidate is already in exoplanet.eu, NASA Exoplanet Archive, Sahlmann 2025, Halbwachs/Gaia DR3 `binary_masses`, Marcussen+Albrecht 2023, Stefánsson 2025, Trifonov 2025 HIRES, and others. Our headline 10 are absent from all of them as substellar companions.
+
+3. **Multi-witness corroboration.** For HIP-named candidates, we layer the Gaia NSS detection with the Brandt 2024 HGCA χ² (25-yr arc) and Kervella 2022 H2G2 SNR (10-yr arc). Triple-corroborated candidates are detected by Gaia, by HGCA, and by Kervella — three independent astrometric baselines from three different teams. The triple coincidence is what makes them more robust than NSS-only candidates.
+
+4. **Methodology hygiene.** During cascade development we identified and fixed several non-trivial bugs in the published-systems vetting flow: Filter #28's silent failure since v1.0.0 (ra/dec never propagated), Sahlmann CONFIRMED_BINARY_FP filter missing, RUWE verdict-logic drift, SIMBAD `**` visual-double filter missing, WD-host M_1 default assumption (still pending). These are useful methodology contributions even if no individual candidate ends up confirmed.
+
+5. **Tentative claim on 28 sources with zero SIMBAD bibcodes.** Of the 63 no-HIP frontier supplementary candidates, 28 have no SIMBAD bibcodes at all. For these, no published literature exists about the source besides the Gaia DR3 catalog entry itself. If we publish their cascade-derived parameters, that is the first characterization of these objects. This is the closest thing in the repo to a genuine first-detection claim — but even here, the detection itself was Gaia's; we're the first to *characterize* it.
+
+### What this pipeline still does not do
+
+- We do not re-fit Gaia's epoch-level astrometry. Gaia DR3 did not release per-transit data; that arrives with DR4 in December 2026. Our pipeline operates on the published NSS catalog outputs.
+- We do not perform joint orbital fits combining Gaia astrometry with archival radial-velocity time-series. Some `scripts/orvara_runs/` exist for individual candidates (HIP 20122, HIP 60865, HIP 91479) but this is not yet end-to-end for all 10. A joint RV+astrometric fit would give a direct M_2 measurement without the inclination-prior assumption.
+- We do not propose or carry out new telescope observations.
+- We do not make discovery claims. Confirmation of any candidate requires either Gaia DR4 (free, December 2026) or targeted ground-based RV (paid, telescope-allocation dependent).
+- It has not been peer-reviewed.
+
+### How a reader should think about the 10 candidates
+
+The honest framing is: "Gaia DR3 detected these 10 stars as astrometric binaries with orbital periods consistent with substellar mass at moderate inclinations. Brandt 2024 and Kervella 2022 independently see the wobble at different baselines. No published companion catalog has interpreted any of them as brown dwarfs. Confirmation observations are required to distinguish substellar from stellar-at-moderate-inclination interpretations." That is the strongest defensible statement.
 
 ## What this pipeline does not do
 
