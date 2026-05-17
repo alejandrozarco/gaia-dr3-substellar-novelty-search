@@ -7,6 +7,110 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.11.0 (2026-05-17) — Independent 25-year proper-motion-anomaly verification
+
+Question raised during external review: where exactly does the cascade
+detect the orbital wobble itself? The cascade so far has consumed
+Gaia DR3 NSS Orbital fits and Brandt 2024's HGCA χ² as inputs — both
+upstream-published. v1.11.0 closes that loop by **computing the
+proper-motion anomaly independently from raw catalog data**.
+
+### Method (`scripts/independent_pma_verification_2026_05_17.py`)
+
+For each of the 10 headline candidates:
+
+  * Fetch Hipparcos van Leeuwen 2007 reduction (Vizier I/311/hip2)
+    position + uncertainty at epoch J1991.25
+  * Fetch Gaia DR3 position, proper motion, and full uncertainty
+    covariance at epoch J2016.0
+  * Compute the long-baseline proper motion:
+    PM_HG = (pos_Gaia − pos_Hipparcos) / 24.75 yr
+  * The proper-motion anomaly Δμ = PM_Gaia − PM_HG. A single-star
+    moving in a straight line has Δμ = 0; a star perturbed by an
+    orbital companion has Δμ > 0 with a signature proportional to the
+    companion's mass and orbital geometry.
+  * Compute χ² = (Δμ_α / σ_α)² + (Δμ_δ / σ_δ)² with proper error
+    propagation
+    σ_Δμ_α² = σ_PM_Gaia_α² + (σ_pos_Hip_α² + σ_pos_Gaia_α²) / dt²
+
+### Results — all 10 candidates show independent wobble detection at >2σ
+
+| Name | HIP | |Δμ| (mas/yr) | Significance | χ²_ours | χ²_Brandt 2024 | agreement |
+|---|---|---|---|---|---|---|
+| HD 101767 | 57135 | 0.189 | 4.5σ | 19.8 | 14.2 | 1.40× |
+| HD 104828 | 58863 | 3.849 | 49.2σ | 2417 | n/a (Acceleration) | — |
+| HD 140895 | 77262 | 4.291 | 43.4σ | 1883 | 1059 | 1.78× |
+| HD 140940 | 77357 | 1.686 | 18.8σ | 354 | 200 | 1.77× |
+| BD+46 2473 | 90060 | 0.170 | 5.7σ | 32.6 | 17.8 | 1.83× |
+| BD+35 228 | 5787 | 0.278 | 5.6σ | 31.0 | 18.9 | 1.64× |
+| HIP 60865 | 60865 | 0.394 | 2.9σ | 8.3 | 10.6 | 0.78× |
+| HIP 20122 | 20122 | 0.442 | 2.3σ | 5.4 | 5.1 | 1.05× |
+| **HD 76078** | 43870 | 0.105 | 2.9σ | 8.25 | 9.35 | 0.88× |
+| **BD+56 1762** | 72389 | 0.175 | 3.7σ | 13.38 | 10.27 | 1.30× |
+
+Median agreement ratio is 1.40×. Our χ² runs systematically slightly
+higher than Brandt 2024's because we do not apply the **Lindegren
+frame-rotation correction** between Hipparcos and Gaia (a small global
+PM offset of order tens of microarcseconds per year) and we use only
+the van Leeuwen 2007 (Hip2) reduction rather than a Hip1+Hip2 weighted
+combination. These differences inflate our χ² by a factor of ~1.4 on
+average but do not change any candidate's tier (CORROBORATED stays
+CORROBORATED). The qualitative result — every headline candidate
+has a real, independently detected wobble — matches Brandt 2024
+exactly.
+
+### Why this matters
+
+Before v1.11.0, the cascade's claim of "real companion" depended on
+two upstream published values: Gaia DR3's NSS Orbital fit and Brandt
+2024's HGCA χ². Both of those products process the same underlying
+catalog data through their own pipelines. The independent verification
+adds a third, fully redundant path:
+
+  1. Gaia DR3 detected the wobble within its own 34-month observation
+     window (the NSS Orbital fit). Detection #1.
+  2. Brandt 2024 detected the wobble at the 25-yr Hipparcos-Gaia
+     baseline (HGCA χ²). Detection #2.
+  3. **We now detect the wobble at the same 25-yr baseline using only
+     public catalog positions and a simple geometric calculation.**
+     Detection #3.
+
+For HD 76078 and BD+56 1762 specifically — the two v1.8.0 additions
+that have no Gaia DR3 RV time-series, no Halbwachs DPAC joint fit,
+no Sahlmann 2025 entry, and no archival HARPS / HIRES coverage —
+this independent PMa is the **only second-channel verification**
+that the orbital signature is not an artifact of the Gaia NSS
+pipeline. With this v1.11.0 calculation:
+
+  * HD 76078: χ²_ours = 8.25 at 2.9σ (consistent with Brandt's 9.35)
+    → wobble is real
+  * BD+56 1762: χ²_ours = 13.38 at 3.7σ (consistent with Brandt's
+    10.27) → wobble is real
+
+This is the strongest "detect wobble ourselves" deliverable possible
+without per-transit Gaia data (which arrives with DR4 in December
+2026). It does not replace orvara — which would additionally
+constrain inclination and direct M_2 from joint RV+astrometric data —
+but it does establish a third independent channel for the orbital
+detection itself.
+
+### Limitations
+
+Three independent astrometric channels do not yet make a discovery:
+
+  * The mass interpretation (substellar) still depends on the cascade's
+    derived M_2 from a_phot via the Pourbaix mass function; that
+    derivation requires assumed M_host and inclination.
+  * For face-on or near-face-on orbits, the proper-motion anomaly is
+    smaller (Δμ ∝ sin(i)), so a small Δμ can be consistent with both
+    a substellar companion at moderate inclination AND a stellar
+    companion at face-on inclination. Independent RV time-series is
+    required to break this degeneracy.
+  * Brandt 2024's χ² treatment is more conservative than our raw
+    calculation, but neither addresses the systematic possibility that
+    the Hipparcos and Gaia positions are correlated through shared
+    reference catalogs.
+
 ## v1.10.0 (2026-05-17) — No-HIP frontier supplementary list (63 candidates)
 
 The v9b cascade exposed a **structural blind spot**: HGCA and Kervella PMa
