@@ -7,6 +7,92 @@ of known systems. Addresses the external reviewer's #1 critique
 **This document reports BOTH the original v2 cascade benchmark AND the
 v3 cascade with Sahlmann tie-breaking rule applied.**
 
+## v1.13.0 (2026-05-17) — WD M_host correction + DR4 readiness predictor
+
+Two small closes to the session.
+
+### Fix: WD M_host gap in cascade
+
+The v1.10.0 frontier list contained one SIMBAD WD\* candidate
+(Gaia 6422387644229686272) at G=17.2, BP-RP=0.80, d=51 pc, listed with
+cascade M_2_marg = 34 M_J at P=416 d. The cascade had used M_1 =
+0.094 M_☉ — its default for sources without SpType, calibrated for late
+M dwarfs — but SIMBAD correctly classifies the source as a white dwarf.
+
+A typical WD has M_1 ≈ 0.6 M_☉. Re-deriving M_2 from the fixed
+photocentric semi-major axis with the corrected host mass gives a
+scaling factor (M_total_new / M_total_old)^(2/3) = 2.95:
+
+  * Cascade M_2_face_on (M_1=0.094): 32.2 M_J
+  * Corrected M_2_face_on (M_1=0.6): **94.7 M_J**
+  * Cascade M_2_marginalized (M_1=0.094): 34.0 M_J
+  * Corrected M_2_marginalized (M_1=0.6): **100.1 M_J**
+
+Both corrected values are firmly in stellar regime. The "WD+BD wide
+post-CE candidate" that looked exciting during the v1.10.0 hunt was
+actually an M-dwarf companion to a WD — interesting in its own right
+(WD+M_dwarf wide pairs are not common at P=416 d) but **not a
+substellar candidate**.
+
+Action:
+  * Demoted from `data/supplementary/no_hip_frontier_clean.csv`
+    (now 62 candidates, down from 63)
+  * Moved with corrected interpretation to
+    `data/supplementary/wd_low_mass_companion_candidates.csv`
+
+This exposes a known cascade gap that future versions should address:
+when SIMBAD obj_type = `WD\*`, the cascade's M_1 default needs to be
+~0.6 M_☉, not 0.09. A proper v1.14 filter would auto-correct.
+
+### DR4 readiness predictor
+
+`data/intermediate/dr4_readiness.csv` provides per-candidate
+projections of what Gaia DR4 (December 2026, public ~2027) will
+deliver. DR4 will publish per-transit radial velocities (~70 epochs
+over 5.5-yr baseline) and intermediate astrometric data for every
+source.
+
+DR4 per-transit RV precision scales as ~100 m/s × 10^(0.4×(V−10)/2)
+(sqrt-flux scaling); the aggregate K_1 precision after N=70 transits
+gains a factor of √(N/2) ≈ 6×, giving:
+
+  * V=8.7: σ_K_DR4 ≈ 9 m/s
+  * V=10.0: σ_K_DR4 ≈ 17 m/s
+  * V=12.1: σ_K_DR4 ≈ 44 m/s
+  * V=13.5: σ_K_DR4 ≈ 84 m/s
+
+Comparing to predicted K_1 from cascade orbital params:
+
+| Candidate | V | Predicted K (i=60°) | DR4 σ_K | DR4 SNR | Verdict |
+|---|---|---|---|---|---|
+| HD 101767 | 8.88 | 1,421 m/s | 10 | 141 | DEFINITIVE |
+| HD 140895 | 9.39 | 2,025 | 13 | 159 | DEFINITIVE |
+| HD 140940 | 8.72 | 3,748 | 9 | 400 | DEFINITIVE |
+| BD+46 2473 | 8.97 | 1,978 | 11 | 188 | DEFINITIVE |
+| BD+35 228 | 9.08 | 1,036 | 11 | 94 | DEFINITIVE |
+| HIP 60865 | 12.09 | 1,439 | 44 | 33 | DEFINITIVE |
+| HIP 20122 | 13.49 | 2,687 | 84 | 32 | DEFINITIVE |
+| HD 76078 | 8.72 | 2,010 | 9 | 215 | DEFINITIVE |
+| BD+56 1762 | 10.03 | 2,276 | 17 | 133 | DEFINITIVE |
+
+Every NSS-Orbital candidate will be DR4-resolvable at SNR > 30σ. The
+mass interpretation (substellar vs face-on stellar) will be settled
+unambiguously in December 2026. HD 104828 (Acceleration solution
+type, no orbital period) is the only candidate without a P-based
+prediction; it will require a different DR4 analysis path (combined
+long-baseline acceleration vector + future direct imaging at large
+separation).
+
+### Bottom line for the headline list
+
+The 10 candidates are now corroborated by **four independent astrometric/
+photometric channels** (Gaia NSS, Brandt 2024 HGCA, our independent
+PMa v1.11.0, TESS v1.12.0) and will be **definitively resolved** by
+Gaia DR4 spectroscopic data within 7 months from now. The repo's
+current claim level — "Gaia-detected NSS Orbital substellar candidates
+not yet promoted by any published catalog" — is the strongest
+defensible statement until DR4 lands.
+
 ## v1.12.0 (2026-05-17) — TESS light-curve analysis: transit search + activity screening
 
 Fourth independent channel after Gaia NSS + Brandt 2024 HGCA + our
