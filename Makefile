@@ -7,7 +7,7 @@
 
 .PHONY: help benchmark benchmark-truth-set benchmark-v2 benchmark-v3 \
         benchmark-figures verify-catalogs verify-deps lock clean \
-        info paths
+        info paths test test-verbose
 
 # Configuration
 PYTHON ?= python3
@@ -31,6 +31,10 @@ help:  ## Show this help message
 	@echo "  make benchmark-v2         Run v2 cascade benchmark (no Sahlmann tie-breaking)"
 	@echo "  make benchmark-v3         Run v3 cascade benchmark (with tie-breaking)"
 	@echo "  make benchmark-figures    Regenerate benchmark figures (PNG, 300 dpi)"
+	@echo ""
+	@echo "Tests:"
+	@echo "  make test          Run cascade filter test suite (pytest, offline)"
+	@echo "  make test-verbose  Run tests with verbose output"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make lock     Regenerate requirements-lock.txt"
@@ -113,3 +117,10 @@ lock:  ## Regenerate requirements-lock.txt from current environment
 clean:  ## Remove benchmark outputs
 	rm -rf $(OUT_DIR)
 	@echo "Removed $(OUT_DIR)/"
+
+# ============================================================
+test:  ## Run cascade filter test suite (pytest, offline)
+	PYTHONPATH=scripts $(PYTHON) -m pytest tests/
+
+test-verbose:  ## Run tests with verbose output
+	PYTHONPATH=scripts $(PYTHON) -m pytest tests/ -v
