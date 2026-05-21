@@ -9,3 +9,9 @@ __pycache__/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Large reproducible analysis intermediates (regenerable via scripts/; kept out of git to stay lean)
+data/intermediate/nss_sb1_pool_widened_v13_plx2_sig3.csv
+data/intermediate/hipparcos_vanLeeuwen2007_FULL.csv
+data/intermediate/nss_sb1_pool_raw_2026_05_17.csv
+data/intermediate/nss_sb1_pool_with_m2_2026_05_17.csv

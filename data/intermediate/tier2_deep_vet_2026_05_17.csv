@@ -1,0 +1,3 @@
+name,source_id,tycho_gaia_chi2,m2_marg,P_d,e,K_kms,in_sb9,in_exoplanet_eu,epx_match_name,in_sahlmann,simbad_main_id,simbad_otype
+HD 104289,1576108450508750208,10.7,47.6,886,0.27,0.87,false,true,HD 104289 b,true,HD 104289,SB*
+CD-70 5,4702272586713535872,9.6,58.8,76,0.25,2.22,false,false,,false,CD-70     5,SB*

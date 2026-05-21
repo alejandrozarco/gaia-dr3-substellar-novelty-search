@@ -13,17 +13,36 @@ abstract: >-
   Non-Single-Star (NSS) Orbital and Acceleration tables against 30+ public
   literature catalogs and archival radial-velocity time-series. The pipeline
   identifies candidate substellar (13-80 M_J) companions to bright nearby
-  stars (V < 12, d < 200 pc) that have not been claimed in published
-  companion catalogs. After applying ~28 sequential filters (including
-  conditional RUWE per NSS solution_type, HGCA Brandt 2024 chi-squared
-  tier filtering, proper-motion-corrected exoplanet.eu coord cross-match
-  at 10 arcsec radius (v8), Halbwachs FluxRatio + direct-method M_2,
-  both-estimates-stellar M_2 rejection, and the Gaia DR3 documented
-  false-positive list), the pipeline produces a list of 10 tentative
-  substellar candidates. None are confirmed by independent orbital
-  characterization. Status is experimental archival mining; confirmation
-  requires Gaia DR4 (Dec 2026 expected) or new ground-based RV
-  observations.
+  stars that have not been claimed in published companion catalogs. After
+  applying ~29 sequential filters (including conditional RUWE per NSS
+  solution_type, HGCA Brandt 2024 chi-squared tier filtering, proper-motion-
+  corrected exoplanet.eu coord cross-match at 10 arcsec radius, Halbwachs
+  FluxRatio + direct-method M_2, both-estimates-stellar M_2 rejection,
+  the Gaia DR3 documented false-positive list, and (v1.17.0) Filter #29
+  Gaia SB2/SB2C double-lined rejection), the pipeline produces a list of
+  26 tentative substellar candidates: 11 from NSS Orbital/Acceleration,
+  plus 15 from the v1.16.0 multi-channel SB1 pool expansion
+  (3 HGCA-corroborated: HD 156239, HD 156342, HD 11042;
+  3 Tycho-Gaia PMa CORROBORATED-tier original pool: HD 343905, HD 199695,
+  CD-70 5; 3 Tycho-Gaia PMa FLAG-tier strong-BD original pool: HD 83408,
+  HD 153386, HD 221068; 3 Tycho-Gaia PMa CORROBORATED-tier widened-66
+  strong-BD: HD 22782, HD 1912, HD 90072; 3 Tycho-Gaia PMa CORROBORATED-tier
+  widened-502 borderline-BD: TYC 4291-119-1, HD 114124, BD+37 3282;
+  1 HIP NSS-orbital x Gaia DR3 SB1 dual-detected: BD+14 4993 = HIP 115718).
+  The v1.16.0 release also retrieved the full Hipparcos van Leeuwen 2007 NSS
+  catalog (117,955 rows), which revealed HD 104828 has HIP Sn=7
+  stochastic-motion classification - making it the project's first
+  triple-corroborated candidate (HIP Sn=7 + HGCA chi^2=23.6 + Gaia DR3 NSS
+  Acceleration9). v1.17.0 added an independent leak-free negative control set
+  (24 stellar imposters labelled by the Gaia SB2/SB2C and APOGEE-SB2 channels,
+  disjoint from every cascade filter) measuring out-of-sample specificity at
+  0.33 (Wilson 95% CI 0.16-0.56); it exposed the absence of a Gaia
+  double-lined-binary filter and caught one headline false positive, HD 76078
+  (a Gaia SB2 stellar binary, K1=18.8/K2=17.6 km/s), which was removed (27 ->
+  26) and the gap closed by Filter #29. None of the 26 are confirmed by
+  independent orbital characterization. Status is experimental archival
+  mining; confirmation requires Gaia DR4 (Dec 2026 expected) or new
+  ground-based RV observations.
 keywords:
   - "Gaia DR3"
   - "non-single stars"
@@ -33,6 +52,8 @@ keywords:
   - "Hipparcos-Gaia proper motion anomaly"
   - "filter cascade"
   - "tentative candidate"
+  - "spectroscopic binary"
+  - "negative control"
 license: "CC-BY-4.0"
-version: "1.15.0"
-date-released: "2026-05-17"
+version: "1.17.0"
+date-released: "2026-05-18"

@@ -247,3 +247,81 @@ def test_wd_mhost_gap_documented_as_pending():
     assert wd_id in w["source_id"].to_list(), (
         "WD candidate should be in wd_low_mass_companion_candidates.csv"
     )
+
+
+def test_filter29_sb2_rejection_catches_hd76078():
+    """Filter #29 (Gaia SB2/SB2C rejection), added v1.16.0.
+
+    The independent negative-control set (2026-05-17) revealed the cascade
+    had no filter on the Gaia DR3 spectroscopic-binary (SB2/SB2C) channel.
+    Out-of-sample specificity against leak-free SB2 stellar imposters was
+    only 0.33. One escape, HD 76078 (Gaia 1017645329162554752), had reached
+    the headline candidate list as a false positive: it carries a Gaia SB2
+    solution (K1=18.8, K2=17.6 km/s, sig=92) — a double-lined stellar binary.
+
+    Filter #29 rejects any source carrying a Gaia SB2/SB2C solution (a
+    measured K2 means a luminous secondary => stellar, not substellar).
+
+    This test pins down three things:
+      1. HD 76078 is no longer in the headline candidate list.
+      2. HD 76078 IS in cascade_byproducts.csv tagged as SB2 stellar.
+      3. Filter #29 logic rejects a known SB2 source and passes a non-SB2.
+    """
+    import sys
+    from pathlib import Path
+
+    repo = Path("/tmp/gaia-novelty-publication")
+    sys.path.insert(0, str(repo / "scripts"))
+    import pipeline_v11_sb2_filter_2026_05_17 as v11
+
+    HD76078 = 1017645329162554752
+
+    # 1. Removed from headline
+    nov = pl.read_csv(repo / "novelty_candidates.csv",
+                       schema_overrides={"gaia_dr3_source_id": pl.Int64})
+    assert HD76078 not in nov["gaia_dr3_source_id"].to_list(), (
+        "HD 76078 (Gaia SB2 stellar binary) must NOT be in the headline list"
+    )
+
+    # 2. Present in byproducts, tagged SB2 stellar
+    byp = pl.read_csv(repo / "cascade_byproducts.csv",
+                       schema_overrides={"gaia_dr3_source_id": pl.Int64})
+    hd = byp.filter(pl.col("gaia_dr3_source_id") == HD76078)
+    assert len(hd) == 1, "HD 76078 must be in cascade_byproducts.csv"
+    assert "sb2" in hd["category"][0].lower(), (
+        "HD 76078 byproduct category must reference SB2"
+    )
+
+    # 3. Filter logic: SB2 source fails, non-SB2 passes
+    sb2_ids = v11.load_sb2_source_ids()
+    assert HD76078 in sb2_ids, "HD 76078 must be in the SB2 source-id set"
+    assert v11.filter29_sb2_rejection({"source_id": HD76078}, sb2_ids) is False, (
+        "Filter #29 must REJECT (return False for) the HD 76078 SB2 binary"
+    )
+    # A clearly non-SB2 headline survivor must pass
+    hd101767 = 841536616165020416
+    assert v11.filter29_sb2_rejection({"source_id": hd101767}, sb2_ids) is True, (
+        "Filter #29 must PASS (return True for) a non-SB2 source"
+    )
+
+
+def test_filter29_no_headline_candidate_has_gaia_sb2():
+    """No remaining headline candidate carries a Gaia SB2/SB2C solution.
+
+    After HD 76078's removal, the 26-source headline list must be free of
+    any Gaia double-lined-binary source. This guards against a future
+    promotion re-introducing an SB2 stellar binary.
+    """
+    import sys
+    from pathlib import Path
+
+    repo = Path("/tmp/gaia-novelty-publication")
+    sys.path.insert(0, str(repo / "scripts"))
+    import pipeline_v11_sb2_filter_2026_05_17 as v11
+
+    sb2_ids = v11.load_sb2_source_ids()
+    nov = pl.read_csv(repo / "novelty_candidates.csv",
+                       schema_overrides={"gaia_dr3_source_id": pl.Int64})
+    headline_ids = set(int(x) for x in nov["gaia_dr3_source_id"].drop_nulls().to_list())
+    overlap = headline_ids & sb2_ids
+    assert not overlap, f"Headline candidates with Gaia SB2 solution: {overlap}"

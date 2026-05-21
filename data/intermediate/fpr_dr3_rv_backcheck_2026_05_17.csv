@@ -1,0 +1,5 @@
+table,context,candidates_hit,note
+gaiadr3.epoch_radial_velocity,DR3 (not FPR) - documented for reference,-1,ERR:HTTPError
+gaiadr3.vari_rad_vel_statistics,DR3 (not FPR) - documented for reference,0,OK
+gaiadr3.nss_acceleration_astro,DR3 NSS (expected hits = our origin pool),2,OK
+gaiadr3.nss_two_body_orbit,DR3 NSS (expected hits = our origin pool),11,OK
