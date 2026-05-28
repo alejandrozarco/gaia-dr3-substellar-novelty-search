@@ -144,6 +144,7 @@ across all inclinations.
 | Gaia DR3 411532290151732992               | Already in Shahaf+ 2023 Triage I (M_2_min = 1.75) |
 | Gaia DR3 2899685738980957568              | Already in Shahaf+ 2023 Triage I (M_2_min = 1.58) |
 | Gaia DR3 504135672000072064               | Already in Shahaf+ 2023 Triage I (M_2_min = 1.30) |
+| Gaia DR3 1985832181476519936 (HD 216783)  | Gaia MSC luminous-binary fit (`logposterior_msc > 50`) AND DSC `binary_prob > 0.5` — near-certain stellar-binary contaminant |
 
 ## Pile F — CV-period orbital periods (full table)
 
