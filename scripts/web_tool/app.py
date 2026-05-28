@@ -2115,6 +2115,9 @@ def main():
                    'cascade scope (e.g. NSS Eclipsing).')
 
     # ----------------------------- HGCA lookup ----------------------------
+    # Source coordinates pulled here once so both the PMa double-panel below
+    # and the Archival RV / GALEX panels further down can reference them.
+    ra_q = row.get('ra'); dec_q = row.get('dec')
     st.subheader('Astrometric proper-motion-anomaly channels')
     st.caption('Two long-baseline PMa catalogs — HGCA Brandt 2021 (J/ApJS/254/42, '
                'Hipparcos+Gaia, ~25-yr baseline) and Kervella H2G2 2022 (J/A+A/657/A7, '
@@ -2185,7 +2188,7 @@ def main():
     # Multi-epoch RV from RAVE/LAMOST/APOGEE/GALAH — the cheapest second-method
     # channel for a Gaia NSS candidate.  Any archive with >= 2 epochs spanning
     # >30 days directly tests the NSS K_1 prediction.
-    ra_q = row.get('ra'); dec_q = row.get('dec')
+    # (ra_q, dec_q already set above in the PMa section.)
     # Open the archival-RV expander by default when the cascade had no NSS row
     # — that's the HD 157033 case where the verdict comes ENTIRELY from archival
     # channels and the user shouldn't have to hunt for it.
