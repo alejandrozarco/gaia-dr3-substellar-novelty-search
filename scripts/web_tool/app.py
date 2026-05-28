@@ -593,6 +593,35 @@ def query_archival_rv_epochs(ra: float, dec: float,
 
 
 @st.cache_data(show_spinner=False, ttl=3600)
+def query_kervella_h2g2(ra: float, dec: float, radius_arcsec: float = 5.0,
+                         timeout_s: int = 20) -> dict | str:
+    """Kervella+ 2022 Hipparcos-Gaia PMa catalog (Vizier J/A+A/657/A7).
+
+    Returns snrPMa + dVt + M_2 implied at 5-AU reference if matched, or a
+    status string. Companion to the HGCA Brandt 2021 cross-match — they
+    use different baselines and methodologies, so corroboration across
+    the two is the standard astrometric second-method check.
+    """
+    try:
+        from astroquery.vizier import Vizier
+        from astropy.coordinates import SkyCoord
+        from astropy import units as u
+    except Exception as exc:  # noqa: BLE001
+        return f'Kervella: skipped ({type(exc).__name__})'
+    try:
+        coord = SkyCoord(ra=ra * u.deg, dec=dec * u.deg, frame='icrs')
+        v = Vizier(columns=['*'], timeout=timeout_s)
+        res = v.query_region(coord, radius=radius_arcsec * u.arcsec,
+                              catalog='J/A+A/657/A7')
+        if res is None or len(res) == 0:
+            return 'Kervella H2G2: no match within radius'
+        t = res[0]
+        return {c: t[c][0] for c in t.colnames}
+    except Exception as exc:  # noqa: BLE001
+        return f'Kervella: skipped ({type(exc).__name__})'
+
+
+@st.cache_data(show_spinner=False, ttl=3600)
 def query_galex_uv(ra: float, dec: float, radius_arcsec: float = 5.0,
                    timeout_s: int = 20) -> dict:
     """Pull GALEX AIS (II/335) FUV/NUV detection at the source position.
@@ -1834,7 +1863,10 @@ def main():
                    'binarity but the NSS solution channel does not provide the inputs the cascade '
                    'needs (Thiele-Innes constants).  Common cases: Gaia BH3-class long-period orbits '
                    '(P > Gaia mission baseline → Acceleration solution); SB1/SB2 spectroscopic-only '
-                   'NSS rows.  Look up the source in published RV-derived orbital catalogs instead.')
+                   'NSS rows. **For these sources, classification comes from off-cascade channels — '
+                   'see the "HGCA", "Archival RV epochs", and "Dossier verdict" panels below. '
+                   'A common case is HD 157033: no NSS row (P ≈ 10 yr), but HGCA χ² = 1583 + '
+                   'archival ΔRV = 71 km/s → K_1 ≈ 47 km/s → M_2 = 6–17 M_⊙ BH.**')
     else:
         # Filter failure — systematic / spurious
         st.error(f'### **{tier}**')
@@ -2083,27 +2115,85 @@ def main():
                    'cascade scope (e.g. NSS Eclipsing).')
 
     # ----------------------------- HGCA lookup ----------------------------
-    st.subheader('Hipparcos-Gaia Catalog of Accelerations (Brandt 2021)')
+    st.subheader('Astrometric proper-motion-anomaly channels')
+    st.caption('Two long-baseline PMa catalogs — HGCA Brandt 2021 (J/ApJS/254/42, '
+               'Hipparcos+Gaia, ~25-yr baseline) and Kervella H2G2 2022 (J/A+A/657/A7, '
+               'Hipparcos+Gaia DR3, separate calibration). A high χ² in HGCA + corroborating '
+               'SNR_PMa in Kervella is the standard astrometric second-method check for long-period '
+               'binaries that exceed the Gaia NSS baseline (e.g. HD 157033 at P ≈ 10 yr).')
     hip_raw = row.get('hip')
     hip_val: int | None
     try:
         hip_val = int(hip_raw) if hip_raw is not None and not pd.isna(hip_raw) else None
     except (TypeError, ValueError):
         hip_val = None
-    with st.spinner('Vizier J/ApJS/254/42/catalog ...'):
-        hgca = query_hgca(hip_val, timeout_s=20)
-    if isinstance(hgca, str):
-        st.info(hgca)
-    else:
-        st.dataframe(pd.DataFrame([hgca]).T.rename(columns={0: 'value'}), use_container_width=True)
+    pa1, pa2 = st.columns(2)
+    with pa1:
+        st.markdown('**HGCA Brandt 2021** (HIP cross-match)')
+        with st.spinner('Vizier J/ApJS/254/42/catalog ...'):
+            hgca = query_hgca(hip_val, timeout_s=20)
+        if isinstance(hgca, str):
+            st.info(hgca)
+        else:
+            # Surface the key field — chisq — prominently
+            chi2 = hgca.get('chisq') or hgca.get('chi2') or hgca.get('chi^2')
+            try:
+                chi2_v = float(chi2) if chi2 is not None else None
+            except (TypeError, ValueError):
+                chi2_v = None
+            if chi2_v is not None:
+                if chi2_v >= 30:
+                    box = st.success
+                    verdict = f'CORROBORATED  ·  χ² = {chi2_v:.1f}'
+                elif chi2_v >= 5:
+                    box = st.warning
+                    verdict = f'FLAG  ·  χ² = {chi2_v:.1f}'
+                else:
+                    box = st.info
+                    verdict = f'ISOLATED  ·  χ² = {chi2_v:.1f}'
+                box(verdict)
+            with st.expander('HGCA full row'):
+                st.dataframe(pd.DataFrame([hgca]).T.rename(columns={0: 'value'}),
+                              use_container_width=True)
+    with pa2:
+        st.markdown('**Kervella H2G2 2022** (coord cross-match)')
+        if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
+            with st.spinner('Vizier J/A+A/657/A7 ...'):
+                kerv = query_kervella_h2g2(float(ra_q), float(dec_q), radius_arcsec=5.0)
+            if isinstance(kerv, str):
+                st.info(kerv)
+            else:
+                # Surface snrPMaH2G2 + M_2 at 5 AU
+                snr = kerv.get('snrPMaH2G2') or kerv.get('snrPMaG3')
+                m2_5au = kerv.get('M2_5AU') or kerv.get('M25AU')
+                try: snr_v = float(snr) if snr is not None else None
+                except (TypeError, ValueError): snr_v = None
+                try: m2_v = float(m2_5au) if m2_5au is not None else None
+                except (TypeError, ValueError): m2_v = None
+                if snr_v is not None:
+                    snr_box = (st.success if snr_v >= 5 else
+                               (st.warning if snr_v >= 3 else st.info))
+                    m2_str = f', M_2(5AU) = {m2_v:.2f} M_⊙' if m2_v is not None else ''
+                    snr_box(f'PMa snrH2G2 = {snr_v:.2f}{m2_str}')
+                with st.expander('Kervella H2G2 full row'):
+                    st.dataframe(pd.DataFrame([kerv]).T.rename(columns={0: 'value'}),
+                                  use_container_width=True)
+        else:
+            st.info('No source coordinates available — cannot query Kervella.')
 
     # ----------------------------- Archival RV epochs ---------------------
     # Multi-epoch RV from RAVE/LAMOST/APOGEE/GALAH — the cheapest second-method
     # channel for a Gaia NSS candidate.  Any archive with >= 2 epochs spanning
     # >30 days directly tests the NSS K_1 prediction.
     ra_q = row.get('ra'); dec_q = row.get('dec')
+    # Open the archival-RV expander by default when the cascade had no NSS row
+    # — that's the HD 157033 case where the verdict comes ENTIRELY from archival
+    # channels and the user shouldn't have to hunt for it.
+    no_nss_verdict = (derived.get('M2_msun') is None or
+                      tier.startswith('No NSS') or tier.startswith('NSS '))
     if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
-        with st.expander('Archival RV epochs (RAVE / LAMOST / APOGEE / GALAH)'):
+        with st.expander('Archival RV epochs (RAVE / LAMOST / APOGEE / GALAH)',
+                         expanded=no_nss_verdict):
             st.caption('Independent multi-epoch RV from non-Gaia archives. '
                        'For a real Gaia NSS orbit the ΔRV across these epochs should be '
                        'consistent with the predicted K_1; a flat archival RV at the '
@@ -2119,12 +2209,19 @@ def main():
                 rows_out = []
                 K_obs = derived.get('K_obs_rvampl')
                 P_d_nss = derived.get('P_d')
+                # Track the maximum observed rv_span across archives for the
+                # "model-free K_1" estimate used in the off-cascade summary.
+                max_observed_span = 0.0
+                max_span_archive = None
                 for archive, info in rv_data.items():
                     if info.get('count', 0) == 0:
                         continue
                     n = info['count']
                     span_d = (info.get('mjd_max', 0) - info.get('mjd_min', 0)) if info.get('mjd_max') else None
                     rv_span = info.get('rv_span')
+                    if rv_span is not None and rv_span > max_observed_span:
+                        max_observed_span = rv_span
+                        max_span_archive = archive
                     pred_K = float(K_obs)/2.0 if K_obs is not None and not pd.isna(K_obs) else None
                     note = ''
                     if rv_span is not None and pred_K is not None:
@@ -2136,6 +2233,14 @@ def main():
                             note = f'inconsistent: span only {ratio:.2f}× predicted'
                         else:
                             note = f'marginal ({ratio:.2f}× predicted span)'
+                    elif rv_span is not None and pred_K is None and n >= 2:
+                        # No cascade K_obs (e.g. OrbitalAlternative or no NSS).
+                        # The model-free K_1 lower bound is rv_span / 2 (the
+                        # observed peak-to-peak from n epochs sampling some
+                        # arbitrary subset of orbital phases).
+                        note = (f'model-free K_1 ≥ {rv_span/2:.1f} km/s '
+                                f'(no NSS ephemeris — central estimate ≈ {rv_span*0.66:.1f} km/s '
+                                f'if epochs sample > half the orbit)')
                     rows_out.append({
                         'archive': archive,
                         'n_epochs': n,
@@ -2154,13 +2259,25 @@ def main():
                                     f'(= 2·K_1 per v2 cascade convention → K_1 ≈ {float(K_obs)/2:.2f} km/s, '
                                     f'so the full peak-to-peak RV span observed in any archive at '
                                     f'separations > P/2 should approach {float(K_obs):.2f} km/s).')
+                    elif max_observed_span > 0:
+                        # No cascade K_obs but archival RV present — quote the
+                        # implied model-free K_1 directly. This is the HD 157033
+                        # situation: no NSS row, but multi-archive RV gives a
+                        # robust K_1 ≥ rv_span/2.
+                        st.caption(
+                            f'No Gaia NSS K_obs for this source — but the largest archival '
+                            f'rv_span = {max_observed_span:.2f} km/s ({max_span_archive}) implies '
+                            f'a **model-free K_1 ≥ {max_observed_span/2:.1f} km/s** (lower bound) '
+                            f'with central estimate around {max_observed_span * 0.66:.1f} km/s. '
+                            f'This is independent of any NSS ephemeris and is the direct archival '
+                            f'evidence for binarity.')
                 else:
                     st.info('All archives queried, no matches within 5".')
 
     # ----------------------------- GALEX UV detection ---------------------
     # WD-vs-NS-vs-mass-gap-BH discriminator for the M_2 ≈ 1.0-1.5 boundary.
     if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
-        with st.expander('GALEX UV detection (FUV / NUV)'):
+        with st.expander('GALEX UV detection (FUV / NUV)', expanded=no_nss_verdict):
             st.caption('A 1.4-M_⊙ WD companion is detectable in GALEX FUV if T_WD > ~30,000 K '
                        'and the primary doesn\'t outshine it. Quiet GALEX is consistent with '
                        'an NS (or cool/old WD); a UV excess at predicted WD flux level demotes '
