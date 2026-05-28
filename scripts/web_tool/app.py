@@ -499,24 +499,60 @@ def query_gaia_live(source_id: int, timeout_s: int = 30) -> dict | None:
 
 
 @st.cache_data(show_spinner=False, ttl=3600)
-def query_hgca(hip: int | None, timeout_s: int = 20) -> dict | str:
+def query_hgca(hip: int | None,
+                ra: float | None = None, dec: float | None = None,
+                timeout_s: int = 20) -> dict | str:
     """Look up the Hipparcos-Gaia Catalog of Accelerations (Brandt 2021,
     J/ApJS/254/42) via Vizier.
 
-    Returns a dict of the matched row, or a string status message on
-    timeout/no-match so the UI can show 'HGCA: skipped (timeout)'.
+    Primary lookup is by HIP id (fast + unambiguous). When `hip` is null —
+    which is the common case for Gaia DR3 live queries, since
+    `gaiadr3.gaia_source` doesn't carry the HIP cross-id — we fall back
+    to a 5″ cone search on (ra, dec) so HGCA still resolves for any
+    bright source.
+
+    Returns a dict of the matched row, or a string status message.
     """
-    if hip is None or (isinstance(hip, float) and math.isnan(hip)):
-        return 'HGCA: no HIP cross-match available'
     try:
         from astroquery.vizier import Vizier
-        v = Vizier(columns=['*'], timeout=timeout_s)
-        res = v.query_constraints(catalog='J/ApJS/254/42/catalog', HIP=str(int(hip)))
-        if res is None or len(res) == 0:
-            return 'HGCA: HIP not in catalog'
-        return {c: res[0][c][0] for c in res[0].colnames}
     except Exception as exc:  # noqa: BLE001
-        return f'HGCA: skipped ({type(exc).__name__})'
+        return f'HGCA: astroquery import failed ({type(exc).__name__})'
+
+    v = Vizier(columns=['*'], timeout=timeout_s)
+
+    # Path 1: HIP id (preferred)
+    hip_ok = hip is not None and not (isinstance(hip, float) and math.isnan(hip))
+    if hip_ok:
+        try:
+            res = v.query_constraints(catalog='J/ApJS/254/42/catalog', HIP=str(int(hip)))
+            if res is not None and len(res) > 0:
+                return {c: res[0][c][0] for c in res[0].colnames}
+        except Exception as exc:  # noqa: BLE001
+            # Fall through to coord lookup
+            hip_lookup_error = type(exc).__name__
+        else:
+            hip_lookup_error = None
+    else:
+        hip_lookup_error = None
+
+    # Path 2: coord cone search (fallback / no-HIP case)
+    if ra is not None and dec is not None and not pd.isna(ra) and not pd.isna(dec):
+        try:
+            from astropy.coordinates import SkyCoord
+            from astropy import units as u
+            coord = SkyCoord(ra=float(ra) * u.deg, dec=float(dec) * u.deg, frame='icrs')
+            res = v.query_region(coord, radius=5 * u.arcsec, catalog='J/ApJS/254/42/catalog')
+            if res is not None and len(res) > 0:
+                t = res[0]
+                return {c: t[c][0] for c in t.colnames}
+            return 'HGCA: no match within 5" cone'
+        except Exception as exc:  # noqa: BLE001
+            return f'HGCA: coord lookup skipped ({type(exc).__name__})'
+
+    # Neither path worked
+    if hip_ok:
+        return 'HGCA: HIP not in catalog'
+    return 'HGCA: no HIP cross-match and no coordinates supplied'
 
 
 # ---------------------------------------------------------------------------
@@ -2132,9 +2168,11 @@ def main():
         hip_val = None
     pa1, pa2 = st.columns(2)
     with pa1:
-        st.markdown('**HGCA Brandt 2021** (HIP cross-match)')
+        st.markdown('**HGCA Brandt 2021** (HIP or 5″ coord cross-match)')
         with st.spinner('Vizier J/ApJS/254/42/catalog ...'):
-            hgca = query_hgca(hip_val, timeout_s=20)
+            ra_for_hgca = float(ra_q) if ra_q is not None and not pd.isna(ra_q) else None
+            dec_for_hgca = float(dec_q) if dec_q is not None and not pd.isna(dec_q) else None
+            hgca = query_hgca(hip_val, ra=ra_for_hgca, dec=dec_for_hgca, timeout_s=20)
         if isinstance(hgca, str):
             st.info(hgca)
         else:
