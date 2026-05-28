@@ -48,10 +48,10 @@ A parallax 50% too low (plx_used = 0.67 × plx_true) inflates a_phot_AU
 by 1.5×, hence f(M) by 1.5³ ≈ 3.4×.  Since M_2 ≈ f(M) when M_2 < M_1,
 v1's M_2 is over-stated by a similar factor for affected candidates.
 
-### Measured bias for the 7 Tier-1 candidates
+### Measured bias for the original 7 Tier-1 candidates
 
 Verified by querying `gaiadr3.nss_two_body_orbit.parallax` directly for
-each of the 7 paper-ready candidates.  The ratio
+each of the original 7 v1 Tier-1 candidates.  The ratio
 `plx_NSS / plx_gaia_source` (orbit-fit ÷ single-star fit):
 
 | Source | name | plx_GS (v1) | plx_NSS | ratio | M_2 (v1) | M_2 (v2) |
@@ -204,7 +204,7 @@ which is the **deferred** extension; not in this v2 re-run.)
 
 ## Net effect on the catalog
 
-See `docs/PAPER_READY_CATALOG_v2.md` for the corrected catalog.
+See `docs/CANDIDATES.md` for the current candidate list (post-verification).
 Highlights:
 
 - All 4 "fake BH" candidates (TYC 1363, TYC 1299, TYC 2773, TYC 8785)
@@ -235,6 +235,5 @@ Highlights:
 - Halbwachs+ 2023, A&A 674, A9 — NSS DR3 Thiele-Innes formalism
 - El-Badry+ 2023, MNRAS 521, 4323 — Gaia BH2 spectroscopic orbit
 - Brandt+ 2021, ApJS 254, 42 — HGCA acceleration catalog
+- Kervella+ 2022, A&A 657, A7 — Hipparcos-Gaia H2G2 PMa catalog
 - Houk 1999 — HD 1957 spectral type G5/6 IV (Michigan Spectral Survey)
-- See `docs/HD1957_DEEP_ARCHIVAL_2026_05_28.md` for the full case study
-  that motivated Corrections A and C.

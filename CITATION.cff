@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: "Gaia DR3 NSS substellar candidate mining pipeline + tentative-candidate list"
-message: "If you use this pipeline or the tentative-candidate list in your research, please cite the Zenodo DOI (auto-generated per release) and this GitHub repository."
+title: "Gaia DR3 NSS dormant compact-object & substellar companion search"
+message: "If you use this pipeline or the candidate list, please cite the GitHub release tag and (if Zenodo-GitHub auto-archival is enabled on the release) the per-release Zenodo DOI."
 type: software
 authors:
   - given-names: "Alejandro"
@@ -9,51 +9,38 @@ authors:
     email: "alejandro.zarcos@gmail.com"
 repository-code: "https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search"
 abstract: >-
-  An archival filter-cascade pipeline that cross-correlates Gaia DR3
-  Non-Single-Star (NSS) Orbital and Acceleration tables against 30+ public
-  literature catalogs and archival radial-velocity time-series. The pipeline
-  identifies candidate substellar (13-80 M_J) companions to bright nearby
-  stars that have not been claimed in published companion catalogs. After
-  applying ~29 sequential filters (including conditional RUWE per NSS
-  solution_type, HGCA Brandt 2024 chi-squared tier filtering, proper-motion-
-  corrected exoplanet.eu coord cross-match at 10 arcsec radius, Halbwachs
-  FluxRatio + direct-method M_2, both-estimates-stellar M_2 rejection,
-  the Gaia DR3 documented false-positive list, and (v1.17.0) Filter #29
-  Gaia SB2/SB2C double-lined rejection), the pipeline produces a list of
-  26 tentative substellar candidates: 11 from NSS Orbital/Acceleration,
-  plus 15 from the v1.16.0 multi-channel SB1 pool expansion
-  (3 HGCA-corroborated: HD 156239, HD 156342, HD 11042;
-  3 Tycho-Gaia PMa CORROBORATED-tier original pool: HD 343905, HD 199695,
-  CD-70 5; 3 Tycho-Gaia PMa FLAG-tier strong-BD original pool: HD 83408,
-  HD 153386, HD 221068; 3 Tycho-Gaia PMa CORROBORATED-tier widened-66
-  strong-BD: HD 22782, HD 1912, HD 90072; 3 Tycho-Gaia PMa CORROBORATED-tier
-  widened-502 borderline-BD: TYC 4291-119-1, HD 114124, BD+37 3282;
-  1 HIP NSS-orbital x Gaia DR3 SB1 dual-detected: BD+14 4993 = HIP 115718).
-  The v1.16.0 release also retrieved the full Hipparcos van Leeuwen 2007 NSS
-  catalog (117,955 rows), which revealed HD 104828 has HIP Sn=7
-  stochastic-motion classification - making it the project's first
-  triple-corroborated candidate (HIP Sn=7 + HGCA chi^2=23.6 + Gaia DR3 NSS
-  Acceleration9). v1.17.0 added an independent leak-free negative control set
-  (24 stellar imposters labelled by the Gaia SB2/SB2C and APOGEE-SB2 channels,
-  disjoint from every cascade filter) measuring out-of-sample specificity at
-  0.33 (Wilson 95% CI 0.16-0.56); it exposed the absence of a Gaia
-  double-lined-binary filter and caught one headline false positive, HD 76078
-  (a Gaia SB2 stellar binary, K1=18.8/K2=17.6 km/s), which was removed (27 ->
-  26) and the gap closed by Filter #29. None of the 26 are confirmed by
-  independent orbital characterization. Status is experimental archival
-  mining; confirmation requires Gaia DR4 (Dec 2026 expected) or new
-  ground-based RV observations.
+  A reproducible filter-cascade pipeline that derives companion-mass
+  estimates from the Gaia DR3 Non-Single-Star (NSS) Orbital,
+  AstroSpectroSB1, and Acceleration catalogs, cross-references them
+  against published companion catalogs (HGCA Brandt 2021, Kervella H2G2
+  2022, Shahaf+ 2023 Triage I, Halbwachs+ 2023, exoplanet.eu, NASA
+  Exoplanet Archive, Gentile Fusillo 2021 Gaia WD, and ~25 other
+  external catalogs), and surfaces candidate dormant black holes,
+  neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and
+  exoplanets. v2 applies three corrections to the v1 cascade (NSS
+  parallax over gaia_source.parallax, K_obs = rv_amplitude_robust / 2,
+  Filter #30 logg fallback chain) and is validated at 93% class-level
+  recall and 14% adversarial false-positive rate against 70 published
+  systems. Independent second-method verification confirms one
+  discovery (the CV CRTS J051419+0111 via TESS eclipse at the
+  ZTF-derived 3.013-hr orbital period) and identifies ~6 strong
+  candidates pending archival or new-RV follow-up. All other v2
+  Tier-1 candidates either match published systems or have been
+  demoted to stellar binaries by second-method checks. Status is
+  experimental archival mining; new claims require independent
+  follow-up.
 keywords:
   - "Gaia DR3"
   - "non-single stars"
+  - "dormant compact objects"
+  - "neutron stars"
+  - "black holes"
   - "brown dwarfs"
   - "substellar companions"
   - "astrometric binaries"
   - "Hipparcos-Gaia proper motion anomaly"
+  - "cataclysmic variables"
   - "filter cascade"
-  - "tentative candidate"
-  - "spectroscopic binary"
-  - "negative control"
 license: "CC-BY-4.0"
-version: "1.17.0"
-date-released: "2026-05-18"
+version: "2.0.0"
+date-released: "2026-05-28"
