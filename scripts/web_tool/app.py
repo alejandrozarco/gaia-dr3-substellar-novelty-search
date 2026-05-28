@@ -268,6 +268,26 @@ def K1_kms(P_d: float, e: float, M1: float, M2: float, sini: float) -> float:
     return (num / den) / 1000.0
 
 
+def m2_from_K1(K1_kms_val: float, P_d: float, M1: float, e: float = 0.3,
+                sini: float = 1.0) -> float:
+    """Invert K_1 → M_2 by bisection on the mass-function equation.
+
+    K_1 = (2πG/P)^(1/3) * (M_2 sin i) / (M_1+M_2)^(2/3) / sqrt(1-e²)
+    Solve for M_2 given K_1, P, M_1, e, sin i.
+    """
+    if K1_kms_val <= 0 or P_d <= 0 or M1 <= 0 or e >= 1.0 or sini <= 0:
+        return 0.0
+    lo, hi = 1e-4, 1e3
+    for _ in range(80):
+        mid = 0.5 * (lo + hi)
+        K_at_mid = K1_kms(P_d, e, M1, mid, sini)
+        if K_at_mid > K1_kms_val:
+            hi = mid
+        else:
+            lo = mid
+    return 0.5 * (lo + hi)
+
+
 def filter32(K_obs_rvampl, P_d, e, M1, M2_astrom):
     """Filter #32 (apply_filter32.apply_filter32_row) — CORRECTED.
 
@@ -2541,6 +2561,101 @@ def main():
                                 f'astrometrically.')
                         st.plotly_chart(plot_archival_keplerian_fit(fit_result, all_epochs),
                                           use_container_width=True)
+
+            # ---- Off-cascade M_2 synthesis (dossier-style) ----------------
+            # When the cascade has no NSS-derived M_2 but we DO have HGCA +
+            # multi-archive RV evidence, reproduce the dossier-style off-
+            # cascade companion-mass estimate:
+            #   K_1_lb = max archival rv_span / 2          (data-driven)
+            #   P range = HGCA-implied (3-15 yr if χ²>30 — Brandt-2021 sweet
+            #             spot for the Hipparcos-Gaia baseline)
+            #   M_1 = FLAME mass (or M_1 prior slider)
+            #   M_2 = m2_from_K1(K_1_lb, P, M_1, e=0.3, sini=1) at three P
+            # This is the recipe behind the HD 157033 dossier's "M_2 = 6-17 M_⊙
+            # mass-gap BH" headline.
+            if no_nss_verdict and max_observed_span > 0:
+                # Need HGCA chi² to bracket the period range
+                hgca_chi2 = None
+                try:
+                    if isinstance(hgca, dict):
+                        for k in ('chisq', 'chi2', 'chi^2'):
+                            if k in hgca and hgca[k] is not None:
+                                hgca_chi2 = float(hgca[k]); break
+                except (TypeError, ValueError, NameError):
+                    pass
+
+                K1_lb = max_observed_span / 2.0
+                K1_central = max_observed_span * 0.66
+                M1_for_synth = float(row.get('mass_flame') or M1_prior)
+
+                if hgca_chi2 is not None and hgca_chi2 >= 30:
+                    # HGCA CORROBORATED → Brandt-2021 sweet spot P in [3, 10] yr
+                    # (matches the dossier convention used for HD 157033 etc.)
+                    P_grid_yr = [3.0, 6.5, 10.0]
+                    P_label = f'HGCA-corroborated P range [3, 10] yr (χ² = {hgca_chi2:.0f})'
+                elif hgca_chi2 is not None and hgca_chi2 >= 5:
+                    # HGCA FLAG-tier → wider range
+                    P_grid_yr = [3.0, 8.0, 15.0]
+                    P_label = f'HGCA-flagged P range [3, 15] yr (χ² = {hgca_chi2:.0f})'
+                else:
+                    # No HGCA constraint → broader range
+                    P_grid_yr = [1.0, 5.0, 20.0]
+                    P_label = 'plausible P range [1, 20] yr (no HGCA constraint)'
+
+                st.markdown('---')
+                st.markdown('### Off-cascade M_2 synthesis')
+                st.caption(
+                    f'Same recipe the dossiers use when the cascade has no NSS row. '
+                    f'Inputs: model-free K_1 lower bound from the max archival rv_span '
+                    f'(`{max_observed_span:.2f}` km/s in `{max_span_archive}`) → K_1 ≥ '
+                    f'`{K1_lb:.1f}` km/s, central ≈ `{K1_central:.1f}` km/s. '
+                    f'M_1 = `{M1_for_synth:.2f}` M_⊙ (FLAME / prior slider). '
+                    f'Period bracketed by {P_label}. e = 0.3 assumed, sin i = 1.')
+
+                # Compute M_2 at each (P, K_1_assumption) corner
+                M2_table = []
+                for P_yr in P_grid_yr:
+                    P_d = P_yr * 365.25
+                    M2_lb = m2_from_K1(K1_lb, P_d, M1_for_synth, e=0.3, sini=1.0)
+                    M2_central = m2_from_K1(K1_central, P_d, M1_for_synth, e=0.3, sini=1.0)
+                    M2_table.append({
+                        'P (yr)':        f'{P_yr:.1f}',
+                        'K_1 ≥ (km/s)':  f'{K1_lb:.1f}',
+                        'M_2 lower bound (M_⊙)': f'{M2_lb:.2f}',
+                        'K_1 central (km/s)':  f'{K1_central:.1f}',
+                        'M_2 central (M_⊙)':   f'{M2_central:.2f}',
+                    })
+                st.dataframe(pd.DataFrame(M2_table), hide_index=True,
+                              use_container_width=True)
+
+                # Headline metric: M_2 range using ONLY the conservative
+                # K_1 lower bound across the P grid. This matches the dossier
+                # convention (HD 157033 quote: M_2 = 6-17 M_⊙ over P ∈ [3, 10]
+                # yr at K_1 ≥ 35.5 km/s).
+                all_M2_lb = []
+                for row_d in M2_table:
+                    try:
+                        all_M2_lb.append(float(row_d['M_2 lower bound (M_⊙)']))
+                    except (TypeError, ValueError):
+                        pass
+                if all_M2_lb:
+                    M2_min, M2_max = min(all_M2_lb), max(all_M2_lb)
+                    if M2_max >= 3.0:
+                        verdict_box = st.success
+                        verdict = (f'**Off-cascade M_2 range = {M2_min:.1f}–{M2_max:.1f} M_⊙ '
+                                   f'→ stellar-mass BH territory** at the upper end. ')
+                    elif M2_max >= 1.4:
+                        verdict_box = st.warning
+                        verdict = (f'**Off-cascade M_2 range = {M2_min:.1f}–{M2_max:.1f} M_⊙ '
+                                   f'→ NS / mass-gap territory**. ')
+                    else:
+                        verdict_box = st.info
+                        verdict = (f'**Off-cascade M_2 range = {M2_min:.1f}–{M2_max:.1f} M_⊙ '
+                                   f'→ WD / low-mass companion**. ')
+                    verdict_box(verdict + 'Reproduces the dossier-style headline directly '
+                                'from the displayed archival inputs. Spans the full P bracket; '
+                                'tightening either K_1 or P with new RV / longer-baseline PMa '
+                                'collapses the range.')
 
     # ----------------------------- GALEX UV detection ---------------------
     # WD-vs-NS-vs-mass-gap-BH discriminator for the M_2 ≈ 1.0-1.5 boundary.
