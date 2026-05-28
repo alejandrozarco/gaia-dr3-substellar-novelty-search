@@ -34,11 +34,16 @@ all four filter verdicts + reasons.
 
 | Field | Value |
 |---|---|
-| Class | CV (DN, in the orbital-period gap) |
+| Class | CV — SU UMa subclass DN, in the orbital-period gap |
 | RA, Dec | 78.583, +1.189 |
 | G | 15.40 |
-| First channel | ZTF DR23 orbital period = 180.05 min (3.013 hr) |
-| Second channel | TESS photometric eclipse, 25% depth at the ZTF period |
+| First channel | ZTF DR23: P = 180.770 ± 0.001 min = 3.013 hr (BLS power 43,842) |
+| Second channel | TESS S98 eclipse at the ZTF period — **median quiescent depth = 71%, individual eclipses > 98% flux removed**. Near-total eclipse at i ≈ 84°. Headline "25%" was the phase-bin-averaged dilution; per-eclipse measurement is much deeper. |
+| Superoutburst | ZTF caught a 7-day g = 14.41 superoutburst (2023-09-15 → 22) confirming SU UMa subclass |
+| Component masses (Knigge 2011 donor sequence at P = 3.013 hr) | M_WD ≈ 0.70–0.90 M_⊙, M_donor ≈ 0.20–0.30 M_⊙, q ≈ 0.31, i ≈ 84° |
+| Novelty | 14 CV catalogs queried (RKcat 7.24, Hardy 2017, Pala 2019/2020, Bruch 2024, Inight 2019/2021/2023a/2023b/2024, CuPS-ETV) — no prior orbital period for this source. SIMBAD has 2 ingest bibcodes (Drake+ 2014, Coppejans+ 2016 DN class) — neither measured P_orb. |
+| QSO false-positive | Gaia DR3 `in_qso_candidates = True` + DSC quasar prob = 0.994 — known DSC failure mode for blue + variable CVs (Pala 2020, Inight 2023). CV identification overrides. |
+| Dossier | `docs/dossiers/CRTS_J051419+0111_DOSSIER_2026_05_28.md` |
 
 ### Gaia DR3 3155543945892767232
 

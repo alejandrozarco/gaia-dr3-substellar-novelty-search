@@ -1,4 +1,4 @@
-"""Gaia DR3 Dormant Compact-Object Cascade — single-source web tool prototype.
+"""Gaia DR3 NSS companion-mass cascade — single-source web tool prototype.
 
 A Streamlit front-end onto the same cascade that scripts/streaming/consumer.py
 runs in bulk over the Gaia DR3 NSS catalog.  Filters #29–#32 use the EXACT
@@ -1563,12 +1563,14 @@ def plot_cascade_ladder(derived: dict) -> go.Figure:
 # ---------------------------------------------------------------------------
 
 def main():
-    st.set_page_config(page_title='Gaia DR3 Dormant Compact-Object Cascade',
+    st.set_page_config(page_title='Gaia DR3 NSS companion-mass cascade',
                        layout='wide')
 
-    st.title('Gaia DR3 Dormant Compact-Object Cascade')
-    st.caption('Filters #29 – #32 applied to a single Gaia DR3 source.  '
-               'Mirrors the bulk pipeline in `scripts/streaming/consumer.py`.')
+    st.title('Gaia DR3 NSS companion-mass cascade')
+    st.caption('Filter cascade for Gaia DR3 Non-Single-Star companions across the full '
+               'mass spectrum — planet-mass, brown dwarf, M-dwarf, white dwarf, '
+               'and dormant compact-object (NS / BH) regimes. Filters #29 – #32 applied '
+               'to a single source. Mirrors the bulk pipeline in `scripts/streaming/`.')
 
     with st.sidebar:
         st.header('Input')
