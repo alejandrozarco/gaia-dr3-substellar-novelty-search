@@ -2289,8 +2289,25 @@ def main():
                         if k in hgca_pre and hgca_pre[k] is not None:
                             try: hgca_chi2_pre = float(hgca_pre[k]); break
                             except (TypeError, ValueError): pass
+                # Determine K_1 source: prefer the archival rv_span (longer
+                # baseline, samples more of the orbit), fall back to Gaia's
+                # own rv_amplitude_robust if archival is empty.
+                K1_central = None
+                K1_source_str = None
                 if rv_span_max > 0:
                     K1_central = rv_span_max * 0.66
+                    K1_source_str = (f'0.66 × max archival rv_span '
+                                      f'{rv_span_max:.1f} km/s')
+                else:
+                    try:
+                        gaia_rv_amp = float(row.get('rv_amplitude_robust'))
+                        if gaia_rv_amp > 0 and not math.isnan(gaia_rv_amp):
+                            K1_central = gaia_rv_amp / 2.0
+                            K1_source_str = (f'Gaia rv_amplitude_robust = '
+                                             f'{gaia_rv_amp:.2f} km/s (÷2 = K_1)')
+                    except (TypeError, ValueError):
+                        pass
+                if K1_central is not None and K1_central > 0:
                     # Pick P at the centre of the HGCA-implied range
                     if hgca_chi2_pre is not None and hgca_chi2_pre >= 30:
                         P_assumed_yr = 6.5
@@ -2306,6 +2323,7 @@ def main():
                         'P_yr': P_assumed_yr,
                         'e': 0.3,
                         'K1': K1_central,
+                        'K1_source': K1_source_str,
                         'M1': M1_pre,
                         'M2': M2_synth,
                         'hgca_chi2': hgca_chi2_pre,
@@ -2318,9 +2336,9 @@ def main():
             st.caption(
                 f'Phase curve below is **synthesised** from the off-cascade '
                 f'evidence (no NSS orbital solution exists). Assumed P = '
-                f'{synth_orbit["P_yr"]:.1f} yr (centre of HGCA-corroborated range), '
-                f'K_1 ≈ {synth_orbit["K1"]:.1f} km/s (= 0.66 × max archival rv_span '
-                f'{synth_orbit["rv_span"]:.1f} km/s), e = 0.3 (typical). '
+                f'{synth_orbit["P_yr"]:.1f} yr (centre of HGCA-implied range), '
+                f'K_1 ≈ {synth_orbit["K1"]:.1f} km/s ({synth_orbit["K1_source"]}), '
+                f'e = 0.3 (typical). '
                 f'Implied M_2 ≈ {synth_orbit["M2"]:.1f} M_⊙ at this P. '
                 f'**Curve is for illustration of the expected orbit; the K_1 '
                 f'value is the displayed off-cascade central estimate.**')
