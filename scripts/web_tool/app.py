@@ -1282,15 +1282,17 @@ def plot_hr(row: dict, derived: dict) -> go.Figure:
                               name='Giant branch (sketch)',
                               line=dict(color='orange', width=2)))
     fig.add_trace(go.Scatter(x=[bp_rp], y=[M_G], mode='markers+text',
-                              name=f'Target ({cls.replace("_", " ")})',
-                              text=[f'  M_G={M_G:.2f}'], textposition='middle right',
+                              name=f'Primary (host) — companion class: {cls.replace("_", " ")}',
+                              text=[f'  Primary M_G={M_G:.2f}'], textposition='middle right',
                               marker=dict(size=16, color=cls_color, symbol='circle',
                                           line=dict(color='white', width=2)),
-                              hovertemplate=(f'BP−RP = {bp_rp:.3f}<br>'
+                              hovertemplate=(f'<b>Primary (visible host)</b><br>'
+                                              f'BP−RP = {bp_rp:.3f}<br>'
                                               f'M_G = {M_G:.2f}<br>'
-                                              f'class = {cls}<extra></extra>')))
+                                              f'Cascade class for companion = {cls}<br>'
+                                              f'(The companion is dark — no HR position)<extra></extra>')))
     fig.update_layout(
-        title=dict(text='HR diagram  ·  M_G vs BP−RP',
+        title=dict(text='HR diagram (primary)  ·  M_G vs BP−RP',
                     x=0.5, xanchor='center', y=0.95, yanchor='top',
                     font=dict(size=14)),
         xaxis_title='BP-RP (colour)', yaxis_title='M_G (absolute magnitude)',
@@ -1367,17 +1369,22 @@ def plot_kiel(row: dict, derived: dict) -> go.Figure:
                         showarrow=False, font=dict(size=10, color='#d62728'),
                         xanchor='center', yanchor='top')
 
-    # Target marker
+    # Primary-star marker. Different colour + circle (not star) from the
+    # mass-function plot, where the green star = the M_2 companion at sin i = 1.
+    # The Kiel diagram only shows the primary — the companion is dark and has
+    # no measurable Teff / log g.
     if teff_v is not None and logg_v is not None:
         fig.add_trace(go.Scatter(
             x=[teff_v], y=[logg_v], mode='markers+text',
-            text=[f'  {sp["sp_full"]}' if sp['sp_full'] != 'unknown' else ''],
+            text=[f'  Primary: {sp["sp_full"]}' if sp['sp_full'] != 'unknown' else '  Primary'],
             textposition='middle right',
-            marker=dict(size=16, color='#2ca02c', symbol='star',
+            marker=dict(size=16, color='#1f77b4', symbol='circle',
                         line=dict(color='black', width=1.5)),
-            hovertemplate=(f'Teff = {teff_v:.0f} K<br>'
+            hovertemplate=(f'<b>Primary (visible host)</b><br>'
+                            f'Teff = {teff_v:.0f} K<br>'
                             f'log g = {logg_v:.2f}<br>'
-                            f'Class = {sp["sp_full"]}<extra></extra>'),
+                            f'Class = {sp["sp_full"]}<br>'
+                            f'(The companion is dark — no Kiel position)<extra></extra>'),
             showlegend=False,
         ))
     else:
@@ -1387,7 +1394,7 @@ def plot_kiel(row: dict, derived: dict) -> go.Figure:
                             xanchor='center', yanchor='middle')
 
     fig.update_layout(
-        title=dict(text='Kiel diagram  ·  log g vs T_eff',
+        title=dict(text='Kiel diagram (primary)  ·  log g vs T_eff',
                     x=0.5, xanchor='center', y=0.95, yanchor='top',
                     font=dict(size=14)),
         xaxis_title='T_eff (K)', yaxis_title='log g',
