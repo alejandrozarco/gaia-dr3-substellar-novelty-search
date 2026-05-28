@@ -664,6 +664,74 @@ def query_tess_phase_fold(source_id: int, P_d: float,
         return {'error': f'TESS query failed: {type(exc).__name__}: {exc}'}
 
 
+@st.cache_data(show_spinner=False)
+def find_dossier(source_id: int) -> dict | None:
+    """Find any archival-deep-dive dossier in docs/dossiers/ for this source.
+
+    Parses the verdict section so the tool can surface the dossier verdict
+    alongside the cascade's mechanical tier. Important: the cascade caps at
+    Tier-2 whenever F#31/F#32 evaluate NO_DATA (e.g. OrbitalAlternative rows
+    where rv_amplitude_robust is null) — the dossier work can elevate a
+    Tier-2 to a STRONG_CANDIDATE via archival evidence the cascade doesn't
+    consider. This function surfaces that elevation.
+    """
+    dossier_dir = PROJECT_ROOT / 'docs' / 'dossiers'
+    if not dossier_dir.exists():
+        return None
+
+    # Direct source_id-named dossier files first
+    candidates = sorted(dossier_dir.glob(f'{source_id}_DOSSIER_*.md'))
+
+    # Early M-dwarf dossiers from agent K use descriptive names instead of
+    # the bare source_id. Map them so the tool finds them too.
+    NAME_MAP = {
+        5486916932205092352: 'APMPM_J0710-5704',
+        5796338299045711232: 'SCR_J1441-7338',
+        5612039087715504640: 'UCAC4_313-025977',
+    }
+    if not candidates and source_id in NAME_MAP:
+        candidates = sorted(dossier_dir.glob(f'{NAME_MAP[source_id]}_DOSSIER_*.md'))
+
+    if not candidates:
+        return None
+
+    path = candidates[-1]  # Most recent if multiple
+    try:
+        text = path.read_text()
+    except Exception:
+        return None
+
+    # Locate the verdict section — section 9.2 is the canonical home, with
+    # fallbacks for the simpler dossier formats.
+    verdict_chunk = ''
+    for marker in ('### 9.2 Verdict', '### Verdict', '## 9. Verdict',
+                    '### Final verdict', '### 9. Verdict + RV proposal'):
+        idx = text.find(marker)
+        if idx < 0:
+            continue
+        chunk = text[idx + len(marker):]
+        # Stop at next section header or horizontal rule
+        for stop in ('\n### ', '\n## ', '\n---'):
+            sidx = chunk.find(stop)
+            if sidx > 0:
+                chunk = chunk[:sidx]
+                break
+        verdict_chunk = chunk.strip()
+        break
+
+    # Extract a short label from the first bolded segment of the verdict
+    import re
+    label = ''
+    m = re.search(r'\*\*([^*]+)\*\*', verdict_chunk)
+    if m:
+        label = m.group(1).strip()
+    return {
+        'rel_path':     str(path.relative_to(PROJECT_ROOT)),
+        'verdict_text': verdict_chunk,
+        'verdict_label': label,
+    }
+
+
 def plot_tess_phase_fold(tess: dict, P_d: float) -> go.Figure:
     """Render a phase-folded TESS light curve from query_tess_phase_fold output."""
     fig = go.Figure()
@@ -1524,6 +1592,43 @@ def main():
             marker = '> this' if this_row else ''
             rows.append({'current': marker, 'tier': label, 'meaning': descr})
         st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+
+    # ----------------------------- Dossier verdict (if any) ---------------
+    # The cascade caps at Tier-2 whenever F#31/F#32 are NO_DATA. For sources
+    # that have had archival deep-dive work (BH-class targets, the LAMOST-
+    # corroborated NS, the M-dwarf super-Jupiters etc.), surface the dossier
+    # verdict here so the user is not left thinking Tier-2 is the final word.
+    try:
+        sid_for_dossier = int(sid_display)
+    except (TypeError, ValueError):
+        sid_for_dossier = None
+    if sid_for_dossier is not None:
+        dossier = find_dossier(sid_for_dossier)
+        if dossier:
+            label = dossier['verdict_label'] or '(see dossier)'
+            # Heuristic colour by verdict keyword
+            label_lower = label.lower()
+            if 'confirmed' in label_lower:
+                box = st.success
+            elif 'strong' in label_lower:
+                box = st.success
+            elif 'demoted' in label_lower or 'falsified' in label_lower or 'not_novel' in label_lower:
+                box = st.error
+            elif 'disputed' in label_lower or 'needs' in label_lower or 'ambiguous' in label_lower:
+                box = st.warning
+            else:
+                box = st.info
+            box(f'**Dossier verdict** — {label}')
+            st.caption(f'Sourced from `{dossier["rel_path"]}`. The dossier reflects archival '
+                       'second-method work (Bayesian M_2 posterior, multi-archive RV checks, '
+                       'GALEX UV, ellipsoidal photometry, HGCA / Kervella PMa) that goes beyond '
+                       'what the four cascade filters can evaluate. Where the cascade tier and '
+                       'the dossier verdict disagree (e.g. cascade = Tier-2, dossier = '
+                       'STRONG_CANDIDATE), the disagreement is by design: the cascade is the '
+                       'conservative mechanical classifier; the dossier carries the archival '
+                       'evidence.')
+            with st.expander('Full dossier verdict text'):
+                st.markdown(dossier['verdict_text'])
 
     # ----------------------------- likely object type ---------------------
     st.subheader('Likely companion type')
