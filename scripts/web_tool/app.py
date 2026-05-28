@@ -42,36 +42,54 @@ DEMO_SOURCE_ID = 2543788153077017344  # HD 1957
 # a verdict (e.g. SB1-only or Acceleration-only NSS), we surface whatever the
 # bulk runs found instead.
 PROJECT_ROOT = HERE.parent.parent  # scripts/web_tool/ → repo root
-V2_PARQUET   = PROJECT_ROOT / 'data' / 'derived' / 'main_hunt_derived_v2.parquet'
-V3_PARQUET   = PROJECT_ROOT / 'data' / 'derived' / 'acceleration_v3.parquet'
+V2_PARQUET           = PROJECT_ROOT / 'data' / 'derived' / 'main_hunt_derived_v2.parquet'
+V3_PARQUET           = PROJECT_ROOT / 'data' / 'derived' / 'acceleration_v3.parquet'
+V2_ALT_PARQUET       = PROJECT_ROOT / 'data' / 'derived' / 'main_hunt_derived_v2_alt.parquet'
+V2_RELAXED_PARQUET   = PROJECT_ROOT / 'data' / 'derived' / 'main_hunt_derived_v2_relaxed.parquet'
 
 
 # ---------------------------------------------------------------------------
 # Tier ladder — what each tier means (used in UI explainer)
 # ---------------------------------------------------------------------------
+# Each entry is (label, color, description, match_prefix).
+# `match_prefix` is a substring (or list of prefixes) that derived['tier']
+# may start with — needed because the human-readable ladder label doesn't
+# always match the verbatim tier string returned by derive_one (e.g.
+# label='Tier-2 (follow-up needed)' but tier='Tier-2 — compact-object…').
 TIER_LADDER = [
     ('Tier-1 BH discovery candidate',     '#2ca02c',
-     'M_2 ≥ 3.0 M_⊙, all four cascade filters pass — discovery-grade BH candidate, follow up with RV'),
+     'M_2 ≥ 3.0 M_⊙, all four cascade filters pass — discovery-grade BH candidate, follow up with RV',
+     'Tier-1 BH'),
     ('Tier-1 NS discovery candidate',     '#1f77b4',
-     '1.2 ≤ M_2 < 3.0 M_⊙, all filters pass — discovery-grade NS candidate, follow up with RV'),
+     '1.2 ≤ M_2 < 3.0 M_⊙, all filters pass — discovery-grade NS candidate, follow up with RV',
+     'Tier-1 NS'),
     ('Sub-Ch WD / massive WD companion',  '#9467bd',
-     '0.5 ≤ M_2 < 1.2 M_⊙, all filters pass — confirmed white-dwarf or low-mass-stellar companion (post-mass-transfer typical)'),
+     '0.5 ≤ M_2 < 1.2 M_⊙, all filters pass — confirmed white-dwarf or low-mass-stellar companion (post-mass-transfer typical)',
+     'Sub-Ch'),
     ('M-dwarf companion',                 '#bcbd22',
-     '0.08 ≤ M_2 < 0.5 M_⊙ — confirmed M-dwarf companion'),
+     '0.08 ≤ M_2 < 0.5 M_⊙ — confirmed M-dwarf companion',
+     'M-dwarf'),
     ('Brown-dwarf candidate',             '#e377c2',
-     '0.013 ≤ M_2 < 0.08 M_⊙ — confirmed sub-stellar brown-dwarf companion'),
+     '0.013 ≤ M_2 < 0.08 M_⊙ — confirmed sub-stellar brown-dwarf companion',
+     'Brown-dwarf'),
     ('Exoplanet candidate',               '#17becf',
-     'M_2 < 0.013 M_⊙ — confirmed planet-mass companion'),
-    ('Tier-2 (follow-up needed)',         '#ff7f0e',
-     'Compact-object mass but RV (F#31) is inconclusive — RV epochs would disambiguate'),
+     'M_2 < 0.013 M_⊙ — confirmed planet-mass companion',
+     'Exoplanet'),
+    ('Tier-2 (RV follow-up needed)',      '#ff7f0e',
+     'Compact-object mass but RV (F#31) is inconclusive or absent (e.g. OrbitalAlternative rows where rv_amplitude_robust is null) — RV epochs would disambiguate',
+     'Tier-2'),
     ('Stellar binary (SB2 detected)',     '#8c564b',
-     'F#29 flagged double-lined spectroscopic features — companion is luminous, not compact'),
+     'F#29 flagged double-lined spectroscopic features — companion is luminous, not compact',
+     'Stellar binary'),
     ('K-giant systematic (M_2 inflated)', '#d62728',
-     'F#30 fires — K-giant primary, photocentric chromatic bias inflates M_2 by ~2-3× (HD 1957 / 4 UMi class)'),
+     'F#30 fires — K-giant primary, photocentric chromatic bias inflates M_2 by ~2-3× (HD 1957 / 4 UMi class)',
+     'K-giant systematic'),
     ('Joint-check failure (M_2 likely overestimated)', '#d62728',
-     'F#32 fires — K_obs > K_pred(i=90°), suggests non-orbital RV noise or M_2 inflation'),
+     'F#32 fires — K_obs > K_pred(i=90°), suggests non-orbital RV noise or M_2 inflation',
+     'Joint-check failure'),
     ('Phantom RV signal (no real variability)', '#7f7f7f',
-     'F#31 fires — rv_amplitude_robust > 0 but rv_chisq_pvalue says no real variability (A-dwarf class)'),
+     'F#31 fires — rv_amplitude_robust > 0 but rv_chisq_pvalue says no real variability (A-dwarf class)',
+     'Phantom RV signal'),
 ]
 
 
@@ -118,6 +136,36 @@ def solve_m2(fM: float, M1: float) -> float:
         else:
             lo = mid
     return 0.5 * (lo + hi)
+
+
+def m2_range_isotropic_sini(fM: float, M1: float, n: int = 20000,
+                             percentiles: tuple = (16.0, 50.0, 84.0)) -> dict:
+    """Monte Carlo M_2 percentiles under an isotropic inclination prior.
+
+    Assumes cos i ~ Uniform(0, 1).  For each sin i draw, solve the photocentric
+    mass function for M_2 given the supplied M_1 point estimate.  Returns the
+    1σ-equivalent (16/50/84%) percentiles of M_2 in M_⊙, plus the underlying
+    Monte Carlo samples for further analysis.
+
+    This is *not* a full Bayesian posterior — it marginalises over inclination
+    only and treats M_1, f(M) as point estimates.  For tighter constraints
+    that incorporate Gaia DR3 RV-variability evidence and an M_1 uncertainty,
+    use the dossier-grade tooling in `scripts/streaming/v2_corrected/`.
+    """
+    import numpy as np
+    if fM is None or M1 is None or fM <= 0 or M1 <= 0:
+        return {'p16': None, 'p50': None, 'p84': None, 'samples': None}
+    rng = np.random.default_rng(42)
+    cos_i = rng.uniform(0.0, 1.0, size=n)
+    sin_i = np.sqrt(1.0 - cos_i * cos_i)
+    # Avoid sin_i == 0 (M_2 → ∞)
+    sin_i = np.clip(sin_i, 1e-4, 1.0)
+    m2_samples = np.empty(n)
+    for k in range(n):
+        m2_samples[k] = solve_m2(fM / sin_i[k] ** 3, M1)
+    p16, p50, p84 = np.percentile(m2_samples, percentiles)
+    return {'p16': float(p16), 'p50': float(p50), 'p84': float(p84),
+            'samples': m2_samples}
 
 
 def mass_class(m2: float) -> str:
@@ -194,31 +242,36 @@ def load_sample_row() -> dict:
 
 @st.cache_data(show_spinner=False)
 def lookup_in_bulk_catalogs(source_id: int) -> dict:
-    """Return any matching row from the v2 + v3 bulk-cascade outputs.
+    """Return any matching row from the bulk-cascade outputs.
 
     Cross-referencing is essential when the live single-source query lands
-    in a degenerate channel (SB1-only / Acceleration-only).  The bulk runs
-    have already computed mass-function inferences for these sources via
-    different math; this lookup surfaces what they found so the user is
-    not left with a bare "no NSS Orbital" message.
+    in a degenerate channel (SB1-only / Acceleration-only) or in a sub-pool
+    the v2 producer skipped (OrbitalAlternative, faint AstroSpectroSB1).
+    The bulk runs have already computed mass-function inferences for these
+    sources via different math; this lookup surfaces what they found so
+    the user is not left with a bare "no NSS Orbital" message.
+
+    Returns keys:
+      - 'v2'        : row from main_hunt_derived_v2.parquet (production)
+      - 'v3'        : row from acceleration_v3.parquet (Acceleration channel)
+      - 'v2_alt'    : row from main_hunt_derived_v2_alt.parquet
+                      (OrbitalAlternative ingest, today's expansion)
+      - 'v2_relaxed': row from main_hunt_derived_v2_relaxed.parquet
+                      (relaxed G<15 plx>0.5 expansion, today)
     """
-    result = {'v2': None, 'v3': None}
-    try:
-        if V2_PARQUET.exists():
-            v2 = pd.read_parquet(V2_PARQUET, columns=None)
-            r = v2[v2['source_id'] == source_id]
-            if len(r):
-                result['v2'] = r.iloc[0].to_dict()
-    except Exception:
-        pass
-    try:
-        if V3_PARQUET.exists():
-            v3 = pd.read_parquet(V3_PARQUET, columns=None)
-            r = v3[v3['source_id'] == source_id]
-            if len(r):
-                result['v3'] = r.iloc[0].to_dict()
-    except Exception:
-        pass
+    result = {'v2': None, 'v3': None, 'v2_alt': None, 'v2_relaxed': None}
+    for key, path in (('v2', V2_PARQUET),
+                       ('v3', V3_PARQUET),
+                       ('v2_alt', V2_ALT_PARQUET),
+                       ('v2_relaxed', V2_RELAXED_PARQUET)):
+        try:
+            if path.exists():
+                df = pd.read_parquet(path)
+                r = df[df['source_id'] == source_id]
+                if len(r):
+                    result[key] = r.iloc[0].to_dict()
+        except Exception:
+            pass
     return result
 
 
@@ -1112,7 +1165,9 @@ def main():
 
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric('M_2 (M_⊙)', m2_str,
-              help='Raw cascade output. ⚠ = unreliable because a systematic filter fired.')
+              help='Raw cascade output at sin i = 1 (lower bound). '
+                   'See the "M_2 (isotropic prior)" row below for the inclination-marginalized range. '
+                   '⚠ = unreliable because a systematic filter fired.')
     c2.metric('f(M) (M_⊙)', fmt(derived.get('fM_msun'), 4))
     c3.metric('a_phot (mas)', fmt(derived.get('a_phot_mas'), 3))
     c4.metric('sin i implied', fmt(derived.get('sini_implied'), 3))
@@ -1121,6 +1176,32 @@ def main():
               help='⚠ = mass class derived from a raw M_2 that a cascade filter '
                    'has flagged as unreliable.  The "Likely companion type" panel below '
                    'gives the probability spectrum after correcting for the systematic.')
+
+    # M_2 range under isotropic inclination prior — answers "what's the actual
+    # mass range?".  The headline M_2 metric above is the sin i = 1 (edge-on)
+    # value, which is a strict LOWER bound.  Marginalising over cos i ∈ [0, 1]
+    # gives the 16/50/84% range a follow-up observer should plan around.
+    fM_val = derived.get('fM_msun')
+    if fM_val is not None and not (isinstance(fM_val, float) and math.isnan(fM_val)):
+        m2_range = m2_range_isotropic_sini(float(fM_val), float(M1_prior), n=10000)
+        if m2_range['p50'] is not None:
+            r1, r2, r3, r4 = st.columns(4)
+            r1.metric('M_2 16% (M_⊙)', f"{m2_range['p16']:.3f}",
+                       help='16th percentile under isotropic inclination prior — '
+                            'i.e. 84% of equally-likely inclinations give M_2 ≥ this value.')
+            r2.metric('M_2 median (M_⊙)', f"{m2_range['p50']:.3f}",
+                       help='Median M_2 marginalising over cos i ∈ [0, 1] uniformly. '
+                            'Half of inclinations give a heavier companion, half lighter.')
+            r3.metric('M_2 84% (M_⊙)', f"{m2_range['p84']:.3f}",
+                       help='84th percentile — only 16% of equally-likely inclinations '
+                            'give a heavier companion.')
+            r4.metric('M_2 16-84 range',
+                       f"[{m2_range['p16']:.2f}, {m2_range['p84']:.2f}] M_⊙",
+                       help='1σ-equivalent range marginalising over inclination. '
+                            'Note: this assumes M_1 is exact and ignores any additional '
+                            'evidence (RV variability, ellipsoidal photometry) that would '
+                            'further constrain inclination. For tighter posteriors see '
+                            'the per-target dossiers in docs/dossiers/.')
 
     # Verdict banner — colour by category
     #   green  = compact-object discovery candidate (Tier-1 BH/NS)
@@ -1167,9 +1248,8 @@ def main():
         st.caption('Cascade ladder — every Tier-1 candidate has *passed* all four filters; '
                    '"Demoted" means a mass candidate that failed somewhere in F#29/F#30/F#32.')
         rows = []
-        for label, color, descr in TIER_LADDER:
-            this_row = tier.startswith(label) or (label == 'Demoted' and tier.startswith('Demoted')) or (
-                label == 'Rejected' and tier.startswith('Rejected'))
+        for label, color, descr, match_prefix in TIER_LADDER:
+            this_row = tier.startswith(match_prefix)
             marker = '➤  ' if this_row else '   '
             rows.append({'': marker, 'tier': label, 'meaning': descr})
         st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
@@ -1224,23 +1304,50 @@ def main():
     # in the Orbital table but DOES appear in v3 as a top BH-mass candidate
     # (M_2_median ≈ 8 M_⊙ with period degeneracy).
     bulk = lookup_in_bulk_catalogs(int(sid_display))
-    if bulk.get('v2') or bulk.get('v3'):
+    any_bulk_hit = any(bulk.get(k) for k in ('v2', 'v3', 'v2_alt', 'v2_relaxed'))
+    if any_bulk_hit:
         st.subheader('🔗 Cross-reference: bulk-cascade catalogs')
-        st.caption('This source was already processed in the bulk v2 (NSS Orbital + AstroSpectroSB1, '
-                   '56,100 sources) and/or v3 (NSS Acceleration, 16,949 sources) runs.  The bulk '
-                   'verdicts are shown below — these may add or revise the single-source verdict.')
+        st.caption('This source appears in one or more bulk-cascade outputs. v2 = production NSS Orbital + '
+                   'AstroSpectroSB1 (56,100 sources). v3 = NSS Acceleration channel (16,949). '
+                   'v2_alt = OrbitalAlternative / Validated ingest (629). '
+                   'v2_relaxed = expanded producer cuts G<15, plx>0.5 (71,346 new rows). '
+                   'The bulk verdicts are shown below — these may add or revise the single-source verdict.')
 
         if bulk.get('v2'):
             r2 = bulk['v2']
-            tier = r2.get('tier_v2', '(missing)')
+            tier_v2 = r2.get('tier_v2', '(missing)')
             M2 = r2.get('M2_msun_v2')
             M2_str = f'{float(M2):.3f}' if M2 is not None and not pd.isna(M2) else '—'
             sini = r2.get('sini_implied_v2')
             sini_str = f'{float(sini):.3f}' if sini is not None and not pd.isna(sini) else '—'
-            st.markdown(f"**v2 (NSS Orbital + AstroSpectroSB1)** &nbsp;·&nbsp; tier = **{tier}** &nbsp;·&nbsp; "
+            st.markdown(f"**v2 (NSS Orbital + AstroSpectroSB1)** &nbsp;·&nbsp; tier = **{tier_v2}** &nbsp;·&nbsp; "
                          f"M_2 = {M2_str} M_⊙ &nbsp;·&nbsp; sin i = {sini_str} &nbsp;·&nbsp; "
                          f"F#29={r2.get('filter29_v2','?')} F#30={r2.get('filter30_v2','?')} "
                          f"F#31={r2.get('filter31_v2','?')} F#32={r2.get('filter32_v2','?')}")
+
+        if bulk.get('v2_alt'):
+            ra = bulk['v2_alt']
+            tier_alt = ra.get('tier_v2', '(missing)')
+            M2_alt = ra.get('M2_msun_v2')
+            M2_alt_str = f'{float(M2_alt):.3f}' if M2_alt is not None and not pd.isna(M2_alt) else '—'
+            nss_type = ra.get('nss_solution_type', ra.get('nss_solution_type_v2', '?'))
+            st.markdown(f"**v2_alt (OrbitalAlternative / Validated channel)** &nbsp;·&nbsp; "
+                         f"nss_solution_type = `{nss_type}` &nbsp;·&nbsp; "
+                         f"tier = **{tier_alt}** &nbsp;·&nbsp; M_2 = {M2_alt_str} M_⊙")
+            st.caption('ℹ Pulled from `nss_two_body_orbit` rows that the production v2 producer '
+                       'skipped because `rv_amplitude_robust` is null for the entire OrbitalAlternative '
+                       'class. F#31/F#32 are NO_DATA → cascade caps at Tier-2 even for plausible '
+                       'compact-mass companions. Verify via HGCA / Kervella / archival RV.')
+
+        if bulk.get('v2_relaxed'):
+            rr = bulk['v2_relaxed']
+            tier_rel = rr.get('tier_v2', '(missing)')
+            M2_rel = rr.get('M2_msun_v2')
+            M2_rel_str = f'{float(M2_rel):.3f}' if M2_rel is not None and not pd.isna(M2_rel) else '—'
+            sini_rel = rr.get('sini_implied_v2')
+            sini_rel_str = f'{float(sini_rel):.3f}' if sini_rel is not None and not pd.isna(sini_rel) else '—'
+            st.markdown(f"**v2_relaxed (G<15, plx>0.5 expansion)** &nbsp;·&nbsp; tier = **{tier_rel}** &nbsp;·&nbsp; "
+                         f"M_2 = {M2_rel_str} M_⊙ &nbsp;·&nbsp; sin i = {sini_rel_str}")
 
         if bulk.get('v3'):
             r3 = bulk['v3']
@@ -1266,13 +1373,12 @@ def main():
                     f'the v3 estimate and may diagnose a hierarchical triple).'
                 )
 
-        # Bulk says nothing if both v2 and v3 are None — shouldn't get here in that case
     else:
-        # Source wasn't in either bulk run.  Most likely it's in NSS but outside
+        # Source wasn't in any bulk run.  Most likely it's in NSS but outside
         # the cuts (e.g. low significance, no NSS, or Eclipsing channel).
-        st.caption('ℹ This source was not in either bulk-cascade run (v2: NSS Orbital, '
-                   'v3: NSS Acceleration). Either no NSS solution at all, or the NSS channel '
-                   'is not covered by the current cascade scope (e.g. NSS Eclipsing).')
+        st.caption('ℹ This source was not in any bulk-cascade run (v2, v2_alt, v2_relaxed, v3). '
+                   'Either no NSS solution at all, or the NSS channel is not covered by the current '
+                   'cascade scope (e.g. NSS Eclipsing).')
 
     # ----------------------------- HGCA lookup ----------------------------
     st.subheader('Hipparcos-Gaia Catalog of Accelerations (Brandt 2021)')
