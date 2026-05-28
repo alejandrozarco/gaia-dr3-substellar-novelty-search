@@ -1,6 +1,13 @@
 cff-version: 1.2.0
 title: "Gaia DR3 NSS dormant compact-object & substellar companion search"
-message: "If you use this pipeline or the candidate list, please cite the GitHub release tag and (if Zenodo-GitHub auto-archival is enabled on the release) the per-release Zenodo DOI."
+message: "If you use this pipeline or the candidate list, please cite the concept Zenodo DOI (resolves to the latest archived release) and the GitHub release tag."
+identifiers:
+  - description: "Concept DOI (resolves to the latest archived version)"
+    type: doi
+    value: "10.5281/zenodo.20162959"
+  - description: "v1.0.0 release DOI"
+    type: doi
+    value: "10.5281/zenodo.20162960"
 type: software
 authors:
   - given-names: "Alejandro"
