@@ -42,6 +42,32 @@ all four filter verdicts + reasons.
 >
 > **Net: 0 confirmed/strong compact objects remain.** The only firmly-confirmed binaries are the SED-based WD pairs (WG 26, WDJ205650). The dormant-NS/BH list is now a set of *candidates* — best: 5858574 and 3155543 (NS-mass), HD 157033 (ambiguous). All need a clean external RV to advance.
 
+## Tier-1 NS pool triage + Shahaf+2023 cross-check (2026-05-28)
+
+All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (archival-RV census + NSS-locked Keplerian; `scripts/ns_pool_triage_2026_05_28.py`) and cross-matched to Shahaf+2023 Triage I (`scripts/ns2127900_deepdive_2026_05_28.py`), whose AMRF analysis distinguishes a single dark companion from a hierarchical triple — the discrimination the cascade itself lacks.
+
+| Triage verdict | N |
+|---|---:|
+| No archival RV (remain candidates) | 117 |
+| Inconclusive (RV, too few distinct phases) | 40 |
+| Outer-orbit RV corroborated | 2 (1 verified real) |
+| **REFUTED → demoted** | **2** |
+
+**Demoted** (archival RV grossly inconsistent with the astrometric orbit — a superposed/inner short-period binary, not the astrometric companion): Gaia DR3 **2129927539681151872** (spectroscopic f(M) ≈ 220× astrometric) and **1379150557507688960** (ruwe = 20.2; f(M) ≈ 860×).
+
+**Key finding — the compact-vs-triple problem.** Shahaf+2023 independently **corroborates the cascade masses** (M₂min consistent) but assigns most high-significance candidates a *low* compact probability — i.e. they are more likely **hierarchical triples** (an inner main-sequence pair) than single neutron stars:
+
+| Source | AMRF | M₂min | Shahaf P(compact) | Read |
+|---|---:|---:|---:|---|
+| **3378588057203660160 (HD 264291)** | 0.635 | **1.97** | **0.75** | **best compact prospect** (heavy NS / mass-gap); but marginal astrometry (sig 12.5, χ²/dof 18.6) — next deep-dive target |
+| 2127900555635640832 | 0.591 | 1.45 | **0.21** | external RV (3 APOGEE + 1 LAMOST, K₁=16.6±0.6) confirms the *outer* orbit, but Shahaf favors a triple ~4:1; M₂ at the WD/NS boundary |
+| 6419437207856851584 (sig 212) | 0.575 | 1.30 | ~0.0 | likely triple |
+| 823243942431149568 (sig 194) | 0.563 | 1.42 | ~0.0 | likely triple |
+| 5640825637852070016 (sig 295, HD 75567) | — | — | not in Shahaf | **genuinely novel**, single-method (astrometric-only, no RV, no triple test) |
+| 1714530637958169600 (sig 208) | — | — | not in Shahaf | **genuinely novel**, single-method |
+
+**Net:** the cascade masses are real and independently corroborated (Shahaf AMRF), but there is **no clean confirmed NS** — the highest-significance candidates are mostly favored to be triples. The one standout compact prospect is **HD 264291** (P(compact)=0.75, M₂min≈2.0), pending vetting of its marginal astrometric solution; two genuinely novel high-significance candidates (HD 75567, 1714530637958169600) remain untested for the triple-vs-compact ambiguity.
+
 ## Confirmed (independent 2-channel)
 
 ### CRTS J051419+0111 — ⚠ RETRACTED 2026-05-28 (no longer a confirmed detection)
