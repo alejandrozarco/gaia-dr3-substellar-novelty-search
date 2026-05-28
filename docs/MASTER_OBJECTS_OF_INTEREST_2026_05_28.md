@@ -1,8 +1,25 @@
 # Master objects of interest — all confirmed-novel candidates
 
-*Consolidated 2026-05-28. Single source of truth for every candidate currently in our discovery queue.*
+*Consolidated 2026-05-28 (post-verification-pass). Single source of truth for every candidate currently in our discovery queue.*
 
 This document supersedes all prior candidate lists (PAPER_READY_CATALOG, FINAL_VERDICT, TOP_LEADS_SUMMARY). Older catalogs are kept in `data/archive/` for reference but should NOT be used as the current candidate state.
+
+## 🔴 Important update — agent O verification pass (2026-05-28 04:30 UTC)
+
+The "discovery-grade verification" agent (`docs/DISCOVERY_GRADE_VERIFICATION_2026_05_28.md`) applied second-method archival checks to 5 priority targets. **Most candidates were demoted**:
+
+- **APMPM J0710-5704** (M-dwarf super-Jupiter): TESS 35-sector phase-fold at P=253 d shows depth = 0.18% vs predicted 6.6% for R_p=1 R_J. **Non-eclipsing**; doesn't refute the planet but cannot promote to discovery without RV.
+- **Gaia 5476986108823894400** (multi-survey K_1=163 km/s candidate): **RETRACTED.** Source is an A1IV at V=8.82, not in any Gaia NSS table. The "K_1=163" decomposes to APOGEE σ=6.96 (real) vs RAVE σ=115 km/s (RAVE pipeline noise floor, not phase-folded amplitude). The multi-survey K_1 pipeline misinterpreted RAVE scatter as orbital signal.
+- **Stefánsson 3 BDs**: only BD+35 228 has secondary signal (Kervella snrPMa=5.85, BinH2G2=1). All 3 show Kervella-M_2 a factor of 3 LOWER than NSS-M_2 → consistent with **hierarchical triples**, not BD verification. The "triple-astrometric" label was overstated.
+- **HGCA Pile A 8 "BH-class"**: 7/8 confirmed in BOTH HGCA and Kervella H2G2 (genuine 2-baseline astrometric confirmation), **but Kervella M_2 at the 5-AU reference is 0.4–2.9 M_⊙** — these are **real stellar binaries, NOT compact-object candidates.** The "BH-class" headline was a single-P scaling artifact in the original step3 inversion.
+- **HD 157033** survives (agent M dossier work): NSS plx + Kervella + HGCA all align; M_2=4 M_⊙ at P=10yr; GALAH DR4 RV time series available for free.
+
+**Net effect**: the catalog of 32 truly-novel candidates collapses to:
+- **1 confirmed discovery** (CRTS J051419+0111, TESS eclipse-confirmed CV period)
+- **3-5 strong candidates needing RV** (CV-period siblings, WD-primary pair, HD 157033, M-dwarf super-Jupiters)
+- **~22 demoted to stellar-binary class or marked as hierarchical triples** by second-method verification
+
+Below this update notice the original (pre-O) framing remains for reference, but **section status flags are updated** to reflect agent O's findings.
 
 ---
 

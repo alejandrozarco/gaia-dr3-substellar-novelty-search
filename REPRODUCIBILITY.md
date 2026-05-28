@@ -1,172 +1,103 @@
-# Reproducibility Notes
+# Reproducibility notes — v2.0.0
 
-This document describes what is and is not reproducible from the contents of this repository alone.
+This document describes how to reproduce the v2-corrected catalog from the contents of this repository plus public archive data. It supersedes the pre-v2 reproducibility notes archived at `docs/archive/root_v1/`.
 
-## Quickstart (for the benchmark / methodology validation)
+## What's reproducible from this repo alone
 
-The cascade benchmark (recall, specificity, parameter recovery vs Sahlmann 2025 truth set, documented at `BENCHMARK.md`) is **fully reproducible from this repo** with a single command, no external pipeline catalog cache required. You only need two external CSVs (Sahlmann 2025 verdicts + Gaia DR3 NSS FP list) and a Python environment.
+| Artifact | Reproducible? | How |
+|---|---|---|
+| The two cascade-correction methodology | ✓ fully | `docs/CASCADE_CORRECTIONS_2026_05_28.md` derives both corrections analytically; Gaia BH2 K_1 verification numbers are deterministic |
+| `data/derived/main_hunt_derived_v2.parquet` (the v2 catalog) | ✓ from cached data | The v1 parquet (`data/archive/v1_2026_05_27/main_hunt_derived.parquet`) plus a supplementary Gaia ADQL pull for NSS-plx + logg_gspspec_ann columns is sufficient. See `scripts/streaming/v2_corrected/run_v2.py`. |
+| `data/derived/acceleration_v3.parquet` (NSS Acceleration channel) | ✓ from fresh Gaia pull | Requires fresh ADQL queries against `gaiadr3.nss_acceleration_astro`. See `scripts/streaming/v3_acceleration/`. |
+| 70-source benchmark self-test | ✓ | `scripts/validate_cascade_extended_2026_05_28.py` pulls all 70 benchmark sources via Gaia ADQL and runs the v2 cascade. |
+| The 7-step novelty verification | ✗ requires external services | Live web queries to SIMBAD, NASA Exoplanet Archive, arXiv API, Google. Results cached at `data/candidate_dossiers/novelty_verification_2026_05_28/` for the 32 truly-novel subset. |
+| Per-candidate deep dossiers (HD 1957, HD 216783, etc.) | ✓ from external archives | Each dossier in `docs/` lists every catalog query made; rerunning them against the live Vizier / IRSA / MAST returns the same data. |
+| CV-period orbital periods (Pile F) | ✓ from ZTF DR23 + TESS | `scripts/streaming/` has the BLS pipeline; refresh against ZTF DR23 via IRSA cutout API. 14 BLS periods listed in `docs/CV_PERIOD_PAPER_DRAFT_2026_05_28.md`. |
+| Streamlit web tool single-source verdicts | ✓ from cached parquets | `streamlit run scripts/web_tool/app.py` works offline with cached sample data; live ADQL extends to any Gaia DR3 source. |
+
+## What's NOT reproducible from this repo
+
+- **Original Gaia DR3 NSS data**. The raw NSS Orbital + AstroSpectroSB1 + Acceleration catalogs (a few hundred MB total) are not redistributed. Pull via `astroquery.gaia.Gaia.launch_job_async` from the ESA Gaia archive.
+- **Müller-Horn 2026 Zenodo catalogs**. ~19 MB of CSVs at https://zenodo.org/records/19181131. Pull manually + cache locally.
+- **NASA Exoplanet Archive `ps` table snapshot**. Live TAP queries (not redistributed).
+- **The 65 MB River ML model** (`main_river_model.pkl`) — superseded by v2 and gitignored. Regenerable via `scripts/streaming/river_ml.py` if needed.
+- **Raw Gaia chunks** in `data/raw_chunks/` — gitignored; regenerable via `scripts/streaming/producer.py`.
+
+## Required external catalogs
+
+See `CATALOG_DEPENDENCIES.md` for the full list. Critical ones for the v2 pipeline:
+
+| Catalog | Vizier ID | Used for |
+|---|---|---|
+| Gaia DR3 main + NSS | live ADQL | Primary input |
+| Brandt 2021 HGCA | `J/ApJS/254/42/catalog` | 25-yr PMa corroboration (HIP-named candidates) |
+| Kervella 2022 H2G2 | `J/A+A/657/A7/tablea1` | Independent astrometric baseline |
+| Gentile Fusillo 2021 Gaia WDs | `J/MNRAS/508/3877` | WD-primary reverse hunt |
+| Shahaf 2023 Triage I NS | `J/MNRAS/518/2991` | NS-candidate cross-check |
+| Müller-Horn 2026 RGB+MS BH | Zenodo 10.5281/zenodo.17271785 | Most-recent BH-candidate catalog |
+| Sahlmann 2025 G-ASOI ML labels | (project-internal) | Imposter labels |
+| NASA Exoplanet Archive `ps` | TAP | Known planet hosts (HD 81040, HD 111232 recovery) |
+| exoplanet.eu | CSV cache | Independent exoplanet catalog |
+| ZTF DR23 | IRSA TAP | CV-period light curves |
+| TESS QLP/SPOC + Tesscut | MAST | Eclipse confirmation |
+
+## Pipeline versions
+
+| Tag | Date | What's in it | Notes |
+|---|---|---|---|
+| **v2.0.0** | 2026-05-28 | Corrected NSS plx + K_obs/2 + F#30 logg fallback; v3 Acceleration channel; 32 truly-novel candidates; 7-step novelty | Current canonical release |
+| v1.17.0 | 2026-05-18 | Multi-channel SB1 / Tycho-Gaia expansion; negative-control specificity audit; Filter #29 SB2 added | Superseded by v2 corrections |
+| v1.15.0 | 2026-05-13 | Fix E (conditional-RUWE for Acceleration); HD 134574 promoted | |
+| v1.14.0 / v1.13.0 / older | 2026-04 / 05 | Earlier cascade iterations | |
+
+The v2 corrections changed M_2 values across the catalog by factors of 1.2–2.5× for high-RUWE binaries. Direct M_2 numbers from v1 should NOT be cited; use the v2 values from `data/derived/main_hunt_derived_v2.parquet` (column `M2_msun_v2`).
+
+## How to reproduce a single source's verdict
+
+The fastest path is the Streamlit web tool:
 
 ```bash
-# 1. Install dependencies
-pip install -r requirements-lock.txt   # exact versions used for v1.1.0
-# OR
-pip install -r requirements.txt        # ranged compatibility
-
-# 2. Copy the example config and edit the two external paths
-cp config.yaml.example config.yaml
-# Edit benchmark.sahlmann_verdicts and benchmark.gaia_fp_list to point to
-# your local copies of those files (download URLs in CATALOG_DEPENDENCIES.md).
-
-# 3. Verify everything is in place
-make verify-deps
-make verify-catalogs
-
-# 4. Run the benchmark
-make benchmark
+cd /path/to/repo
+source .venv/bin/activate
+streamlit run scripts/web_tool/app.py
 ```
 
-The output lands in `benchmark_output/`:
+Then enter any Gaia DR3 source_id, HD/HIP/TYC name, or known discovery name (Gaia BH1/BH2/BH3 are aliased). The page shows the v2-corrected verdict with all 4 filters + likely-companion-type probability spectrum + Bayesian-style HR diagram.
 
-| File | Content |
-|---|---|
-| `truth_set.csv` | 150-row truth set (Sahlmann labels + documented FPs joined with v2 cascade verdicts) |
-| `confusion_matrix.csv` | Cascade outcome distribution by truth bucket |
-| `per_filter_breakdown.csv` | Per-filter destruction stats |
-| `parameter_recovery.csv` | P/M agreement for known systems caught by cascade |
-| `fp_escapes.csv` | Imposters the cascade incorrectly retained |
-| `novelty_metrics_summary.txt` | v2 cascade headline metrics |
-| `v3_metrics_summary.txt` | v3 cascade headline metrics (with Sahlmann tie-breaking simulation) |
-| `benchmark_figure.png` | v2 benchmark hero figure (300 dpi) |
-| `benchmark_v3_figure.png` | v3 improvement figure (300 dpi) |
-
-Headline benchmark numbers (v1.1.0 release):
-
-| Metric | v2 cascade | v3 cascade (simulated tie-breaking) |
-|---|---|---|
-| In-pool novelty recall | 58.8% | 85.3% |
-| End-to-end specificity | 72.7% | 72.7% |
-| Documented-FP catch | 100% | 100% |
-| Period recovery (median) | \|ΔP/P\| = 0.005% | unchanged |
-| Mass recovery (median) | \|ΔM/M\| = 6.5% | unchanged |
-
-See `BENCHMARK.md` for the full report.
-
-## Granular Makefile targets
+## How to reproduce the full catalog
 
 ```bash
-make help                  # list all targets
-make verify-deps           # check Python packages
-make verify-catalogs       # check input files
-make benchmark-truth-set   # build truth_set.csv only
-make benchmark-v2          # v2 cascade benchmark
-make benchmark-v3          # v3 cascade benchmark
-make benchmark-figures     # regenerate PNGs
-make benchmark             # full pipeline (above all in sequence)
-make lock                  # regenerate requirements-lock.txt
-make clean                 # remove benchmark_output/
+# Set up environment
+cd /path/to/repo
+uv venv && source .venv/bin/activate
+uv pip install astroquery polars pandas lightkurve emcee dynesty plotly streamlit
+
+# 1. Fetch fresh Gaia DR3 NSS data (chunked, resumable)
+python scripts/streaming/producer.py
+
+# 2. Apply v2-corrected cascade
+python scripts/streaming/v2_corrected/run_v2.py
+# → produces data/derived/main_hunt_derived_v2.parquet
+
+# 3. Apply v3 NSS Acceleration channel
+python scripts/streaming/v3_acceleration/run_acceleration.py
+# → produces data/derived/acceleration_v3.parquet
+
+# 4. Run the 70-source benchmark self-test
+python scripts/validate_cascade_extended_2026_05_28.py
+# → produces data/validation_2026_05_28/results.csv
+
+# 5. Apply 7-step novelty verification (requires web access)
+# (no canonical script yet — manual per-candidate workflow documented in PROJECT_STATE_2026_05_28.md §3)
 ```
 
-## Config schema
+Expected runtime: ~30 min for the v2 cascade re-run; ~5 min for the v3 acceleration channel; ~10 min for the benchmark; novelty verification is per-candidate web-bound.
 
-`config.yaml` is git-ignored so each user maintains their own paths. The canonical schema lives in `config.yaml.example`, which is version-controlled and matches the release tag. Edit `config.yaml` to point at your local Sahlmann 2025 and Gaia FP files.
+## Version control conventions
 
-The benchmark-relevant settings:
-
-```yaml
-benchmark:
-  v2_scan_pool: v2_scan_full_pool.csv          # bundled in this repo
-  sahlmann_verdicts: /path/to/sahl_2025.csv    # external
-  gaia_fp_list: /path/to/gaia_fps.csv          # external
-```
-
-The cascade-parameter settings (`cascade.*` in `config.yaml.example`) are frozen for v1.1.0 — they document the filter thresholds used to produce `novelty_candidates.csv`. Modifying them does not affect bundled outputs, but is the right place to record any cascade re-tune.
-
-## Full pipeline reproducibility (the original "not turn-key" part)
-
-The benchmark above tests cascade *behavior* against a curated truth set, using the already-computed `v2_scan_full_pool.csv`. Re-running the cascade from scratch on 26,000+ NSS Orbital + Acceleration sources is a different and much larger task. The rest of this document covers that.
-
----
-
-## What is included
-
-| Item | Status |
-|---|---|
-| Pipeline source code (`scripts/`) | Included; 8 Python files |
-| Final candidate output (`novelty_candidates.csv`) | Included |
-| Python package dependencies (`requirements.txt`) | Included with pinned tested versions |
-| Methodology writeup (`REPORT.md`) | Included |
-| Non-technical summary (`README.md`) | Included |
-| Catalog dependency list (`CATALOG_DEPENDENCIES.md`) | Included with public download URLs |
-
-## What is NOT included
-
-| Item | Why | How to get it |
-|---|---|---|
-| External catalog data | Hundreds of GB; all publicly available at original sources; redistribution is unnecessary and undesirable | Download from URLs listed in `CATALOG_DEPENDENCIES.md` |
-| Intermediate pipeline output files | Generated by the scripts themselves; could be many GB | Run the scripts in order (see Script Ordering below) |
-| Cached PDFs of literature filtering papers (Mills 2018, Feng 2022, etc.) | Copyright; user should download from arXiv or journal | arXiv links in `REPORT.md` filter table |
-| Per-candidate deep-dive dossiers | Many MB of plots + intermediate JSON + MCMC chains | Not part of this publication; generated during pipeline development |
-| Example test data | Not provided — pipeline operates on full-catalog scale; small subsets are not representative | — |
-
-## Scope of reproducibility
-
-This repository is **not a turn-key reproduction package**. It is a methodology document plus the scripts that implement the methodology. Running the scripts end-to-end requires:
-
-1. ~100–200 GB of public catalog downloads (per `CATALOG_DEPENDENCIES.md`)
-2. A configured local cache directory pointed to by the `GAIA_NOVELTY_DATA_ROOT` environment variable
-3. Python 3.12 + the packages in `requirements.txt`
-4. Optional: the additional packages commented out in `requirements.txt` (orvara, astroquery, lightkurve) for deeper analyses described in `REPORT.md` Stage 4 but whose driver scripts are not all in this `scripts/` selection
-5. The scripts will fail with explicit `FileNotFoundError` exceptions when a required catalog file is missing; in some cases the missing-file behavior produces silently more permissive results rather than an error (see CAVEATS below)
-
-## Script ordering
-
-The 8 numbered scripts in `scripts/` are not strictly sequential — they are independent stages of the cascade. A typical ordering for a fresh run:
-
-```
-01_filter_cascade_mega.py            # initial selection + most filters
-02_inclination_marginalize.py        # M_2 posterior with marginalization
-03_published_stellar_filter.py       # literature catalog cross-match
-04_filters_l17_l18_l19.py            # K_RV pre-screen + Trifonov + WDS
-05_lessons_33_34_retroactive.py      # universal Kervella + A9 inclination-marg
-06_rv_archive_inventory.py           # archive RV cross-match
-07_multi_body_methodology.py         # Pick #2 multi-body PMa-excess analysis
-08_two_keplerian_joint_fitter.py     # multi-archive 0/1/2-Keplerian Bayesian fit per target
-```
-
-Outputs of earlier scripts feed later ones (e.g., `02` requires the candidate pool from `01`; `05` requires the candidate pool from `01` plus the M_2 posterior from `02`). Output paths are written to `data/candidate_dossiers/<stage_name>_<date>/` relative to `GAIA_NOVELTY_DATA_ROOT`.
-
-The exact end-to-end command sequence used to produce `novelty_candidates.csv` is not preserved here — that table is the result of many iterative passes, manual deep-dive verifications, and methodology lesson refinements rather than a single pipeline run.
-
-## What you can do without the full data
-
-Without downloading any catalogs:
-- Read `REPORT.md` and `README.md` to understand the methodology
-- Inspect `scripts/*.py` to verify what the filters actually do
-- Examine `novelty_candidates.csv` for the final candidate parameters
-- Reproduce small experiments (e.g., the 2-Keplerian Bayesian fitter in `08_two_keplerian_joint_fitter.py` can be tested with any RV time-series; it does not require the full catalog cache)
-
-With only the Gaia DR3 NSS tables downloaded (~1 GB):
-- Run `02_inclination_marginalize.py` standalone to compute the M_2 posterior step
-- Run portions of `01_filter_cascade_mega.py` that depend only on Gaia data
-
-With the literature catalogs added (~few GB):
-- Most of the cascade can run
-
-With the RV archives added (HARPS RVBank, APOGEE DR17, GALAH, etc., ~100 GB):
-- Full pipeline including multi-archive joint inference becomes possible
-
-## Caveats and known issues
-
-1. **Missing-catalog silent-permissive failure mode.** When a literature catalog file is missing, the filter that depends on it has no rows to match against and therefore catches no sources. This means an incomplete catalog setup produces *more* permissive (more false-positive-prone) results, not fewer. Verify catalog availability before drawing any conclusions.
-
-2. **No automated test suite.** The pipeline was developed iteratively; the lessons accumulated through individual deep-dive verifications, not through unit tests. There are no regression tests included.
-
-3. **No exact provenance of `novelty_candidates.csv`.** The final candidate table reflects multiple iteration cycles, manual sanity checks, and deep-dive refinements. Running the scripts blindly may produce a candidate list that differs from this CSV. The CSV is the documented output of the pipeline as of the date of this commit, not an automatically-regeneratable artifact.
-
-4. **External archive query results are time-dependent.** Some scripts query live archives (Gaia TAP, NASA Exoplanet Archive TAP, SIMBAD, ESO TAP, VizieR). These will return slightly different results as catalogs are updated. This is acceptable for the methodology but means the exact filter outputs are not bit-reproducible from a future date.
-
-5. **Some methodology lessons are described in `REPORT.md` but their dedicated implementation scripts are not in `scripts/`.** For example, Lesson #25 (TESS BLS rotation systematic) and Lesson #27 (Gaia vari + vbroad cross-match) were implemented in separate scripts during pipeline development. Their outputs were used as intermediate filter inputs but the driver scripts themselves are not bundled here. To re-run those lessons, the user would need to write their own driver scripts using the recipe described in `REPORT.md` §1.3.
-
-## Honest statement
-
-This is an exploratory archival-data-mining project, not a peer-reviewed, audit-quality reproducibility package. The repository is intended to document the methodology and provide the core pipeline logic. Full bit-level reproduction is not the goal. Researchers wishing to apply this methodology should expect to adapt the scripts to their local data layout and may find inconsistencies in the cascade ordering that need resolution.
+- One commit per logical change; no force-pushes.
+- Annotated tags only for releases (v1.x.x, v2.x.x).
+- v1 outputs archived to `data/archive/v1_2026_05_27/`.
+- v1 docs archived to `docs/archive/root_v1/` and `docs/archive/dev_notes_v1/`.
+- Production v2 outputs live in `data/derived/` and v2 docs in `docs/*_2026_05_28.md`.
+- Large files (>50 MB ML models, raw Gaia chunks) are gitignored; regeneration paths documented above.
