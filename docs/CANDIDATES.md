@@ -20,16 +20,27 @@ all four filter verdicts + reasons.
 
 | Bucket | Count (M_1-corrected) |
 |---|---:|
-| **Confirmed (independent 2-channel)** | **1** (Gaia DR3 3155543945892767232) — CRTS J051419+0111 **RETRACTED 2026-05-28** (period + eclipse are artifacts; see below) |
+| **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. Firmly-confirmed binaries = the SED-based WD pairs only (next row). |
 | **Confirmed WD-binary (SED 2-component)** | **3** (WDJ060042, WDJ020915, WG 26) |
-| Strong candidate (single-method, archival follow-up identified) | ~6 |
+| Strong candidate (single-method) | **0 compact-object "strong" remain** — 5406907, HD 157033, 5858574 all downgraded on re-verification (→ weak / ambiguous / candidate; see Survivor Re-verification) |
 | **Tier-1 NS pool** (after M_1 correction) | **160** (was 291 at fixed M_1=1.5; 131 demoted to WD/low-mass at real M_1) |
-| Tier-1 BH pool | 1 (5406907 STRONG; 2 v2 sources already demoted) |
+| Tier-1 BH pool | **0 STRONG** — 5406907 downgraded to weak/suspect (orbit DPAC-rejected + Gaia RV non-detection); HD 157033 BH-claim now ambiguous (0.4–6 M⊙) |
 | Tier-2 (RV-inconclusive) | 426 (after M_1 correction; was 958) |
 | v3 Acceleration P-degenerate compact-object | 10,818 (not yet M_1-corrected) |
 | Demoted / falsified after 2nd method | ~32 named |
 
 > **M_1 systematic correction (task LL, 2026-05-28)**: the bulk cascade originally derived M_2 at a fixed primary mass M_1 = 1.5 M_⊙. The photocentric mass function f(M) = M_2³/(M_1+M_2)² is invariant, so M_2 scales with the assumed M_1 — overestimated for WD/M-dwarf primaries, underestimated for A-star/giant primaries. Re-solving with the actual primary mass (Gaia FLAME for 74% of sources, StarHorse/TIC/GF21/Kervella for the rest) re-tiers **665 of 1251 candidates**. The Tier-1 NS pool collapses from 291 → 160. **All four headline dormant candidates survive** (3155543 NS holds at M_1=1.67; 5406907 BH holds at M_1=0.82, M_2=4.02; 5858574 strengthens at M_1=2.07, M_2=1.75; HD 157033 unaffected — no NSS row). Corrected catalogs: `data/derived/*_M1corrected.parquet`. Root-cause fix applied to `consumer_v2.py::select_m1()`.
+
+> **⚠ SURVIVOR RE-VERIFICATION (2026-05-28).** Independent re-analysis of the named compact-object survivors (`scripts/survivor_revet_2026_05_28.py`, `scripts/survivor_verify.py`), applying the rigor that falsified the CV avenue, **downgrades all four — none holds at its prior "confirmed"/"strong" label.** The cascade *masses* are sound (audited, validated on Gaia BH2); these are real Gaia binaries, but their headline classifications were overstated:
+>
+> | Object | Was | Now | Why |
+> |---|---|---|---|
+> | 3155543 | CONFIRMED NS (2-channel) | **Candidate (NS-mass)** | Gaia AstroSpectroSB1 (sig 40.7, M₂≈1.3) is solid, but the *external* LAMOST "confirmation" is only 2 distinct phases at 2.66σ; the dossier χ²=0.36 was a 2-point free-ω overfit. Strong Gaia binary, weak external corroboration. |
+> | 5858574 | (candidate) | **Candidate — cleanest survivor** | NSS Orbital (sig 20) + independent Gaia RV variability (ampl 23.9, p=1.6e-14) + AMRF 0.63. M₂ ≥ 1.48 (NS/heavy-WD; mass-gap BH only at low i). |
+> | HD 157033 | STRONG BH | **Ambiguous (0.4–6 M⊙)** | Real companion (Gaia RV p=1.8e-15, Kervella snrPMa 14.85, APOGEE 3-visit scatter 35.7 km/s), BUT APOGEE RVs are suspect for this hot A9/F0 star (Chi2RV=7.9, spurious [Fe/H]=−1.45); Kervella face-value M₂=0.45; ruwe=0.85 (no astrometric orbit). Mass unconstrained between M-dwarf and BH — needs one clean optical RV. |
+> | 5406907 | STRONG BH | **Weak / suspect** | Single OrbitalAlternative solution (DPAC-rejected from Validated, max\|corr\|=0.98). For P=25 d / M₂≈4 (K₁~100 km/s) Gaia shows NO RV variability (rv_amplitude_robust NULL, RV 2.34±4.12 over 27 transits) — the orbit itself may be spurious. The dossier's "rv_chisq_pvalue=0 corroboration" was incorrect. |
+>
+> **Net: 0 confirmed/strong compact objects remain.** The only firmly-confirmed binaries are the SED-based WD pairs (WG 26, WDJ205650). The dormant-NS/BH list is now a set of *candidates* — best: 5858574 and 3155543 (NS-mass), HD 157033 (ambiguous). All need a clean external RV to advance.
 
 ## Confirmed (independent 2-channel)
 
