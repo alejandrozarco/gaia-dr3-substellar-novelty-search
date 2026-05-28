@@ -1,6 +1,6 @@
 # Gaia DR3 dormant compact-object & substellar companion search
 
-[![release v2.1.0](https://img.shields.io/badge/release-v2.1.0-blue)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/tag/v2.1.0)
+[![Latest release](https://img.shields.io/github/v/release/alejandrozarco/gaia-dr3-substellar-novelty-search)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/latest)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20162959.svg)](https://doi.org/10.5281/zenodo.20162959)
 
 Filter-cascade pipeline that derives companion-mass estimates from the Gaia DR3 NSS Orbital, AstroSpectroSB1, OrbitalAlternative, and Acceleration channels, cross-references them against published catalogs, and surfaces candidate dormant black holes, neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and exoplanets.
