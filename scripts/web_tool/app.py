@@ -1041,16 +1041,43 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
     not a time series.  Convert to semi-amplitude K_1 = rv_amplitude_robust / 2
     (the cascade fix from the methodology re-run), then sketch the eccentric
     RV curve K_1·cos(true_anomaly) using a low-order analytic approximation
-    to the true anomaly.  For e > 0.5 this is qualitative only — the real
-    curve would need Kepler-equation solution.
+    to the true anomaly.
+
+    When K_obs is null (e.g. OrbitalAlternative class, where DPAC didn't run
+    the spectroscopic-orbit fit), we DO NOT silently draw a flat zero curve —
+    we draw the *predicted* K_1 from the dossier-grade mass posterior
+    (K_pred at the inferred M_2) and label the plot accordingly, so the user
+    sees the expected signal rather than a misleading flat line.
     """
     try:
         P = float(row.get('period') or 1.0)
         e = float(derived.get('e') or 0.0)
-        K_obs_p2p = float(derived.get('K_obs') or 0.0)  # peak-to-trough from Gaia DR3
     except (TypeError, ValueError):
         return go.Figure().update_layout(title='Phase curve unavailable')
-    K1 = K_obs_p2p / 2.0  # semi-amplitude after correction
+
+    # Check whether K_obs is actually measured vs missing (e.g. OrbitalAlternative
+    # rows where rv_amplitude_robust is null for the entire class)
+    K_obs_raw = derived.get('K_obs')
+    K_obs_measured = (K_obs_raw is not None
+                      and not (isinstance(K_obs_raw, float) and math.isnan(K_obs_raw))
+                      and float(K_obs_raw) > 0)
+
+    if K_obs_measured:
+        K1 = float(K_obs_raw) / 2.0  # semi-amplitude after correction
+        K1_source = 'measured'
+        K1_label = f'Measured K_1 = {K1:.1f} km/s (from rv_amplitude_robust)'
+    else:
+        # Fall back to predicted K_1 at sin i = 1 from the cascade-derived M_2.
+        K_pred = derived.get('K_pred_i90')
+        try:
+            K1 = float(K_pred) if K_pred is not None else 0.0
+            if math.isnan(K1): K1 = 0.0
+        except (TypeError, ValueError):
+            K1 = 0.0
+        K1_source = 'predicted'
+        K1_label = (f'Predicted K_1(sin i = 1) = {K1:.1f} km/s — '
+                    f'Gaia DR3 did not publish rv_amplitude_robust for this NSS class. '
+                    f'Curve below is the *expected* signal at the cascade-derived M_2.')
 
     phi = np.linspace(0, 1, 400)
     nu = phi * 2 * math.pi
@@ -1061,21 +1088,24 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=phi, y=rv_model, mode='lines',
-        name=f'Model K_1·cos f (K_1={K1:.1f} km/s, e={e:.3f})',
-        line=dict(color='#1f77b4', width=2),
+        name=f'Model K_1·cos f  ({K1_source} K_1 = {K1:.1f} km/s, e={e:.3f})',
+        line=dict(color='#1f77b4' if K1_source == 'measured' else '#9467bd',
+                   width=2, dash='solid' if K1_source == 'measured' else 'dash'),
     ))
     fig.add_hline(y=0, line=dict(color='grey', dash='dot'))
     # Reference: ±K_1 lines so the user can read amplitude off the y-axis
-    fig.add_hline(y=K1,  line=dict(color='grey', dash='dot', width=1),
-                  annotation_text=f'+K_1 = {K1:.1f}', annotation_position='top right',
-                  annotation=dict(font=dict(size=10, color='grey')))
-    fig.add_hline(y=-K1, line=dict(color='grey', dash='dot', width=1),
-                  annotation_text=f'−K_1 = −{K1:.1f}', annotation_position='bottom right',
-                  annotation=dict(font=dict(size=10, color='grey')))
+    if K1 > 0:
+        fig.add_hline(y=K1,  line=dict(color='grey', dash='dot', width=1),
+                      annotation_text=f'+K_1 = {K1:.1f}', annotation_position='top right',
+                      annotation=dict(font=dict(size=10, color='grey')))
+        fig.add_hline(y=-K1, line=dict(color='grey', dash='dot', width=1),
+                      annotation_text=f'−K_1 = −{K1:.1f}', annotation_position='bottom right',
+                      annotation=dict(font=dict(size=10, color='grey')))
 
+    title_suffix = '' if K1_source == 'measured' else '  (predicted — K_obs not measured by Gaia)'
     fig.update_layout(
         title=dict(
-            text=f'Orbital phase curve  ·  P = {P:.2f} d, e = {e:.3f}',
+            text=f'Orbital phase curve  ·  P = {P:.2f} d, e = {e:.3f}{title_suffix}',
             x=0.5, xanchor='center', y=0.95, yanchor='top',
             font=dict(size=14),
         ),
@@ -1085,6 +1115,16 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
         legend=dict(yanchor='top', y=0.99, xanchor='left', x=0.01,
                     bgcolor='rgba(255,255,255,0.7)'),
     )
+    # Annotation explaining the predicted-vs-measured choice
+    if K1_source == 'predicted':
+        fig.add_annotation(
+            x=0.5, y=-0.32, xref='paper', yref='paper', showarrow=False,
+            text=('Note: this NSS solution class (e.g. OrbitalAlternative) does not include '
+                  'a Gaia-fitted K_obs. The dashed purple curve above is the *predicted* RV '
+                  'signal at sin i = 1 given the cascade-derived M_2 — not a measurement.'),
+            font=dict(size=9, color='#555'), xanchor='center', yanchor='top',
+            align='center',
+        )
     return fig
 
 
