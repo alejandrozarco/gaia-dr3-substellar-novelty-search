@@ -999,10 +999,14 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
                   annotation=dict(font=dict(size=10, color='grey')))
 
     fig.update_layout(
-        title=f'Orbital phase curve — P = {P:.2f} d, e = {e:.3f}',
+        title=dict(
+            text=f'Orbital phase curve  ·  P = {P:.2f} d, e = {e:.3f}',
+            x=0.5, xanchor='center', y=0.95, yanchor='top',
+            font=dict(size=14),
+        ),
         xaxis_title='orbital phase φ',
         yaxis_title='RV  (km/s)  [model sketch]',
-        height=320, margin=dict(t=40, b=40, l=50, r=20),
+        height=340, margin=dict(t=60, b=50, l=55, r=20),
         legend=dict(yanchor='top', y=0.99, xanchor='left', x=0.01,
                     bgcolor='rgba(255,255,255,0.7)'),
     )
@@ -1114,15 +1118,22 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
                             xanchor='right', yanchor='middle')
         placed_y.append(y_thr)
 
-    # Solved M_2 at sin i = 1
+    # Solved M_2 at sin i = 1 — green star marker with inline label so the
+    # value is readable without needing a legend.
     if M2_solved is not None and y_bot <= M2_solved <= y_top:
         fig.add_trace(go.Scatter(
             x=[1.0], y=[M2_solved], mode='markers',
-            name=f'sin i = 1  (M_2 = {M2_solved:.4g})',
             marker=dict(size=14, color='#2ca02c', symbol='star',
                         line=dict(color='black', width=1)),
             hovertemplate='sin i = 1<br>M_2 = %{y:.5g} M_⊙<extra></extra>',
         ))
+        fig.add_annotation(
+            x=1.0, y=M2_solved, ax=-30, ay=-25,
+            text=f'sin i = 1<br>M_2 = {M2_solved:.3g} M_⊙',
+            showarrow=True, arrowhead=0, arrowcolor='#2ca02c',
+            font=dict(size=10, color='#2ca02c'),
+            bgcolor='rgba(255,255,255,0.85)', xanchor='right',
+        )
 
     # Pretty-print f(M) — switch to scientific notation when ≪ 1
     if fM is not None and fM > 0:
@@ -1130,16 +1141,19 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
     else:
         fM_str = 'n/a'
     fig.update_layout(
-        title=f'Mass function: M_2 vs sin i &nbsp;(f(M) = {fM_str} M_⊙, M_1 = {M1} M_⊙)',
+        title=dict(
+            text=f'M_2 vs sin i  ·  f(M) = {fM_str} M_⊙, M_1 = {M1} M_⊙',
+            x=0.5, xanchor='center', y=0.95, yanchor='top',
+            font=dict(size=14),
+        ),
         xaxis_title='sin i', yaxis_title='M_2  (M_⊙)',
         xaxis=dict(range=[0.2, 1.02]),
         yaxis=dict(type='log', range=[math.log10(y_bot), math.log10(y_top)]),
-        height=360, margin=dict(t=50, b=40, l=55, r=20),
-        # Legend at bottom-centre so it doesn't collide with threshold labels
-        # on the right edge or regime labels on the left.
-        legend=dict(orientation='h', yanchor='bottom', y=-0.22,
-                    xanchor='center', x=0.5,
-                    bgcolor='rgba(255,255,255,0.7)'),
+        height=380, margin=dict(t=70, b=55, l=55, r=20),
+        # Hide the legend — the red curve and green sin i = 1 star are both
+        # described by in-plot annotations (curve label appears via title,
+        # star marker is self-evident as the cascade's adopted M_2 value).
+        showlegend=False,
     )
     return fig
 
