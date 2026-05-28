@@ -1209,13 +1209,17 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
     fig = go.Figure()
     # Regime band labels live on the LEFT edge (x=0.21) so they do not collide
     # with threshold dash labels (which sit on the RIGHT, x=0.98).
+    #
+    # Plotly 6.x note: on a log-y axis, add_annotation(y=…) treats `y` as a LOG10
+    # coordinate (not a data value), while add_shape / add_hline use data coords.
+    # We pass log10(y_centre) and yref='y' so the annotation lands at the band's
+    # geometric centre on the data axis.
     for lo, hi, colour, label in REGIMES:
         lo_v = max(lo, y_bot); hi_v = min(hi, y_top)
         if hi_v > lo_v:
             fig.add_hrect(y0=lo_v, y1=hi_v, fillcolor=colour, opacity=0.08, line_width=0)
-            # Place band label at log-geometric centre of the visible band on the LEFT
             y_centre = math.sqrt(lo_v * hi_v)
-            fig.add_annotation(x=0.21, y=y_centre, text=label, showarrow=False,
+            fig.add_annotation(x=0.21, y=math.log10(y_centre), text=label, showarrow=False,
                                font=dict(size=9, color=colour),
                                xanchor='left', yanchor='middle',
                                bgcolor='rgba(255,255,255,0.55)')
