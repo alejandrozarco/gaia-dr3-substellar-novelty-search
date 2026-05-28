@@ -1,6 +1,6 @@
 # Gaia DR3 dormant compact-object & substellar companion search
 
-[![release v2.0.1](https://img.shields.io/badge/release-v2.0.1-blue)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/tag/v2.0.1)
+[![release v2.1.0](https://img.shields.io/badge/release-v2.1.0-blue)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/tag/v2.1.0)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20162959.svg)](https://doi.org/10.5281/zenodo.20162959)
 
 Filter-cascade pipeline that derives companion-mass estimates from the Gaia DR3 NSS Orbital, AstroSpectroSB1, OrbitalAlternative, and Acceleration channels, cross-references them against published catalogs, and surfaces candidate dormant black holes, neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and exoplanets.
@@ -22,14 +22,16 @@ Filter-cascade pipeline that derives companion-mass estimates from the Gaia DR3 
 | `scripts/web_tool/`       | Streamlit single-source interactive cascade. |
 | `tests/`                  | Cascade end-to-end + filter unit tests + benchmark regressions. |
 
-## Confirmed candidates (independent 2-channel)
+## Confirmed candidates
 
-| Object | Class | Confirmation |
+**No confirmed novel compact-object or CV discoveries.** Independent re-verification (2026-05-28; see the v2.1.0 release) **retracted** the previous headline claims:
+
+| Object | Previously listed as | Status now |
 |---|---|---|
-| CRTS J051419+0111 | CV (DN, period gap) | ZTF DR23 P=180.05 min + TESS 25% eclipse at the ZTF period |
-| Gaia DR3 3155543945892767232 | NS candidate around K1III RGB giant | NSS AstroSpectroSB1 P=543.27 d + LAMOST 2-epoch ΔRV consistent with predicted NSS phase at χ²=0.36 |
+| CRTS J051419+0111 | "confirmed CV discovery" (ZTF period + TESS eclipse) | **RETRACTED** — the 3.013-hr period and eclipse are artifacts (outburst-contaminated fold + minimum-of-noise depth at S/N<1). A real dwarf nova, but with no measured period or eclipse. |
+| Gaia DR3 3155543945892767232 | "confirmed NS (2-channel)" | **Candidate** — Gaia AstroSpectroSB1 is solid (M₂≈1.3), but the external LAMOST corroboration is only 2 phases at 2.66σ. |
 
-All other candidates (Strong / Tier-1 / Tier-2 / demoted) are listed in `docs/CANDIDATES.md`.
+The only **firmly confirmed** binaries are two SED-confirmed white-dwarf pairs — **WG 26** and **WDJ205650** — which are known object classes, not novel discoveries. Every compact-object result is a **candidate**: see `docs/CANDIDATES.md` (Strong / Tier-1 / Tier-2) and the v2.1.0 release notes for the full retraction.
 
 ## Quick start
 

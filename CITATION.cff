@@ -34,14 +34,15 @@ abstract: >-
   parallax over gaia_source.parallax, K_obs = rv_amplitude_robust / 2,
   Filter #30 logg fallback chain) and is validated at 93% class-level
   recall and 14% adversarial false-positive rate against 70 published
-  systems. Independent second-method verification confirms one
-  discovery (the CV CRTS J051419+0111 via TESS eclipse at the
-  ZTF-derived 3.013-hr orbital period) and identifies ~6 strong
-  candidates pending archival or new-RV follow-up. All other v2
-  Tier-1 candidates either match published systems or have been
-  demoted to stellar binaries by second-method checks. Status is
-  experimental archival mining; new claims require independent
-  follow-up.
+  systems. Independent re-verification (2026-05-28) RETRACTED the
+  earlier CV-period "discovery" (CRTS J051419+0111 — its period and
+  eclipse are artifacts) and the entire CV-period avenue, and
+  downgraded the named dormant compact-object candidates: none is
+  confirmed. The only firmly-confirmed binaries are two SED-confirmed
+  white-dwarf pairs (WG 26, WDJ205650; known classes, not novel
+  discoveries). All compact-object results are candidates pending
+  second-method follow-up. Status is experimental archival mining;
+  new claims require independent follow-up.
 keywords:
   - "Gaia DR3"
   - "non-single stars"
