@@ -239,7 +239,24 @@ def filter31(K_obs, pval):
 def tier_label(cls, f29, f30, f31, f32):
     is_compact_class = cls in ('dormant_BH_candidate', 'dormant_NS_candidate')
     if not is_compact_class:
-        return f'Rejected — class={cls}'
+        # The cascade was originally scoped to BH/NS discovery; M_2 < 1.2 was
+        # labelled "Rejected" to mean "not a compact-object candidate." That's
+        # misleading — these rows are *characterized* substellar / WD / M-dwarf
+        # companions with valid astrometric mass-function measurements, and are
+        # the discovery space for planet, BD, M-dwarf, and WD hunts.
+        # Tier strings now reflect that.
+        FRIENDLY = {
+            'WD_or_low_mass_star':
+                'Characterized — sub-Ch WD or low-mass-star companion '
+                '(0.5 ≤ M_2 < 1.2; ambiguous from astrometry alone)',
+            'M_dwarf_companion':
+                'Characterized — M-dwarf companion (0.08 ≤ M_2 < 0.5)',
+            'BD_candidate':
+                'Characterized — brown-dwarf companion (0.013 ≤ M_2 < 0.08)',
+            'planet_candidate':
+                'Characterized — planet-mass companion (M_2 < 0.013)',
+        }
+        return FRIENDLY.get(cls, f'Characterized — {cls}')
     if f29 == 'FAIL':
         return 'Demoted (failed F#29 SB2)'
     if f30 == 'FAIL':
