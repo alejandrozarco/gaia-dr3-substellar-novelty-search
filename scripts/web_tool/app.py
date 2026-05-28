@@ -2231,13 +2231,19 @@ def main():
     col_b.dataframe(obj_df[['identity', 'rationale']], hide_index=True, use_container_width=True)
 
     # ----------------------------- plots ----------------------------------
-    # Six panels in a 2×3 grid:
-    #   row 1: phase curve | mass function | cascade ladder
-    #   row 2: HR diagram  | Kiel diagram  | (empty / future)
-    # The HR + Kiel pair gives both the colour-magnitude and the spectroscopic
-    # views of where the primary sits — Kiel is more diagnostic for the F#30
-    # K-giant chromatic-bias risk zone.
-    if derived.get('M2_msun') is not None and derived.get('fM_msun') is not None:
+    # Three plots always render because they only need primary-star data
+    # (HR/Kiel) or cascade-output (ladder) — no NSS orbit required:
+    #   - HR diagram  (BP-RP + G + parallax)
+    #   - Kiel diagram (T_eff + log g)
+    #   - Cascade ladder (the four filter verdicts)
+    # Two more render only when the NSS orbital solution exists:
+    #   - Phase curve (P + e + K_1 or K_pred)
+    #   - Mass function M_2 vs sin i (f(M))
+    # This means HD-157033-class sources (no NSS, long-period BH candidates)
+    # still see the host's HR + Kiel + cascade ladder.
+    has_orbit = (derived.get('M2_msun') is not None and
+                  derived.get('fM_msun') is not None)
+    if has_orbit:
         g1, g2, g3 = st.columns(3)
         g1.plotly_chart(plot_phase_curve(row, derived), use_container_width=True)
         g2.plotly_chart(plot_mass_function(M1_prior, derived['fM_msun'], derived['M2_msun']),
@@ -2247,13 +2253,16 @@ def main():
         g4.plotly_chart(plot_hr(row, derived), use_container_width=True)
         g5.plotly_chart(plot_kiel(row, derived), use_container_width=True)
     else:
-        st.info('Plots disabled — no mass function available for this source. '
-                'Either the NSS Orbital row is missing (Acceleration / SB1 / SB2 only) '
-                'or required astrometry is incomplete.  The cascade ladder + Kiel '
-                'diagram still show what they can from the available data.')
-        c1, c2 = st.columns(2)
-        c1.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        # Phase curve + mass function are disabled (no orbit), but HR, Kiel,
+        # and the cascade ladder all still work from the available data.
+        st.caption('Phase curve and mass-function plot disabled (no NSS orbital '
+                   'solution). HR + Kiel + cascade-ladder plots below show the '
+                   'host-star context; the off-cascade panels further down '
+                   'carry the actual M_2 evidence for these sources.')
+        c1, c2, c3 = st.columns(3)
+        c1.plotly_chart(plot_hr(row, derived), use_container_width=True)
         c2.plotly_chart(plot_kiel(row, derived), use_container_width=True)
+        c3.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
 
     # ----------------------------- bulk-catalog cross-reference ----------
     # Always show what the bulk v2 + v3 runs said about this source_id, even
