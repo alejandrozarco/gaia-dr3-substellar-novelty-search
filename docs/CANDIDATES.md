@@ -36,7 +36,7 @@ all four filter verdicts + reasons.
 > | Object | Was | Now | Why |
 > |---|---|---|---|
 > | 3155543 | CONFIRMED NS (2-channel) | **Candidate (NS-mass)** | Gaia AstroSpectroSB1 (sig 40.7, M₂≈1.3) is solid, but the *external* LAMOST "confirmation" is only 2 distinct phases at 2.66σ; the dossier χ²=0.36 was a 2-point free-ω overfit. Strong Gaia binary, weak external corroboration. |
-> | 5858574 | (candidate) | **Candidate — cleanest survivor** | NSS Orbital (sig 20) + independent Gaia RV variability (ampl 23.9, p=1.6e-14) + AMRF 0.63. M₂ ≥ 1.48 (NS/heavy-WD; mass-gap BH only at low i). |
+> | 5858574 | (candidate) | **Triple-favored — demoted** (2026-05-29) | AMRF P(compact)≈0.21–0.35 → likely inner MS pair; the "mass-gap BH 2.8" was a sin-i error → M₂≈1.5–1.6; no archival RV. |
 > | HD 157033 | STRONG BH | **Ambiguous (0.4–6 M⊙)** | Real companion (Gaia RV p=1.8e-15, Kervella snrPMa 14.85, APOGEE 3-visit scatter 35.7 km/s), BUT APOGEE RVs are suspect for this hot A9/F0 star (Chi2RV=7.9, spurious [Fe/H]=−1.45); Kervella face-value M₂=0.45; ruwe=0.85 (no astrometric orbit). Mass unconstrained between M-dwarf and BH — needs one clean optical RV. |
 > | 5406907 | STRONG BH | **Weak / suspect** | Single OrbitalAlternative solution (DPAC-rejected from Validated, max\|corr\|=0.98). For P=25 d / M₂≈4 (K₁~100 km/s) Gaia shows NO RV variability (rv_amplitude_robust NULL, RV 2.34±4.12 over 27 transits) — the orbit itself may be spurious. The dossier's "rv_chisq_pvalue=0 corroboration" was incorrect. |
 >
@@ -59,14 +59,14 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 
 | Source | AMRF | M₂ | P(compact) | Read (deep-dive 2026-05-29, `scripts/prime3_deepdive_2026_05_29.py`) |
 |---|---:|---:|---:|---|
-| **3378588057203660160 (HD 264291)** | 0.635 | **~2.04** | **0.75** | **Best compact candidate — RV-CONFIRMED.** A *free-period* fit of its 50 LAMOST RVs independently recovers P ≈ 1050–1095 d (= astrometric 999 d), K₁ ≈ 17 km/s, e ≈ 0.33, RV span 39 km/s → orbit confirmed *despite* the marginal astrometry (sig 12.5). M₂ = 2.04 [1.90, 2.19] M⊙ (heavy NS / lower mass-gap), no SB2. **Caveats:** Ap/emission-line primary (A1IVSrSi); χ²/dof ≈ 16 (LAMOST errors underestimated → formal significances inflated); **not novel** (in Shahaf+2023). |
+| **3378588057203660160 (HD 264291)** | 0.635 | **1.94** | **0.75** | **HEAVY NEUTRON STAR — RV-CONFIRMED** (the one surviving compact-favored candidate; full dossier `docs/dossiers/HD264291_DOSSIER_2026_05_29.md`). Free-period fit of 50 LAMOST RVs recovers P≈1026–1095 d (= astrometric 999 d), confirming the orbit despite marginal astrometry (sig 12.5). With honest errors (jitter 1.6 km/s → χ²/dof 3.15, K₁=16.5±0.35) and M₁=1.81±0.15 (FLAME; Ap-star systematic broadened) at i≈67°: **M₂ = 1.94 [1.80, 2.09] M⊙, P(heavy-NS)=0.95, P(mass-gap)=0.05, P(BH)=0.** Single dark companion (no SB2; a separate 32-d residual = Ap rotation, decoupled from the orbit). **NOT novel** — it is the Shahaf+2023 headline; our contribution is the independent RV confirmation. |
 | 2127900555635640832 | 0.591 | 1.45 | 0.21 | external RV confirms the *outer* orbit, but Shahaf favors a triple ~4:1; M₂ at the WD/NS edge |
 | 6419437207856851584 (sig 212) | 0.575 | 1.30 | ~0.0 | triple |
 | 823243942431149568 (sig 194) | 0.563 | 1.42 | ~0.0 | triple |
 | **5640825637852070016 (sig 295, HD 75567)** | 0.588 | 1.35 (dark) | **0.15** | **TRIPLE-FAVORED — downgraded.** Calibrated P(III\|A,M1) over 322 Shahaf neighbours = 0.85 triple; spectroscopic/astrometric a-ratio = 1.23 (>1 → luminous inner pair pulls the photocentre back). Novel, but not a compact object. |
 | **1714530637958169600 (sig 208, TYC 4562-535-1)** | 0.586 | 1.26 (dark) | **0.13** | **TRIPLE-FAVORED — downgraded.** 448 neighbours; a-ratio = 1.31; near face-on (i≈22°) inflates M₂. Novel, but not a compact object. |
 
-**Net:** the cascade masses are real and Shahaf-AMRF-corroborated, but the **only** candidate that survives the triple-vs-compact test is **HD 264291** — and it is a *known* Shahaf object whose orbit we independently **RV-confirmed** (heavy-NS / lower-mass-gap, M₂ ≈ 2.0), carrying an Ap-star-primary caveat. Every other high-significance Tier-1 NS — including the two genuinely novel ones (HD 75567, TYC 4562-535-1) — is favored to be a hierarchical triple. **No novel confirmed compact object remains in the catalog.**
+**Net:** the cascade masses are real and Shahaf-AMRF-corroborated, but the **only** candidate that survives the triple-vs-compact test is **HD 264291** — a *known* Shahaf object whose orbit we independently **RV-confirmed** (heavy neutron star, M₂ ≈ 1.94), with an Ap-star-primary caveat. Every other high-significance Tier-1 NS — including all three genuinely novel ones (HD 75567, TYC 4562-535-1, and Gaia DR3 5858574810404752256) — is favored to be a hierarchical triple. **No novel compact object survives anywhere in the catalog;** the only compact-favored object (HD 264291) was already published by Shahaf+2023.
 
 ## Confirmed (independent 2-channel)
 
@@ -112,7 +112,9 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | Prior identification | ResearchGate preprint #403022650 (unreviewed; their a_phot uses √(s/2) not Pourbaix-Halbwachs, giving M_2_min ≈ 1.95 M_⊙) |
 | Dossier | `docs/dossiers/5406907085973524224_DOSSIER_2026_05_28.md` |
 
-### Gaia DR3 5858574810404752256 — mass-gap-BH / NS candidate
+### Gaia DR3 5858574810404752256 — ⚠ DEMOTED 2026-05-29 (triple-favored, not a compact object)
+
+**Re-verification** (`scripts/hd264291_dossier_2026_05_29.py`): the AMRF + Shahaf calibrated P(compact|A,M₁) classifier gives **P(compact) ≈ 0.21–0.35 → favored to be a hierarchical triple** (unresolved inner main-sequence pair), like HD 75567 / 1714530. The prior "**M₂ ≈ 2.82 (mass-gap BH)**" is **FALSIFIED** — it misused `rv_amplitude_robust/2` to invent sin i = 0.53; the astrometric photocentric mass function gives M₂ ≈ **1.48–1.63 M⊙** directly (no sin-i inflation), and there is **no archival RV** (the "Gaia RV corroboration" was variability only). Original table retained for the audit trail.
 
 | Field | Value |
 |---|---|
