@@ -1,0 +1,29 @@
+name,P_d,M1_msun,M2_msun,secondary,eclipsing,ref,M2_MJ,q
+Ou 5,0.363,0.5,0.23,K/M dwarf,true,Corradi+ 2014,241,0.46
+Abell 41,0.226,0.66,0.4,M dwarf,true,Bruch+ 2001,419,0.606
+Abell 46,0.472,0.51,0.15,M dwarf,true,Afsar+ 2008,157,0.294
+Abell 63,0.469,0.63,0.29,M dwarf,true,Bond+ 1978 UU Sge,304,0.46
+Abell 65,1.003,0.56,0.22,M dwarf,false,Pollacco+ 1993,230,0.393
+DS 1,0.357,0.63,0.28,M dwarf,true,Drechsel+ 1995,293,0.444
+HFG 1,0.582,0.57,0.71,K subgiant,false,Exter+ 2005,744,1.246
+NGC 6337,0.173,0.59,0.31,M dwarf,true,Hillwig+ 2010,325,0.525
+NGC 6326,0.372,0.58,0.42,M dwarf,true,Miszalski+ 2011,440,0.724
+ESO 330-9,0.323,0.55,0.3,M dwarf,false,Miszalski+ 2011,314,0.545
+HaTr 7,0.322,0.55,0.3,M dwarf,false,Miszalski+ 2011,314,0.545
+HaTr 4,1.74,0.5,0.34,M dwarf,false,Miszalski+ 2009,356,0.68
+M 3-1,0.127,0.6,0.18,M dwarf,true,Jones+ 2019,189,0.3
+NGC 6778,0.153,0.6,0.28,M dwarf,false,Miszalski+ 2011,293,0.467
+PN G054.2-03.4,0.236,0.55,0.46,M dwarf,true,Necklace Corradi+ 2011,482,0.836
+PHR J1804-2913,0.629,0.55,0.32,M dwarf,false,Hillwig+ 2017,335,0.582
+NN Ser,0.13,0.535,0.111,M dwarf,true,WD+M CB planets,116,0.207
+V471 Tau,0.521,0.84,0.93,K dwarf,true,WD+K Hyades,974,1.107
+Lo 16,0.483,0.5,0.3,M dwarf,true,Jones+ 2017,314,0.6
+Sp 1,2.91,0.65,0.45,M dwarf,false,Hillwig+ 2016,471,0.692
+Hen 2-155,0.148,0.61,0.34,M dwarf,true,Jones+ 2015,356,0.557
+NGC 2392,1.902,0.59,0.2,M dwarf,false,Miszalski+ 2019,209,0.339
+Fg 1,1.195,0.62,0.6,K dwarf,false,Boffin+ 2012,628,0.968
+Hen 2-428,0.176,0.88,0.88,WD,true,double WD Santander-Garcia+ 2015,922,1.0
+Kn 26,0.219,0.55,0.3,M dwarf,true,Jones+ 2017,314,0.545
+ETHOS 1,0.535,0.6,0.33,M dwarf,true,Miszalski+ 2011,346,0.55
+NGC 6026,0.528,0.57,0.5,M dwarf,true,Hillwig+ 2010,524,0.877
+MyCn 18,18.15,0.6,1.0,K giant?,false,Bruch+ 2001 tentative,1047,1.667

@@ -40,3 +40,10 @@ amateur_transit_candidates.csv
 # Large ML model is always gitignored regardless of subfolder
 **/main_river_model.pkl
 **/*.pkl
+
+# Ephemeral logs (regenerated on every run)
+logs/
+downstream_log.txt
+*_log.txt
+wider_hunt_log.txt
+wider_hunt_chunked_log.txt
