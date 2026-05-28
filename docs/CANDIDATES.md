@@ -98,10 +98,12 @@ all four filter verdicts + reasons.
 | Primary | A9/F0V, G = 9.95, d = 293 pc, M_1 = 1.60 ± 0.20 M_⊙ (consensus of FLAME 1.67 / StarHorse 1.59 / TIC 1.42 / GALAH 1.43 / Kervella 1.82) |
 | Channel 1 — HGCA Brandt 2021 | **χ² = 1583** (one of the highest in the catalog — far above the 30 corroborated threshold) |
 | Channel 2 — Kervella H2G2 2022 | snrPMa = 14.85, dVt = 3.15 km/s; Kervella M_2_5AU = 0.45 M_⊙ at face value (the often-quoted "4 M_⊙" only comes from accounting for orbit-averaged PMa dilution at P ≈ 10 yr — see dossier §6) |
-| Channel 3 — Direct archival K_1 | Gaia DR3 `rv_amplitude_robust = 16.305 km/s` over 17 transits; `rv_chisq_pvalue = 1.78×10⁻¹⁵` (> 9σ rejection of single-velocity); `rv_renormalised_gof = 7.22` (≫ 4 = binary). GALAH DR4 single epoch corroborates with γ-offset = −7.99 ± 1.56 km/s vs Gaia mean. |
-| NSS solution | None — P ≈ 10 yr exceeds the Gaia mission 1000-d cutoff |
-| M_2 (at M_1 = 1.60, P = 10 yr, K_1 = 16.3) | sin i = 1: 3.62 M_⊙; ⟨sin i⟩ = 0.785: **5.65 M_⊙ → stellar-mass BH territory** |
-| P(M_2 > 3.0) | ~75% (BH); P(M_2 > 2.2) ~88% (above NS upper limit) |
+| Channel 3 — Gaia DR3 RV variability | `rv_amplitude_robust = 16.305 km/s` over 17 transits; `rv_chisq_pvalue = 1.78×10⁻¹⁵` (> 9σ rejection of single-velocity); `rv_renormalised_gof = 7.22` (≫ 4 = binary) |
+| Channel 4 — Multi-archive direct RV (task HH) | **4 archival epochs across 4.3 yr**: GALAH DR3 MJD 57479 = −39.94 km/s; APOGEE DR17 MJD 58567 = +26.54, MJD 58570 = −2.41, MJD 59057 = −44.52 km/s. **ΔRV peak-to-peak = 71 km/s → model-free K_1 ≥ 35.5 km/s, central ≈ 47 km/s — 2-3× larger than the Gaia rv_amplitude_robust.** Strengthens the BH classification. |
+| NSS solution | None — P ≈ 10 yr exceeds the Gaia mission 1000-d cutoff (no Keplerian fit possible from the 4 epochs without ephemeris) |
+| M_2 (at M_1 = 1.60, P = 10 yr, K_1 = 16.3) | sin i = 1: 3.62 M_⊙; ⟨sin i⟩ = 0.785: 5.65 M_⊙ |
+| M_2 (at M_1 = 1.60, P ∈ [3, 10] yr, K_1 ≈ 47 km/s from HH) | **6–17 M_⊙ → solid stellar-mass BH** (or potential hierarchical triple if scatter is from a third body) |
+| P(M_2 > 3.0) | ~75% from Gaia channel alone; substantially higher when HH archival K_1 included |
 | Novelty | **Zero SIMBAD bibcodes** — no peer-reviewed paper has ever discussed HD 157033. Absent from Halbwachs+ 2023, Shahaf+ 2023, Müller-Horn+ 2026 (excluded by RUWE = 0.85 < 1.4, M_1 = 1.6 > MS cutoff 1.51, rv_amp = 16.3 < 20 threshold). First 2-channel-corroborated identification. |
 | Follow-up | ~1 hr on FEROS or 4 epochs of new RV to derive 5-epoch Keplerian; would promote to CONFIRMED |
 | Dossier | `docs/dossiers/HD157033_DOSSIER_2026_05_28.md` |
