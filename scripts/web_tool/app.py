@@ -445,6 +445,260 @@ def query_hgca(hip: int | None, timeout_s: int = 20) -> dict | str:
 
 
 # ---------------------------------------------------------------------------
+# Archival second-method queries — pulled lazily by the UI panels below.
+# Each function caches for an hour so re-runs of the same source are cheap.
+# All return either a dict / list, or a string status message.
+# ---------------------------------------------------------------------------
+
+@st.cache_data(show_spinner=False, ttl=3600)
+def query_archival_rv_epochs(ra: float, dec: float,
+                              radius_arcsec: float = 5.0,
+                              timeout_s: int = 30) -> dict:
+    """Pull multi-epoch RVs from RAVE / LAMOST / APOGEE / GALAH at the source
+    position.  Returns one entry per archive with epoch counts + summary stats.
+
+    The intent is *cheap* second-method evidence: any archive with >= 2 epochs
+    spanning >30 days gives a direct test of the NSS K_1 prediction.
+    """
+    result: dict[str, Any] = {}
+    try:
+        from astroquery.vizier import Vizier
+        from astropy.coordinates import SkyCoord
+        from astropy import units as u
+    except Exception as exc:  # noqa: BLE001
+        return {'_error': f'astroquery import failed ({type(exc).__name__})'}
+
+    coord = SkyCoord(ra=ra * u.deg, dec=dec * u.deg, frame='icrs')
+    radius = radius_arcsec * u.arcsec
+    v = Vizier(columns=['*'], timeout=timeout_s)
+    v.ROW_LIMIT = -1
+
+    # (catalog_id, label, mjd_col, rv_col, rv_err_col)
+    archives = [
+        ('III/283/rave6',  'RAVE DR6',  'MJD',     'HRV',  'eHRV'),
+        ('V/156/dr6vols',  'LAMOST DR6 LRS', 'MJD', 'RV',   'e_RV'),
+        ('V/156/dr6mrss',  'LAMOST DR6 MRS', 'MJD', 'RV',   'e_RV'),
+        ('III/284/allvis', 'APOGEE DR17 (allvis)', 'MJD',   'VHELIO', 'VRELERR'),
+        ('III/284/allstar','APOGEE DR17 (allstar)','MJD',   'VHELIO', 'VRELERR'),
+        ('III/295/galah4', 'GALAH DR4',         'mjd',  'rv_obst','e_rv_obst'),
+    ]
+    for cat_id, label, mjd_col, rv_col, rv_err_col in archives:
+        try:
+            tab = v.query_region(coord, radius=radius, catalog=cat_id)
+            if tab is None or len(tab) == 0:
+                continue
+            t = tab[0]
+            # Different archives use slightly different column names; check
+            # each candidate column lazily.
+            avail = {c.lower(): c for c in t.colnames}
+            mjd_real = avail.get(mjd_col.lower(), avail.get('jd'))
+            rv_real  = avail.get(rv_col.lower(),  avail.get('hrv'))
+            err_real = avail.get(rv_err_col.lower(), avail.get('ehrv'))
+            if mjd_real is None or rv_real is None:
+                result[label] = {'count': len(t), 'note': 'columns not recognized'}
+                continue
+            mjds = [float(x) for x in t[mjd_real]
+                    if x is not None and not (isinstance(x, float) and math.isnan(x))]
+            rvs  = [float(x) for x in t[rv_real]
+                    if x is not None and not (isinstance(x, float) and math.isnan(x))]
+            errs = ([float(x) for x in t[err_real]] if err_real else [None] * len(rvs))
+            epochs = sorted(zip(mjds, rvs, errs), key=lambda p: p[0])[:30]
+            result[label] = {
+                'count': len(epochs),
+                'epochs': epochs,
+                'mjd_min': min(mjds) if mjds else None,
+                'mjd_max': max(mjds) if mjds else None,
+                'rv_min':  min(rvs) if rvs else None,
+                'rv_max':  max(rvs) if rvs else None,
+                'rv_span': (max(rvs) - min(rvs)) if rvs else None,
+            }
+        except Exception as exc:  # noqa: BLE001
+            result[label] = {'count': 0, 'note': f'skipped ({type(exc).__name__})'}
+    return result
+
+
+@st.cache_data(show_spinner=False, ttl=3600)
+def query_galex_uv(ra: float, dec: float, radius_arcsec: float = 5.0,
+                   timeout_s: int = 20) -> dict:
+    """Pull GALEX AIS (II/335) FUV/NUV detection at the source position.
+
+    Useful for WD-vs-NS resolution at the M_2 ≈ 1.0-1.5 M_⊙ boundary: a
+    Chandrasekhar-mass WD emits detectably in FUV if T > ~30,000 K and the
+    primary doesn't dilute the flux too much.  Quiet GALEX is consistent
+    with NS (or already-cooled WD).
+    """
+    try:
+        from astroquery.vizier import Vizier
+        from astropy.coordinates import SkyCoord
+        from astropy import units as u
+    except Exception as exc:  # noqa: BLE001
+        return {'_error': f'astroquery import failed ({type(exc).__name__})'}
+
+    coord = SkyCoord(ra=ra * u.deg, dec=dec * u.deg, frame='icrs')
+    radius = radius_arcsec * u.arcsec
+    v = Vizier(columns=['*'], timeout=timeout_s)
+    try:
+        res = v.query_region(coord, radius=radius, catalog='II/335/galex_ais')
+        if res is None or len(res) == 0:
+            return {'detected': False, 'note': 'No GALEX AIS source within radius'}
+        t = res[0]
+        # Best (closest) match — Vizier sorts by distance for query_region
+        avail = {c.lower(): c for c in t.colnames}
+        out: dict = {'detected': True}
+        for key in ('FUV', 'NUV', 'e_FUV', 'e_NUV', 'FUVmag', 'NUVmag',
+                     'e_FUVmag', 'e_NUVmag'):
+            col = avail.get(key.lower())
+            if col is not None:
+                val = t[col][0]
+                try:
+                    out[key] = float(val)
+                except (TypeError, ValueError):
+                    pass
+        return out
+    except Exception as exc:  # noqa: BLE001
+        return {'_error': f'GALEX skipped ({type(exc).__name__})'}
+
+
+@st.cache_data(show_spinner='Downloading TESS data via lightkurve (slow) ...',
+                ttl=86400)
+def query_tess_phase_fold(source_id: int, P_d: float,
+                           T0_bjd: float | None = None,
+                           n_bins: int = 60) -> dict:
+    """Download TESS SPOC light curves for source_id, stitch + phase-fold at P.
+
+    Lazy/expensive: only run from the UI when the user explicitly requests it.
+    Caches for a day per (source_id, P_d).
+
+    Returns:
+      sectors  -- list of TESS sector numbers found
+      phase    -- 1D array of fold phase centres (0-1)
+      flux     -- mean-normalized flux per bin
+      flux_err -- mean of per-cadence errors per bin
+      ampl_P   -- best-fit sinusoid amplitude at period P (mmag)
+      ampl_P2  -- best-fit sinusoid amplitude at P/2 (ellipsoidal; mmag)
+      rms_oot  -- robust RMS of out-of-eclipse flux (mmag)
+      error    -- failure message if any step failed
+    """
+    try:
+        import lightkurve as lk
+    except ImportError:
+        return {'error': 'lightkurve not installed. '
+                          'Add to requirements: pip install lightkurve'}
+    try:
+        target = f'Gaia DR3 {source_id}'
+        # SPOC first (already detrended); fall back to QLP for fainter targets
+        search = lk.search_lightcurve(target, mission='TESS', author='SPOC')
+        if len(search) == 0:
+            search = lk.search_lightcurve(target, mission='TESS', author='QLP')
+        if len(search) == 0:
+            return {'error': 'No SPOC or QLP TESS light curves available',
+                    'sectors': []}
+
+        lcs = search.download_all()
+        if lcs is None or len(lcs) == 0:
+            return {'error': 'TESS data download returned empty', 'sectors': []}
+        sectors = [int(getattr(l, 'sector', -1)) for l in lcs]
+        try:
+            stitched = lcs.stitch().normalize().remove_nans()
+        except Exception:  # fallback: per-sector normalize then concat
+            stitched = lcs[0].normalize().remove_nans()
+            for l in lcs[1:]:
+                stitched = stitched.append(l.normalize().remove_nans())
+
+        # Phase fold at P
+        t = np.asarray(stitched.time.value, dtype=float)
+        f = np.asarray(stitched.flux.value, dtype=float)
+        e = np.asarray(stitched.flux_err.value, dtype=float) if stitched.flux_err is not None else np.zeros_like(f)
+        # Reference epoch: NSS T0 in BJD-2457000 (TESS frame) if provided,
+        # otherwise start of first sector.
+        if T0_bjd is not None and not (isinstance(T0_bjd, float) and math.isnan(T0_bjd)):
+            t0 = float(T0_bjd) - 2457000.0
+        else:
+            t0 = float(np.nanmin(t))
+        phase = ((t - t0) % P_d) / P_d
+        # Bin
+        bins = np.linspace(0.0, 1.0, n_bins + 1)
+        idx = np.digitize(phase, bins) - 1
+        idx = np.clip(idx, 0, n_bins - 1)
+        flux_bin = np.full(n_bins, np.nan)
+        err_bin = np.full(n_bins, np.nan)
+        for i in range(n_bins):
+            sel = idx == i
+            if sel.sum() == 0:
+                continue
+            flux_bin[i] = np.nanmedian(f[sel])
+            err_bin[i] = np.nanmedian(e[sel]) if e is not None else 0.0
+        phase_centres = 0.5 * (bins[:-1] + bins[1:])
+
+        # Robust amplitude estimates via sinusoid LS fit at P and P/2.
+        def _sin_amplitude(t_arr, f_arr, period):
+            phi = 2.0 * math.pi * (t_arr - t0) / period
+            A = np.column_stack([np.cos(phi), np.sin(phi), np.ones_like(phi)])
+            try:
+                coefs, *_ = np.linalg.lstsq(A, f_arr, rcond=None)
+                ampl = math.hypot(coefs[0], coefs[1])
+                return 1000.0 * ampl  # convert fractional to mmag-equivalent
+            except Exception:
+                return 0.0
+
+        # Use only out-of-eclipse points for fits (clip flux > 5 MAD below median)
+        med = float(np.nanmedian(f))
+        mad = float(np.nanmedian(np.abs(f - med)))
+        in_band = np.abs(f - med) < 5.0 * mad
+        t_in, f_in = t[in_band], f[in_band]
+        ampl_P  = _sin_amplitude(t_in, f_in, P_d)
+        ampl_P2 = _sin_amplitude(t_in, f_in, P_d / 2.0)
+        rms_oot = 1000.0 * float(np.nanstd(f_in - np.nanmean(f_in)))
+
+        return {
+            'sectors': sectors,
+            'phase': phase_centres.tolist(),
+            'flux':  flux_bin.tolist(),
+            'flux_err': err_bin.tolist(),
+            'ampl_P_mmag':  ampl_P,
+            'ampl_P2_mmag': ampl_P2,
+            'rms_oot_mmag': rms_oot,
+            'n_points': int(len(t)),
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {'error': f'TESS query failed: {type(exc).__name__}: {exc}'}
+
+
+def plot_tess_phase_fold(tess: dict, P_d: float) -> go.Figure:
+    """Render a phase-folded TESS light curve from query_tess_phase_fold output."""
+    fig = go.Figure()
+    if tess.get('error'):
+        fig.update_layout(title=f'TESS: {tess["error"]}',
+                          height=240, margin=dict(t=40, b=20, l=40, r=20))
+        return fig
+    phase = tess.get('phase', [])
+    flux = tess.get('flux', [])
+    err = tess.get('flux_err', [])
+    # Plot phase 0-2 to make eclipse/dip continuity visible
+    p2 = list(phase) + [p + 1.0 for p in phase]
+    f2 = list(flux) + list(flux)
+    e2 = list(err) + list(err)
+    fig.add_trace(go.Scatter(
+        x=p2, y=f2, mode='markers',
+        error_y=dict(type='data', array=e2, visible=True, thickness=0.6),
+        marker=dict(size=4, color='#1f77b4'),
+        showlegend=False,
+    ))
+    fig.add_hline(y=1.0, line=dict(color='grey', dash='dot', width=1))
+    title = (f'TESS phase fold at P = {P_d:.3f} d  ·  sectors = {tess.get("sectors", [])}  ·  '
+             f'n = {tess.get("n_points", 0)}  ·  '
+             f'A(P) = {tess.get("ampl_P_mmag", 0):.1f} mmag,  '
+             f'A(P/2) = {tess.get("ampl_P2_mmag", 0):.1f} mmag,  '
+             f'RMS = {tess.get("rms_oot_mmag", 0):.1f} mmag')
+    fig.update_layout(
+        title=title, xaxis_title='orbital phase φ  (showing 0-2 for clarity)',
+        yaxis_title='normalised flux', height=300,
+        margin=dict(t=70, b=40, l=50, r=20),
+    )
+    return fig
+
+
+# ---------------------------------------------------------------------------
 # Derivation pipeline (single source) — mirrors consumer.derive_chunk per-row
 # ---------------------------------------------------------------------------
 
@@ -1411,6 +1665,189 @@ def main():
         st.info(hgca)
     else:
         st.dataframe(pd.DataFrame([hgca]).T.rename(columns={0: 'value'}), use_container_width=True)
+
+    # ----------------------------- Archival RV epochs ---------------------
+    # Multi-epoch RV from RAVE/LAMOST/APOGEE/GALAH — the cheapest second-method
+    # channel for a Gaia NSS candidate.  Any archive with >= 2 epochs spanning
+    # >30 days directly tests the NSS K_1 prediction.
+    ra_q = row.get('ra'); dec_q = row.get('dec')
+    if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
+        with st.expander('Archival RV epochs (RAVE / LAMOST / APOGEE / GALAH)'):
+            st.caption('Independent multi-epoch RV from non-Gaia archives. '
+                       'For a real Gaia NSS orbit the ΔRV across these epochs should be '
+                       'consistent with the predicted K_1; a flat archival RV at the '
+                       'right phase difference falsifies the orbit.')
+            with st.spinner('Vizier multi-archive query (~20s) ...'):
+                rv_data = query_archival_rv_epochs(float(ra_q), float(dec_q),
+                                                     radius_arcsec=5.0)
+            if '_error' in rv_data:
+                st.warning(rv_data['_error'])
+            elif not rv_data:
+                st.info('No RAVE/LAMOST/APOGEE/GALAH match within 5".')
+            else:
+                rows_out = []
+                K_obs = derived.get('K_obs_rvampl')
+                P_d_nss = derived.get('P_d')
+                for archive, info in rv_data.items():
+                    if info.get('count', 0) == 0:
+                        continue
+                    n = info['count']
+                    span_d = (info.get('mjd_max', 0) - info.get('mjd_min', 0)) if info.get('mjd_max') else None
+                    rv_span = info.get('rv_span')
+                    pred_K = float(K_obs)/2.0 if K_obs is not None and not pd.isna(K_obs) else None
+                    note = ''
+                    if rv_span is not None and pred_K is not None:
+                        # rough corroboration ratio: observed span vs predicted 2*K_1
+                        ratio = rv_span / (2 * pred_K)
+                        if ratio > 0.5:
+                            note = f'corroborates K_1 ({ratio:.2f}× predicted span)'
+                        elif ratio < 0.2:
+                            note = f'inconsistent: span only {ratio:.2f}× predicted'
+                        else:
+                            note = f'marginal ({ratio:.2f}× predicted span)'
+                    rows_out.append({
+                        'archive': archive,
+                        'n_epochs': n,
+                        'span_d': f'{span_d:.1f}' if span_d else '—',
+                        'RV_min (km/s)': f'{info.get("rv_min"):.2f}' if info.get('rv_min') is not None else '—',
+                        'RV_max (km/s)': f'{info.get("rv_max"):.2f}' if info.get('rv_max') is not None else '—',
+                        'RV_span (km/s)': f'{rv_span:.2f}' if rv_span is not None else '—',
+                        '2nd-method note': note,
+                    })
+                if rows_out:
+                    st.dataframe(pd.DataFrame(rows_out), hide_index=True,
+                                  use_container_width=True)
+                    # Predicted 2K_1 for reference
+                    if K_obs is not None and not pd.isna(K_obs):
+                        st.caption(f'Gaia rv_amplitude_robust = {float(K_obs):.2f} km/s '
+                                    f'(= 2·K_1 per v2 cascade convention → K_1 ≈ {float(K_obs)/2:.2f} km/s, '
+                                    f'so the full peak-to-peak RV span observed in any archive at '
+                                    f'separations > P/2 should approach {float(K_obs):.2f} km/s).')
+                else:
+                    st.info('All archives queried, no matches within 5".')
+
+    # ----------------------------- GALEX UV detection ---------------------
+    # WD-vs-NS-vs-mass-gap-BH discriminator for the M_2 ≈ 1.0-1.5 boundary.
+    if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
+        with st.expander('GALEX UV detection (FUV / NUV)'):
+            st.caption('A 1.4-M_⊙ WD companion is detectable in GALEX FUV if T_WD > ~30,000 K '
+                       'and the primary doesn\'t outshine it. Quiet GALEX is consistent with '
+                       'an NS (or cool/old WD); a UV excess at predicted WD flux level demotes '
+                       'an NS-mass candidate to massive-WD.')
+            with st.spinner('Vizier GALEX AIS query ...'):
+                galex = query_galex_uv(float(ra_q), float(dec_q), radius_arcsec=5.0)
+            if '_error' in galex:
+                st.warning(galex['_error'])
+            elif not galex.get('detected'):
+                st.info(galex.get('note', 'No GALEX detection within 5".'))
+            else:
+                disp = {k: v for k, v in galex.items() if k != 'detected'}
+                st.dataframe(pd.DataFrame([disp]).T.rename(columns={0: 'value'}),
+                              use_container_width=True)
+
+    # ----------------------------- TESS phase fold ------------------------
+    # Lazy: only run if user clicks the button.  TESS download is slow (~30s
+    # per sector + stitch) and noise-floor is too high to be informative for
+    # faint (G > 15) targets.
+    P_d_for_fold = derived.get('P_d')
+    if P_d_for_fold is not None and not pd.isna(P_d_for_fold):
+        with st.expander('TESS phase fold at the NSS period (optional)'):
+            st.caption('Downloads SPOC (or QLP fallback) light curves and phase-folds at '
+                       'the Gaia NSS orbital period. Looks for eclipses (sharp dip at φ=0), '
+                       'ellipsoidal modulation at P/2 (sinusoidal with two minima per orbit), '
+                       'or reflection at P (companion is heated → luminous, demote). '
+                       'Slow — requires `lightkurve` and downloads ~tens of MB per sector.')
+            t_run = st.button('Run TESS phase fold',
+                               help='Click to fetch + fold TESS data for this source. '
+                                    'Results are cached for 1 day per (source_id, P_d) pair.')
+            if t_run:
+                try:
+                    sid_int = int(sid_display)
+                except (TypeError, ValueError):
+                    sid_int = None
+                T0_bjd = None
+                # Try to grab a reference epoch if the NSS row has it
+                for key in ('t_periastron', 't_periastron_bjd', 'reference_time'):
+                    val = row.get(key)
+                    if val is not None and not pd.isna(val):
+                        try:
+                            T0_bjd = float(val)
+                            break
+                        except (TypeError, ValueError):
+                            pass
+                if sid_int is None:
+                    st.error('source_id missing — cannot resolve TESS target.')
+                else:
+                    tess = query_tess_phase_fold(sid_int, float(P_d_for_fold), T0_bjd)
+                    if tess.get('error'):
+                        st.warning(tess['error'])
+                    else:
+                        st.plotly_chart(plot_tess_phase_fold(tess, float(P_d_for_fold)),
+                                         use_container_width=True)
+                        # Interpretation
+                        amp_P = tess.get('ampl_P_mmag', 0.0)
+                        amp_P2 = tess.get('ampl_P2_mmag', 0.0)
+                        rms = max(tess.get('rms_oot_mmag', 1.0), 1.0)
+                        snr_P = amp_P / rms
+                        snr_P2 = amp_P2 / rms
+                        if snr_P > 5 and amp_P > 5:
+                            verdict = (f'**Signal at P** (S/N = {snr_P:.1f}): possible eclipse or '
+                                       f'reflection — check the fold visually for a dip vs sinusoid.')
+                        elif snr_P2 > 5 and amp_P2 > 1:
+                            verdict = (f'**Signal at P/2** (S/N = {snr_P2:.1f}): consistent with '
+                                       f'ellipsoidal modulation. Estimate amplitude → predicted '
+                                       f'amplitude at NSS M_2 to verify.')
+                        else:
+                            verdict = (f'No significant signal at P or P/2 (S/N < 5). RMS noise '
+                                       f'floor = {rms:.1f} mmag. For dark compact-companion '
+                                       f'candidates this is a *positive* constraint (companion '
+                                       f'is non-luminous to the photometric limit).')
+                        st.markdown(verdict)
+
+    # ----------------------------- Pool selection trace -------------------
+    with st.expander('Pool selection trace: F#1–#28 (producer) vs F#29–#32 (cascade)'):
+        st.caption('The cascade has two stages. F#1–#28 are producer-side pool-selection '
+                   'rules (G_max, plx_min, period range, NSS solution_type, etc.) applied '
+                   '*before* the per-source cascade. If a source fails any of these it never '
+                   'enters the pool — and the "Filter reasons" panel below only shows the '
+                   'cascade verdicts F#29–#32 for sources that made it through. This trace '
+                   'shows which pool(s) this source-id is in (and therefore which producer '
+                   'rules it has already passed).')
+        in_pools = []
+        if bulk.get('v2'):
+            in_pools.append(('v2', 'main_hunt_derived_v2.parquet — Orbital + AstroSpectroSB1, '
+                                     'G<13, plx>1.0, sig>12, 100<P<3000 d'))
+        if bulk.get('v2_alt'):
+            in_pools.append(('v2_alt', 'main_hunt_derived_v2_alt.parquet — OrbitalAlternative + '
+                                          'OrbitalAlternativeValidated (rv_amplitude_robust null → '
+                                          'F#31/F#32 are NO_DATA)'))
+        if bulk.get('v2_relaxed'):
+            in_pools.append(('v2_relaxed', 'main_hunt_derived_v2_relaxed.parquet — G<15, plx>0.5 '
+                                              'expansion (mostly faint AstroSpectroSB1 rows)'))
+        if bulk.get('v3'):
+            in_pools.append(('v3', 'acceleration_v3.parquet — NSS Acceleration channel '
+                                     '(BH3-regime, P-degenerate)'))
+        if not in_pools:
+            st.warning('This source is not in any bulk pool. Either no NSS row at all, or '
+                        'it failed an upstream cut. The cascade still ran on the live '
+                        'single-source query and produced the F#29–#32 verdicts above.')
+        else:
+            st.dataframe(pd.DataFrame(in_pools, columns=['pool', 'selection rules met']),
+                          hide_index=True, use_container_width=True)
+        st.markdown(
+            '**Producer-side cuts the v2 pool applies** (`scripts/streaming/producer.py`):\n'
+            '- `nss_solution_type IN (Orbital, AstroSpectroSB1)`\n'
+            '- `significance >= 12`\n'
+            '- `100 <= period_d <= 3000`\n'
+            '- `parallax >= 1.0 mas`\n'
+            '- `phot_g_mean_mag <= 13`\n'
+            '- Documented Gaia DR3 NSS false-positive source IDs excluded\n\n'
+            '**Cascade-side filters surfaced below** (`scripts/streaming/v2_corrected/consumer_v2.py`):\n'
+            '- F#29 SB2: non_single_star bits for SB2/SB2C indicator\n'
+            '- F#30 K-giant: chromatic-bias risk via logg fallback chain\n'
+            '- F#31 RV reality: rv_amplitude_robust + rv_chisq_pvalue\n'
+            '- F#32 Joint K_obs/K_pred: sin_i_implied within physical range\n'
+        )
 
     # ----------------------------- tables ---------------------------------
     with st.expander('Derived parameters'):

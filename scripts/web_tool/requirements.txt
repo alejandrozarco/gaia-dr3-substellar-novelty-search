@@ -8,3 +8,4 @@ numpy>=1.26
 plotly>=5.20
 scipy>=1.11
 pyarrow>=14.0          # parquet I/O for sample_data
+lightkurve>=2.5        # optional — only needed for TESS phase-fold panel; install separately if you want it
