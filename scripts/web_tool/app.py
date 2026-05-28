@@ -168,6 +168,81 @@ def m2_range_isotropic_sini(fM: float, M1: float, n: int = 20000,
             'samples': m2_samples}
 
 
+# Pecaut & Mamajek 2013 + SIMBAD spectral classification midpoints.
+# (Teff_upper_bound_K, sp_letter, sub_number)  — sorted high to low so a
+# simple "first match" walk converts a Teff into a spectral letter + sub-class.
+SPECTRAL_BINS: list[tuple[float, str, int]] = [
+    (30000, 'O', 5),
+    (16400, 'B', 5),
+    (10000, 'A', 0),
+    (9700, 'A', 1),  (9300, 'A', 2),  (8800, 'A', 3),  (8500, 'A', 4),
+    (8270, 'A', 5),  (8080, 'A', 6),  (7800, 'A', 7),
+    (7440, 'F', 0),  (7220, 'F', 1),  (7030, 'F', 2),  (6810, 'F', 3),
+    (6720, 'F', 4),  (6510, 'F', 5),  (6340, 'F', 6),  (6240, 'F', 7),
+    (6170, 'F', 8),  (6055, 'F', 9),
+    (5980, 'G', 0),  (5880, 'G', 1),  (5770, 'G', 2),  (5720, 'G', 3),
+    (5680, 'G', 4),  (5660, 'G', 5),  (5610, 'G', 6),  (5510, 'G', 7),
+    (5340, 'G', 8),  (5240, 'G', 9),
+    (5150, 'K', 0),  (5040, 'K', 1),  (4830, 'K', 2),  (4620, 'K', 3),
+    (4410, 'K', 4),  (4230, 'K', 5),  (4080, 'K', 6),  (3940, 'K', 7),
+    (3870, 'K', 8),  (3700, 'K', 9),
+    (3600, 'M', 0),  (3500, 'M', 1),  (3400, 'M', 2),  (3250, 'M', 3),
+    (3050, 'M', 4),  (2950, 'M', 5),  (2800, 'M', 6),  (2650, 'M', 7),
+    (2500, 'M', 8),  (2400, 'M', 9),
+    (1300, 'L', 5),
+]
+
+
+def classify_primary(teff: float | None, logg: float | None) -> dict:
+    """Derive Morgan-Keenan spectral type from Teff + log g.
+
+    Returns a dict with `sp_letter`, `sp_number`, `lum_class`, `sp_full`
+    (e.g. 'K1III', 'G2V'), and human-readable `description`.
+    Falls back gracefully when inputs are missing.
+    """
+    out: dict[str, Any] = {
+        'sp_letter': '?', 'sp_number': '?', 'lum_class': '?',
+        'sp_full': 'unknown', 'description': 'insufficient data',
+    }
+    if teff is None or (isinstance(teff, float) and math.isnan(teff)):
+        return out
+    teff_v = float(teff)
+    # First spectral bin whose Teff_upper bound is <= our Teff
+    for t_thr, letter, number in SPECTRAL_BINS:
+        if teff_v >= t_thr:
+            out['sp_letter'] = letter
+            out['sp_number'] = number
+            break
+    # Luminosity class from log g — same cuts used by SIMBAD's MK pipeline
+    if logg is None or (isinstance(logg, float) and math.isnan(logg)):
+        out['lum_class'] = '?'
+    else:
+        logg_v = float(logg)
+        if   logg_v >= 4.0: out['lum_class'] = 'V'    # dwarf / main sequence
+        elif logg_v >= 3.5: out['lum_class'] = 'IV'   # subgiant
+        elif logg_v >= 2.5: out['lum_class'] = 'III'  # giant
+        elif logg_v >= 1.5: out['lum_class'] = 'II'   # bright giant
+        else:                out['lum_class'] = 'I'    # supergiant
+    out['sp_full'] = (f"{out['sp_letter']}{out['sp_number']}{out['lum_class']}"
+                       if out['sp_letter'] != '?' else 'unknown')
+    descr_lum = {
+        'V':   'main-sequence dwarf',
+        'IV':  'subgiant',
+        'III': 'giant',
+        'II':  'bright giant',
+        'I':   'supergiant',
+        '?':   '',
+    }.get(out['lum_class'], '')
+    descr_temp = {
+        'O': 'hot blue', 'B': 'blue', 'A': 'blue-white', 'F': 'white-yellow',
+        'G': 'yellow (solar-type)', 'K': 'orange', 'M': 'cool red',
+        'L': 'ultra-cool', '?': '',
+    }.get(out['sp_letter'], '')
+    out['description'] = (f'{descr_temp} {descr_lum}'.strip()
+                          if descr_temp or descr_lum else 'unknown')
+    return out
+
+
 def mass_class(m2: float) -> str:
     """Cascade mass-class labels (consumer.mass_class)."""
     if m2 >= 3.0:
@@ -1643,6 +1718,60 @@ def main():
                        'evidence.')
             with st.expander('Full dossier verdict text'):
                 st.markdown(dossier['verdict_text'])
+
+    # ----------------------------- Primary-star classification -----------
+    # Surface the visible primary's Morgan-Keenan classification (e.g. G5V,
+    # K1III) so the user can see at a glance what the system looks like.
+    # We prefer GSP-Spec ANN for Teff + logg (less sensitive to binary
+    # photometric variation than GSP-Phot), with fallbacks to GSP-Phot and
+    # to the main-table GSP-Spec.
+    teff_pref = (row.get('teff_gspspec_ann') or row.get('teff_gspphot')
+                  or row.get('teff_gspspec'))
+    logg_pref = (row.get('logg_gspspec_ann') or row.get('logg_gspphot')
+                  or row.get('logg_gspspec'))
+    sp = classify_primary(teff_pref, logg_pref)
+    # ESPHS-published spectral type label for cross-check (often missing)
+    esphs = row.get('spectraltype_esphs')
+    if esphs is not None and not (isinstance(esphs, float) and math.isnan(esphs)):
+        esphs_str = str(esphs).strip()
+    else:
+        esphs_str = ''
+    # Distance from NSS plx if available, else gaia_source plx
+    plx_for_dist = row.get('nss_parallax') or row.get('parallax')
+    try:
+        plx_v = float(plx_for_dist) if plx_for_dist is not None else None
+        dist_pc = 1000.0 / plx_v if plx_v and plx_v > 0 else None
+    except (TypeError, ValueError):
+        dist_pc = None
+    # Mass + radius (FLAME) — these are the Gaia-published primary estimates
+    M1_flame = row.get('mass_flame')
+    R1_flame = row.get('radius_flame_spec') or row.get('radius_flame')
+
+    st.subheader('Primary star')
+    st.caption('Morgan-Keenan classification derived from Gaia DR3 Teff + log g '
+               '(GSP-Spec ANN preferred). The cascade also uses an M_1 prior '
+               'slider in the sidebar to invert the mass function for M_2; '
+               'when the prior differs from the FLAME mass below, both are shown.')
+    p1, p2, p3, p4, p5, p6 = st.columns(6)
+    p1.metric('Spectral type', sp['sp_full'] if sp['sp_full'] != 'unknown' else '—',
+               help=f'{sp["description"]}. From Teff + log g via Pecaut & Mamajek '
+                    f'2013 SpT-Teff midpoints + standard MK log g cuts.')
+    p2.metric('Teff (K)', fmt(teff_pref, 0),
+               help='GSP-Spec ANN preferred (less sensitive to binary photometric variation '
+                    'than GSP-Phot). Falls back to GSP-Phot if ANN is null.')
+    p3.metric('log g', fmt(logg_pref, 2),
+               help='Surface gravity. ≥4.0 = main sequence (V); 3.5-4.0 = subgiant (IV); '
+                    '2.5-3.5 = giant (III); <2.5 = bright giant or supergiant.')
+    p4.metric('M_1 (FLAME)', fmt(M1_flame, 2),
+               help='Gaia FLAME (Final Luminosity Age Mass Estimator) primary mass. '
+                    'Compare to the M_1 prior slider — they may differ if the slider '
+                    'was set manually.')
+    p5.metric('R_1 (R_⊙)', fmt(R1_flame, 2),
+               help='Gaia FLAME radius (spec-derived preferred).')
+    p6.metric('d (pc)', f'{dist_pc:.0f}' if dist_pc else '—',
+               help='Distance from inverted parallax (NSS plx preferred).')
+    if esphs_str:
+        st.caption(f'ESPHS published spectral type for cross-check: **{esphs_str}**')
 
     # ----------------------------- likely object type ---------------------
     st.subheader('Likely companion type')
