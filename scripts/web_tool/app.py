@@ -1067,13 +1067,26 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
         K1_source = 'measured'
         K1_label = f'Measured K_1 = {K1:.1f} km/s (from rv_amplitude_robust)'
     else:
-        # Fall back to predicted K_1 at sin i = 1 from the cascade-derived M_2.
+        # Fall back to predicted K_1 at sin i = 1. The cascade may have stored
+        # K_pred_i90 already (it does when filter32 ran), but for OrbitalAlternative
+        # rows filter32 returns NO_DATA / None because K_obs is null. In that case
+        # we compute K_pred ourselves from the orbital parameters — same formula
+        # K1_kms uses inside filter32.
         K_pred = derived.get('K_pred_i90')
         try:
             K1 = float(K_pred) if K_pred is not None else 0.0
             if math.isnan(K1): K1 = 0.0
         except (TypeError, ValueError):
             K1 = 0.0
+        if K1 == 0.0:
+            # Compute predicted K_1 directly from the cascade-derived M_2 + orbit
+            try:
+                M1_val = float(derived.get('M1_msun') or 1.5)
+                M2_val = float(derived.get('M2_msun') or 0.0)
+                if M2_val > 0 and P > 0 and e < 1.0:
+                    K1 = K1_kms(P, e, M1_val, M2_val, 1.0)
+            except (TypeError, ValueError):
+                K1 = 0.0
         K1_source = 'predicted'
         K1_label = (f'Predicted K_1(sin i = 1) = {K1:.1f} km/s — '
                     f'Gaia DR3 did not publish rv_amplitude_robust for this NSS class. '
@@ -1102,11 +1115,13 @@ def plot_phase_curve(row: dict, derived: dict) -> go.Figure:
                       annotation_text=f'−K_1 = −{K1:.1f}', annotation_position='bottom right',
                       annotation=dict(font=dict(size=10, color='grey')))
 
-    title_suffix = '' if K1_source == 'measured' else '  (predicted — K_obs not measured by Gaia)'
+    title_main = f'Orbital phase curve  ·  P = {P:.2f} d, e = {e:.3f}'
+    if K1_source != 'measured':
+        title_main += '<br><span style="font-size:11px;color:#9467bd">(predicted K_1 — Gaia K_obs not published)</span>'
     fig.update_layout(
         title=dict(
-            text=f'Orbital phase curve  ·  P = {P:.2f} d, e = {e:.3f}{title_suffix}',
-            x=0.5, xanchor='center', y=0.95, yanchor='top',
+            text=title_main,
+            x=0.5, xanchor='center', y=0.97, yanchor='top',
             font=dict(size=14),
         ),
         xaxis_title='orbital phase φ',
