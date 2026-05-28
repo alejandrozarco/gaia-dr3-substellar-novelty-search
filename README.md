@@ -1,6 +1,6 @@
 # Gaia DR3 dormant compact-object & substellar companion search
 
-[![release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/tag/v2.0.0)
+[![release v2.0.1](https://img.shields.io/badge/release-v2.0.1-blue)](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/releases/tag/v2.0.1)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20162959.svg)](https://doi.org/10.5281/zenodo.20162959)
 
 A reproducible pipeline that derives companion mass estimates from the Gaia DR3 Non-Single-Star (NSS) Orbital, AstroSpectroSB1, and Acceleration catalogs, cross-references them against published catalogs, and surfaces candidate dormant black holes, neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and exoplanets.
@@ -76,7 +76,7 @@ Details in `docs/METHODOLOGY.md`.
 If you use this pipeline or its candidate lists, please cite:
 - Gaia Mission (Gaia Collaboration 2016, A&A 595, A1) + Gaia DR3 (Gaia Collaboration 2023, A&A 674, A1) for the underlying data
 - Gaia DR3 NSS pipeline (Halbwachs et al. 2023, A&A 674, A9) for the orbital solutions
-- This repository — concept DOI [10.5281/zenodo.20162959](https://doi.org/10.5281/zenodo.20162959) (always resolves to the latest archived release), or the per-version DOI for the release you used. v2.0.0 = [10.5281/zenodo.20421316](https://doi.org/10.5281/zenodo.20421316); v1.0.0 = [10.5281/zenodo.20162960](https://doi.org/10.5281/zenodo.20162960).
+- This repository — concept DOI [10.5281/zenodo.20162959](https://doi.org/10.5281/zenodo.20162959) (always resolves to the latest archived release), or the per-version DOI for the release you used. v2.0.1 = [10.5281/zenodo.20421566](https://doi.org/10.5281/zenodo.20421566); v2.0.0 = [10.5281/zenodo.20421316](https://doi.org/10.5281/zenodo.20421316); v1.0.0 = [10.5281/zenodo.20162960](https://doi.org/10.5281/zenodo.20162960).
 
 ## License
 

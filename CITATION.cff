@@ -5,6 +5,9 @@ identifiers:
   - description: "Concept DOI (resolves to the latest archived version)"
     type: doi
     value: "10.5281/zenodo.20162959"
+  - description: "v2.0.1 release DOI"
+    type: doi
+    value: "10.5281/zenodo.20421566"
   - description: "v2.0.0 release DOI"
     type: doi
     value: "10.5281/zenodo.20421316"
@@ -52,5 +55,5 @@ keywords:
   - "cataclysmic variables"
   - "filter cascade"
 license: "CC-BY-4.0"
-version: "2.0.0"
+version: "2.0.1"
 date-released: "2026-05-28"
