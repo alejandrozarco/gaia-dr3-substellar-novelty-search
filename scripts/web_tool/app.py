@@ -872,6 +872,175 @@ def find_dossier(source_id: int) -> dict | None:
     }
 
 
+def _kepler_rv_curve(t: np.ndarray, P: float, e: float, T0: float,
+                       K1: float, gamma: float, omega: float) -> np.ndarray:
+    """Compute Keplerian RV at times t.
+
+    Solves Kepler's equation (M = E - e sin E) by Newton iteration, then
+    computes true anomaly ν and RV = γ + K_1·(cos(ν+ω) + e·cos(ω)).
+
+    All inputs in standard units; times and P in days.
+    """
+    M = 2.0 * math.pi * (t - T0) / P
+    M = np.mod(M + math.pi, 2 * math.pi) - math.pi
+    # Newton iteration on Kepler's equation
+    E = M + e * np.sin(M)  # initial guess
+    for _ in range(40):
+        dE = (E - e * np.sin(E) - M) / (1.0 - e * np.cos(E))
+        E = E - dE
+        if np.max(np.abs(dE)) < 1e-10:
+            break
+    nu = 2.0 * np.arctan2(np.sqrt(1.0 + e) * np.sin(E / 2.0),
+                          np.sqrt(1.0 - e) * np.cos(E / 2.0))
+    return gamma + K1 * (np.cos(nu + omega) + e * math.cos(omega))
+
+
+def fit_archival_keplerian(epochs: list[tuple[float, float, float | None]],
+                            P_grid_days: np.ndarray | None = None,
+                            gamma_hint: float | None = None) -> dict:
+    """Coarse Keplerian fit to sparse archival RV epochs.
+
+    epochs : list of (MJD, RV km/s, err km/s) tuples
+    P_grid_days : trial periods (log-spaced; default 100 d to 6000 d / 16 yr)
+    gamma_hint : optional fixed γ; if None, freely fitted
+
+    Strategy: scan P on a coarse grid; at each P, least-squares fit
+    (K_1, e, T0, ω, γ) bounded to physical ranges. Returns the global best
+    fit + the full χ² vs P curve for the periodogram plot.
+
+    With only 4-5 epochs the fit is sparse — multiple periods will be
+    near-degenerate. The χ²(P) curve makes this visible to the user.
+    """
+    try:
+        from scipy.optimize import least_squares
+    except ImportError:
+        return {'error': 'scipy not installed — required for the Keplerian fit'}
+
+    if len(epochs) < 3:
+        return {'error': f'Need ≥3 archival epochs; have {len(epochs)}'}
+
+    t_arr = np.array([e[0] for e in epochs], dtype=float)
+    rv_arr = np.array([e[1] for e in epochs], dtype=float)
+    err_arr = np.array([e[2] if e[2] else 1.0 for e in epochs], dtype=float)
+    err_arr = np.maximum(err_arr, 0.1)  # floor at 100 m/s
+
+    if P_grid_days is None:
+        P_grid_days = np.logspace(np.log10(50), np.log10(6000), 80)
+
+    rv_mean = float(np.mean(rv_arr))
+    rv_span = float(np.ptp(rv_arr))
+
+    chi2_grid = np.full_like(P_grid_days, np.inf)
+    best_params_grid = [None] * len(P_grid_days)
+
+    for i, P in enumerate(P_grid_days):
+        def residuals(params, P=P):
+            K1, e, T0_frac, omega, gamma = params
+            T0 = t_arr.min() + T0_frac * P
+            return (_kepler_rv_curve(t_arr, P, e, T0, K1, gamma, omega) - rv_arr) / err_arr
+
+        K1_init = max(rv_span / 2.0, 5.0)
+        x0 = [K1_init, 0.3, 0.5, 0.0, rv_mean]
+        bounds = ([1.0, 0.0, 0.0, -math.pi, rv_mean - 100.0],
+                   [200.0, 0.95, 1.0, math.pi, rv_mean + 100.0])
+        try:
+            res = least_squares(residuals, x0=x0, bounds=bounds, max_nfev=200)
+            chi2 = float(np.sum(res.fun ** 2))
+            chi2_grid[i] = chi2
+            K1, e, T0_frac, omega, gamma = res.x
+            T0 = t_arr.min() + T0_frac * P
+            best_params_grid[i] = (K1, e, T0, omega, gamma)
+        except Exception:
+            continue
+
+    valid = np.isfinite(chi2_grid)
+    if not np.any(valid):
+        return {'error': 'all Keplerian fits failed'}
+    best_idx = int(np.argmin(chi2_grid[valid]))
+    valid_indices = np.where(valid)[0]
+    best_idx_full = int(valid_indices[best_idx])
+    P_best = float(P_grid_days[best_idx_full])
+    K1_best, e_best, T0_best, omega_best, gamma_best = best_params_grid[best_idx_full]
+    chi2_best = float(chi2_grid[best_idx_full])
+    dof = max(len(epochs) - 5, 1)
+    return {
+        'P_grid_days': P_grid_days.tolist(),
+        'chi2_grid': chi2_grid.tolist(),
+        'P_best_days':  P_best,
+        'P_best_yr':    P_best / 365.25,
+        'K1_best':      float(K1_best),
+        'e_best':       float(e_best),
+        'T0_best':      float(T0_best),
+        'omega_best':   float(omega_best),
+        'gamma_best':   float(gamma_best),
+        'chi2_best':    chi2_best,
+        'chi2_dof':     chi2_best / dof,
+        'n_epochs':     len(epochs),
+    }
+
+
+def plot_archival_keplerian_fit(fit: dict, epochs: list[tuple[float, float, float | None]],
+                                  title_prefix: str = '') -> go.Figure:
+    """Three-panel figure: (top) χ² vs P periodogram, (mid) time-series RV + best
+    fit, (bot) phase-folded RV at the best P."""
+    fig = make_subplots(rows=3, cols=1,
+                         subplot_titles=('χ² vs trial period',
+                                          'Time-series: archival RV + Keplerian fit at P_best',
+                                          f'Phase fold at P_best = {fit["P_best_yr"]:.2f} yr ({fit["P_best_days"]:.1f} d)'),
+                         vertical_spacing=0.10, row_heights=[0.28, 0.36, 0.36])
+
+    P_grid = np.array(fit['P_grid_days'])
+    chi2_grid = np.array(fit['chi2_grid'])
+    P_yr = P_grid / 365.25
+    fig.add_trace(go.Scatter(x=P_yr, y=chi2_grid, mode='lines', line=dict(color='#1f77b4'),
+                              showlegend=False), row=1, col=1)
+    fig.add_vline(x=fit['P_best_yr'], line=dict(color='#d62728', dash='dash'),
+                  annotation_text=f'P_best = {fit["P_best_yr"]:.2f} yr',
+                  annotation_position='top', row=1, col=1)
+    fig.update_xaxes(type='log', title_text='trial P (yr)', row=1, col=1)
+    fig.update_yaxes(title_text='χ²', row=1, col=1)
+
+    t_arr = np.array([e[0] for e in epochs])
+    rv_arr = np.array([e[1] for e in epochs])
+    err_arr = np.array([e[2] if e[2] else 1.0 for e in epochs])
+    t_model = np.linspace(t_arr.min() - 50, t_arr.max() + 50, 1000)
+    rv_model = _kepler_rv_curve(t_model, fit['P_best_days'], fit['e_best'],
+                                  fit['T0_best'], fit['K1_best'],
+                                  fit['gamma_best'], fit['omega_best'])
+    fig.add_trace(go.Scatter(x=t_model, y=rv_model, mode='lines',
+                              line=dict(color='#d62728'),
+                              name=f'Keplerian fit (K_1={fit["K1_best"]:.1f}, e={fit["e_best"]:.2f})',
+                              showlegend=False), row=2, col=1)
+    fig.add_trace(go.Scatter(x=t_arr, y=rv_arr, mode='markers',
+                              error_y=dict(type='data', array=err_arr, visible=True),
+                              marker=dict(size=10, color='#2ca02c', symbol='circle'),
+                              name='Archival epochs', showlegend=False), row=2, col=1)
+    fig.update_xaxes(title_text='MJD', row=2, col=1)
+    fig.update_yaxes(title_text='RV (km/s)', row=2, col=1)
+
+    phase_data = ((t_arr - fit['T0_best']) % fit['P_best_days']) / fit['P_best_days']
+    phase_model = np.linspace(0, 1, 500)
+    t_model_phase = fit['T0_best'] + phase_model * fit['P_best_days']
+    rv_model_phase = _kepler_rv_curve(t_model_phase, fit['P_best_days'],
+                                        fit['e_best'], fit['T0_best'],
+                                        fit['K1_best'], fit['gamma_best'],
+                                        fit['omega_best'])
+    fig.add_trace(go.Scatter(x=phase_model, y=rv_model_phase, mode='lines',
+                              line=dict(color='#d62728'), showlegend=False),
+                   row=3, col=1)
+    fig.add_trace(go.Scatter(x=phase_data, y=rv_arr, mode='markers',
+                              error_y=dict(type='data', array=err_arr, visible=True),
+                              marker=dict(size=10, color='#2ca02c'),
+                              showlegend=False), row=3, col=1)
+    fig.update_xaxes(title_text='orbital phase φ', row=3, col=1)
+    fig.update_yaxes(title_text='RV (km/s)', row=3, col=1)
+
+    fig.update_layout(height=820, margin=dict(t=80, b=40, l=60, r=20),
+                       title=dict(text=f'{title_prefix}Archival-RV Keplerian fit  ·  χ²/dof = {fit["chi2_dof"]:.2f}  ·  K_1 = {fit["K1_best"]:.1f} km/s',
+                                   x=0.5, xanchor='center', y=0.99, yanchor='top'))
+    return fig
+
+
 def plot_tess_phase_fold(tess: dict, P_d: float) -> go.Figure:
     """Render a phase-folded TESS light curve from query_tess_phase_fold output."""
     fig = go.Figure()
@@ -2314,6 +2483,64 @@ def main():
                             f'evidence for binarity.')
                 else:
                     st.info('All archives queried, no matches within 5".')
+
+                # ---- Archival-RV Keplerian fit (sub-panel) ----
+                # When we have ≥3 archival RV epochs from any archive, attempt
+                # a coarse Keplerian fit. The fit is necessarily under-
+                # determined with sparse data, so we scan a P grid and report
+                # the χ² vs P curve to make the period degeneracy visible.
+                # This is the only way to surface an actual orbital fit for
+                # no-NSS sources like HD 157033.
+                all_epochs: list[tuple[float, float, float | None]] = []
+                for info in rv_data.values():
+                    if isinstance(info, dict) and info.get('epochs'):
+                        for ep in info['epochs']:
+                            try:
+                                mjd, rv, err = float(ep[0]), float(ep[1]), (float(ep[2]) if ep[2] is not None else None)
+                                all_epochs.append((mjd, rv, err))
+                            except (TypeError, ValueError):
+                                continue
+                if len(all_epochs) >= 3:
+                    st.markdown('---')
+                    st.markdown('**Archival-RV Keplerian fit (coarse P scan)**')
+                    st.caption(
+                        f'Attempted Keplerian fit to {len(all_epochs)} archival epochs over a '
+                        f'log-spaced trial period grid [100 d, 16 yr]. **With sparse data this '
+                        f'fit is severely under-determined** — there are 5 Keplerian free '
+                        f'parameters (P, K_1, e, T_0, ω) and only {len(all_epochs)} data points. '
+                        f'Many periods will give near-zero χ² because the curve can thread '
+                        f'the points exactly. The χ² vs P curve below shows which periods are '
+                        f'**ruled out** (high χ²) more than which one is preferred. For long-period '
+                        f'sources with HGCA + Kervella evidence (e.g. HD 157033 at P ≈ 10 yr), '
+                        f'use the global χ² shape to confirm the implied P is at least *consistent* '
+                        f'with the data.')
+                    with st.spinner('Running coarse Keplerian fit ...'):
+                        fit_result = fit_archival_keplerian(all_epochs)
+                    if 'error' in fit_result:
+                        st.warning(f'Fit skipped: {fit_result["error"]}')
+                    else:
+                        f1, f2, f3 = st.columns(3)
+                        f1.metric('Best-fit P', f'{fit_result["P_best_yr"]:.2f} yr',
+                                   help=f'= {fit_result["P_best_days"]:.1f} d. With sparse '
+                                        f'epochs other periods are likely equally consistent.')
+                        f2.metric('K_1 at best P', f'{fit_result["K1_best"]:.1f} km/s',
+                                   help='Note: K_1 varies with assumed P. The model-free '
+                                        'K_1 ≥ rv_span/2 lower bound (above) is more robust '
+                                        'than this per-P value.')
+                        f3.metric('χ²/dof', f'{fit_result["chi2_dof"]:.2f}',
+                                   help='≤2 = good fit; <0.1 = under-determined (fit threads '
+                                        'the points exactly with multiple periods).')
+                        if fit_result['chi2_dof'] < 0.3:
+                            st.warning(
+                                f'**χ²/dof = {fit_result["chi2_dof"]:.2f} indicates the fit is '
+                                f'under-determined**: {len(all_epochs)} epochs vs 5 Keplerian '
+                                f'free parameters. Multiple periods will give equally-good fits. '
+                                f'The "Best-fit P" above is the global χ² minimum but is NOT a '
+                                f'physically preferred value — look at the χ² vs P curve below '
+                                f'and at HGCA/Kervella to constrain the period range '
+                                f'astrometrically.')
+                        st.plotly_chart(plot_archival_keplerian_fit(fit_result, all_epochs),
+                                          use_container_width=True)
 
     # ----------------------------- GALEX UV detection ---------------------
     # WD-vs-NS-vs-mass-gap-BH discriminator for the M_2 ≈ 1.0-1.5 boundary.
