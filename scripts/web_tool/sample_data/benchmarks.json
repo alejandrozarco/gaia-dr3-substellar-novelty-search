@@ -1,0 +1,206 @@
+{
+  "_comment": "Benchmark Gaia DR3 sources with known/published nature. Used by the web tool for verification and demo runs. All source_ids verified by direct Gaia DR3 ADQL query on 2026-05-28.",
+  "groups": [
+    {
+      "label": "Confirmed dormant black holes",
+      "items": [
+        {
+          "name": "Gaia BH1",
+          "source_id": "4373465352415301632",
+          "expected_tier": "Tier-1 BH",
+          "M_2_expected": 9.6,
+          "P_expected_d": 185.6,
+          "primary_sp": "G dwarf",
+          "G_mag": 13.77,
+          "ref": "El-Badry+ 2023 MNRAS 518, 1057",
+          "notes": "First confirmed dormant BH. RUWE=7.6, NSS=1. RV-confirmed."
+        },
+        {
+          "name": "Gaia BH2",
+          "source_id": "5870569352746779008",
+          "expected_tier": "Demoted by F#30 — but real BH (known cascade trade-off)",
+          "M_2_expected": 8.9,
+          "P_expected_d": 1276.7,
+          "primary_sp": "Red giant K-type",
+          "G_mag": 12.28,
+          "ref": "El-Badry+ 2023 MNRAS 521, 4323",
+          "notes": "Real BH confirmed by El-Badry. Cascade DEMOTES (F#30 K-giant) by design — same population as HD 1957. F#30 trades BH2-class real BHs for chromatic FP rejection. RV follow-up was required to settle BH2's classification."
+        },
+        {
+          "name": "Gaia BH3",
+          "source_id": "4318465066420528000",
+          "expected_tier": "(no NSS solution)",
+          "M_2_expected": 32.7,
+          "P_expected_d": 4253,
+          "primary_sp": "Metal-poor giant (G-K)",
+          "G_mag": 11.23,
+          "ref": "Gaia Coll. 2024 A&A 686 L2",
+          "notes": "33 M_⊙ BH (heaviest stellar-mass BH). P > Gaia mission baseline, so NSS gives Acceleration not Orbital. Demo: cascade will fail because no NSS Orbital fit."
+        }
+      ]
+    },
+    {
+      "label": "Known false-positive calibrators",
+      "items": [
+        {
+          "name": "4 UMi",
+          "source_id": "1714135092946125184",
+          "expected_tier": "Demoted (F#30 K-giant chromatic)",
+          "M_2_expected": "2.9x inflated by chromatic",
+          "P_expected_d": null,
+          "primary_sp": "K3 III",
+          "G_mag": 4.32,
+          "ref": "This work — Filter #30 calibration object",
+          "notes": "BP-RP=1.57, K3-III with strong molecular bands. Photocentric a_phot inflated 2x → M_2 over-estimated 2.9x. Naked-eye Polaris-region giant."
+        },
+        {
+          "name": "Phantom-RV A-dwarf",
+          "source_id": "245948793944575360",
+          "expected_tier": "Demoted (F#31 phantom RV)",
+          "M_2_expected": "spurious",
+          "P_expected_d": null,
+          "primary_sp": "A-type",
+          "G_mag": 11.80,
+          "ref": "This work — Filter #31 calibration object",
+          "notes": "rv_chisq_pvalue=0.9989 — RV chi-sq says NO variability, yet rv_amplitude_robust is non-zero due to single-transit outlier. The pattern Filter #31 catches."
+        },
+        {
+          "name": "HD 76078",
+          "source_id": "1017645329162554752",
+          "expected_tier": "Rejected (F#29 SB2)",
+          "M_2_expected": "stellar SB2",
+          "P_expected_d": null,
+          "primary_sp": "G5",
+          "G_mag": 8.58,
+          "ref": "Removed from headline catalog 2025-05",
+          "notes": "Confirmed double-lined SB2 stellar binary. Should fail F#29 if NSS solution type contains SB2 markers (NSS bit 3 set here)."
+        }
+      ]
+    },
+    {
+      "label": "Methodology recoveries (known planet hosts)",
+      "items": [
+        {
+          "name": "HD 111232",
+          "source_id": "5855730584310531200",
+          "expected_tier": "Rejected (planet companion, sub-stellar mass)",
+          "M_2_expected": 0.0065,
+          "P_expected_d": 1143,
+          "primary_sp": "G8 V",
+          "G_mag": 7.42,
+          "ref": "Mayor+ 2004 A&A 415 391",
+          "notes": "M sin(i)=6.8 M_Jup planet at P=1143 d. Cascade should land in 'planet_candidate' class, not BH/NS."
+        },
+        {
+          "name": "HD 81040",
+          "source_id": "637329067477530368",
+          "expected_tier": "Rejected (planet)",
+          "M_2_expected": 0.0065,
+          "P_expected_d": 1001,
+          "primary_sp": "G0 V",
+          "G_mag": 7.57,
+          "ref": "Sozzetti+ 2006 A&A 449 417",
+          "notes": "M sin(i)=6.86 M_Jup planet at P=1001 d. Recovery validates the cascade can correctly land at sub-stellar mass."
+        }
+      ]
+    },
+    {
+      "label": "This work — Tier-1 candidates (clean after re-vet)",
+      "items": [
+        {
+          "name": "TYC 1363-2339-1",
+          "source_id": "666596383384888320",
+          "expected_tier": "Tier-1 BH",
+          "M_2_expected": 3.88,
+          "P_expected_d": 945.7,
+          "primary_sp": "F subgiant",
+          "G_mag": 9.90,
+          "ref": "This work — candidate BH",
+          "notes": "Cleanest BH candidate. logg=4.01 ANN, BP-RP=0.56 (F color), zero risk flags."
+        },
+        {
+          "name": "TYC 8785-1657-1",
+          "source_id": "6471824298353396736",
+          "expected_tier": "Tier-1 BH",
+          "M_2_expected": 3.63,
+          "P_expected_d": 490.8,
+          "primary_sp": "F dwarf",
+          "G_mag": 10.81,
+          "ref": "This work — candidate BH (shortest P)",
+          "notes": "logg=4.37 ANN dwarf, BP-RP=0.66. Shortest orbital period in catalog (P=491 d)."
+        },
+        {
+          "name": "TYC 1299-727-1",
+          "source_id": "3396420280383215360",
+          "expected_tier": "Tier-1 BH",
+          "M_2_expected": 3.50,
+          "P_expected_d": 620.1,
+          "primary_sp": "F subgiant",
+          "G_mag": 10.12,
+          "ref": "This work",
+          "notes": "Clean F-subgiant, P=620 d, e=0.55 — high eccentricity hints at natal kick."
+        },
+        {
+          "name": "TYC 2773-348-1",
+          "source_id": "1913089145012902016",
+          "expected_tier": "Tier-1 BH",
+          "M_2_expected": 3.21,
+          "P_expected_d": 874.7,
+          "primary_sp": "F subgiant",
+          "G_mag": 10.36,
+          "ref": "This work",
+          "notes": "Mass-gap edge. RUWE=8.04 strong astrometric reflex."
+        },
+        {
+          "name": "TYC 4791-2322-1",
+          "source_id": "3020944382416549632",
+          "expected_tier": "Tier-1 NS",
+          "M_2_expected": 2.66,
+          "P_expected_d": 1158.2,
+          "primary_sp": "F-G subgiant",
+          "G_mag": 10.03,
+          "ref": "This work — strongest astrometric signal",
+          "notes": "RUWE=17.3 highest in catalog. NSS significance=13 (lowest — needs DR4 re-fit). Excellent RV target."
+        }
+      ]
+    },
+    {
+      "label": "This work — flagged Tier-1B",
+      "items": [
+        {
+          "name": "HD 207141",
+          "source_id": "6811355413155399040",
+          "expected_tier": "Tier-1B (R=8.2 R_⊙ flag)",
+          "M_2_expected": 7.57,
+          "P_expected_d": 951.9,
+          "primary_sp": "F-G bright giant",
+          "G_mag": 8.72,
+          "ref": "This work — heaviest BH candidate",
+          "notes": "If real, the heaviest dormant BH in our catalog. R=8 R_⊙ gives single F30 flag. Needs UV check."
+        },
+        {
+          "name": "BD+38 2040",
+          "source_id": "811261052394634240",
+          "expected_tier": "Tier-1B (R=6.1 R_⊙ flag)",
+          "M_2_expected": 2.77,
+          "P_expected_d": 1294.8,
+          "primary_sp": "G subgiant",
+          "G_mag": 9.64,
+          "ref": "This work; HIP 46583 = HGCA cross-match",
+          "notes": "Has HGCA row (independent confirmation). Flagged for R=6.1 R_⊙ but GSP-Spec ANN logg=3.45 — not K-giant."
+        },
+        {
+          "name": "HD 1957",
+          "source_id": "2543788153077017344",
+          "expected_tier": "Demoted (F#30 + F#32 chromatic, 3 risks)",
+          "M_2_expected": "2.4 cascade → 0.7–1.5 chromatic-corrected",
+          "P_expected_d": 816.3,
+          "primary_sp": "K1–2 RGB (Gaia DR3 GSP-Spec ANN)",
+          "G_mag": 8.40,
+          "ref": "This work — K-giant chromatic calibration #2 (after 4 UMi)",
+          "notes": "Strongest single-target case but K-giant evidence cannot be ignored. Was Tier-1 NS at first cascade; demoted by GSP-Spec ANN re-vet. R=15.5 R_⊙, logg=2.63, K spectral class — textbook F#30 territory."
+        }
+      ]
+    }
+  ]
+}

@@ -15,3 +15,28 @@ data/intermediate/nss_sb1_pool_widened_v13_plx2_sig3.csv
 data/intermediate/hipparcos_vanLeeuwen2007_FULL.csv
 data/intermediate/nss_sb1_pool_raw_2026_05_17.csv
 data/intermediate/nss_sb1_pool_with_m2_2026_05_17.csv
+
+# v1 large ML model — 65 MB, regenerable from streaming pipeline (kept out of git)
+data/derived/main_river_model.pkl
+
+# Raw Gaia chunks — large + regenerable via streaming producer
+data/raw_chunks/
+
+# Streaming pipeline log files (ephemeral)
+companions_hunt_chunked_log.txt
+companions_hunt_log.txt
+deep_dive_log.txt
+parallel_deep_dive_2026_05_27.log
+
+# Streamlit web tool cache + sample data is small enough to commit; pycache is not
+scripts/web_tool/__pycache__/
+
+# Validation script sandbox
+/tmp/
+
+# Backup / amateur-list artifacts from earlier work — not needed for canonical reproducibility
+amateur_transit_candidates.csv
+
+# Large ML model is always gitignored regardless of subfolder
+**/main_river_model.pkl
+**/*.pkl

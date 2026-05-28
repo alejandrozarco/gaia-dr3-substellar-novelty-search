@@ -1,0 +1,10 @@
+# Gaia DR3 cascade web tool — runtime dependencies
+# Install with:  pip install -r requirements.txt
+streamlit>=1.36
+astroquery>=0.4.10
+astropy>=6.0
+pandas>=2.0
+numpy>=1.26
+plotly>=5.20
+scipy>=1.11
+pyarrow>=14.0          # parquet I/O for sample_data
