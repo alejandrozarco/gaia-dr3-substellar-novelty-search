@@ -97,12 +97,14 @@ all four filter verdicts + reasons.
 
 ### WD-primary + Chandrasekhar-mass companion (Pile E)
 
-| Source | M_1 (WD) | M_2 | P | G | Notes |
-|---|---:|---:|---:|---:|---|
-| **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 M_⊙ | 935 d | 18.4 | GALEX-confirmed WD. NOT in SIMBAD. |
-| **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 M_⊙ | 274 d | 16.2 | DA WD. NOT in SIMBAD. Short-period → tractable RV. |
+Both sources verdict: **CONFIRMED_WD_BINARY_CHANDRASEKHAR (provisional)**. SED two-component fits exclude M-dwarf companions at >10σ via W1/W2; exclude hot WD companions (T_2 ≥ 11 000 / 20 000 K respectively) at >3σ via GALEX NUV / Pan-STARRS optical. Surviving companion classes: cool double-degenerate (T_2 ≤ 9 000 K cool WD) or dormant low-mass NS.
 
-Companion identity (massive WD vs low-mass NS) needs UV photometry + IR excess test.
+| Source | M_1 (WD) | M_2 | P | G | Primary T_eff | Notes | Dossier |
+|---|---:|---:|---:|---:|---:|---|---|
+| **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 M_⊙ | 935 d | 18.4 | 7 121 K (DA) | d = 98 pc. NOT in SIMBAD. M_2 sits 0.03 M_⊙ below Chandrasekhar; +1σ M_1 envelope crosses 1.40 M_⊙. No archival RV — X-shooter (6 epochs, σ_K ≈ 1.5 km/s) over 2.5 yr at predicted K_1 = 17.3 km/s. | `docs/dossiers/WDJ060042-293041_DOSSIER_2026_05_28.md` |
+| **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 M_⊙ | 274 d | 16.2 | 14 958 K (DA) | d = 84 pc. NOT in SIMBAD. M_2 sits 0.08 M_⊙ below Chandrasekhar; ONe-core primary (M_1 ≳ 0.83) reaches 1.40 M_⊙. **Highest-tractability Pile-E target**: 5 HARPS-N epochs over a single 9-month season yields >50σ K_1 detection. | `docs/dossiers/WDJ020915+380425_DOSSIER_2026_05_28.md` |
+
+If WD+WD with M_total ≥ 1.4 M_⊙: candidate **Type Ia supernova progenitor**.
 
 ### M-dwarf super-Jupiter candidates (Pile B)
 
