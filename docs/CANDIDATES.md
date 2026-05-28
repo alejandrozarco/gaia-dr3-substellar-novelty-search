@@ -141,11 +141,11 @@ APMPM J0710 archival positive constraint: 37 TESS sectors stitched, **no
 phase modulation at P or P/2 below 200 ppm** → companion is dark/substellar
 across all inclinations.
 
-## Weak archival corroboration (1 candidate — task BB2)
+## Marginal archival corroboration (1 candidate — tasks BB2 + II2)
 
 | Source | NSS class | Sig | P (d) | e | Archival evidence |
 |---|---|---:|---:|---:|---|
-| **Gaia DR3 1593152388271709824** | Orbital | 104.5 | 597.4 | 0.404 | 3 multi-archive RV epochs (1 APOGEE DR17 + 2 LAMOST DR11) fit a Keplerian at the NSS-locked phases at χ²/dof = 0.00, K_fit = 4.09 km/s. Only 2 distinct phase bins so K–ω degeneracy not yet broken. **One additional RV epoch at near-periastron upgrades to CONFIRMED.** |
+| **Gaia DR3 1593152388271709824** | Orbital | 104.5 | 597.4 | 0.404 | **MARGINAL_2CHANNEL.** 4 archival RV epochs across 3 distinct phases (1 LAMOST LRS 2016 + 1 APOGEE DR17 2017 + 2 LAMOST MRS 2023) fit the NSS-locked Keplerian at χ²/dof = 0.002, K_1 = 17.5 ± 5.9 km/s; spectroscopic f(M) = 0.26 agrees with astrometric f_phot = 0.29 (< 0.2σ) → K–ω degeneracy broken, both channels corroborate. **But K_1 is only ~3σ** (the amplitude rests on one ±10.54 km/s LAMOST LRS epoch), short of CONFIRMED. At M_1 = 1.40 (FLAME): M_2 ≈ 1.27 M_⊙ on the WD/NS boundary → most likely a massive WD; P(NS) ≈ 42%, P(BH) ≈ 2%. Corrects the earlier "2 LAMOST DR11 + K_fit = 4.09" note, which rested on a mis-dated LRS epoch — PlanId `HD145818N500615V01` encodes the plate field-center coords, not 2015-06-15; true epoch MJD 57501 = 2016-04-23. **Settling epoch:** one ~1 km/s RV near periastron MJD 61060 (2026-01-20) measures the predicted ~30 km/s swing at > 50σ — the highest-value single Tier-2 epoch. Dossier: `docs/dossiers/1593152388271709824_DOSSIER_2026_05_28.md`. |
 
 ## Tier-1 BH pool — verdicts
 
