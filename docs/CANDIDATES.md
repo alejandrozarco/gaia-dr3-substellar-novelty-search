@@ -18,15 +18,18 @@ all four filter verdicts + reasons.
 
 ## Headline
 
-| Bucket | Count |
+| Bucket | Count (M_1-corrected) |
 |---|---:|
-| **Confirmed (independent 2-channel)** | **2** |
-| Strong candidate (single-method, archival follow-up identified) | ~8 |
-| Tier-1 NS pool (v2 + v2_relaxed)         | 291 |
-| Tier-1 BH pool (v2 + v2_alt)             | 3 — 2 demoted by 2nd method, 1 dossier STRONG |
-| Tier-2 (RV-inconclusive)                  | 87 (v2) + 829 (v2_relaxed) + 42 (v2_alt) |
-| v3 Acceleration P-degenerate compact-object | 10,818 |
-| Demoted / falsified after 2nd method      | ~30 named |
+| **Confirmed (independent 2-channel)** | **2** (CRTS J051419+0111, Gaia DR3 3155543945892767232) |
+| **Confirmed WD-binary (SED 2-component)** | **3** (WDJ060042, WDJ020915, WG 26) |
+| Strong candidate (single-method, archival follow-up identified) | ~6 |
+| **Tier-1 NS pool** (after M_1 correction) | **160** (was 291 at fixed M_1=1.5; 131 demoted to WD/low-mass at real M_1) |
+| Tier-1 BH pool | 1 (5406907 STRONG; 2 v2 sources already demoted) |
+| Tier-2 (RV-inconclusive) | 426 (after M_1 correction; was 958) |
+| v3 Acceleration P-degenerate compact-object | 10,818 (not yet M_1-corrected) |
+| Demoted / falsified after 2nd method | ~32 named |
+
+> **M_1 systematic correction (task LL, 2026-05-28)**: the bulk cascade originally derived M_2 at a fixed primary mass M_1 = 1.5 M_⊙. The photocentric mass function f(M) = M_2³/(M_1+M_2)² is invariant, so M_2 scales with the assumed M_1 — overestimated for WD/M-dwarf primaries, underestimated for A-star/giant primaries. Re-solving with the actual primary mass (Gaia FLAME for 74% of sources, StarHorse/TIC/GF21/Kervella for the rest) re-tiers **665 of 1251 candidates**. The Tier-1 NS pool collapses from 291 → 160. **All four headline dormant candidates survive** (3155543 NS holds at M_1=1.67; 5406907 BH holds at M_1=0.82, M_2=4.02; 5858574 strengthens at M_1=2.07, M_2=1.75; HD 157033 unaffected — no NSS row). Corrected catalogs: `data/derived/*_M1corrected.parquet`. Root-cause fix applied to `consumer_v2.py::select_m1()`.
 
 ## Confirmed (independent 2-channel)
 
@@ -119,8 +122,8 @@ Pipeline-derived (WG 26, WDJ205650 — from task GG GF21 cross-match of the v2 +
 |---|---:|---:|---:|---:|---:|---|---|---|
 | **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 | 1.98 | 935 d | 18.4 | hand-curated | d = 98 pc. NOT in SIMBAD. M_total >> Chandrasekhar → **Type Ia progenitor candidate** if WD+WD. No archival RV; X-shooter follow-up. | `docs/dossiers/WDJ060042-293041_DOSSIER_2026_05_28.md` |
 | **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 | 2.04 | 274 d | 16.2 | hand-curated | d = 84 pc. NOT in SIMBAD. M_total >> Chandrasekhar → Type Ia progenitor candidate. Highest-tractability: 5 HARPS-N epochs yield >50σ K_1. | `docs/dossiers/WDJ020915+380425_DOSSIER_2026_05_28.md` |
-| **WG 26** = WDJ141039.06-474439.48 (Gaia DR3 6092654861665006592) | 0.53 | **0.51** | **1.04** | 176 d | 14.35 | v2_relaxed | DA WD at d=56 pc. NSS Orbital P=175.9d, e=0.064, sig=68.8. Mass self-consistency: cascade M_2=1.03 assumed M_1=1.5 (no FLAME); at GF21 M_1=0.53, M_2 = 0.51 → M_total = 1.04 (below Chandrasekhar; **not a Type Ia progenitor** — earlier GG claim was a mass-inconsistency error). RUWE=5.0 + AEN sig=731 → likely WD+M-dwarf or hierarchical triple. |  |
-| **WDJ205650.56+062149.68** (Gaia DR3 1736555475066523008) | 0.39 (low-mass He WD) | 0.56 | 0.95 | 81 d | (TBD) | v2_alt | NEW from GG. SIMBAD GALEX J205650.5+062149, DA WD. Below Chandrasekhar. RUWE = 2.16. |  |
+| **WG 26** = WDJ141039.06-474439.48 (Gaia DR3 6092654861665006592) | 0.62 | **0.65** | **1.27** | 176 d | 14.35 | v2_relaxed | **CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR** (JJ dossier). Hot DA WD primary (Shahaf 2023 HST/COS: T_eff=21,705 K, log g=7.99, M_1=0.62, cooling age 42 Myr) at d=56.4 pc. NSS Orbital P=175.9d, e=0.064, sig=68.8 → M_2=0.65 (dark), M_total=1.27 (**0.13 below Chandrasekhar — not Type Ia**). Likely cool double-degenerate; M-dwarf companion excluded >10σ by SED. Binarity essentially un-studied (Shahaf 2023 + Vincent 2024 catalog ingest only). LISA-precursor DD at one of the smallest distances in Gaia DR3 NSS. | `docs/dossiers/WG26_DOSSIER_2026_05_28.md` |
+| **WDJ205650.56+062149.68** (Gaia DR3 1736555475066523008) | 0.39 (He WD) | **0.26** | **0.64** | 81 d | — | v2_alt | **CONFIRMED_WD_WD_LOW_MASS** (KK dossier). He+He double-degenerate at d=93 pc. SED consistent with single 9,300–10,500 K LM He WD primary; cascade M_2=0.56 was at default M_1=1.5 → self-consistent at M_1=0.39 gives M_2=0.26, M_total=0.64. BOTH components require binary mass-transfer history → post-CE He+He DD that survived the 2nd CE (wide enough at a=68 R_⊙ to NOT merge in a Hubble time, t_GW ≈ 5×10¹⁶ yr). NEEDS_RV. | `docs/dossiers/WDJ205650+062149_DOSSIER_2026_05_28.md` |
 
 Plus 4 additional candidates from the v3 Acceleration channel (separate pipeline), notably **WDJ173708.52+242024.77** with M_WD = 1.22 M_⊙ — massive ONe WD with significant acceleration.
 

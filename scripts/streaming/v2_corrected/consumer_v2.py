@@ -278,24 +278,60 @@ def tier_label(cls, f29, f30, f31, f32):
 # Single-row v2 derivation — mirrors web_tool/app.py derive_one()
 # ----------------------------------------------------------------------------
 
+def select_m1(row, M1_prior=1.5):
+    """Choose the primary mass for the M_2 inversion.
+
+    The photocentric mass function f(M) = M_2^3/(M_1+M_2)^2 is invariant, so
+    the derived M_2 depends directly on the assumed M_1. Using a fixed
+    default (the historical 1.5) systematically biases M_2 for any source
+    whose true primary mass differs — overestimating M_2 for WD/M-dwarf
+    primaries (M_1 < 1.5) and underestimating it for A-star/giant primaries
+    (M_1 > 1.5). The systematic M_1 audit (2026-05-28) showed this re-tiers
+    ~53% of the Tier-1/Tier-2 pool.
+
+    Preference order (returns the first available + its provenance string):
+      1. mass_flame        (Gaia DR3 astrophysical_parameters.mass_flame)
+      2. mass_flame_spec   (astrophysical_parameters_supp)
+      3. M1_prior fallback (default 1.5)
+
+    External-catalog masses (Gentile Fusillo WD cooling, Kervella H2G2,
+    StarHorse, TIC) are NOT pulled here — the streaming consumer only sees
+    the joined Gaia columns. The offline M_1 audit applies those richer
+    sources; this in-pipeline version captures the FLAME masses, which
+    cover ~74% of the pool.
+    """
+    for col, src in (('mass_flame', 'FLAME'),
+                      ('mass_flame_spec', 'FLAME_spec')):
+        v = row.get(col)
+        if v is not None and not (isinstance(v, float) and pd.isna(v)):
+            try:
+                vf = float(v)
+                if vf > 0:
+                    return vf, src
+            except (TypeError, ValueError):
+                pass
+    return float(M1_prior), 'DEFAULT_1.5'
+
+
 def derive_row_v2(row, M1_prior=1.5):
     """Apply all three corrections to one row dict-like input.
 
     `row` must expose (numeric or None):
         a_phot_mas, parallax, nss_parallax,
         period (P_d), eccentricity (e),
+        mass_flame, mass_flame_spec,
         bp_rp, logg_gspphot, logg_gspspec_ann, logg_gspspec,
         teff_gspphot, teff_gspspec_ann,
         rv_amplitude_robust, rv_chisq_pvalue,
         in_sb2 (bool), nss_solution_type (str).
 
-    `M1_prior` is the fixed primary-mass prior in M_sun.  Defaults to 1.5
-    to match the web-tool default — the published v1 catalog used
-    FLAME mass with fallback to 1.0, which gave a different M_2 scale.
-    The user's smoke-test expected values assume M1_prior = 1.5.
+    `M1_prior` is the *fallback* primary mass (M_sun) used only when neither
+    Gaia FLAME mass is available. The pipeline prefers the measured FLAME
+    mass — see select_m1(). This corrects the systematic M_2 bias that the
+    previous fixed-1.5 default introduced across the whole catalog.
 
-    Returns dict with the v2 columns (M2_msun_v2, filter30_v2, ..., tier_v2).
-    Returns {'error': ...} if derivation impossible.
+    Returns dict with the v2 columns (M1_msun_v2, M2_msun_v2, M1_source_v2,
+    filter30_v2, ..., tier_v2). Returns {'error': ...} if impossible.
     """
     a_phot = row.get('a_phot_mas')
     plx_gs = row.get('parallax')
@@ -310,7 +346,7 @@ def derive_row_v2(row, M1_prior=1.5):
     P_yr = float(P) / 365.25
     fM_v2 = a_phot_AU ** 3 / P_yr ** 2
 
-    M1_v2 = float(M1_prior)
+    M1_v2, M1_source = select_m1(row, M1_prior)
 
     M2_v2 = solve_m2(fM_v2, M1_v2)
     cls_v2 = mass_class(M2_v2)
@@ -352,6 +388,7 @@ def derive_row_v2(row, M1_prior=1.5):
         'P_yr_v2': P_yr,
         'e_v2': e_val,
         'M1_msun_v2': M1_v2,
+        'M1_source_v2': M1_source,
         'fM_msun_v2': fM_v2,
         'M2_msun_v2': M2_v2,
         'class_v2': cls_v2,
