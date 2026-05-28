@@ -149,7 +149,7 @@ across all inclinations.
 |---|---:|---|
 | Gaia DR3 5406907085973524224 (v2_alt) | 4.79 | **STRONG_CANDIDATE** — see above |
 | Gaia DR3 3263804373319076480 (GALEX J033455+000910, v2) | 3.22 | DEMOTED — Simon, Lam, El-Badry, Reggiani 2026 (arXiv:2603.20371) published as WD with M_2 ≤ 0.9 via 7 MIKE + 4 FEROS + APOGEE + LAMOST RV epochs |
-| Gaia DR3 6281177228434199296 (GALEX J145250-192225, v2) | 12.75 | DISPUTED — Shahaf+ 2023 (Triage I) M_2 = 11.9; TESS ellipsoidal 0.138% (4.6× too high for face-on); RAVE-Gaia RV drift inconsistent |
+| Gaia DR3 6281177228434199296 (GALEX J145250-192225, v2) | 12.75 | DISPUTED — **RUWE = 6.46** (astrometric solution severely compromised → NSS photocentric M_2 unreliable; cascade also needs sini ≈ 0.12, near-face-on); RAVE–Gaia RV drift inconsistent; Shahaf+ 2023 Triage I. **Ellipsoidal claim retracted 2026-05-28** (`scripts/galex_j145250_ellip_recheck.py`): only a single 27-d TESS sector (QLP) vs P_orb = 154 d, so P/2 = 77-d ellipsoidal is unmeasurable — folded P2P at P/2 is indistinguishable from random periods (perm FAP = 0.28); the prior "0.138%" was a post-detrend noise-floor, not a detection. |
 
 ## X-ray non-detection note (task Q2)
 
@@ -181,7 +181,17 @@ across all inclinations.
 
 14 candidate periods from ZTF DR23 BLS + 4 blind methodology rediscoveries (the latter match RKcat/Hardy/Bruch — validating the method *when a real period exists*).
 
-> **⚠ Pipeline-reliability caveat (2026-05-28).** The CV-period pipeline is now known to produce **false positives at low S/N** — it folded outburst-*including* light curves and measured eclipse depths as the per-cycle *minimum* of noise-dominated cadences. The one "TESS-eclipse-confirmed" object, **CRTS J051419 (#13), is RETRACTED** (see Confirmed section). The 4 TESS-claimed CVs (#2, #7, #10, #11) are under rigorous re-vet (task #92: outburst-masked LS/BLS + permutation FAP). **Treat every un-re-vetted ZTF-only period below as provisional.**
+> **⚠ CV-period pipeline RETRACTION (2026-05-28).** The CV-period pipeline produces **false positives** — it folded outburst-*including* light curves (outbursts inject power across all frequencies), read eclipse depths as the per-cycle *minimum* of noise-dominated cadences, and applied no alias control. Rigorous re-vetting (outburst-masked Lomb-Scargle + BLS + permutation/refined-null FAP, plus the actual TESS SPOC product; scripts `crts_j051419_*recheck.py`, `cv_period_revet_2026_05_28.py`) **falsifies every claim tested — 5 of 5:**
+>
+> | # | Object | claimed P (min) | verdict |
+> |---|---|---:|---|
+> | 13 | CRTS J051419.8+011120 | 180.05 | **NOT_SUPPORTED** — masked-LS FAP = 1.0; TESS S/N 0.66 |
+> | 2 | SDSS J154953.41+173939 | 116.68 | **NOT_SUPPORTED** — masked-LS FAP = 1.0 (ZTF S/N 27, ample); BLS bands disagree |
+> | 7 | SDSS J091935.66+502825 | 93.51 | **NOT_SUPPORTED** — masked-LS FAP = 1.0; bands disagree |
+> | 10 | CRTS J151836.0-054803 | 24.64 | **NOT_SUPPORTED** — masked-LS FAP = 1.0 (ZTF S/N 11, ample → true falsification, not sensitivity); proposed 172-min parent absent |
+> | 11 | SDSS J160419.02+161548 | 128.80 | **NOT_SUPPORTED** — masked-LS FAP = 1.0; "23% eclipse" is min-of-noise (refined-null FAP 0.63) |
+>
+> In every case the claimed period vanishes when outbursts are masked, only 1-sidereal-day aliases survive, the BLS best period disagrees across bands, and TESS "eclipses" are minimum-of-noise. **Two targets had ample ZTF S/N (27 and 11) yet still failed — these are genuine false periods, not sensitivity limits.** The 4 "blind rediscoveries" (below) only recovered *known* RKcat/Hardy/Bruch periods. **Net: the CV-period avenue produced ZERO verified novel periods.** The 9 untested ZTF-only entries (#1,3,4,5,6,8,9,12,14) used the same method and are presumed unreliable pending re-vet. The objects remain genuine dwarf novae (outbursts are real); only their *periods and eclipses* are retracted.
 
 | # | Name | RA | Dec | G | P (min) | Subtype | TESS confirmation |
 |---:|---|---:|---:|---:|---:|---|---|
