@@ -1290,13 +1290,111 @@ def plot_hr(row: dict, derived: dict) -> go.Figure:
                                               f'M_G = {M_G:.2f}<br>'
                                               f'class = {cls}<extra></extra>')))
     fig.update_layout(
-        title='HR diagram (BP-RP vs absolute G-band magnitude)',
+        title=dict(text='HR diagram  ·  M_G vs BP−RP',
+                    x=0.5, xanchor='center', y=0.95, yanchor='top',
+                    font=dict(size=14)),
         xaxis_title='BP-RP (colour)', yaxis_title='M_G (absolute magnitude)',
         xaxis=dict(range=[-0.5, 4.2]),
         yaxis=dict(autorange='reversed', range=[16, -3]),
-        height=340, margin=dict(t=40, b=40, l=55, r=20),
+        height=360, margin=dict(t=60, b=50, l=55, r=20),
         legend=dict(yanchor='bottom', y=0.02, xanchor='right', x=0.99,
                     bgcolor='rgba(255,255,255,0.7)'),
+    )
+    return fig
+
+
+def plot_kiel(row: dict, derived: dict) -> go.Figure:
+    """Kiel diagram (log g vs T_eff) — the spectroscopic HR diagram.
+
+    More diagnostic than the colour-magnitude HR for our use case because the
+    F#30 K-giant chromatic-bias filter fires directly on the (log g, T_eff)
+    plane: low log g + intermediate T_eff is the chromatic-bias risk zone
+    (4 UMi class; HD 1957 case).  Shows where the primary sits relative to
+    dwarf / subgiant / giant / supergiant log-g bands and to the F#30 risk
+    box, so the user can see at a glance whether the cascade's M_2 is at
+    risk of K-giant chromatic inflation.
+
+    Source of stellar parameters (in order of preference):
+      1. GSP-Spec ANN (less sensitive to binary photometric variation)
+      2. GSP-Phot
+      3. main-table GSP-Spec
+    """
+    teff_pref = (row.get('teff_gspspec_ann') or row.get('teff_gspphot')
+                  or row.get('teff_gspspec'))
+    logg_pref = (row.get('logg_gspspec_ann') or row.get('logg_gspphot')
+                  or row.get('logg_gspspec'))
+
+    try:
+        teff_v = float(teff_pref) if teff_pref is not None else None
+        if teff_v is not None and math.isnan(teff_v):
+            teff_v = None
+    except (TypeError, ValueError):
+        teff_v = None
+    try:
+        logg_v = float(logg_pref) if logg_pref is not None else None
+        if logg_v is not None and math.isnan(logg_v):
+            logg_v = None
+    except (TypeError, ValueError):
+        logg_v = None
+
+    sp = classify_primary(teff_v, logg_v)
+
+    fig = go.Figure()
+
+    # Luminosity-class bands at standard log g cuts (V / IV / III / II / I).
+    # Drawn as shaded horizontal bands across the full Teff range.
+    BANDS = [
+        (4.0, 6.0, '#d4ecf2', 'dwarf (V)'),
+        (3.5, 4.0, '#e3e0f0', 'subgiant (IV)'),
+        (2.5, 3.5, '#f6e7d3', 'giant (III)'),
+        (1.5, 2.5, '#f5d3d3', 'bright giant (II)'),
+        (-1.0, 1.5, '#e7c8e3', 'supergiant (I)'),
+    ]
+    for lo, hi, colour, label in BANDS:
+        fig.add_hrect(y0=lo, y1=hi, fillcolor=colour, opacity=0.45, line_width=0)
+        # Place label on the LEFT side (high-T_eff end)
+        fig.add_annotation(x=9500, y=(lo + hi) / 2, text=label, showarrow=False,
+                            font=dict(size=10, color='#555'),
+                            xanchor='left', yanchor='middle',
+                            bgcolor='rgba(255,255,255,0.4)')
+
+    # F#30 K-giant chromatic-bias risk box: Teff 3700-5200 K AND log g < 2.7
+    # (the canonical 4 UMi / HD 1957 demotion zone).
+    fig.add_shape(type='rect', x0=3700, x1=5200, y0=0.0, y1=2.7,
+                   line=dict(color='#d62728', width=2, dash='dash'),
+                   fillcolor='rgba(214,39,40,0.10)')
+    fig.add_annotation(x=4450, y=2.5, text='F#30 K-giant chromatic-bias risk',
+                        showarrow=False, font=dict(size=10, color='#d62728'),
+                        xanchor='center', yanchor='top')
+
+    # Target marker
+    if teff_v is not None and logg_v is not None:
+        fig.add_trace(go.Scatter(
+            x=[teff_v], y=[logg_v], mode='markers+text',
+            text=[f'  {sp["sp_full"]}' if sp['sp_full'] != 'unknown' else ''],
+            textposition='middle right',
+            marker=dict(size=16, color='#2ca02c', symbol='star',
+                        line=dict(color='black', width=1.5)),
+            hovertemplate=(f'Teff = {teff_v:.0f} K<br>'
+                            f'log g = {logg_v:.2f}<br>'
+                            f'Class = {sp["sp_full"]}<extra></extra>'),
+            showlegend=False,
+        ))
+    else:
+        fig.add_annotation(x=5500, y=3.5,
+                            text='Primary Teff or log g missing — Kiel position not plotted',
+                            showarrow=False, font=dict(size=11, color='#555'),
+                            xanchor='center', yanchor='middle')
+
+    fig.update_layout(
+        title=dict(text='Kiel diagram  ·  log g vs T_eff',
+                    x=0.5, xanchor='center', y=0.95, yanchor='top',
+                    font=dict(size=14)),
+        xaxis_title='T_eff (K)', yaxis_title='log g',
+        xaxis=dict(autorange='reversed', range=[10000, 2500]),
+        yaxis=dict(autorange='reversed', range=[6.0, -0.5]),
+        height=360, margin=dict(t=60, b=50, l=55, r=20),
+        showlegend=False,
     )
     return fig
 
@@ -1800,20 +1898,29 @@ def main():
     col_b.dataframe(obj_df[['identity', 'rationale']], hide_index=True, use_container_width=True)
 
     # ----------------------------- plots ----------------------------------
+    # Six panels in a 2×3 grid:
+    #   row 1: phase curve | mass function | cascade ladder
+    #   row 2: HR diagram  | Kiel diagram  | (empty / future)
+    # The HR + Kiel pair gives both the colour-magnitude and the spectroscopic
+    # views of where the primary sits — Kiel is more diagnostic for the F#30
+    # K-giant chromatic-bias risk zone.
     if derived.get('M2_msun') is not None and derived.get('fM_msun') is not None:
-        g1, g2 = st.columns(2)
+        g1, g2, g3 = st.columns(3)
         g1.plotly_chart(plot_phase_curve(row, derived), use_container_width=True)
         g2.plotly_chart(plot_mass_function(M1_prior, derived['fM_msun'], derived['M2_msun']),
                         use_container_width=True)
-        g3, g4 = st.columns(2)
-        g3.plotly_chart(plot_hr(row, derived), use_container_width=True)
-        g4.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        g3.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        g4, g5 = st.columns(2)
+        g4.plotly_chart(plot_hr(row, derived), use_container_width=True)
+        g5.plotly_chart(plot_kiel(row, derived), use_container_width=True)
     else:
         st.info('Plots disabled — no mass function available for this source. '
                 'Either the NSS Orbital row is missing (Acceleration / SB1 / SB2 only) '
-                'or required astrometry is incomplete.  The cascade ladder still '
-                'shows individual filter outcomes below.')
-        st.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+                'or required astrometry is incomplete.  The cascade ladder + Kiel '
+                'diagram still show what they can from the available data.')
+        c1, c2 = st.columns(2)
+        c1.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        c2.plotly_chart(plot_kiel(row, derived), use_container_width=True)
 
     # ----------------------------- bulk-catalog cross-reference ----------
     # Always show what the bulk v2 + v3 runs said about this source_id, even
