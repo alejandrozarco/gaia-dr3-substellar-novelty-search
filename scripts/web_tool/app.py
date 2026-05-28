@@ -605,13 +605,21 @@ def query_archival_rv_epochs(ra: float, dec: float,
     v.ROW_LIMIT = -1
 
     # (catalog_id, label, mjd_col, rv_col, rv_err_col)
+    # Multiple table IDs per archive — Vizier table-ids drift between releases
+    # so we try multiple candidates per provider.
     archives = [
-        ('III/283/rave6',  'RAVE DR6',  'MJD',     'HRV',  'eHRV'),
-        ('V/156/dr6vols',  'LAMOST DR6 LRS', 'MJD', 'RV',   'e_RV'),
-        ('V/156/dr6mrss',  'LAMOST DR6 MRS', 'MJD', 'RV',   'e_RV'),
-        ('III/284/allvis', 'APOGEE DR17 (allvis)', 'MJD',   'VHELIO', 'VRELERR'),
-        ('III/284/allstar','APOGEE DR17 (allstar)','MJD',   'VHELIO', 'VRELERR'),
-        ('III/295/galah4', 'GALAH DR4',         'mjd',  'rv_obst','e_rv_obst'),
+        ('III/283/rave6',   'RAVE DR6',           'MJD',  'HRV',     'eHRV'),
+        ('V/156/dr6vols',   'LAMOST DR6 LRS',     'MJD',  'RV',      'e_RV'),
+        ('V/156/dr6mrss',   'LAMOST DR6 MRS',     'MJD',  'RV',      'e_RV'),
+        ('III/284/allvis',  'APOGEE DR17 (allvis)',  'MJD',  'VHELIO',  'VRELERR'),
+        ('III/284/allstar', 'APOGEE DR17 (allstar)', 'MJD',  'VHELIO',  'VRELERR'),
+        # APOGEE DR17 lives at multiple Vizier handles depending on the data
+        # release version that Vizier mirrored; also try the bare paths.
+        ('III/284',         'APOGEE DR17',        'MJD',  'VHELIO',  'VRELERR'),
+        ('III/295/galah4',  'GALAH DR4',          'mjd',  'rv_obst', 'e_rv_obst'),
+        ('III/295',         'GALAH DR4',          'mjd',  'rv_obst', 'e_rv_obst'),
+        ('III/297/galahdr3','GALAH DR3',          'mjd',  'rv_obst', 'e_rv_obst'),
+        ('III/297',         'GALAH DR3',          'mjd',  'rv_obst', 'e_rv_obst'),
     ]
     for cat_id, label, mjd_col, rv_col, rv_err_col in archives:
         try:
@@ -2507,6 +2515,11 @@ def main():
     # channels and the user shouldn't have to hunt for it.
     no_nss_verdict = (derived.get('M2_msun') is None or
                       tier.startswith('No NSS') or tier.startswith('NSS '))
+    # These two are referenced later by the off-cascade synthesis even when
+    # the archival-RV query returns nothing, so initialise them here.
+    max_observed_span = 0.0
+    max_span_archive = None
+    all_epochs: list[tuple[float, float, float | None]] = []
     if ra_q is not None and dec_q is not None and not pd.isna(ra_q) and not pd.isna(dec_q):
         with st.expander('Archival RV epochs (RAVE / LAMOST / APOGEE / GALAH)',
                          expanded=no_nss_verdict):
@@ -2525,10 +2538,8 @@ def main():
                 rows_out = []
                 K_obs = derived.get('K_obs_rvampl')
                 P_d_nss = derived.get('P_d')
-                # Track the maximum observed rv_span across archives for the
-                # "model-free K_1" estimate used in the off-cascade summary.
-                max_observed_span = 0.0
-                max_span_archive = None
+                # max_observed_span / max_span_archive declared above; the
+                # loop updates them when archives return matching epochs.
                 for archive, info in rv_data.items():
                     if info.get('count', 0) == 0:
                         continue
@@ -2597,7 +2608,8 @@ def main():
                 # the χ² vs P curve to make the period degeneracy visible.
                 # This is the only way to surface an actual orbital fit for
                 # no-NSS sources like HD 157033.
-                all_epochs: list[tuple[float, float, float | None]] = []
+                # all_epochs declared at module level above so the synthesis
+                # block can see it whether or not archives returned data.
                 for info in rv_data.values():
                     if isinstance(info, dict) and info.get('epochs'):
                         for ep in info['epochs']:
