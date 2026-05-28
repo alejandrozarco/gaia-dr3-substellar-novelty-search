@@ -63,8 +63,8 @@ TIER_LADDER = [
     ('Tier-1 NS discovery candidate',     '#1f77b4',
      '1.2 ≤ M_2 < 3.0 M_⊙, all filters pass — discovery-grade NS candidate, follow up with RV',
      'Tier-1 NS'),
-    ('Sub-Ch WD / massive WD companion',  '#9467bd',
-     '0.5 ≤ M_2 < 1.2 M_⊙, all filters pass — confirmed white-dwarf or low-mass-stellar companion (post-mass-transfer typical)',
+    ('Sub-Ch WD or low-mass-star companion',  '#9467bd',
+     '0.5 ≤ M_2 < 1.2 M_⊙, all filters pass — ambiguous between a sub-Chandrasekhar white dwarf and a low-mass M-dwarf companion (the cascade cannot distinguish them from astrometry alone; UV photometry resolves it)',
      'Sub-Ch'),
     ('M-dwarf companion',                 '#bcbd22',
      '0.08 ≤ M_2 < 0.5 M_⊙ — confirmed M-dwarf companion',
@@ -1268,12 +1268,11 @@ def plot_hr(row: dict, derived: dict) -> go.Figure:
     M_giant = 0.6 + 0.3 * (bp_seq - 1.2) - 1.0 * np.maximum(bp_seq - 1.2, 0)
 
     cls = derived.get('class', 'unknown')
-    cls_color = {
-        'dormant_BH_candidate': '#000000', 'dormant_NS_candidate': '#9467bd',
-        'WD_or_low_mass_star': '#1f77b4', 'M_dwarf_companion': '#d62728',
-        'BD_candidate': '#e377c2', 'planet_candidate': '#17becf',
-    }.get(cls, '#7f7f7f')
-
+    # Decoupled: the HR marker shows the primary's position only. Its colour
+    # is uniform blue regardless of companion class — the companion class is
+    # already surfaced prominently in the KPIs + verdict banner above, and
+    # using a class-tagged colour on the primary was confusing because the
+    # primary's HR position has nothing to do with the companion.
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=bp_seq, y=M_ms, mode='lines',
                               name='Main sequence (sketch)',
@@ -1282,15 +1281,15 @@ def plot_hr(row: dict, derived: dict) -> go.Figure:
                               name='Giant branch (sketch)',
                               line=dict(color='orange', width=2)))
     fig.add_trace(go.Scatter(x=[bp_rp], y=[M_G], mode='markers+text',
-                              name=f'Primary (host) — companion class: {cls.replace("_", " ")}',
+                              name='Primary (visible host)',
                               text=[f'  Primary M_G={M_G:.2f}'], textposition='middle right',
-                              marker=dict(size=16, color=cls_color, symbol='circle',
+                              marker=dict(size=16, color='#1f77b4', symbol='circle',
                                           line=dict(color='white', width=2)),
                               hovertemplate=(f'<b>Primary (visible host)</b><br>'
                                               f'BP−RP = {bp_rp:.3f}<br>'
                                               f'M_G = {M_G:.2f}<br>'
-                                              f'Cascade class for companion = {cls}<br>'
-                                              f'(The companion is dark — no HR position)<extra></extra>')))
+                                              f'(The companion is non-luminous and contributes '
+                                              f'no flux — no HR position for it)<extra></extra>')))
     fig.update_layout(
         title=dict(text='HR diagram (primary)  ·  M_G vs BP−RP',
                     x=0.5, xanchor='center', y=0.95, yanchor='top',
@@ -1672,10 +1671,16 @@ def main():
     # When a filter fires, we annotate the KPIs with "(raw)" to remind the user
     # the raw M_2 is unreliable; the cascade still surfaces what the data
     # produces so power users can see the magnitude of any systematic.
+    # Display labels chosen to match standard astronomy usage:
+    #  - "dormant" only attached to BH / NS rows (X-ray-quiescent compact objects)
+    #  - the M_2 = 0.5-1.2 row is *intentionally* ambiguous: from astrometry alone
+    #    the cascade cannot tell a sub-Chandrasekhar WD from a low-mass M-dwarf
+    #    companion. UV photometry (GALEX) or IR excess (W1/W2) is the standard
+    #    discriminator and is surfaced in the dossier panels below.
     CLASS_SHORT = {
-        'dormant_BH_candidate':  'BH cand.',
-        'dormant_NS_candidate':  'NS cand.',
-        'WD_or_low_mass_star':   'WD / low-M',
+        'dormant_BH_candidate':  'Dormant BH',
+        'dormant_NS_candidate':  'Dormant NS',
+        'WD_or_low_mass_star':   'WD or low-M',
         'M_dwarf_companion':     'M-dwarf',
         'BD_candidate':          'Brown dwarf',
         'planet_candidate':      'Exoplanet',
@@ -1708,9 +1713,12 @@ def main():
     c4.metric('sin i implied', fmt(derived.get('sini_implied'), 3))
     c5.metric('Mass class',
               companion_label + (' (raw)' if filter_failed and companion_label not in ('no NSS Orbital',) else ''),
-              help='"(raw)" = mass class derived from a raw M_2 that a cascade filter '
-                   'has flagged as unreliable.  The "Likely companion type" panel below '
-                   'gives the probability spectrum after correcting for the systematic.')
+              help='Cascade-derived companion class from M_2 + cascade filter outcomes. '
+                   '"Dormant" = X-ray-quiescent compact object (not currently accreting); only '
+                   'used for the BH (M_2 ≥ 3.0 M_⊙) and NS (1.2 ≤ M_2 < 3.0 M_⊙) rows. '
+                   '"WD or low-M" is genuinely ambiguous at M_2 = 0.5–1.2 M_⊙ — UV photometry '
+                   'or IR excess resolves it. "(raw)" = M_2 flagged unreliable by a cascade '
+                   'filter; see the "Likely companion type" panel below for the corrected spectrum.')
 
     # M_2 range under isotropic inclination prior — answers "what's the actual
     # mass range?".  The headline M_2 metric above is the sin i = 1 (edge-on)
