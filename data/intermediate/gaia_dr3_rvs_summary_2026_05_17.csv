@@ -1,6 +1,0 @@
-table,description,headline_hits,sb1_pool_hits
-gaiadr3.epoch_radial_velocity,"DR3 per-transit RVs (RV-standards subset, ~~370 stars)",0,0
-gaiadr3.vari_rad_vel_statistics,"DR3 per-source RV summary (~~1,800 sources)",0,0
-gaiafpr.vari_epoch_radial_velocity,"FPR LPV per-transit RVs (~~9,500 LPVs)",0,0
-gaiafpr.vari_rad_vel_statistics,FPR LPV per-source RV summary,0,0
-gaiadr3.rvs_mean_spectrum,DR3 mean RVS spectrum (~~1M sources),0,0

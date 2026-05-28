@@ -1,9 +1,0 @@
-table,status,n_cols
-gaiafpr.crowded_field_source,OK,78
-gaiafpr.interstellar_medium_params,OK,37
-gaiafpr.interstellar_medium_spectra,OK,8
-gaiafpr.lens_candidates,OK,16
-gaiafpr.sso_source,OK,9
-gaiafpr.vari_epoch_radial_velocity,OK,7
-gaiafpr.vari_long_period_variable,OK,11
-gaiafpr.vari_rad_vel_statistics,OK,16

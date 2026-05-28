@@ -1,5 +1,0 @@
-fpr_table,channel_description,candidates_probed,candidates_hit,hit_source_ids
-gaiafpr.vari_epoch_radial_velocity,FPR LPV epoch radial velocities (key novel channel),11,0,""
-gaiafpr.vari_rad_vel_statistics,FPR LPV RV time-series summary statistics,11,0,""
-gaiafpr.vari_long_period_variable,FPR LPV summary table,11,0,""
-gaiafpr.crowded_field_source,FPR dense-field re-processing (omega Cen + LMC/SMC clusters),11,0,""

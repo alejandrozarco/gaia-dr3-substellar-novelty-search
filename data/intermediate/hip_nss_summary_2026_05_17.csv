@@ -1,8 +1,0 @@
-channel,count
-HIP NSS Sn!=5 total,50
-HIP NSS Sn=1 (orbit),2
-HIP NSS Sn=3 (accel),0
-HIP NSS Sn=7 (stochastic/VIM),3
-HIP NSS Sn=9 (resolved),0
-HIP NSS w/ Gaia DR3 source_id,31
-HIP NSS + Gaia DR3 NSS dual-coverage,1
