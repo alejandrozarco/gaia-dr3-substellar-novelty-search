@@ -22,7 +22,7 @@ all four filter verdicts + reasons.
 |---|---:|
 | **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. Firmly-confirmed binaries = the SED-based WD pairs only (next row). |
 | **Confirmed WD-binary (SED 2-component)** | **3** (WDJ060042, WDJ020915, WG 26) |
-| Strong candidate (single-method) | **0 compact-object "strong" remain** — 5406907, HD 157033, 5858574 all downgraded on re-verification (→ weak / ambiguous / candidate; see Survivor Re-verification) |
+| Strong candidate | **1 — HD 264291** (Gaia DR3 3378588057203660160): RV-confirmed orbit + Shahaf P(compact)=0.75, M₂≈2.0 (heavy NS / lower mass-gap); caveats — known Shahaf object, Ap-star primary. The 3 former "strong" (5406907 / HD 157033 / 5858574) were all downgraded on re-verification. |
 | **Tier-1 NS pool** (after M_1 correction) | **160** (was 291 at fixed M_1=1.5; 131 demoted to WD/low-mass at real M_1) |
 | Tier-1 BH pool | **0 STRONG** — 5406907 downgraded to weak/suspect (orbit DPAC-rejected + Gaia RV non-detection); HD 157033 BH-claim now ambiguous (0.4–6 M⊙) |
 | Tier-2 (RV-inconclusive) | 426 (after M_1 correction; was 958) |
@@ -57,16 +57,16 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 
 **Key finding — the compact-vs-triple problem.** Shahaf+2023 independently **corroborates the cascade masses** (M₂min consistent) but assigns most high-significance candidates a *low* compact probability — i.e. they are more likely **hierarchical triples** (an inner main-sequence pair) than single neutron stars:
 
-| Source | AMRF | M₂min | Shahaf P(compact) | Read |
+| Source | AMRF | M₂ | P(compact) | Read (deep-dive 2026-05-29, `scripts/prime3_deepdive_2026_05_29.py`) |
 |---|---:|---:|---:|---|
-| **3378588057203660160 (HD 264291)** | 0.635 | **1.97** | **0.75** | **best compact prospect** (heavy NS / mass-gap); but marginal astrometry (sig 12.5, χ²/dof 18.6) — next deep-dive target |
-| 2127900555635640832 | 0.591 | 1.45 | **0.21** | external RV (3 APOGEE + 1 LAMOST, K₁=16.6±0.6) confirms the *outer* orbit, but Shahaf favors a triple ~4:1; M₂ at the WD/NS boundary |
-| 6419437207856851584 (sig 212) | 0.575 | 1.30 | ~0.0 | likely triple |
-| 823243942431149568 (sig 194) | 0.563 | 1.42 | ~0.0 | likely triple |
-| 5640825637852070016 (sig 295, HD 75567) | — | — | not in Shahaf | **genuinely novel**, single-method (astrometric-only, no RV, no triple test) |
-| 1714530637958169600 (sig 208) | — | — | not in Shahaf | **genuinely novel**, single-method |
+| **3378588057203660160 (HD 264291)** | 0.635 | **~2.04** | **0.75** | **Best compact candidate — RV-CONFIRMED.** A *free-period* fit of its 50 LAMOST RVs independently recovers P ≈ 1050–1095 d (= astrometric 999 d), K₁ ≈ 17 km/s, e ≈ 0.33, RV span 39 km/s → orbit confirmed *despite* the marginal astrometry (sig 12.5). M₂ = 2.04 [1.90, 2.19] M⊙ (heavy NS / lower mass-gap), no SB2. **Caveats:** Ap/emission-line primary (A1IVSrSi); χ²/dof ≈ 16 (LAMOST errors underestimated → formal significances inflated); **not novel** (in Shahaf+2023). |
+| 2127900555635640832 | 0.591 | 1.45 | 0.21 | external RV confirms the *outer* orbit, but Shahaf favors a triple ~4:1; M₂ at the WD/NS edge |
+| 6419437207856851584 (sig 212) | 0.575 | 1.30 | ~0.0 | triple |
+| 823243942431149568 (sig 194) | 0.563 | 1.42 | ~0.0 | triple |
+| **5640825637852070016 (sig 295, HD 75567)** | 0.588 | 1.35 (dark) | **0.15** | **TRIPLE-FAVORED — downgraded.** Calibrated P(III\|A,M1) over 322 Shahaf neighbours = 0.85 triple; spectroscopic/astrometric a-ratio = 1.23 (>1 → luminous inner pair pulls the photocentre back). Novel, but not a compact object. |
+| **1714530637958169600 (sig 208, TYC 4562-535-1)** | 0.586 | 1.26 (dark) | **0.13** | **TRIPLE-FAVORED — downgraded.** 448 neighbours; a-ratio = 1.31; near face-on (i≈22°) inflates M₂. Novel, but not a compact object. |
 
-**Net:** the cascade masses are real and independently corroborated (Shahaf AMRF), but there is **no clean confirmed NS** — the highest-significance candidates are mostly favored to be triples. The one standout compact prospect is **HD 264291** (P(compact)=0.75, M₂min≈2.0), pending vetting of its marginal astrometric solution; two genuinely novel high-significance candidates (HD 75567, 1714530637958169600) remain untested for the triple-vs-compact ambiguity.
+**Net:** the cascade masses are real and Shahaf-AMRF-corroborated, but the **only** candidate that survives the triple-vs-compact test is **HD 264291** — and it is a *known* Shahaf object whose orbit we independently **RV-confirmed** (heavy-NS / lower-mass-gap, M₂ ≈ 2.0), carrying an Ap-star-primary caveat. Every other high-significance Tier-1 NS — including the two genuinely novel ones (HD 75567, TYC 4562-535-1) — is favored to be a hierarchical triple. **No novel confirmed compact object remains in the catalog.**
 
 ## Confirmed (independent 2-channel)
 
