@@ -138,6 +138,12 @@ APMPM J0710 archival positive constraint: 37 TESS sectors stitched, **no
 phase modulation at P or P/2 below 200 ppm** → companion is dark/substellar
 across all inclinations.
 
+## Weak archival corroboration (1 candidate — task BB2)
+
+| Source | NSS class | Sig | P (d) | e | Archival evidence |
+|---|---|---:|---:|---:|---|
+| **Gaia DR3 1593152388271709824** | Orbital | 104.5 | 597.4 | 0.404 | 3 multi-archive RV epochs (1 APOGEE DR17 + 2 LAMOST DR11) fit a Keplerian at the NSS-locked phases at χ²/dof = 0.00, K_fit = 4.09 km/s. Only 2 distinct phase bins so K–ω degeneracy not yet broken. **One additional RV epoch at near-periastron upgrades to CONFIRMED.** |
+
 ## Tier-1 BH pool — verdicts
 
 | Source | M_2 (cascade) | Verdict |
