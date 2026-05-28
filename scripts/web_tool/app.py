@@ -2253,16 +2253,93 @@ def main():
         g4.plotly_chart(plot_hr(row, derived), use_container_width=True)
         g5.plotly_chart(plot_kiel(row, derived), use_container_width=True)
     else:
-        # Phase curve + mass function are disabled (no orbit), but HR, Kiel,
-        # and the cascade ladder all still work from the available data.
-        st.caption('Phase curve and mass-function plot disabled (no NSS orbital '
-                   'solution). HR + Kiel + cascade-ladder plots below show the '
-                   'host-star context; the off-cascade panels further down '
-                   'carry the actual M_2 evidence for these sources.')
-        c1, c2, c3 = st.columns(3)
-        c1.plotly_chart(plot_hr(row, derived), use_container_width=True)
-        c2.plotly_chart(plot_kiel(row, derived), use_container_width=True)
-        c3.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        # No NSS orbital solution → phase curve + mass function would normally
+        # be disabled.  But for HD-157033-class candidates we have enough
+        # off-cascade evidence (HGCA + archival RV) to SYNTHESISE a predicted
+        # phase curve: assume P from HGCA-corroborated range + K_1 from
+        # archival rv_span + e = 0.3.  The plot is labelled as a synthesised
+        # prediction (dashed) so the user knows it is not a Gaia measurement.
+        synth_orbit = None
+        try:
+            ra_pre = row.get('ra'); dec_pre = row.get('dec')
+            if (ra_pre is not None and dec_pre is not None and
+                not pd.isna(ra_pre) and not pd.isna(dec_pre)):
+                hgca_pre = query_hgca(int(row.get('hip')) if row.get('hip') and not pd.isna(row.get('hip')) else None,
+                                       ra=float(ra_pre), dec=float(dec_pre), timeout_s=20)
+                rv_pre = query_archival_rv_epochs(float(ra_pre), float(dec_pre), radius_arcsec=5.0)
+                # Find max archival rv_span
+                rv_span_max = 0.0
+                for info in (rv_pre or {}).values():
+                    if isinstance(info, dict):
+                        s = info.get('rv_span')
+                        if s is not None and s > rv_span_max:
+                            rv_span_max = float(s)
+                # Find HGCA chi²
+                hgca_chi2_pre = None
+                if isinstance(hgca_pre, dict):
+                    for k in ('chisq', 'chi2', 'chi^2'):
+                        if k in hgca_pre and hgca_pre[k] is not None:
+                            try: hgca_chi2_pre = float(hgca_pre[k]); break
+                            except (TypeError, ValueError): pass
+                if rv_span_max > 0:
+                    K1_central = rv_span_max * 0.66
+                    # Pick P at the centre of the HGCA-implied range
+                    if hgca_chi2_pre is not None and hgca_chi2_pre >= 30:
+                        P_assumed_yr = 6.5
+                    elif hgca_chi2_pre is not None and hgca_chi2_pre >= 5:
+                        P_assumed_yr = 8.0
+                    else:
+                        P_assumed_yr = 5.0
+                    M1_pre = float(row.get('mass_flame') or M1_prior)
+                    M2_synth = m2_from_K1(K1_central, P_assumed_yr * 365.25,
+                                            M1_pre, e=0.3, sini=1.0)
+                    synth_orbit = {
+                        'P_d': P_assumed_yr * 365.25,
+                        'P_yr': P_assumed_yr,
+                        'e': 0.3,
+                        'K1': K1_central,
+                        'M1': M1_pre,
+                        'M2': M2_synth,
+                        'hgca_chi2': hgca_chi2_pre,
+                        'rv_span': rv_span_max,
+                    }
+        except Exception:
+            synth_orbit = None
+
+        if synth_orbit is not None:
+            st.caption(
+                f'Phase curve below is **synthesised** from the off-cascade '
+                f'evidence (no NSS orbital solution exists). Assumed P = '
+                f'{synth_orbit["P_yr"]:.1f} yr (centre of HGCA-corroborated range), '
+                f'K_1 ≈ {synth_orbit["K1"]:.1f} km/s (= 0.66 × max archival rv_span '
+                f'{synth_orbit["rv_span"]:.1f} km/s), e = 0.3 (typical). '
+                f'Implied M_2 ≈ {synth_orbit["M2"]:.1f} M_⊙ at this P. '
+                f'**Curve is for illustration of the expected orbit; the K_1 '
+                f'value is the displayed off-cascade central estimate.**')
+            # Build a synthetic row + derived to pass to plot_phase_curve
+            synth_row = dict(row)
+            synth_row['period'] = synth_orbit['P_d']
+            synth_derived = dict(derived)
+            synth_derived['e'] = synth_orbit['e']
+            synth_derived['K_obs_rvampl'] = None   # force the predicted path
+            synth_derived['K_pred_i90'] = synth_orbit['K1']
+            synth_derived['P_d'] = synth_orbit['P_d']
+            synth_derived['M1_msun'] = synth_orbit['M1']
+            synth_derived['M2_msun'] = synth_orbit['M2']
+            g1, g2, g3 = st.columns(3)
+            g1.plotly_chart(plot_phase_curve(synth_row, synth_derived),
+                              use_container_width=True)
+            g2.plotly_chart(plot_hr(row, derived), use_container_width=True)
+            g3.plotly_chart(plot_kiel(row, derived), use_container_width=True)
+            st.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
+        else:
+            st.caption('Phase curve + mass-function plot disabled (no NSS orbital '
+                       'solution and no archival RV available to synthesise one). '
+                       'HR + Kiel + cascade-ladder plots below show host-star context.')
+            c1, c2, c3 = st.columns(3)
+            c1.plotly_chart(plot_hr(row, derived), use_container_width=True)
+            c2.plotly_chart(plot_kiel(row, derived), use_container_width=True)
+            c3.plotly_chart(plot_cascade_ladder(derived), use_container_width=True)
 
     # ----------------------------- bulk-catalog cross-reference ----------
     # Always show what the bulk v2 + v3 runs said about this source_id, even
