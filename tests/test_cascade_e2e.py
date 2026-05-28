@@ -1,74 +1,72 @@
-"""End-to-end cascade tests.
+"""End-to-end cascade tests for the v2 corrected cascade.
 
-Runs the v9 + v9b reclassification on the test pool starting from
-v8 verdicts (already in the pool) and verifies the final v9b verdicts
-match the documented expectations.
+Runs derive_row_v2 (scripts/streaming/v2_corrected/consumer_v2.py) over the
+bundled offline sample row (scripts/web_tool/sample_data/hd1957_demo.parquet)
+and checks the full single-source derivation.
 
-These tests do not require network access — they exercise the
-verdict-derivation logic in `pipeline_v9_recall_improvements_*.py`
-against the offline test pool.
+No network access required.
+
+The pre-cleanup v1 e2e tests re-ran pipeline_v9.reclassify_pool_to_v9 on the
+v8 verdicts recorded in test_pool.csv. Those v8/v9 cascade stages were deleted
+(commit 5fac35c); the tests are pruned. The v2 cascade consumes raw Gaia NSS
+columns (Thiele-Innes, nss_parallax, mass_flame, logg_*) rather than v8
+verdicts, so the bundled parquet is the right offline fixture for it.
 """
 from __future__ import annotations
 
-import polars as pl
+from pathlib import Path
+
+import pandas as pd
+import pytest
+
+import consumer_v2 as c2
+
+SAMPLE_PARQUET = (
+    Path(__file__).resolve().parents[1]
+    / "scripts" / "web_tool" / "sample_data" / "hd1957_demo.parquet"
+)
+HD_1957 = 2543788153077017344
 
 
-def test_v9_reclassify_pool_matches_documented_v9_verdicts(test_pool):
-    """Re-run v9 against the test pool's v8 verdicts and check that
-    the resulting v9 verdicts match what we recorded in the test pool.
-    """
-    import pipeline_v9_recall_improvements_2026_05_17 as v9
-
-    # Drop the recorded v9b_verdict so the test isn't trivially passing
-    # on the same column we'd later overwrite
-    pool = test_pool.drop("v9_verdict", "v9b_verdict")
-    result = v9.reclassify_pool_to_v9(pool)
-    # Join back to the recorded verdicts for comparison
-    expected = test_pool.select(["source_id", "v9_verdict"])
-    merged = result.select(["source_id", "v9_verdict"]).rename(
-        {"v9_verdict": "v9_verdict_recomputed"}
-    ).join(expected, on="source_id")
-    mismatches = merged.filter(
-        pl.col("v9_verdict_recomputed") != pl.col("v9_verdict")
+@pytest.fixture(scope="module")
+def hd1957_row() -> dict:
+    """The bundled HD 1957 offline sample, with a_phot_mas pre-computed from
+    its Thiele-Innes coefficients (the form derive_row_v2 consumes)."""
+    df = pd.read_parquet(SAMPLE_PARQUET)
+    row = df.iloc[0].to_dict()
+    row["a_phot_mas"] = c2.photocentric_a_mas(
+        row["a_thiele_innes"], row["b_thiele_innes"],
+        row["f_thiele_innes"], row["g_thiele_innes"],
     )
-    assert mismatches.height == 0, (
-        f"v9 cascade produces different verdicts than recorded:\n{mismatches}"
-    )
+    return row
 
 
-def test_v9_verdict_breakdown_unchanged(test_pool):
-    """The distribution of v9b verdicts on the test pool is a fixed
-    contract. Any cascade change that alters this distribution is a
-    semantic change and should be reflected in an updated test."""
-    expected = {
-        "CORROBORATED_real_companion": 6,       # HD 76078, BD+56 1762, HIP 60865,
-                                                # HIP 20122, HD 5433 (Fix C recovery),
-                                                # HD 89707 (Fix A promotion)
-        "CORROBORATED_kervella_only": 1,        # HD 92320 (Fix D)
-        "REJECTED_published_exoplanet_eu_pm_corr": 3,  # HD 33636, HD 30246, BD+05 5218
-        "REJECTED_ruwe_quality": 1,             # HD 140895 (genuinely high)
-        "REJECTED_sahlmann_fp": 1,              # HD 185501 (Fix A FP catch)
-        "REJECTED_simbad_visual_double": 1,     # HD 222805 (Fix B)
-    }
-    actual = dict(
-        test_pool.group_by("v9b_verdict").agg(pl.len().alias("n")).iter_rows()
-    )
-    # Compare keys
-    for k, v in expected.items():
-        assert actual.get(k, 0) == v, (
-            f"v9b verdict count mismatch for {k}: expected {v}, got {actual.get(k, 0)}"
-        )
+def test_sample_parquet_is_hd1957(hd1957_row):
+    assert int(hd1957_row["source_id"]) == HD_1957
 
 
-def test_no_documented_fp_in_test_pool_appears_corroborated(test_pool):
-    """Negative regression: the 4 documented_fp source_ids must never
-    be CORROBORATED no matter what other filters say."""
-    import pipeline_v2_tuned_filters_2026_05_13 as v2
+def test_derive_row_v2_runs_clean_on_sample(hd1957_row):
+    """The full v2 derivation must complete without an error key and return
+    all the documented v2 output columns."""
+    out = c2.derive_row_v2(hd1957_row)
+    assert "error" not in out, out
+    for key in ("M1_msun_v2", "M2_msun_v2", "class_v2", "filter29_v2",
+                "filter30_v2", "filter31_v2", "filter32_v2", "tier_v2"):
+        assert key in out
 
-    fp_ids = {int(k) for k in v2.DOCUMENTED_NSS_FPS.keys()}
-    fp_in_pool = test_pool.filter(pl.col("source_id").is_in(list(fp_ids)))
-    for r in fp_in_pool.to_dicts():
-        assert not r["v9b_verdict"].startswith("CORROBORATED"), (
-            f"documented_fp source_id {r['source_id']} should NEVER be "
-            f"CORROBORATED, got {r['v9b_verdict']}"
-        )
+
+def test_hd1957_mass_function_in_NS_class(hd1957_row):
+    """HD 1957's astrometric mass function alone (M_1=1.5 default) puts M_2
+    in the NS-mass band — which is exactly why the K-giant F#30 demotion
+    matters: the inflated mass would otherwise look like a Tier-1 NS."""
+    out = c2.derive_row_v2(hd1957_row)
+    assert out["class_v2"] == "dormant_NS_candidate"
+    assert 1.2 <= out["M2_msun_v2"] < 3.0
+
+
+def test_hd1957_demoted_by_f30_kgiant(hd1957_row):
+    """The end-to-end verdict for HD 1957 is an F#30 K-giant demotion:
+    logg_gspphot=2.63 < 2.7 (and Teff=4771 K is in the K-giant window)."""
+    out = c2.derive_row_v2(hd1957_row)
+    assert out["filter30_v2"] == "FAIL"
+    assert out["tier_v2"] == "Demoted (failed F#30 K-giant chromatic)"

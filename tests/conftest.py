@@ -16,8 +16,11 @@ TESTS_DIR = Path(__file__).parent
 REPO_ROOT = TESTS_DIR.parent
 TEST_POOL_PATH = TESTS_DIR / "data" / "test_pool.csv"
 
-# Make `scripts/` importable for the test modules
+# Make `scripts/` importable for the test modules, and the v2_corrected
+# package dir so `import consumer_v2` resolves to the current production
+# cascade (scripts/streaming/v2_corrected/consumer_v2.py).
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "streaming" / "v2_corrected"))
 
 
 @pytest.fixture(scope="session")
