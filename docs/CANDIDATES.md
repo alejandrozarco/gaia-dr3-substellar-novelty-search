@@ -20,7 +20,7 @@ all four filter verdicts + reasons.
 
 | Bucket | Count (M_1-corrected) |
 |---|---:|
-| **Confirmed (independent 2-channel)** | **2** (CRTS J051419+0111, Gaia DR3 3155543945892767232) |
+| **Confirmed (independent 2-channel)** | **1** (Gaia DR3 3155543945892767232) — CRTS J051419+0111 **RETRACTED 2026-05-28** (period + eclipse are artifacts; see below) |
 | **Confirmed WD-binary (SED 2-component)** | **3** (WDJ060042, WDJ020915, WG 26) |
 | Strong candidate (single-method, archival follow-up identified) | ~6 |
 | **Tier-1 NS pool** (after M_1 correction) | **160** (was 291 at fixed M_1=1.5; 131 demoted to WD/low-mass at real M_1) |
@@ -33,20 +33,16 @@ all four filter verdicts + reasons.
 
 ## Confirmed (independent 2-channel)
 
-### CRTS J051419+0111
+### CRTS J051419+0111 — ⚠ RETRACTED 2026-05-28 (no longer a confirmed detection)
 
-| Field | Value |
+**The 3.013-hr period and the TESS eclipse are artifacts; only Gaia DR3 3155543945892767232 remains in this section.** Rigorous re-analysis — outburst-masked Lomb-Scargle + BLS on the *identical* ZTF DR23 data, plus a proper test of the actual S98 2-min SPOC product (`scripts/crts_j051419_ztf_recheck.py`, `scripts/crts_j051419_spoc_recheck.py`):
+
+| Original claim | Re-analysis verdict |
 |---|---|
-| Class | CV — SU UMa subclass DN, in the orbital-period gap |
-| RA, Dec | 78.583, +1.189 |
-| G | 15.40 |
-| First channel | ZTF DR23: P = 180.770 ± 0.001 min = 3.013 hr (BLS power 43,842) |
-| Second channel | TESS S98 eclipse at the ZTF period — **median quiescent depth = 71%, individual eclipses > 98% flux removed**. Near-total eclipse at i ≈ 84°. Headline "25%" was the phase-bin-averaged dilution; per-eclipse measurement is much deeper. |
-| Superoutburst | ZTF caught a 7-day g = 14.41 superoutburst (2023-09-15 → 22) confirming SU UMa subclass |
-| Component masses (Knigge 2011 donor sequence at P = 3.013 hr) | M_WD ≈ 0.70–0.90 M_⊙, M_donor ≈ 0.20–0.30 M_⊙, q ≈ 0.31, i ≈ 84° |
-| Novelty | 14 CV catalogs queried (RKcat 7.24, Hardy 2017, Pala 2019/2020, Bruch 2024, Inight 2019/2021/2023a/2023b/2024, CuPS-ETV) — no prior orbital period for this source. SIMBAD has 2 ingest bibcodes (Drake+ 2014, Coppejans+ 2016 DN class) — neither measured P_orb. |
-| QSO false-positive | Gaia DR3 `in_qso_candidates = True` + DSC quasar prob = 0.994 — known DSC failure mode for blue + variable CVs (Pala 2020, Inight 2023). CV identification overrides. |
-| Dossier | `docs/dossiers/CRTS_J051419+0111_DOSSIER_2026_05_28.md` |
+| P = 180.77 min (BLS power 43,842) | **Not supported** — outburst-masked LS FAP at 180.77 min = 1.0 in all 3 ZTF bands; only 1-sidereal-day aliases survive; BLS best period disagrees across bands (zg 256 / zr 154–269 / zi 110 min). The "power 43,842" came from folding outburst-*including* data. |
+| TESS "71% median quiescent eclipse, i≈84°" | **Falsified** — S98 SPOC per-cadence S/N = 0.66; the folded dip at 180.77 min is 3.37σ vs a random-period null *mean* of 4.07σ (permutation FAP = 0.87). The 71% was a per-cycle minimum-of-noise artifact. S5/S32 FFI give negative net flux — TESS cannot detect this source's eclipse at all. |
+
+**Real (survives):** a dwarf nova with 6 ZTF + 1 CRTS outbursts and a genuine 2023 superoutburst (7-day, g = 14.41) → SU UMa subtype. **No orbital period, eclipse, or inclination.** CV identity is prior (Drake+ 2014, Coppejans+ 2016, and **Gaia DR3 variability classifier best_class = CV, 0.911** — previously only the DSC QSO false-positive was cited). VSX entry not found in the Vizier `B/vsx` mirror (reconcile vs live AAVSO VSX). Residual publishable value: an outburst/superoutburst note (RNAAS-level), not the eclipsing-period discovery originally claimed. Dossier: `docs/dossiers/CRTS_J051419+0111_DOSSIER_2026_05_28.md` (body §3/§4/§6 numbers superseded by the retraction banner at its head).
 
 ### Gaia DR3 3155543945892767232
 
@@ -183,7 +179,9 @@ across all inclinations.
 
 ## Pile F — CV-period orbital periods (full table)
 
-14 truly novel + 4 blind methodology rediscoveries. All 14 confirmed by ZTF DR23 period detection. 1 confirmed via independent TESS eclipse; 2 with additional TESS signatures.
+14 candidate periods from ZTF DR23 BLS + 4 blind methodology rediscoveries (the latter match RKcat/Hardy/Bruch — validating the method *when a real period exists*).
+
+> **⚠ Pipeline-reliability caveat (2026-05-28).** The CV-period pipeline is now known to produce **false positives at low S/N** — it folded outburst-*including* light curves and measured eclipse depths as the per-cycle *minimum* of noise-dominated cadences. The one "TESS-eclipse-confirmed" object, **CRTS J051419 (#13), is RETRACTED** (see Confirmed section). The 4 TESS-claimed CVs (#2, #7, #10, #11) are under rigorous re-vet (task #92: outburst-masked LS/BLS + permutation FAP). **Treat every un-re-vetted ZTF-only period below as provisional.**
 
 | # | Name | RA | Dec | G | P (min) | Subtype | TESS confirmation |
 |---:|---|---:|---:|---:|---:|---|---|
@@ -199,7 +197,7 @@ across all inclinations.
 | 10 | CRTS J151836.0-054803           | 229.650 |  -5.801 | 16.50 |  24.64 | DN       | 16.6% per-eclipse depth at ZTF P (3.8σ MARGINAL); BLS best at 172 min ≈ 7× ZTF P → ZTF 24.64-min period may be a 1/7 sub-harmonic alias |
 | 11 | SDSS J160419.02+161548.5        | 241.079 | +16.263 | 19.09 | 128.80 | SU UMa   | 23% eclipse |
 | 12 | SDSS J080142.37+210345.8        | 120.426 | +21.063 | 18.86 | 115.11 | Polar:   | — |
-| 13 | **CRTS J051419.8+011120**       |  78.583 |  +1.189 | 15.40 | 180.05 | DN       | **25% eclipse at 3.013 hr — confirmed (Pile F headline)** |
+| 13 | CRTS J051419.8+011120           |  78.583 |  +1.189 | 15.40 | ~~180.05~~ | DN       | **⚠ RETRACTED 2026-05-28 — period + eclipse are artifacts (masked-LS FAP = 1.0 at claimed P; TESS S/N 0.66). Real: DN + 2023 superoutburst only.** |
 | 14 | SDSS J115639.48+630907.7        | 179.164 | +63.152 | 20.72 |  29.13 | Polar    | — |
 
 Blind methodology rediscoveries: CRTS J041133.6-090729 → 93.7 min (RKcat 93.6), CRTS J163120.8+103133 → 91.9 min (RKcat 90.3), CRTS J233003.0+303300 → 224.6 min (Hardy 2017 224.6), CRTS J005152.8+204017 → 295.7 min (Dağ 2026 / Bruch 2026 290.6).
