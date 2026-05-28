@@ -751,13 +751,18 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
     ]
 
     fig = go.Figure()
+    # Regime band labels live on the LEFT edge (x=0.21) so they do not collide
+    # with threshold dash labels (which sit on the RIGHT, x=0.98).
     for lo, hi, colour, label in REGIMES:
         lo_v = max(lo, y_bot); hi_v = min(hi, y_top)
         if hi_v > lo_v:
-            fig.add_hrect(y0=lo_v, y1=hi_v, fillcolor=colour, opacity=0.08, line_width=0,
-                          annotation_text=label,
-                          annotation_position='top left',
-                          annotation=dict(font=dict(size=9, color=colour)))
+            fig.add_hrect(y0=lo_v, y1=hi_v, fillcolor=colour, opacity=0.08, line_width=0)
+            # Place band label at log-geometric centre of the visible band on the LEFT
+            y_centre = math.sqrt(lo_v * hi_v)
+            fig.add_annotation(x=0.21, y=y_centre, text=label, showarrow=False,
+                               font=dict(size=9, color=colour),
+                               xanchor='left', yanchor='middle',
+                               bgcolor='rgba(255,255,255,0.55)')
 
     # The actual mass-function curve
     fig.add_trace(go.Scatter(
@@ -767,16 +772,25 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
         hovertemplate='sin i = %{x:.2f}<br>M_2 = %{y:.5g} M_⊙<extra></extra>',
     ))
 
-    # Threshold lines + labels, but only ones that fall in the visible y-range
+    # Threshold lines + labels — RIGHT edge so they don't collide with regime
+    # band labels on the left.  Drop labels that sit too close to an already-
+    # placed threshold (within 0.15 dex).
+    placed_y: list[float] = []
     for y_thr, label, colour, where in THRESHOLDS:
         if regime not in where: continue
         if not (y_bot <= y_thr <= y_top): continue
         fig.add_shape(type='line', x0=0.2, x1=1.0, y0=y_thr, y1=y_thr,
                       line=dict(color=colour, dash='dash', width=1.5))
-        fig.add_annotation(x=0.7, y=y_thr, text=label, showarrow=False,
+        # Skip the label if a previous threshold's label is within 0.15 dex,
+        # to avoid visual stacking when two thresholds bracket the candidate.
+        too_close = any(abs(math.log10(y_thr) - math.log10(yp)) < 0.15 for yp in placed_y)
+        if too_close:
+            continue
+        fig.add_annotation(x=0.98, y=y_thr, text=label, showarrow=False,
                             bgcolor='rgba(255,255,255,0.85)',
                             font=dict(size=10, color=colour),
-                            xanchor='left', yanchor='middle')
+                            xanchor='right', yanchor='middle')
+        placed_y.append(y_thr)
 
     # Solved M_2 at sin i = 1
     if M2_solved is not None and y_bot <= M2_solved <= y_top:
@@ -798,8 +812,11 @@ def plot_mass_function(M1: float, fM: float, M2_solved: float) -> go.Figure:
         xaxis_title='sin i', yaxis_title='M_2  (M_⊙)',
         xaxis=dict(range=[0.2, 1.02]),
         yaxis=dict(type='log', range=[math.log10(y_bot), math.log10(y_top)]),
-        height=340, margin=dict(t=50, b=40, l=55, r=20),
-        legend=dict(yanchor='top', y=0.99, xanchor='right', x=0.99,
+        height=360, margin=dict(t=50, b=40, l=55, r=20),
+        # Legend at bottom-centre so it doesn't collide with threshold labels
+        # on the right edge or regime labels on the left.
+        legend=dict(orientation='h', yanchor='bottom', y=-0.22,
+                    xanchor='center', x=0.5,
                     bgcolor='rgba(255,255,255,0.7)'),
     )
     return fig
@@ -1031,7 +1048,7 @@ def plot_cascade_ladder(derived: dict) -> go.Figure:
 
 def main():
     st.set_page_config(page_title='Gaia DR3 Dormant Compact-Object Cascade',
-                       page_icon=':milky_way:', layout='wide')
+                       layout='wide')
 
     st.title('Gaia DR3 Dormant Compact-Object Cascade')
     st.caption('Filters #29 – #32 applied to a single Gaia DR3 source.  '
@@ -1099,7 +1116,7 @@ def main():
         st.error(resolve_msg)
         st.info('Tip: try a different identifier (HD/HIP/HR/TYC/BD numbers, or a 19-digit Gaia DR3 source_id).')
         return
-    st.caption(f'🔎 {resolve_msg}')
+    st.caption(resolve_msg)
 
     # ----------------------------- fetch data -----------------------------
     row: dict | None = None
@@ -1134,7 +1151,7 @@ def main():
 
     # ----------------------------- top KPIs -------------------------------
     # Short labels keep the metric box from clipping ("Neutron sta…" issue).
-    # When a filter fires, we annotate the KPIs with ⚠️ to remind the user
+    # When a filter fires, we annotate the KPIs with "(raw)" to remind the user
     # the raw M_2 is unreliable; the cascade still surfaces what the data
     # produces so power users can see the magnitude of any systematic.
     CLASS_SHORT = {
@@ -1161,19 +1178,19 @@ def main():
 
     m2_str = fmt(derived.get('M2_msun'), 3)
     if filter_failed and m2_str != '—':
-        m2_str = f'{m2_str} ⚠'
+        m2_str = f'{m2_str} (raw)'
 
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric('M_2 (M_⊙)', m2_str,
               help='Raw cascade output at sin i = 1 (lower bound). '
                    'See the "M_2 (isotropic prior)" row below for the inclination-marginalized range. '
-                   '⚠ = unreliable because a systematic filter fired.')
+                   '"(raw)" = unreliable because a systematic filter fired.')
     c2.metric('f(M) (M_⊙)', fmt(derived.get('fM_msun'), 4))
     c3.metric('a_phot (mas)', fmt(derived.get('a_phot_mas'), 3))
     c4.metric('sin i implied', fmt(derived.get('sini_implied'), 3))
     c5.metric('Mass class',
-              companion_label + (' ⚠' if filter_failed and companion_label not in ('no NSS Orbital',) else ''),
-              help='⚠ = mass class derived from a raw M_2 that a cascade filter '
+              companion_label + (' (raw)' if filter_failed and companion_label not in ('no NSS Orbital',) else ''),
+              help='"(raw)" = mass class derived from a raw M_2 that a cascade filter '
                    'has flagged as unreliable.  The "Likely companion type" panel below '
                    'gives the probability spectrum after correcting for the systematic.')
 
@@ -1210,24 +1227,24 @@ def main():
     #   red    = systematic / spurious (filter failure)
     tier = derived['tier']
     if tier.startswith('Tier-1'):
-        st.success(f'### **{tier}**', icon='🎯')
+        st.success(f'### **{tier}**')
         st.caption('All cascade filters pass. M_2 sits in the dormant compact-object range — '
                    'a discovery target worth RV follow-up. Use this for VERIFICATION of known dormant '
                    'BH/NS systems (e.g. Gaia BH1) or DISCOVERY of new ones.')
     elif (tier.startswith('Sub-Ch') or tier.startswith('M-dwarf')
           or tier.startswith('Brown-dwarf') or tier.startswith('Exoplanet')):
-        st.info(f'### **{tier}**', icon='🪐')
+        st.info(f'### **{tier}**')
         st.caption('All cascade filters pass — this is a real companion detection, just below '
                    'the dormant-compact-object mass threshold. Use this mode for RECOVERY of known '
                    'planet hosts (HD 81040, HD 111232) or SB1 binaries; the mass-class label tells '
                    'you the companion type the data favours.')
     elif tier.startswith('Tier-2'):
-        st.warning(f'### **{tier}**', icon='🔍')
+        st.warning(f'### **{tier}**')
         st.caption('Mass class is compact-object but RV evidence is weak — needs spectroscopic '
                    'follow-up. Promote to Tier-1 if K_1 measured.')
     elif tier.startswith('No NSS Orbital') or tier.startswith('NSS Orbital data') or tier.startswith('NSS '):
         # No mass-function derivation possible — not a failure, just missing data
-        st.info(f'### **{tier}**', icon='📭')
+        st.info(f'### **{tier}**')
         st.caption('No astrometric mass function available for this source. Gaia DR3 detected '
                    'binarity but the NSS solution channel does not provide the inputs the cascade '
                    'needs (Thiele-Innes constants).  Common cases: Gaia BH3-class long-period orbits '
@@ -1235,7 +1252,7 @@ def main():
                    'NSS rows.  Look up the source in published RV-derived orbital catalogs instead.')
     else:
         # Filter failure — systematic / spurious
-        st.error(f'### **{tier}**', icon='⚠️')
+        st.error(f'### **{tier}**')
         st.caption('A cascade filter fired — the M_2 value reported above is the RAW astrometric '
                    'derivation (no chromatic correction applied), and is unreliable. The '
                    '"Likely companion type" panel below gives the probability spectrum *after* '
@@ -1250,8 +1267,8 @@ def main():
         rows = []
         for label, color, descr, match_prefix in TIER_LADDER:
             this_row = tier.startswith(match_prefix)
-            marker = '➤  ' if this_row else '   '
-            rows.append({'': marker, 'tier': label, 'meaning': descr})
+            marker = '> this' if this_row else ''
+            rows.append({'current': marker, 'tier': label, 'meaning': descr})
         st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
 
     # ----------------------------- likely object type ---------------------
@@ -1306,7 +1323,7 @@ def main():
     bulk = lookup_in_bulk_catalogs(int(sid_display))
     any_bulk_hit = any(bulk.get(k) for k in ('v2', 'v3', 'v2_alt', 'v2_relaxed'))
     if any_bulk_hit:
-        st.subheader('🔗 Cross-reference: bulk-cascade catalogs')
+        st.subheader('Cross-reference: bulk-cascade catalogs')
         st.caption('This source appears in one or more bulk-cascade outputs. v2 = production NSS Orbital + '
                    'AstroSpectroSB1 (56,100 sources). v3 = NSS Acceleration channel (16,949). '
                    'v2_alt = OrbitalAlternative / Validated ingest (629). '
@@ -1334,7 +1351,7 @@ def main():
             st.markdown(f"**v2_alt (OrbitalAlternative / Validated channel)** &nbsp;·&nbsp; "
                          f"nss_solution_type = `{nss_type}` &nbsp;·&nbsp; "
                          f"tier = **{tier_alt}** &nbsp;·&nbsp; M_2 = {M2_alt_str} M_⊙")
-            st.caption('ℹ Pulled from `nss_two_body_orbit` rows that the production v2 producer '
+            st.caption('Pulled from `nss_two_body_orbit` rows that the production v2 producer '
                        'skipped because `rv_amplitude_robust` is null for the entire OrbitalAlternative '
                        'class. F#31/F#32 are NO_DATA → cascade caps at Tier-2 even for plausible '
                        'compact-mass companions. Verify via HGCA / Kervella / archival RV.')
@@ -1365,7 +1382,7 @@ def main():
             )
             if M2_med is not None and not pd.isna(M2_med) and float(M2_med) >= 3.0:
                 st.warning(
-                    f'⚠ The v3 acceleration channel ranks this source as a **BH-mass-median candidate** '
+                    f'The v3 acceleration channel ranks this source as a **BH-mass-median candidate** '
                     f'(M_2_median = {fp(M2_med)} M_⊙). The period is degenerate without an orbital '
                     f'solution, so confirmation requires either (a) long-baseline RV monitoring to pin '
                     f'down P, or (b) cross-check against any SB1 row in nss_two_body_orbit '
@@ -1376,7 +1393,7 @@ def main():
     else:
         # Source wasn't in any bulk run.  Most likely it's in NSS but outside
         # the cuts (e.g. low significance, no NSS, or Eclipsing channel).
-        st.caption('ℹ This source was not in any bulk-cascade run (v2, v2_alt, v2_relaxed, v3). '
+        st.caption('This source was not in any bulk-cascade run (v2, v2_alt, v2_relaxed, v3). '
                    'Either no NSS solution at all, or the NSS channel is not covered by the current '
                    'cascade scope (e.g. NSS Eclipsing).')
 
