@@ -131,7 +131,7 @@ Plus 4 additional candidates from the v3 Acceleration channel (separate pipeline
 | Source | SpT | d (pc) | M_2 (M_J) face-on | P (d) | G | TESS sectors | Dossier |
 |---|---|---:|---:|---:|---:|---:|---|
 | **APMPM J0710-5704** (Gaia DR3 5486916932205092352) | M4V    | 17.07 | 9.5 ± 1.5 | 253.48 | 12.2 | 37 | `docs/dossiers/APMPM_J0710-5704_DOSSIER_2026_05_28.md` |
-| **SCR J1441-7338**   (Gaia DR3 5796338299045711232) | M5.5-M6V | 25.55 | 11-12 | 488.05 | 14.8 |  9 | `docs/dossiers/SCR_J1441-7338_DOSSIER_2026_05_28.md` |
+| **SCR J1441-7338**   (Gaia DR3 5796338299045711232) | M5.5-M6V | 25.55 | 11-12 | 488.05 | 14.8 |  9 | `docs/dossiers/SCR_J1441-7338_DOSSIER_2026_05_28.md`. eROSITA-DE DR1 counterpart at 3.45″, L_X ≈ 1.4×10²⁸ erg/s — consistent with M-dwarf coronal emission, not a compact-companion signature; doesn't affect the SJ companion claim. |
 | **UCAC4 313-025977** (Gaia DR3 5612039087715504640) | M4-M5V | 32.39 | 13 | 592.32 | (TBD) |  4 | `docs/dossiers/UCAC4_313-025977_DOSSIER_2026_05_28.md` |
 
 APMPM J0710 archival positive constraint: 37 TESS sectors stitched, **no
@@ -145,6 +145,10 @@ across all inclinations.
 | Gaia DR3 5406907085973524224 (v2_alt) | 4.79 | **STRONG_CANDIDATE** — see above |
 | Gaia DR3 3263804373319076480 (GALEX J033455+000910, v2) | 3.22 | DEMOTED — Simon, Lam, El-Badry, Reggiani 2026 (arXiv:2603.20371) published as WD with M_2 ≤ 0.9 via 7 MIKE + 4 FEROS + APOGEE + LAMOST RV epochs |
 | Gaia DR3 6281177228434199296 (GALEX J145250-192225, v2) | 12.75 | DISPUTED — Shahaf+ 2023 (Triage I) M_2 = 11.9; TESS ellipsoidal 0.138% (4.6× too high for face-on); RAVE-Gaia RV drift inconsistent |
+
+## X-ray non-detection note (task Q2)
+
+5-catalog cone search (eROSITA-DE DR1, CSC2.1, 4XMM-DR13, 2RXS, 2SXPS at 10″) on the 4 strong dormant compact-object candidates — 5406907, 5858574, HD 157033, 3155543 — returns **zero counterparts**. Expected: at d = 296 pc – 1.33 kpc, quiescent NS/BH XRB flux would be F_X ~ 10⁻¹⁵ – 10⁻¹⁶ erg/s/cm², below all-sky-survey sensitivity. The null rules out *persistent* L_X > 10³¹ erg/s for 3155543 (only candidate inside the eROSITA-DE footprint); HD 157033, 5406907, 5858574 are in the Russian eROSITA half and not yet probed by any public all-sky X-ray catalog at the required depth. Targeted Chandra/XMM at quiescent-XRB sensitivity is the next confirmation channel.
 
 ## Demoted / falsified
 
@@ -183,7 +187,7 @@ across all inclinations.
 |  7 | SDSS J091935.66+502825.1        | 139.899 | +50.474 | 19.86 |  93.51 | DN       | S21 superoutburst recovered |
 |  8 | SDSS J110706.76+340526.8        | 166.778 | +34.091 | 19.48 |  95.84 | DN:      | — |
 |  9 | SDSS J115419.06+575750.9        | 178.579 | +57.964 | 20.62 |  21.58 | ER UMa:  | — |
-| 10 | CRTS J151836.0-054803           | 229.650 |  -5.801 | 16.50 |  24.64 | DN       | 24.9% eclipse at BLS P |
+| 10 | CRTS J151836.0-054803           | 229.650 |  -5.801 | 16.50 |  24.64 | DN       | 16.6% per-eclipse depth at ZTF P (3.8σ MARGINAL); BLS best at 172 min ≈ 7× ZTF P → ZTF 24.64-min period may be a 1/7 sub-harmonic alias |
 | 11 | SDSS J160419.02+161548.5        | 241.079 | +16.263 | 19.09 | 128.80 | SU UMa   | 23% eclipse |
 | 12 | SDSS J080142.37+210345.8        | 120.426 | +21.063 | 18.86 | 115.11 | Polar:   | — |
 | 13 | **CRTS J051419.8+011120**       |  78.583 |  +1.189 | 15.40 | 180.05 | DN       | **25% eclipse at 3.013 hr — confirmed (Pile F headline)** |
