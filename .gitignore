@@ -47,3 +47,8 @@ downstream_log.txt
 *_log.txt
 wider_hunt_log.txt
 wider_hunt_chunked_log.txt
+
+# Claude Code local harness state — ignore everything under .claude/ EXCEPT the
+# reusable workflow scripts (.claude/workflows/), which we version-control.
+.claude/*
+!.claude/workflows/

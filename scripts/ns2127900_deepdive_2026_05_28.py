@@ -139,8 +139,8 @@ def inclination_from_ABFG(A, B, F, G):
     v_ = q
     a2 = u_ + math.sqrt(max(u_ * u_ - v_ * v_, 0.0))   # = a^2
     a = math.sqrt(a2)
-    # cos i = sqrt( |q| / a^2 )  (sign ambiguous)
-    cosi = math.sqrt(max(min(abs(v_) / a2, 1.0), 0.0))
+    # cos i = |q| / a^2  (Halbwachs+2023: A*G - B*F = a^2 cos i; sign/orientation ambiguous)
+    cosi = max(min(abs(v_) / a2, 1.0), 0.0)
     incl = math.degrees(math.acos(cosi))
     return {'a_mas': a, 'cos_i': cosi, 'incl_deg': incl,
             'omega_plus_deg': math.degrees(omega_plus),
@@ -473,7 +473,7 @@ def m2_posterior(nss, gs, ap, n=200000, seed=1, K1_rvfit=None, K1_rvfit_err=None
     pp = As ** 2 + Bs ** 2 + Fs ** 2 + Gs_ ** 2
     qq = As * Gs_ - Bs * Fs
     a2 = 0.5 * pp + np.sqrt(np.maximum((0.5 * pp) ** 2 - qq ** 2, 0.0))
-    cosi = np.sqrt(np.clip(np.abs(qq) / a2, 0.0, 1.0))
+    cosi = np.clip(np.abs(qq) / a2, 0.0, 1.0)   # cos i = |A*G-B*F|/a^2 (no sqrt)
     sini = np.sqrt(np.clip(1 - cosi ** 2, 1e-6, 1.0))
 
     # solve M2 from f(M) = M2^3 sin^3 i /(M1+M2)^2  => with f_spec and sin i
