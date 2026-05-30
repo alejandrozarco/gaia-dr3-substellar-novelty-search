@@ -31,7 +31,7 @@ Filter-cascade pipeline that derives companion-mass estimates from the Gaia DR3 
 | CRTS J051419+0111 | "confirmed CV discovery" (ZTF period + TESS eclipse) | **RETRACTED** — the 3.013-hr period and eclipse are artifacts (outburst-contaminated fold + minimum-of-noise depth at S/N<1). A real dwarf nova, but with no measured period or eclipse. |
 | Gaia DR3 3155543945892767232 | "confirmed NS (2-channel)" | **Candidate** — Gaia AstroSpectroSB1 is solid (M₂≈1.3), but the external LAMOST corroboration is only 2 phases at 2.66σ. |
 
-The only **firmly confirmed** binaries are two SED-confirmed white-dwarf pairs — **WG 26** and **WDJ205650** — which are known object classes, not novel discoveries. Every compact-object result is a **candidate**: see `docs/CANDIDATES.md` (Strong / Tier-1 / Tier-2) and the v2.1.0 release notes for the full retraction.
+The only **firmly confirmed** binaries are SED-confirmed white-dwarf systems (a known object class, not novel physics): two double-degenerates — **WG 26** (a novel identification) and **WDJ205650** (already published by Munday+2024) — plus two WD-primary systems with **unresolved** massive companions, **WDJ020915** and **WDJ060042**, which are super-Chandrasekhar Type-Ia-progenitor *candidates* pending RV (the companion may be a second white dwarf or a dormant neutron star — the SED cannot decide). No novel dormant compact object is confirmed. Every compact-object result is a **candidate**: see `docs/CANDIDATES.md` (Strong / Tier-1 / Tier-2) and the v2.1.0 release notes for the full retraction.
 
 ## Quick start
 

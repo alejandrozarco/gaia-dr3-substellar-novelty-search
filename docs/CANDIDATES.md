@@ -20,8 +20,9 @@ all four filter verdicts + reasons.
 
 | Bucket | Count (M_1-corrected) |
 |---|---:|
-| **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. Firmly-confirmed binaries = the SED-based WD pairs only (next row). |
-| **Confirmed WD-binary (SED 2-component)** | **3** (WDJ060042, WDJ020915, WG 26) |
+| **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. Firmly-confirmed binaries = the SED-based WD systems only (next two rows). |
+| **Confirmed double-degenerate (WD+WD), sub-Chandrasekhar** | **2** — WG 26 (novel identification) + WDJ205650 (**already published**: Munday+2024, DBL Survey I) |
+| **WD + unresolved massive companion** (super-Chandra M_total; Type-Ia-progenitor *candidate* — companion WD-vs-dark-NS undecided from SED alone) | **2** — WDJ020915 (M_tot≈2.04), WDJ060042 (M_tot≈1.98); both novel, both need RV |
 | Strong candidate | **1 — HD 264291** (Gaia DR3 3378588057203660160): RV-confirmed orbit + Shahaf P(compact)=0.75, M₂≈2.0 (heavy NS / lower mass-gap); caveats — known Shahaf object, Ap-star primary. The 3 former "strong" (5406907 / HD 157033 / 5858574) were all downgraded on re-verification. |
 | **Tier-1 NS pool** (after M_1 correction) | **160** (was 291 at fixed M_1=1.5; 131 demoted to WD/low-mass at real M_1) |
 | Tier-1 BH pool | **0 STRONG** — 5406907 downgraded to weak/suspect (orbit DPAC-rejected + Gaia RV non-detection); HD 157033 BH-claim now ambiguous (0.4–6 M⊙) |
@@ -40,7 +41,7 @@ all four filter verdicts + reasons.
 > | HD 157033 | STRONG BH | **Ambiguous (0.4–6 M⊙)** | Real companion (Gaia RV p=1.8e-15, Kervella snrPMa 14.85, APOGEE 3-visit scatter 35.7 km/s), BUT APOGEE RVs are suspect for this hot A9/F0 star (Chi2RV=7.9, spurious [Fe/H]=−1.45); Kervella face-value M₂=0.45; ruwe=0.85 (no astrometric orbit). Mass unconstrained between M-dwarf and BH — needs one clean optical RV. |
 > | 5406907 | STRONG BH | **Weak / suspect** | Single OrbitalAlternative solution (DPAC-rejected from Validated, max\|corr\|=0.98). For P=25 d / M₂≈4 (K₁~100 km/s) Gaia shows NO RV variability (rv_amplitude_robust NULL, RV 2.34±4.12 over 27 transits) — the orbit itself may be spurious. The dossier's "rv_chisq_pvalue=0 corroboration" was incorrect. |
 >
-> **Net: 0 confirmed/strong compact objects remain.** The only firmly-confirmed binaries are the SED-based WD pairs (WG 26, WDJ205650). The dormant-NS/BH list is now a set of *candidates* — best: 5858574 and 3155543 (NS-mass), HD 157033 (ambiguous). All need a clean external RV to advance.
+> **Net: 0 confirmed/strong compact objects remain.** The only firmly-confirmed binaries are the SED-based WD systems — two double-degenerates (WG 26, novel; WDJ205650, already in Munday+2024) plus two super-Chandrasekhar Type-Ia-progenitor candidates with unresolved companions (WDJ020915, WDJ060042). The dormant-NS/BH list is now a set of *candidates*: the one that survives the triple-vs-compact test is **HD 264291** (RV-confirmed heavy NS — but a known Shahaf+2023 object); 3155543 (NS-mass, weak external RV) and HD 157033 (ambiguous 0.4–6 M⊙) remain candidates; 5858574 is now triple-favored (demoted). All novel candidates need a clean external RV to advance.
 
 ## Tier-1 NS pool triage + Shahaf+2023 cross-check (2026-05-28)
 
@@ -151,9 +152,9 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | Dossier | `docs/dossiers/HD157033_DOSSIER_2026_05_28.md` |
 | Status of sibling Pile-A candidates | 7/8 demoted to stellar binaries via Kervella H2G2 (M_2 = 0.4–2.9 M_⊙ at 5 AU): CD-46 10032A, HD 173689, HD 16385, HD 81825, HD 37943, HD 5514, LP 155-298. Detailed demotion dossiers for CD-46 10032A and HD 173689 at `docs/dossiers/CD-46_10032A_DOSSIER_2026_05_28.md` and `docs/dossiers/HD_173689_DOSSIER_2026_05_28.md`. |
 
-### WD-primary + Chandrasekhar-mass companion (Pile E)
+### WD-primary binaries (Pile E)
 
-Hand-curated (WDJ060042, WDJ020915): **CONFIRMED_WD_BINARY_CHANDRASEKHAR (provisional)**. SED two-component fits exclude M-dwarf companions at >10σ via W1/W2; exclude hot WD companions (T_2 ≥ 11 000 / 20 000 K respectively) at >3σ via GALEX NUV / Pan-STARRS optical. Surviving companion classes: cool double-degenerate (T_2 ≤ 9 000 K cool WD) or dormant low-mass NS.
+Hand-curated (WDJ060042, WDJ020915): **WD-primary binary with an unresolved massive companion (provisional)** — super-Chandrasekhar M_total → **Type-Ia-progenitor candidate**, companion class undecided. SED two-component fits exclude an M-dwarf companion at >10σ via W1/W2 and a hot-WD companion (T_2 ≳ 19 000–20 000 K) at >3σ via Pan-STARRS / Gaia **blue optical** (GALEX has an AIS coverage gap for WDJ020915, so its hot-WD exclusion rests on blue optical, **not UV** — correcting the dossiers' UV-based wording). Surviving companion classes: a cool double-degenerate WD or a dormant ~1.3 M_⊙ neutron star — SED-indistinguishable.
 
 Pipeline-derived (WG 26, WDJ205650 — from task GG GF21 cross-match of the v2 + v2_relaxed + v2_alt "WD or low-mass star" bin):
 
@@ -161,8 +162,8 @@ Pipeline-derived (WG 26, WDJ205650 — from task GG GF21 cross-match of the v2 +
 |---|---:|---:|---:|---:|---:|---|---|---|
 | **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 | 1.98 | 935 d | 18.4 | hand-curated | d = 98 pc. NOT in SIMBAD. M_total >> Chandrasekhar → **Type Ia progenitor candidate** if WD+WD. No archival RV; X-shooter follow-up. | `docs/dossiers/WDJ060042-293041_DOSSIER_2026_05_28.md` |
 | **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 | 2.04 | 274 d | 16.2 | hand-curated | d = 84 pc. NOT in SIMBAD. M_total >> Chandrasekhar → Type Ia progenitor candidate. Highest-tractability: 5 HARPS-N epochs yield >50σ K_1. | `docs/dossiers/WDJ020915+380425_DOSSIER_2026_05_28.md` |
-| **WG 26** = WDJ141039.06-474439.48 (Gaia DR3 6092654861665006592) | 0.62 | **0.65** | **1.27** | 176 d | 14.35 | v2_relaxed | **CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR** (JJ dossier). Hot DA WD primary (Shahaf 2023 HST/COS: T_eff=21,705 K, log g=7.99, M_1=0.62, cooling age 42 Myr) at d=56.4 pc. NSS Orbital P=175.9d, e=0.064, sig=68.8 → M_2=0.65 (dark), M_total=1.27 (**0.13 below Chandrasekhar — not Type Ia**). Likely cool double-degenerate; M-dwarf companion excluded >10σ by SED. Binarity essentially un-studied (Shahaf 2023 + Vincent 2024 catalog ingest only). LISA-precursor DD at one of the smallest distances in Gaia DR3 NSS. | `docs/dossiers/WG26_DOSSIER_2026_05_28.md` |
-| **WDJ205650.56+062149.68** (Gaia DR3 1736555475066523008) | 0.39 (He WD) | **0.26** | **0.64** | 81 d | — | v2_alt | **CONFIRMED_WD_WD_LOW_MASS** (KK dossier). He+He double-degenerate at d=93 pc. SED consistent with single 9,300–10,500 K LM He WD primary; cascade M_2=0.56 was at default M_1=1.5 → self-consistent at M_1=0.39 gives M_2=0.26, M_total=0.64. BOTH components require binary mass-transfer history → post-CE He+He DD that survived the 2nd CE (wide enough at a=68 R_⊙ to NOT merge in a Hubble time, t_GW ≈ 5×10¹⁶ yr). NEEDS_RV. | `docs/dossiers/WDJ205650+062149_DOSSIER_2026_05_28.md` |
+| **WG 26** = WDJ141039.06-474439.48 (Gaia DR3 6092654861665006592) | 0.62 | **0.65** | **1.27** | 176 d | 14.35 | v2_relaxed | **CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR** (JJ dossier). Hot DA WD primary (**Sahu 2023**, MNRAS 526, 5800, HST/COS: T_eff=21,705 K, log g=7.99, M_1=0.62, cooling age 42 Myr — *not* "Shahaf 2023") at d=56.4 pc. NSS Orbital P=175.9d, e=0.064, sig=68.8, measured i=77° → M_2=0.60–0.65 (dark; a deprojected measurement, not a sin-i=1 floor), M_total=1.13–1.27 across WD M_1 priors (**sub-Chandrasekhar — not Type Ia**). Likely cool double-degenerate; M-dwarf companion excluded >10σ by SED. Binarity essentially un-studied (Sahu 2023 + Vincent 2024 catalog ingest only). LISA-precursor DD at one of the smallest distances in Gaia DR3 NSS. | `docs/dossiers/WG26_DOSSIER_2026_05_28.md` |
+| **WDJ205650.56+062149.68** (Gaia DR3 1736555475066523008) | 0.39 (He WD) | **0.26** | **0.64** | 81 d | — | v2_alt | **CONFIRMED_WD_WD_LOW_MASS** (KK dossier). He+He double-degenerate at d=93 pc. SED consistent with single 9,300–10,500 K LM He WD primary; cascade M_2=0.56 was at default M_1=1.5 → self-consistent at M_1=0.39 gives M_2=0.26, M_total=0.64. BOTH components require binary mass-transfer history → post-CE He+He DD that survived the 2nd CE (wide enough at a=68 R_⊙ to NOT merge in a Hubble time, t_GW ≈ 5×10¹⁶ yr). **NOT NOVEL — Munday+2024 (DBL Survey I, 2024MNRAS.532.2534M / arXiv:2407.02594) already characterized this as a wide double-WD with the 81-d Gaia astrometric period; our only new element is the dynamical M₂/M_total inversion.** (The pipeline's earlier stored super-Chandra M_total=2.06 was an artifact — the GF21 WD mass was never joined into the M₁-correction step, leaving the default M₁=1.5.) NEEDS_RV. | `docs/dossiers/WDJ205650+062149_DOSSIER_2026_05_28.md` |
 
 Plus 4 additional candidates from the v3 Acceleration channel (separate pipeline), notably **WDJ173708.52+242024.77** with M_WD = 1.22 M_⊙ — massive ONe WD with significant acceleration.
 
@@ -176,9 +177,9 @@ Plus 4 additional candidates from the v3 Acceleration channel (separate pipeline
 | **SCR J1441-7338**   (Gaia DR3 5796338299045711232) | M5.5-M6V | 25.55 | 11-12 | 488.05 | 14.8 |  9 | `docs/dossiers/SCR_J1441-7338_DOSSIER_2026_05_28.md`. eROSITA-DE DR1 counterpart at 3.45″, L_X ≈ 1.4×10²⁸ erg/s — consistent with M-dwarf coronal emission, not a compact-companion signature; doesn't affect the SJ companion claim. |
 | **UCAC4 313-025977** (Gaia DR3 5612039087715504640) | M4-M5V | 32.39 | 13 | 592.32 | (TBD) |  4 | `docs/dossiers/UCAC4_313-025977_DOSSIER_2026_05_28.md` |
 
-APMPM J0710 archival positive constraint: 37 TESS sectors stitched, **no
-phase modulation at P or P/2 below 200 ppm** → companion is dark/substellar
-across all inclinations.
+APMPM J0710: 37 TESS sectors stitched show **no phase modulation at P or P/2 below ~200 ppm**, but at a/R₁ ≈ 446 even an edge-on *stellar* companion would produce only ~0.02 ppm ellipsoidal modulation — so this non-detection is **uninformative** about the companion's mass or darkness (it does *not* establish a dark companion "across all inclinations"). The substellar case rests on the astrometric mass function alone; RV is required.
+
+**Novelty (2026-05-30 cross-check):** APMPM J0710 (5486916932205092352) and SCR J1441-7338 (5796338299045711232) are **already published** Gaia-NSS substellar candidates — both appear in Marcussen & Albrecht 2023 (AJ 165, 266) and Bailer-Jones & Kreidberg 2026 (A&A 708, A249) at consistent ~10–12 M_J. Our analysis is an independent reanalysis/cross-check, **not a discovery**; the dossiers' "TRULY NOVEL" claims (from a stale SIMBAD snapshot) are corrected. Only **UCAC4 313-025977** (5612039087715504640, ~15 M_J brown dwarf, P=592 d) is not previously cataloged. All three are astrometry-only and inclination-degenerate (M_2 ∝ 1/sin i): substellar-favored but unconfirmed pending RV.
 
 ## Marginal archival corroboration (1 candidate — tasks BB2 + II2)
 
@@ -193,6 +194,8 @@ across all inclinations.
 | Gaia DR3 5406907085973524224 (v2_alt) | 4.79 | **WEAK / SUSPECT** (2026-05-29) — orbit may be spurious (DPAC-rejected OrbitalAlternative; Gaia RV-silent); see above |
 | Gaia DR3 3263804373319076480 (GALEX J033455+000910, v2) | 3.22 | DEMOTED — Simon, Lam, El-Badry, Reggiani 2026 (arXiv:2603.20371) published as WD with M_2 ≤ 0.9 via 7 MIKE + 4 FEROS + APOGEE + LAMOST RV epochs |
 | Gaia DR3 6281177228434199296 (GALEX J145250-192225, v2) | 12.75 | DISPUTED — **RUWE = 6.46** (astrometric solution severely compromised → NSS photocentric M_2 unreliable; cascade also needs sini ≈ 0.12, near-face-on); RAVE–Gaia RV drift inconsistent; Shahaf+ 2023 Triage I. **Ellipsoidal claim retracted 2026-05-28** (`scripts/galex_j145250_ellip_recheck.py`): only a single 27-d TESS sector (QLP) vs P_orb = 154 d, so P/2 = 77-d ellipsoidal is unmeasurable — folded P2P at P/2 is indistinguishable from random periods (perm FAP = 0.28); the prior "0.138%" was a post-detrend noise-floor, not a detection. |
+
+> **Pipeline note — no global RUWE gate (cascade-regression, 2026-05-30).** The bulk consumer (`consumer_v2.derive_row_v2`) applies no astrometric-quality (RUWE) cut, so two RUWE > 6 sources reach Tier-1: GALEX J145250 (RUWE = 6.46 — the catalog's only Tier-1 BH) and GALEX J033455 (RUWE = 9.35, since published as a WD). Both are individually flagged/demoted in the table above, and the corrected headline makes **no** astrometry-only BH/Tier-1 claim, so this affects no current result. But any *future* Tier-1/BH headline must re-vet on RUWE first; adding a global RUWE flag to the tiering is a tracked follow-up.
 
 ## X-ray non-detection note (task Q2)
 
