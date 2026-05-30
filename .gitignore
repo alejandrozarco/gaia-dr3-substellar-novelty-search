@@ -52,3 +52,8 @@ wider_hunt_chunked_log.txt
 # reusable workflow scripts (.claude/workflows/), which we version-control.
 .claude/*
 !.claude/workflows/
+
+# Local convenience symlink -> ostinato sandbox's external catalogs (HGCA / Kervella /
+# Gentile Fusillo 2021 / etc.). NOT committed: third-party data, 469 MB+, and the public
+# repo references these via CATALOG_DEPENDENCIES.md (Vizier) rather than redistributing.
+data/external_catalogs
