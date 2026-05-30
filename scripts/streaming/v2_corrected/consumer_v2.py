@@ -108,14 +108,14 @@ def select_plx(plx_gs, plx_nss):
     Returns (None, None) if neither is available/positive.
     """
     def _is_good(v):
+        # Coerce-then-test (isinstance(v, float) misses numpy.float32 NaNs).
         if v is None:
             return False
         try:
-            if isinstance(v, float) and math.isnan(v):
-                return False
-        except TypeError:
+            f = float(v)
+        except (TypeError, ValueError):
             return False
-        return float(v) > 0
+        return (not math.isnan(f)) and f > 0
 
     if _is_good(plx_nss):
         return float(plx_nss), 'NSS'
@@ -158,14 +158,17 @@ def filter32_v2(K_obs_rvampl, P_d, e, M1, M2_astrom):
 # ----------------------------------------------------------------------------
 
 def _nan_safe(v):
+    # Coerce first, THEN test for NaN: isinstance(v, float) is False for
+    # numpy.float32, which let float32 NaNs slip past the guard (a float32 NaN
+    # logg_gspphot made Filter #30 read NaN and skip the gspspec_ann fallback,
+    # turning HD 1957 into a phantom Tier-1 NS when fed the production parquet).
     if v is None:
         return None
     try:
-        if isinstance(v, float) and math.isnan(v):
-            return None
-    except TypeError:
+        f = float(v)
+    except (TypeError, ValueError):
         return None
-    return float(v)
+    return None if math.isnan(f) else f
 
 
 def filter30_v2(bp_rp, logg_gspphot, logg_gspspec_ann, logg_gspspec,
@@ -303,7 +306,7 @@ def select_m1(row, M1_prior=1.5):
     for col, src in (('mass_flame', 'FLAME'),
                       ('mass_flame_spec', 'FLAME_spec')):
         v = row.get(col)
-        if v is not None and not (isinstance(v, float) and pd.isna(v)):
+        if v is not None and not pd.isna(v):  # pd.isna handles numpy dtypes; isinstance(v,float) did not
             try:
                 vf = float(v)
                 if vf > 0:

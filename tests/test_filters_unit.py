@@ -160,6 +160,25 @@ def test_filter30_logg_fallback_uses_gspspec_ann_when_gspphot_nan():
     assert risk is True and status == "FAIL"
 
 
+def test_filter30_logg_fallback_handles_numpy_float32_nan():
+    """Regression (2026-05-29): a numpy.float32 NaN must be treated as missing
+    so F#30 falls back to logg_gspspec_ann. isinstance(v, float) is False for
+    np.float32, which let a float32-NaN logg_gspphot (as stored in the
+    production parquet) slip past the NaN guard -> F#30 PASS -> HD 1957 became a
+    phantom Tier-1 NS. The earlier fixture used python float64 and masked it."""
+    import numpy as np
+    status, risk, logg_used, logg_source, reason = c2.filter30_v2(
+        bp_rp=0.9,
+        logg_gspphot=np.float32("nan"),
+        logg_gspspec_ann=2.63,
+        logg_gspspec=None,
+        teff_gspphot=np.float32(4771.0),
+    )
+    assert logg_source == "gspspec_ann"
+    assert logg_used == 2.63
+    assert risk is True and status == "FAIL"
+
+
 def test_filter30_logg_prefers_gspphot_when_present():
     status, risk, logg_used, logg_source, reason = c2.filter30_v2(
         bp_rp=0.5,
