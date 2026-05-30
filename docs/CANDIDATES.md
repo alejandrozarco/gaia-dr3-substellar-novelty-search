@@ -96,7 +96,9 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 
 ## Strong candidates (single-method)
 
-### Gaia DR3 5406907085973524224 — BH candidate
+### Gaia DR3 5406907085973524224 — ⚠ DOWNGRADED 2026-05-29 (weak / suspect)
+
+**The orbit may be spurious:** a single DPAC-rejected OrbitalAlternative solution (max|corr| = 0.98), and Gaia shows **no RV variability** (RV 2.34 ± 4.12 km/s over 27 transits) where a P = 25-d / M₂ ≈ 4 orbit predicts ~100 km/s. The "rv_chisq_pvalue = 0 corroboration" row below is **incorrect** (rv_amplitude_robust is NULL). Table retained for the audit trail.
 
 | Field | Value |
 |---|---|
@@ -107,7 +109,7 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | P(M_2 > 1.4) | 99.7% (WD ruled out) |
 | P(M_2 > 2.2) | 96.7% (NS upper limit exceeded) |
 | P(M_2 > 3.0) | 85.5% (stellar-mass BH) |
-| RV-variability corroboration | Gaia `rv_chisq_pvalue = 0` across 27 transits |
+| RV-variability corroboration | ~~Gaia `rv_chisq_pvalue = 0`~~ **RETRACTED — incorrect**: rv_amplitude_robust is NULL; RV = 2.34 ± 4.12 over 27 transits shows no variability |
 | Follow-up | HARPS half-night (3 epochs × 30 min) — predicted K_1 ≈ 100 km/s vs HARPS σ_RV = 5 m/s |
 | Prior identification | ResearchGate preprint #403022650 (unreviewed; their a_phot uses √(s/2) not Pourbaix-Halbwachs, giving M_2_min ≈ 1.95 M_⊙) |
 | Dossier | `docs/dossiers/5406907085973524224_DOSSIER_2026_05_28.md` |
@@ -128,7 +130,9 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | Follow-up | 3-5 RV epochs (~5 h CHIRON/FEROS) at periastron |
 | Dossier | `docs/dossiers/5858574810404752256_DOSSIER_2026_05_28.md` |
 
-### HD 157033 — HGCA Pile A survivor (first archival K_1 detection)
+### HD 157033 — ⚠ DOWNGRADED 2026-05-29 (ambiguous 0.4–6 M⊙, NOT a confirmed BH)
+
+**Companion is real, but the mass is unconstrained.** The APOGEE RVs are unreliable for this hot A9/F0 star (high Chi2RV, spurious [Fe/H] = −1.45); Kervella's face-value is M₂ = 0.45 M⊙; ruwe = 0.85 (no astrometric orbit); and the "K₁ ≥ 16.3" is `rv_amplitude_robust` (≈ 2K₁), not a clean K₁. Needs one clean optical RV to resolve M-dwarf vs BH. Table retained for the audit trail.
 
 | Field | Value |
 |---|---|
@@ -140,10 +144,10 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | Channel 4 — Multi-archive direct RV (task HH) | **4 archival epochs across 4.3 yr**: GALAH DR3 MJD 57479 = −39.94 km/s; APOGEE DR17 MJD 58567 = +26.54, MJD 58570 = −2.41, MJD 59057 = −44.52 km/s. **ΔRV peak-to-peak = 71 km/s → model-free K_1 ≥ 35.5 km/s, central ≈ 47 km/s — 2-3× larger than the Gaia rv_amplitude_robust.** Strengthens the BH classification. |
 | NSS solution | None — P ≈ 10 yr exceeds the Gaia mission 1000-d cutoff (no Keplerian fit possible from the 4 epochs without ephemeris) |
 | M_2 (at M_1 = 1.60, P = 10 yr, K_1 = 16.3) | sin i = 1: 3.62 M_⊙; ⟨sin i⟩ = 0.785: 5.65 M_⊙ |
-| M_2 (at M_1 = 1.60, P ∈ [3, 10] yr, K_1 ≈ 47 km/s from HH) | **6–17 M_⊙ → solid stellar-mass BH** (or potential hierarchical triple if scatter is from a third body) |
+| M_2 (optimistic end, IF the suspect APOGEE K_1 ≈ 47 is real) | 6–17 M_⊙ — but this rests on **unreliable APOGEE RVs**; the honest range is **0.4–6 M⊙** (M-dwarf to BH). NOT a solid BH; could also be a hierarchical triple. |
 | P(M_2 > 3.0) | ~75% from Gaia channel alone; substantially higher when HH archival K_1 included |
-| Novelty | **Zero SIMBAD bibcodes** — no peer-reviewed paper has ever discussed HD 157033. Absent from Halbwachs+ 2023, Shahaf+ 2023, Müller-Horn+ 2026 (excluded by RUWE = 0.85 < 1.4, M_1 = 1.6 > MS cutoff 1.51, rv_amp = 16.3 < 20 threshold). First 2-channel-corroborated identification. |
-| Follow-up | ~1 hr on FEROS or 4 epochs of new RV to derive 5-epoch Keplerian; would promote to CONFIRMED |
+| Novelty | **Zero SIMBAD bibcodes** — no peer-reviewed paper has ever discussed HD 157033. Absent from Halbwachs+ 2023, Shahaf+ 2023, Müller-Horn+ 2026 (excluded by RUWE = 0.85 < 1.4, M_1 = 1.6 > MS cutoff 1.51, rv_amp = 16.3 < 20 threshold). The accurate claim is only that no peer-reviewed paper has discussed HD 157033 as a binary; the snrPMa = 14.85 PMa was already published (Kervella 2022). |
+| Follow-up | ~1 hr on FEROS or 4 epochs of new RV to derive 5-epoch Keplerian; would **resolve the M-dwarf-vs-BH ambiguity** (mass is currently unconstrained) |
 | Dossier | `docs/dossiers/HD157033_DOSSIER_2026_05_28.md` |
 | Status of sibling Pile-A candidates | 7/8 demoted to stellar binaries via Kervella H2G2 (M_2 = 0.4–2.9 M_⊙ at 5 AU): CD-46 10032A, HD 173689, HD 16385, HD 81825, HD 37943, HD 5514, LP 155-298. Detailed demotion dossiers for CD-46 10032A and HD 173689 at `docs/dossiers/CD-46_10032A_DOSSIER_2026_05_28.md` and `docs/dossiers/HD_173689_DOSSIER_2026_05_28.md`. |
 
@@ -186,7 +190,7 @@ across all inclinations.
 
 | Source | M_2 (cascade) | Verdict |
 |---|---:|---|
-| Gaia DR3 5406907085973524224 (v2_alt) | 4.79 | **STRONG_CANDIDATE** — see above |
+| Gaia DR3 5406907085973524224 (v2_alt) | 4.79 | **WEAK / SUSPECT** (2026-05-29) — orbit may be spurious (DPAC-rejected OrbitalAlternative; Gaia RV-silent); see above |
 | Gaia DR3 3263804373319076480 (GALEX J033455+000910, v2) | 3.22 | DEMOTED — Simon, Lam, El-Badry, Reggiani 2026 (arXiv:2603.20371) published as WD with M_2 ≤ 0.9 via 7 MIKE + 4 FEROS + APOGEE + LAMOST RV epochs |
 | Gaia DR3 6281177228434199296 (GALEX J145250-192225, v2) | 12.75 | DISPUTED — **RUWE = 6.46** (astrometric solution severely compromised → NSS photocentric M_2 unreliable; cascade also needs sini ≈ 0.12, near-face-on); RAVE–Gaia RV drift inconsistent; Shahaf+ 2023 Triage I. **Ellipsoidal claim retracted 2026-05-28** (`scripts/galex_j145250_ellip_recheck.py`): only a single 27-d TESS sector (QLP) vs P_orb = 154 d, so P/2 = 77-d ellipsoidal is unmeasurable — folded P2P at P/2 is indistinguishable from random periods (perm FAP = 0.28); the prior "0.138%" was a post-detrend noise-floor, not a detection. |
 
