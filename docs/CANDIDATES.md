@@ -127,7 +127,7 @@ All 161 M₁-corrected Tier-1 NS run through a rigorous second-method triage (ar
 | AMRF (Shahaf+ 2019) | 0.63 — dark companion confirmed |
 | RV evidence | rv_amplitude_robust = 23.9 km/s peak-to-peak, p_χ² = 1.6×10⁻¹⁴ over 22 RVS transits |
 | M_2 interpretation | rv_amplitude as 2K_1 (v2 convention): K_1 ≈ 12 km/s, sin i ≈ 0.53 → **M_2 ≈ 2.82 M_⊙ (mass-gap BH)**; as half-amplitude: K_1 = 24 km/s, sin i = 1.0 → M_2 = 1.48 (NS / heavy WD) |
-| Novelty | Truly novel — not in SIMBAD, not in Shahaf+ 2023 / 2024 |
+| Novelty | ~~Truly novel — not in SIMBAD, not in Shahaf+ 2023 / 2024~~ — the *novelty* fact stands, but **COMPACTNESS demoted 2026-05-29 (triple-favored — see banner above)**; most likely a hierarchical triple, not a compact object |
 | Follow-up | 3-5 RV epochs (~5 h CHIRON/FEROS) at periastron |
 | Dossier | `docs/dossiers/5858574810404752256_DOSSIER_2026_05_28.md` |
 
