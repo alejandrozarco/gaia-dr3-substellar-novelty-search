@@ -332,7 +332,10 @@ def main():
                 'M2_min_v3', 'M2_median_v3', 'M2_max_v3',
                 'logg_used_v3', 'logg_source_v3', 'cbias_risk_v3',
                 'filter29_v3', 'filter30_v3', 'filter30_reason_v3',
-                'filter31_v3', 'tier_v3']}
+                'filter31_v3', 'has_rv_var_v3', 'K1_used_kms_v3',
+                'M2_joint_min_v3', 'M2_joint_median_v3', 'M2_joint_max_v3',
+                'M2_joint_shortP_v3', 'i_joint_shortP_deg_v3',
+                'jerk_P_yr_max_grid_v3', 'rv_consistency_flag_v3', 'tier_v3']}
             result['tier_v3'] = f'ERROR ({err_count})'
         result['source_id'] = int(r['source_id'])
         result['plx_source_v3'] = plx_source

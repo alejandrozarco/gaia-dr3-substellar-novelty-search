@@ -162,6 +162,138 @@ def M2_range(accel_mas_yr2: float,
     return (M2_min, M2_med, M2_max)
 
 
+# ---------------------------------------------------------------------------
+# RV-consistency cross-check: joint RV + astrometric mass (added 2026-05-31)
+# ---------------------------------------------------------------------------
+# The astrometry-only M2 above assumes the FULL acceleration is sky-projected
+# (face-on) and marginalizes flat in log-P, which systematically OVER-states the
+# headline median.  Example: Gaia DR3 4698497413538721408 (HD 10711) has
+# astrometry-only M2_median = 4.758 Msun ("dark_candidate"), but the source's OWN
+# measured RV (rv_amplitude_robust = 15.86 km/s -> K1 = 7.9 km/s) collapses the
+# mass to ~0.6-1.4 Msun at the short periods favored by its 9-parameter (jerk)
+# solution -- a white dwarf, not a NS/BH.
+#
+# When a source HAS a significant RV variation, the spectroscopic K1 pins the
+# inclination (sin i = K1 / v1, v1 = the primary's 3-D orbital velocity) AND the
+# sky-projected acceleration (a_obs = a_faceon * sqrt((1 + cos^2 i)/2)); both must
+# be produced by the SAME circular orbit, giving one self-consistent (M2, i) per
+# trial period.  Validated against HD 10711 (2026-05-31; /tmp/g4698_joint2.py).
+#
+# NOTE (separate, flagged): M2_from_acceleration() above uses M2/(M1+M2)^(1/3);
+# the correct two-body exponent (used HERE) is (2/3).  The face-on inversion's
+# exponent is tracked as a separate correction -- the JOINT solution below uses
+# the exact orbit and is correct regardless.
+
+_G_SI = 6.6743e-11
+_MSUN = 1.98892e30
+_AU = 1.495978707e11
+_YR = 3.15576e7
+_PC = 3.0856775815e16
+_MAS_PER_RAD = 206264.806e3
+
+
+def _bisect_root(f, lo, hi, n_iter: int = 100):
+    """Bisection root of monotone f on [lo, hi] (requires a sign change)."""
+    flo, fhi = f(lo), f(hi)
+    if flo == 0.0:
+        return lo
+    if fhi == 0.0:
+        return hi
+    if (flo > 0.0) == (fhi > 0.0):
+        return None
+    for _ in range(n_iter):
+        mid = 0.5 * (lo + hi)
+        fm = f(mid)
+        if (fm > 0.0) == (flo > 0.0):
+            lo, flo = mid, fm
+        else:
+            hi = mid
+    return 0.5 * (lo + hi)
+
+
+def _primary_v_and_faceon_accel(P_yr: float, M1: float, M2: float, plx_mas: float):
+    """(v1 [m/s], face-on angular acceleration [mas/yr^2]) of the primary's reflex
+    circular orbit, from the exact two-body relation a1 = a_rel * M2/Mtot."""
+    Mtot = M1 + M2
+    a_rel_AU = (Mtot * P_yr ** 2) ** (1.0 / 3.0)
+    a1_m = a_rel_AU * _AU * M2 / Mtot
+    P_s = P_yr * _YR
+    v1 = 2.0 * math.pi * a1_m / P_s
+    d_pc = 1000.0 / plx_mas
+    af = (4.0 * math.pi ** 2 * a1_m / P_s ** 2 / (d_pc * _PC)) * _MAS_PER_RAD * _YR ** 2
+    return v1, af
+
+
+def joint_m2_from_accel_rv(accel_mas_yr2, plx_mas, K1_kms, M1, P_yr):
+    """Companion mass from the JOINT (RV K1 + astrometric acceleration) constraint
+    at a fixed circular-orbit period.  The same orbit must reproduce both the
+    spectroscopic K1 (sin i = K1/v1) and the observed sky-projected acceleration
+    (a_obs = a_faceon * sqrt((1+cos^2 i)/2)).  Returns (M2, i_deg) or None.  If even
+    the edge-on (sin i=1) spectroscopic mass floor already over-produces the
+    acceleration, returns (floor, 90.0)."""
+    try:
+        accel_mas_yr2 = float(accel_mas_yr2); plx_mas = float(plx_mas)
+        K1_ms = float(K1_kms) * 1000.0; M1 = float(M1); P_yr = float(P_yr)
+    except (TypeError, ValueError):
+        return None
+    if not all(map(math.isfinite, (accel_mas_yr2, plx_mas, K1_ms, M1, P_yr))):
+        return None
+    if min(accel_mas_yr2, plx_mas, K1_ms, M1, P_yr) <= 0:
+        return None
+    fM = (P_yr * _YR) * K1_ms ** 3 / (2.0 * math.pi * _G_SI) / _MSUN   # spec. mass fn floor
+    floor = _bisect_root(lambda m: m ** 3 / (M1 + m) ** 2 - fM, 1e-5, 500.0)
+    if floor is None:
+        return None
+
+    def resid(M2):
+        v1, af = _primary_v_and_faceon_accel(P_yr, M1, M2, plx_mas)
+        s = K1_ms / v1
+        if s > 1.0:
+            return -999.0
+        proj = math.sqrt((1.0 + (1.0 - s * s)) / 2.0)
+        return af * proj - accel_mas_yr2
+
+    lo = floor * (1.0 + 1e-9)
+    if resid(lo) > 0.0:
+        return float(floor), 90.0
+    M2 = _bisect_root(resid, lo, 500.0)
+    if M2 is None:
+        M2 = floor
+    v1, _ = _primary_v_and_faceon_accel(P_yr, M1, M2, plx_mas)
+    i_deg = math.degrees(math.asin(min(K1_ms / v1, 1.0)))
+    return float(M2), float(i_deg)
+
+
+def joint_m2_range(accel_mas_yr2, plx_mas, K1_kms, M1, Pgrid):
+    """(M2_min, M2_median, M2_max, M2_at_shortest_P, i_at_shortest_P) of the joint
+    RV+astrometric solution over `Pgrid` (yr).  None if no period yields a soln."""
+    out = []
+    for P in Pgrid:
+        r = joint_m2_from_accel_rv(accel_mas_yr2, plx_mas, K1_kms, M1, float(P))
+        if r is not None:
+            out.append((float(P), r[0], r[1]))
+    if not out:
+        return None
+    out.sort(key=lambda t: t[0])
+    masses = [m for _, m, _ in out]
+    return (float(min(masses)), float(np.median(masses)), float(max(masses)),
+            float(out[0][1]), float(out[0][2]))
+
+
+def jerk_aware_period_grid(nss_solution_type, P_yr_min: float = 3.0,
+                           P_yr_max: float = 100.0, jerk_P_yr_max: float = 12.0,
+                           n_grid: int = 32):
+    """Period grid for the inversion, weighted toward short P for jerk solutions.
+    An Acceleration9 (9-parameter) fit includes a measured JERK, which is only
+    well-constrained when the orbital curvature changes appreciably over the
+    ~2.83-yr DR3 baseline -> P not >> baseline.  So Acceleration9 is capped near a
+    few x baseline (jerk_P_yr_max, default 12 yr); Acceleration7 (constant accel)
+    keeps the long P_yr_max.  Returns (grid, pmax_used)."""
+    st = str(nss_solution_type or '')
+    pmax = jerk_P_yr_max if st == 'Acceleration9' else P_yr_max
+    return np.geomspace(P_yr_min, pmax, n_grid), pmax
+
+
 def acceleration_magnitude(accel_ra: float, accel_dec: float) -> Optional[float]:
     """Quadrature sum of accel components (mas/yr^2).  None if either NaN."""
     if accel_ra is None or accel_dec is None:
@@ -289,7 +421,8 @@ def tier_label_v3(M2_min: Optional[float],
                   M2_max: Optional[float],
                   f29: str,
                   f30: str,
-                  f31: str) -> str:
+                  f31: str,
+                  rv_flag: str = 'NO_RV_VAR') -> str:
     """Acceleration-channel tier rule (no F#32 because no orbit fit):
 
       Tier-1 BH: M2_min >= 3 (BH-mass even at most pessimistic period)
@@ -324,6 +457,9 @@ def tier_label_v3(M2_min: Optional[float],
             return f'Demoted (failed F#30 K-giant chromatic) -- was {base}'
         if f31 == 'FAIL':
             return f'Demoted (failed F#31 phantom RV) -- was {base}'
+        if rv_flag == 'OVERSTATED_TO_WD_LOWMASS':
+            return (f'Demoted (RV-joint short-P mass is WD/low-mass; '
+                    f'astrometry-only over-stated) -- was {base}')
 
     return base
 
@@ -394,7 +530,33 @@ def derive_row_v3(row: dict,
     f31 = filter31_v3(row.get('rv_amplitude_robust'),
                       row.get('rv_chisq_pvalue'))
 
-    tier = tier_label_v3(M2_min, M2_max, f29, f30, f31)
+    # --- RV-consistency cross-check (joint RV + astrometric mass) ---
+    K_obs = _nan_safe(row.get('rv_amplitude_robust'))
+    pval = _nan_safe(row.get('rv_chisq_pvalue'))
+    has_rv_var = (K_obs is not None and pval is not None
+                  and K_obs > 0 and pval < 0.05)
+    Pgrid_joint, jerk_pmax = jerk_aware_period_grid(nss_type, P_yr_min, P_yr_max)
+    (M2_joint_min, M2_joint_med, M2_joint_max,
+     M2_joint_shortP, i_joint_shortP, K1_used) = (None, None, None, None, None, None)
+    rv_flag = 'NO_RV_VAR'
+    if has_rv_var:
+        K1_used = K_obs / 2.0   # rv_amplitude_robust is peak-to-peak; K1 = half (v2 Corr. B)
+        jr = joint_m2_range(accel_mag, plx_used, K1_used, M1_prior, Pgrid_joint)
+        if jr is None:
+            rv_flag = 'JOINT_NO_SOLUTION'
+        else:
+            (M2_joint_min, M2_joint_med, M2_joint_max,
+             M2_joint_shortP, i_joint_shortP) = jr
+            if M2_med is not None and M2_med >= 1.2 and M2_joint_shortP < 1.2:
+                rv_flag = 'OVERSTATED_TO_WD_LOWMASS'
+            elif M2_joint_shortP >= 3.0:
+                rv_flag = 'CONSISTENT_BH'
+            elif M2_joint_shortP >= 1.2:
+                rv_flag = 'CONSISTENT_NS'
+            else:
+                rv_flag = 'CONSISTENT_LOWMASS'
+
+    tier = tier_label_v3(M2_min, M2_max, f29, f30, f31, rv_flag)
 
     return {
         'accel_mag_mas_yr2': accel_mag,
@@ -413,5 +575,14 @@ def derive_row_v3(row: dict,
         'filter30_v3': f30,
         'filter30_reason_v3': f30_reason,
         'filter31_v3': f31,
+        'has_rv_var_v3': bool(has_rv_var),
+        'K1_used_kms_v3': K1_used,
+        'M2_joint_min_v3': M2_joint_min,
+        'M2_joint_median_v3': M2_joint_med,
+        'M2_joint_max_v3': M2_joint_max,
+        'M2_joint_shortP_v3': M2_joint_shortP,
+        'i_joint_shortP_deg_v3': i_joint_shortP,
+        'jerk_P_yr_max_grid_v3': float(jerk_pmax),
+        'rv_consistency_flag_v3': rv_flag,
         'tier_v3': tier,
     }
