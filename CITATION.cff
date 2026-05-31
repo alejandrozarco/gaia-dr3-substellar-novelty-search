@@ -42,7 +42,11 @@ abstract: >-
   white-dwarf systems (a known class): two double-degenerates (WG 26,
   novel; WDJ205650, already published by Munday+2024) plus two
   super-Chandrasekhar Type-Ia-progenitor candidates with unresolved
-  companions (WDJ020915, WDJ060042). All compact-object results are
+  companions (WDJ020915, WDJ060042). v2.2 adds Filter #33 (Gaia NSS
+  period-confidence flag, flags bit 13) and a v3-acceleration
+  RV-consistency cross-check with a corrected (2/3) two-body mass
+  exponent, demoting period-/inclination-degenerate over-promotions.
+  All compact-object results are
   candidates pending
   second-method follow-up. Status is experimental archival mining;
   new claims require independent follow-up.
@@ -59,5 +63,5 @@ keywords:
   - "cataclysmic variables"
   - "filter cascade"
 license: "CC-BY-4.0"
-version: "2.1.1"
-date-released: "2026-05-28"
+version: "2.2.0"
+date-released: "2026-05-31"
