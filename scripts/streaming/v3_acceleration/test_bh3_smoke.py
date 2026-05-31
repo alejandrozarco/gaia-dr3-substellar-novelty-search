@@ -34,7 +34,9 @@ from acceleration_inversion import (
 
 def synth_bh3_accel(M_2: float, M_1: float, P_yr: float, plx: float) -> float:
     """Implied PM-accel amplitude (mas/yr^2) for a circular-orbit binary."""
-    return (4*math.pi**2) * (M_2 / (M_1 + M_2)**(1.0/3.0)) * P_yr**(-4.0/3.0) * plx
+    # Exact two-body exponent is (2/3): a1 = a_rel * M2/Mtot, a_rel = (Mtot P^2)^(1/3)
+    # -> accel ~ M2 / Mtot^(2/3) * P^(-4/3) (corrected 2026-05-31).
+    return (4*math.pi**2) * (M_2 / (M_1 + M_2)**(2.0/3.0)) * P_yr**(-4.0/3.0) * plx
 
 
 def test_bh3_roundtrip():

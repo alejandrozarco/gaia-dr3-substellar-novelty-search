@@ -21,6 +21,19 @@ import acceleration_inversion as ai  # noqa: E402
 HD = dict(accel=16.137, plx=7.123961, K1=7.929, M1=1.5)
 
 
+def test_m2_from_acceleration_matches_exact_twobody_physics():
+    """Forward-inverse consistency: the face-on angular acceleration computed from
+    the EXACT two-body orbit must invert back to the same M2.  This pins the
+    (2/3) exponent in M2_from_acceleration -- it FAILS on the old (1/3)."""
+    plx = 7.124
+    for M1, M2, P_yr in [(1.5, 0.6, 4.0), (0.76, 32.7, 11.6), (1.0, 2.0, 8.0),
+                         (1.3, 1.4, 6.0)]:
+        _, accel = ai._primary_v_and_faceon_accel(P_yr, M1, M2, plx)
+        m2_back = ai.M2_from_acceleration(accel, plx, M1, P_yr)
+        assert m2_back is not None
+        assert abs(m2_back - M2) < 1e-2 * max(1.0, M2), (M1, M2, P_yr, m2_back)
+
+
 def test_bisect_root_basic():
     assert abs(ai._bisect_root(lambda x: x * x - 4.0, 0.0, 10.0) - 2.0) < 1e-6
     assert ai._bisect_root(lambda x: x + 1.0, 0.0, 10.0) is None  # no sign change

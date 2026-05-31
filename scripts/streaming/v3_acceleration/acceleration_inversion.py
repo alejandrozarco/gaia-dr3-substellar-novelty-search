@@ -10,7 +10,7 @@ El-Badry+ 2024 for BH3):
     The proper-motion acceleration amplitude |a| (mas/yr^2) for a primary
     with companion of mass M_2 on a circular orbit of period P (yr) is:
 
-        |a|_mas/yr^2 = 4 pi^2 * (M_2 / (M_1 + M_2)^(1/3)) * P_yr^(-4/3) * plx_mas
+        |a|_mas/yr^2 = 4 pi^2 * (M_2 / (M_1 + M_2)^(2/3)) * P_yr^(-4/3) * plx_mas
 
     where P_yr is the orbital period in years, M_1 + M_2 the total mass in
     M_sun, and plx_mas the parallax in mas.
@@ -18,7 +18,7 @@ El-Badry+ 2024 for BH3):
     Solving for M_2 (given measured |a|, plx, M_1, assumed P) requires
     numerical inversion of
 
-        M_2 / (M_1 + M_2)^(1/3) = |a| / (4 pi^2 * plx * P^(-4/3))
+        M_2 / (M_1 + M_2)^(2/3) = |a| / (4 pi^2 * plx * P^(-4/3))
 
     which we do by bisection.  For an unknown P, we grid in log-P over the
     physically motivated range:
@@ -32,6 +32,12 @@ El-Badry+ 2024 for BH3):
 Mass-function intuition for circular orbits is preserved: longer assumed P
 yields larger inferred M_2 (since |a| ~ 1/P^(4/3) means more mass is needed
 to produce the same acceleration for longer periods).
+
+Exponent correction (2026-05-31): the inversion uses M_2/(M_1+M_2)^(2/3) -- the
+exact two-body exponent, since a_1 = a_rel * M_2/M_tot and a_rel = (M_tot P^2)^(1/3)
+give |a| ~ M_2 / M_tot^(2/3) * P^(-4/3).  The original code/docstring used
+^(1/3), which under-stated the face-on M_2 increasingly with P (e.g. P=17 yr:
+4.6 vs the correct 18.4 M_sun for HD 10711's acceleration).
 
 The output mass range encodes the P-uncertainty.  Combined with the F#29-32
 filters (re-imported from v2_corrected/consumer_v2.py), a source is tagged
@@ -65,7 +71,7 @@ def M2_from_acceleration(accel_mas_yr2: float,
     `M_1` (M_sun) and an assumed orbital period `P` (yr).
 
     Solves by bisection:
-        f(M_2) = M_2 / (M_1 + M_2)^(1/3) - K = 0,
+        f(M_2) = M_2 / (M_1 + M_2)^(2/3) - K = 0,
         K     = |a| / (4 pi^2 * plx * P^(-4/3))
               = |a| * P^(4/3) / (4 pi^2 * plx)
 
@@ -99,8 +105,8 @@ def M2_from_acceleration(accel_mas_yr2: float,
 
     # Bisection bracket: M_2 in [1e-4, 1e4] M_sun.
     lo, hi = 1e-4, 1e4
-    f_lo = lo / (M1 + lo) ** (1.0 / 3.0) - K
-    f_hi = hi / (M1 + hi) ** (1.0 / 3.0) - K
+    f_lo = lo / (M1 + lo) ** (2.0 / 3.0) - K
+    f_hi = hi / (M1 + hi) ** (2.0 / 3.0) - K
     if f_lo > 0:
         # Even the smallest M_2 exceeds the required K -- inversion sets M_2
         # at the lower bound.
@@ -110,7 +116,7 @@ def M2_from_acceleration(accel_mas_yr2: float,
         return hi
     for _ in range(80):
         mid = 0.5 * (lo + hi)
-        fm = mid / (M1 + mid) ** (1.0 / 3.0) - K
+        fm = mid / (M1 + mid) ** (2.0 / 3.0) - K
         if fm > 0:
             hi = mid
         else:
@@ -179,10 +185,9 @@ def M2_range(accel_mas_yr2: float,
 # be produced by the SAME circular orbit, giving one self-consistent (M2, i) per
 # trial period.  Validated against HD 10711 (2026-05-31; /tmp/g4698_joint2.py).
 #
-# NOTE (separate, flagged): M2_from_acceleration() above uses M2/(M1+M2)^(1/3);
-# the correct two-body exponent (used HERE) is (2/3).  The face-on inversion's
-# exponent is tracked as a separate correction -- the JOINT solution below uses
-# the exact orbit and is correct regardless.
+# NOTE: both M2_from_acceleration() above and the JOINT solution below now use the
+# exact two-body exponent (2/3) (corrected 2026-05-31; the face-on inversion
+# previously used (1/3), which under-stated M2 increasingly with P).
 
 _G_SI = 6.6743e-11
 _MSUN = 1.98892e30
