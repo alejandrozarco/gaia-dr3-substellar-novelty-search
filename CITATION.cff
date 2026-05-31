@@ -41,8 +41,16 @@ abstract: >-
   confirmed. The only firmly-confirmed binaries are SED-confirmed
   white-dwarf systems (a known class): two double-degenerates (WG 26,
   novel; WDJ205650, already published by Munday+2024) plus two
-  super-Chandrasekhar Type-Ia-progenitor candidates with unresolved
-  companions (WDJ020915, WDJ060042). v2.2 adds Filter #33 (Gaia NSS
+  novel long-period (P~275, 935 d) double-degenerate / WD+NS binaries
+  whose total mass exceeds the Chandrasekhar mass (WDJ020915,
+  WDJ060042; companion class unresolved). A 2026-05-31 full-covariance
+  mass re-analysis corrects the earlier "super-Chandrasekhar
+  Type-Ia-progenitor" framing: neither companion is confidently
+  >1.4 Msun, and at these wide separations the systems do not merge
+  within a Hubble time (so they are not Type-Ia progenitors); their
+  significance is instead the wide-orbit massive-WD-binary regime
+  (longest catalogued double-WD period ~30 d) reachable only by Gaia
+  astrometry. v2.2 adds Filter #33 (Gaia NSS
   period-confidence flag, flags bit 13) and a v3-acceleration
   RV-consistency cross-check with a corrected (2/3) two-body mass
   exponent, demoting period-/inclination-degenerate over-promotions.
