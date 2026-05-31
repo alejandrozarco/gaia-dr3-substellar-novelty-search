@@ -140,7 +140,8 @@ def inclination_from_ABFG(A, B, F, G):
     q = A * G - B * F
     u_ = 0.5 * p
     a2 = u_ + math.sqrt(max(u_ * u_ - q * q, 0.0))
-    cosi = math.sqrt(max(min(abs(q) / a2, 1.0), 0.0))
+    # cos i = |q| / a^2  (Halbwachs+2023: A*G - B*F = a^2 cos i; sign/orientation ambiguous)
+    cosi = max(min(abs(q) / a2, 1.0), 0.0)
     return {'a_mas': math.sqrt(a2), 'cos_i': cosi, 'incl_deg': math.degrees(math.acos(cosi))}
 
 def solve_m2(fM, M1):
@@ -470,7 +471,7 @@ def hd264291_rv_full(sid, nss, M1, M1sig):
     Fs = rng.normal(F, Fe, nmc); Gs_ = rng.normal(G, Ge, nmc)
     uu = 0.5 * (As ** 2 + Bs ** 2 + Fs ** 2 + Gs_ ** 2); vv = As * Gs_ - Bs * Fs
     a2 = uu + np.sqrt(np.maximum(uu ** 2 - vv ** 2, 0.0))
-    cosi = np.sqrt(np.clip(np.abs(vv) / a2, 0, 1)); sini = np.sqrt(np.clip(1 - cosi ** 2, 1e-6, 1))
+    cosi = np.clip(np.abs(vv) / a2, 0, 1); sini = np.sqrt(np.clip(1 - cosi ** 2, 1e-6, 1))  # cos i (no sqrt)
     fM = (Ps * 86400.0) * (K1s * 1000.0) ** 3 * (1 - es ** 2) ** 1.5 / (2 * np.pi * G_SI) / MSUN
     rhs = fM / sini ** 3
     M2 = np.array([solve_m2(max(r, 1e-6), m1) for r, m1 in zip(rhs, M1s)])

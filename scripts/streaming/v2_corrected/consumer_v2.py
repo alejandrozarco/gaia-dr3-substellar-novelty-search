@@ -43,13 +43,22 @@ def photocentric_a_mas(A, B, F, G):
 
     Halbwachs+ 2023, Gaia DR3 NSS doc.  Identical to consumer.photocentric_a_mas.
     """
-    if any(v is None for v in (A, B, F, G)):
-        return None
-    try:
-        if any(isinstance(v, float) and math.isnan(v) for v in (A, B, F, G)):
+    # Coerce-then-test: isinstance(v, float) is False for numpy.float32, so the
+    # old guard let a float32-NaN Thiele-Innes element through and returned a
+    # NaN a_phot instead of None.  Coercing to float first makes the None/NaN
+    # guard dtype-agnostic (and runs the math on plain floats).
+    coerced = []
+    for v in (A, B, F, G):
+        if v is None:
             return None
-    except TypeError:
-        return None
+        try:
+            f = float(v)
+        except (TypeError, ValueError):
+            return None
+        if math.isnan(f):
+            return None
+        coerced.append(f)
+    A, B, F, G = coerced
     u = 0.5 * (A * A + B * B + F * F + G * G)
     v = A * G - B * F
     disc = max(0.0, u * u - v * v)

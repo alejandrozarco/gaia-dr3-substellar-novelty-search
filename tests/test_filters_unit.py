@@ -179,6 +179,19 @@ def test_filter30_logg_fallback_handles_numpy_float32_nan():
     assert risk is True and status == "FAIL"
 
 
+def test_photocentric_a_mas_handles_numpy_float32_nan():
+    """Regression: a NaN Thiele-Innes element means no orbit solution, so
+    photocentric_a_mas must return None. Same dtype bug as the F#30 case above
+    -- isinstance(v, float) is False for numpy.float32, so a float32 NaN slipped
+    past the guard and the function returned a NaN a_phot, which then feeds
+    fM_v2 in derive_row_v2 instead of short-circuiting on missing data."""
+    import numpy as np
+    assert c2.photocentric_a_mas(np.float32("nan"), 1.0, 1.0, 1.0) is None
+    # a fully-finite Thiele-Innes set still yields a real, positive a_phot
+    val = c2.photocentric_a_mas(1.0, 0.5, 0.5, 1.0)
+    assert val is not None and val > 0
+
+
 def test_filter30_logg_prefers_gspphot_when_present():
     status, risk, logg_used, logg_source, reason = c2.filter30_v2(
         bp_rp=0.5,
