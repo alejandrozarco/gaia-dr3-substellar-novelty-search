@@ -235,11 +235,56 @@ def filter31(K_obs, pval):
     return 'AMBIGUOUS'
 
 
+# Gaia DR3 nss_two_body_orbit `flags` bit 13 (value 2**13 = 8192) =
+# NO_SIGNIFICANT_PERIODS_CAN_BE_FOUND ("confidence on the period below threshold").
+NSS_FLAG_NO_SIGNIFICANT_PERIOD = 1 << 13  # 8192
+
+
+def filter33_v2(nss_solution_type, flags):
+    """F#33 — Gaia DR3 NSS period-confidence flag (flags bit 13 = 8192).
+
+    Gaia sets bit 13 when the confidence on the orbital period is below
+    threshold. The derived companion mass scales with the period
+    (f(M) = a_phot^3/P^2 for the astrometric channel; f(M) ~ K1^3 * P for the
+    spectroscopic one), so a non-significant period makes the mass unreliable.
+
+    Severity is solution-type dependent:
+      - SB1 / SB1C      : period is spectroscopic-only -> bit 13 means the orbit
+                          (and f(M)) is unreliable -> 'FAIL' (hard demote).
+      - AstroSpectroSB1 : period is *also* astrometrically constrained
+                          (Thiele-Innes), so bit 13 is a caution, not fatal ->
+                          'FLAG' (down-tier / require corroboration). ~49% of
+                          AstroSpectroSB1 carry it.
+      - Orbital / OrbitalAlternative / Acceleration : bit 13 is a spectroscopic
+                          flag and does not apply -> 'PASS'.
+    Returns 'PASS', 'FAIL', 'FLAG', or 'NO_DATA' (flags unavailable).
+
+    Refs: Gaia DR3 datamodel (nss_two_body_orbit.flags); Bashi+2022
+    (MNRAS 517, 3888) clean-SB sample drops ~half; SB1 chain (arXiv:2410.14372).
+    """
+    if flags is None:
+        return 'NO_DATA'
+    try:
+        if pd.isna(flags):          # pd.isna handles numpy dtypes (float32 lesson)
+            return 'NO_DATA'
+        fl = int(flags)
+    except (TypeError, ValueError):
+        return 'NO_DATA'
+    if not (fl & NSS_FLAG_NO_SIGNIFICANT_PERIOD):
+        return 'PASS'
+    st = str(nss_solution_type or '')
+    if st in ('SB1', 'SB1C'):
+        return 'FAIL'
+    if st == 'AstroSpectroSB1':
+        return 'FLAG'
+    return 'PASS'
+
+
 # ----------------------------------------------------------------------------
 # Tier classification — identical to web_tool/app.py derive_one()
 # ----------------------------------------------------------------------------
 
-def tier_label(cls, f29, f30, f31, f32):
+def tier_label(cls, f29, f30, f31, f32, f33='PASS'):
     is_compact_class = cls in ('dormant_BH_candidate', 'dormant_NS_candidate')
     if not is_compact_class:
         # The cascade was originally scoped to BH/NS discovery; M_2 < 1.2 was
@@ -262,6 +307,8 @@ def tier_label(cls, f29, f30, f31, f32):
         return FRIENDLY.get(cls, f'Characterized — {cls}')
     if f29 == 'FAIL':
         return 'Demoted (failed F#29 SB2)'
+    if f33 == 'FAIL':
+        return 'Demoted (failed F#33 NSS period non-significant)'
     if f30 == 'FAIL':
         return 'Demoted (failed F#30 K-giant chromatic)'
     if f32 == 'FAIL':
@@ -270,6 +317,8 @@ def tier_label(cls, f29, f30, f31, f32):
         return 'Demoted (failed F#31 phantom RV)'
     if f31 in ('AMBIGUOUS', 'NO_DATA'):
         return 'Tier-2 (RV inconclusive — needs follow-up)'
+    if f33 == 'FLAG':
+        return 'Tier-2 (NSS period non-significant — needs corroboration)'
     if cls == 'dormant_BH_candidate':
         return 'Tier-1 BH'
     if cls == 'dormant_NS_candidate':
@@ -363,6 +412,10 @@ def derive_row_v2(row, M1_prior=1.5):
     in_sb2 = ('SB2' in nss_type) or bool(row.get('in_sb2', False))
     f29 = 'FAIL' if in_sb2 else 'PASS'
 
+    # F#33 — Gaia NSS period-confidence flag (flags bit 13 = NO_SIGNIFICANT_PERIODS)
+    flags_val = row.get('flags')
+    f33 = filter33_v2(nss_type, flags_val)
+
     # F#30 with logg fallback (Correction C)
     f30, cbias_risk_v2, logg_used, logg_source, f30_reason = filter30_v2(
         bp_rp=row.get('bp_rp'),
@@ -381,7 +434,7 @@ def derive_row_v2(row, M1_prior=1.5):
     # F#32 with K_obs / 2 conversion (Correction B)
     f32, sini_implied_v2, K_pred_i90_v2 = filter32_v2(K_obs, float(P), e_val, M1_v2, M2_v2)
 
-    tier = tier_label(cls_v2, f29, f30, f31, f32)
+    tier = tier_label(cls_v2, f29, f30, f31, f32, f33)
 
     return {
         'a_phot_mas': float(a_phot),
@@ -403,6 +456,9 @@ def derive_row_v2(row, M1_prior=1.5):
         'filter30_reason_v2': f30_reason,
         'filter31_v2': f31,
         'filter32_v2': f32,
+        'filter33_v2': f33,
+        'flags': (int(flags_val) if (flags_val is not None and not pd.isna(flags_val)) else None),
+        'nss_period_nonsignificant': f33 in ('FAIL', 'FLAG'),
         'sini_implied_v2': sini_implied_v2,
         'K_pred_i90_v2': K_pred_i90_v2,
         'tier_v2': tier,

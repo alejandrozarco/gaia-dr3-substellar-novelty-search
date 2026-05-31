@@ -55,7 +55,7 @@ def fetch_chunk(mode: str, ra_min: float, ra_max: float, cuts: dict) -> pd.DataF
     nss_types_sql = "(" + ",".join(f"'{t}'" for t in cuts['nss_types']) + ")"
     q = f"""
     SELECT nss.source_id, nss.nss_solution_type, nss.period, nss.eccentricity,
-           nss.significance, nss.a_thiele_innes, nss.b_thiele_innes,
+           nss.significance, nss.flags, nss.a_thiele_innes, nss.b_thiele_innes,
            nss.f_thiele_innes, nss.g_thiele_innes,
            g.ra, g.dec, g.l, g.b,
            g.parallax, g.parallax_error,

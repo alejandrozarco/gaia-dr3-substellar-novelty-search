@@ -310,3 +310,59 @@ def test_test_pool_loads(test_pool):
     """The curated test pool should still load cleanly."""
     assert test_pool.height >= 13
     assert "source_id" in test_pool.columns
+
+
+# ---------------------------------------------------------------------------
+# Filter #33 — NSS period-confidence flag (flags bit 13 = 8192 =
+# NO_SIGNIFICANT_PERIODS_CAN_BE_FOUND). Added 2026-05-31 after the SB1 flags
+# QA audit found 49% of AstroSpectroSB1 and ~14% of high-f(M) SB1 carry it.
+# ---------------------------------------------------------------------------
+
+def test_filter33_sb1_nonsignificant_period_fails():
+    """Pure SB1/SB1C with bit 13 is a hard FAIL — spectroscopic-only period
+    (hence f(M)) is unreliable. Example: Gaia DR3 5355234746758153728."""
+    assert c2.filter33_v2("SB1", 8192) == "FAIL"
+    assert c2.filter33_v2("SB1C", 8192) == "FAIL"
+
+
+def test_filter33_astrospectrosb1_nonsignificant_period_flags():
+    """AstroSpectroSB1 with bit 13 is FLAG (not FAIL) — the astrometric orbit
+    independently constrains the period (~49% of AstroSpectroSB1 carry it)."""
+    assert c2.filter33_v2("AstroSpectroSB1", 8192) == "FLAG"
+
+
+def test_filter33_orbital_bit13_not_applicable():
+    """bit 13 is a spectroscopic flag; for a pure astrometric solution -> PASS."""
+    assert c2.filter33_v2("Orbital", 8192) == "PASS"
+    assert c2.filter33_v2("OrbitalAlternative", 8192) == "PASS"
+
+
+def test_filter33_clean_and_missing():
+    assert c2.filter33_v2("SB1", 0) == "PASS"                # bit 13 clear
+    assert c2.filter33_v2("AstroSpectroSB1", 64) == "PASS"   # bit 6 only
+    assert c2.filter33_v2("SB1", None) == "NO_DATA"          # flags not pulled
+
+
+def test_filter33_dtype_safe():
+    """float32 lesson: numpy dtypes (and NaN) must decode correctly."""
+    import numpy as np
+    assert c2.filter33_v2("SB1", np.float32(8192)) == "FAIL"
+    assert c2.filter33_v2("SB1", np.int64(8192)) == "FAIL"
+    assert c2.filter33_v2("SB1", float("nan")) == "NO_DATA"
+    # 3155543-like AstroSpectroSB1: flags = 2**52 + 2**13 + 2**6 -> bit 13 set
+    assert c2.filter33_v2("AstroSpectroSB1", (1 << 52) | (1 << 13) | (1 << 6)) == "FLAG"
+
+
+def test_tier_label_f33_fail_demotes():
+    t = c2.tier_label("dormant_NS_candidate", "PASS", "PASS", "PASS", "PASS", "FAIL")
+    assert "Demoted" in t and "F#33" in t
+
+
+def test_tier_label_f33_flag_downtiers_to_tier2():
+    t = c2.tier_label("dormant_NS_candidate", "PASS", "PASS", "PASS", "PASS", "FLAG")
+    assert "Tier-2" in t and "non-significant" in t
+
+
+def test_tier_label_f33_default_backward_compatible():
+    """tier_label still works without f33 (default PASS) -> Tier-1 NS."""
+    assert c2.tier_label("dormant_NS_candidate", "PASS", "PASS", "PASS", "PASS") == "Tier-1 NS"

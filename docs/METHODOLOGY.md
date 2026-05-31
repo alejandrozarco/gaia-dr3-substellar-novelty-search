@@ -230,6 +230,34 @@ Highlights:
   features (M_2_msun, sini_implied, etc.) may need re-training on v2
   features.  Deferred until the v2 candidate list is finalised.
 
+## Filter #33 — NSS period-confidence flag (added 2026-05-31)
+
+The Gaia DR3 `nss_two_body_orbit.flags` bitmask was not pulled by the v1/v2
+producer, so its **bit 13 (value 2¹³ = 8192) = `NO_SIGNIFICANT_PERIODS_CAN_BE_FOUND`**
+("confidence on the period below threshold") was never applied. A QA audit
+(`/tmp/sb1_flags_audit_2026_05_31.md`) found it set on **49% of all
+AstroSpectroSB1** solutions and ~14% of high-f(M) pure SB1 — consistent with
+Bashi+2022 (MNRAS 517, 3888), whose "clean" SB sample drops ~half of all orbits.
+Because the mass function scales with the period (f(M) = a_phot³/P² for the
+astrometric channel; f(M) ∝ K₁³·P for the spectroscopic one), a non-significant
+period makes M₂ unreliable.
+
+`filter33_v2(nss_solution_type, flags)` (consumer_v2.py):
+- **SB1 / SB1C + bit 13 → FAIL** (period is spectroscopic-only; orbit unreliable).
+- **AstroSpectroSB1 + bit 13 → FLAG** → down-tier to "Tier-2 (NSS period
+  non-significant — needs corroboration)" (the astrometric orbit still
+  constrains P, so not fatal).
+- Orbital / OrbitalAlternative / Acceleration → PASS (bit 13 is a spectroscopic
+  flag and does not apply).
+
+The producer ADQL now selects `nss.flags`; the consumer threads it through
+`derive_row_v2` → `tier_label`, emitting `flags`, `filter33_v2`, and
+`nss_period_nonsignificant` columns. Re-derivation of the v2 catalogs moves
+**79 Tier-1 NS + 1 Tier-1 BH → Tier-2** (raw-v2 Tier-1 NS 277→198). Threshold
+note: the SB1 chain (arXiv:2410.14372) recommends significance > 40 for a clean
+pure-SB1 sample; this is applied to the spectroscopic-SB1 probe, not the Orbital
+channel (the `significance` field's meaning is solution-type dependent).
+
 ## References
 
 - Halbwachs+ 2023, A&A 674, A9 — NSS DR3 Thiele-Innes formalism

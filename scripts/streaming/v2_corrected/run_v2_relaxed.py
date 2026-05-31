@@ -91,6 +91,7 @@ def process_chunk(chunk_path: Path, existing_ids: set[int], M1_prior: float) -> 
             'rv_chisq_pvalue': r.get('rv_chisq_pvalue'),
             'in_sb2': bool(r.get('in_sb2', False)),
             'nss_solution_type': r.get('nss_solution_type'),
+            'flags': r.get('flags'),  # NSS bitmask; F#33 reads bit 13 (8192)
         }
         result = derive_row_v2(row_in, M1_prior=M1_prior)
         if 'error' in result:
@@ -100,7 +101,8 @@ def process_chunk(chunk_path: Path, existing_ids: set[int], M1_prior: float) -> 
                 'P_yr_v2', 'e_v2', 'M1_msun_v2', 'fM_msun_v2', 'M2_msun_v2',
                 'class_v2', 'logg_used', 'logg_source', 'cbias_risk_v2',
                 'filter29_v2', 'filter30_v2', 'filter30_reason_v2',
-                'filter31_v2', 'filter32_v2', 'sini_implied_v2',
+                'filter31_v2', 'filter32_v2', 'filter33_v2', 'flags',
+                'nss_period_nonsignificant', 'sini_implied_v2',
                 'K_pred_i90_v2', 'tier_v2']}
             result['tier_v2'] = 'ERROR'
             result['class_v2'] = None
