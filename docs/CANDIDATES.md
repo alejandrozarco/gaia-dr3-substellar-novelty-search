@@ -30,6 +30,13 @@ all four filter verdicts + reasons.
 | v3 Acceleration P-degenerate compact-object | 10,818 (not yet M_1-corrected) |
 | Demoted / falsified after 2nd method | ~32 named |
 
+> **⚠ UNCONFIRMED — follow-up embargo (2026-05-31).** The genuinely-novel candidates in this catalog are **astrometric/SED candidates only — not second-method-confirmed and not published** — pending a clean RV epoch (and HST/COS FUV for the WD-vs-NS question). Treat as preliminary; **do not cite as confirmed discoveries**:
+> - **WG 26** (6092654861665006592) — novel sub-Chandra double-WD (companion class SED-decided; orbit RV pending)
+> - **WDJ020915** (332248057157474176) — novel long-period M_total>M_Ch DD/WD+NS (mass provisional — weak DR3 orbit F2=+8.4 → awaits DR4)
+> - **WDJ060042** (2909342818326298112) — novel long-period M_total>M_Ch DD/WD+NS (companion WD-vs-NS unresolved)
+> - **UCAC4 313-025977** (5612039087715504640) — novel ~15 M_J brown dwarf (astrometry-only, inclination-degenerate)
+> (The novel astrometric triples HD 75567 / TYC 4562-535-1 / 5858574810404752256 are likewise unpublished but triple-favored, not compact — already flagged as such below.)
+
 > **M_1 systematic correction (task LL, 2026-05-28)**: the bulk cascade originally derived M_2 at a fixed primary mass M_1 = 1.5 M_⊙. The photocentric mass function f(M) = M_2³/(M_1+M_2)² is invariant, so M_2 scales with the assumed M_1 — overestimated for WD/M-dwarf primaries, underestimated for A-star/giant primaries. Re-solving with the actual primary mass (Gaia FLAME for 74% of sources, StarHorse/TIC/GF21/Kervella for the rest) re-tiers **665 of 1251 candidates**. The Tier-1 NS pool collapses from 291 → 160. **All four headline dormant candidates survive** (3155543 NS holds at M_1=1.67; 5406907 BH holds at M_1=0.82, M_2=4.02; 5858574 strengthens at M_1=2.07, M_2=1.75; HD 157033 unaffected — no NSS row). Corrected catalogs: `data/derived/*_M1corrected.parquet`. Root-cause fix applied to `consumer_v2.py::select_m1()`.
 
 > **⚠ SURVIVOR RE-VERIFICATION (2026-05-28).** Independent re-analysis of the named compact-object survivors (`scripts/survivor_revet_2026_05_28.py`, `scripts/survivor_verify.py`), applying the rigor that falsified the CV avenue, **downgrades all four — none holds at its prior "confirmed"/"strong" label.** The cascade *masses* are sound (audited, validated on Gaia BH2); these are real Gaia binaries, but their headline classifications were overstated:
