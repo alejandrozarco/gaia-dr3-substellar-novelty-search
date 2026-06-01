@@ -56,6 +56,7 @@ You only need the catalogs that the scripts you intend to run actually load.
 | TESS QLP HLSP light curves | downloaded as needed via `lightkurve` | MAST |
 | ESO archive | TAP at https://archive.eso.org/tap_obs/sync | per-target on demand |
 | SIMBAD | live query (no local cache needed) | https://simbad.cds.unistra.fr (or https://simbad.harvard.edu mirror) |
+| **Known-object store** — CV/accretor "is it already catalogued?" front-filter: Ritter-Kolb `B/cb`, Downes `V/123A`, Rodriguez+2025 eRASS1×Gaia CVs `J/PASP/137/A4201`, eROSITA-CV `J/A+A/698/A321`, AAVSO VSX `B/vsx`, Gaia DR3 `vari_classifier_result` (CV), Raddi+2019 LP40 `J/MNRAS/489/1489` | `data/external_catalogs/known_objects/known_objects.parquet` (rebuild: `python scripts/known_objects/build.py`) | VizieR / Gaia TAP — registry + filter live in `scripts/known_objects/` |
 
 ## Notes
 
