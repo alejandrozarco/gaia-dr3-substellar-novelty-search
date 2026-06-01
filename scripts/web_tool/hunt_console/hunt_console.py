@@ -302,7 +302,7 @@ def view_browser() -> None:
     fdf = df[mask].reset_index(drop=True)
 
     st.caption(f"{len(fdf)} / {len(df)} candidates shown. "
-               "Click a row to open it in **Target Findings** (selection is remembered).")
+               "**Click any row to open its dossier** in Target Findings.")
 
     have_findings = set(hd.list_targets_with_findings(hid))
     fdf = fdf.copy()
@@ -333,9 +333,19 @@ def view_browser() -> None:
         chosen_id = str(fdf.iloc[sel[0]]["id"])
         st.session_state["selected_hunt"] = hid
         st.session_state["selected_id"] = chosen_id
-        st.success(f"Selected **{chosen_id}** — open the **Target Findings** view "
-                   "in the sidebar to inspect it.")
-        if st.button("➡️ Go to Target Findings", type="primary"):
+        # Click-through: a NEW row selection opens that object's dossier directly in
+        # Target Findings. Guard on the last-opened (hunt, id) so that returning to
+        # the Browser — where the clicked row stays highlighted — doesn't bounce
+        # straight back out; clicking a *different* row still navigates.
+        if st.session_state.get("_browser_opened") != [hid, chosen_id]:
+            st.session_state["_browser_opened"] = [hid, chosen_id]
+            st.session_state["_pending_target"] = {"hunt": hid, "id": chosen_id}
+            st.session_state["_pending_nav"] = "Target Findings"
+            st.rerun()
+        # Already the open row — offer an explicit re-open (also covers Streamlit's
+        # deselect-on-reclick quirk for single-row dataframes).
+        st.caption(f"**{chosen_id}** is open in Target Findings.")
+        if st.button(f"➡️ Re-open {chosen_id}", type="primary"):
             st.session_state["_pending_target"] = {"hunt": hid, "id": chosen_id}
             st.session_state["_pending_nav"] = "Target Findings"
             st.rerun()
