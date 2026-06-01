@@ -30,6 +30,7 @@ import pandas as pd
 import streamlit as st
 
 import hunt_data as hd
+import object_panels as op
 
 # ---------------------------------------------------------------------------
 # Optional auto-refresh dependency.  streamlit_autorefresh is the nicest option;
@@ -379,15 +380,10 @@ def _num(v, fmt: str = "{:.3f}") -> str:
 
 
 def _render_generic_findings(findings: dict, crow: dict | None) -> None:
-    kv = findings.get("key_values", {})
-    if kv:
-        items = [(k, v) for k, v in kv.items()]
-        # show first 8 as metrics, rest as a table
-        mcols = st.columns(4)
-        for i, (k, v) in enumerate(items[:8]):
-            mcols[i % 4].metric(k, _num(v) if isinstance(v, (int, float)) else str(v))
-        if len(items) > 8:
-            st.table(pd.DataFrame(items[8:], columns=["key", "value"]))
+    # the rich renderer (classification banner + metric tiles + evidence table)
+    # handles the deep-vet schema (names / evidence / known_in_catalogs) as well
+    # as the legacy key_values shape.
+    op.evidence_panel(findings, crow)
 
 
 def view_findings() -> None:
@@ -445,36 +441,45 @@ def view_findings() -> None:
         st.warning(f"No findings.json and no candidate row for `{tid}`.")
         return
 
-    if findings:
-        cls = findings.get("classification", "")
-        if cls:
-            st.subheader(cls)
-        # per-lane renderer hook, generic fallback
-        lane = findings.get("lane") or man.get("lane")
-        renderer = LANE_RENDERERS.get(lane, _render_generic_findings)
-        renderer(findings, crow)
+    # --- 1) identity + external links -------------------------------------
+    op.identity_header(tid, crow, findings)
+    # --- 2) already-catalogued? (the known-object front-filter, per object) -
+    op.known_status_panel(tid, crow, findings)
+    st.divider()
 
+    # --- 3) classification + evidence metrics (generic) + lane-specific extra
+    if findings:
+        op.evidence_panel(findings, crow)
+        lane = findings.get("lane") or man.get("lane")
+        extra = LANE_RENDERERS.get(lane)
+        if extra is not None and extra is not _render_generic_findings:
+            extra(findings, crow)
         if findings.get("flags"):
             st.write("**Flags:** " + "  ".join(f"`{f}`" for f in findings["flags"]))
         if findings.get("notes"):
             st.markdown(f"> {findings['notes']}")
     else:
-        st.info("No findings.json for this target — showing the candidate row below.")
+        st.info("No findings.json for this target — showing HR position + candidate row below.")
 
-    # --- plots ------------------------------------------------------------
+    # --- 4) HR-diagram locus ----------------------------------------------
+    op.hr_diagram(crow, findings)
+
+    # --- 5) plot gallery (organised: phase-fold / LC / spectrum / SED / finder)
     plots = _plots(hid, tid)
-    if plots:
-        st.subheader(f"Plots ({len(plots)})")
-        for p in plots:
-            st.image(p, caption=Path(p).name, width="stretch")
-    elif findings:
+    op.plot_gallery(plots)
+    if not plots and findings:
         st.caption("No PNG plots in this target's directory.")
 
-    # --- raw candidate row + deep-dive pointer ----------------------------
+    # --- 6) live ZTF light curve / phase-fold (opt-in, where a period exists)
+    op.live_phasefold_panel(crow, findings)
+
+    # --- 7) written dossier + cross-hunt appearances ----------------------
+    op.dossier_md_panel(tid, findings, crow)
+    op.cross_hunt_panel(tid, findings, crow, hd)
+
+    # --- raw expanders + single-source deep-dive pointer ------------------
     if crow:
         with st.expander("Candidate row (candidates.csv)"):
-            # Transpose to a key/value view; stringify so Arrow can serialize a
-            # column that mixes strings and floats without warning.
             kv = pd.DataFrame(
                 {"value": {k: ("" if v is None else str(v)) for k, v in crow.items()}}
             )
@@ -483,12 +488,10 @@ def view_findings() -> None:
         with st.expander("Raw findings.json"):
             st.json(findings)
 
-    st.info(
-        "🔬 **Deep dive:** for a full single-source archival work-up of this target "
-        "(Gaia NSS cascade, HGCA / Kervella astrometry, archival RV epochs, GALEX, "
-        "TESS phase-fold, dossier verdict), open it in the per-source dossier viewer — "
-        "`scripts/web_tool/app.py` — which keys on the Gaia DR3 source_id.",
-        icon="🔬",
+    st.caption(
+        "🔬 For the NSS-cascade single-source work-up (photocentric mass function, "
+        "HGCA / Kervella PMa, tier ladder), open this Gaia DR3 source_id in the "
+        "per-source viewer `scripts/web_tool/app.py`."
     )
 
 
