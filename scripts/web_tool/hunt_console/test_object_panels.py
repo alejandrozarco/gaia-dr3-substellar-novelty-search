@@ -48,11 +48,16 @@ check("_coords reads ra/dec", op._coords(findings, crow) == (250.55517, -23.2204
 check("source_id_of prefers the explicit id", op.source_id_of("x", findings, crow) == "6048007439673413760")
 check("source_id_of falls back to tid", op.source_id_of("TID123", None, None) == "TID123")
 
-# external links
+# external links — must be per-source/position and resolve (not dead/homepage)
 links = op.external_links("6048007439673413760", 250.55517, -23.22)
-check("external_links includes SIMBAD", "simbad" in links.lower())
-check("external_links includes Aladin", "aladin" in links.lower())
-check("external_links empty-safe without coords", isinstance(op.external_links("x", None, None), str))
+check("external_links includes SIMBAD by id", "simbad" in links.lower())
+check("external_links includes a per-source Gaia DR3 row",
+      "gaiadr3" in links.lower() and "Source=6048007439673413760" in links)
+check("external_links includes ESASky (position)", "sky.esa.int" in links)
+check("external_links includes Legacy Survey cutout", "legacysurvey.org" in links)
+check("external_links DROPS the dead ZTF nph_ztf link", "nph_ztf" not in links)
+check("external_links DROPS the generic ESA archive homepage", "gea.esac.esa.int/archive" not in links)
+check("external_links empty-safe without coords/id", isinstance(op.external_links("x", None, None), str))
 
 # plot-kind classification
 check("_kind: phase fold", op._kind("ztf_phasefold_123.png") == "Phase fold")

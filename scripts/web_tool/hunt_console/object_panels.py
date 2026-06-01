@@ -75,14 +75,24 @@ def source_id_of(tid, findings, crow):
 # identity + external links
 # ---------------------------------------------------------------------------
 def external_links(source_id: str, ra: float | None, dec: float | None) -> str:
+    """Per-source / per-position deep links (all verified to resolve, not homepages).
+
+    ZTF *light curves* are available via the in-console live phase-fold panel, so we
+    don't link the (non-existent) ZTF cutout page; the Gaia archive has no clean
+    per-source web URL, so we link the per-source Gaia DR3 row at VizieR + ESA's
+    own position viewer (ESASky) instead of the generic archive homepage.
+    """
+    sid = str(source_id) if source_id else ""
     links = []
-    if ra is not None and dec is not None:
+    if sid.isdigit():
+        links.append(f"[SIMBAD](https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+{sid})")
+        links.append(f"[Gaia DR3 row](https://vizier.cds.unistra.fr/viz-bin/VizieR-5?-source=I%2F355%2Fgaiadr3&Source={sid})")
+    elif ra is not None and dec is not None:
         links.append(f"[SIMBAD](https://simbad.cds.unistra.fr/simbad/sim-coo?Coord={ra}+{dec}&Radius=5&Radius.unit=arcsec)")
-        links.append(f"[Aladin](https://aladin.cds.unistra.fr/AladinLite/?target={ra}%20{dec}&fov=0.05&survey=P%2FDSS2%2Fcolor)")
-        links.append(f"[VizieR](https://vizier.cds.unistra.fr/viz-bin/VizieR?-c={ra}+{dec}&-c.rs=5)")
-        links.append(f"[ZTF cutout](https://irsa.ipac.caltech.edu/cgi-bin/ZTF/nph_ztf?POS={ra},{dec})")
-    if source_id and str(source_id).isdigit():
-        links.append(f"[ESA Gaia](https://gea.esac.esa.int/archive/)")
+    if ra is not None and dec is not None:
+        links.append(f"[VizieR (all cats)](https://vizier.cds.unistra.fr/viz-bin/VizieR?-c={ra}+{dec}&-c.rs=5)")
+        links.append(f"[ESASky](https://sky.esa.int/esasky/?target={ra}%20{dec}&fov=0.1&sci=true)")
+        links.append(f"[Legacy Survey](https://www.legacysurvey.org/viewer?ra={ra}&dec={dec}&zoom=16&layer=ls-dr10)")
     return "  ·  ".join(links)
 
 
