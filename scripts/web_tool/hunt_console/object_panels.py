@@ -168,7 +168,69 @@ def known_status_panel(tid, crow, findings):
 
 
 # ---------------------------------------------------------------------------
-# evidence: classification banner + metrics grid + key/value table
+# our own classification (the hunt's / deep-vet's inference) — the analogue of
+# app.py's "Likely object type" panel, kept distinct from the *external* known
+# status. Shown ONLY when there is an own-call to make.
+# ---------------------------------------------------------------------------
+def own_classification(findings: dict | None, crow: dict | None):
+    """Extract the hunt's own classification, or None if there's nothing
+    appropriate to assert (gates the panel). Looks at: the deep-vet's
+    classification + subtype (+ optional confidence and a ranked likely-types
+    list), and the pipeline verdict/score as the automated first-pass call."""
+    f = findings or {}
+    c = crow or {}
+    cls = f.get("classification") or f.get("our_classification")
+    verdict = c.get("verdict")
+    if verdict in (None, "", "nan", "NaN", "none"):
+        verdict = None
+    ranked = None
+    for key in ("likely_types", "classification_candidates", "object_type_spectrum", "alternatives"):
+        v = f.get(key)
+        if isinstance(v, list) and v:
+            ranked = v
+            break
+    if not (cls or ranked or verdict):
+        return None
+    return {"classification": cls, "subtype": f.get("subtype"),
+            "confidence": f.get("confidence"), "verdict": verdict,
+            "score": c.get("score"), "ranked": ranked}
+
+
+def our_classification_panel(findings, crow) -> bool:
+    info = own_classification(findings, crow)
+    if info is None:
+        return False
+    st.markdown("#### 🏷️ Our classification")
+    if info["classification"]:
+        line = f"**{info['classification']}**"
+        if info["subtype"]:
+            line += f"  —  {info['subtype']}"
+        st.markdown(line)
+    if info["confidence"]:
+        st.caption(f"confidence: {info['confidence']}")
+    if info["ranked"]:
+        rows = []
+        for item in info["ranked"]:
+            if isinstance(item, dict):
+                rows.append((str(item.get("label") or item.get("type") or "?"),
+                             item.get("prob", item.get("probability", "")),
+                             str(item.get("rationale") or item.get("reason") or "")))
+            elif isinstance(item, (list, tuple)) and len(item) >= 2:
+                rows.append((str(item[0]), item[1], str(item[2]) if len(item) > 2 else ""))
+        if rows:
+            st.dataframe(pd.DataFrame(rows, columns=["type", "prob", "rationale"]),
+                         hide_index=True, width="stretch")
+    if info["verdict"]:
+        cap = f"hunt pipeline verdict: **{info['verdict']}**"
+        sc = _num(info["score"])
+        if sc is not None:
+            cap += f"  (score {sc:.2f})"
+        st.caption(cap)
+    return True
+
+
+# ---------------------------------------------------------------------------
+# evidence: metrics grid + key/value table (classification lives in its own panel)
 # ---------------------------------------------------------------------------
 # fields worth promoting to metric tiles, with label + format
 _METRIC_FIELDS = [
@@ -190,11 +252,7 @@ _METRIC_FIELDS = [
 
 
 def evidence_panel(findings, crow):
-    cls = (findings or {}).get("classification") or (findings or {}).get("verdict")
-    sub = (findings or {}).get("subtype")
-    if cls:
-        st.info(f"**{cls}**" + (f"  —  {sub}" if sub else ""), icon="🔭")
-
+    # (the classification line is rendered by our_classification_panel, above)
     # metric tiles for whichever known fields are present
     tiles = []
     for key, label, fmt in _METRIC_FIELDS:

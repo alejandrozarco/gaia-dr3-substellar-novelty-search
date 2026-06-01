@@ -23,6 +23,7 @@ findings = {
     "gaia_dr3_source_id": "6048007439673413760",
     "ra": 250.55517, "dec": -23.220485,
     "classification": "KNOWN SU UMa dwarf nova",
+    "subtype": "UGSU / SU UMa dwarf nova",
     "names": {"asassn": "ASASSN-14gb", "vsx": "ASASSN-14gb"},
     "known_in_catalogs": ["AAVSO VSX (UGSU)"],
     "evidence": {"distance_pc": 392, "ruwe": 1.175, "orbital_period_d": 0.066,
@@ -71,6 +72,18 @@ check("_period_days reads orbital_period_d", abs(op._period_days(findings, crow)
 check("_period_days converts minutes when only minutes present",
       abs(op._period_days({"evidence": {"orbital_period_min": 95}}, None) - 95/1440.0) < 1e-9)
 check("_period_days None when no period", op._period_days({"evidence": {}}, None) is None)
+
+# own classification — gates the "Our classification" panel (only when appropriate)
+oc = op.own_classification(findings, crow)
+check("own_classification surfaces the deep-vet classification",
+      bool(oc) and "SU UMa" in (oc["classification"] or ""))
+check("own_classification carries the subtype", (oc or {}).get("subtype") == "UGSU / SU UMa dwarf nova")
+check("own_classification is None for a bare candidate (no class, no verdict)",
+      op.own_classification({}, {"id": "x", "verdict": "", "score": 0.0}) is None)
+check("own_classification falls back to the pipeline verdict when no findings class",
+      (op.own_classification({}, {"id": "x", "verdict": "new_cv_candidate", "score": 7.0}) or {}).get("verdict") == "new_cv_candidate")
+check("own_classification picks up a ranked likely-types list",
+      bool((op.own_classification({"likely_types": [{"label": "WD", "prob": 0.7}]}, None) or {}).get("ranked")))
 
 print(f"\n{'='*48}\n{N_PASS} passed, {N_FAIL} failed\n{'='*48}")
 sys.exit(1 if N_FAIL else 0)

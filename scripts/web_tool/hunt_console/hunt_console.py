@@ -453,11 +453,13 @@ def view_findings() -> None:
 
     # --- 1) identity + external links -------------------------------------
     op.identity_header(tid, crow, findings)
-    # --- 2) already-catalogued? (the known-object front-filter, per object) -
+    # --- 2) OUR classification (the hunt's own inference) — only when apt ---
+    op.our_classification_panel(findings, crow)
+    # --- 3) already-catalogued? (the known-object front-filter, per object) -
     op.known_status_panel(tid, crow, findings)
     st.divider()
 
-    # --- 3) classification + evidence metrics (generic) + lane-specific extra
+    # --- 4) evidence metric tiles + full evidence table + lane-specific extra
     if findings:
         op.evidence_panel(findings, crow)
         lane = findings.get("lane") or man.get("lane")
