@@ -370,9 +370,14 @@ def make_synthetic_running(runs_dir: Path = RUNS_DIR) -> Path:
 
 
 def main() -> None:
+    import os
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     ingest_ir_nova()
-    make_synthetic_running()
+    # The synthetic demo run is OFF by default — it cluttered a console that now has
+    # real hunts (and the console hides demo runs anyway). Set INGEST_DEMO=1 to
+    # (re)generate it for a fresh-launch / first-run demonstration.
+    if os.environ.get("INGEST_DEMO"):
+        make_synthetic_running()
     print(f"\nruns dir: {RUNS_DIR}")
     for child in sorted(RUNS_DIR.iterdir()):
         if child.is_dir():

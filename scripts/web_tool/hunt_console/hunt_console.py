@@ -56,8 +56,23 @@ st.set_page_config(page_title="Hunt Console", page_icon="🔭", layout="wide")
 # Caching here — not in hunt_data — keeps the data layer streamlit-free.
 # ---------------------------------------------------------------------------
 @st.cache_data(ttl=REFRESH_SECONDS, show_spinner=False)
-def _runs() -> list[str]:
+def _all_runs() -> list[str]:
     return hd.list_runs()
+
+
+def _is_demo(hid: str) -> bool:
+    """Synthetic demo runs (ingest_run.make_synthetic_running) — hidden by default."""
+    man = _manifest(hid)
+    return hid.startswith("demo") or man.get("lane") == "demo" or bool(man.get("demo"))
+
+
+def _runs() -> list[str]:
+    """Run ids for the UI; hides synthetic demo runs unless the sidebar
+    'Show demo runs' toggle is on (they clutter a console that now has real hunts)."""
+    runs = _all_runs()
+    if st.session_state.get("show_demo_runs", False):
+        return runs
+    return [r for r in runs if not _is_demo(r)]
 
 
 @st.cache_data(ttl=REFRESH_SECONDS, show_spinner=False)
@@ -98,7 +113,7 @@ def _plots(hid: str, tid: str) -> list[str]:
 
 
 def _clear_caches() -> None:
-    for fn in (_runs, _manifest, _progress, _candidates_cached, _findings, _plots):
+    for fn in (_all_runs, _manifest, _progress, _candidates_cached, _findings, _plots):
         fn.clear()
 
 
@@ -722,6 +737,8 @@ def main() -> None:
     choice = st.sidebar.radio("View", options, key="nav")
 
     st.sidebar.divider()
+    st.sidebar.toggle("Show demo runs", value=False, key="show_demo_runs",
+                      help="Synthetic demo run(s) from ingest_run.py are hidden by default.")
     runs = _runs()
     st.sidebar.metric("Hunts", len(runs))
     n_running = sum(1 for h in runs if _manifest(h).get("status") == "running")
