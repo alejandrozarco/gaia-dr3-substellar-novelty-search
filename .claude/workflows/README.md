@@ -33,6 +33,30 @@ the ostinato venv) and finishes with a skeptical synthesis. They run in the back
 - **Known ⇒ not novel.** Always cross-check Shahaf+2023 / Müller-Horn+2026 / Halbwachs+2023.
 - **Trust but verify.** Each workflow ends with an adversarial synthesis that defaults to the
   less-exciting interpretation.
+- **Write it down.** Cross-checks live in `docs/object_journals/<source_id>.md`, not memory —
+  every per-object deep-dive emits a `journal_entry` + `ledger_rows` for the main thread to append
+  (the 2026-06 UCAC4/Shahaf drift, where a compaction invented a "Shahaf recovery", is why).
+
+## Journaling (mandatory)
+
+Every per-object workflow's synthesis returns two extra fields for the **main thread** to append
+to that object's journal via `scripts/journal/journal.py`:
+
+- `journal_entry` — a dated entry body: what was done / what was found (incl. nulls) / provenance.
+- `ledger_rows` — one per catalog/method checked: `{catalog, query, result, provenance}`.
+
+Agents never write to `docs/` themselves (single-writer rule — see `CLAUDE.md`); they **return**
+the content and the main thread appends it:
+
+```
+python scripts/journal/journal.py ledger <sid> --catalog "Shahaf+2023 (J/MNRAS/518/2991)" \
+    --query "by source_id" --result "NOT IN" --provenance "task #NN"
+python scripts/journal/journal.py entry  <sid> --title "..." --did "..." --found "..." \
+    --provenance "..." [--status CANDIDATE --reason "..."]
+```
+
+Before asserting any prior result about an object (is it known? in catalog X? what mass?),
+**read its ledger** — don't reconstruct from memory. Full spec: `docs/object_journals/README.md`.
 
 ## Additional workflows (built — same `.claude/workflows/` dir)
 
