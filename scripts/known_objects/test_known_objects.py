@@ -69,5 +69,19 @@ empty = KnownObjectStore(df=pd.DataFrame(columns=["source_id", "ra", "dec", "nam
 ann_e = empty.annotate(cand)
 check("annotate against an empty store flags nothing / no crash", not ann_e["known"].any())
 
+# high-PM J2000-propagation: a fast mover whose Gaia-epoch position is ~27" from a
+# J2000 catalogue entry is MISSED by a plain cone but caught when PM is supplied.
+hpm = KnownObjectStore(df=pd.DataFrame([
+    {"source_id": pd.NA, "ra": 10.0, "dec": 41.0, "name": "HighPMKnown",
+     "otype": "NL", "catalog": "vsx_cataclysmic", "pulled_utc": "x"}]))
+cand_hpm = pd.DataFrame([{"id": "5", "ra": 10.008834, "dec": 40.996444,
+                          "pmra": 1500.0, "pmdec": -800.0}])   # = J2000 pos + 16 yr PM
+a_nopm = hpm.annotate(cand_hpm, id_col="id")
+check("plain cone MISSES the high-PM star (Gaia-epoch position ~27\" off)",
+      not bool(a_nopm.loc[0, "known"]))
+a_pm = hpm.annotate(cand_hpm, id_col="id", pmra_col="pmra", pmdec_col="pmdec")
+check("PM back-propagation CATCHES the high-PM star",
+      bool(a_pm.loc[0, "known"]) and a_pm.loc[0, "known_name"] == "HighPMKnown")
+
 print(f"\n{'='*48}\n{N_PASS} passed, {N_FAIL} failed\n{'='*48}")
 sys.exit(1 if N_FAIL else 0)

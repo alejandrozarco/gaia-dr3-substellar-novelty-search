@@ -108,9 +108,17 @@ class KnownObjectStore:
         return out
 
     def annotate(self, cand: pd.DataFrame, ra_col: str = "ra", dec_col: str = "dec",
-                 id_col: str | None = "id", radius_arcsec: float = 3.0) -> pd.DataFrame:
+                 id_col: str | None = "id", radius_arcsec: float = 3.0,
+                 pmra_col: str | None = None, pmdec_col: str | None = None,
+                 source_epoch: float = 2016.0, match_epoch: float = 2000.0) -> pd.DataFrame:
         """Add known/known_catalogs/known_name/known_otype/known_sep_arcsec columns
-        to a candidate table. Vectorised; returns a copy."""
+        to a candidate table. Vectorised; returns a copy.
+
+        If pmra_col/pmdec_col (mas/yr; pmra = mu_alpha* incl. cos dec) are supplied,
+        candidates are ALSO matched at their position back-propagated from
+        source_epoch (Gaia DR3 = 2016.0) to match_epoch (J2000 — the epoch of the
+        positional catalogues VSX/Ritter-Kolb/Downes/Akras), so high-proper-motion
+        objects are not missed by a fixed cone (the eRASS1-v2 leak lesson)."""
         out = cand.copy().reset_index(drop=True)
         n = len(out)
         known = np.zeros(n, bool)
@@ -130,14 +138,35 @@ class KnownObjectStore:
         cdec = pd.to_numeric(out[dec_col], errors="coerce").to_numpy(float)
         valid = np.isfinite(cra) & np.isfinite(cdec)
         if valid.any():
-            cc = SkyCoord(cra[valid] * u.deg, cdec[valid] * u.deg)
             sc = self._skycoord()
-            idx_c, idx_s, sep2d, _ = sc.search_around_sky(cc, radius_arcsec * u.arcsec)
             valid_pos = np.where(valid)[0]
             per: dict[int, list] = {}
-            for ic, is_, s in zip(idx_c, idx_s, sep2d.arcsec):
-                gi = int(valid_pos[ic])
-                per.setdefault(gi, []).append((float(s), int(is_)))
+
+            def _accumulate(coords):
+                idx_c, idx_s, sep2d, _ = sc.search_around_sky(coords, radius_arcsec * u.arcsec)
+                for ic, is_, s in zip(idx_c, idx_s, sep2d.arcsec):
+                    per.setdefault(int(valid_pos[ic]), []).append((float(s), int(is_)))
+
+            # (a) match at the candidates' (Gaia-epoch) positions
+            _accumulate(SkyCoord(cra[valid] * u.deg, cdec[valid] * u.deg))
+
+            # (b) high-PM safety: if proper motions are supplied, ALSO match at the
+            # position back-propagated to match_epoch. Most of the store (VSX /
+            # Ritter-Kolb / Downes / Akras) is at J2000 (~16 yr before Gaia 2016.0),
+            # so a fixed cone misses fast movers (Kapteyn's Star, RR Cae) — the
+            # eRASS1-v2 leak. Gaia-keyed rows are still caught exactly by source_id.
+            if pmra_col and pmdec_col and pmra_col in out.columns and pmdec_col in out.columns:
+                pmra = pd.to_numeric(out[pmra_col], errors="coerce").to_numpy(float)[valid]
+                pmdec = pd.to_numeric(out[pmdec_col], errors="coerce").to_numpy(float)[valid]
+                has_pm = np.isfinite(pmra) & np.isfinite(pmdec)
+                if has_pm.any():
+                    dt = match_epoch - source_epoch          # yr (e.g. 2000 - 2016)
+                    cosd = np.cos(np.radians(cdec[valid]))
+                    cosd[np.abs(cosd) < 1e-6] = 1e-6
+                    ra_p = cra[valid] + np.where(has_pm, pmra, 0.0) * dt / 3.6e6 / cosd
+                    dec_p = cdec[valid] + np.where(has_pm, pmdec, 0.0) * dt / 3.6e6
+                    _accumulate(SkyCoord(ra_p * u.deg, dec_p * u.deg))
+
             for gi, lst in per.items():
                 lst.sort()
                 known[gi] = True
