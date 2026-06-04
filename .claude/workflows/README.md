@@ -56,7 +56,12 @@ python scripts/journal/journal.py entry  <sid> --title "..." --did "..." --found
 ```
 
 Before asserting any prior result about an object (is it known? in catalog X? what mass?),
-**read its ledger** — don't reconstruct from memory. Full spec: `docs/object_journals/README.md`.
+**read its ledger** — don't reconstruct from memory.
+
+**Log every surfaced object, not just survivors.** A hunt should `journal.py register` each
+object it surfaces into `findings_register.csv` — validation recoveries (a recovered *known*
+object proves the pipeline works) *and* uncatalogued finds — and promote any novel/uncatalogued
+one to a full journal. Full spec: `docs/object_journals/README.md`.
 
 ## Additional workflows (built — same `.claude/workflows/` dir)
 

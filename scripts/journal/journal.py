@@ -24,6 +24,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime
 import re
 import sys
@@ -32,6 +33,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 JDIR = ROOT / "docs" / "object_journals"
 RESERVED = {"README.md", "TEMPLATE.md", "INDEX.md"}
+REGISTER = JDIR / "findings_register.csv"
+REGISTER_COLS = ["date", "source_id", "name", "lane", "classification",
+                 "novelty", "disposition", "journal", "provenance"]
 
 
 def today() -> str:
@@ -187,6 +191,23 @@ def cmd_index(a):
     _rebuild_index()
 
 
+def cmd_register(a):
+    """Append a row to findings_register.csv — the lightweight log for ANY object a
+    search surfaces (validation recoveries + bulk uncatalogued). Novel/candidate
+    objects ALSO get a full journal via `new`."""
+    REGISTER.parent.mkdir(parents=True, exist_ok=True)
+    fresh = not REGISTER.exists()
+    with REGISTER.open("a", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=REGISTER_COLS)
+        if fresh:
+            w.writeheader()
+        w.writerow({"date": a.date or today(), "source_id": str(a.source_id),
+                    "name": a.name, "lane": a.lane, "classification": a.classification,
+                    "novelty": a.novelty, "disposition": a.disposition,
+                    "journal": a.journal or "no", "provenance": a.provenance})
+    print(f"register += {a.source_id} ({a.novelty or '?'})")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Object-journal helper")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -220,6 +241,12 @@ def main():
 
     i = sub.add_parser("index")
     i.set_defaults(func=cmd_index)
+
+    g = sub.add_parser("register")
+    g.add_argument("source_id")
+    for f in ("name", "lane", "classification", "novelty", "disposition", "journal", "provenance", "date"):
+        g.add_argument(f"--{f}", default="")
+    g.set_defaults(func=cmd_register)
 
     a = ap.parse_args()
     a.func(a)

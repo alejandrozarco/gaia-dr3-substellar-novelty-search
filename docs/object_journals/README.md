@@ -42,6 +42,26 @@ and matches the known-object store. `INDEX.md` maps source_id ↔ names ↔ stat
 4. **Append-only.** Never delete history; supersede a wrong value with a new
    dated entry that says what it supersedes and why.
 
+## What to log (scope)
+
+Log **every new object a search surfaces**, tiered by value — the catalogue of what
+the pipeline has *seen and classified* is itself a result (completeness + validation),
+not just the headline candidates:
+
+- **Full per-object journal** (`<source_id>.md`) — candidates of any tier, objects
+  of interest (demoted/retracted with a story), and **especially any novel or
+  uncatalogued object**, even an unremarkable one. Novelty is the highest-value
+  thing to capture.
+- **Findings-register row** (`findings_register.csv`, via `journal.py register`) —
+  everything else a search surfaces, above all **validation recoveries** (a
+  recovered *known* object proves the pipeline works — worth recording). Columns:
+  date, source_id, name, lane, classification, novelty
+  (novel / uncatalogued / known-recovery / known), disposition, journal (y/n),
+  provenance.
+
+Hunts populate the register for all surfaced objects and promote novel/uncatalogued
+ones to full journals.
+
 ## Tooling
 
 `scripts/journal/journal.py` makes this mechanical (scaffold a journal, append an

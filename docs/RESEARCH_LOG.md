@@ -42,7 +42,7 @@ closed. Newest at the bottom of each section. Status tags: `OPEN` /
 
 ---
 
-## Net state (as of 2026-06-03)
+## Net state (as of 2026-06-04)
 
 **0 confirmed novel compact objects across every archival lane.** All methods
 validated. Remaining expected value is **XP-at-scale** (a build, highest ceiling)
@@ -50,10 +50,13 @@ and **fresh data** (Gaia DR4, 2 Dec 2026; eROSITA-east; Rubin/LSST). Breadth on
 existing data is exhausted. Active candidates (all unconfirmed, pending DR4): see
 `docs/CANDIDATES.md` + the per-object journals.
 
-Pending lanes (network-gated): #101 ELM/sdB + NS/BH tail — **INFRA-NULL, never
-actually tested** (2026-06-03 re-vet); #102 ETV dark/compact tertiary —
-**INFRA-NULL, never tested**; #103 XP-catalogue ingest; #104 CPM wide-companion
-check; #108 re-vet orphan TYC 7350-249-1; #110 regenerate 5858574 post-bugfix.
+**Online re-runs (2026-06-04) — all NULL, now PROPERLY tested** (the two big lanes were never genuinely tested before; the 2026-06-03 attempts were infra-nulls):
+- **#101 ELM/sdB + NS/BH** — real test (66k hot subdwarfs × live Gaia NSS with no period floor; short-P ZTF/Gaia photometry; 3 positive controls pass) → **0 novel** sdB/ELM + dark compact companion. Gaia NSS is structurally blind to hours-period sdB orbits → that channel is telescope-gated (RV f(M) needed).
+- **#102 ETV compact tertiary** — real test (Borkovits+2016 LTT + Gaia accel/RUWE; controls pass) → **0 novel** compact tertiaries (the "compact" cases drop to ~1–1.5 M⊙ at realistic inner mass); 3 partial-arc systems are DR4 targets.
+- **#104 CPM** → NULL (no wide tertiary for WG 26 / WDJ020915 / WDJ060042). **#108** orphan TYC 7350-249-1 → REFUTED. **#110** 5858574 → ambiguous/watch-list (Orbital solution → the inclination bug never applied; NS-mass 1.48, not BH).
+- **eRASS1 re-exam** of the 2 top uncatalogued leads → A (5526308…) deflated (reddening artifact); **B = Gaia DR3 3161546596480983040 — uncatalogued blue Galactic compact-object candidate** (Gaia QSOC "AGN" overturned by 5.3σ parallax + 36σ PM); full journal + deep-dive (#112), spectrum-gated + X-ray-ID-ambiguous.
+
+Still pending: **#103** XP-catalogue ingest (network), **#111** bulk-import remaining hunt findings (offline), **#112** Object B deep-dive (running).
 
 **Offline-done 2026-06-03:** #109 front-filter novelty blind-spot closed — 306
 in-pool Halbwachs+2023 `binary_masses` AMRFClassIII compact-candidates ingested

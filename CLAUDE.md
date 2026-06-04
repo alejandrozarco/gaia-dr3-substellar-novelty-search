@@ -24,8 +24,23 @@ recovery" — it is not in Shahaf; a ledger grep settles it).
    avenue, a sidestep, a re-run) → append to `docs/RESEARCH_LOG.md`.
 4. Use `scripts/journal/journal.py` to do this mechanically (it keeps
    `docs/object_journals/INDEX.md` in sync). Append-only — supersede, never delete.
+5. **Log every new object a search surfaces — not just headline candidates.** A
+   recovered *known* object earns a `findings_register.csv` row (it validates the
+   pipeline); a *novel or uncatalogued* object earns a full journal (highest
+   value — log it even if the find is unremarkable). Use `journal.py register`
+   for the bulk/validation tier and `journal.py new` for candidates + novel.
 
 See `docs/object_journals/README.md` for the full spec.
+
+## Autonomy: deep-dive dispatch
+
+When a search surfaces an **interesting object** — novel/uncatalogued **and** carrying a
+genuine compact-companion / accretor / anomaly signal that survives initial triage —
+**dispatch a deep-dive immediately, without waiting for user confirmation**
+(user-authorized 2026-06-04). Report the dispatch and the result. Apply judgment so this
+fires on real follow-up-worthy candidates, not every register row. Deep-dives are
+read-only archival vetting (astroquery / VizieR / MAST → `/tmp`), so they carry no
+side-effects; promote a survivor to a full journal + dossier.
 
 ## Where things live
 
