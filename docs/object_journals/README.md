@@ -56,7 +56,7 @@ not just the headline candidates:
   everything else a search surfaces, above all **validation recoveries** (a
   recovered *known* object proves the pipeline works — worth recording). Columns:
   date, source_id, name, lane, classification, novelty
-  (novel / uncatalogued / known-recovery / known), disposition, journal (y/n),
+  (novel / uncatalogued / known-recovery / known / unqueried / screened-FP), disposition, journal (y/n),
   provenance.
 
 Hunts populate the register for all surfaced objects and promote novel/uncatalogued
