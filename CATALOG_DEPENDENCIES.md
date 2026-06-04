@@ -29,6 +29,7 @@ You only need the catalogs that the scripts you intend to run actually load.
 |---|---|---|
 | Gaia DR3 `nss_two_body_orbit` | `data/external_catalogs/parquets/gaia_dr3_nss_two_body_orbit.parquet` | Gaia ESA Archive TAP at https://gea.esac.esa.int/tap-server/tap |
 | Gaia DR3 `nss_acceleration_astro` | `data/external_catalogs/parquets/gaia_dr3_nss_acceleration_astro.parquet` | Gaia ESA Archive TAP |
+| Gaia DR3 `binary_masses` (Halbwachs+ 2023) | `data/external_catalogs/gaia_dr3_binary_masses_full.csv` | Gaia ESA Archive / VizieR. The `AMRFClassIII` flag = published compact-companion candidates; `scripts/known_objects/ingest_binary_masses.py` feeds these into the known-object front-filter as a novelty gate (a candidate matching one is NOT novel). |
 | HGCA Brandt 2024 | `data/external_catalogs/raw/hgca_brandt_2024.csv` | Brandt 2024 ApJS supplementary table; see also Brandt 2021 (`brandt2021_hgca.parquet`) |
 | Kervella 2022 PMa | `data/external_catalogs/parquets/kervella2022_pma_dr3.parquet` | VizieR catalog `J/A+A/657/A7` |
 | Penoyre 2022 RUWE catalog | `data/candidate_dossiers/penoyre_mining_2026_05_12/binarydata.ecsv` | Zenodo `10.5281/zenodo.6792290` (paper II "binarydata") |
