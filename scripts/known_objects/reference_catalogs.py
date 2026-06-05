@@ -83,6 +83,14 @@ CATALOGS: list[CatalogSpec] = [
         ident="gaiadr3.vari_classifier_result",
         note="best_class_name='CV'; Gaia's own CV identifications (source_id-keyed).",
     ),
+    # --- symbiotic stars (the known set to filter out of a bulge/plane hunt) ---
+    CatalogSpec(
+        key="akras2019_symbiotic",
+        name="Akras+ 2019 — Catalogue of Symbiotic Stars",
+        classes=("symbiotic", "accretor"),
+        source="vizier", ident="J/ApJS/240/21",
+        note="The modern ~300-object symbiotic compilation; the known set to exclude.",
+    ),
     # --- runaway / partly-burnt / hypervelocity WD samples (small, published) ---
     CatalogSpec(
         key="raddi2019_lp40",
