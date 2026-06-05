@@ -1,7 +1,54 @@
 # Candidates
 
-Authoritative list of objects currently in the discovery queue, with the
+Authoritative list of candidate objects currently under investigation, with the
 evidence that produced each verdict.
+
+## Candidate roster — methods & results (current, 2026-06-04)
+
+> **Theorized candidates, not discoveries.** Every object below is an *unconfirmed*
+> candidate from an archival search; **no discovery is claimed**, and there are
+> **0 confirmed novel compact objects**. Each entry gives the estimate, how it was
+> found, and the single observation that would confirm or refute it.
+
+**Methods — how candidates are identified.** Gaia DR3 non-single-star (NSS)
+astrometric orbital solutions → the photocentric mass function
+f(M) = (a_phot/ϖ)³ / P² → a companion-mass estimate for *dark* (unseen) companions
+(the mass is the direct photocentric value; no sin-i inflation). White-dwarf
+primaries are identified in the Gentile Fusillo et al. 2021 catalogue; one
+candidate is X-ray-selected from eROSITA eRASS1 cross-matched to Gaia astrometry.
+Each candidate is screened against a multi-catalogue novelty gate (SIMBAD,
+Shahaf+2023, Halbwachs binary_masses, GF21, SPY/DBL/Munday), the Shahaf AMRF
+triple-vs-compact test, and a second method where archival data allow. The mass /
+class discriminant is gated on Gaia DR4 epoch astrometry (2 Dec 2026) or an
+optical spectrum.
+
+### Strong candidates — 2
+| object (Gaia DR3 source_id) | estimate | how found | confirm / refute |
+|---|---|---|---|
+| **WDJ060042** · 2909342818326298112 | DA white dwarf (M₁≈0.61 M⊙) + **dark companion M₂≈1.37 [1.23–1.52] M⊙**, P=935 d, M_tot≈1.98 M⊙, d≈98 pc; clean astrometric orbit (F2=+0.79), P(M₂>1.4)=41% | Gaia DR3 NSS Orbital × GF21 white-dwarf catalogue; photocentric mass function | theorized long-period double-degenerate **or** white-dwarf + neutron-star binary (companion class unresolved). Gaia DR4 confirms the orbit + mass; HST/COS far-UV separates WD vs NS |
+| **Object B** · 3161546596480983040 | blue Galactic compact object at the **cataclysmic-variable / pre-CV** locus; M_G≈8.75, d≈944 pc, eROSITA Lx≈3.6×10³¹ erg/s | eROSITA eRASS1 X-ray × Gaia astrometry; the Gaia QSOC "AGN" flag overturned (parallax 5.3σ + proper motion 36σ ⇒ Galactic) | theorized accreting white-dwarf binary. An optical spectrum (H / He II emission ⇒ CV) + a ZTF light curve decide the subtype |
+
+### Weaker candidates — provisional, still worth pursuing — 2
+| object (Gaia DR3 source_id) | estimate | how found | confirm / refute |
+|---|---|---|---|
+| **WDJ020915** · 332248057157474176 | DA white dwarf (M₁≈0.72 M⊙) + **dark companion M₂≈1.32 [1.27–1.38] M⊙**, P=275 d, M_tot≈2.04 M⊙ | same method as WDJ060042 | provisional — the astrometric orbit is a **weak fit** (F2=+8.39, RUWE=8.79), so the mass is uncertain; Gaia DR4 is decisive |
+| **UCAC4 313** · 5612039087715504640 | M-dwarf + **substellar / brown-dwarf candidate**, M₂≈13 M_J (edge-on minimum; M₂ ∝ 1/sin i, so possibly higher — into the stellar range), P=592 d | Gaia DR3 NSS Orbital, astrometry-only | inclination-degenerate; Gaia DR4 measures the inclination (and thus whether it remains substellar) |
+
+### Watch-list — ambiguous, listed for completeness — 4
+| object (Gaia DR3 source_id) | estimate | how found | note |
+|---|---|---|---|
+| 1593152388271709824 | G-subgiant + **dark M₂≈1.27 M⊙** (white-dwarf / neutron-star boundary); NSS significance 104.5 | NSS Orbital + a weak (~3σ) archival-RV corroboration | Tier-2; needs a clean RV epoch |
+| 3155543945892767232 | K-giant + **M₂≈1.26 M⊙** | Gaia AstroSpectroSB1; LAMOST two-phase | downgraded (NSS period-significance flag); needs corroboration |
+| 5858574810404752256 | **M₂≈1.48 M⊙** (neutron-star mass), triple-vs-compact on the boundary | NSS Orbital + Shahaf AMRF | ambiguous — more likely a hierarchical triple than a compact object |
+| **HD 157033** · 4111149395881722496 | companion **0.4–6 M⊙** (M-dwarf ↔ stellar-mass black hole) | Hipparcos–Gaia proper-motion anomaly + Kervella | ambiguous, **not** a confirmed black hole; needs a clean optical RV |
+
+### Confirmed / known — context, not theorized candidates
+- **WG 26** · 6092654861665006592 — a **confirmed** sub-Chandrasekhar double-white-dwarf (M₂≈0.6 M⊙; inclination i=77° measured). A real binary of a *known* class, not novel physics.
+- **HD 264291** · 3378588057203660160 — RV-confirmed heavy neutron star (M₂≈1.94 M⊙), but a previously-published object (Shahaf+2023) — not our identification.
+
+**Summary: 2 strong + 2 provisional + 4 watch-list theorized candidates — all unconfirmed, each gated on Gaia DR4 or a spectrum. 0 confirmed novel objects.** Detailed per-object evidence, the mass-derivation corrections, and the full QA / retraction history follow below.
+
+---
 
 ## Backing data (machine-readable)
 
