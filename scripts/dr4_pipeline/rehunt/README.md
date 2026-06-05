@@ -1,0 +1,138 @@
+# DR4 day-one blind re-hunt harness
+
+Re-run the **v2 dormant-compact cascade** on a new (DR4) `nss_two_body_orbit`
+table and **diff the candidate tiers against the DR3 baseline**. Built for the
+morning Gaia DR4 lands (2 Dec 2026): point it at the DR4 export, run, read the
+diff.
+
+It does **not** fork the science. The mass-function inversion, the M_1-aware
+primary-mass selection, and all five filters (F#29 SB2, F#30 K-giant chromatic,
+F#31 phantom-RV, F#32 joint K_obs/K_pred, F#33 NSS period-confidence) live in
+`scripts/streaming/v2_corrected/consumer_v2.py` and are *imported* here. This
+harness only (1) maps a table's column names into the schema `derive_row_v2`
+expects, (2) runs it, (3) diffs two runs.
+
+```
+adapter.py   column-mapping: NSS table  ->  canonical row dicts (+ a_phot from Thiele-Innes)
+rehunt.py    run consumer_v2.derive_row_v2 over the adapted rows -> tiered candidate frame
+diff.py      source_id-keyed diff of two runs: NEW / PROMOTED / DEMOTED / VANISHED / movers
+test_rehunt.py  offline regression + dry-run (reproduces today's DR3 roster exactly)
+```
+
+## Pointing it at DR4
+
+DR4 will ship an expanded `nss_two_body_orbit` (more Orbital / AstroSpectroSB1 /
+Acceleration rows; refined parallax / a_phot / errors; possibly new column names
+or solution types). Adapting to it is **one edit**: fill in the `dr4` profile in
+`adapter.py` (`PROFILES['dr4']`) with the real DR4 source-column names.
+
+1. **Export the DR4 NSS table** to a parquet/csv. Ideally join, at export time,
+   `nss_two_body_orbit` ⨝ `gaia_source` ⨝ `astrophysical_parameters[_supp]` so
+   the file already carries: the Thiele-Innes elements (or a direct a_phot),
+   `parallax` + the NSS (orbit-fit) parallax, `period`, `eccentricity`,
+   `mass_flame`, `bp_rp`, the `logg_*`/`teff_*` variants,
+   `rv_amplitude_robust` + `rv_chisq_pvalue`, `nss_solution_type`, and **`flags`**
+   (the NSS bitmask — F#33 reads bit 13). See the canonical column list in
+   `adapter.CANONICAL_KEYS` and the DR3 producer query in
+   `scripts/streaming/v2_corrected/producer_relaxed.py::fetch_chunk`.
+
+2. **Edit `PROFILES['dr4']`** so each canonical key lists the real DR4 column
+   name(s). The stub currently inherits the DR3-raw names. Things likely to move:
+   - a refined parallax column → update `nss_parallax` / `parallax`;
+   - if DR4 reports the photocentric semi-major axis directly, list its column
+     under `a_phot_mas` (then the Thiele-Innes fallback is skipped);
+   - renamed Thiele-Innes elements → update `Profile.thiele_innes`;
+   - a renamed FLAME mass → update `mass_flame`.
+   `python adapter.py --profile dr4` prints the active mapping for a sanity check.
+
+3. **Run the re-hunt:**
+   ```bash
+   PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+   cd scripts/dr4_pipeline/rehunt
+   $PY rehunt.py --table /path/to/dr4_nss.parquet --profile dr4 \
+       --out /tmp/dr4_rehunt.parquet
+   ```
+   If the DR4 export *didn't* join the AP/NSS-plx columns, either pass a
+   supplementary table with `--supp /path/to/dr4_supp.parquet` (merged by
+   `source_id`), or add `--gaia-backfill` to fetch them from ADQL (network; off
+   by default). `--M1-prior` overrides the fallback primary mass (default 1.5,
+   used only when no FLAME mass is present).
+
+4. **Diff vs the DR3 baseline:**
+   ```bash
+   $PY diff.py --baseline data/derived/main_hunt_derived_v2_M1corrected.parquet \
+       --new /tmp/dr4_rehunt.parquet \
+       --out /tmp/dr4_diff.md --out-csv /tmp/dr4_diff.csv
+   ```
+   `diff.py` exits non-zero when there is any tier movement, so it doubles as a
+   CI/drift gate.
+
+## Reading the diff
+
+Each `source_id` is classified by **tier-ladder rank change** (higher rank =
+stronger compact candidate; see `diff.TIER_RANK`):
+
+| change | meaning |
+|---|---|
+| **NEW** | in the new run, absent (or ERROR) in the baseline — a DR4-only source |
+| **VANISHED** | in the baseline, absent (or ERROR) in the new run |
+| **PROMOTED** | moved up the ladder (e.g. Tier-2 → Tier-1 NS) |
+| **DEMOTED** | moved down the ladder (e.g. Tier-1 NS → Demoted/Tier-2) |
+| **MASS_MOVER** | same tier, but \|ΔM₂\| ≥ `--mass-thresh` (default 0.05 M⊙) |
+| **PERIOD_MOVER** | same tier, but fractional \|ΔP\| ≥ `--period-frac-thresh` (default 0.02) |
+| **SAME** | same tier, within thresholds |
+
+The report leads with the **Tier-1 NS+BH delta** (gained / lost / retained) —
+that is the headline for the compact-object hunt. The per-source diff CSV
+(`--out-csv`) has `M2_base/M2_new/dM2` and `P_base/P_new/dP_frac` for follow-up.
+
+## Choosing the baseline
+
+The diff compares against *whatever roster you pass as `--baseline`*. For DR4,
+use the **M_1-corrected** DR3 roster
+(`data/derived/main_hunt_derived_v2_M1corrected.parquet`), which reflects the
+current cascade (FLAME-preferred primary masses).
+
+> ⚠ **Do not** use the plain `data/derived/main_hunt_derived_v2.parquet` as the
+> science baseline for a *raw* DR4/DR3 re-run. That file was generated by an
+> earlier code path with **M_1 fixed at 1.5** (its `M1_msun_v2` column is
+> uniformly 1.5) and predates `consumer_v2.select_m1`. A faithful re-run with
+> real FLAME masses legitimately re-tiers ~half the pool against it — that is the
+> documented M_1 correction, not a regression. (`test_rehunt.py` reproduces that
+> file *exactly* only by forcing the same fixed-1.5 path — see the next section.)
+
+## Regression / dry-run
+
+`test_rehunt.py` runs fully offline:
+
+```bash
+$PY -m pytest scripts/dr4_pipeline/rehunt/test_rehunt.py -q   # 10 tests
+$PY scripts/dr4_pipeline/rehunt/test_rehunt.py                # one-shot dry-run report
+```
+
+The headline test feeds the committed DR3 v2 roster's own input columns back
+through the harness (adapter → rehunt → `derive_row_v2`) and asserts an **exact**
+reproduction of today's `tier_v2` + `M2` (0 tier mismatches across 56,100 rows;
+Tier-1 NS+BH 199 → 199). This pins the harness as a faithful wrapper — if the
+science is ever forked/re-implemented here, it breaks.
+
+### Two input-staleness gotchas (found while building this)
+
+Running the cascade on the *raw producer chunks* (`data/raw_chunks/main_RA*.parquet`)
+does **not** reproduce the committed roster, for two input reasons (not cascade
+bugs):
+
+1. **`flags` is missing from the raw main-mode chunks.** F#33 was added
+   2026-05-31, after those chunks were produced (2026-05-27); the original
+   `producer.py` main mode didn't select `nss.flags`. So F#33 no-ops on them and
+   ~51 sources the baseline had down-tiered via F#33 spuriously re-appear as
+   Tier-1. `flags` exists offline only inside the committed v2 parquet itself.
+   → For DR4, make sure the export carries `flags`.
+2. **FLAME vs fixed-1.5 M₁.** The raw chunks carry the real `mass_flame`; the
+   committed plain-v2 parquet was made with M₁=1.5 fixed. Feeding real FLAME
+   masses re-tiers ~half the pool (≈17 k mass-movers) — the M_1 correction.
+   → For DR4, diff against the `_M1corrected` baseline, which already applies it.
+
+Everything here is stdlib + pandas/numpy (polars only to read/write parquet, and
+astropy is inherited transitively via the imported cascade for the a_phot math).
+No pip-install into the ostinato venv is required.

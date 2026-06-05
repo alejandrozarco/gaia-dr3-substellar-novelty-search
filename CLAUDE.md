@@ -42,6 +42,20 @@ fires on real follow-up-worthy candidates, not every register row. Deep-dives ar
 read-only archival vetting (astroquery / VizieR / MAST → `/tmp`), so they carry no
 side-effects; promote a survivor to a full journal + dossier.
 
+## Lane dispatch: the prior-art gate
+
+Before opening a **new search lane** — especially a cross-survey/multi-survey hunt —
+run a method-level prior-art screen: `python scripts/litcheck/prior_art.py "<method
+keywords>"`. Multi-survey fusion is the field's dominant paradigm (2024–26), so most
+cross-survey recipes are already published (Gaia×eROSITA×ZTF accretors = Rodriguez+2025,
+arXiv:2505.10478; Fermi×ZTF spiders = COBIPLANE / arXiv:2509.09605; high-velocity X-ray =
+arXiv:2601.02287). If the method has prior art: (1) record the ref(s) in
+`docs/RESEARCH_LOG.md`; (2) front-filter candidates against that paper's published list,
+not just SIMBAD; (3) frame the lane as **method-validation, not novel discovery**, and
+weight its EV accordingly. Absence of a hit is *weak* evidence of novelty (arXiv-only
+screen) — pair it with the object-level multi-catalogue front-filter. This is the
+method-level twin of the "known ⇒ not novel" object gate.
+
 ## Where things live
 
 | Path | Role |

@@ -31,6 +31,11 @@ the ostinato venv) and finishes with a skeptical synthesis. They run in the back
 - **Photometry false positives.** Outburst-contaminated folds + minimum-of-noise depths at
   per-cadence S/N<1 manufacture fake periods/eclipses — hence masked periodograms + permutation FAPs.
 - **Known ⇒ not novel.** Always cross-check Shahaf+2023 / Müller-Horn+2026 / Halbwachs+2023.
+- **Prior-art before a new lane.** Multi-survey fusion is the field's main paradigm — before
+  dispatching a cross-survey hunt, run `python scripts/litcheck/prior_art.py "<method>"`. If the
+  recipe is published (it usually is: Rodriguez+2025 eRASS1×Gaia×ZTF accretors; COBIPLANE / ZTF×4FGL
+  spiders; high-velocity X-ray 2026), record the ref, dedup against its candidate list, and frame the
+  lane as method-validation. The method-level twin of "known ⇒ not novel".
 - **Trust but verify.** Each workflow ends with an adversarial synthesis that defaults to the
   less-exciting interpretation.
 - **Write it down.** Cross-checks live in `docs/object_journals/<source_id>.md`, not memory —
