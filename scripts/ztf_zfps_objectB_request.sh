@@ -8,7 +8,9 @@
 #
 # Docs: https://irsa.ipac.caltech.edu/data/ZTF/docs/ztf_forced_photometry.pdf
 set -euo pipefail
-: "${ZFPS_PASS:?set ZFPS_PASS to the ZFPS userpass from the IPAC email}"
+# Credential: env var wins; else read ~/.config/ztf_zfps/userpass (mode 600, outside the repo).
+ZFPS_PASS="${ZFPS_PASS:-$(cat "$HOME/.config/ztf_zfps/userpass" 2>/dev/null || true)}"
+: "${ZFPS_PASS:?no ZFPS userpass: set ZFPS_PASS or create ~/.config/ztf_zfps/userpass}"
 
 JDSTART=2458194.5      # 2018-03-17 (ZTF survey start)
 JDEND=2461204.5        # ~2026-06-12 (now)

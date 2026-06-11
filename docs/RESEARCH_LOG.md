@@ -368,3 +368,17 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
   (4) the "93% recall on 27 systems" claim annotated **unverified** in CANDIDATES.md (truth set never
   committed; CITATION.cff says 70) — re-commit the truth set or soften before release.
 - **Provenance:** session 2026-06-10; gate run wf_30d426da; `scripts/apply_f34_astromqual_2026_06_10.py`.
+
+### 2026-06-12 — Access lanes: ZTF ZFPS granted; LAMOST DR12 route host-gated (not CV-gated)
+- **ZTF ZFPS:** account granted (IPAC, J. Castaneda Jaimes). Dual-position request staged
+  (`scripts/ztf_zfps_objectB_request.sh`): Object B + the 4.76″ neighbour as contamination
+  control; submission = user keystroke; results by email (queue can exceed 7 d).
+- **LAMOST:** DR11 is public without registration (already swept 2026-06-10 — nothing new for
+  1593152/3155543). The DR12+ external-collaborator application requires a **Chinese host
+  institution + host researcher + recommendation letter** (form sections 5+7) — not viable solo;
+  the correct plan stays the existing watch item (re-query on DR12 international release), or a
+  host/collaborator if a confirmed result later motivates one.
+- **Object B contamination audit (same session):** Gaia BP/RP blend diagnostics — Object B
+  photometry CLEAN (C*=+0.056, 0% blended transits, ipd_mp=0); the neighbour is itself a close
+  double (ipd_mp=91, RUWE 18.95) → coronal-ceiling argument weakens to ~1.3×; X-ray ID rests on
+  the positional match (unaffected). Ledger row in the Object B journal.
