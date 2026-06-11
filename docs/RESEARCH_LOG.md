@@ -54,6 +54,14 @@ closed. Newest at the bottom of each section. Status tags: `OPEN` /
 | 06-05 | **Odd-axis E: asteroseismology × astrometry** (#123) | NO-GO / NULL (yield-starved) | seismic M1 IS new info (19 pool overlaps all had M1=default 1.5; median M_seis 1.59) but companions stay stellar — max min-M2=1.97 (already demoted), 0 compact; yield ceiling ~46 systems (Kepler×all-sky-NSS overlap tiny); established niche. Best residual use = consistency check on existing candidates. arXiv 429. `/tmp/seismic_nss_lane123_report.md` |
 | 06-05 | **Odd-axis A: chemistry × astrometry** (#119; Ba/CH × Gaia NSS) | NO-GO / PARKED (feasible, not novel) | 437 Escorza Ba/CH → 60 with NSS orbits, 25 AMRF-derivable; companion masses 0.31-0.84 M⊙ (median 0.60 = textbook CO WD), nothing >1.0 → physically confirmatory but sample+objects+method all published (Escorza/Jorissen WD-mass dists of THIS sample; Shahaf AMRF); Gaia P matches literature → AMRF-pipeline validation. arXiv 429. `/tmp/lane119_FEASIBILITY_REPORT.md` |
 | 06-05 | **Astrometric microlensing predictor** (#118) | BUILT + VALIDATED; candidate cross NULL | `scripts/microlensing/` (geometry/predict/validate/apply + 13 tests); reproduces LAWD 37 (θ_E 31.4 vs 32.8 mas, TCA exact, mass→0.61 M⊙; fixed a 2× parallax-factor bug); 12 candidates as lenses → NULL (low-PM distant); WD-lens flagging works. Method-validation + DR4-ready tool, NOT novel — isolated dark lenses are Rubin-monitoring-gated (can't pre-target the unseen) |
+| 06-09→06-10 | **Full project review** (5 repo audits + 8 ideation lenses → 36 ideas → 12-lane shortlist → adversarial verify + second skeptic) | 4 GO lanes; debt list; NO-GO ledger | `docs/reports/project_review_2026_06_10.json` (full verdicts + prior-art refs); detailed entry below |
+| 06-10 | **F#33 → corrected-tier propagation** (review debt item) | FIXED | 41 main + 4 relaxed corrected-Tier-1 NS carried bit-13 FLAG → new `tier_v2_corrected_f33` column: Tier-1 NS 148→**107** (main), 13→**9** (relaxed), roster = **116**; `scripts/apply_f33_to_corrected_tiers_2026_06_10.py`; DR4 rehunt must diff on this column |
+| 06-10 | **WD full-TI-covariance MC regeneration** (deleted /tmp provenance restored) | REPRODUCED | WDJ020915 M₂=1.322 [1.267–1.379], P(>1.4)=8.7% (anchor 8.6); WDJ060042 1.368 [1.229–1.521], P(>1.4)=41.4% (anchor 41); corr_vec used; `docs/reports/wd_ti_mc_regen_2026_06_10.md` |
+| 06-10 | **Phase-2 archival sweep** (eRASS1 / GALEX / 4XMM / CSC / 2SXPS / DASCH / LAMOST-DR11+DR12 / SDSS-V DR19 / ESO raw) on 6 roster objects | logged (14 ledger rows) | Object B: GALEX = **coverage gap** (UV unconstrained — dossier S3 superseded), XMM/Chandra = no-coverage, DASCH = no nova-scale outburst 1889–1989; WDJ060042+WG 26 eRASS1 NULL; no new RV epochs (1593152, 3155543; DR12 login-gated); HD 157033 ESO archive = zero spectra (positive control verified) → confirmed telescope-gated. `docs/reports/phase2_archival_checks_2026_06_10.md` |
+| 06-10 | **DR4 prereg Addendum A+B** (5 remaining roster objects + floor convention + WDJ020915 MC mandate) | built — coverage now 9/9 | `docs/dr4_preregistration_2026_06_01.md` addenda; corrects #122's false "(pre-registered)" claim — HD 157033 is pre-registered only as of A.4 |
+| 06-10 | **Register backfill** (#109 AMRFClassIII 25 rows; relaxed Tier-1 NS 13 rows incl. 8 never-logged) | done | `findings_register.csv` → 1,997 rows; per-object 2026-05-28 triage verdicts unrecoverable (/tmp purged) — logged as triaged-in-aggregate |
+| 06-11 | **ATLAS forced photometry** — first-ever light curves for Object B + WDJ020915 (10.4 yr o+c) | WDJ020915 QUIET / Object B unmeasurable | WDJ020915: no outbursts, nothing at P_orb=274.5d or P/2 (perm-FAP 0.27–1.0), LS peaks = diurnal/seasonal aliases → variability does NOT explain the F2=+8.39 weak fit (orbit-reality strengthened pre-DR4). Object B: blend with the 4.76″ G=13.8 neighbour dominates the 4″ ATLAS PSF (σ_rob=740 µJy) → only sustained mag≲15 events excluded; discriminator now rests on ZTF ZFPS (user registration pending; probe confirmed email unregistered). LAMOST DR12 NADC validation pending. `docs/reports/atlas_forcedphot_2026_06_11.md` |
+| 06-10 | **F#34 astrometric-quality caution flag** (the 05-30 "global RUWE gate" follow-up, retired) | built + gate PASS | `consumer_v2.filter34_astromqual` — flag never cut: F2>+5 / ipd≥4 / RUWE≥12.5. Key finding: Tier-1 RUWE 2.6–28.8 (median 6.1) = normal photocentric-binary signature → absolute-RUWE gate meaningless, orbit F2 is the axis. F2+ipd fetched for 1,251 candidate-tier srcs; 51/108 main + 3/9 relaxed Tier-1 flagged (incl. GALEX J145250 F2=+8.0, HD 75567, HD 264291 caution). Cascade-regression gate: **PASS (conditional)** — 0 behavioral regressions; conditions fixed same-day (stale BH1 + HD 207141 benchmark expectations corrected; HD 207141 journal created incl. a flagged 1.31-vs-1.75 M₂ reconciliation item; Shahaf 49-obj cross salvaged to `docs/reports/tier1_x_shahaf_t1_2026_06_10.csv`; 93% recall claim annotated unverified — truth set never committed). Shahaf gate stat: 9/49 Tier-1 with PIII≥0.5 (median 0.015) — quantitative re-confirmation of the triple-dominated insight |
 
 ---
 
@@ -71,7 +79,7 @@ existing data is exhausted. Active candidates (all unconfirmed, pending DR4): se
 - **#104 CPM** → NULL (no wide tertiary for WG 26 / WDJ020915 / WDJ060042). **#108** orphan TYC 7350-249-1 → REFUTED. **#110** 5858574 → ambiguous/watch-list (Orbital solution → the inclination bug never applied; NS-mass 1.48, not BH).
 - **eRASS1 re-exam** of the 2 top uncatalogued leads → A (5526308…) deflated (reddening artifact); **B = Gaia DR3 3161546596480983040 — uncatalogued blue Galactic compact-object candidate** (Gaia QSOC "AGN" overturned by 5.3σ parallax + 36σ PM); full journal + deep-dive (#112), spectrum-gated + X-ray-ID-ambiguous.
 
-Still pending: **#103** XP-catalogue ingest (network), **#111** bulk-import remaining hunt findings (offline), **#112** Object B deep-dive (running).
+Still pending: **#103** XP-catalogue ingest (network), **#111** bulk-import remaining hunt findings (offline), **#112** Object B deep-dive (running). *(Superseded 2026-06-10: #103/#111/#112 were all completed in commit 7b7c4a2 and #113 in the Object B journal — closure recorded in the 2026-06-10 detailed entry below.)*
 
 **Offline-done 2026-06-03:** #109 front-filter novelty blind-spot closed — 306
 in-pool Halbwachs+2023 `binary_masses` AMRFClassIII compact-candidates ingested
@@ -272,3 +280,91 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - **Applied:** all 12 CANDIDATES.md source_ids cross-checked as lenses 2024-2030 → NULL (low PM 5-48 mas/yr ⇒ <0.3″ tracks ⇒ no background source swept). Predictor correctly flags 3 WD-locus lenses among top sample events (incl. LAWD 37 + two with ~30-47 µas predicted shifts — the "deflection weighs a WD mass" case).
 - **Verdict:** method-validation + DR4-ready re-runnable tool, NOT a novel channel. Prior art semi-crowded (Klüter+2018 ×2, McGill+2018/19/20, Bramich 2018, Klüter+2024). HARD LIMIT (README): unseen isolated dark lenses CANNOT be pre-targeted (no Gaia entry) — those need Rubin-era monitoring; the predictor weighs KNOWN foreground objects. Solo edge = DR4-readiness (GAIA_TABLE→gaiadr4) + the candidate cross (null).
 - **Provenance:** task #118; `scripts/microlensing/`, `tests/test_microlensing.py`.
+
+### 2026-06-10 — Full project review (multi-agent) + Phase-1/2 of the resulting attack order
+- **Did:** 5 repo audits (docs/infra/journals/data/candidates) + 8 ideation lenses → 36 lane ideas → 12-lane
+  shortlist → per-lane adversarial verification (prior-art via WebSearch, duplicate-check vs this log,
+  no-telescope test, feasibility probes) + a second skeptic on every GO + a completeness critic. Full
+  machine-readable verdicts: `docs/reports/project_review_2026_06_10.json`.
+- **Survivor lanes (GO, double-verified):** (1) **freeze the DR4 prereg as a citable product + AEN
+  shadow-WD watch list** (EV 6.5; per-candidate registered-report practice absent in subfield; GF21 WDs with
+  RUWE/AEN wobble but NO NSS solution = a day-one watch list the #117 rehunt is structurally blind to;
+  condition: extend prereg coverage first — DONE today, Addendum A); (2) **RVS mean-spectrum SB2/second-light
+  screen on the 23 Tier-1 NS with has_rvs** (EV 5; zero in-repo DataLink-RVS use; window closes at DR4;
+  realistic sensitivity 15–30% flux ratio); (3) **M1-correction debt**: substellar bins still at default
+  M1=1.5 (81/82 main, 113/115 relaxed) + acceleration_v3 100% default → re-tier + BD extraction + a
+  near-unpopulated [Fe/H]<−1 astrometric-BD-host slice (EV 6; front-filter vs Stevenson+2023/DPAC/Wallace&Casey
+  2026/GaiaPMEX; NOTE: the dossier ref "Bailer-Jones & Kreidberg 2026" could not be located by the verifier —
+  re-check that citation); (4) **DR4 joint epoch-astrometry+epoch-RV fitter** (EV 6; third pipeline leg,
+  genuinely absent in-repo; validate on the 854 FPR×SB1 overlap — the AstroSpectroSB1×FPR overlap is EMPTY).
+- **Killed lanes (log so they are not re-tried):** occurrence-limit standalone paper **REFUTED** — El-Badry+2024
+  (arXiv:2405.00089) already *measured* ~1e-6 for this population, ~50× below our f<5.7e-5 limit (the limit is
+  non-constraining; #125 kinematics box survives only as a methods-paper element); Gomel
+  vari_compact_companion × archival RV (Nagarajan & El-Badry 2023 refuted the best candidates; 17/6306 have NSS
+  rows); FPR-LPV blind RV Keplerian hunt (Nagarajan+2024 = exactly this); eastern 4XMM/2SXPS/CSC screen
+  (expected detections ~0); APOGEE-ASPCAP both-arms ingest (bright-cap mismatch + telescope-gated discriminants
+  — closes the standing "highest-value missing data" item as a NO-GO); bug-catalog stress-test of published
+  lists (Bashi+2022 = the bit-13 audit; Gomel join structurally empty; surviving kernel = pre-register DR4
+  predictions for published lists, folded into lane 1); plus MARVELS / radio-quiescence / DASCH-as-survey /
+  OGLE-ETV / self-lensing / CPM-age / TESS-BD-transit / dark-lens-π_E / e–P mining — reasons + refs in the JSON.
+- **Review blind spots (critic):** ASAS-SN + ATLAS forced photometry never used as a modality anywhere —
+  the pool is G≈6–13 where ZTF *saturates*; a pool-wide bright-star variability screen is an open cheap
+  self-audit (queued). No standing scoop monitor on the 4 novel candidates (queued). No security red-team of
+  the hunt console / web-ingest path. eROSITA-east is IKI-held with **no scheduled public release** — stop
+  treating it as scheduled fresh data.
+- **Phase-1 debt retired today:** F#33→corrected-tier propagation (roster 161→116, see index row); WD
+  full-TI MC regenerated + REPRODUCED (prereg provenance restored, `docs/reports/wd_ti_mc_regen_2026_06_10.md`);
+  prereg Addenda A+B (coverage 4/9→9/9; floor-convention + WDJ020915 MC mandate recorded); register backfill
+  (25 AMRFClassIII + 13 relaxed Tier-1; → 1,997 rows); #121 GALEX ledger rows propagated to WDJ205650 + 1593152;
+  `docs/reports/` created as the durable home for lane artifacts (**lesson: stop anchoring permanent docs to
+  /tmp — three headline artifacts had already been purged**, incl. the prereg's mass-MC provenance).
+- **Task closures:** #103 (XP ingest), #111 (register bulk-import), #112 (Object B deep-dive) completed in
+  commit 7b7c4a2; #113 (Object B ZTF re-check → INCONCLUSIVE, unmeasurable: no ZTF source within 2″) integrated
+  in the journal — Object B is **spectrum-gated**; CANDIDATES.md roster row updated accordingly. **Correction:**
+  the #122 entry's claim that the HD 157033 PMa play was "(pre-registered)" was false at the time of writing —
+  it is pre-registered only as of today's Addendum A.4.
+- **Phase-2 archival sweep results:** see index row + `docs/reports/phase2_archival_checks_2026_06_10.md`;
+  14 cross-check ledger rows appended. Notables: Object B's GALEX null is a **coverage gap** (dossier S3
+  wording superseded — UV unconstrained); DASCH 1889–1989 excludes nova-scale outbursts of the blend (dwarf-nova
+  scale hidden by the B≈13.7 blend floor); HD 157033 has zero ESO archival spectra ever (Proxima positive
+  control) → its RV is genuinely telescope-gated; no new public RV epochs for 1593152/3155543 (LAMOST DR12 is
+  login-gated — **watch item**: re-query on international release).
+- **Unrecoverable details (recorded honestly):** per-object verdicts of the 2026-05-28 ns_pool_triage and the
+  exact candidate membership of the #118/#120/#125 per-object nulls were only in purged /tmp files — register
+  rows say "triaged-in-aggregate"; the per-object #118/#120/#125 ledger backfill is NOT possible from prose
+  alone and was skipped rather than logged inaccurately.
+- **Queued next (order of attack):** RUWE flag in consumer_v2 tiering (+ cascade-regression gate) before DR4;
+  GALEX screen + store/Milliquas gate wiring into ns-candidate-deep-dive workflow; lanes 1–4 above; ASAS-SN/ATLAS
+  bright-pool screen; scoop monitor; CITATION.cff/version reconciliation; unified-parquet regeneration.
+- **Provenance:** session 2026-06-09→10; `docs/reports/project_review_2026_06_10.json`; workflow run wf_d27944e2.
+
+### 2026-06-10 — F#34 astrometric-quality caution flag (RUWE follow-up retired) + cascade-regression gate
+- **Did:** implemented `filter34_astromqual` in `consumer_v2.py` — the 2026-05-30 "global RUWE gate" tracked
+  follow-up — as a **caution flag that never changes the tier**. Fetched the never-pulled NSS
+  `goodness_of_fit` (F2) + `ipd_frac_multi_peak` for all 1,251 candidate-tier sources
+  (`docs/reports/f2_ipd_fetch_2026_06_10.csv`), merged into the three `_M1corrected` parquets
+  (`nss_gof_f2`, `ipd_frac_multi_peak`, `filter34_v2`, `filter34_reason_v2`;
+  `scripts/apply_f34_astromqual_2026_06_10.py`), wired into `derive_row_v2` so the DR4 rehunt inherits it.
+- **Design finding (corrects the original note's premise):** the corrected Tier-1 pool spans RUWE 2.6–28.8
+  (median 6.1) — elevated single-star RUWE is the *normal* signature of a photocentric binary, so the
+  originally envisioned absolute-RUWE gate would flag 52% of Tier-1 at >6 and discriminate nothing (both
+  motivating offenders, 6.46/9.35, sit inside the bulk). Discriminating axes used instead: orbit-level
+  **F2 > +5** (the frozen prereg "unreliable" convention), **ipd_frac_multi_peak ≥ 4** (resolved-double
+  contamination), **RUWE ≥ 12.5** (Tier-1 P95, extreme even for wobble). Loud `NO_DATA` when all inputs
+  missing (the #117 silent-no-op lesson).
+- **Result:** 51/108 main + 3/9 relaxed Tier-1 NS flagged — incl. **GALEX J145250 (F2=+8.0)**, the exact case
+  that motivated the follow-up, HD 75567 (triple-favored, F2=+6.3), and 2129927539681151872 (F2=+17.2).
+  HD 264291 carries the caution too (F2=+6.8) — consistent with its documented marginal astrometry
+  (sig 12.5); its independent RV confirmation is why this is a flag, not a cut.
+- **Gate:** cascade-regression after the consumer change — **PASS (conditional)**: 63/63 pytest, BH2 fixture
+  Tier-1 (1/1), 6/6 negative controls rejected, frozen production tiers reproduced exactly; the 3 live "misses"
+  (BH1 F#31 NO_DATA, BH2 F#30, BH3 no-NSS) are documented design. Conditions, all closed same-day:
+  (1) `benchmarks.json` stale BH1 expectation ("Tier-1 BH" → the by-design Tier-2 string) fixed;
+  (2) HD 207141 stale "heaviest BH candidate M₂=7.57" benchmark entry corrected AND its missing journal
+  created (`docs/object_journals/6811355413155399040.md`) with the Shahaf PIII=1e-5 triple verdict +
+  a flagged **1.31-vs-1.75 M₂ reconciliation item** (demoted-table vs M1-corrected parquet — open);
+  (3) the 49-object Tier-1×Shahaf cross salvaged to `docs/reports/tier1_x_shahaf_t1_2026_06_10.csv`
+  (gate stat: 9/49 PIII≥0.5, median 0.015 — quantitative re-confirmation of the triple-dominated insight);
+  (4) the "93% recall on 27 systems" claim annotated **unverified** in CANDIDATES.md (truth set never
+  committed; CITATION.cff says 70) — re-commit the truth set or soften before release.
+- **Provenance:** session 2026-06-10; gate run wf_30d426da; `scripts/apply_f34_astromqual_2026_06_10.py`.

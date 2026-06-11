@@ -210,4 +210,61 @@ UCAC4 313-025977 (5612039087715504640):
 ### Pre-registration audit hooks (so the test is honestly falsifiable)
 - The thresholds above (F2 ≤ +2 confirm / > +5 refute; a_phot within 3σ; 2nd-period/accel > 5σ; sin i ≥ 0.85 substellar / i ≤ 45° refute; M₂ < 1.33 NS-floor downgrade; M₂ > 1.40 super-Chandra companion) are **fixed as of 2026-06-01** and must not be moved after seeing DR4.
 - The DR3 anchor values to beat: WG 26 (a_phot 5.40, i 77.1°, F2 −1.11); WDJ020915 (a_phot 7.73, F2 +8.39, RUWE 8.79); WDJ060042 (a_phot 19.62, i 66.4°, F2 +0.79, π 10.24 vs 12.08); UCAC4 313 (a_phot 1.32, e 0.214, i undetermined).
-- Provenance: `docs/dossiers/{WG26,WDJ020915+380425,WDJ060042-293041,UCAC4_313-025977}_DOSSIER_2026_05_28.md`; `/tmp/wd_sed_mass_refinement_2026_05_31.md`; `data/derived/main_hunt_derived_v2_relaxed_M1corrected.parquet`. DR4 content: [ESA Gaia DR4](https://www.cosmos.esa.int/web/gaia/dr4), [ESA release scenario](https://www.cosmos.esa.int/web/gaia/release).
+- Provenance: `docs/dossiers/{WG26,WDJ020915+380425,WDJ060042-293041,UCAC4_313-025977}_DOSSIER_2026_05_28.md`; `/tmp/wd_sed_mass_refinement_2026_05_31.md` (purged from /tmp — **regenerated and REPRODUCED 2026-06-10**: `docs/reports/wd_ti_mc_regen_2026_06_10.md`); `data/derived/main_hunt_derived_v2_relaxed_M1corrected.parquet`. DR4 content: [ESA Gaia DR4](https://www.cosmos.esa.int/web/gaia/dr4), [ESA release scenario](https://www.cosmos.esa.int/web/gaia/release).
+
+---
+
+## Addendum B (2026-06-10) — conventions clarification + mass-MC provenance (frozen thresholds untouched)
+
+1. **NS-floor convention.** The 2026-06-01 thresholds use *per-candidate* floors — WDJ020915 downgrades at M₂ < 1.2 M⊙, WDJ060042 at M₂ < 1.33 M⊙. These are intentional (set by each candidate's posterior position vs the NS mass range), remain frozen, and the difference is hereby recorded as a convention, not an error. Any DR4-day verdict must quote the candidate's own floor.
+2. **WDJ020915 knife-edge procedure (mandatory).** The 2026-06-05 refit-engine finding (RESEARCH_LOG #116): the bare f(M) at the pre-reg anchors gives M₂ = 1.223, ON the 1.2 floor — ~1-in-7 noise realisations land on DOWNGRADE even with a perfect orbit. **On DR4 day, run the full-Thiele-Innes-covariance MC, never the bare inversion**, for this candidate.
+3. **Mass-anchor provenance restored.** The 2026-05-31 full-TI-covariance MC artifact this document cites was purged from /tmp. Re-derived 2026-06-10 from `gaiadr3.nss_two_body_orbit` + `corr_vec` (200k draws, the vetted `refit/model.py` chain): WDJ020915 M₂ = 1.322 [1.267–1.379], P(M₂>1.4) = 8.7% (anchor 8.6%); WDJ060042 M₂ = 1.368 [1.229–1.521], P(M₂>1.4) = 41.4% (anchor 41%) — **both REPRODUCED**. Committed artifact: `docs/reports/wd_ti_mc_regen_2026_06_10.md` (+ `.csv`).
+
+## Addendum A (2026-06-10) — pre-registered thresholds for the remaining roster objects
+
+> **Dated addendum, fixed before the DR4 drop.** The 2026-06-01 thresholds for the 4 original candidates are **untouched and remain frozen**. This section extends the same discipline to the 5 remaining roster objects (closing the coverage gap found by the 2026-06-10 project review — which also found RESEARCH_LOG #122 calling the HD 157033 DR4 play "pre-registered" when it was not; it is, as of this addendum). Same engine and statistics throughout: `scripts/dr4_pipeline/refit` (ΔBIC > +10 strong / accel-SNR > 5σ significant; F2 ≤ +2 clean / > +5 unreliable), the full-TI-covariance MC, the F#33 period-significance flag. DR4 baseline 66 months ≈ 2008 d.
+>
+> **Threshold provenance:** anchor values below are taken from the journals/dossiers; thresholds marked **[new 06-10]** are proposals first registered today (not derived from a prior doc) — still frozen as of this addendum date.
+
+### A.1 Gaia DR3 3155543945892767232 — the period-reality test (bit-13)
+
+Anchors (journal/dossier): AstroSpectroSB1 P=543.27±4.56 d, e=0.089±0.045, sig=40.74, a_phot=0.980 mas (MC 0.90/1.16/1.48), K₁≈15.47 km/s, γ=37.38±0.91 km/s, M₂≈1.26–1.6; **NSS flags bit 13 set** — so the first DR4 question is *is the 543-d period real*. External corroboration only 2 LAMOST phases / 2.66σ (re-confirmed current 2026-06-10: no new public epochs; LAMOST DR12 login-gated). DR4 covers ~3.7 cycles.
+
+- **CONFIRM period + orbit:** DR4 NSS (or epoch-astrometry re-fit) returns P within 3σ of 543.27±4.56 d **with a significant period** (DR4 analogue of bit 13 NOT set) AND F2 ≤ +2 AND a_phot within 3σ of 0.980 mas AND no accel/2nd-period > 5σ. **CONFIRM NS-mass band** additionally if DR4 epoch RVs (G=12.3, well inside RVS) give K₁ = 13–18 km/s with γ within 3σ (bands repurposed from the dossier's ground-RV outcome table **[new 06-10 as DR4-RV thresholds]**).
+- **REFUTE:** no significant DR4 period / P shifts > 5σ / F2 > +5 → period-search artifact, park. **DOWNGRADE → WD:** K₁ = 8–13 km/s; falsified if K₁ < 5. Accel/2nd-period > 5σ → triple.
+- **DR4 cannot decide:** WD-vs-NS class at M₂≈1.3 (K₁ identical for both) — FUV/telescope-gated.
+
+### A.2 Gaia DR3 5858574810404752256 — triple-vs-compact at the calibrated boundary
+
+Anchors: Orbital P=506.14±2.80 d, e=0.542±0.047, sig=20.02, a_phot=0.5265 mas, π_NSS=0.5918±0.0129, f(M)=0.3667, M₂=1.48 [1.34–1.74] at adopted M₁=1.5±0.3 (StarHorse 1.80); Shahaf-calibrated P(compact|A,M₁)=0.21–0.35 — **TRIPLE for M₁ ≥ 1.55**; RUWE 1.96; no archival RV; WATCH-LIST (triple-favored).
+
+- **REFUTE → hierarchical triple:** DR4 epoch astrometry prefers accel/2-body at ΔBIC > +10 or accel-SNR > 5σ.
+- **CONFIRM compact-channel:** DR4 single-Keplerian F2 ≤ +2 AND a_phot within 3σ of 0.5265 mas AND no accel/2nd-period > 5σ, AND recomputed P(compact|A,M₁) at the DR4 values ≥ 0.5 **[new 06-10: the 0.5 line is the Shahaf-convention complement of the anchored 0.35 boundary]**. P(compact) ≤ 0.35 at DR4 M₁ → triple-favored verdict STANDS; 0.35–0.5 → still ambiguous. M₁ is the lever.
+- **Auxiliary:** SB2/SB3 signature in DR4 RVS epochs, or K₁ inconsistent with the DR4 inclination, → triple.
+- **DR4 cannot decide:** a *tight* inner MS pair gives the same single outer Keplerian — if clean AND P(compact) lands 0.35–0.5, the split stays spectrum/RV-gated. WD-vs-NS likewise.
+
+### A.3 Gaia DR3 1593152388271709824 — the GoF stress case + predictive RV orbit
+
+Anchors: Orbital P=597.36±3.61 d, e=0.404±0.027, sig=104.54 (highest of roster), **GoF F2=+9.70 (stress case)**, a_phot=1.952 mas, π_NSS=2.1307±0.0160 (vs gaia_source +4.05σ), RUWE 5.44, M₂=1.27±0.04 at M₁=1.40; archival 4-epoch NSS-locked K₁=17.49±5.93 (only ~3σ), γ=−22.80±2.89; MSC luminous-pair demotion risk (logposterior 684.8). Next periastron (predicted ~30 km/s swing) MJD 61658 = 2027-09-09 — **outside the DR4 data window (ends 2020)**. DR4 covers ~3.4 cycles.
+
+- **CONFIRM:** DR4 single-Keplerian **F2 collapses from +9.7 to ≤ +2** AND a_phot within 3σ of 1.952 mas AND no accel/2nd-period > 5σ → M₂=1.27±0.04 stands. **CONFIRM 2-channel** additionally if DR4 epoch RVs (G=11.30; DR3 has_rvs=False — DR4's fainter RVS limit expected to add epochs) detect K₁ at > 3σ within 2σ of 17.49±5.93, γ within 3σ.
+- **REFUTE → triple:** accel/2nd-period > 5σ. **PARK:** DR4 still F2 > +5. **DOWNGRADE → MSC luminous pair:** DR4 epoch RVs give K₁ < 6 km/s at > 3σ **[new 06-10: ≈2σ below central K₁]**, or DR4 RVS shows line-doubling.
+- **DR4 cannot decide:** WD-vs-NS at M₂≈1.27; the definitive periastron K₁ (2027-09-09) stays a ground-RV epoch.
+
+### A.4 HD 157033 / Gaia DR3 4111149395881722496 — the partial-arc acceleration prediction (no DR3 NSS)
+
+Anchors: A9/F0 (M₁=1.60±0.20, d=293.4 pc), no DR3 NSS row (P≈5–20 yr, nominal 10), RUWE=0.849; HGCA χ²=1583 (|ΔPM|=2.350±0.085 mas/yr), Kervella snrPMa=14.85 (dVt=3.15±0.13 km/s, PA 303.2°±1.5°, face-value M₂_5AU=0.45), rv_amplitude_robust=16.305 km/s (≈2K₁, not clean). Mass AMBIGUOUS 0.4–6 M⊙. ESO raw archive: **zero archival spectra (verified 2026-06-10 with positive control)**. At P≈10 yr the 66-month DR4 window is a ~55% arc → **the pre-registered prediction is curvature (acceleration), not a closed orbit**.
+
+- **CONFIRM companion (astrometric):** DR4 publishes an acceleration (7/9-param) or long-period Orbital NSS solution at > 5σ — equivalently refit accel-SNR > 5 on DR4 epoch astrometry — with the acceleration PA consistent with the Kervella PMa (303.2°±1.5°). Corollary: DR3 RUWE=0.849 must rise with the longer baseline if the PMa is orbital.
+- **Mass branch (only if DR4 epoch RVs deliver; G=9.95):** K₁ ≥ 15 km/s → BH-class candidate; 5–10 → NS/massive-WD band; 2–5 → **DOWNGRADE to M-dwarf** (Kervella face value); peak-to-peak < ~2 km/s over the DR4 span → rv_amplitude_robust spurious **[new 06-10: the <3σ refute floor and 2 km/s flatness line]**.
+- **REFUTE:** no DR4 acceleration (accel-SNR < 3) AND flat DR4 epoch RVs → the PMa interpretation fails for P ≤ ~20 yr; park.
+- **DR4 cannot decide:** if P ≈ 10–20 yr the arc does not close — P, e, M₂ stay degenerate (acceleration gives M₂(P) only); M-dwarf-vs-BH likely still needs one clean ground RV + the DR5 baseline. A hierarchical-triple reading is not excluded by an acceleration alone.
+
+### A.5 Object B / Gaia DR3 3161546596480983040 — astrometry testable, subtype not
+
+Anchors: plx=1.166±0.218 (5.34σ), pmdec=−8.176±0.225 (36σ), RUWE 1.159, M_G=8.75 [8.32–9.17], G=18.62, d_BJ≈944 pc; eRASS1 favoured ID (P≈0.8), Lx≈3.6e31; blended with the 4.76″ G=13.8 neighbour (ZTF cannot isolate it, #113); **subtype spectrum-gated**. 2026-06-10 sweep: GALEX = coverage gap; XMM/Chandra never pointed here; DASCH 1889–1989 = no nova-scale outburst (blend floor hides dwarf-nova-scale).
+
+- **CONFIRM Galactic + distance scale:** DR4 parallax within 3σ of 1.166±0.218 AND still > 5σ; pmdec within 3σ; RUWE stays < 1.4 **[new 06-10: conventional cut]**. This locks the subluminous-blue gap locus.
+- **REFUTE (re-open extragalactic/artefact):** DR4 parallax consistent with 0 at < 3σ, or the solution degrades (RUWE > 1.4 with AEN_sig ≫ 2 without an NSS solution → blend/systematic suspect).
+- **Support channels (pre-registered as support, NOT confirmation):** DR4 epoch photometry (first un-blended light curve of the blue star): outburst ≥ 1 mag, eclipses, or a period at permutation-FAP < 1% → accretor/close-binary support; a null is inconclusive at G=18.6 **[new 06-10]**. has_xp_continuous flipping True → XP continuum Teff for the WD-vs-composite split. A DR4 NSS/epoch-RV entry (unexpected at this G) would be decisive for binarity.
+- **Honesty clause:** the subtype (CV / pre-CV / WD+dM / ELM) **remains telescope-gated** — DR4 can *refute* (kill the parallax) but can only *strengthen, never confirm*, the accretor claim. The ~20% X-ray-ID ambiguity closes only with Chandra/XMM or a spectrum.

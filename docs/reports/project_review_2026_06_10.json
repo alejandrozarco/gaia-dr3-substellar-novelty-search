@@ -1,0 +1,1307 @@
+{
+  "summary": "Full project audit + generate and adversarially verify untried novelty lanes",
+  "agentCount": 32,
+  "logs": [
+    "Launching 5 auditors + 8 ideation lenses in parallel",
+    "Map done: 5/5 audits returned; Ideate done: 36 raw ideas from 8/8 lenses",
+    "Shortlist: 12 lanes survive (15 dropped)",
+    "Verify done: 4 GO survive both passes, of 12 verified"
+  ],
+  "result": {
+    "audits": [
+      {
+        "key": "docs",
+        "result": {
+          "findings": [
+            {
+              "area": "Provenance / documented-history mandate",
+              "issue": "Permanent docs anchor headline results to ephemeral /tmp artifacts, several already deleted: the occurrence-limit deliverable (f<5.7e-5), the authoritative full-TI-covariance WD mass re-analysis the DR4 pre-registration cites as its parameter source, and the F#33 flags audit are gone from /tmp.",
+              "severity": "high",
+              "evidence": "docs/RESEARCH_LOG.md:36, docs/dr4_preregistration_2026_06_01.md:16+213, docs/CANDIDATES.md:100; `ls` → 'No such file': /tmp/occurrence_limit_2026_06_01.md, /tmp/wd_sed_mass_refinement_2026_05_31.md, /tmp/sb1_flags_audit_2026_05_31.md (lane123/119/127 reports likewise unverifiable)",
+              "recommendation": "Salvage surviving /tmp lane reports (gaia_xray_quiescent, lane125 etc.) into a repo docs/reports/ or attach to journals now; reconstruct or re-derive the occurrence-limit and WD-mass-refinement numbers into a committed artifact before DR4 day, since the prereg's anchor values depend on them."
+            },
+            {
+              "area": "DR4 pre-registration coverage",
+              "issue": "Pre-registration covers only 4 candidates (WG 26, WDJ020915, WDJ060042, UCAC4 313). Watch-list objects CANDIDATES.md declares 'gated on Gaia DR4' — 3155543, 5858574 (triple-vs-compact, exactly what DR4 epoch astrometry breaks), 1593152, HD 157033 — and strong candidate Object B have no pre-registered thresholds. RESEARCH_LOG #122 even claims the HD 157033/PMa DR4 play is '(pre-registered)' — it is not.",
+              "severity": "high",
+              "evidence": "grep '4111149395881722496|3155543...|5858574...|1593152...|3161546596480983040' docs/dr4_preregistration_2026_06_01.md → no matches; docs/CANDIDATES.md:49 'each gated on Gaia DR4 or a spectrum'; docs/RESEARCH_LOG.md:210",
+              "recommendation": "Before 2026-12-02, append a pre-registration addendum (dated, clearly marked post-2026-06-01) with confirm/refute thresholds for the 4 watch-list objects + Object B, or explicitly record in the prereg doc that they are excluded and why; fix the false '(pre-registered)' claim in RESEARCH_LOG #122."
+            },
+            {
+              "area": "Confirmed vs UNCONFIRMED framing (overclaim risk)",
+              "issue": "The same three objects are simultaneously 'firmly confirmed binaries' (README), 'Confirmed double-degenerate' / 'CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR' (CANDIDATES headline, WG26 dossier verdict line) and 'UNCONFIRMED — not second-method-confirmed... do not cite as confirmed discoveries' (CANDIDATES embargo block, dossier banners). The binary-class-confirmed vs discovery-confirmed distinction is implied but never stated as a rule.",
+              "severity": "medium",
+              "evidence": "README.md:34 vs docs/CANDIDATES.md:71-72 vs :80-84; docs/dossiers/WG26_DOSSIER_2026_05_28.md header (UNCONFIRMED banner directly above 'Verdict (headline): CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR')",
+              "recommendation": "Adopt one vocabulary ('SED-confirmed WD binary, candidate orbit/companion — unconfirmed discovery') and apply it in README, CANDIDATES headline rows, and dossier verdict lines; run the pre-release-audit skill, which is described as catching exactly this miss."
+            },
+            {
+              "area": "CITATION.cff / release metadata staleness",
+              "issue": "CITATION.cff says version 2.2.0 (2026-05-31), but git tags show v2.1.1 and v2.3.0 with no v2.2.0 tag; DOI identifiers stop at v2.0.1 (no v2.1.x/v2.3.0 DOIs); README cites v2.0.1 as the per-version DOI; abstract omits post-05-31 results (F#33 wording exists but no 06-01/06-05 nulls, M1 correction).",
+              "severity": "medium",
+              "evidence": "CITATION.cff:74-75 ('version: 2.2.0'), :4-16 (DOIs end at v2.0.1); `git tag` → v2.1.0, v2.1.1, v2.3.0 (no v2.2.0); README.md:63",
+              "recommendation": "Sync CITATION.cff version/date to the actual latest tag (v2.3.0), add or reconcile the missing release DOIs, and explain the v2.2.0-in-text vs v2.1.1/v2.3.0-tag discrepancy; add this check to the pre-release-audit gate."
+            },
+            {
+              "area": "Validation-statistics inconsistency",
+              "issue": "CITATION.cff claims cascade validation '93% class-level recall and 14% adversarial false-positive rate against 70 published systems'; CANDIDATES.md states '93% class-level recall on 27 confirmed compact + sub-stellar systems, 14% adversarial-FP rate'. 70 vs 27 systems is unexplained (possibly 27 recall + 43 adversarial, but neither doc says so).",
+              "severity": "medium",
+              "evidence": "CITATION.cff:35-37 vs docs/CANDIDATES.md:348",
+              "recommendation": "Recover the validation-set composition from the cascade-regression truth sets, state the split (N recall-set, N adversarial-set) identically in both files, and pin the numbers to a committed test artifact rather than prose."
+            },
+            {
+              "area": "Tracked follow-up never done: global RUWE gate",
+              "issue": "CANDIDATES.md records 'adding a global RUWE flag to the tiering is a tracked follow-up' (2026-05-30) after two RUWE>6 sources reached Tier-1, but consumer_v2.py still contains no RUWE handling — the follow-up was never implemented, and the DR4 day-one rehunt harness imports this same consumer.",
+              "severity": "medium",
+              "evidence": "docs/CANDIDATES.md:275; `grep -i ruwe scripts/streaming/v2_corrected/consumer_v2.py` → no matches; RESEARCH_LOG.md:44 (rehunt imports consumer_v2 science unforked)",
+              "recommendation": "Implement a RUWE flag column (not a hard cut) in consumer_v2 tiering before DR4, run cascade-regression as the gate, and re-derive parquets; otherwise the DR4 blind re-hunt will re-surface RUWE-compromised Tier-1 entries."
+            },
+            {
+              "area": "DR4 prereg internal threshold ambiguity",
+              "issue": "Two different 'NS-floor' values are pre-registered: WDJ020915 downgrades at M2<1.2 M_sun while WDJ060042 downgrades at 'M2<1.33 (NS-floor)'. Also the 06-05 refit-engine finding that WDJ020915's bare f(M)=1.223 sits on the 1.2 floor (mandating full-TI MC on DR4 day) lives only in RESEARCH_LOG, not in the prereg doc whose thresholds are frozen.",
+              "severity": "medium",
+              "evidence": "docs/dr4_preregistration_2026_06_01.md:68 ('M₂ < 1.2 M⊙') vs :89 ('M₂ < 1.33 M⊙ (NS-floor)'); docs/RESEARCH_LOG.md:45 (WDJ020915 knife-edge)",
+              "recommendation": "Add a dated addendum to the prereg doc (without moving frozen thresholds) defining the floor convention per candidate and codifying the mandatory full-TI-covariance MC procedure for WDJ020915, so the day-one decision is unambiguous."
+            },
+            {
+              "area": "Object B framing vs no-telescope filter",
+              "issue": "Object B (3161546596480983040) is listed as 1 of only 2 'Strong candidates', but its confirm/refute path is an optical spectrum — telescope-gated by the project's own filter — and the roster row omits the journal/log caveat 'X-ray-ID-ambiguous'. No archival or DR4 falsifiable test is registered for it anywhere.",
+              "severity": "medium",
+              "evidence": "docs/CANDIDATES.md:29 ('An optical spectrum ... decide the subtype') vs docs/RESEARCH_LOG.md:72 ('spectrum-gated + X-ray-ID-ambiguous'); CLAUDE.md no-telescope filter",
+              "recommendation": "Either add the spectrum-gated + X-ray-ID-ambiguous caveats to the roster row and define an archival test (ZTF light-curve threshold, eRASS follow-up epoch) it must pass, or move it to a 'telescope-gated / parked' tier consistent with the insight catalog."
+            },
+            {
+              "area": "Promised workflow add-on missing: GALEX UV-excess screen",
+              "issue": "Lane #121's verdict (2026-06-05) was 'GO (cheap): add a standing GALEX-AIS UV-excess screen to the deep-dive workflow', but ns-candidate-deep-dive.js contains no GALEX/UV step; only the pre-existing wd-binary-sed-vet.js mentions GALEX.",
+              "severity": "low",
+              "evidence": "docs/RESEARCH_LOG.md:240; `grep -ril galex .claude/workflows/` → only .claude/workflows/wd-binary-sed-vet.js; grep in ns-candidate-deep-dive.js → no hits",
+              "recommendation": "Wire the companion_excess_sigma GALEX screen (with the cool-primary blackbody caveat from #121) into ns-candidate-deep-dive.js, or log in RESEARCH_LOG that the add-on was deliberately deferred."
+            },
+            {
+              "area": "CV-period avenue residuals never closed",
+              "issue": "Two 2026-05-28 flags remain open: 9 untested ZTF-only CV periods are 'presumed unreliable pending re-vet' but still printed as a candidate-period table, and the CRTS J051419 VSX check says 'reconcile vs live AAVSO VSX' — no evidence either was ever done.",
+              "severity": "low",
+              "evidence": "docs/CANDIDATES.md:317 ('presumed unreliable pending re-vet'), :160 ('VSX entry not found in the Vizier B/vsx mirror (reconcile vs live AAVSO VSX)'), table rows 319-334 still list the unvetted periods",
+              "recommendation": "Either run photometric-revet on the 9 entries (or strike-through the period column pending re-vet, as done for #13), and do the one-query live-VSX reconcile for CRTS J051419; record results in the journal ledger."
+            },
+            {
+              "area": "Stale METHODOLOGY + standing open data items",
+              "issue": "METHODOLOGY.md still says the Acceleration NSS extension is 'deferred to a follow-up task' though acceleration_v3.parquet (16,949 rows) shipped, and the finetune-v2 ML retrain remains deferred with no tracker. APOGEE DR17 ASPCAP ingest ('highest-value missing data') and the arXiv prior-art manual re-runs for lanes #119/#123/#125 ('NEEDS MANUAL RE-RUN') are flagged in two docs but have no open task.",
+              "severity": "low",
+              "evidence": "docs/METHODOLOGY.md:18-22, 224-231 vs docs/CANDIDATES.md:60; docs/RESEARCH_LOG.md:107, :260, :264-266",
+              "recommendation": "Append a dated note to METHODOLOGY marking the Acceleration extension as delivered (v3, 2026-05-31); open explicit tracked tasks (or PARKED-with-reason log entries) for APOGEE ASPCAP ingest, ML retrain, and the arXiv-gate re-runs."
+            },
+            {
+              "area": "Minor numeric/placeholder inconsistencies",
+              "issue": "Tier-1 NS pool is '160' in the headline/M1 note but 'All 161 M₁-corrected Tier-1 NS' in the triage section; UCAC4 313's G magnitude is '(TBD)' though G=13.91 appears in its dossier and the prereg; README quick start sources a .venv that does not exist in the repo; Object B's journal has 6 uncommitted lines.",
+              "severity": "low",
+              "evidence": "docs/CANDIDATES.md:74+87 ('160') vs :125 ('161'); :255 '(TBD)'; README.md:40 + `ls .venv` → missing; `git diff --stat docs/object_journals/3161546596480983040.md` → +6 lines",
+              "recommendation": "Resolve the 160/161 count against the M1-corrected parquet and state one number; fill G=13.91; add the venv-creation step to README quick start; commit the journal edit (user-authorized commits only — queue it)."
+            }
+          ],
+          "summary": "Docs are largely honest and self-correcting, but the audit found 12 gaps: headline provenance artifacts (occurrence limit, the WD mass re-analysis anchoring the DR4 prereg) already deleted from /tmp; DR4 pre-registration covers only 4 of the 9 roster objects while RESEARCH_LOG falsely calls the HD 157033 play \"pre-registered\"; \"confirmed vs UNCONFIRMED\" wording contradictions across README/CANDIDATES/dossiers; CITATION.cff stale (v2.2.0 vs tag v2.3.0, DOIs end at v2.0.1, 70-vs-27 validation systems); and several flagged follow-ups (RUWE gate, CV re-vets, live-VSX reconcile, GALEX screen) never executed."
+        }
+      },
+      {
+        "key": "infra",
+        "result": {
+          "findings": [
+            {
+              "area": "scripts/litcheck/prior_art.py — prior-art gate resilience",
+              "issue": "The 429 storm root cause (9 parallel scouts, no throttle) was fixed Jun 5 19:24 (lockfile throttle + 7-day cache + 429 backoff); gate verified live-working today (2 uncached queries, ~0.6s). But residual hardening is missing: 429 backoff is only 15s x 3 retries vs observed evening-long penalty windows; no Retry-After honoring; no circuit breaker (concurrent callers each burn retries); failures uncached; ADS backend is a TODO comment; WebSearch fallback only ad hoc.",
+              "severity": "high",
+              "evidence": "scripts/litcheck/prior_art.py:59-60,162-165,244-245; live test: 'real 0m0.689s' uncached success; RESEARCH_LOG.md:46-55 (429s across ~8 lanes, all pre-fix)",
+              "recommendation": "Add: exponential backoff honoring Retry-After; persist 'throttled_until' in the gate dir so callers fail fast to exit-2; ADS API backend behind ADS_DEV_KEY tried on arXiv 429; codify in CLAUDE.md/workflows README that exit-2 means run WebSearch with the same keywords and log 'gate could-not-run + web substitute'."
+            },
+            {
+              "area": "Prior-art gate — unverified lane verdicts",
+              "issue": "Seven 2026-06-05 lanes (#119, #122, #123, #124, #125, #126, #127) carry explicit 'arXiv gate 429 / unverified — manual re-run needed' flags; their novelty framings rest on training knowledge or WebSearch substitutes. The gate now works and caches, so the backfill costs ~1 minute total.",
+              "severity": "medium",
+              "evidence": "docs/RESEARCH_LOG.md:208 ('FLAGGED could-not-run'), 234 ('arXiv gate unverified — re-run before relying on the novelty framing'), 260, 266",
+              "recommendation": "Re-run prior_art.py for each flagged lane's method keywords (results now cache 7 days), append the verdicts to docs/RESEARCH_LOG.md, and clear the could-not-run flags."
+            },
+            {
+              "area": "scripts/known_objects — Milliquas gap status",
+              "issue": "The #126 gap is CLOSED in the data (1,021,800 milliquas rows in the live store; ingest_milliquas.py committed in 3852cfa) but UNDOCUMENTED: no RESEARCH_LOG INFRA entry records the ingest as done, no CATALOG_DEPENDENCIES.md row, and milliquas is absent from reference_catalogs.py — the exact reproducibility hole commit ae7085e fixed for Akras+2019.",
+              "severity": "medium",
+              "evidence": "store breakdown: 'milliquas 1021800'; grep CATALOG_DEPENDENCIES.md for milliquas = empty; reference_catalogs.py:40-102 has no milliquas spec; RESEARCH_LOG.md:248 still reads as open ('add a QSO/AGN catalogue (Milliquas)')",
+              "recommendation": "Add a milliquas CatalogSpec (or a 'rebuild via ingest_milliquas.py' pointer) to reference_catalogs.py, a CATALOG_DEPENDENCIES.md row with the resolved VizieR id, and an INFRA row in RESEARCH_LOG.md recording the 2026-06-05 ingest (1,021,800 rows)."
+            },
+            {
+              "area": "scripts/known_objects — registered catalogs never built",
+              "issue": "Three catalogs registered in reference_catalogs.py have ZERO rows in the live store: vsx_cataclysmic (B/vsx — the broad known-variable net), gaia_dr3_vari_cv, and raddi2019_lp40. Store annotate() will silently report VSX CVs as not-known; lanes have compensated with per-lane VSX queries, but the front-filter contract ('multi-catalogue gate, never SIMBAD-only') is weaker than documented.",
+              "severity": "medium",
+              "evidence": "store catalog value_counts lists 12 tags, none of vsx/gaia_dr3_vari_cv/raddi2019; reference_catalogs.py:69-101 registers all three",
+              "recommendation": "Run build.py for the three missing specs (or document in reference_catalogs.py why each is intentionally per-lane), then record the store breakdown in RESEARCH_LOG."
+            },
+            {
+              "area": "tests/ — fragmented suite + pytest-incompatible test file",
+              "issue": "The documented command `pytest tests/` passes (63 in 0.6s) but misses 18 dr4_pipeline pytest tests (which pass when targeted), the refit self-runner (14 checks), and known_objects (14 checks). Worse, scripts/known_objects/test_known_objects.py executes at import with module-level sys.exit(), so any pytest invocation touching it dies with INTERNALERROR SystemExit — it can never join the suite as-is.",
+              "severity": "medium",
+              "evidence": "pytest tests/ -> '63 passed in 0.58s'; pytest scripts/dr4_pipeline -> '18 passed in 5.50s'; pytest scripts/known_objects -> 'INTERNALERROR> SystemExit: 0, no tests ran'",
+              "recommendation": "Wrap test_known_objects.py's runner in `if __name__ == \"__main__\":` (or convert checks to pytest functions); add scripts/dr4_pipeline and scripts/known_objects to the canonical suite invocation (pytest.ini testpaths) so the DR4 day-one harness is regression-gated."
+            },
+            {
+              "area": "scripts/litcheck + scripts/journal — zero test coverage",
+              "issue": "prior_art.py (build_query quoting/hyphen logic, throttle, cache) and journal.py/check_consistency.py (the documented-history mandate's mechanical core) have no tests anywhere; a regression in journal table insertion or the gate's query builder would corrupt ledgers or silently blind the gate.",
+              "severity": "medium",
+              "evidence": "grep -rln prior_art tests/ scripts/dr4_pipeline = empty; tests/ contains only cascade/filters/microlensing/regressions/v3 files",
+              "recommendation": "Add offline unit tests: build_query phrase-quoting, cache get/put TTL, throttle interval (mocked time), journal.py ledger/entry insertion on a tmp scaffold, check_consistency on a fixture journal."
+            },
+            {
+              "area": ".claude/workflows — guardrails lag the insight catalog",
+              "issue": "ns-candidate-deep-dive.js does not implement the #121 verdict ('GO: standing GALEX-AIS UV-excess screen in the deep-dive workflow') and its novelty agent queries SIMBAD + 4 literature catalogs but never the project's own known-object store, so the new Milliquas AGN gate is unused by the flagship workflow. GALEX appears only in wd-binary-sed-vet.js.",
+              "severity": "medium",
+              "evidence": "grep galex/milliquas .claude/workflows/*.js -> only wd-binary-sed-vet.js:16; ns-candidate-deep-dive.js:25 novelty step = SIMBAD/Shahaf/Mueller-Horn/Halbwachs/El-Badry only; RESEARCH_LOG.md:240 (#121 GO verdict)",
+              "recommendation": "Add to ns-candidate-deep-dive.js: (a) a GALEX-AIS UV-excess screen step (reuse the companion_excess_sigma machinery from the hd*/wdj* scripts, flag NUV excess >=+0.3 mag at >=3 sigma with FUV corroboration); (b) a known-object store annotate() call (incl. milliquas) in the novelty agent."
+            },
+            {
+              "area": "git hygiene — uncommitted ledger entry + gitignored root clutter",
+              "issue": "The Object B journal carries a completed 2026-06-05 ZTF re-check ledger row (#113 closure: ZTF INCONCLUSIVE, target below depth/blended) uncommitted for 4 days — the documented-history mandate depends on ledger durability. Root clutter (amateur_transit_candidates.csv from the May-27 amateur-transit sidestep, 5 stale *_log.txt, finetune_*.pkl from scripts/streaming/finetune_*.py) is all gitignored and referenced nowhere — cosmetic only.",
+              "severity": "low",
+              "evidence": "git status: 'M docs/object_journals/3161546596480983040.md' (+6 lines, dated 2026-06-05); git ls-files shows none of the clutter tracked; .gitignore covers amateur_transit_candidates.csv, *_log.txt, **/*.pkl; grep -rl amateur_transit docs/ scripts/ = empty",
+              "recommendation": "Ask the user to commit the journal entry (single-writer history should not live only in a working tree). Optionally move the orphan CSV, stale logs, and the two pkl files (provenance: METHODOLOGY.md + scripts/streaming/finetune_*.py) into data/archive/ or /tmp."
+            }
+          ],
+          "summary": "Infrastructure is healthier than the brief implied: prior_art.py already gained throttle+cache+backoff (post-429-storm, Jun 5 19:24) and works live today; Milliquas IS ingested (1.02M store rows). Real gaps: gate lacks circuit-breaker/ADS/WebSearch-protocol hardening and 7 lane verdicts still carry unverified-gate flags; Milliquas is unregistered/undocumented; 3 registered catalogs (VSX etc.) have zero store rows; 32 tests live outside `pytest tests/` and one file crashes pytest; deep-dive workflow lacks the #121 GALEX screen and store/AGN gate; one journal entry sits uncommitted."
+        }
+      },
+      {
+        "key": "journals",
+        "result": {
+          "findings": [
+            {
+              "area": "RESEARCH_LOG pending tasks",
+              "issue": "#103 (XP ingest), #111 (register bulk-import), #112 (Object B deep-dive) are all DONE (commit 7b7c4a2: ingest_xp_catalogs.py, 1,831 register rows, dossier+journal), but RESEARCH_LOG still says 'Still pending... #112 (running)'. No closing entries or lane-index rows exist for #103/#111/#112/#113.",
+              "evidence": "docs/RESEARCH_LOG.md:74 vs git log 7b7c4a2 (CATALOG_DEPENDENCIES.md, ingest_xp_catalogs.py, findings_register.csv +1051)",
+              "severity": "high",
+              "recommendation": "Append dated closure entries to RESEARCH_LOG for #103/#111/#112/#113 (append-only; supersede line 74). Note #103 caveat: Roulston+2025 carbon-star catalogue unpullable from VizieR — re-attempt queued."
+            },
+            {
+              "area": "Object B (3161546596480983040) — uncommitted #113 + CANDIDATES.md mismatch",
+              "issue": "The uncommitted journal diff is task #113 (2026-06-05 ZTF re-check): no ZTF source within 2 arcsec of the blue target, discriminator INCONCLUSIVE, subtype now spectrum-ONLY-gated. CANDIDATES.md:29 still says 'spectrum + a ZTF light curve decide the subtype', and the journal status line still says 'ZTF-gated'. Per the no-telescope filter Object B is now fully telescope-gated.",
+              "evidence": "git diff docs/object_journals/3161546596480983040.md; docs/CANDIDATES.md:29",
+              "severity": "high",
+              "recommendation": "Commit the journal edit; update CANDIDATES.md row 29 to spectrum-gated only; add a status-timeline row reflecting 'subtype telescope-gated'; append #113 to RESEARCH_LOG."
+            },
+            {
+              "area": "findings_register — AMRFClassIII ingest (#109)",
+              "issue": "RESEARCH_LOG promises per-object rows for the 26 in-pool published Halbwachs AMRFClassIII candidates (incl. 5 named Tier-1 NS + 1 BH — the key 'not novel' evidence), but the register holds only ONE 'front-filter binary_masses ingest' row (5446310318525312768). 5788346533133183744, 4042401027000908928, 2208943221256515712 are entirely absent.",
+              "evidence": "findings_register.csv: lane 'front-filter binary_masses ingest' count=1; grep absent for 3 of 6 named source_ids; RESEARCH_LOG.md:79,144",
+              "severity": "high",
+              "recommendation": "Backfill 25 known-recovery rows via journal.py register (source_ids from scripts/known_objects/ingest_binary_masses.py output), lane 'front-filter binary_masses ingest', provenance #109."
+            },
+            {
+              "area": "findings_register — missing whole lanes",
+              "issue": "Register lacks lanes for: spectral-diff SDSS×DESI (51 known CV accretion-state recoveries), hypervelocity-WD (2 D6/LP40 recoveries + halo-DBZ lead), #119 Ba/CH (60 NSS-orbit knowns), #123 seismic (19 overlaps), #127 QSOC rejects (58 catalogued WDs), #124 WISE-saturation screened-FPs (13). Policy: every recovery/screened-FP earns a row.",
+              "evidence": "findings_register.csv lane list (14 lanes, none of the above) vs RESEARCH_LOG.md:33,53-55,213-217,251-255; CANDIDATES.md:114,117",
+              "severity": "medium",
+              "recommendation": "Backfill from the /tmp lane reports where they survive (e.g. /tmp/lane119_FEASIBILITY_REPORT.md, /tmp/lane127_*); for already-purged /tmp data, log an aggregate provenance row noting the loss."
+            },
+            {
+              "area": "Lane #121 GALEX — ledger rows not propagated",
+              "issue": "The GALEX UV-excess lane measured four objects but ledger rows were appended only to WDJ060042 and WDJ020915. WDJ205650 (1736555475066523008, +9.2σ NUV positive control) and 1593152388271709824 (−13.6σ single-T-BB artifact) have no 2026-06-05 ledger row — measured results unlogged, violating journal rule 2.",
+              "evidence": "docs/object_journals/1736555475066523008.md (last ledger row 2026-05-30) and 1593152388271709824.md (last 2026-05-28) vs RESEARCH_LOG.md:239-241",
+              "severity": "medium",
+              "recommendation": "Append GALEX ledger rows to both journals from /tmp/lane121_galex_uv_astrometry_scout_2026_06_05.md, including the cool-primary BB-artifact caveat for 1593152."
+            },
+            {
+              "area": "Odd-axis sweep — per-candidate results not in ledgers",
+              "issue": "Lanes #118 (12 candidates as microlenses → NULL), #120 (16 candidates photometrically quiet, 0/16 in vari_summary), #125 (4 candidates thin-disk kinematics) each tested every roster object but appended zero per-object cross-check ledger rows — these clean nulls are reconstructable only from RESEARCH_LOG prose.",
+              "evidence": "RESEARCH_LOG.md:221-222,233,272; no 2026-06-05 rows in any roster journal except the two #121 entries",
+              "severity": "medium",
+              "recommendation": "Batch-append one ledger row per roster object per lane (Gaia vari_summary null, microlens-track null, UVW thin-disk) via journal.py ledger, provenance /tmp/lane1xx reports."
+            },
+            {
+              "area": "WDJ060042 + WG 26 — eROSITA gap",
+              "issue": "Both sit INSIDE the eRASS1-DE western footprint (l=235.4 and l=316.5) yet neither journal has an eROSITA ledger row. For NS-companion candidates an X-ray null (or hit) is the cheapest archival discriminant; the #115 quiescent-XRB lane crossed the G≤13 NSS pool, which excludes these G=18.4/G≈17 WDs.",
+              "evidence": "computed l,b: WDJ060042 l=235.4 b=-23.2; WG26 l=316.5 b=13.0; journals 2909342818326298112.md and 6092654861665006592.md ledgers contain no eROSITA row",
+              "severity": "medium",
+              "recommendation": "Run eRASS1-DE (J/A+A/682/A34) cones on both; log the result (incl. null) as ledger rows. Also add GALEX/ASAS-SN/VSX rows for WG 26 (hot 21.7 kK DA, never UV-checked)."
+            },
+            {
+              "area": "WDJ020915 (332248057157474176) — photometric variability never checked",
+              "issue": "Northern (dec +38), G=16.2 — squarely in ZTF/TESS/ASAS-SN reach — yet the ledger has zero variability rows (no ZTF, TESS, VSX, NEOWISE, ATLAS). For the weakest-fit candidate (F2=+8.39, RUWE=8.79) a masked-periodogram null/hit is the only cheap pre-DR4 handle. Out of eRASS1-DE footprint (l=139.4) — log that too.",
+              "evidence": "docs/object_journals/332248057157474176.md ledger (6 rows, none photometric); computed l=139.4",
+              "severity": "medium",
+              "recommendation": "Run photometric-revet-style ZTF masked LS + VSX cone + TESS sector check; append ledger rows including nulls and the eRASS1-DE out-of-footprint note."
+            },
+            {
+              "area": "Object B — GALEX and archival X-ray gaps",
+              "issue": "A blue X-ray-selected WD-class candidate, yet GALEX UV was never checked (the #121 screen skipped it) and no 4XMM/CSC/Swift-2SXPS cone was ever logged — a serendipitous pointed X-ray detection would sharpen the ~20% residual X-ray-ID ambiguity with the RUWE=19 G-dwarf neighbour without a telescope.",
+              "evidence": "docs/object_journals/3161546596480983040.md ledger: no GALEX, no 4XMM/CSC/Swift rows; dossier notes residual ID ambiguity 'closable only by Chandra/XMM or a spectrum'",
+              "severity": "medium",
+              "recommendation": "Run GALEX AIS 8-arcsec cone (reuse lane-#121 machinery) + 4XMM-DR13/CSC2.1/2SXPS cones; append ledger rows. Both are no-telescope and classification-relevant."
+            },
+            {
+              "area": "Thin ledgers: UCAC4 313 and 5858574810404752256",
+              "issue": "UCAC4 313 (roster 'provisional') has NO archival-RV census rows (RAVE/GALAH/APOGEE/LAMOST never logged) and no GALEX/WISE/X-ray/ZTF rows. 5858574 (watch-list) has no SIMBAD, GALEX, WISE, X-ray, or photometric-variability rows at all — only Shahaf/AMRF/RV-cone entries.",
+              "evidence": "docs/object_journals/5612039087715504640.md (5 ledger rows, none RV-archive) and 5858574810404752256.md (4 rows)",
+              "severity": "medium",
+              "recommendation": "Run the standard archival sweep (SIMBAD, RV surveys, GALEX, AllWISE, eRASS1-if-in-footprint, ZTF/ASAS-SN, VSX) on both; log every null. Add UCAC4 313 to the archival-rv-monitor watchlist."
+            },
+            {
+              "area": "Stale RV epochs: 3155543 and 1593152",
+              "issue": "3155543's LAMOST ledger rows are DR7-era (2 epochs, 2013/2015); newer LAMOST DRs were never re-queried for added epochs — one new phase could settle the 2.66σ external-RV weakness. 1593152's predicted periastron MJD 61060 (2026-01-20) has passed; no post-2023 epoch check logged. Neither journal has an X-ray row (1593152) or ZTF/ASAS-SN rows.",
+              "evidence": "3155543945892767232.md ledger rows dated 2026-05-28 (LAMOST DR7); 1593152388271709824.md entry 'Settling-epoch... MJD 61060'",
+              "severity": "medium",
+              "recommendation": "Run the archival-rv-monitor skill on both source_ids against LAMOST DR11+/APOGEE; append ledger rows either way. Add ZTF/ASAS-SN variability rows for 1593152 (dec +49.9, G~11.5)."
+            },
+            {
+              "area": "Register hygiene + INDEX staleness",
+              "issue": "111 rows (06-05 imports) use journal='n' vs the 'no' enum; two ETV rows carry 'KIC 2856960'/'KIC 12508348' in the source_id column (non-Gaia, breaks source_id-keyed joins); INDEX.md Object B class string still says M_G~8.95 (journal: 8.75 after deep-dive #112).",
+              "evidence": "findings_register.csv journal-column Counter {'no':1845,'n':111,'yes':3}; non-numeric source_ids; INDEX.md row 12 vs 3161546596480983040.md header",
+              "severity": "low",
+              "recommendation": "Normalize 'n'→'no'; move KIC names to the name column with empty/flagged source_id; re-run journal.py index to refresh the Object B class string."
+            }
+          ],
+          "summary": "Journals/register are structurally healthy (consistency gate: 0 failures) but the bookkeeping trails reality. #103/#111/#112 are DONE yet RESEARCH_LOG still lists them pending; the uncommitted Object B diff is the #113 ZTF re-check (integrated in journal, uncommitted, contradicts CANDIDATES.md's \"ZTF decides subtype\" — Object B is now spectrum/telescope-gated). Register gaps: 25/26 AMRFClassIII rows missing, 6 whole lanes unregistered. Ledger gaps: eROSITA never run on in-footprint WDJ060042/WG 26, no variability checks on WDJ020915, GALEX/X-ray missing for Object B, thin ledgers for UCAC4 313 and 5858574."
+        }
+      },
+      {
+        "key": "data",
+        "result": {
+          "findings": [
+            {
+              "area": "F#33 vs M1-corrected tiers (main + relaxed)",
+              "issue": "F#33 down-tiering is encoded only in tier_v2 (raw-M1), never in tier_v2_corrected: 41 main + 4 relaxed corrected-Tier-1 NS carry filter33_v2=FLAG (all AstroSpectroSB1; their tier_v2 says 'Tier-2 period non-significant'). The '161 triaged' roster and the DR4 _M1corrected diff baseline therefore include 45 period-non-significant Tier-1s; policy-consistent counts are 107 (main) + 9 (relaxed).",
+              "evidence": "main_hunt_derived_v2_M1corrected.parquet: tier_v2_corrected=='Tier-1 NS' & filter33_v2=='FLAG' → 41 rows; 148→107 if down-tiered; relaxed 13→9",
+              "severity": "high",
+              "recommendation": "Re-derive tier_v2_corrected with the F#33 down-tier applied (or add a tier_v2_corrected_f33 column); update CANDIDATES.md headline and re-baseline the DR4 rehunt diff against the corrected file."
+            },
+            {
+              "area": "acceleration_v3 M1 correction (Q1)",
+              "issue": "M1_msun_v3 = 1.5 for all 16,949 rows (std 0); no mass_flame column exists in the channel. Quantified: at M1=1.0 median Tier-2 M2 drops 3.22→2.77 and ~24% of the 7,062 surviving Tier-2 fall below the 1.2 M⊙ NS floor (~26–30% at WD-like M1 0.8–0.6). Main-pool analogue demoted 45% of Tier-1 (291→160).",
+              "evidence": "acceleration_v3.parquet M1_msun_v3.describe(): mean=min=max=1.5; f(M)-invariant re-solve on Tier-2 M2_median_v3; 1,081/7,062 Tier-2 have logg_source_v3=NONE",
+              "severity": "medium",
+              "recommendation": "Run the select_m1/FLAME correction on acceleration_v3 (needs a fresh FLAME/StarHorse fetch — channel parquet carries no mass columns); expect roughly a quarter of the Tier-2 pool to demote below NS mass."
+            },
+            {
+              "area": "acceleration_v3 triple/second-method triage (Q1)",
+              "issue": "Pool was never AMRF/Shahaf-triaged — structurally impossible (Acceleration7/9 have no orbital elements; no AMRF code in scripts/streaming/v3_acceleration/). Only the internal Gaia-RV joint screen ran (3,761 demoted). 594 CONSISTENT_NS + 240 CONSISTENT_BH survive in Tier-2 with zero external archival-RV triage; CONSISTENT_BH joint medians ~30 M⊙ are period-degeneracy artifacts.",
+              "evidence": "acceleration_v3.parquet rv_consistency_flag_v3 counts within Tier-2: NO_RV_VAR 5380, CONSISTENT_NS 594, CONSISTENT_BH 240; M2_joint_median_v3 50%≈29.8 M⊙ for CONSISTENT_BH",
+              "severity": "medium",
+              "recommendation": "Treat the 834 RV-consistent NS/BH subset as the only triage-worthy slice; run the pool-second-method-triage (LAMOST/APOGEE census) on it, or formally document the channel as DR4-gated (period degeneracy unbreakable in DR3)."
+            },
+            {
+              "area": "CANDIDATES.md headline drift (Q1/Q2)",
+              "issue": "Headline 'v3 Acceleration P-degenerate: 10,818' is stale: 10,823 = pre-RV-joint count (not-F30/F31/Rejected); the current parquet's surviving Tier-2 is 7,062 after the 05-31 RV-joint demotion of 3,761. Also Tier-1 NS '160' (line 74) vs parquet 148 vs '161' (line 125, = 148 main + 13 relaxed).",
+              "evidence": "acceleration_v3.parquet tier_v3: Tier-2=7,062, RV-joint-demoted=3,761 (sum 10,823 vs doc 10,818); main_hunt_derived_v2_M1corrected tier_v2_corrected: Tier-1 NS=148",
+              "severity": "medium",
+              "recommendation": "Refresh the CANDIDATES.md backing-data and headline tables from the current parquets: acceleration surviving pool = 7,062 (not 10,818), Tier-1 NS = 148+13, and note the 45 F#33-flagged Tier-1s."
+            },
+            {
+              "area": "Relaxed/alt triage parity (Q2)",
+              "issue": "Relaxed Tier-1 (13) WERE unioned into the 161-object archival-RV + Shahaf triage (3 demoted as already-in-Shahaf; 161 = 148 main + 13 relaxed exactly); alt has 0 Tier-1. Untriaged Tier-1-equivalents: 354 relaxed Tier-2 + 26/27 alt Tier-2 (only 5406907 touched) + main's 45 Tier-2 — none ever got external second-method work.",
+              "evidence": "scripts/ns_pool_triage_2026_05_28.py:619-628 unions relaxed Tier-1 NS; grep of 27 alt Tier-2 ids over docs/: 1 hit (5406907)",
+              "severity": "medium",
+              "recommendation": "Log the parity explicitly in RESEARCH_LOG; queue the 354+26 relaxed/alt Tier-2 for the pool-second-method-triage skill if any has M2_corrected near/above 1.4, else mark them DR4-gated."
+            },
+            {
+              "area": "Logging-policy gap: relaxed Tier-1 (Q2)",
+              "issue": "8 of the 13 relaxed-pool Tier-1 NS (e.g. 3056409026894392448, 6184510360847047808, 4056403406274320768, 5815441557668429312, 6441920468296049280, 6846249479816261504, 1736313273270398720, 6695559040407753984) appear nowhere in docs/, journals, or findings_register.csv — triaged only in aggregate, violating the 'log every surfaced object' mandate.",
+              "evidence": "grep -rl per source_id over docs/ + scripts/: 0 hits for 8/13 relaxed Tier-1 ids; findings_register.csv has no relaxed-lane rows",
+              "severity": "medium",
+              "recommendation": "Backfill findings_register.csv rows (journal.py register) for the 8 unlogged relaxed Tier-1 NS with their per-object triage verdicts from the 2026-05-28 run."
+            },
+            {
+              "area": "compact_object_candidates_unified.parquet staleness (Q3)",
+              "issue": "Confirmed stale on three axes: M1_msun = 1.5 for ALL 17,760 rows (both channels — not M1-corrected); tiers are raw-v2 (198 Tier-1 NS + 1 BH vs corrected 148); no flags/filter33 columns; and row drift vs current acceleration_v3 (16,930 vs 16,949). Matches the CANDIDATES.md:100 regenerate instruction — still not done.",
+              "evidence": "unified parquet: groupby(channel)['M1_msun'] mean=min=max=1.5; tier counts Tier-1 NS=198; columns lack flags/f33",
+              "severity": "high",
+              "recommendation": "Regenerate unified downstream of the M1corrected + F#33-re-tiered parquets (and the M1-corrected acceleration file once built), or delete/rename it with a STALE marker so no lane consumes it as the candidate list."
+            },
+            {
+              "area": "main_hunt_derived_v2_supplementary.parquet (Q3)",
+              "issue": "Superseded merge-input, not a candidate list: its 9 columns (nss_parallax + logg/teff variants, fetched 05-28) are fully folded into the 05-31 main parquet. Harmless but it lacks flags and is still wired as input to run_v2.py — a raw-chunk re-run would merge it and silently no-op F#33.",
+              "evidence": "supplementary (May 28, 9 cols) ⊂ main_hunt_derived_v2.parquet (May 31, 61 cols incl. flags); referenced in scripts/streaming/v2_corrected/run_v2.py",
+              "severity": "low",
+              "recommendation": "Add a flags column to the supplementary fetch (or a third supplementary parquet with source_id+flags) so any future run_v2.py re-derivation from raw chunks keeps F#33 live."
+            },
+            {
+              "area": "Raw chunks lack NSS flags (Q4)",
+              "issue": "Confirmed: neither main_RA*.parquet nor relaxed_RA*.parquet schemas contain 'flags' (main chunks also lack nss_parallax and gspspec columns). Inheriting products: any re-derivation from raw chunks (DR4 rehunt adapter expects flags → F#33 no-ops, ~51 demoted sources resurface per #117), both supplementary parquets, and the unified parquet.",
+              "evidence": "pyarrow schema of raw_chunks/main_RA000.parquet and relaxed_RA000.parquet: has 'flags' = False; rehunt/adapter.py:96 expects flags for F#33",
+              "severity": "medium",
+              "recommendation": "Do a one-off Gaia TAP fetch of source_id+flags for the 127,531 raw-chunk sources into data/raw_chunks/ (or a sidecar parquet) so the rehunt harness and any re-run are F#33-complete before DR4 day."
+            },
+            {
+              "area": "Unmined axis: eccentricity (Q5)",
+              "issue": "e/e_v2 is populated for 100% of all three orbital pools but is never a filter axis — consumer_v2.py only stores it. High-e NSS orbits are a documented FP class (6802634430521968000 demoted partly on e=0.871); 2 of the 149 corrected Tier-1 carry e>0.8 unflagged.",
+              "evidence": "consumer_v2.py:415,454 (store-only); main M1corrected Tier-1: e_v2 max=0.884, 2 rows >0.8, 0 nulls",
+              "severity": "low",
+              "recommendation": "Add a cheap e>0.8 caution flag (Halbwachs-style FP class) to the cascade and re-check the 2 high-e Tier-1 NS; costs nothing, uses in-hand data."
+            },
+            {
+              "area": "Unmined pools: alt channel + Acceleration9 jerk (Q5)",
+              "issue": "OrbitalAlternative pool (629) is effectively unmined: 0 Tier-1, 27 Tier-2 of which 26 are untouched anywhere in docs; its unique vetting columns (ipd_frac_multi_peak, aen_sig) unused. jerk_P_yr_max_grid_v3 is computed for all 16,949 acceleration rows (689 Acceleration9 Tier-2 = curvature-constrained periods) but no script outside the v3 pipeline consumes it.",
+              "evidence": "alt_M1corrected tier counts: Tier-2=27, Tier-1=0; grep: jerk_P_yr consumed only inside scripts/streaming/v3_acceleration/",
+              "severity": "low",
+              "recommendation": "Use jerk_P_yr_max_grid_v3 to tighten the period grid for the 689 Acceleration9 Tier-2 (shrinks M2 range for free); spot-check the 26 untouched alt Tier-2 against the known-object store."
+            },
+            {
+              "area": "Producer state files (Q4/Q5)",
+              "issue": "STATE_wider.json records an abandoned 'wider' producer run (0 completed chunks, 0 rows, started 2026-05-27) — a planned pool that never materialized and is documented nowhere. Counts otherwise reconcile: main 56,185 raw → 56,100 derived (dedupe); relaxed 127,531 raw − 56,185 main overlap = 71,346 derived exactly (pools disjoint by construction).",
+              "evidence": "data/raw_chunks/STATE_wider.json: completed_chunks=[], rows_total=0; STATE_main 56,185; STATE_relaxed 127,531; relaxed parquet rows 71,346",
+              "severity": "low",
+              "recommendation": "Either delete STATE_wider.json or log in RESEARCH_LOG why the wider cut was abandoned; note the relaxed/main disjointness explicitly in CANDIDATES.md's backing-data table (headline counts already silently sum pools)."
+            }
+          ],
+          "summary": "Audited all 11 derived parquets + 3 STATE files. Highest-impact: F#33 was never propagated into tier_v2_corrected — 45 period-non-significant sources sit in the 161-object triaged Tier-1 roster (policy-consistent count: 116); and the unified parquet is stale on three axes (M1=1.5 everywhere, raw-v2 tiers, no flags). acceleration_v3 is M1-uncorrected (all 16,949 at 1.5; ~24% of its 7,062 surviving Tier-2 would drop below the NS floor at M1=1.0) and structurally AMRF-blind; 834 RV-consistent NS/BH never externally triaged. Relaxed Tier-1 was triaged (161=148+13) but 8/13 are unlogged; raw chunks confirmed flags-less."
+        }
+      },
+      {
+        "key": "candidates",
+        "result": {
+          "findings": [
+            {
+              "area": "Object B (3161546596480983040) — DASCH DR7",
+              "issue": "No DASCH row in the ledger. Quiescent G≈18.6 is below plate limits, but a dwarf-nova outburst (3–6 mag) reaches B≈13–15, inside plate depth across ~100 yr. One archival outburst confirms the CV nature with zero telescope time — the single highest-impact pre-DR4 check on the roster.",
+              "severity": "high",
+              "evidence": "docs/object_journals/3161546596480983040.md:16-27 (ledger has SIMBAD/QSO/ZTF/eRASS1 only); dossier line 13: RA 112.335086, Dec +9.868546",
+              "recommendation": "Query DASCH DR7 light curve at 112.335086 +9.868546. Caveat: the 4.76\" G=13.8 neighbour dominates plate PSFs — treat ≥0.5–1 mag blend brightenings as candidate outbursts and vet plate-by-plate. Append ledger row including a null."
+            },
+            {
+              "area": "Object B — ZTF forced photometry + ATLAS",
+              "issue": "Both prior ZTF attempts were catalog-based (nph_light_curves); no source within 2\" of the blue target, so the variability discriminator is INCONCLUSIVE, not null. Forced PSF photometry on difference images recovers sub-threshold flux and any 2018–2026 outburst despite the 5-mag-brighter neighbour. ATLAS forced photometry adds 2015+ at dec +9.9.",
+              "severity": "high",
+              "evidence": "docs/object_journals/3161546596480983040.md:27 — 'NO ZTF source within 2 arcsec... INCONCLUSIVE (unmeasurable, not flat)'",
+              "recommendation": "Submit ZTF ZFPS and ATLAS forced-photometry requests at the exact Gaia position; an outburst or periodic signal upgrades CV subtype; flat residuals tighten the pre-CV reading. Outputs to /tmp; main thread integrates ledger rows."
+            },
+            {
+              "area": "Object B — PS1 epochs, 2026 CV-list refresh, VSX",
+              "issue": "Pan-STARRS DR2 epoch photometry (2010–2014, g~22, resolves the 4.76\" pair) was never pulled. The front-filter holds Rodriguez+2025 and A&A 698/A321 but not arXiv:2504.10794 (eROSITA-DE DR1+XMM+Swift+ROSAT CV candidates) or the Jan-2026 A&A period-bounce list. WebSearch by source_id/1eRASS name: null (still unpublished).",
+              "severity": "medium",
+              "evidence": "scripts/known_objects/reference_catalogs.py:39,57; WebSearch 2026-06-09 returned no astronomy hits for '3161546596480983040'",
+              "recommendation": "Cross-check Object B (and the eRASS1 register rows) against arXiv:2504.10794 and the 2026 period-bounce table; pull PS1 DR2 detection-table epochs via MAST; check VSX live. Log all results, including nulls."
+            },
+            {
+              "area": "1593152388271709824 — new RV survey epochs",
+              "issue": "Status hangs on K1=17.5±5.9 (≈3σ) from one ±10.5 km/s LRS epoch; ledger RV census stops at LAMOST DR11/APOGEE DR17. LAMOST MRS observed it in 2023 and the predicted decisive periastron (MJD 61060 = 2026-01-20) has now passed — any newly published 2025–26 survey epoch could confirm or refute outright.",
+              "severity": "high",
+              "evidence": "docs/object_journals/1593152388271709824.md:42,49,56 (MARGINAL_2CHANNEL; settling epoch MJD 61060)",
+              "recommendation": "Run the archival-rv-monitor skill on this source: check LAMOST DR12/updated V/162 MRS epochs and SDSS-V DR19 mwm_apogee_allvisit (dec +50, H≈10, APO-reachable); re-run the NSS-locked Keplerian on any new epoch."
+            },
+            {
+              "area": "3155543945892767232 — new RV survey epochs",
+              "issue": "External corroboration is only 2 LAMOST phases at 2.66σ (epochs end 2015-10-30); F#33 bit-13 caution compounds it. A single new epoch at a third phase (K1≈15.5, γ≈37.4 km/s) is decisive either way. LAMOST DR12 and SDSS-V DR19 (dec +9.8) were never queried.",
+              "severity": "high",
+              "evidence": "docs/object_journals/3155543945892767232.md:22-23,50 (2 phases/2.66σ; F#33 down-tier)",
+              "recommendation": "Same archival-rv-monitor sweep: LAMOST DR12 LRS/MRS + SDSS-V DR19 APOGEE allvisit cone. Also a free ASAS-SN/ATLAS light curve for a giant-variability null (G≈11–12). Append ledger rows including nulls."
+            },
+            {
+              "area": "WDJ020915 (332248057157474176) — first time-series photometry",
+              "issue": "No optical light curve has ever been checked: dec +38, G=16.2 is prime ZTF/ATLAS/PS1 territory, yet the ledger has zero time-series rows. Variability could explain the weak astrometric fit (F2=+8.39, RUWE=8.79; variability-induced motion), while a quiet curve strengthens the orbit's reality ahead of the DR4 stress test.",
+              "severity": "medium",
+              "evidence": "docs/object_journals/332248057157474176.md:17-25 (ledger: SIMBAD/GF21/SED/CPM/NSS/GALEX only); dossier: G=16.2, Dec +38.07",
+              "recommendation": "Pull ZTF DR (IRSA) + ATLAS forced photometry; masked Lomb-Scargle with permutation FAP (photometric-revet conventions) around P=274.5 d and short periods; PS1 DR2 epochs as a 2010–14 extension. Log result either way."
+            },
+            {
+              "area": "5858574810404752256 — TESS asteroseismic M1",
+              "issue": "M1 is the explicit lever: P(compact)=0.355 sits on the triple/ambiguous boundary and tips TRIPLE for M1≥1.55. T=11.45 lower-RGB/subgiant with 7+ TESS sectors (incl. 200-s FFI) and fresh 2026 southern sectors at dec −65.6; lane #123 already built the seismic-M1 machinery and showed seismic M1 is genuinely new information.",
+              "severity": "medium",
+              "evidence": "docs/object_journals/5858574810404752256.md:21; dossier lines 63,213 (T=11.45; sectors S11→S101)",
+              "recommendation": "Stack all QLP/200-s FFI sectors, search νmax/Δν; detection is marginal at 15,770 ppm RMS so run an injection feasibility first. Any credible seismic M1 moves the boundary verdict; non-detection is a cheap logged null."
+            },
+            {
+              "area": "HD 157033 (4111149395881722496) — archival-spectrum sweep",
+              "issue": "'Needs one clean optical RV' is only telescope-gated if no archival spectrum exists. The ledger checked HARPS-RVBank-style products but never the ESO raw archive (FEROS/UVES/X-shooter/HARPS serendipitous spectra of this V≈10 HD star) nor SDSS-V DR19 BOSS epochs (LCO-reachable, dec −23.8; BOSS RVs work on hot stars where APOGEE failed).",
+              "severity": "medium",
+              "evidence": "docs/object_journals/4111149395881722496.md:27,52 — no ESO-archive/FEROS/UVES row; 'Needs one clean optical RV epoch'",
+              "recommendation": "ESO archive cone on HD 157033/HIP 84960 + SDSS-V DR19 BOSS query. One archival high-resolution epoch (vs GALAH 2016 −37.5 km/s) could collapse the 0.4–6 M⊙ ambiguity. Append ledger rows."
+            },
+            {
+              "area": "WDJ060042 (2909342818326298112) — photometric quietness null",
+              "issue": "No time-series row in the ledger; dec −29.5 is inside ZTF (limit ≈−31) and ATLAS at G=18.4. Low expected signal (P=935 d, no eclipses), but a quietness null hardens the clean-orbit anchor and a surprise variable would flag contamination. DASCH/TESS are too shallow (B≈18.7, T=18.1). WebSearch by source_id: null.",
+              "severity": "low",
+              "evidence": "docs/object_journals/2909342818326298112.md:17-23 (no photometry-time-series row); dossier line 19: Dec −29.51, G=18.4",
+              "recommendation": "One ZTF DR + ATLAS forced-photometry pull with a periodogram null; log it. Pair with a 2026 novelty re-grep when new Gaia WD-binary catalogs appear (publication-anchor protection)."
+            },
+            {
+              "area": "UCAC4 313 (5612039087715504640) + WG 26 (6092654861665006592) — archival-immune walls",
+              "issue": "Both are structurally DR4-gated: UCAC4 313's inclination degeneracy is untouchable by photometry (K1 sin i ≈ 0.4 km/s, below survey RV precision), and WG 26 is essentially confirmed with only the close-triple residual. Remaining cheap items are nulls: VSX, ASAS-SN/ATLAS rotation-flare characterization (G=13.9 / G=14.35; WG 26 has no ZTF/PS1 at dec −47.7).",
+              "severity": "low",
+              "evidence": "docs/object_journals/5612039087715504640.md:24,40 (TESS uninformative; inclination-degenerate); docs/object_journals/6092654861665006592.md:29,56",
+              "recommendation": "Spend ≤30 min total: VSX live for both, ASAS-SN g sky-patrol pulls, and a novelty re-lock of UCAC4 313 against any 2025–26 Gaia-NSS substellar catalogs. Do not prioritize over Object B / RV-epoch lanes."
+            },
+            {
+              "area": "Cross-cutting — checks that do NOT pay",
+              "issue": "Gaia FPR products are irrelevant to all nine (epoch RVs only for LPVs; ω Cen crowded field; SSO). NEOWISE/unTimely adds nothing: targets are either too blue/faint (W1≳17.5 limit: Object B, both WDJs) or already SED-cleared/saturation-prone bright giants. TESS sectors-since-2026-05 matter only for 5858574/HD 157033 rotation; tess-point is not installed in ostinato.",
+              "severity": "low",
+              "evidence": "Bash: `import tess_stars2px` → ModuleNotFoundError; FPR product list vs roster classes",
+              "recommendation": "Skip FPR and NEOWISE rows except as one-line considered-and-rejected ledger notes; if TESS coverage is needed, use the TESS Web Viewing Tool or a /tmp venv with tess-point rather than installing into ostinato."
+            }
+          ],
+          "summary": "Ranked by impact×cheapness, five real pre-DR4 advancement opportunities exist: (1) Object B outburst hunt — DASCH DR7 plates plus ZTF/ATLAS forced photometry (prior ZTF checks were catalog-based, so the discriminator was never truly run); (2) new-RV-epoch sweeps (LAMOST DR12, SDSS-V DR19) for 1593152 and 3155543, both one epoch from decision; (3) first-ever ZTF light curve for WDJ020915's weak-fit question; (4) TESS seismic M1 for 5858574's boundary verdict; (5) ESO/SDSS-V archival spectra for HD 157033. WebSearch on the three strongest: no 2026 publications — novelty holds. UCAC4 313 and WG 26 stay DR4-gated."
+        }
+      }
+    ],
+    "ideaCount": 36,
+    "ideaTitlesByLens": [
+      {
+        "lens": "gaia-tables",
+        "titles": [
+          "Gomel ellipsoidal compact candidates (vari_compact_companion) x archival epoch RVs — the short-period lane NSS is blind to",
+          "Blind Keplerian hunt in the Gaia FPR long-period-variable epoch radial velocities (the only public phase-resolved Gaia RVs)",
+          "Build the missing DR4 day-one module: joint epoch-astrometry + epoch-RV orbit fitter ('rvjoint') for the bright Tier-1 pool",
+          "Open the 23 in-hand RVS mean spectra of Tier-1 NS candidates: a second-light/SB2 screen never run",
+          "Gaia variability-classifier 'CV' class (7,306) front-filtered to uncatalogued dwarf novae, ZTF-outburst-confirmed"
+        ]
+      },
+      {
+        "lens": "time-domain",
+        "titles": [
+          "Difference-imaging alert-archive eruption audit of the roster (ZTF brokers + ATLAS + Gaia Science Alerts)",
+          "DASCH DR7 century-baseline dormancy audit of the bright dark-companion pool",
+          "OGLE-IV bulge eclipse-timing dark tertiaries: mine Hajdu+2019/2022 for compact-mass outer companions",
+          "Rubin/LSST broker watchlist: first-season alert sweep + standing monitor on the full candidate set"
+        ]
+      },
+      {
+        "lens": "spectro-archives",
+        "titles": [
+          "APOGEE DR17 s-process (Ce) chemical tagging as a WD-companion demotion axis on the dark-companion pool",
+          "APOGEE bulge Brackett-emission + RV-jitter confirmation: unlock the parked bulge-symbiotic lane (the no-telescope confirmation arm)",
+          "SB9 x Gaia NSS photocentric-dilution calibration: an empirical contamination prior for dark-companion f(M) searches",
+          "MARVELS DR12 re-mine: bright (V 7.6-12) short-period high-f(M) SB1s in the Gaia-NSS structural blind window (P < 100 d)"
+        ]
+      },
+      {
+        "lens": "highenergy-radio",
+        "titles": [
+          "Eastern-hemisphere deep-pointed X-ray screen of the NSS dark-companion pool (4XMM-DR14 + 2SXPS + CSC2.1) with flux upper limits",
+          "Gaia-astrometry-first identification of the 66 unidentified eastern SRG/ART-XC 4-12 keV sources (the hard-band, east-sky Object-B recipe)",
+          "Eastern Fermi-unassociated spider hunt: re-run the validated #114 pipeline with Swift-XRT/4XMM in-ellipse X-ray plus a ZTF orbital-modulation stage",
+          "Radio-quiescence screen of the dark-companion pool: VLASS quick-look epochs 1-3 inter-epoch variability + RACS + LoTSS DR2"
+        ]
+      },
+      {
+        "lens": "methods-in-hand",
+        "titles": [
+          "Pool-wide in-repo AMRF triage of the 68k faint/low-plx Orbital margin Shahaf never classified",
+          "Chemistry-blind e-P mining: circular wide massive-WD post-mass-transfer binaries confirmed by archival s-process spectra",
+          "Isolation-forest anomaly miner over the 128k local orbital-element rows (the cuts-orthogonal search)",
+          "Photometric-M1 correction and re-tier of acceleration_v3 (all 16,949 rows still at fixed M1=1.5)",
+          "Eccentricity-distribution contamination box: the dynamical twin of the kinematics lane (#125)"
+        ]
+      },
+      {
+        "lens": "novelty-by-correction",
+        "titles": [
+          "Bug-catalog stress-test of published Gaia DR3 compact-candidate lists (bit-13 / M1-default / parallax / AMRF audit)",
+          "Harvest the demotions: a catalog note of novel AMRF-triple-favored Gaia NSS systems with massive dark inner pairs",
+          "Assemble the occurrence-limit + contamination-demographics paper now (pre-DR4 timestamp)",
+          "Freeze the DR4 pre-registration as a citable, timestamped registered-report-style product",
+          "DR4 day-one refit harvest of the FIELD's published DR3 candidate lists (not just our roster)"
+        ]
+      },
+      {
+        "lens": "substellar",
+        "titles": [
+          "M1-correct the substellar boundary: the never-run BD extraction across both pools",
+          "Wide WD+BD astrometric pairs: GF21 x NSS substellar-bin cross (first hit already in hand: L 279-25)",
+          "Archival TESS transit sweep of the astrometric-BD pool (adopt the orphaned amateur_transit_candidates.csv)",
+          "Halo / metal-poor astrometric BD companions: kinematic cut on the (corrected) substellar pool"
+        ]
+      },
+      {
+        "lens": "contrarian",
+        "titles": [
+          "Ephemeris-locked TESS self-lensing pulses on the Tier-1 dark-companion pool (un-park the 05-31 self-lensing lane)",
+          "RUWE/AEN shadow catalog: GF21 white dwarfs whose dark massive companions DR3 NSS never solved (pre-registered DR4 day-one list)",
+          "Wide common-proper-motion WD companions as coeval age anchors for the full dark-companion pool",
+          "DR4 day-one exclusive #3: epoch-RV second-method engine (the unbuilt third leg of the DR4 pipeline)",
+          "DR4 epoch astrometry of published photometric dark-lens microlensing candidates (pi_E lists -> lens masses)"
+        ]
+      }
+    ],
+    "shortlist": {
+      "lanes": [
+        {
+          "title": "Gomel ellipsoidal compact candidates (vari_compact_companion) x archival epoch RVs — the short-period lane NSS is blind to",
+          "novelty_type": "candidate-advancement",
+          "recipe": "Run prior_art.py ('Gomel ellipsoidal LAMOST compact companion') first per the gate. Step 0: ingest all 6,306 gaiadr3.vari_compact_companion rows into the known-object front-filter. Select the 319 with mod_min_mass_ratio_three_sigma>0.5; crossmatch by source_id to LAMOST DR11 LRS/MRS, SDSS-V DR19 allvisit, APOGEE DR17 allVisit epoch RVs; fit K1 at the FIXED Gaia orbital period -> spectroscopic f(M); compare to mMRF. ZTF masked-periodogram re-vet (photometric-revet skill) kills eclipse/outburst contaminants.",
+          "data_sources": [
+            "gaiadr3.vari_compact_companion",
+            "VizieR V/164 + V/162 (LAMOST DR11 LRS/MRS epoch RVs)",
+            "SDSS-V DR19 mwm_apogee_allvisit",
+            "APOGEE DR17 allVisit",
+            "ZTF DR23 (IRSA)"
+          ],
+          "confirm_path": "Spectroscopic f(M) from >=3 archival RV epochs at the known Gaia period, consistent with mMRF + single-lined + pure ellipsoidal ZTF curve = corroborated dark companion; K1 inconsistency = refutation. All archive-only — K1~100-300 km/s, so even R~1800 LRS RVs discriminate.",
+          "novelty_argument": "Attacks the documented wall head-on: roster is P>100 d, this pool is hours-days, exactly where NSS is structurally blind. Log #120 only name-drops the table; never mined as a pool. Nagarajan+2023 took NEW spectra of ~a dozen; a systematic archival-epoch-RV sweep of the 319-object high-mMRF tail is plausibly unpublished. Even all-refuted, the refutation-rate is a citable population row.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        {
+          "title": "Wide WD+BD astrometric pairs: GF21 x NSS substellar-bin cross (first hit already in hand: L 279-25)",
+          "novelty_type": "new-object",
+          "recipe": "Vet the in-hand probe hit first: Gaia DR3 6471102606408911360 = L 279-25 (GF21 WD, 62 pc, NSS Orbital P=458 d, M2 rescaling to ~20-40 M_J at M_WD~0.6; no published binarity found). Then generalize: join full GF21 against gaiadr3.nss_two_body_orbit by source_id, recompute M2 at M1=M_WD(GF21), keep 0.01<M2<0.08 Msun; vet orbit quality (RUWE/F2/sig), WISE IR-excess and GALEX/Pan-STARRS SED; front-filter store + published WD-binary lists.",
+          "data_sources": [
+            "VizieR J/MNRAS/508/3877 (Gentile Fusillo 2021)",
+            "gaiadr3.nss_two_body_orbit + gaia_source",
+            "GALEX AIS II/335",
+            "AllWISE/CatWISE",
+            "data/derived/main_hunt_derived_v2_relaxed_M1corrected.parquet"
+          ],
+          "confirm_path": "Photocentric mass is direct (BD invisible next to WD); WISE excludes IR excess, GALEX/PS1 SED excludes stellar companions — all archival; DR4 epoch astrometry confirms orbit+inclination via the existing pre-registration machinery. No telescope to find or to reach roster-grade candidacy.",
+          "novelty_argument": "One concrete candidate already surfaced, falling through a documented gap (Pile-E scanned only the WD/low-mass-star companion bin, never the BD bin). Known WD+BD systems are nearly all post-CE hours-period; a P~460 d unresolved astrometric WD+BD is a near-empty class. Plays directly to the project's WD-primary-astrometry strength. Verify RUWE=1.66 orbit quality and screen Shahaf-style WD-NSS papers before claiming.",
+          "merged_from": [
+            "substellar"
+          ]
+        },
+        {
+          "title": "Blind Keplerian hunt in the Gaia FPR LPV epoch radial velocities — the only public phase-resolved Gaia RVs",
+          "novelty_type": "new-object",
+          "recipe": "Run prior_art.py ('Gaia FPR long period variable epoch RV binary') first. Pull all 231,767 epoch RVs for 9,614 LPVs; joint-fit pulsation RV locked to the photometric period+harmonics, Lomb-Scargle the residuals for a distinct orbital period; Keplerian -> K1, f(M) with FLAME/isochrone giant M1. Front-filter Akras symbiotics (in store), NSS overlap, SIMBAD. Flag f(M)>0.3 single-lined systems.",
+          "data_sources": [
+            "gaiafpr.vari_epoch_radial_velocity",
+            "gaiafpr.vari_long_period_variable",
+            "gaiadr3.nss_two_body_orbit",
+            "Akras+2019 store",
+            "eRASS1-DE J/A+A/682/A34",
+            "GALEX AIS II/335"
+          ],
+          "confirm_path": "Self-confirming in one product: orbital period must differ from pulsation period/harmonics across 34 months; f(M) direct from public epochs; eRASS1/GALEX accretion screen + 2MASS/WISE second-light check classify survivors. Doubles as live validation data for the DR4 epoch-RV module (lane 5).",
+          "novelty_argument": "The walls say triple-vs-compact breaks only via phase-resolved RV — these ARE public phase-resolved RVs, find-and-confirm in one dataset, touched exactly once in-project (one absence check). A dark-companion f(M) census of all 9,614 is plausibly unclaimed; main risk is FPR-paper follow-ups having harvested the binary tail — gate on the prior-art screen.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        {
+          "title": "Assemble the occurrence-limit + contamination-demographics paper now (pre-DR4 timestamp), adding the SB9-dilution and eccentricity-distribution boxes",
+          "novelty_type": "population-result",
+          "recipe": "Integrate existing boxes: (a) f<5.7e-5 limit framed conditionally on the published NSS sample; (b) #125 colder-kinematics contamination diagnostic with its falsifiable DR4 prediction; (c) bit-13/F#33 prevalence; (d) the 1.7%-all-coronal X-ray ceiling; (e) El-Badry gap analysis. Build the missing denominator: injection-recovery efficiency through the v2 cascade. NEW box 1 (SB9 dilution): 157 probed SB9xNSS matches -> a1*sin(i)_spec vs photocentric a0 -> empirical f(M)_phot/f(M)_spec contamination prior. NEW box 2 (eccentricity): Tier-1 NS e-distribution (probe: median 0.365 vs control 0.328, KS p=0.012) vs matched control + triple-outer-orbit/post-SN/post-MT mixture fit, with permutation test. Re-run all 429-flagged arXiv prior-art gates.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed + acceleration_v3.parquet",
+            "VizieR B/sb9/main + B/sb9/orbits",
+            "Gaia DR3 nss_two_body_orbit (Thiele-Innes)",
+            "/tmp/lane125_* + /tmp/occurrence_limit_2026_06_01.md (regenerate)",
+            "eRASS1-DE J/A+A/682/A34",
+            "Shahaf+2023 J/MNRAS/518/2991"
+          ],
+          "confirm_path": "Statistics on public tables — every number re-derivable from Gaia DR3 NSS + eRASS1 + SB9 queries; the kinematic and eccentricity predictions are falsified/confirmed by public DR4. No telescope anywhere; publication itself is user-gated per project rules.",
+          "novelty_argument": "The project's most certain citable product and its declared signature outcome (the rigorous null). #125's verdict was explicitly 'GO as limits-paper box' and assembly was never opened as a lane; no published Gaia DR3 NSS dark-companion occurrence LIMIT is known. The SB9 dilution-prior framing and the e-distribution contamination axis are unpublished slices (DPAC compared P/e for validation, not dilution-as-contamination-prior). Both marginal boxes can only be included if they survive matched controls.",
+          "merged_from": [
+            "novelty-by-correction",
+            "spectro-archives",
+            "methods-in-hand"
+          ]
+        },
+        {
+          "title": "Build the missing DR4 day-one module: joint epoch-astrometry + epoch-RV orbit fitter, validated NOW on FPR epoch RVs",
+          "novelty_type": "method-or-tool",
+          "recipe": "Extend scripts/dr4_pipeline/ with the third leg: an RV likelihood sharing (P,e,T0,omega) with the astrometric orbit; K1_observed vs K1_predicted-for-dark-companion tests; SB2/non-Keplerian residual flags as triple-killers; pre-registered CORROBORATED/REFUTED thresholds wired to docs/dr4_preregistration_2026_06_01.md. DR4 column names isolated in one adapter stub (established pattern). Validate pre-release on gaiafpr.vari_epoch_radial_velocity + DR3 AstroSpectroSB1 combined solutions as ground truth + synthetic triples drawn from rv_amplitude_robust statistics.",
+          "data_sources": [
+            "scripts/dr4_pipeline/ (extends rehunt #117 + refit #116)",
+            "gaiafpr.vari_epoch_radial_velocity (validation)",
+            "gaiadr3.nss_two_body_orbit AstroSpectroSB1 (ground truth)",
+            "Gaia DR4 epoch RVs (day-one, schema TBD)",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet"
+          ],
+          "confirm_path": "On DR4 day the public epoch RVs are themselves the second method for the whole bright pool: joint fit CONFIRM/REFUTE per the existing pre-registration — the no-telescope second method the 117 RV-less Tier-1 NS have never had. Pre-DR4, the FPR validation proves the machinery on real Gaia epochs.",
+          "novelty_argument": "Grep-confirmed gap: rehunt re-runs the cascade, refit consumes epoch astrometry only — no code consumes epoch RVs, yet epoch RV is one of the three named degeneracy-breakers and all 198 Tier-1 NS (G 7.7-12.9) sit in the expected DR4 epoch-RV reach. Two lenses independently proposed it. Risk is DR4 schema/precision surprises — hence the thin adapter.",
+          "merged_from": [
+            "gaia-tables",
+            "contrarian"
+          ]
+        },
+        {
+          "title": "Bug-catalog stress-test of published DR3 compact-candidate lists now + DR4 day-one field-wide refit scorecard",
+          "novelty_type": "correction-of-published",
+          "recipe": "Phase 1 (now): assemble machine-readable published lists — Jayasinghe+2023 (80 SB1), Andrews+2022, Gomel vari_compact_companion, El-Badry NS candidates, LAMOST-MRS SB1 lists; join each to nss_two_body_orbit.flags bit 13, re-derive M2 with real M1 (existing select_m1 machinery), NSS-vs-single parallax check, Shahaf AMRF where Orbital exists, rv_amplitude_robust/2 convention check; report per-list flagged fractions. Phase 2: pre-ingest the same lists into the refit engine's target adapter; on 2026-12-02 batch re-fit from DR4 epoch astrometry (validated DeltaBIC/F-test/accel-SNR) and publish the confirm/refute scorecard within the first weeks.",
+          "data_sources": [
+            "gaiadr3.nss_two_body_orbit (flags bitmask)",
+            "gaiadr3.vari_compact_companion",
+            "Jayasinghe+2023 / Andrews+2022 / El-Badry candidate tables",
+            "arXiv:2405.09825 + arXiv:2602.05421 tables",
+            "Shahaf+2023 J/MNRAS/518/2991",
+            "scripts/dr4_pipeline/refit (adapter ready)",
+            "data/derived/*_M1corrected.parquet"
+          ],
+          "confirm_path": "Phase 1 is pure public-table joins — every flagged entry independently verifiable by re-running the query. Phase 2's adjudicator is public DR4 epoch astrometry through the already-validated refit statistics. No telescope at any step.",
+          "novelty_argument": "Plays to the project's proven strength: correction-finding (bit-13, M1-default, sin-i, parallax bugs all found in-house). #109 used published lists to deflate OUR novelty, never audited THEIRS; no one has jointly applied bit-13 + M1-default + AMRF across the published lists (Nagarajan refuted only 14 Gomel objects, by telescope). Phase-1 output is citable regardless of DR4 timing; phase 2 has a real first-mover scoop risk, so phase 1 carries the EV.",
+          "merged_from": [
+            "novelty-by-correction"
+          ]
+        },
+        {
+          "title": "Pool-wide in-repo AMRF triage of the unclassified Orbital margin + harvest the demotions as a novel-triple catalog note",
+          "novelty_type": "candidate-advancement",
+          "recipe": "One compute, two products. Compute AMRF A=(a_phot/plx)*P^(-2/3)*M1^(-1/3) for all 127k local Orbital rows (zero nulls verified); MS-primary screen via local teff/logg/CMD; apply Shahaf Class-II/III boundaries (machinery in scripts/prime3_deepdive_2026_05_29.py), focused on the 71,346-row relaxed pool (G 13-15, plx 0.5-1 — largely outside Shahaf+2023's cuts). Product A: Class-III compact-favoured flags -> front-filter (binary_masses + store) -> survivors into the DR4 pre-reg list; re-rank all Tier-1 by AMRF+ruwe+aen_sig. Product B: P(triple)>0.7 with photocentric dark mass >1.2 Msun -> front-filter vs Shahaf/Halbwachs/SIMBAD -> catalog note of novel AMRF-triple-favored systems (anchors: HD 75567, TYC 4562-535-1, 5858574810404752256), each with a-ratio/flux-ratio/LAMOST SB2-split corroboration + a pre-registered DR4 double-Keplerian test.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed",
+            "data/external_catalogs/gaia_dr3_binary_masses_full.csv",
+            "Shahaf+2023 J/MNRAS/518/2991",
+            "LAMOST DR11 V/162 MRS epoch RVs",
+            "scripts/known_objects/ store"
+          ],
+          "confirm_path": "AMRF is itself the archival triple-killer; Class-III survivors go through the existing pool-second-method-triage + GALEX screen + kinematics box; triple-side corroboration via a-ratio/flux-ratio/LAMOST SB2 splitting; decisive test is public DR4 epoch astrometry via the built refit engine. No telescope.",
+          "novelty_argument": "Nothing in the log ever COMPUTED AMRF pool-wide — lanes only consumed published classifications, and the relaxed G13-15 margin sits outside Shahaf's sample. The demotion-harvest flips the project's strongest demotion axis into a product: 3 verified-novel named triples already in hand. Check Shahaf+2024/25 faint-sample follow-ups first; AMRF calibration off the MS is the referee risk.",
+          "merged_from": [
+            "methods-in-hand",
+            "novelty-by-correction"
+          ]
+        },
+        {
+          "title": "Finish the M1-correction debt: substellar-bin BD extraction (both pools) + acceleration_v3 re-tier + halo/metal-poor slice",
+          "novelty_type": "new-object",
+          "recipe": "Both _M1corrected parquets left substellar bins at default M1=1.5 (81/82 prod, 113/115 relaxed) and acceleration_v3 is 100% M1=1.5. Assign real host masses (Mann+2019 M_Ks for M_G>8 hosts; TIC/FLAME/photometric select_m1 branch else), rescale M2 by (M1/1.5)^(2/3) from invariant f(M). Outputs: (a) corrected substellar census incl. the ~1,900 'low-mass stellar' M-dwarf-host rows that drop below 0.08 Msun, sig/bit-13/RUWE gated, front-filtered vs Marcussen&Albrecht, Bailer-Jones&Kreidberg 2026, Stevenson, GaiaPMEX II; (b) acceleration_v3 re-tier pruning the 7,062 P-degenerate Tier-2 DR4 targets; (c) kinematic slice: Toomre V_tot>180 km/s + archival [Fe/H] on the corrected census — any [Fe/H]<-1 astrometric BD host is a near-unpopulated class.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed + acceleration_v3.parquet",
+            "scripts/streaming/v2_corrected/consumer_v2.py (select_m1)",
+            "2MASS II/246 + Mann+2019 J/ApJ/871/63",
+            "published NSS-substellar lists (M&A23, BJ&K26, Stevenson 2023, GaiaPMEX II, arXiv:2601.03539)",
+            "LAMOST/APOGEE/GALAH [Fe/H]"
+          ],
+          "confirm_path": "Archival LAMOST/APOGEE/GALAH RV epochs where present give a no-telescope second method now; each survivor gets pre-registered DR4 inclination/mass thresholds (the sanctioned UCAC4 313 confirm path); substellar-vet skill applies per-object. Internal consistency check vs the parquet's RV-joint masses for the acceleration channel.",
+          "novelty_argument": "CANDIDATES.md line 77 explicitly flags the acceleration gap, and the substellar bins were verified-in-data never M1-corrected; UCAC4 313 (relaxed-pool, escaped both published catalogs) is the existence proof that residue exists at the faint M-dwarf-host end where published catalogs thin out. Main risk: BJ&K26/GaiaPMEX II coverage — hence the hard front-filter.",
+          "merged_from": [
+            "substellar",
+            "methods-in-hand"
+          ]
+        },
+        {
+          "title": "Open the 23 in-hand RVS mean spectra of Tier-1 NS candidates: a second-light/SB2 screen never run",
+          "novelty_type": "candidate-advancement",
+          "recipe": "DataLink-download RVS_MEAN_SPECTRUM for the 23/198 Tier-1 NS with has_rvs=True (probe list at /tmp/tier1_ipd_probe_2026_06_09.csv) plus any watch-list objects. Cross-correlate against the rv_template; hunt secondary CCF peaks, Ca-II-triplet line doubling, template-Teff mismatch, vbroad anomalies. Log the completed pool-level ipd null (0/198 multi-peak) as a self-audit ledger row. Every object gets a cross-check ledger row regardless of outcome.",
+          "data_sources": [
+            "Gaia DR3 DataLink RVS_MEAN_SPECTRUM",
+            "gaiadr3.gaia_source (rv_template_teff, vbroad)",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet",
+            "/tmp/tier1_ipd_probe_2026_06_09.csv"
+          ],
+          "confirm_path": "Archive-only by construction: a secondary spectral component refutes 'dark companion' for that object independent of Shahaf AMRF; a clean single-lined CCF at known S/N adds a quantified flux-ratio upper bound to each journal. Weak verdicts at G~12 S/N are still ledger rows.",
+          "novelty_argument": "No dossier or lane ever opened an RVS spectrum — only scalar rv_* columns. A genuinely independent in-hand discriminant orthogonal to AMRF (triple inner pairs contribute light that epoch-averaged CCFs can reveal). One-afternoon cost, 23-object scale, every outcome documentable — the project's cheapest unrun vetting axis.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        {
+          "title": "Freeze the DR4 pre-registration as a citable, timestamped registered-report-style product (+ AEN shadow-WD appendix)",
+          "novelty_type": "method-or-tool",
+          "recipe": "Convert docs/dr4_preregistration_2026_06_01.md + the refit/rehunt engines into a standalone frozen note: per-candidate confirm/refute thresholds (incl. WDJ020915 full-TI-MC requirement, UCAC4 313 M2(sin i) curve), population predictions (#125 kinematic tail; bit-13 re-test; lane-4 eccentricity prediction if it survives), frozen code snapshot. Optional appendix from the contrarian lens: a GF21 x gaia_source RUWE/AEN-selected list of WDs with single-WD SEDs and no DR3 NSS solution, mass-floor-ranked via AEN-as-photocentric-wobble inversion — a frozen day-one watch list for orbits DR3 never solved (the #117 rehunt is structurally blind to no-solution sources). User mints the Zenodo DOI before 2026-12-02 (user-gated action).",
+          "data_sources": [
+            "docs/dr4_preregistration_2026_06_01.md",
+            "scripts/dr4_pipeline/refit + rehunt (built, tested)",
+            "Gentile Fusillo+2021 J/MNRAS/508/3877 + gaiadr3.gaia_source (appendix)",
+            "Gaia DR4 (2026-12-02) as adjudicator"
+          ],
+          "confirm_path": "Confirmation IS the public DR4 release scored against pre-frozen thresholds — confirm and refute are both reportable outcomes; archival by construction. The appendix list is adjudicated by DR4's fainter NSS limit + 66-month baseline through the built refit engine.",
+          "novelty_argument": "The engines and thresholds exist but packaging as a public timestamped pre-registration was never opened as a lane; registered-report practice is essentially absent in compact-object astronomy and the timestamp cannot be retro-fitted after 2026-12-02 — a hard, cheap, guaranteed-outcome deadline product. AEN appendix carries the scan-angle-systematics caveat explicitly.",
+          "merged_from": [
+            "novelty-by-correction",
+            "contrarian"
+          ]
+        },
+        {
+          "title": "Eastern-hemisphere deep-pointed X-ray screen of the NSS dark-companion pool (4XMM-DR14 + 2SXPS + CSC2.1) with flux upper limits",
+          "novelty_type": "population-result",
+          "recipe": "PM-propagate the 366 orbital + 16,949 acceleration pool to each catalog epoch; XMatch vs 4XMM-DR14 + 2SXPS + CSC2.1; run the #115 coronal log(fx/fopt) ceiling + hardness/variability columns on every match; adjudicate the 2 already-probed unscreened eastern Tier-1 NS detections (541803119301355392 = 4XMM J024945.6+694028; 2182400190235793536 = 2SXPS 194565); pull HILIGT/2SXPS upper limits for the named candidates in the eastern half (5406907, 5858574, HD 157033). Register every match per the logging policy.",
+          "data_sources": [
+            "4XMM-DR14 (VizieR IX/69)",
+            "Swift 2SXPS (IX/58) + upper-limit server",
+            "Chandra CSC2.1 (CXC TAP)",
+            "HILIGT upper-limit server",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + acceleration_v3.parquet"
+          ],
+          "confirm_path": "All-archival: coronal fx/fopt ceiling, 4XMM hardness/intra-obs variability, ZTF/ASAS-SN photometry; any above-ceiling survivor goes to the existing read-only deep-dive workflow; nulls become per-candidate Lx limits feeding the lane-4 limits paper.",
+          "novelty_argument": "#115 screened only eRASS1-DE (western hemisphere, detections-only); the 184 eastern orbital-pool sources (104 Tier-1) were never screened and the probe immediately found 2 unexamined Tier-1 X-ray matches — those alone make this near-obligatory vetting. Upper limits were never computed anywhere; pool-specific, so no published twin by construction. Likely outcome is the coronal null repeated east — itself a citable box.",
+          "merged_from": [
+            "highenergy-radio"
+          ]
+        },
+        {
+          "title": "APOGEE DR17 ingest, both arms: bulge Brackett-emission + RV-jitter symbiotic confirmation (un-parks the bulge lane) and Ce s-process WD-demotion on the dark-companion pool",
+          "novelty_type": "new-object",
+          "recipe": "Run prior_art.py ('APOGEE Brackett emission symbiotic') first. One ingest, two applications. Arm A: regenerate the documented 137-candidate 2MASS+WISE bulge symbiotic selection (/tmp list lost); crossmatch to APOGEE DR17 allstar/allvisit in bulge fields; for matches fetch apStar FITS; automated Brackett 11-17 emission index + STARFLAG/chi2 anomalies + VSCATTER>~1.5 km/s jitter; front-filter Akras+2019 store. Gate arm A on a cheap fiber-overlap count BEFORE building the line-index machinery. Arm B: crossmatch the Tier-1/2 + wider dark-companion pool to allstar; flag good-SNR giants with [Ce/Fe]>=+0.3 (BAWLAS corroboration) => AGB mass-transfer => companion is a WD, not NS => demote; free VSCATTER-vs-predicted-K1 cross-check.",
+          "data_sources": [
+            "APOGEE DR17 allstar + allvisit + apStar FITS (SDSS SAS)",
+            "BAWLAS DR17 VAC",
+            "2MASS PSC + AllWISE",
+            "Akras+2019 store",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + acceleration_v3.parquet"
+          ],
+          "confirm_path": "Arm A: cool-giant continuum + Brackett emission + multi-visit RV jitter, all from public SAS FITS — find (IR colors) and confirm (H-band emission) entirely in archives, supplying exactly the missing confirmation arm that parked the bulge lane. Arm B: the abundance IS the discriminant; demotions are archival reclassifications feeding the contamination paper.",
+          "novelty_argument": "The insight catalog names APOGEE ASPCAP twice as 'the no-telescope bulge-confirmation route, still open' / 'highest-value missing data' — the project's own ledger flags this as the highest-value un-ingested archive. The bulge lane was parked SOLELY for lacking archival confirmation; H-band penetrates the dust. Chemistry-as-vetting on NSS NS candidates is absent from the log (#119 went the opposite direction). Honest risk: fiber overlap may be ~zero — hence the cheap overlap gate first.",
+          "merged_from": [
+            "spectro-archives"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "title": "MARVELS DR12 re-mine: bright short-period high-f(M) SB1s",
+          "reason": "Self-estimated yield ~0; km/s pipeline systematics + clunky DR12 access; the short-P wall is better attacked by the Gomel lane."
+        },
+        {
+          "title": "Gaia variability-classifier 'CV' class front-filtered to uncatalogued dwarf novae",
+          "reason": "Repeats the NULL eRASS1-v2 outburst-confirm machinery; Canbay-type Gaia-CV catalogs + VSX/SNAD churn leave ~no uncatalogued residue."
+        },
+        {
+          "title": "Eastern Fermi-unassociated spider hunt (#114 re-run)",
+          "reason": "Confirmation is radio/gamma timing = telescope-gated (the exact #114 park reason); heavily published space (COBIPLANE, ZTF x 4FGL)."
+        },
+        {
+          "title": "Radio-quiescence screen (VLASS + RACS + LoTSS)",
+          "reason": "Own admission: limits land 2-3 dex above quiescent-jet physics; 0 expected detections; null is uninformative."
+        },
+        {
+          "title": "Isolation-forest anomaly miner over orbital-element rows",
+          "reason": "XP-at-scale lesson: top anomalies are solution artifacts/known exotica; ~0 yield; closure box subsumable into the limits paper."
+        },
+        {
+          "title": "Gaia-astrometry-first ID of 66 unidentified eastern ART-XC sources",
+          "reason": "20-25 arcsec plane positions = wrong-counterpart dominated; active Zaznobin ID program scoop risk; new-IP science is adjacent to project goals — below the 12-lane cut."
+        },
+        {
+          "title": "DASCH DR7 century-baseline dormancy audit",
+          "reason": "Null-dominated with heavy plate-defect vetting; value is one limits-paper box — defer until the lane-4 paper needs it."
+        },
+        {
+          "title": "OGLE-IV bulge eclipse-timing dark tertiaries (Hajdu)",
+          "reason": "#102 precedent: 'compact' tertiaries deflate to 1-1.5 Msun; the compact-vs-close-M-dwarf-pair degeneracy one level up is not archivally breakable."
+        },
+        {
+          "title": "Difference-imaging alert-archive eruption audit of the roster",
+          "reason": "Object B 8-yr alert null already in hand; bright pool saturates ZTF difference imaging; low marginal EV over the X-ray screen."
+        },
+        {
+          "title": "Rubin/LSST broker watchlist (first-season sweep + standing monitor)",
+          "reason": "Early-ops coverage spotty, 45% of Tier-1 out of footprint; standing-monitor value real but below the 12-lane cut — revisit pre-DR4."
+        },
+        {
+          "title": "Archival TESS transit sweep of the astrometric-BD pool",
+          "reason": "~0.2 expected detections; DR3 T0 smears over 2018-2026 cycles; possible BJ&K26 overlap — below cut."
+        },
+        {
+          "title": "Ephemeris-locked TESS self-lensing pulses on Tier-1",
+          "reason": "0-1 expected after edge-on + sector-coverage cuts; conjunction-window smear exceeds a 27 d sector for most systems — below cut."
+        },
+        {
+          "title": "Wide CPM WD companions as coeval age anchors",
+          "reason": "Cooling ages too coarse to falsify cleanly; EDR3 catalog excludes high-RUWE members (our wobbliest candidates); mostly weak constraints."
+        },
+        {
+          "title": "DR4 epoch astrometry of published dark-lens microlensing pi_E candidates",
+          "reason": "Scoop-certain (Wyrzykowski/Kruszynska groups own these events); faint crowded bulge sources — per-epoch sigma swamps sub-mas deflections."
+        },
+        {
+          "title": "Chemistry-blind e-P mining: circular wide massive-WD post-MT binaries",
+          "reason": "Circular wide orbits can be primordial low-e pairs; s-process marginal at LAMOST LRS resolution; Shahaf Triage II / Yamaguchi overlap risk."
+        }
+      ]
+    },
+    "verified": [
+      {
+        "lane": {
+          "title": "Gomel ellipsoidal compact candidates (vari_compact_companion) x archival epoch RVs — the short-period lane NSS is blind to",
+          "novelty_type": "candidate-advancement",
+          "recipe": "Run prior_art.py ('Gomel ellipsoidal LAMOST compact companion') first per the gate. Step 0: ingest all 6,306 gaiadr3.vari_compact_companion rows into the known-object front-filter. Select the 319 with mod_min_mass_ratio_three_sigma>0.5; crossmatch by source_id to LAMOST DR11 LRS/MRS, SDSS-V DR19 allvisit, APOGEE DR17 allVisit epoch RVs; fit K1 at the FIXED Gaia orbital period -> spectroscopic f(M); compare to mMRF. ZTF masked-periodogram re-vet (photometric-revet skill) kills eclipse/outburst contaminants.",
+          "data_sources": [
+            "gaiadr3.vari_compact_companion",
+            "VizieR V/164 + V/162 (LAMOST DR11 LRS/MRS epoch RVs)",
+            "SDSS-V DR19 mwm_apogee_allvisit",
+            "APOGEE DR17 allVisit",
+            "ZTF DR23 (IRSA)"
+          ],
+          "confirm_path": "Spectroscopic f(M) from >=3 archival RV epochs at the known Gaia period, consistent with mMRF + single-lined + pure ellipsoidal ZTF curve = corroborated dark companion; K1 inconsistency = refutation. All archive-only — K1~100-300 km/s, so even R~1800 LRS RVs discriminate.",
+          "novelty_argument": "Attacks the documented wall head-on: roster is P>100 d, this pool is hours-days, exactly where NSS is structurally blind. Log #120 only name-drops the table; never mined as a pool. Nagarajan+2023 took NEW spectra of ~a dozen; a systematic archival-epoch-RV sweep of the 319-object high-mMRF tail is plausibly unpublished. Even all-refuted, the refutation-rate is a citable population row.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 1.5,
+          "prior_art": [
+            "Gomel+2023, A&A 674 A19 (arXiv:2206.06032) — the vari_compact_companion table itself; flags the 262 mMMR>1 tail for RV follow-up",
+            "Nagarajan+2023, MNRAS 524, 4367 (arXiv:2304.07324) — spectroscopic follow-up of the high-mMRF tail: majority contact binaries with starspots, typical M2~0.15 Msun, 'unlikely any contain a BH/NS' — this IS the proposal's fallback 'refutation-rate population row', already published",
+            "Rowan+2024, OJAp 7, 24 (arXiv:2401.09531) — high-f(M) ellipsoidal variables in Gaia FPR with RV time-series; same method on the bright cousin sample",
+            "arXiv:2405.17772 (2024) — contact binary misclassified as ellipsoidal: the dominant FP mode for detached-BH ellipsoidal searches, characterised",
+            "arXiv:2405.09825 (2024) — LAMOST MRS SB1 compact candidates with ellipsoidal light curves: the archival-RV direction already done, inverted (RV-first), because that is the only direction LAMOST coverage permits"
+          ],
+          "duplicate_check": "Clean internally: vari_compact_companion only name-dropped in lane #120 as 'the constructive flip-side', never mined; the post-2.2.0 LAMOST/APOGEE SB1 sweep was RV-first, a different pool. Dies on prior art + feasibility, not duplication.",
+          "no_telescope": "FAIL — empirically. CDS XMatch: 0/319 high-mMRF objects in LAMOST LRS (V/156) at 3 arcsec; pool is median G=18.0, 94% |b|<10, 69% dec<-10; APOGEE/SDSS-V are H<~13. No archival RV epochs exist; Nagarajan+2023 needed NEW spectra for exactly this reason.",
+          "feasibility": "Data products exist but do not overlap: the 319-object mMRF>0.5 tail is faint (median G 18.0, only 1 object G<16), Galactic-plane (94% |b|<10) and mostly southern (69% dec<-10). Only 4 objects pass dec>-10 & G<17; LAMOST LRS crossmatch returns 0. Expected K1-fit yield: ~0 systems with >=3 archival epochs. Cost would be ~1 session — to harvest nothing.",
+          "rationale": "Triple kill. (1) Prior art: Nagarajan+2023 already did the high-mMRF follow-up and published the population answer — contact binaries with starspots, ~0.15 Msun companions, no BH/NS — so even the all-refuted fallback deliverable is taken. (2) No-telescope: archival epoch RVs for this G~18 plane/southern pool do not exist (0/319 LAMOST matches); confirmation is new-spectrum-gated. (3) The recipe attacks the short-period wall with a pool archival spectroscopy cannot reach. Salvage: ingest the 6,306 rows into the known-object front-filter (cheap, lane-independent).",
+          "first_step": "Salvage only: ingest all 6,306 gaiadr3.vari_compact_companion rows (with Nagarajan+2023 contact-binary verdicts attached) into scripts/known_objects/ — e.g. /Users/legbatterij/claude_projects/ostinato/.venv/bin/python with the Gaia TAP query \"SELECT source_id, period, mod_min_mass_ratio_three_sigma FROM gaiadr3.vari_compact_companion\" written to a new ingest_vari_compact_companion.py, following the ingest_binary_masses.py pattern. Do NOT open the RV-sweep lane."
+        }
+      },
+      {
+        "lane": {
+          "title": "Wide WD+BD astrometric pairs: GF21 x NSS substellar-bin cross (first hit already in hand: L 279-25)",
+          "novelty_type": "new-object",
+          "recipe": "Vet the in-hand probe hit first: Gaia DR3 6471102606408911360 = L 279-25 (GF21 WD, 62 pc, NSS Orbital P=458 d, M2 rescaling to ~20-40 M_J at M_WD~0.6; no published binarity found). Then generalize: join full GF21 against gaiadr3.nss_two_body_orbit by source_id, recompute M2 at M1=M_WD(GF21), keep 0.01<M2<0.08 Msun; vet orbit quality (RUWE/F2/sig), WISE IR-excess and GALEX/Pan-STARRS SED; front-filter store + published WD-binary lists.",
+          "data_sources": [
+            "VizieR J/MNRAS/508/3877 (Gentile Fusillo 2021)",
+            "gaiadr3.nss_two_body_orbit + gaia_source",
+            "GALEX AIS II/335",
+            "AllWISE/CatWISE",
+            "data/derived/main_hunt_derived_v2_relaxed_M1corrected.parquet"
+          ],
+          "confirm_path": "Photocentric mass is direct (BD invisible next to WD); WISE excludes IR excess, GALEX/PS1 SED excludes stellar companions — all archival; DR4 epoch astrometry confirms orbit+inclination via the existing pre-registration machinery. No telescope to find or to reach roster-grade candidacy.",
+          "novelty_argument": "One concrete candidate already surfaced, falling through a documented gap (Pile-E scanned only the WD/low-mass-star companion bin, never the BD bin). Known WD+BD systems are nearly all post-CE hours-period; a P~460 d unresolved astrometric WD+BD is a near-empty class. Plays directly to the project's WD-primary-astrometry strength. Verify RUWE=1.66 orbit quality and screen Shahaf-style WD-NSS papers before claiming.",
+          "merged_from": [
+            "substellar"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 1.5,
+          "prior_art": [
+            "Gaia Collaboration / Arenou et al. 2022 (arXiv:2206.05595) — the DR3 multiplicity teaser ALREADY did this exact recipe: all 38 WD-sequence nss_two_body_orbit solutions enumerated, 4 substellar candidates named at M1=0.6/dark-companion — including the lane's own 'in-hand' hit Gaia DR3 6471102606408911360 = L 279-25 at ~22 M_J, plus LP 522-46 (~34 M_J), 2098419251579450880 (~34 M_J), WD 0141-675",
+            "Rogers et al. 2023 (arXiv:2310.05778) — WD0141-675, the class's flagship planetary-mass case, RETRACTED by DPAC as spurious; paper on how to follow up Gaia astrometric WD companion candidates",
+            "Ramirez et al. 2024 (arXiv:2412.06920) — ESPRESSO RVs refute WD0141-675's companion",
+            "Shahaf et al. 2023 Triage II (arXiv:2309.15143) — the reverse direction (WD companions to MS primaries), same NSS pool",
+            "arXiv:2503.04672 (2025) — ML search for WD hidden companions; arXiv:2601.03539 — Gaia DR3 BD-desert study (MS primaries)"
+          ],
+          "duplicate_check": "Not an internal duplicate: Pile E (CANDIDATES.md:232-247) scanned WD primaries only in the WD/low-mass-star and NS companion bins; the substellar bin and L 279-25 appear nowhere in repo/journals. The internal gap is real — but it is not a field gap.",
+          "no_telescope": "PASS in form: Gaia DR4 epoch astrometry (Dec 2026, pre-reg machinery) confirms orbit+mass; AllWISE/GALEX/PS1 SED screens companions archivally. Moot — prior art kills the lane first.",
+          "feasibility": "Trivially feasible — verified live: NSS row reproduces (P=458 d, plx=16.5 mas, sig=16.9, F2=-0.14, RUWE=1.66; my Thiele-Innes calc gives a0=0.54 mas, M2=21 M_J at M1=0.6); SIMBAD: known DB WD. But the entire search space is 38 WD-sequence orbits — one session, already harvested by the release paper.",
+          "rationale": "The lane's novelty anchor is false: L 279-25's ~22 M_J astrometric companion is published in the Gaia DR3 flagship multiplicity paper (Arenou+2022), which ran the identical GF21-locus x NSS substellar-bin recipe and enumerated all four class members from the full 38-orbit WD-sequence pool. The class is near-empty because its complete membership is already published, and its archetype (WD0141-675) was retracted as spurious — a fragility precedent for exactly these solutions (L 279-25 RUWE=1.66). Residual value is vetting-only, not discovery.",
+          "first_step": "Ingest the 4 Arenou+2022 WD+substellar candidates into the known-object front-filter (scripts/known_objects/), marking WD 0141-675 as DPAC-RETRACTED: add rows for source_ids \"6471102606408911360\", \"2813020961166816512\", \"2098419251579450880\", \"4698424845771339520\" with ref arXiv:2206.05595; then log the NO-GO + refs in docs/RESEARCH_LOG.md (main thread integrates)."
+        }
+      },
+      {
+        "lane": {
+          "title": "Blind Keplerian hunt in the Gaia FPR LPV epoch radial velocities — the only public phase-resolved Gaia RVs",
+          "novelty_type": "new-object",
+          "recipe": "Run prior_art.py ('Gaia FPR long period variable epoch RV binary') first. Pull all 231,767 epoch RVs for 9,614 LPVs; joint-fit pulsation RV locked to the photometric period+harmonics, Lomb-Scargle the residuals for a distinct orbital period; Keplerian -> K1, f(M) with FLAME/isochrone giant M1. Front-filter Akras symbiotics (in store), NSS overlap, SIMBAD. Flag f(M)>0.3 single-lined systems.",
+          "data_sources": [
+            "gaiafpr.vari_epoch_radial_velocity",
+            "gaiafpr.vari_long_period_variable",
+            "gaiadr3.nss_two_body_orbit",
+            "Akras+2019 store",
+            "eRASS1-DE J/A+A/682/A34",
+            "GALEX AIS II/335"
+          ],
+          "confirm_path": "Self-confirming in one product: orbital period must differ from pulsation period/harmonics across 34 months; f(M) direct from public epochs; eRASS1/GALEX accretion screen + 2MASS/WISE second-light check classify survivors. Doubles as live validation data for the DR4 epoch-RV module (lane 5).",
+          "novelty_argument": "The walls say triple-vs-compact breaks only via phase-resolved RV — these ARE public phase-resolved RVs, find-and-confirm in one dataset, touched exactly once in-project (one absence check). A dark-companion f(M) census of all 9,614 is plausibly unclaimed; main risk is FPR-paper follow-ups having harvested the binary tail — gate on the prior-art screen.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 2,
+          "prior_art": [
+            "Gaia Collaboration 2023 (arXiv:2310.06051) — the FPR LPV RV release paper: classifies all 9,614 (half pulsation / half LSP / 12% ellipsoidal binaries) and models the RV series",
+            "Rowan et al. 2024 (arXiv:2401.09531, OJAp) — the proposed hunt already executed: Keplerian fits to the FPR LPV epoch RVs for massive unseen companions; 8/9,614 with f(M)>1 Msun; archives could NOT exclude luminous MS/subgiant companions (spectrum-gated survivors)",
+            "arXiv:2604.09767 (2026, PASP) — population-wide binary-LSP test with FPR RVs + Gaia astrometry: implied companions ~0.1 Msun; astrometry disfavors binarity",
+            "arXiv:2606.05292 (June 2026) — rebuttal ('Gaia astrometry does not disfavor a binary origin for LSPs'): the LSP half of this dataset is an active professional battleground",
+            "Gomel/Gaia DR3 ellipsoidal NS/BH-secondary candidates (A&A 2023, aa43626-22) — adjacent ellipsoidal-f(M) channel already mined"
+          ],
+          "duplicate_check": "Not a prior lane: FPR epoch RVs appear only as per-candidate absence checks (dossiers 5406907..., 3155543...). CANDIDATES.md:111 loosely lists FPR among 'exhausted' datasets, but no blind LPV Keplerian hunt was ever logged.",
+          "no_telescope": "FAIL on the confirm half. f(M) is public (gaiafpr.vari_epoch_radial_velocity, verified live, 231,767 rows), but a giant primary outshines any <=1.5 Msun MS companion, so 2MASS/WISE second-light cannot establish 'dark' — Rowan+2024's survivors needed spectra.",
+          "feasibility": "Data exist and are live: 231,767 epoch RVs / 9,614 LPVs (probed via TAP), G~6-14 all-sky, ~24 epochs over ~34 months, periods detectable to ~3,800 d. Pulsation-RV disentangling on 24 noisy giant epochs is hard but doable. ~2-3 solo sessions. Feasibility is moot given prior art.",
+          "rationale": "The lane's own kill condition fired: Rowan+2024 ran this exact blind Keplerian hunt on this exact dataset and harvested the f(M) tail (8 systems, none archive-classifiable as dark), and the LSP 'distinct-period' half is contested in dueling 2026 papers using FPR RVs + astrometry. Residual band (0.3<f(M)<1) yields companions indistinguishable from luminous dwarfs/triples without spectra — telescope-gated. Worth keeping only as validation data for the DR4 epoch-RV module.",
+          "first_step": "If salvaged as DR4-module validation only: download Rowan+2024's f(M) table (OJAp/arXiv:2401.09531) to /tmp as the front-filter, then ADQL: SELECT lpv.source_id, rv.transit_id, rv.rv_obs_time, rv.radial_velocity, rv.radial_velocity_error FROM gaiafpr.vari_long_period_variable AS lpv JOIN gaiafpr.vari_epoch_radial_velocity AS rv USING (source_id)"
+        }
+      },
+      {
+        "lane": {
+          "title": "Assemble the occurrence-limit + contamination-demographics paper now (pre-DR4 timestamp), adding the SB9-dilution and eccentricity-distribution boxes",
+          "novelty_type": "population-result",
+          "recipe": "Integrate existing boxes: (a) f<5.7e-5 limit framed conditionally on the published NSS sample; (b) #125 colder-kinematics contamination diagnostic with its falsifiable DR4 prediction; (c) bit-13/F#33 prevalence; (d) the 1.7%-all-coronal X-ray ceiling; (e) El-Badry gap analysis. Build the missing denominator: injection-recovery efficiency through the v2 cascade. NEW box 1 (SB9 dilution): 157 probed SB9xNSS matches -> a1*sin(i)_spec vs photocentric a0 -> empirical f(M)_phot/f(M)_spec contamination prior. NEW box 2 (eccentricity): Tier-1 NS e-distribution (probe: median 0.365 vs control 0.328, KS p=0.012) vs matched control + triple-outer-orbit/post-SN/post-MT mixture fit, with permutation test. Re-run all 429-flagged arXiv prior-art gates.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed + acceleration_v3.parquet",
+            "VizieR B/sb9/main + B/sb9/orbits",
+            "Gaia DR3 nss_two_body_orbit (Thiele-Innes)",
+            "/tmp/lane125_* + /tmp/occurrence_limit_2026_06_01.md (regenerate)",
+            "eRASS1-DE J/A+A/682/A34",
+            "Shahaf+2023 J/MNRAS/518/2991"
+          ],
+          "confirm_path": "Statistics on public tables — every number re-derivable from Gaia DR3 NSS + eRASS1 + SB9 queries; the kinematic and eccentricity predictions are falsified/confirmed by public DR4. No telescope anywhere; publication itself is user-gated per project rules.",
+          "novelty_argument": "The project's most certain citable product and its declared signature outcome (the rigorous null). #125's verdict was explicitly 'GO as limits-paper box' and assembly was never opened as a lane; no published Gaia DR3 NSS dark-companion occurrence LIMIT is known. The SB9 dilution-prior framing and the e-distribution contamination axis are unpublished slices (DPAC compared P/e for validation, not dilution-as-contamination-prior). Both marginal boxes can only be included if they survive matched controls.",
+          "merged_from": [
+            "novelty-by-correction",
+            "spectro-archives",
+            "methods-in-hand"
+          ]
+        },
+        "verdict": {
+          "verdict": "GO",
+          "ev_score": 6,
+          "prior_art": [
+            "El-Badry et al. 2024 (arXiv:2405.00089) - 21 NS candidates, same P/G regime; already publishes the high-e distribution + kick interpretation (kills the e-box as novel)",
+            "arXiv:2603.20371 (Mar 2026) - Magellan RV follow-up: Gaia orbits incorrect for ALL >2 Msun dark-companion candidates + conservative cuts; the contamination thesis published with telescopes",
+            "arXiv:2602.17870 (Feb 2026) - SB9 catalogue vs Gaia DR3 NSS comparison; scoops NEW box 1's parent comparison; dilution-prior slice must be checked against it",
+            "arXiv:2411.00654 (2024) - analytic empirical Gaia DR3 astrometric-orbit selection function (BH1/BH2 detection probs)",
+            "arXiv:2411.00088 (2024) - generative NSS selection-function model incl. compact-object companions (the denominator already exists - import, don't build)",
+            "arXiv:2508.08374 (2025) - 156-companion astrometry+RV validation of Gaia NSS",
+            "arXiv:2407.16760 (2024) - NSS orbital/acceleration validation with hierarchical triples",
+            "El-Badry 2024 review (arXiv:2403.12146) - occurrence-rate context for Gaia BH/NS"
+          ],
+          "duplicate_check": "Not a duplicate: #125 (06-05) explicitly verdicts 'GO as limits-paper box'; assembly was never opened as a lane. Boxes (a)-(e) exist as logged results; the integration and the SB9/eccentricity boxes are untried.",
+          "no_telescope": "PASS — every number re-derives from public Gaia DR3 nss_two_body_orbit + VizieR B/sb9 + eRASS1-DE (J/A+A/682/A34); the kinematic + eccentricity predictions are falsified/confirmed by public DR4 epoch astrometry.",
+          "feasibility": "All inputs present: 4 derived parquets incl. main_hunt_derived_v2_M1corrected.parquet; /tmp lane125 + occurrence artifacts gone but regenerable from logged recipes; SB9 public on VizieR; the injection-recovery denominator can be imported from published selection functions (2411.00654/2411.00088) instead of built. Regime matches (G<13, P>100d). ~3-5 solo sessions.",
+          "rationale": "GO only with rescoping. The core survives: no published occurrence LIMIT found, the #125 kinematic-colder contamination diagnostic appears unpublished, and the pre-DR4 timestamp + falsifiable predictions are real solo value. But both NEW boxes are freshly scooped (2602.17870 for SB9xNSS; El-Badry+2024 for eccentricity), and 2603.20371 already published the contamination headline with RVs. Frame as methods-validation + conditional limit reconciled against El-Badry's 21 NS candidates; demote the new boxes to validation-vs-published unless residual slices survive a line-by-line scoop check.",
+          "first_step": "curl -sL https://arxiv.org/abs/2602.17870 -o /tmp/sb9_nss_2602.17870.html && curl -sL https://arxiv.org/abs/2603.20371 -o /tmp/rv_followup_2603.20371.html — scoop-check both against NEW box 1 (a1sini vs a0 dilution prior) and the #125 contamination framing before any assembly; then regenerate /tmp/occurrence_limit and /tmp/lane125_* from the logged recipes."
+        },
+        "refutation": {
+          "refuted": true,
+          "fatal_flaw": "The headline box is non-constraining, not novel: El-Badry+2024 (arXiv:2405.00089) already published the occurrence number for this exact population/regime — ~1e-6 wide-orbit NS companions per solar-type star, from the same Gaia DR3 NSS catalog — so the proposed upper limit f<5.7e-5 sits ~50x ABOVE a published measurement. The limit's \"0 detections\" numerator exists only because the cascade demotes El-Badry's 21 candidates; making that contamination claim interesting requires exactly what arXiv:2603.20371 already published with RV follow-up.",
+          "rationale": "Every box is now published or vacuous: occurrence measured (~1e-6, El-Badry+2024) far below the proposed 5.7e-5 limit; e-distribution, SB9xNSS, contamination headline, selection-function denominator (2411.00088/00654), and population-vs-DR3-yield comparison (Chawla+2025, 2508.21805) all scooped. Sole survivor is #125 kinematics — self-logged \"modest, not standalone,\" arXiv gate unverified (429). And the \"pre-DR4 timestamp\" value needs external posting, which CLAUDE.md defers as a user-gated action. Yield as a citable product rounds to zero."
+        }
+      },
+      {
+        "lane": {
+          "title": "Build the missing DR4 day-one module: joint epoch-astrometry + epoch-RV orbit fitter, validated NOW on FPR epoch RVs",
+          "novelty_type": "method-or-tool",
+          "recipe": "Extend scripts/dr4_pipeline/ with the third leg: an RV likelihood sharing (P,e,T0,omega) with the astrometric orbit; K1_observed vs K1_predicted-for-dark-companion tests; SB2/non-Keplerian residual flags as triple-killers; pre-registered CORROBORATED/REFUTED thresholds wired to docs/dr4_preregistration_2026_06_01.md. DR4 column names isolated in one adapter stub (established pattern). Validate pre-release on gaiafpr.vari_epoch_radial_velocity + DR3 AstroSpectroSB1 combined solutions as ground truth + synthetic triples drawn from rv_amplitude_robust statistics.",
+          "data_sources": [
+            "scripts/dr4_pipeline/ (extends rehunt #117 + refit #116)",
+            "gaiafpr.vari_epoch_radial_velocity (validation)",
+            "gaiadr3.nss_two_body_orbit AstroSpectroSB1 (ground truth)",
+            "Gaia DR4 epoch RVs (day-one, schema TBD)",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet"
+          ],
+          "confirm_path": "On DR4 day the public epoch RVs are themselves the second method for the whole bright pool: joint fit CONFIRM/REFUTE per the existing pre-registration — the no-telescope second method the 117 RV-less Tier-1 NS have never had. Pre-DR4, the FPR validation proves the machinery on real Gaia epochs.",
+          "novelty_argument": "Grep-confirmed gap: rehunt re-runs the cascade, refit consumes epoch astrometry only — no code consumes epoch RVs, yet epoch RV is one of the three named degeneracy-breakers and all 198 Tier-1 NS (G 7.7-12.9) sit in the expected DR4 epoch-RV reach. Two lenses independently proposed it. Risk is DR4 schema/precision surprises — hence the thin adapter.",
+          "merged_from": [
+            "gaia-tables",
+            "contrarian"
+          ]
+        },
+        "verdict": {
+          "verdict": "GO",
+          "ev_score": 6,
+          "prior_art": [
+            "Octofitter joint Gaia-astrometry+RV likelihood, DR4-ready (Thompson et al.; see arXiv:2411.06705 usage)",
+            "gaiamock — El-Badry+2024, arXiv:2411.00088: simulates Gaia epoch astrometry+RV for compact-object selection functions; the community's DR4 day-one kit",
+            "Nagarajan & El-Badry 2024, arXiv:2401.09531: already fit dark-companion RV orbits to the exact proposed validation set (FPR LPV epoch RVs)",
+            "Gaia Collaboration 2023, arXiv:2310.06051: FPR LPV RV time series (9,614 srcs, G 6-14)",
+            "BINARYS — Leclerc+2023 (A&A 672, A82): joint astrometry+RV fitting tool; also orvara, orbitize!"
+          ],
+          "duplicate_check": "Not a duplicate. #117 rehunt = cascade re-run; #116 refit = epoch astrometry only; grep confirms zero in-repo Gaia-epoch-RV consumers. Nearest relative is the NSS-locked archival-RV Keplerian (LAMOST/APOGEE) — different data, lock-not-joint.",
+          "no_telescope": "PASS — Gaia DR4 public epoch RVs (2026-12-02) are the confirming second method for the G 7.7-12.9 Tier-1 pool (predicted K1 10-20 km/s vs ~1-2 km/s per-transit RVS precision); time-gated, not telescope-gated. Pre-DR4: gaiafpr.vari_epoch_radial_velocity validates on real Gaia epochs.",
+          "feasibility": "TAP probe: FPR epoch-RV × DR3 NSS = 854 SB1 + 1 Orbital + 0 AstroSpectroSB1 — the named ground truth is EMPTY; swap to the 854 SB1 solutions (published P,e,K1,T0,omega) + the 1 Orbital joint anchor + synthetics. Refit engine exists to extend; LPV pulsation jitter is the noise caveat. Est. 1-2 sessions.",
+          "rationale": "GO as infrastructure, not discovery: joint astrometry+RV fitting is fully published (Octofitter, gaiamock, BINARYS) and Nagarajan+2024 already mined FPR epoch RVs for dark companions — so zero methodological novelty and zero pre-DR4 discovery EV. But the third pipeline leg genuinely doesn't exist in-repo, DR4 epoch RVs are the only no-telescope second method the 117 RV-less Tier-1 NS will ever get, and validation is feasible after one correction: ground truth = the 854 FPR×SB1 overlap, not AstroSpectroSB1 (overlap = 0). Frame as tool-build per the prior-art gate; consider benchmarking against Octofitter.",
+          "first_step": "ADQL via astroquery.gaia: SELECT n.source_id, n.period, n.eccentricity, n.semi_amplitude_primary, n.t_periastron, n.arg_periastron, s.* FROM gaiafpr.vari_rad_vel_statistics s JOIN gaiadr3.nss_two_body_orbit n USING (source_id) WHERE n.nss_solution_type='SB1' — pull the 854-source RV-leg validation set (plus the 1 Orbital joint anchor) to /tmp, then fetch their vari_epoch_radial_velocity time series."
+        },
+        "refutation": {
+          "refuted": false,
+          "rationale": "No fatal flaw. DR4 epoch RVs ship day-one for all sources (ESA-confirmed) — no telescope gate; the bright long-period Tier-1 pool is the RVS sweet spot (K1 10-20 km/s vs 1-3 km/s per transit); epoch RV is a named degeneracy-breaker the 117 RV-less Tier-1 NS otherwise never get; prior art (Octofitter, Nagarajan+2024) is acknowledged and the prior-art gate permits tool-builds — precedent #116/#117. Grep confirms the joint leg is genuinely absent in-repo.",
+          "fatal_flaw": "The strongest objection (non-fatal): \"validated NOW\" is overstated — the only genuinely new component, the joint astrometry+RV likelihood, has zero real validation data pre-DR4 (AstroSpectroSB1×FPR overlap = 0; DR3 epoch astrometry unpublished). FPR LPV epochs validate only the RV-only leg, which the repo already has (NSS-locked Keplerian in ns_pool_triage) and which arXiv:2401.09531 already published on that exact dataset, on pulsation-jittered giants unlike the target pool. Pre-DR4 deliverable = adapter + synthetics; weight EV accordingly and write the missing pool-level RV pre-registration thresholds before 2026-12-02 (the current pre-reg is astrometry-only)."
+        }
+      },
+      {
+        "lane": {
+          "title": "Bug-catalog stress-test of published DR3 compact-candidate lists now + DR4 day-one field-wide refit scorecard",
+          "novelty_type": "correction-of-published",
+          "recipe": "Phase 1 (now): assemble machine-readable published lists — Jayasinghe+2023 (80 SB1), Andrews+2022, Gomel vari_compact_companion, El-Badry NS candidates, LAMOST-MRS SB1 lists; join each to nss_two_body_orbit.flags bit 13, re-derive M2 with real M1 (existing select_m1 machinery), NSS-vs-single parallax check, Shahaf AMRF where Orbital exists, rv_amplitude_robust/2 convention check; report per-list flagged fractions. Phase 2: pre-ingest the same lists into the refit engine's target adapter; on 2026-12-02 batch re-fit from DR4 epoch astrometry (validated DeltaBIC/F-test/accel-SNR) and publish the confirm/refute scorecard within the first weeks.",
+          "data_sources": [
+            "gaiadr3.nss_two_body_orbit (flags bitmask)",
+            "gaiadr3.vari_compact_companion",
+            "Jayasinghe+2023 / Andrews+2022 / El-Badry candidate tables",
+            "arXiv:2405.09825 + arXiv:2602.05421 tables",
+            "Shahaf+2023 J/MNRAS/518/2991",
+            "scripts/dr4_pipeline/refit (adapter ready)",
+            "data/derived/*_M1corrected.parquet"
+          ],
+          "confirm_path": "Phase 1 is pure public-table joins — every flagged entry independently verifiable by re-running the query. Phase 2's adjudicator is public DR4 epoch astrometry through the already-validated refit statistics. No telescope at any step.",
+          "novelty_argument": "Plays to the project's proven strength: correction-finding (bit-13, M1-default, sin-i, parallax bugs all found in-house). #109 used published lists to deflate OUR novelty, never audited THEIRS; no one has jointly applied bit-13 + M1-default + AMRF across the published lists (Nagarajan refuted only 14 Gomel objects, by telescope). Phase-1 output is citable regardless of DR4 timing; phase 2 has a real first-mover scoop risk, so phase 1 carries the EV.",
+          "merged_from": [
+            "novelty-by-correction"
+          ]
+        },
+        "verdict": {
+          "verdict": "MAYBE",
+          "ev_score": 3.5,
+          "prior_art": [
+            "Nagarajan & El-Badry 2023 (arXiv:2304.07324) — RV follow-up refuting the 14 best Gomel ellipsoidal BH/NS candidates (all M2,min<=0.5)",
+            "El-Badry+2024 (arXiv:2405.00089) — wide-orbit NS candidates WITH self-vetting: ~25% spurious fraction quantified even among good-flag astrometric solutions",
+            "Bashi+2022 (MNRAS 517,3888) — the bit-13 / clean-sample reliability analysis of the DR3 SB1 catalogue (the proposal's flagship check, already published)",
+            "Shahaf+2023 (J/MNRAS/518/2991) — AMRF triage published on the same NSS Orbital parent sample any Orbital-based list draws from",
+            "Jayasinghe+2023 (MNRAS 521,5927) — authors self-deflated: majority of their high-f(M) SB1 declared false positives in the paper itself",
+            "arXiv:2603.20371 (Mar 2026) — Magellan RV orbital solutions for Gaia DR3 BH/NS candidates: active adjudication of these exact lists is underway now",
+            "Müller-Horn+2026 (arXiv:2510.05982) + El-Badry review (arXiv:2403.12146) + arXiv:2508.21805 — DR3 reliability/selection space crowded; community-wide DR4 epoch-astrometry refits explicitly anticipated"
+          ],
+          "duplicate_check": "Not a literal duplicate, but ~60% piecemeal-done: #109 ingested published lists (reverse direction), the 2026-05-31 El-Badry gap analysis already cascaded their list, F#33 = the bit-13 audit, and phase 2 = the built #116 engine + wider target list.",
+          "no_telescope": "MARGINAL PASS — phase-1 flags cast doubt but cannot refute (El-Badry showed good-flag solutions are 25% spurious only via RV); the true adjudicator is public Gaia DR4 epoch astrometry (2026-12-02) through the validated refit engine.",
+          "feasibility": "Tables exist (Jayasinghe/Andrews/El-Badry machine-readable; vari_compact_companion 6306 rows via TAP; select_m1 + refit adapter built). But a live probe shows only 17/6306 Gomel sources have an nss_two_body_orbit row — the bit-13/AMRF battery no-ops on 99.7% of that list and fully applies only to NSS-derived lists whose authors already self-vetted. Cost: ~2-3 sessions phase 1, ~1 session phase-2 pre-ingest.",
+          "rationale": "The EV-carrying claim (\"phase 1 is citable correction-of-published\") dies: every valid check is published (Bashi bit-13, Shahaf AMRF, El-Badry's own spurious-fraction RV audit), the in-house bugs were ours not theirs, and the Gomel join is structurally empty (17/6306). Phase 2 is real but is a #116 extension facing near-certain scooping by the candidate authors. Surviving kernel: pre-register per-object DR4 confirm/refute predictions for the published lists now — cheap, falsifiable, scoop-proof as an artifact.",
+          "first_step": "/Users/legbatterij/claude_projects/ostinato/.venv/bin/python -c \"from astroquery.vizier import Vizier; V=Vizier(row_limit=-1); t=V.get_catalogs('J/ApJ/964/L6')\" — pull the El-Badry+2024 NS-candidate source_ids to /tmp, cross-tab against data/derived/main_hunt_derived_v2_M1corrected.parquet + nss flags, and pre-ingest into scripts/dr4_pipeline/refit's target adapter as pre-registered prediction rows (main thread integrates the prereg doc)."
+        }
+      },
+      {
+        "lane": {
+          "title": "Pool-wide in-repo AMRF triage of the unclassified Orbital margin + harvest the demotions as a novel-triple catalog note",
+          "novelty_type": "candidate-advancement",
+          "recipe": "One compute, two products. Compute AMRF A=(a_phot/plx)*P^(-2/3)*M1^(-1/3) for all 127k local Orbital rows (zero nulls verified); MS-primary screen via local teff/logg/CMD; apply Shahaf Class-II/III boundaries (machinery in scripts/prime3_deepdive_2026_05_29.py), focused on the 71,346-row relaxed pool (G 13-15, plx 0.5-1 — largely outside Shahaf+2023's cuts). Product A: Class-III compact-favoured flags -> front-filter (binary_masses + store) -> survivors into the DR4 pre-reg list; re-rank all Tier-1 by AMRF+ruwe+aen_sig. Product B: P(triple)>0.7 with photocentric dark mass >1.2 Msun -> front-filter vs Shahaf/Halbwachs/SIMBAD -> catalog note of novel AMRF-triple-favored systems (anchors: HD 75567, TYC 4562-535-1, 5858574810404752256), each with a-ratio/flux-ratio/LAMOST SB2-split corroboration + a pre-registered DR4 double-Keplerian test.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed",
+            "data/external_catalogs/gaia_dr3_binary_masses_full.csv",
+            "Shahaf+2023 J/MNRAS/518/2991",
+            "LAMOST DR11 V/162 MRS epoch RVs",
+            "scripts/known_objects/ store"
+          ],
+          "confirm_path": "AMRF is itself the archival triple-killer; Class-III survivors go through the existing pool-second-method-triage + GALEX screen + kinematics box; triple-side corroboration via a-ratio/flux-ratio/LAMOST SB2 splitting; decisive test is public DR4 epoch astrometry via the built refit engine. No telescope.",
+          "novelty_argument": "Nothing in the log ever COMPUTED AMRF pool-wide — lanes only consumed published classifications, and the relaxed G13-15 margin sits outside Shahaf's sample. The demotion-harvest flips the project's strongest demotion axis into a product: 3 verified-novel named triples already in hand. Check Shahaf+2024/25 faint-sample follow-ups first; AMRF calibration off the MS is the referee risk.",
+          "merged_from": [
+            "methods-in-hand",
+            "novelty-by-correction"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 2.5,
+          "prior_art": [
+            "DPAC binary_masses pool-wide schematic AMRF triage (Gaia DR3 NSS, 2022) — 195,315 sources, 735 AMRFClassIII; covers 80.5% of the relaxed pool, 85% of its G13-15 slice (local file confirms)",
+            "Shahaf+2023 Triage I, arXiv:2209.00828 — refined AMRF on DR3 Orbital, 177 compact-favored",
+            "Shahaf+2024 Triage II, arXiv:2309.15143 — AMRF WD census (~3,200) on the full Orbital sample",
+            "arXiv:2411.17819 (A&A 2024) — 956 compact-hierarchical-triple candidates harvested from the SAME Gaia Orbital solutions (+3,115 from acceleration) = Product B already published",
+            "Czavalinga+2023, A&A 670 — new CHT candidates from Gaia DR3 NSS",
+            "El-Badry+2024, arXiv:2407.16760 — NSS validation via 14,791 wide hierarchical triples",
+            "Andrew+2022, arXiv:2206.04392 — candidate hierarchical triples + massive dark companions from DR3 diagnostics",
+            "Nagarajan+2024, arXiv:2405.00089 — RV follow-up resolving Gaia dark-companion candidates into triples",
+            "arXiv:2510.05982 (A&A 2026) — dormant BH candidates from Gaia DR3 summary diagnostics"
+          ],
+          "duplicate_check": "Not a literal duplicate — no in-repo pool-wide AMRF compute. But near-miss: #109 ingested binary_masses ClassIII (26 candidates demoted), Tier-1 fully Shahaf-cross-matched, AMRF machinery validated (#119); the 3 anchor triples are already in hand.",
+          "no_telescope": "PASS (nominally) — Gaia DR4 epoch astrometry (public 2026-12-02) via the built refit engine confirms; LAMOST DR11 V/162 MRS gives archival SB2 checks. But pre-DR4 nothing confirms: pre-reg advancement only.",
+          "feasibility": "Data are local and the compute is 1-2 sessions, BUT the probe kills the premise: binary_masses already classifies 80.5% of the relaxed pool; the true unclassified margin is 9,873 rows (not 71k) and ALL carry default M1=1.5 with no real primary mass (~24% lack Teff/logg) — AMRF is unreliable exactly there, which is why DPAC skipped them.",
+          "rationale": "Both headline claims fail. \"Nothing ever computed AMRF pool-wide\": DPAC's binary_masses IS a published pool-wide schematic AMRF triage covering 80-85% of the proposed margin, refined by Shahaf I/II. \"Demotion-harvest as a novel-triple catalog\": arXiv:2411.17819 already harvested 956 CHT candidates from the same Orbital solutions (plus Czavalinga+2023, El-Badry+2024, Andrew+2022). The residue — ~10k M1-less faint rows — is unclassifiable without the missing ingredient and gets reprocessed by the DR4 rehunt harness in 6 months anyway. Salvage: front-filter the 3 anchor triples vs the published CHT lists; a note, not a lane.",
+          "first_step": "/Users/legbatterij/claude_projects/ostinato/.venv/bin/python -c \"from astroquery.vizier import Vizier; v=Vizier(columns=['**'],row_limit=-1); cats=v.get_catalogs('J/A+A/692/A24'); print(cats)\"  # locate the arXiv:2411.17819 CHT table on VizieR, then check HD 75567 / TYC 4562-535-1 / '5858574810404752256' membership (salvage check only; scratch to /tmp)"
+        }
+      },
+      {
+        "lane": {
+          "title": "Finish the M1-correction debt: substellar-bin BD extraction (both pools) + acceleration_v3 re-tier + halo/metal-poor slice",
+          "novelty_type": "new-object",
+          "recipe": "Both _M1corrected parquets left substellar bins at default M1=1.5 (81/82 prod, 113/115 relaxed) and acceleration_v3 is 100% M1=1.5. Assign real host masses (Mann+2019 M_Ks for M_G>8 hosts; TIC/FLAME/photometric select_m1 branch else), rescale M2 by (M1/1.5)^(2/3) from invariant f(M). Outputs: (a) corrected substellar census incl. the ~1,900 'low-mass stellar' M-dwarf-host rows that drop below 0.08 Msun, sig/bit-13/RUWE gated, front-filtered vs Marcussen&Albrecht, Bailer-Jones&Kreidberg 2026, Stevenson, GaiaPMEX II; (b) acceleration_v3 re-tier pruning the 7,062 P-degenerate Tier-2 DR4 targets; (c) kinematic slice: Toomre V_tot>180 km/s + archival [Fe/H] on the corrected census — any [Fe/H]<-1 astrometric BD host is a near-unpopulated class.",
+          "data_sources": [
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + relaxed + acceleration_v3.parquet",
+            "scripts/streaming/v2_corrected/consumer_v2.py (select_m1)",
+            "2MASS II/246 + Mann+2019 J/ApJ/871/63",
+            "published NSS-substellar lists (M&A23, BJ&K26, Stevenson 2023, GaiaPMEX II, arXiv:2601.03539)",
+            "LAMOST/APOGEE/GALAH [Fe/H]"
+          ],
+          "confirm_path": "Archival LAMOST/APOGEE/GALAH RV epochs where present give a no-telescope second method now; each survivor gets pre-registered DR4 inclination/mass thresholds (the sanctioned UCAC4 313 confirm path); substellar-vet skill applies per-object. Internal consistency check vs the parquet's RV-joint masses for the acceleration channel.",
+          "novelty_argument": "CANDIDATES.md line 77 explicitly flags the acceleration gap, and the substellar bins were verified-in-data never M1-corrected; UCAC4 313 (relaxed-pool, escaped both published catalogs) is the existence proof that residue exists at the faint M-dwarf-host end where published catalogs thin out. Main risk: BJ&K26/GaiaPMEX II coverage — hence the hard front-filter.",
+          "merged_from": [
+            "substellar",
+            "methods-in-hand"
+          ]
+        },
+        "verdict": {
+          "verdict": "GO",
+          "ev_score": 6,
+          "prior_art": [
+            "Stevenson+2023 'Combing the brown dwarf desert with Gaia DR3' (arXiv:2310.02695, MNRAS 526,5155) + maintained BD-companion catalogue",
+            "Zhang 2025 'BD desert persists as mass-ratio desert around low-mass stars' (arXiv:2512.11956, ApJL) — the direct M-dwarf-host demographics paper; use INSTEAD of 'Bailer-Jones & Kreidberg 2026', which appears not to exist (likely confabulated ref)",
+            "Wallace & Casey 2026 'Perhaps there is no brown dwarf desert?' (arXiv:2601.03539) — Sun-like hosts <200pc",
+            "GaiaPMEX I-III (Kiefer+ arXiv:2409.16992, 2501.10488)",
+            "Unger+2023 (arXiv:2310.02758) RV+Gaia DR3 BD desert",
+            "'A universal brown dwarf desert' (arXiv:2603.01808, Mar 2026, FGK)",
+            "Stefansson+2025 Gaia-4b/5b (AJ, ada9e1) — RV-confirmed planet+BD around low-mass stars from NSS orbits",
+            "TOI-7019b (arXiv:2512.06069) — metal-poor thick-disk transiting BD; closest to the [Fe/H]<-1 slice but transiting + not [Fe/H]<-1 → that astrometric class stays near-empty",
+            "Impostor-binary FP mode (10.3847/1538-3881/acd53d) — sig/bit-13/RUWE gates mandatory"
+          ],
+          "duplicate_check": "Not a duplicate. No RESEARCH_LOG lane covers it; the 05-30 substellar cross-check was 3 objects only; CANDIDATES.md:77 explicitly flags acceleration_v3 as not-yet-M1-corrected open debt; substellar bins verified still at default M1.",
+          "no_telescope": "PASS (conditional): APOGEE DR17 allvisit + LAMOST DR11 MRS (VizieR V/162) epoch RVs confirm the covered subset (K~1-3 km/s, above APOGEE precision); remainder via the sanctioned pre-registered Gaia DR4 path (UCAC4 313 precedent).",
+          "feasibility": "Verified in-data: substellar default-M1 counts exact (81/82, 113/115); acceleration_v3 100% M1=1.5, 7,062 Tier-2. The '~1,900 drop substellar' is ~2x overstated (~791 relaxed + ~225 prod at M1~0.35), still hundreds. Hosts G~14.3, 55% LAMOST dec. All parquets + select_m1 + Mann+2019/2MASS on VizieR exist. 2-3 sessions. Re-solve the f(M) cubic, not the (M1/1.5)^(2/3) approximation (breaks at q~0.2).",
+          "rationale": "Untried internal debt, fully feasible on existing parquets, archive-confirmable, and it hardens the DR4 day-one baseline (#117 diff target + pruning 7,062 Tier-2). Census-level novelty is dead (Stevenson, Zhang, Wallace&Casey, GaiaPMEX) — frame as method-validation/debt-retirement. Novel residue survives in two narrow slices: faint-M-dwarf-host candidates escaping published lists (UCAC4 313 existence proof) and [Fe/H]<-1 astrometric BD hosts (near-unpopulated). Hard front-filter vs Zhang 2025 + Stevenson catalogue; drop the nonexistent BJ&K26 ref.",
+          "first_step": "Extract the 194 default-M1 substellar-bin rows + 2,553 default-M1 M_dwarf_companion rows with M_G>8 (G+5log10(plx_used/100)>8) from both *_M1corrected.parquets to /tmp/m1debt_targets.csv (source_id as string, ra, dec, G), then CDS XMatch to 2MASS (vizier:II/246, 3 arcsec) for Ks → Mann+2019 M_Ks→M1, re-solve f(M) cubic via consumer_v2.select_m1 branch."
+        },
+        "refutation": {
+          "refuted": false,
+          "fatal_flaw": "Strongest objection: novel-object yield is likely ~0 after front-filtering, because Stevenson+2023 and the DPAC NSS substellar tables already derived real host masses on this same NSS table, so most rows that \"drop substellar\" at corrected M1 are already in their catalogs. It fails as a refutation: UCAC4 313 proves residue escapes both lists at the faint relaxed-pool end, and the lane's guaranteed payoff is internal — #117's DR4 day-one diff requires a fully M1-corrected baseline, which the substellar bins and all of acceleration_v3 (verified 100% M1=1.5, 7,062 Tier-2) currently lack. One mandatory fix: the first verifier's substitute front-filter ref Zhang 2025 (arXiv:2512.11956) is a MICROLENSING mass-ratio paper, not a Gaia object list — front-filter against Stevenson's catalogue + Gaia Collaboration/Holl+2023 substellar tables + Wallace&Casey 2026 + GaiaPMEX instead; drop the nonexistent \"Bailer-Jones & Kreidberg 2026\".",
+          "rationale": "All in-data claims re-verified exactly (81/82, 113/115 default-M1 substellar; acceleration_v3 100% M1=1.5; hundreds of potential bin-droppers). No RESEARCH_LOG wall applies; BDs at P=100-3000d around nearby M dwarfs are inside NSS sensitivity. Confirm path uses archival RVs plus the sanctioned DR4 pre-registration (UCAC4 313 precedent), so no telescope gate. Census novelty is dead but the lane already frames debt-retirement; the [Fe/H]<-1 astrometric slice genuinely appears unpopulated. GO stands with corrected front-filter list."
+        }
+      },
+      {
+        "lane": {
+          "title": "Open the 23 in-hand RVS mean spectra of Tier-1 NS candidates: a second-light/SB2 screen never run",
+          "novelty_type": "candidate-advancement",
+          "recipe": "DataLink-download RVS_MEAN_SPECTRUM for the 23/198 Tier-1 NS with has_rvs=True (probe list at /tmp/tier1_ipd_probe_2026_06_09.csv) plus any watch-list objects. Cross-correlate against the rv_template; hunt secondary CCF peaks, Ca-II-triplet line doubling, template-Teff mismatch, vbroad anomalies. Log the completed pool-level ipd null (0/198 multi-peak) as a self-audit ledger row. Every object gets a cross-check ledger row regardless of outcome.",
+          "data_sources": [
+            "Gaia DR3 DataLink RVS_MEAN_SPECTRUM",
+            "gaiadr3.gaia_source (rv_template_teff, vbroad)",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet",
+            "/tmp/tier1_ipd_probe_2026_06_09.csv"
+          ],
+          "confirm_path": "Archive-only by construction: a secondary spectral component refutes 'dark companion' for that object independent of Shahaf AMRF; a clean single-lined CCF at known S/N adds a quantified flux-ratio upper bound to each journal. Weak verdicts at G~12 S/N are still ledger rows.",
+          "novelty_argument": "No dossier or lane ever opened an RVS spectrum — only scalar rv_* columns. A genuinely independent in-hand discriminant orthogonal to AMRF (triple inner pairs contribute light that epoch-averaged CCFs can reveal). One-afternoon cost, 23-object scale, every outcome documentable — the project's cheapest unrun vetting axis.",
+          "merged_from": [
+            "gaia-tables"
+          ]
+        },
+        "verdict": {
+          "verdict": "GO",
+          "ev_score": 5,
+          "prior_art": [
+            "Katz+2023 Gaia DR3 RVS pipeline (arXiv:2206.05902) — DPAC per-transit CCF multi-peak SB2 detection; shallow (many known SB2s got SB1 solutions); deep SB2 mean-spectrum analysis deferred to DR4",
+            "Gaia DR3 NSS tbosb2 / SB1 processing chain (arXiv:2410.14372, 2024) — 5,376 SB2 orbital solutions from the same CCF machinery",
+            "El-Badry et al. 2024 (arXiv:2405.00089) — 21 wide-orbit Gaia astrometric NS candidates, ground-based spectra explicitly checked for second light; list NOT yet in the front-filter, object-overlap with the 23 must be screened first",
+            "Nagarajan et al. 2023 (arXiv:2304.07324) — spectroscopic follow-up of Gaia DR3 ellipsoidal BH/NS candidates (ground-based)",
+            "Jorissen-style high-f(M) SB1 compact-companion search in Gaia DR3 (arXiv:2207.05086, 2022) — second-light checks on the analogous SB1 pool",
+            "Data-driven RVS spectral model (arXiv:2407.19016, 2024) — single-star RVS models usable as matched templates; no published second-light mining of DR3 RVS mean spectra of dark-companion candidates found"
+          ],
+          "duplicate_check": "Not a duplicate. Repo-wide grep: zero RVS_MEAN_SPECTRUM/DataLink-RVS usage in any lane, script, or workflow; XP-at-scale NO-GO was BP/RP (different product); vbroad touched only in ~10 per-object PMa scripts, never as a pool screen.",
+          "no_telescope": "PASS — Gaia DR3 DataLink RVS_MEAN_SPECTRUM is the in-hand archival spectrum; verified live download (2401 px, median S/N~54). SB2 detection = archive-only refutation; null = quantified flux-ratio bound. No observation needed either way.",
+          "feasibility": "Confirmed: 23/198 Tier-1 NS have has_rvs=True (G 8.1-12.8); DataLink retrieval works now despite the pre-DR4 archive banner. Caveat: the mean spectrum is coadded in the primary rest frame, smearing moving secondary lines — sensitivity is ~5-15% flux ratio via line-dilution/Teff-mismatch, where triple inner pairs can hide. Cost: 1-2 sessions.",
+          "rationale": "Genuinely untried in-repo, archive-only by construction, in-hand data, time-boxed: DPAC's own deep SB2 mean-spectrum analysis arrives with DR4 (2026-12-02), so this window closes. Method has DPAC + ground-based prior art, but the lane honestly claims candidate-advancement, not discovery — that claim survives. EV capped at 5: rest-frame coadding smears secondaries and AstroSpectroSB1 members pre-passed DPAC's single-lined vetting, so expect 23 flux-ratio-bound ledger rows, not a refutation. Pre-step: ingest El-Badry+2024's 21-object list into the front-filter.",
+          "first_step": "/Users/legbatterij/claude_projects/ostinato/.venv/bin/python -c \"import csv; from astroquery.gaia import Gaia; ids=[r['source_id'] for r in csv.DictReader(open('/tmp/tier1_ipd_probe_2026_06_09.csv')) if r['has_rvs']=='True']; dl=Gaia.load_data(ids=ids, data_release='Gaia DR3', retrieval_type='RVS', data_structure='INDIVIDUAL', format='votable', output_file='/tmp/rvs_tier1/dl.zip'); print(len(dl),'spectra')\" — then pull rv_template_teff/logg/feh + vbroad + rv_expected_sig_to_noise for the same 23 from gaiadr3.gaia_source, and front-filter the 23 against El-Badry+2024 (arXiv:2405.00089) Table 1 before any per-object verdicts."
+        },
+        "refutation": {
+          "refuted": false,
+          "rationale": "Searched hard; no fatal flaw. No published second-light mining of DR3 RVS mean spectra of dark-companion candidates (closest: arXiv:2508.00071 generic outlier mining). Verified 0/23 overlap with El-Badry+2024's 21 IDs. Computed inner-pair flux ratios (median ~10%, up to 35%) overlap the 5-15% dilution sensitivity for ~half the sample. Archive-only both ways; no wall contradiction; honest candidate-advancement framing. Verifier's EV-5 cap already prices the smearing/DPAC-prevetting weakness.",
+          "fatal_flaw": "None fatal. Strongest objection: all 23 already passed DPAC's per-transit CCF processing (12 are AstroSpectroSB1), and rest-frame coadding smears short-period inner-pair lines, so the only genuinely new channel is the soft dilution/Teff-mismatch bound — realistic sensitivity is likely 15-30% flux ratio (not 5-15%), constraining only the ~quarter of the sample with the faintest primaries (M_G≳4). An EV haircut toward 3-4, not a refutation."
+        }
+      },
+      {
+        "lane": {
+          "title": "Freeze the DR4 pre-registration as a citable, timestamped registered-report-style product (+ AEN shadow-WD appendix)",
+          "novelty_type": "method-or-tool",
+          "recipe": "Convert docs/dr4_preregistration_2026_06_01.md + the refit/rehunt engines into a standalone frozen note: per-candidate confirm/refute thresholds (incl. WDJ020915 full-TI-MC requirement, UCAC4 313 M2(sin i) curve), population predictions (#125 kinematic tail; bit-13 re-test; lane-4 eccentricity prediction if it survives), frozen code snapshot. Optional appendix from the contrarian lens: a GF21 x gaia_source RUWE/AEN-selected list of WDs with single-WD SEDs and no DR3 NSS solution, mass-floor-ranked via AEN-as-photocentric-wobble inversion — a frozen day-one watch list for orbits DR3 never solved (the #117 rehunt is structurally blind to no-solution sources). User mints the Zenodo DOI before 2026-12-02 (user-gated action).",
+          "data_sources": [
+            "docs/dr4_preregistration_2026_06_01.md",
+            "scripts/dr4_pipeline/refit + rehunt (built, tested)",
+            "Gentile Fusillo+2021 J/MNRAS/508/3877 + gaiadr3.gaia_source (appendix)",
+            "Gaia DR4 (2026-12-02) as adjudicator"
+          ],
+          "confirm_path": "Confirmation IS the public DR4 release scored against pre-frozen thresholds — confirm and refute are both reportable outcomes; archival by construction. The appendix list is adjudicated by DR4's fainter NSS limit + 66-month baseline through the built refit engine.",
+          "novelty_argument": "The engines and thresholds exist but packaging as a public timestamped pre-registration was never opened as a lane; registered-report practice is essentially absent in compact-object astronomy and the timestamp cannot be retro-fitted after 2026-12-02 — a hard, cheap, guaranteed-outcome deadline product. AEN appendix carries the scan-angle-systematics caveat explicitly.",
+          "merged_from": [
+            "novelty-by-correction",
+            "contrarian"
+          ]
+        },
+        "verdict": {
+          "verdict": "GO",
+          "ev_score": 6.5,
+          "prior_art": [
+            "Pre-release Gaia BH yield predictions: Breivik+2017, Andrews+2019, Chawla+2022 (arXiv:2110.05979); forward-model DR3/DR4/DR5 yields arXiv:2502.03527 (2025); El-Badry status review arXiv:2508.21805 (2025) — all population-level, none per-candidate frozen thresholds; registered-report practice absent in subfield",
+            "AEN/RUWE-as-wobble method fully published: Penoyre+2020 & Belokurov+2020 (arXiv:2003.05467); Gandhi+2022 AEN x XRB (arXiv:2009.07277, 2201.00833); Andrews+2022 astrometric compact-companion masses (A&A 664); Korol+2022 WD RUWE/AEN binarity (arXiv:2203.03659)",
+            "Fresh 2025-26 AEN work: arXiv:2511.02476 (RUWE thresholds, extended mission), arXiv:2605.25482 (AEN inclination constraints) — appendix must be framed as a curated watch list applying these, not a novel channel"
+          ],
+          "duplicate_check": "Not a duplicate. Prereg doc (06-01) + refit (#116) + rehunt (#117) exist as builds, but no lane ever covered packaging-as-citable-frozen-product, and no lane ran an AEN-selected no-NSS GF21 WD watch list.",
+          "no_telescope": "PASS — adjudicator is the public Gaia DR4 release (2026-12-02) scored through the built refit/rehunt engines; confirm AND refute both reportable. WD-vs-NS class already carved out as HST-gated inside the prereg.",
+          "feasibility": "All inputs exist locally: 213-line prereg (thresholds frozen 2026-06-01), tested refit/rehunt engines, #125 and bit-13 numbers computed, GF21 parquet (1.28M rows, GaiaEDR3 ids, H/He SED params). Appendix parent sample probed: 16,676 Pwd>0.75 WDs within 100 pc — a ~17-batch gaia_source RUWE/AEN pull + nss anti-join. ~2-3 sessions; hard 2026-12-02 deadline.",
+          "rationale": "Rare lane that passes every gate: untried in-repo, cheap (~2-3 sessions), archive-adjudicated by construction (both outcomes reportable), and deadline-bound — the timestamp cannot be retrofitted after DR4. Novelty is process-level (per-candidate registered-report practice is genuinely absent; only population-yield predictions exist), not scientific — weight EV accordingly. The AEN appendix is method-published (Penoyre/Belokurov/Andrews/Korol) and must ship as a caveated curated watch list with rough mass-floor ranking only. Zenodo mint stays user-gated.",
+          "first_step": "/Users/legbatterij/claude_projects/ostinato/.venv/bin/python: load data/external_catalogs/gentile_fusillo_2021/maincat.parquet, cut Pwd>0.75 & Plx>10 (16,676 WDs), then batched (1000-id) gaiadr3.gaia_source IN() queries for ruwe + astrometric_excess_noise(_sig) + anti-join gaiadr3.nss_two_body_orbit, writing /tmp/aen_shadow_wd_watchlist_2026_06_10.csv"
+        },
+        "refutation": {
+          "refuted": false,
+          "rationale": "Searched hard: no published per-candidate frozen DR4 thresholds exist (only population yields); appendix prior art (Korol+2022 WD wobble list; arXiv:2510.05982 no-NSS DR4 watch list for giants) is already conceded and the WD-primary slice is open. No telescope gate, no wall contradiction, guaranteed reportable outcome, ~1-2 sessions. Flaws found are EV-shaving, not fatal. Conditions: cite Korol+2022/2510.05982 in the appendix; run #125's failed prior-art gate before freezing it.",
+          "fatal_flaw": "Strongest objection (non-fatal): the urgency premise is overstated — the prereg was already pushed to the public GitHub repo on 2026-06-05, so a public timestamp exists; the lane's true marginal content is only the immutable DOI consolidation (user-gated, minutes), the unpushed #116/#117 code snapshot, and a method-published AEN watch list (Korol+2022 built the equivalent 119-candidate 100pc GF21 wobble list; arXiv:2510.05982 published the no-NSS summary-diagnostics DR4-watch-list recipe in 2025)."
+        }
+      },
+      {
+        "lane": {
+          "title": "Eastern-hemisphere deep-pointed X-ray screen of the NSS dark-companion pool (4XMM-DR14 + 2SXPS + CSC2.1) with flux upper limits",
+          "novelty_type": "population-result",
+          "recipe": "PM-propagate the 366 orbital + 16,949 acceleration pool to each catalog epoch; XMatch vs 4XMM-DR14 + 2SXPS + CSC2.1; run the #115 coronal log(fx/fopt) ceiling + hardness/variability columns on every match; adjudicate the 2 already-probed unscreened eastern Tier-1 NS detections (541803119301355392 = 4XMM J024945.6+694028; 2182400190235793536 = 2SXPS 194565); pull HILIGT/2SXPS upper limits for the named candidates in the eastern half (5406907, 5858574, HD 157033). Register every match per the logging policy.",
+          "data_sources": [
+            "4XMM-DR14 (VizieR IX/69)",
+            "Swift 2SXPS (IX/58) + upper-limit server",
+            "Chandra CSC2.1 (CXC TAP)",
+            "HILIGT upper-limit server",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + acceleration_v3.parquet"
+          ],
+          "confirm_path": "All-archival: coronal fx/fopt ceiling, 4XMM hardness/intra-obs variability, ZTF/ASAS-SN photometry; any above-ceiling survivor goes to the existing read-only deep-dive workflow; nulls become per-candidate Lx limits feeding the lane-4 limits paper.",
+          "novelty_argument": "#115 screened only eRASS1-DE (western hemisphere, detections-only); the 184 eastern orbital-pool sources (104 Tier-1) were never screened and the probe immediately found 2 unexamined Tier-1 X-ray matches — those alone make this near-obligatory vetting. Upper limits were never computed anywhere; pool-specific, so no published twin by construction. Likely outcome is the coronal null repeated east — itself a citable box.",
+          "merged_from": [
+            "highenergy-radio"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 2.5,
+          "prior_art": [
+            "Rodriguez+2024, PASP (arXiv:2311.05685) — 'No X-Rays or Radio from the Nearest Black Holes': targeted Chandra limits Lx<9.4e28/4.0e29 on Gaia BH1/BH2 + implications-for-future-searches; the published, 2-4 dex deeper version of the proposed limits box",
+            "arXiv:2601.02287 (2026) — high-velocity X-ray compact-binary search using the identical CSC2.1+4XMM-DR14+2SXPS+eRASS x Gaia DR3 catalog stack",
+            "Fang+2026 (arXiv:2606.01085) — eRASS1xZTF compact-object-binary census with 4XMM-DR14/CSC2.1 cross-match, fx/fopt + Lx selection",
+            "El-Badry+2024 (arXiv:2405.00089) — the wide-orbit Gaia NS-candidate population (same object pool), with follow-up",
+            "Rodriguez+2025 (arXiv:2505.10478) — GaiaxeROSITAxZTF accretors, already logged as #115 prior art"
+          ],
+          "duplicate_check": "Core substantially tried: #115 ran the same ceiling test on the pool (110/110 coronal NULL, west); CANDIDATES.md:279 already cone-searched CSC2.1/4XMM/2SXPS on the named candidates (zero counterparts) and line 111 declares the X-ray channel exhausted.",
+          "no_telescope": "PASS — 4XMM-DR14 hardness/variability columns + 2SXPS/HILIGT limits + ZTF/ASAS-SN are all archival; nulls confirm by construction. Caveat: serendipitous depth (Lx~1e31-33) cannot test dormancy (1e28-29), so the PASS is hollow.",
+          "feasibility": "Data products all exist (VizieR IX/69, IX/58, CXC TAP, HILIGT); pools verified (56,100-row v2 M1corrected with ra/dec/tier; acceleration_v3 16,949 rows). But pointed footprints cover ~2-9% of sky, so the 184 eastern orbital sources yield order-10 matches, mostly shallow 2SXPS. ~2 sessions for a preordained coronal repeat.",
+          "rationale": "The population-result claim dies on Rodriguez+2024: targeted Chandra already showed dormant Gaia companions sit at Lx~1e29, 2-4 dex below serendipitous 2SXPS/4XMM depth, so eastern upper limits constrain nothing; the catalog stack itself is arXiv:2601.02287's. The repo already knew this (CANDIDATES.md:279). Carve-out: the 2 unadjudicated eastern Tier-1 matches (541803119301355392, 2182400190235793536) are obligatory vetting — dispatch as a 1-session deep-dive under the existing workflow, not a lane.",
+          "first_step": "cd /tmp && /Users/legbatterij/claude_projects/ostinato/.venv/bin/python -c \"from astroquery.vizier import Vizier; v=Vizier(columns=['**'],row_limit=5); print(v.query_object('4XMM J024945.6+694028',catalog='IX/69/xmm4d14s',radius='5s')); print(v.query_constraints(catalog='IX/58/2sxps',_2SXPS='194565'))\" — pull fluxes/HR/var flags for the two unadjudicated Tier-1 matches, compute log(fx/fopt) vs the #115 coronal ceiling, then journal both per logging policy."
+        }
+      },
+      {
+        "lane": {
+          "title": "APOGEE DR17 ingest, both arms: bulge Brackett-emission + RV-jitter symbiotic confirmation (un-parks the bulge lane) and Ce s-process WD-demotion on the dark-companion pool",
+          "novelty_type": "new-object",
+          "recipe": "Run prior_art.py ('APOGEE Brackett emission symbiotic') first. One ingest, two applications. Arm A: regenerate the documented 137-candidate 2MASS+WISE bulge symbiotic selection (/tmp list lost); crossmatch to APOGEE DR17 allstar/allvisit in bulge fields; for matches fetch apStar FITS; automated Brackett 11-17 emission index + STARFLAG/chi2 anomalies + VSCATTER>~1.5 km/s jitter; front-filter Akras+2019 store. Gate arm A on a cheap fiber-overlap count BEFORE building the line-index machinery. Arm B: crossmatch the Tier-1/2 + wider dark-companion pool to allstar; flag good-SNR giants with [Ce/Fe]>=+0.3 (BAWLAS corroboration) => AGB mass-transfer => companion is a WD, not NS => demote; free VSCATTER-vs-predicted-K1 cross-check.",
+          "data_sources": [
+            "APOGEE DR17 allstar + allvisit + apStar FITS (SDSS SAS)",
+            "BAWLAS DR17 VAC",
+            "2MASS PSC + AllWISE",
+            "Akras+2019 store",
+            "data/derived/main_hunt_derived_v2_M1corrected.parquet + acceleration_v3.parquet"
+          ],
+          "confirm_path": "Arm A: cool-giant continuum + Brackett emission + multi-visit RV jitter, all from public SAS FITS — find (IR colors) and confirm (H-band emission) entirely in archives, supplying exactly the missing confirmation arm that parked the bulge lane. Arm B: the abundance IS the discriminant; demotions are archival reclassifications feeding the contamination paper.",
+          "novelty_argument": "The insight catalog names APOGEE ASPCAP twice as 'the no-telescope bulge-confirmation route, still open' / 'highest-value missing data' — the project's own ledger flags this as the highest-value un-ingested archive. The bulge lane was parked SOLELY for lacking archival confirmation; H-band penetrates the dust. Chemistry-as-vetting on NSS NS candidates is absent from the log (#119 went the opposite direction). Honest risk: fiber overlap may be ~zero — hence the cheap overlap gate first.",
+          "merged_from": [
+            "spectro-archives"
+          ]
+        },
+        "verdict": {
+          "verdict": "NO-GO",
+          "ev_score": 2,
+          "prior_art": [
+            "Lewis et al. — Symbiotic Stars in the APOGEE Survey (arXiv:2107.08309, 2021) + AAS237 'Extragalactic Symbiotic Stars in the APOGEE Survey': the exact Brackett-emission + multi-visit-RV confirmation recipe; my probe shows the APOGEE-detected symbiotics ARE largely their ancillary targets",
+            "Chojnowski+2014 (arXiv:1409.4668) + SDSS DR17 emission-line-star ancillary program + Campbell+2023 full-DR17 Brackett-emission catalog (VizieR 2024yCat..19420022C): the H-band Brackett line-index machinery already exists survey-wide",
+            "Chemical Signatures of AGB Mass Transfer in Gaia White Dwarf Companions (arXiv:2512.07972, Dec 2025): Arm B's exact method — s-process/C chemistry on Gaia astrometric dark-companion binaries",
+            "Gaia Barium Dwarfs (arXiv:2509.13413, 2025) + GALAH DR4 Ba-star catalog (arXiv:2602.21014, Feb 2026): Ba/s-process enrichment => WD companion on Gaia NSS orbits, with dynamical WD masses",
+            "Hayes+2022 BAWLAS (ApJS 262,34): the Ce data product itself (~120k GIANTS only)",
+            "Miszalski & Mikolajewska 2013 (arXiv:1305.4885): bulge symbiotic surveys are optical-Halpha territory"
+          ],
+          "duplicate_check": "Not a literal duplicate: the bulge park (06-01) explicitly awaited APOGEE, and #119 ran the reverse chemistry direction. But APOGEE DR14/17 RV products were already mined in the post-2.2.0 SB1 sweep; only the line-index and Ce slices are new here.",
+          "no_telescope": "PASS in principle — APOGEE DR17 apStar/allvisit FITS + BAWLAS on SDSS SAS are fully archival confirmers. But the confirming dataset is empty in the bulge regime, so Arm A's PASS is vacuous.",
+          "feasibility": "Products exist (allstar III/286, allvisit, BAWLAS) but coverage kills Arm A: only 1/140 Akras bulge-box symbiotics has an APOGEE fiber (25/410 overall, mostly Magellanic ancillary targets), so the 137 IR candidates expect ~0 matches. Arm B: 19/366 Tier-1/2 matched, but ~15 are warm dwarfs where BAWLAS Ce fails; ~4 testable giants. 2-4 sessions if pursued.",
+          "rationale": "The recipe's own overlap gate fails: I ran it (CDS XMatch vs III/286) and the bulge arm has effectively zero fiber overlap — APOGEE bulge plates target survey giants, not IR-selected symbiotic candidates. The APOGEE-Brackett-symbiotic confirmation method is owned by a published group, and Arm B's chemistry-as-WD-vetting was published 2025-26 with ~4 usable objects here. New-object claim does not survive; residual value is a cheap Ce+VSCATTER vetting add-on on the 19 matched pool sources.",
+          "first_step": "Already executed (the kill-confirming gate): CDS XMatch of Akras+2019 (VizieR J/ApJS/240/21) and the Tier-1/2 pool against APOGEE DR17 allstar 'vizier:III/286/catalog' at 3 arcsec — results 1/140 bulge symbiotics, 19/366 pool; matches saved to /tmp/armB_pool_x_apogee_dr17.csv. If salvaging the add-on: pull BAWLAS [Ce/Fe] + allvisit VSCATTER for those 19 source_ids."
+        }
+      }
+    ],
+    "unverified": [],
+    "survivors": [
+      "Build the missing DR4 day-one module: joint epoch-astrometry + epoch-RV orbit fitter, validated NOW on FPR epoch RVs",
+      "Finish the M1-correction debt: substellar-bin BD extraction (both pools) + acceleration_v3 re-tier + halo/metal-poor slice",
+      "Open the 23 in-hand RVS mean spectra of Tier-1 NS candidates: a second-light/SB2 screen never run",
+      "Freeze the DR4 pre-registration as a citable, timestamped registered-report-style product (+ AEN shadow-WD appendix)"
+    ],
+    "critic": {
+      "gaps": [
+        {
+          "what": "The candidates audit's five ranked cheap wins (DASCH+forced-photometry outburst hunt for Object B; LAMOST DR12 / SDSS-V DR19 new-epoch RV sweeps for 1593152 and 3155543; first ZTF light curve for WDJ020915; TESS seismic M1 for 5858574; ESO/SDSS-V archival spectra for HD 157033) appear in NO shortlisted lane — the review generated its highest impact-per-hour actions and then dropped every one between audit and shortlist.",
+          "why_it_matters": "These are hours-scale, no-telescope, decision-grade checks on the actual roster; the 12-lane shortlist is all new lanes and papers, so the review's most concrete pre-DR4 advancement path was silently discarded."
+        },
+        {
+          "what": "Both GO'd publication products are built on inputs the audits flagged as deleted or stale, and no lane regenerates them first: the occurrence-limit and WD-mass-MC artifacts live only in deleted /tmp files; F#33 was never propagated into tier_v2_corrected (Tier-1 roster 161 vs policy-correct 116); the unified parquet is stale on three axes; 834 RV-consistent NS/BH untriaged. Lane 8 fixes only the M1 debt.",
+          "why_it_matters": "The limits paper and prereg freeze would timestamp numbers (f<5.7e-5 denominator, Tier-1 counts) that are currently irreproducible or known-wrong by the project's own data audit."
+        },
+        {
+          "what": "Verdict-schema incoherence left unadjudicated: the occurrence-limit paper is GO (EV 6) with refuted=true, while all NO-GO/MAYBE lanes have refuted=null — implying adversarial verification ran only on GO lanes and that one GO survived its own refutation with no recorded explanation of what was refuted or how the lane changes in response.",
+          "why_it_matters": "The single highest-priority GO carries an unexplained refutation flag; executing it without resolving this repeats the exact overclaim failure mode the project's retraction history exists to prevent."
+        },
+        {
+          "what": "The 'freeze the DR4 pre-registration as citable' GO ignores the docs audit's finding that the prereg covers only 4 of 9 roster objects and that RESEARCH_LOG falsely calls HD 157033 'pre-registered'. No verdict conditions the freeze on extending coverage (1593152, 3155543, 5858574, HD 157033, UCAC4 313) and fixing the false claim first.",
+          "why_it_matters": "Freezing a known-incomplete, partially-mislabeled document as a timestamped registered-report-style product converts a fixable bookkeeping gap into a permanent, citable one — and forfeits prereg credit for 5 of 9 objects DR4 will adjudicate."
+        },
+        {
+          "what": "No security audit among the five: the hunt console is a live web app (hunt_console.py serving dossier content), the prompt-injection defense for web/archive content is policy-only and never red-teamed, no secrets/credentials scan was run, and pipeline code parses untrusted VizieR/arXiv/MAST responses directly.",
+          "why_it_matters": "An AI-driven project that routinely ingests web content into an agent loop and serves a local web UI has a concrete injection surface; one poisoned catalog comment field could corrupt the append-only documented history the project depends on."
+        },
+        {
+          "what": "No publication-readiness audit despite three of five GO verdicts being citable products: CITATION.cff stale (v2.2.0 vs v2.3.0, DOIs end at v2.0.1, 70-vs-27 validation counts), no venue/format decision, no AI-authorship disclosure policy, and no check of CDS/VizieR redistribution licensing for the derived parquets a data release would ship.",
+          "why_it_matters": "The portfolio pivoted from object-hunting to publishing, but the review never audited whether the repo can actually publish cleanly; the stale-citation defect would propagate into the first external artifact."
+        },
+        {
+          "what": "No operations/time-axis plan for the 6-month pre-DR4 window: no standing scoop monitor (arXiv/ADS alerts) on the 4 novel candidates despite Shahaf/Yamaguchi/El-Badry actively working the same NSS pool; no scheduled archival-rv-monitor cadence keyed to upcoming survey DRs; no Rubin-watchlist revisit trigger; no DR4-slip contingency. 'eROSITA-east' is repeatedly treated as scheduled fresh data when it is IKI-held with no public release date.",
+          "why_it_matters": "The single 'no 2026 publications' WebSearch is a snapshot, not a monitor; a one-paper scoop on WDJ060042 or UCAC4 313 during the wait would erase most remaining project EV, and cheap standing automation exists in-repo."
+        },
+        {
+          "what": "Bright-star time-domain photometry was never swept as a modality: the pool is G≈6-13 where ZTF saturates, yet ASAS-SN and ATLAS forced photometry (decade baselines, the only unsaturated coverage of this regime) appear nowhere in docs, CATALOG_DEPENDENCIES, the 36 ideas, or the drop list; likewise deeper archival UV (XMM-OM SUSS, Swift-UVOT SSC) was used once in one dossier but never adopted where GALEX AIS was too shallow (e.g. WDJ020915's non-detection).",
+          "why_it_matters": "A pool-wide ASAS-SN/ATLAS eclipse/outburst/long-period-variability screen is a cheap no-telescope self-audit of the Tier-1 roster in exactly the magnitude range every existing photometric lane was blind to."
+        }
+      ]
+    }
+  }
+}

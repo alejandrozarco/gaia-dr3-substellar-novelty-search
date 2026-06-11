@@ -289,6 +289,53 @@ def filter33_v2(nss_solution_type, flags):
     return 'PASS'
 
 
+def filter34_astromqual(gof_f2=None, ipd_frac_multi_peak=None, ruwe=None):
+    """F#34 — astrometric-quality CAUTION flag (2026-06-10; the tracked
+    follow-up from CANDIDATES.md 'no global RUWE gate', 2026-05-30).
+
+    A *flag, never a cut*: it does not change the tier. Empirical finding
+    (2026-06-10, project review): the entire corrected Tier-1 pool has
+    RUWE 2.6-28.8 (median 6.1) — elevated single-star RUWE is the NORMAL
+    signature of a photocentric binary here, so an absolute RUWE cut
+    discriminates nothing (the two motivating offenders, RUWE 6.46 / 9.35,
+    sit inside the bulk). The discriminating axes are:
+
+      - gof_f2 > +5            : the NSS orbit's own goodness-of-fit (Gaia F2);
+                                 +5 = the project's frozen 'unreliable' line
+                                 (docs/dr4_preregistration_2026_06_01.md).
+      - ipd_frac_multi_peak >= 4 : resolved-double contamination — the
+                                 photocentre mixes two resolved images.
+      - ruwe >= 12.5           : extreme even for a photocentric binary
+                                 (P95 of the corrected Tier-1 pool).
+
+    Returns (verdict, reason): 'FLAG' + which axes fired; 'PASS' if at least
+    one axis was evaluable and none fired; 'NO_DATA' if all three inputs are
+    missing — deliberately loud, never a silent no-op (the #117 staleness
+    lesson: F#33 silently no-opped on chunks missing `flags`).
+    """
+    fired, seen = [], False
+    checks = [('gof_f2', gof_f2, lambda v: v > 5.0, 'F2>+5'),
+              ('ipd', ipd_frac_multi_peak, lambda v: v >= 4.0, 'ipd_multi_peak>=4'),
+              ('ruwe', ruwe, lambda v: v >= 12.5, 'ruwe>=12.5')]
+    for _name, val, test, label in checks:
+        if val is None:
+            continue
+        try:
+            if pd.isna(val):
+                continue
+            v = float(val)
+        except (TypeError, ValueError):
+            continue
+        seen = True
+        if test(v):
+            fired.append(label)
+    if not seen:
+        return 'NO_DATA', 'no quality inputs (gof_f2/ipd/ruwe all missing)'
+    if fired:
+        return 'FLAG', '+'.join(fired)
+    return 'PASS', ''
+
+
 # ----------------------------------------------------------------------------
 # Tier classification — identical to web_tool/app.py derive_one()
 # ----------------------------------------------------------------------------
@@ -445,6 +492,13 @@ def derive_row_v2(row, M1_prior=1.5):
 
     tier = tier_label(cls_v2, f29, f30, f31, f32, f33)
 
+    # F#34 — astrometric-quality caution flag (never changes the tier)
+    f34, f34_reason = filter34_astromqual(
+        gof_f2=row.get('goodness_of_fit') if 'goodness_of_fit' in row else row.get('nss_gof_f2'),
+        ipd_frac_multi_peak=row.get('ipd_frac_multi_peak'),
+        ruwe=row.get('ruwe'),
+    )
+
     return {
         'a_phot_mas': float(a_phot),
         'plx_used': plx_used,
@@ -466,6 +520,8 @@ def derive_row_v2(row, M1_prior=1.5):
         'filter31_v2': f31,
         'filter32_v2': f32,
         'filter33_v2': f33,
+        'filter34_v2': f34,
+        'filter34_reason_v2': f34_reason,
         'flags': (int(flags_val) if (flags_val is not None and not pd.isna(flags_val)) else None),
         'nss_period_nonsignificant': f33 in ('FAIL', 'FLAG'),
         'sini_implied_v2': sini_implied_v2,

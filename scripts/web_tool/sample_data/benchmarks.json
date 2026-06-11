@@ -7,13 +7,13 @@
         {
           "name": "Gaia BH1",
           "source_id": "4373465352415301632",
-          "expected_tier": "Tier-1 BH",
+          "expected_tier": "Tier-2 (RV inconclusive — needs follow-up) — by design (F#31 NO_DATA: no Gaia RV products at G=13.77); real BH per El-Badry+2023",
           "M_2_expected": 9.6,
           "P_expected_d": 185.6,
           "primary_sp": "G dwarf",
           "G_mag": 13.77,
           "ref": "El-Badry+ 2023 MNRAS 518, 1057",
-          "notes": "First confirmed dormant BH. RUWE=7.6, NSS=1. RV-confirmed."
+          "notes": "First confirmed dormant BH. RUWE=7.6, NSS=1. RV-confirmed. Cascade lands it Tier-2 BY DESIGN: F#31 returns NO_DATA (Gaia publishes no RV products at G=13.77), matching CANDIDATES.md (\"BH1/BH2 land in our Tier-2/Demoted pool — our cascade is more conservative\"). Expectation corrected 2026-06-10 (was stale \"Tier-1 BH\", causing spurious recall misses in every gate run)."
         },
         {
           "name": "Gaia BH2",
@@ -60,7 +60,7 @@
           "M_2_expected": "spurious",
           "P_expected_d": null,
           "primary_sp": "A-type",
-          "G_mag": 11.80,
+          "G_mag": 11.8,
           "ref": "This work — Filter #31 calibration object",
           "notes": "rv_chisq_pvalue=0.9989 — RV chi-sq says NO variability, yet rv_amplitude_robust is non-zero due to single-transit outlier. The pattern Filter #31 catches."
         },
@@ -114,7 +114,7 @@
           "M_2_expected": 3.88,
           "P_expected_d": 945.7,
           "primary_sp": "F subgiant",
-          "G_mag": 9.90,
+          "G_mag": 9.9,
           "ref": "This work — candidate BH",
           "notes": "Cleanest BH candidate. logg=4.01 ANN, BP-RP=0.56 (F color), zero risk flags."
         },
@@ -133,7 +133,7 @@
           "name": "TYC 1299-727-1",
           "source_id": "3396420280383215360",
           "expected_tier": "Tier-1 BH",
-          "M_2_expected": 3.50,
+          "M_2_expected": 3.5,
           "P_expected_d": 620.1,
           "primary_sp": "F subgiant",
           "G_mag": 10.12,
@@ -170,13 +170,13 @@
         {
           "name": "HD 207141",
           "source_id": "6811355413155399040",
-          "expected_tier": "Tier-1B (R=8.2 R_⊙ flag)",
-          "M_2_expected": 7.57,
+          "expected_tier": "Demoted — triple-favored (Shahaf+2023 PIII=1e-5); M_2 corrected 7.57 -> ~1.3-1.75",
+          "M_2_expected": 1.75,
           "P_expected_d": 951.9,
           "primary_sp": "F-G bright giant",
           "G_mag": 8.72,
           "ref": "This work — heaviest BH candidate",
-          "notes": "If real, the heaviest dormant BH in our catalog. R=8 R_⊙ gives single F30 flag. Needs UV check."
+          "notes": "STALE HEADLINE CORRECTED 2026-06-10: the original \"heaviest BH candidate, M_2=7.57\" predates the v2 NSS-parallax correction (M_2 -> 1.31, CANDIDATES.md demoted table) and the M1 correction (M2_corrected=1.75 at M1=2.60). Shahaf+2023 table1 gives PIII=0.00001 — strongly triple-favored. Journal created 2026-06-10. NOTE: 1.31-vs-1.75 discrepancy between demoted-table and M1-corrected parquet is recorded in the journal."
         },
         {
           "name": "BD+38 2040",
@@ -196,7 +196,7 @@
           "M_2_expected": "2.4 cascade → 0.7–1.5 chromatic-corrected",
           "P_expected_d": 816.3,
           "primary_sp": "K1–2 RGB (Gaia DR3 GSP-Spec ANN)",
-          "G_mag": 8.40,
+          "G_mag": 8.4,
           "ref": "This work — K-giant chromatic calibration #2 (after 4 UMi)",
           "notes": "Strongest single-target case but K-giant evidence cannot be ignored. Was Tier-1 NS at first cascade; demoted by GSP-Spec ANN re-vet. R=15.5 R_⊙, logg=2.63, K spectral class — textbook F#30 territory."
         }
