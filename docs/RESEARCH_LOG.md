@@ -382,3 +382,8 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
   photometry CLEAN (C*=+0.056, 0% blended transits, ipd_mp=0); the neighbour is itself a close
   double (ipd_mp=91, RUWE 18.95) → coronal-ceiling argument weakens to ~1.3×; X-ray ID rests on
   the positional match (unaffected). Ledger row in the Object B journal.
+
+### 2026-07-01 — Object B: PS1 DR2 = first resolved photometric signal (suggestive variability); ZFPS revoked -> DIY forced-photometry lane opened
+- **ZFPS account revoked** (institutional-policy gate; creds rejected). Route replaced by (a) a DIY local forced-photometry lane on PUBLIC ZTF difference images (ztfquery/ztflc-class, anonymous-IBE feasibility spike dispatched) and (b) status email to the IPAC operator (user action).
+- **PS1 DR2 (new lane, never checked): suggestive ~0.1-0.3 mag variability of Object B itself** — attribution-clean 15-epoch resolved photometry 2011.8-2014.3; scatter p89-p100 of a 37-star control; percentile-0 g-band bright-state offset (4/4 dets 0.24-0.38 mag above the concordant stack+forced time-average); NO outbursts; deblend-loss confound stated (evidence, not proof). Exactly the CV-flickering signature the classification predicts; confirmation = resolved ZTF light curve.
+- **LSST alert lane opened but not closed** (Fink unreachable locally; ALeRCE/ANTARES ZTF-only; Lasair token-gated). Validated ZTF alert nulls at both positions through 2026-06 (no bright outburst 2018-2026).
