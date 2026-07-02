@@ -420,3 +420,10 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - Hipparcos: only HD 157033 present (Hp scatter 25 mmag, flag=constant 1989–93); other 2 genuinely absent (Tycho-2 controls); raw Hipparcos epochs not publicly exposed anywhere. KELT: unusable ×3 (2 field gaps, 1 saturation-excluded — verified against archive's own data).
 - **Verdict: HD 264291 + HD 207141 photometric lanes CLOSED; HD 157033 mostly closed** (36-yr zero-outburst baseline; mass ambiguity untouched, DR4/telescope-gated). The queued "ASAS-3/KELT/Hipparcos bright trio" item is DONE.
 - Provenance: docs/reports/bright_trio_screen_2026_07_02.md (report of record) + /tmp/bright_trio_screen/; 9 ledger rows appended.
+
+### 2026-07-02 — PS1 candidate-variables adversarial referee: 1 REFUTED artifact + 1 confirmed ordinary active M dwarf; screen fully closed
+- Referee (opus) closed the 2 pending PS1 register-screen flags with the full artifact drill (11 matched isolated controls/band vs the screen's 5, epoch-level seeing/sky/chip/psf-ap forensics, PM propagation, independent ZTF cross-check).
+- **3137896273168859648 (1eRASS J073600.6+034909): REFUTED** — the 0.2–0.6 mag "signal" collapses 0.96→0.29 mag on dropping ferr>10% epochs; residual 92–97% chip-locked zero-point offset; chi2-driver epochs have NEGATIVE aperture flux; seeing ρ up to +0.77; ZTF (839 ep) flat. Register disposition superseded; stays register-tier.
+- **6315134987927550592 (1eRASS J152614.8-111331): variability REAL** (100th pct of matched controls, psf-ap co-motion +0.90..+0.95, ZTF zi chi2/dof=26 corroboration) **but = ordinary active M dwarf** (~0.1 mag dip-dominated spot modulation, no coherent period, d≈121 pc, coronal X-rays). Full journal created (21st) so it is never re-flagged. NOT a compact-object candidate.
+- Campaign null stands: 0 novel compact objects. The PS1 register screen is now fully adjudicated end-to-end.
+- Provenance: /tmp/ps1_referee_2026_07_02/ (analysis.json); superseding register rows + 4 ledger rows + journal entry appended.
