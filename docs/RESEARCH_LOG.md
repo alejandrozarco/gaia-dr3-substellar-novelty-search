@@ -413,3 +413,10 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - **Arm B2 — findings-register screen (1,997 rows):** 25 matched; 5 with NVISITS≥3 & VSCATTER≥1 km/s — all known-recoveries (1 WR spectral-fit failure, 3 eRASS1 knowns, KIC 4069063 = published Conroy+2014 triple); **0 uncatalogued/novel flagged**.
 - Note: `data/external_catalogs/apogee_dr17_v2_pool.csv` (559 rows) is an SB9-style RV pool, not an APOGEE extract, despite the filename — matched 0/20.
 - Provenance: /tmp/apogee_ingest_2026_07_02/ (REPORT.md + armA/armB/armB2 CSVs authoritative); 20 per-object ledger rows appended via journal.py.
+
+### 2026-07-02 — Bright-trio follow-up: Hipparcos/ASAS-3/KELT screen (closes the ASAS-SN saturation blind spot)
+- 3 saturated targets (HD 157033, HD 264291, HD 207141); source_ids SIMBAD-verified first — **HD 207141 = 6811355413155399040 confirmed exact**. Red-noise local-null + dataset-coherence guardrail throughout.
+- **ASAS-3 delivered for all 3** (368–781 epochs, 7–8.8 yr, floors 12–18 mmag): ALL QUIET, 0 signals survive the guardrail; HD 264291's marginal P/2 (FAP 0.10) fails coherence → independently corroborates the ASAS-SN P/2 kill with a decade-earlier instrument.
+- Hipparcos: only HD 157033 present (Hp scatter 25 mmag, flag=constant 1989–93); other 2 genuinely absent (Tycho-2 controls); raw Hipparcos epochs not publicly exposed anywhere. KELT: unusable ×3 (2 field gaps, 1 saturation-excluded — verified against archive's own data).
+- **Verdict: HD 264291 + HD 207141 photometric lanes CLOSED; HD 157033 mostly closed** (36-yr zero-outburst baseline; mass ambiguity untouched, DR4/telescope-gated). The queued "ASAS-3/KELT/Hipparcos bright trio" item is DONE.
+- Provenance: docs/reports/bright_trio_screen_2026_07_02.md (report of record) + /tmp/bright_trio_screen/; 9 ledger rows appended.
