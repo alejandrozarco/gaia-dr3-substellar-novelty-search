@@ -57,3 +57,6 @@ wider_hunt_chunked_log.txt
 # Gentile Fusillo 2021 / etc.). NOT committed: third-party data, 469 MB+, and the public
 # repo references these via CATALOG_DEPENDENCIES.md (Vizier) rather than redistributing.
 data/external_catalogs
+
+# APOGEE DR17 ASPCAP bulk catalog (1.7 GB, re-downloadable from SDSS SAS)
+data/external_catalogs/apogee_dr17/*.fits
