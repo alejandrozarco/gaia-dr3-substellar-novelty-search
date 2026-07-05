@@ -32,9 +32,13 @@ abstract: >-
   neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and
   exoplanets. v2 applies three corrections to the v1 cascade (NSS
   parallax over gaia_source.parallax, K_obs = rv_amplitude_robust / 2,
-  Filter #30 logg fallback chain) and is validated at 93% class-level
-  recall and 14% adversarial false-positive rate against 70 published
-  systems. Independent re-verification (2026-05-28) RETRACTED the
+  Filter #30 logg fallback chain). An internal validation reported
+  ~93% class-level recall and a 14% adversarial false-positive rate,
+  but the frozen truth set is not committed to the repository, so this
+  figure is historical and not independently reproducible from the
+  release (the reproducible regression checks do pass: frozen
+  production tiers, negative-control specificity, and the BH2 fixture).
+  Independent re-verification (2026-05-28) RETRACTED the
   earlier CV-period "discovery" (CRTS J051419+0111 — its period and
   eclipse are artifacts) and the entire CV-period avenue, and
   downgraded the named dormant compact-object candidates: none is
