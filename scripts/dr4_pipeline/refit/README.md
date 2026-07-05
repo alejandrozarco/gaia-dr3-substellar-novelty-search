@@ -188,6 +188,36 @@ Mass chain: M₂ comes from the **photocentric mass function**
 
 ---
 
+## Day-one self-validation against the labeled false-positive registry
+
+Before the engine's *new* DR4 verdicts are trusted, it must first reproduce the
+correct **skeptical** verdict on every false positive the project already
+documented. `fp_registry.py` is that corpus — a **source_id-keyed, ledger-sourced
+list of the campaign's own retractions** (harvested from `RESEARCH_LOG.md`,
+`CANDIDATES.md`, the per-object journals and `CITATION.cff`, **not** from
+memory), classified by `fp_class` and by the `owning_subsystem` responsible for
+catching each. This engine owns the `dr4-refit-astrometric` slice; photometric
+(CV-period, ellipsoidal), SB2/luminous-binary and pure crossmatch FPs are
+recorded for completeness but guarded elsewhere.
+
+`test_fp_selfvalidation.py` turns each astrometric FP into a synthetic-DR4
+assertion — e.g. the cos-i sqrt bug must not inflate M₂ across Chandra; the
+rv/2→sin-i deprojection must not turn an NS-mass into a fake mass-gap BH (the
+5858574 signature: direct M₂≈1.55 vs the retracted 2.82); a hierarchical triple
+must be flagged `multi` (5858574 / HD 75567 / 2127900); a weak-fit WDJ020915
+must PARK not CONFIRM, and a low-mass one DOWNGRADE; WDJ060042 must not claim
+super-Chandra at M₂≈1.37; a near-face-on orbit must REFUTE (stellar, TYC 4562 /
+UCAC4 class); and the WDJ205650 mass-join bug (default M₁=1.5 → the retracted
+super-Chandra M_tot≈2.06 artifact vs the real sub-Chandra 0.64) must not recur.
+
+Run the gate standalone, or it runs **automatically before the real day-one
+analysis** (abort on failure, `--skip-self-validate` to override):
+
+```bash
+$PY run.py --self-validate               # explicit gate, exits 0/1
+$PY -m pytest test_fp_selfvalidation.py -q
+```
+
 ## Files
 
 | File | Role |
@@ -197,8 +227,10 @@ Mass chain: M₂ comes from the **photocentric mass function**
 | `prereg.py` | Per-candidate frozen thresholds (`PREREG`); `decide()` wiring; mass-function chain; doc cross-check (`audit_against_doc`). |
 | `synth.py` | Synthetic DR4-like epoch data: 5.5-yr baseline, visibility-window cadence, varied scan angles, AL parallax factor, G→σ_AL; `CANDIDATE_TRUTH` anchors. |
 | `adapter.py` | **The DR4 column-mapping seam.** `epoch_table_to_epochdata`, `normalize_nss_row`. |
-| `run.py` | Day-one driver: epoch table → fit → model-select → pre-registered verdict (`--demo` for today). |
+| `fp_registry.py` | **Labeled false-positive corpus** — the campaign's own ledger-sourced retractions (source_id-keyed), classified by `fp_class` / `owning_subsystem`; `astrometric_cases()`, `validate_registry()`. |
+| `run.py` | Day-one driver: epoch table → fit → model-select → pre-registered verdict (`--demo` for today; `--self-validate` runs the FP gate; the gate runs automatically before a real analysis). |
 | `test_refit.py` | End-to-end synthetic tests (8). |
+| `test_fp_selfvalidation.py` | **FP self-validation** (11): registry integrity + completeness + every astrometric FP reproduced with its correct skeptical verdict; `run_self_validation()` is the day-one gate entry point. |
 
 Stdlib + numpy + scipy only (pandas/astropy used only by `run.py` for reading
 parquet/fits epoch tables; the engine core does not require them).

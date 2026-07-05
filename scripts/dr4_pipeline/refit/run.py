@@ -43,6 +43,28 @@ import synth
 from synth import make_epoch_data
 
 
+def _self_validate_gate(verbose=True):
+    """Run the labeled-FP self-validation guards; return 0 (pass) / 1 (fail).
+
+    Wired to `--self-validate` and run automatically before the real day-one
+    analysis (unless --skip-self-validate). The engine must reproduce every
+    documented astrometric false positive with the correct skeptical verdict
+    before any NEW verdict is trusted (lane #116 insurance)."""
+    import fp_registry
+    from test_fp_selfvalidation import run_self_validation
+    print(fp_registry.summary())
+    print('\nDR4 day-one self-validation against the labeled-FP registry:')
+    ok, failures = run_self_validation(verbose=verbose)
+    if ok:
+        print('\nSELF-VALIDATION PASSED — the engine reproduces every documented '
+              'astrometric FP with the correct skeptical verdict.')
+        return 0
+    print('\n*** SELF-VALIDATION FAILED — DO NOT TRUST NEW VERDICTS ***')
+    for f in failures:
+        print('  [FAIL] ' + f)
+    return 1
+
+
 def _load_table(path):
     """Load an epoch table from parquet / csv / fits into a dict-of-arrays."""
     ext = os.path.splitext(path)[1].lower()
@@ -100,8 +122,21 @@ def main(argv=None):
                     help='Optional JSON file mapping DR4 column names -> EpochData fields.')
     ap.add_argument('--demo', action='store_true',
                     help='Run on synthetic DR4-like data for all 4 candidates (today).')
+    ap.add_argument('--self-validate', action='store_true',
+                    help='Run the labeled-FP self-validation gate (fp_registry) and exit. '
+                         'Asserts the engine reproduces every documented astrometric false '
+                         'positive with the correct skeptical verdict.')
+    ap.add_argument('--skip-self-validate', action='store_true',
+                    help='Skip the automatic self-validation gate on the real day-one path '
+                         '(NOT recommended — the gate is day-one insurance).')
     ap.add_argument('--json-out', default=None, help='Write the verdict dict(s) to this JSON path.')
     args = ap.parse_args(argv)
+
+    # --- Labeled-FP self-validation gate ---------------------------------
+    # Before trusting any NEW verdict, the engine must reproduce every
+    # documented astrometric false positive with the correct skeptical verdict.
+    if args.self_validate:
+        return _self_validate_gate()
 
     results = {}
 
@@ -124,6 +159,14 @@ def main(argv=None):
         sid = args.source_id
         if sid not in PREREG:
             ap.error(f'{sid} is not one of the 4 pre-registered candidates: {list(PREREG)}')
+        # Day-one insurance: reproduce every documented FP before trusting a new verdict.
+        if not args.skip_self_validate:
+            print('# Running labeled-FP self-validation gate before the real analysis...\n')
+            if _self_validate_gate(verbose=False) != 0:
+                print('\nABORTING: self-validation failed — fix the regression before '
+                      'trusting any DR4 verdict (or pass --skip-self-validate to override).')
+                return 1
+            print()
         column_map = None
         if args.column_map:
             with open(args.column_map) as fh:
