@@ -121,12 +121,19 @@ def _cache_put(key, xml_text):
             lf.close()
 
 
-def build_query(query, category):
-    # AND the whitespace-separated terms, each as a quoted single-token phrase so
-    # arXiv binds EVERY term to all: (a bare "all:a b c" binds only "a") and so an
-    # internal hyphen ("X-ray") is not read as a NOT operator.
+def build_query(query, category, mode="strict"):
+    # Each whitespace term is a quoted single-token phrase so arXiv binds EVERY term
+    # to all: (a bare "all:a b c" binds only "a") and an internal hyphen ("X-ray") is
+    # not read as a NOT operator.
+    #   mode="strict": AND all terms (precision) -- but a long query can require so
+    #     many literal tokens that a real paper using different wording returns ZERO,
+    #     which for a novelty gate is the DANGEROUS failure (false "novel"). So main()
+    #     falls back to:
+    #   mode="broad": OR the terms (recall) -- surfaces related work the strict AND
+    #     missed. A broad hit on a strict miss means "read before claiming novel".
     terms = [t for t in query.split() if t]
-    q = " AND ".join('all:"%s"' % t for t in terms)
+    joiner = " AND " if mode == "strict" else " OR "
+    q = joiner.join('all:"%s"' % t for t in terms)
     if category:
         cats = " OR ".join("cat:" + c.strip() for c in category.split(","))
         q = "(%s) AND (%s)" % (q, cats)
@@ -134,9 +141,9 @@ def build_query(query, category):
 
 
 def search(query, max_results=10, category=None, sort="submittedDate", retries=3,
-           throttle=True, cache=True):
+           throttle=True, cache=True, mode="strict"):
     params = {
-        "search_query": build_query(query, category),
+        "search_query": build_query(query, category, mode=mode),
         "start": 0,
         "max_results": max_results,
         "sortBy": sort,
@@ -236,6 +243,30 @@ def main():
     if args.since:
         entries = [e for e in entries if e["published"] >= args.since]
     print(fmt(total, entries, args.query))
+    # RECALL FALLBACK: the strict all-terms AND can return 0 for a long query even
+    # when related work exists (over-strict = false "novel", the dangerous failure).
+    # If strict found nothing, run a broad any-term OR (relevance-ranked) so a real
+    # scoop paper cannot hide behind a strict miss.
+    if not entries:
+        try:
+            raw_b = search(args.query, max_results=args.max, category=args.category,
+                           sort="relevance", throttle=not args.no_throttle,
+                           cache=not args.no_cache, mode="broad")
+            tb, eb = parse(raw_b)
+            if args.since:
+                eb = [e for e in eb if e["published"] >= args.since]
+        except Exception as ex:  # noqa: BLE001
+            print("\n# BROAD fallback FAILED to run: %s" % ex, file=sys.stderr)
+        else:
+            print("\n# STRICT (all-terms AND) found nothing -> BROAD (any-term OR) "
+                  "relevance-ranked fallback:")
+            print(fmt(tb, eb, args.query + "  [BROAD/OR]"))
+            if eb:
+                print("# ^ strict-novel but broad-related work EXISTS: read these before "
+                      "calling the lane novel.")
+                print("# ALSO run a plain WebSearch on the method: the arXiv strict-match "
+                      "misses papers that use different wording (a WebSearch found a DESI-RV "
+                      "scoop note this arXiv gate had missed, 2026-07-05).")
 
 
 if __name__ == "__main__":

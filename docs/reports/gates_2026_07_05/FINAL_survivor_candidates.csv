@@ -1,0 +1,19 @@
+name,alt_name,source,mag_regime,status,note,dasch_prior_attempt
+ASASSN-J073234-200049,ASASSN-23ht,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,min P>=8yr; no established period,no
+ASASSN-J175602+013135,ASASSN-24cf,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,"RS CVn tag only, no period",no
+ASASSN-J223332+565552,ASASSN-23ik,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,"Algol tag, no reported period",no
+ASASSN-J073924-272916,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,ATLAS P=2.01d spurious; true P open,no
+ASASSN-J074007-161608,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,no period known,no
+ASASSN-J094848-545959,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,"YSO tag, no orbital period",no
+ASASSN-J162209-444247,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,11.4d rotation known; orbital P open,no
+ASASSN-J183210-173432,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,no period known,no
+ASASSN-J183606-314826,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,191d pulsation (not orbital); orbital P open,no
+ASASSN-J190316-195739,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,"RAVE spectrum only, no orbital period",no
+ASASSN-J205245-713514,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,no period known,no
+ASASSN-J212132+480140,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,Gaia P=0.0153d spurious/unrelated,no
+ASASSN-J225702+562312,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_clean,Gaia P=0.608d spurious/unrelated,no
+ASASSN-J005255+633515,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_marginal,P~986d tentative (2 dips + Gaia RV); refinement value,no
+ASASSN-J062510-075341,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_marginal,Gaia SB1 P=1134+-285d imprecise; refinement value,no
+ASASSN-J124745-622756,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_marginal,P~1096d tentative (2 dips); refinement value,no
+ASASSN-J160757-574540,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_marginal,"P~1030d tentative (4 dips, eccentric); refinement value",no
+ASASSN-J202402+383938,-,ASAS-SN Big Dippers (arXiv:2507.19594),"13<g<14 (confirmed bright, DASCH-reachable)",open_marginal,ATLAS P=986d tentative long-period; refinement value,no
