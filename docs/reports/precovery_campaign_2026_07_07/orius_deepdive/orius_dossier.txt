@@ -1,0 +1,52 @@
+DOSSIER: (330836) Orius = 2009 HW77 (Centaur). Compiled 2026-07-07.
+
+ORBIT/DISCOVERY: a=21.36 AU, e=0.4183, i=17.88, q=12.42, Q=30.30, P=98.7 yr, T_J=3.746.
+Perihelion 2007-01-07; currently OUTBOUND, aphelion ~2056. H=9.73 (JPL); 9.725+/-0.343 (Cernis+2016).
+JPL orbit #5 (soln 2021), arc 2002-02-12 to 2012-05-19, 84 obs, RMS 0.5", condition code 3.
+Discovered 2009-04-25 by K. Cernis & I. Eglitis, Baldone 0.8/1.2m Schmidt (V~20.7). Numbered 2012-06,
+named 2013-01 (centaur Orius, killed by Heracles stealing Pholus' wine).
+
+LITERATURE (only 3 refereed, all same Baldone/OrbFit group; dynamics + discovery only):
+1. Wlodarczyk, Cernis & Eglitis 2011 MNRAS 418,2330 - dynamics; half-life ~5.25 Myr; ~27% clones
+   temporarily JFCs (mean ~82 kyr); Bailey-Malhotra "diffusing" Centaur.
+2. Cernis et al. 2016 (Baldone 2008-2013 obs data) - source of H=9.725+/-0.343, D=29-79 km (assumed p).
+3. Wlodarczyk, Cernis & Eglitis 2024 Open Astron 33 astro-2024-0004 - dynamics on longer arc, half-life 4.45 Myr.
+ABSENT from: TNOs-are-Cool XI (Duffard+2014, verified not in PDF), MBOSS colours (verified not in table),
+Johnston diameters, LCDB, and ALL DES TNO catalogs incl. Year-6 known-TNO photometry (2504.16927) - all verified not in text.
+NO targeted lightcurve/colour/spectrum/thermal study exists. Genuinely unstudied beyond survey catalogs + dynamics.
+
+PHYSICAL: only measured quantity is H~9.7-9.9 (V). Size = H+assumed-albedo only: D~26 km(p=0.30) to 79 km(p=0.05),
+nominal ~40-63 km; no thermal constraint. Colour class UNKNOWN. Rotation UNKNOWN. Dynamics: diffusing Centaur,
+half-life ~4.5-5 Myr, high JFC-transition probability.
+
+OUR 6 DECam POINTS vs H=9.73 (Horizons predicted V, G=0.15):
+ 2013-03-02 r=14.214 D=14.132 a=4.00deg V=21.61
+ 2014-02-12 r=14.718 D=15.054 a=3.57deg V=21.80
+ 2015-02-27 r=15.308 D=15.512 a=3.61deg V=21.95
+ 2015-04-27 r=15.403 D=14.690 a=2.71deg V=21.79
+Measured: r=21.57-21.63 (2013); VR=21.53-21.83 (2014-15). Adopt generic red-Centaur V-r~0.35, V-VR~0.20
+(Orius' own colour unmeasured -> ~0.15 mag systematic). 2013: r=21.60 -> V~21.95 = 0.34 mag fainter than
+H=9.73 prediction -> implied H~10.0-10.1 (~1sigma faint edge of 9.725+/-0.343; matches RECON/LuckyStar Hv=9.9).
+2014-15 VR brackets predicted VR (~21.6-21.75) within 0.2 mag. LIMITS: n=6, mixed bands (r+VR), 2 apparitions,
+alpha only 2.7-4.0deg. NO phase curve (lever too short). NO rotation lightcurve (0.30-mag VR spread ~ geometry
+0.16 mag + DECam scatter 0.1-0.2 mag; not a defensible detection). VALUE = brightness consistency check (bare
+~30-65 km nucleus, H slightly faint) + +2.9 yr outbound-leg astrometric arc extension (~+35% on the JPL arc).
+
+OCCULTATION: Centaurs this size ARE occultation targets (only route to real size/shape/rings). Orius is carried
+by Lucky Star (Sicardy/LESIA; uses Hv=9.9) and RECON (Buie/SwRI, attempted 2018-07-06 event, star G=14.6).
+But orbit is NOT occultation-grade: 2018 RECON prediction had 1sigma time err 576 s, cross-track 2141 km (~1/3 Earth
+radius) even 6 yr post last-obs. NOW (2026-04) JPL 3sigma sky ellipse ~14" semi-major = ~230,000 km at Dz=22.4 AU
+(~76,000 km 1sigma) = many Earth diameters, effectively unpredictable. Root cause: 84-obs cc-3 2002-2012 arc
+extrapolated 14 yr with no post-2012 astrometry in the solution. Occultation needs sub-Earth-radius / mas-level
+path -> our 2013-2015 DECam astrometry is the highest-leverage available fix short of a new recovery.
+
+OBSERVABILITY: fading toward aphelion. 2013-15 (our data) r=14.2-15.4 V=21.6-22.0; 2026 r=22.0 V=23.5
+(RA~21h15m Dec -34); 2030 V=23.8; 2036 V=24.2; ~2050-56 aphelion V~24.8. Our window was near brightest
+post-perihelion apparition; only fainter for ~30 yr. RUBIN/LSST: Dec -34 squarely in footprint (Cerro Pachon,
+to Dec ~+15); V~23.5 above single-visit depth (r~24.5) now, stackable into mid-2030s. LSST will give dense
+Gaia-referenced astrometry (finally occultation-grade orbit) + sparse multi-band photometry (first real colour,
+maybe rotation). Realistically the next dataset to advance this object.
+
+BOTTOM LINE: dynamically well-studied, physically near-unstudied Centaur; orbit too coarse for the occultation
+campaigns that list it. Our 6 points matter mainly as a +2.9 yr outbound astrometric arc extension for
+Lucky Star/RECON ephemerides, secondarily as an H~9.7-10.1 brightness check (no variability claim possible).

@@ -1,0 +1,662 @@
+OpenAstronomy2024;33:20240004
+Research Article
+Ireneusz Wlodarczyk*, Kazimieras Černis, and Ilgmar Eglitis
+Asteroids discovered in the Baldone Observatory
+between 2017 and 2022: The orbits of asteroid
+428694 Saule and 330836 Orius
+https://doi.org/10.1515/astro-2024-0004 MPC Minorplanetcenter
+receivedJanuary31,2023;acceptedJune07,2024 MPEC MinorPlanetelectronic
+circulars
+Abstract: We discovered 83 asteroids at the Baldone
+Astrophysical Observatory (MPC code 069) in 2017–2022. NEO NearEarthobject
+NEODyS NearEarthobjectsdyna-
+We studied one of the dynamically interesting Apollo
+micalsite
+(Near Earth object) observed at the Baldone Astronomical
+NEODyS-2 NearEarthobjectsdynamic
+Observatory, namely 428694 Saule (2008 OS9) and the
+Site-2
+Centaur-typeasteroid330836Orius(2009HW77).Westu-
+diedtheevolutionoftheasteroidSaule’srotationperiod, YORPeffect The
+Yarkovsky–O’Keefe–Radzievs-
+obliquity, and spin axis together with its non-gravita-
+kii–Paddackeffect
+tional parameter da∕dt connected with the Yarkovsky
+effect. Additionally, we studied the orbit of the Amor- σLOV denotesthepositionalongthe
+type asteroid 2017 UW42, which has the significant non- lineofvariation(LOV),intheσ
+space
+gravitational parameter A2.
+σ Valuesofσ areusuallyinthe
+Keywords:minorplanets,asteroids,search,astrometry,orbits interval(−3,3)
+RMSast rootmeansquareerror(ofthe
+residualsO–C)oftheorbitalfit
+RMSmag rootmeansquareerrorof
+Acronyms observation’smagnitude
+VA Virtualasteroid,clones
+CA Closeapproach Symbols:
+IAUMPC InternationalAstronomical H absolutemagnitudeofan
+UnionMinorPlanetCenter asteroid
+LOV Lineofvariation;LOVisaone- pV albedo
+dimensionalpartofa(curved) ϱ density
+lineintheinitialconditions
+spacegenerallycomputedwith
+theuniformsamplingofthe
+1 Introduction
+LOVparameter
+In Cernis et al., (2015) and Wlodarczyk et al., (2020), we
+presented the discovered asteroids at the Baldone Obser-
+ vatory (located in Latvia) from 2008–2018. In the present
+*Correspondingauthor:IreneuszWlodarczyk,ChorzowAstronomical work, we gather all discoveries of asteroids from 2017
+Observatory,41-500Chorzow,Poland,e-mail:astrobit@ka.onet.pl through 2022. The work continues our discoveries and
+KazimierasČernis:InstituteofTheoreticalPhysicsandAstronomy,
+attempts to discover new asteroids. The discovery of any
+VilniusUniversity,Saulėtekioal.3,VilniusLT-10222,Lithuania,
+newobjectisvaluableforscience.Theremaybeordinary
+e-mail:Kazimieras.Cernis@tfai.vu.lt
+objects between them, especially a Near Earth object
+IlgmarEglitis:InstituteofAstronomy,UniversityofLatvia,Raina19,Riga
+1586,Latvia,e-mail:ilgmars@latnet.lv (NEO).Moreover,withstandardobservations,itispossible
+OpenAccess.©2024theauthor(s),publishedbyDeGruyter. ThisworkislicensedundertheCreativeCommonsAttribution4.0InternationalLicense.
+2  IreneuszWlodarczyketal.
+to find unique comets with hyperbolic orbits that may Quenzi, the designations in his list are as follows: F/U –
+cometousfromanotherstarsystem. follow-up;1st F/U – first to follow-up; Prec. – precovery. In
+All orbital computations of asteroids are made using detail, “First follow-up” means being the first to confirman
+the OrbFit software v.5.0.5 and v.5.0.6. In the last version, object. For example, here in https://minorplanetcenter.net/
+the NEODyS Team introduced the error weighing model mpec/K22/K22WS5.html, G96 is the discoverer, and L01 was
+described by Veres et al., (2017), as announced by F. Ber- thefirsttofollowup.
+nardi on the Minor Planet Mailing List. We used the JPL For now, this service only analyzes observations/dis-
+DE431 Ephemerides with 17 perturbing massive asteroids coveries announced by Minor Planet electronic circulars
+aswasdescribedinFarnocchiaetal.,(2013a,b)andsimilar (NEOs, comets). Quenzi might include main belters in the
+toWlodarczyk(2015). future.Shortly,thediscoveriesoftheasteroidsfromBaldone
+shouldalsobeincludedthere.
+2 Discoveries of minor planets at
+3 Orbital and physical evolution of
+the Baldone Observatory in
+the asteroid 428694 Saule
+–
+2017 2022
+(2008 OS9)
+Table 1 lists 83 asteroids discovered at the Baldone Astro-
+physical Observatory in Latvia, and Table 2 presents sta- KC and IE discovered asteroid 428694 Saule (2008 OS9) at
+tistics andastrometric observationsof the asteroids (both Baldone on 2008-07-29. The orbit type of this asteroid is
+newandknown)attheBaldoneObservatoryin2017–2022. Apollo and Near Earth Asteroid. Asteroid 428694 Saule
+In 2015–2017, only some orbits of objects were calcu- (2008OS9)isnamedafterSaule,asolargoddess,thesolar
+lated because there needed to be complete information. deity in the Latvian and Lithuanian mythologies (MPC
+The orbits of the following asteroids are computed with 10061).
+low accuracy because of their short observational arc:
+2017SR313,2018GE3,and2019SJ173.
+Thisworkpresentsthefullsetofdiscoveredobjectsin
+2017–2022.Alldiscoveriesandobservationsofasteroidsat 3.1 Starting orbital elements
+BaldoneweremadebyK.Cernis(KC)andI.Eglitis(IE).
+InWlodarczyket al.,(2020),37 asteroids werediscov- TocomputestartingorbitalelementsoftheasteroidSaule,
+ered in 2015–2018. In Wlodarczyk et al., (2020), in 2017, 21 weusedtheOrbFitsoftwarewiththeJPLDE431ephemer-
+objectswerediscovered;inthepresentpaper(2023),there ides, weighting and selecting observations according to
+are54objectsbecausetheMPChascrediteduswithaddi- the NEODyS-21, 17 additional massive asteroids, and the
+tional 33 discoveries in the last 3 years. In Wlodarczyk Yarkovsky effects. We searched for the non-gravitational
+et al.,(2022a) in2018, 9objects were discovered and 14 in parameter A2,computeddirectlyfromobservations. A2is
+the new paper (2023) because the Minor planet center anon-gravitationaltransverseaccelerationparameter.We
+(MPC) has made five additional discoveries in the last 3 used the publicly available OrbFit v.5.0.5 and 5.0.7 soft-
+years. At the same time, in the last 3 years, there have ware2.Theseversionscancomputeorbitsusingdynamical
+been a lot of new sightings of the objects mentioned in parameters connected to the non-gravitational perturba-
+Wlodarczyk et al., (2020). We decided to show all objects tions. We calculated the non-gravitational parameter A2.
+fromWlodarczyketal.,(2020)andadditionaldiscoveriesin We used all 593 observations published by the IAU MPC:
+2017–2018.Wehavegivenreferencestoeachobject’sMPC https://minorplanetcenter.net/db_search,from20080725.36573
+and MPO numbers, and MPC has given us new designa- to20220819.308671.
+tions. Moreover, the number of published astrometric According to the OrbFit v.5.0.7, we used the error
+observations remained the same as in Wlodarczyk et al., model vfcc17 of Veres et al., (2017). Table 3 presents the
+(2020). We should have mentioned that the numbers in startingnominalKeplerianorbitalelementsofthe428694
+Table2refertoMinorPlanetCircularnumbers.
+Recently,QuenziYefromtheUniversityofMaryland,USA,
+
+compiledaninterestingstatisticofasteroiddiscoveries:https://
+1 https://newton.spacedys.com/neodys/
+sbnmpc.astro.umd.edu/mpecwatch/obs.html. According to 2 https://newton.spacedys.com/neodys/
+TheasteroidsdiscoveredattheBaldonein2017–2022  3
+Table1:ListofasteroidsdiscoveredattheBaldoneObservatoryin2017–2022
+No. Dateofdiscovery Designation Number Status MPCreference
+1 2017Sep.25 2017SV33 ID4op. MPC106,573(2017Nov.5)
+2 2017Sep.25 2017SW33 512,962 ID9op. MPC106,573(2017Nov.5)
+3 2017Sep.26 2017SX33 ID7op. MPC106,573(2017Nov.5)
+4 2017Sep.28 2017SY33 506,714 ID9op. MPC106,573(2017Nov.5)
+5 2017Sep.26 2017SO42 *3op. MPC106,573(2017Nov.5)
+6 2017Sep.29 2017SK134 *6op. MPC118,948(2020Jan.9)
+7 2017Sep.26 2017SP136 *60-dayarc MPC118,948(2020Jan.9)
+8 2017Sep.25 2017SY166 *40-dayarc MPC118,948(2020Jan.9)
+9 2017Sep.26 2017SR169 ID5op. MPC118,948(2020Jan.9)
+10 2017Sep.27 2017SK170 ID45-dayarc MPC118,948(2020Jan.9)
+11 2017Sep.26 2017SM172 ID6op. MPC118,948(2020Jan.9)
+12 2017Sep.26 2017SF175 ID4op. MPC118,948(2020Jan.9)
+13 2017Sep.29 2017SX187 *45-dayarc MPC118,948(2020Jan.9)
+14 2017Sep.25 2017SO205 ID6op. MPC123,568(2020Aug.7)
+15 2017Sep.29 2017SK220 ID4op. MPC125,601(2020Nov.17)
+16 2017Sep.29 2017SH213 ID4op. MPC124,649(2020Sep.24)
+17 2017Sep.26 2017SQ228 *3op. MPC129,111(2021Mar.25)
+18 2017Sep.29 2017SM265 *2op. MPC134,098(2021Sep.20)
+19 2017Sep.27 2017SA275 *3op. MPC134,098(2021Sep.20)
+20 2017Sep.25 2017SR313 *26-dayarc MPC141,310(2022Jul.19)
+21 2017Oct.18 2017UT9 ID3op. MPC106,573(2017Nov.5)
+22 2017Oct.18 2017UU9 585,101 ID7op. MPC106,573(2017Nov.5)
+23 2017Oct.19 2017UO11 585,107 ID8op. MPC106,573(2017Nov.5)
+24 2017Oct.19 2017UP11 50,7546 ID11op. MPC106,573(2017Nov.5)
+25 2017Oct.19 2017UQ11 ID3op. MPC106,573(2017Nov.5)
+26 2017Oct.19 2017UR11 585,108 ID7op. MPC106,573(2017Nov.5)
+27 2017Oct.19 2017US11 508,671 ID8op. MPC106,573(2017Nov.5)
+28 2017Oct.19 2017UT11 ID4op. MPC106,573(2017Nov.5)
+29 2017Oct.19 2017UU11 540,601 ID11op. MPC106,573(2017Nov.5)
+30 2017Oct.19 2017UV11 ID8op. MPC106,573(2017Nov.5)
+31 2017Oct.21 2017UV125 *4op. MPC129,111(202Mar.25)
+32 2017Oct.19 2017UW11 508,672 ID12op. MPC106,573(2017Nov.5)
+33 2017Oct.19 2017UX11 540,602 ID8op. MPC106,573(2017Nov.5)
+34 2017Oct.19 2017UY11 ID5op. MPC106,573(2017Nov.5)
+35 2017Oct.22 2017UJ15 545,611 ID11op. MPC106,573(2017Nov.5)
+36 2017Oct.22 2017UK15 ID6op. MPC106,573(2017Nov.5)
+37 2017Oct.22 2017UL15 ID5op. MPC106,573(2017Nov.5)
+38 2017Oct.19 2017UT56 *80-dayarc MPC118,948(2020Jan.9)
+39 2017Oct.19 2017UU58 ID4op. MPC118,948(2020Jan.9)
+40 2017Oct.18 2017UB63 ID3op. MPC118,948(2020Jan.9)
+41 2017Oct.23 2017UR64 *4op. MPC118,948(2020Jan.9)
+42 2017Oct.19 2017UV64 ID2op. MPC118,948(2020Jan.9)
+43 2017Oct.19 2017UY64 ID4op. MPC118,948(2020Jan.9)
+44 2017Oct.19 2017UX71 ID6op. MPC118,948(2020Jan.9)
+45 2017Oct.21 2017UB76 ID6op. MPC118,948(2020Jan.9)
+46 2017Oct.19 2017UK78 *40-dayarc MPC118,948(2020Jan.9)
+47 2017Oct.19 2017UM95 *6op. MPC123,568(2020Aug.7)
+48 2017Oct.23 2017UX95 *7op. MPC123,568(2020Aug.7)
+49 2017Oct.23 2017UK101 *6op. MPC123,568(2020Aug.7)
+50 2017Oct.21 2017UM164 *3op. MPC135,342(2021Oct.27)
+51 2017Oct.23 2002AN214 567,580 N9op. MPO995(2023Jan.23)
+52 2017Nov.17 2017WT35 ID4op. MPC118,948(2020Jan.9)
+53 2017Nov.17 2017WW49 *5op. MPC125,601(2020Nov.17)
+54 2017Nov.16 2017WG88 *2op. MPC141,310(2022Jul.19)
+55 2018Mar.18 2018FU25 ID14op. MPC109,684(2018Apr.30)
+56 2018Mar.18 2018FV25 ID11op. MPC109,684(2018Apr.30)
+(Continued)
+4  IreneuszWlodarczyketal.
+Table1:Continued
+No. Dateofdiscovery Designation Number Status MPCreference
+57 2018Mar.16 2018FL30 *35-dayarc MPC118,948(2020Jan.9)
+58 2018Apr.13 2018GE3 NEOobject ID4-dayarc MPO445,234(2018Apr.30)
+59 2018Apr.10 2018GU6 ID8op. MPC109,684(2018Apr.30)
+60 2018Apr.10 2018GV6 585,398 ID6op. MPC109,684(2018Apr.30)
+61 2018Apr.12 2018GX8 ID2op. MPC109,684(2018Apr.30)
+62 2018Apr.10 2018GV15 *5op. MPC123,568(2020Aug.7)
+63 2018Sep.10 2018RG17 *5op. MPC110,809(2018Sep.25)
+64 2018Sep.10 2018RH17 542,935 ID8op. MPC110,809(2018Sep.25)
+65 2018Sep.13 2018RW41 *4op. MPC118,948(2020Jan.9)
+66 2018Oct.6 2018TL9 ID9op. MPC112,836(2019May.18)
+67 2018Oct.6 2018TM9 *2op. MPC112,836(2019May.18)
+68 2018Oct.7 2018TF19 560,161 ID8op. MPC118,948(2020Jan.9)
+69 2019Mar.31 2019FU4 603,184 ID8op. MPC112,836(2019May.18)
+70 2019Apr.1 2019GJ8 573,235 ID6op. MPC112,836(2019May.18)
+71 2019Apr.1 2019GK8 603,397 ID9op. MPC112,836(2019May.18)
+72 2019Apr.1 2019GL8 ID2op. MPC112,836(2019May.18)
+73 2019Apr.1 2019GM8 ID7op. MPC112,836(2019May.18)
+74 2019Apr.1 2019GN8 ID6op. MPC112,836(2019May.18)
+75 2019Apr.1 2019GO8 ID9op. MPC112,836(2019May.18)
+76 2019Mar.26 2019FQ8 *2op. MPC118,948(2020Jan.9)
+77 2019Sep.22 2019SN19 599,705 ID4op. MPC118,948(2020Jan.9)
+78 2019Sep.27 2019SO29 *40-dayarc MPC118,948(2020Jan.9)
+79 2019Sep.26 2019SH61 *35-dayarc MPC118,948(2020Jan.9)
+80 2019Sep.26 2019SZ140 *40-dayarc MPC129,111(2021Mar.25)
+81 2019Sep.26 2019SJ173 *12-dayarc MPC130,731(2021Jun.1)
+82 2019Sep.26 2019SC183 *4op. MPC134,098(2021Sep.20)
+83 2020Aug.11 2020PC10 ID42-dayarc MPC125,601(2020Nov.17)
+Noted:Main-beltAsteroid567,580(2002AN214)wasnamedLatuni.
+markIDdenotesindependentdiscovery.
+op.–opposition.
+N–namedasteroid.
+mark*denotesthatdiscoverercreditwillbedoneforBaldone,whentheobjectisnumbered.
+Saule (2008 OS9) asteroid computed using the mentioned The Yarkovsky effect was discovered by the Polish-
+OrbFitv.5.0.7software. Russian civil engineer Ivan Osipovich Yarkovsky: https://
+It is worth noting that two other interesting recent en.wikipedia.org/wiki/Yarkovsky_effect.
+methods of computations of the non-gravitational para- We have a diurnal effect and a seasonal effect. Both
+meter A2 are in Perez-Hernandez and Benet (2022) and effectsproduceashiftinthesemimajoraxisoftheasteroid.
+Dziaduraetal.,(2022). The influence of the Yarkovsky effect on the motion of an
+objectisevidentoveralongtime,forexample,inthemotion
+of members of asteroid family e.g., Novakovic et al., (2022),
+Wlodarczyk and Leliwa-Kopystynski (2018), studying retro-
+3.2 Starting physical parameters
+grade orbits in Wlodarczyk (2022b) or dangerous asteroids
+(Wlodarczyk 2020). To study the motion of asteroids and
+Next,weusedthemercurysoftwareofFenucciandNovakovic comets with the influence of the Yarkovsky effect, we use
+(2022).Asstatedinhttps://github.com/Fenu24/mercury,thisisa thenon-gravitationalparameters A2 andda∕dt.Bothvalues
+modified version of the N-body code mercury by Chambers of A2 andda∕dt canbedeterminedduringorbitdetermina-
+(1999) (https://github.com/Fenu24/mercury/tree/master/doc), tion as a seventh parameter together with six other orbital
+which includes the Yarkovsky and YORP effects for the parameters, i.e., Keplerian elements. In Wlodarczyk (2018),
+dynamicsofsmallsolarsystemobjects. several non-gravitational parameters A2 and da∕dt were
+computed.Theadvantageofthemethodusedinthepresent
+work is that it simultaneously shows the evolution of P,
+gamma, and da∕dt for the 2008 OS9 asteroid clones. The
+authorsofthementionedmercurysoftwarehavepublished
+the first papers: Novakovic and Fenucci (2022) and Fenucci
+andNovakovic(2022).
+As physical parameters in starting file yarkovsky.in,
+we used typical values of this type of asteroid, as was
+partiallypresentedinFenucciandNovakovic(2022):
+(cid:129) thedensity ρ (kg/m3)=2,120;
+(cid:129) thethermalconductivityK (W/m/K)=0.001;
+(cid:129) theheatcapacityC (J/kg/K)=800;
+h
+(cid:129) thediameter D (m)=600;
+(cid:129) theobliquityγ(°)=forthefirstclone=0,andofthefollowing
+100clonesdifferfromthepreviousoneby180∕101° = 1.782°;
+(cid:129) therotationperiodP (h)=8.43;takenfromourprevious
+workCernisetal.,(2010)
+(cid:129) theabsorptioncoefficientα;(usuallysetto1);
+(cid:129) theemissivityε (usuallysetto1);
+andasastartingparametertothefollowingfilescontained
+intheYORPfile:
+(cid:129) yorp_flag=1
+i.e.,includethespin-axisevolutionduetotheYORPeffect;
+(cid:129) stoc_yorp_flag=1
+includestochasticYORP;
+(cid:129) step_user=1.0
+timestep for the spin-axis integration, i.e., equal 1.0 year,
+i.e.,theminimumvalueforthisintegrator;
+(cid:129) dt_out=1.0
+timestepforprintingoutputonafile;
+(cid:129) oneyear.
+AnassessmentofthediameteroftheasteroidSauleis
+in our previous article by Cernis et al., (2010), where we
+usedabsolutemagnitudeH =19.42anddifferentvaluesof
+geometric albedo pV. The diameter of pV = 0.04 (C-type
+asteroid) is 867 m; for pV = 0.20 (S-type asteroid), it is
+388 m. The true diameter of 2008 OS9 is between these
+twovalues.
+IncomputationsoftheYarkovskyandYORPeffects,we
+accepttheasteroidhasameandiameterof600m,andits
+meanalbedois0.15.Hence,wetakethemeandiameterof
+theasteroidSauleinourcomputation.
+We can check NEOWISE observations of NEOs for
+some infrared data on Saule. Sometimes, this can help in
+the determination of the geometric albedo. In our case,
+2202–7102niyrotavresbOenodlaBehtta)nwonkdnawenhtob(sdioretsaehtfosnoitavresbocirtemortsadnaseirevocsiddioretsafoscitsitatS:2elbaT
+srebmunCPM
+devresbosdioretsaforebmuN
+snoitavresbodioretsaforebmuN
+seirevocsiddioretsaforebmuN
+raeY
+071,701,375,601,517,501,343,501,989,401,711,401,941,301,953,201
+279
+897,3
+45
+7102
+468,111,908,011,571,011,486,901,822,901,957,801,728,701
+615,1
+165,5
+41
+8102
+772,811,092,711,989,511,760,511,638,211
+170,1
+708,3
+41
+9102
+106,521,846,421,865,321,738,221,223,121,741,021,849,811
+368
+531,3
+1
+0202
+243,531,890,431,404,231,137,31,111,921,654,721
+978
+947,3
+0
+1202
+507,851,631,241,013,141,411,041,806,831,137,631
+074
+294,9
+0
+2202
+177,5
+245,92
+38
+latoT
+TheasteroidsdiscoveredattheBaldonein2017–2022  5
+6  IreneuszWlodarczyketal.
+Table3:StartingnominalKeplerianorbitalelementsofthe428694Saule(2008OS9)asteroid
+a(au) e i(°) Ω(°) ω(°) M (°)
+vfcc17errormodel
+17additionalmassiveasteroids
+1.601243376 0.647927223 19.1403994 133.4127276 288.315140 200.179695
+5.6×10‒8 7.4×10‒8 1.1×10‒5 8.8×10‒6 1.4×10‒5 3.4×10‒5
+H=19.368,RMSast=0.367″,RMSmag=0.427,A =(3.98±11.97)×10‒14au/d2.
+2
+Theanglesω,Ω,andirefertoEquinoxJ2000.0.Epoch:2022Jan21=JD2459600.5TDB.
+H:absolutemagnitude,RMSast:uncertaintyofthefittedorbit,RMSmag:uncertaintyoftheabsolutemagnitude,A:non-gravitationaltransverse
+2
+accelerationparameter.
+wedidnotcheckNEOWISEdata.WeassumethealbedopV Wethencalculatethecriticalrotationperiodgivenby
+in the interval 0.05 ÷ 0.50, as is shown, for example, in Huetal.,(2021):
+Gustafsson et al., (2019). Hence, we can compute the pos-
+ρk
+sible interval of the effective diameter of Saule: having P = 2π D, (1)
+crit 5C
+both H and pV estimated as: H = 19.39 ± 0.5 mag, pV =
+0.27±0.22(botharesystematicuncertainties,notstandard whereρisthebulkdensity,C isthebulkcohesion,andDis
+deviations), one can proceed and estimate the effective thediameter.AccordingtoFenuccietal.,(2021),k = 0.9114is
+diameter, D,whichis0.2 < D < 1 km. a constant parameter, see Supplementary Material Pravec
+From a discussion above, it follows that the effective etal.,(2010).
+diameterofSaulecanbedeterminedonlyapproximately. ResultsarepresentedinTable4.Itturnedoutthatthe
+Forthisreason,wewilldocomputationsforasetofvalues minimumperiodsofcriticalrotationarejustover2h,fora
+presentedinTable4. densityof1,000kg/m3andbulkcohesion100Pa,andmax-
+In turn, Table 4 indicates the calculation of the dia- imumrotationperiodsofover30hoccurforbulkdensity
+meteroftheasteroidSaulebasedontherangeofobserved 2,500kg/m3 andbulkcohesion10Pa.
+Hfor19.34,19.39,and19.44magandpossiblealbedo,pVof
+0.49,0.27,and0.05.Forthediametersobtainedinthisway,
+we calculated the rotation periods of the asteroid for dif- 3.3 Long-time orbital and physical evolution
+ferentbulkdensitydensitiesof1,000,1,500,2,000,and2,500
+kg/m3 and for two mass cohesive trenches 10 and 100 Pa, First,wecomputedorbitalelementsandnon-gravitational
+respectively.WecalculatedthediametersofasteroidSaule elements of 101 clones of the asteroid 428694 Saule (2008
+accordingtotheformulafromBowelletal.,(1978). OS9)forepochJD2459600.5andtheplanetsfromMercury
+Table4:CriticalrotationperiodsfordifferentstartingphysicalparametersoftheasteroidSaule
+Absolutemagnitude,H 19.34 19.39 19.44
+Visualalbedo,pV 0.49 0.27 0.05 0.49 0.27 0.05 0.49 0.27 0.05
+Diameter,D(m) 256 345 803 251 338 784 245 330 767
+Densitykg/m3 BulkcohesionPa Criticalrotationperiod
+Pa P (h)
+crit
+1,000 10 6.88 9.27 21.53 6.72 9.05 21.04 6.57 8.85 20.56
+100 2.17 2.93 6.81 2.13 2.86 6.65 2.08 2.80 6.50
+1,500 10 8.42 11.35 26.37 8.23 11.09 25.77 8.04 10.84 25.18
+100 2.67 3.59 8.34 2.60 3.51 8.15 2.54 3.43 7.96
+2,000 10 9.73 13.10 30.45 9.51 12.81 29.76 9.29 12.51 29.08
+100 3.08 4.14 9.63 3.00 4.05 9.41 2.94 3.96 9.20
+2,500 10 10.87 14.65 34.04 10.63 14.32 33.27 10.39 13.99 32.51
+100 3.44 4.63 10.77 3.36 4.53 10.52 3.28 4.42 10.28
+These are the inputs to the main mercury integrator pro-
+gram. Of course, you can associate each clone’s orbital
+elements with the same yarkovsky.in file. This way, we
+will have 101 input files with 101 data, yielding 101 × 101
+calculation results. This would be a method close to a
+random method like the Monte Carlo method. However,
+this requires long, laborious calculations, and the line of
+variation(LOV)methodofMilaniavoidsthesedifficulties.
+Itdoesnotrequiresomanycalculations.
+Our additional computational tests showed that the
+computationalresultsofonerunof101clonesyieldsimilar
+to 101 × 101 computational results. So, the initial simplifica-
+tionofthenumberofintegrationsdoesnotaffecttheresultof
+calculations of the evolution of rotation, spin, and the non-
+gravitationalparameterda∕dt.Next,weintegratedtheequa-
+tionofmotionsofasteroidsandplanets0.5Myrforward.
+to Neptune. We used the parameter σLOV = 3 according Figure1presentsstartingnon-gravitationalparameter
+to the multiple solution methods (Milani 2006, Milani da∕dt of101clonesoftheasteroid428694Saule(2008OS9)
+et al., 2005a, Milani et al., 2005b), i.e., the starting values x computed from the OrbFit software. They are from
+of da∕dt were obtained from the A2 parameter and its (−0.004 to+0.006)au/Myr.
+uncertainties. Figure 2 presents the physical parameters of asteroid
+Next, the starting orbital elements of each clone are 428694Saule(2008OS9)after0.5Myrforwardintegration.
+treated as inputs in one small.in the file, and all of them, TheyaretherotationperiodP (h),theobliquityγ (°),and
+oneyarkovsky.inafileisincluded,thesameforallclones. the value of da∕dt connected with the non-gravitational
+)ryM/ua(
+td/ad
+Figure1:Startingnon-gravitationalparameterda∕dtof101clonesofthe
+asteroid428694Saule(2008OS9).
+)ryM/ua(
+td/ad
+TheasteroidsdiscoveredattheBaldonein2017–2022  7
+Figure2:Physicalparametersofasteroid428694Saule(2008OS9)after0.5Myrforwardintegration.Parameterda∕dt ismultipliedby104.
+8  IreneuszWlodarczyketal.
+Figure3:Leftpanel:RotationperiodPvsspinaxisofallclonesofasteroid428694Saule(2008OS9);50ofthemreachedrotationperiodP= 1,000 h.
+Rightpanel:dependenceofrotationalperiodshorterthan80hof51clonesvsspinaxis.Bothpanelspresentresultsof0.5Myrforwardintegration.
+parameterA2.OnlythosecloneswithP ≤ 10haremarked 0.Wecanseesymmetryandpossiblecorrelationbetween
+intheleftpanel.Thereare51ofthem,sojustoverhalf.The spin axis gamma and non-gravitational parameter da∕dt
+other 50 have a rotation period, P ≥ 1,000 h, and hence after 0.5 Myr forward integration. Those with gamma =
+wereassumed tohave P = 1,000 h.Accordingtotheclas- 0° may giveda∕dt = 0 orda∕dt > 0. In comparison, those
+sificationoftheprogram,theyslowdown. with gamma =180° may giveda∕dt negative or equal to 0.
+Hence, this state has a minor significance for the Hence,havingthevalueofthegammaparameter,wecansee
+Yarkovsky effect, the semimajor axis drift da∕dt goes to somethingaboutthenon-gravitationalparameterda∕dt.
+Figure4:Knownphysicalparametersof31079asteroidsaccordingtotheMPC.
+TheasteroidsdiscoveredattheBaldonein2017–2022  9
+Comparing da∕dt in Figure 2 (bottom panel), with Table6:NumberofcloneswithP= 10,000 hinagivenstateofspin
+da∕dt from Figure 1, we can see that the amplitude of axisafter0.5Myrforwardintegration
+changes of theda∕dt of the clones of the asteroid 428694
+Saule (2008 OS9) after 0.5 Myr is about 20 times smaller Spinaxis(°) Numberofclones(%ofallstartingclones)
+thanthestartingone,thatis,fromarangeofabout±0.004
+0 22(21.8)
+au/Myrtoabout±0.0008au/Myr. 90 13(12.9)
+Itisinterestingthatafteraperiodof0.5Myr,theclones’
+180 15(14.9)
+da∕dtvaluesarearoundtheborderlinevalues−0.0008au/Myr
+and+0.0008au/Myr,andalsoaroundda∕dt = 0.
+Hence, the dynamics of changes in the da∕dt value re-initializethespinstate.Inthisprocess,wedonotsimulate
+decreases, and the clones seem to slow down, stay close productionofabinarysystem,andweassumethatthemass
+to a particular achieved place, and move slower in both lostissmallenoughtonotsignificantlychangetheequivalent
+directionsoftheirsemimajor axis.Thesecondpartof the diameter of the object.Duringthe fission event, weassume
+clonesisaroundthevalueda∕dt = 0au/Myr,meaningthat
+the obliquity gamma to be unchanged. On the other hand,
+theypracticallydonotchangetheirpositionsonthesemi-
+the spin rate is decreased according to the momentum car-
+majoraxisrelatedtotheYarkovskyeffect.Suchstratifica-
+ried away by the ejected mass.” As a result, the rotation
+tion of clones on the da∕dt axis begins to appear after
+periodisneversmallerthanP .Notethatduringtestruns
+crit
+about100,000yearsandisvisibleafter0.5Myr.
+of the Mercury N-body code, periods were never smaller
+Interesting is the distribution of the clonal rotation
+thanthiscriticalvalue,seeFigure4inFenucciandNovakovic
+period.AsshownintheleftpanelofFigure2,therotation
+(2022).
+periodoftheclonesP isgenerallybetween1and2h,from
+Similarlyinterestingisthedistributionintheinclinationof
+theoriginalvalueP,of8.43h.So,theasteroidclonessped
+therotationaxisoftheclonestotheeclipticplane.Initially,we
+uptheirrotationperiodbyalmostninetimes. assumedthattheneighboringclonesdifferby180∕101°inthe
+Given the diameter of the asteroid Saule (D = 600 m)
+gammaangle,i.e.,intheinclinationoftherotationaxis.There
+and its assumed density of 2,120kg/m3, theasteroid is most isavisiblepolarizationto0,90,and180°.
+likelyarubblepileheldbygravityforces.Theshortestrota-
+Hence, our computations showed that the Yarkovsky
+tionperiodforsuchobjectsisP = 2.1h,atwhichtheyexperi- effectplaysasignificantroleafter0.5Myr,andevensigns
+ence resurfacing (e.g., creation of a typical top-hat shape),
+ofitarealreadyvisibleafter0.1Myr.
+massshading,orevenrotationalfissionintoseveralsmaller
+Figure3presentstherotationperiodP vs.spinaxisof
+objects. This fact has been considered by Fenucci and
+all clones of asteroid 428694 Saule (2008 OS9), 50 reached
+Novakovic (2022), who set a limit at some critical period rotation period P = 10,000 h (left panel) and dependence
+P crit = 2.34 hforhisasteroidwithadiameterof2km. ofrotational period shorter than 80 h of 51clones vs. spin
+Theywrite:“Whentherotationperiodbecomessmaller
+axis (right panel). Both panels present results of 0.5 Myr
+thanP weassumethatafissioneventtakesplaceandwe
+crit
+Table5:NumberofclonesinagivenstateforK=0.001
+Time 10ky 100ky 500ky
+Numberofclones
+P (h)
+1,000 0 25 50
+1–10 99 55 51
+Others 2 21 0
+Gamma(°)
+0 1 8 23
+90 4 6 13
+180 1 13 32
+Others 95 74 31
+da∕dt (au/day2) Figure5:TheCentaur2009HW77.Thebehaviorofthelifetimeofthe
+<0 51 51 53 remainingcloneshasanexponentialshape.Hencewecancomputethe
+half-timeof1,001clonesintheforward100MyrRA15integration.The
+>0 50 50 48
+computedhalf-timeis4.45Myr.
+10  IreneuszWlodarczyketal.
+Table7:InitialnominalKeplerianorbitalelementsofthe330836Orius(2009HW77)asteroid
+a(au) e i(°) Ω(°) ω(°) M (°)
+vfcc17errormodel
+17Additionalmassiveasteroids
+21.502244 0.4169934 17.8749641 50.451470 141.037047 54.14741
+7.13×10‒4 1.76×10‒5 3.47×10‒5 6.26×10‒5 3.15×10‒4 2.78×10‒3
+H =9.749,RMSast=0.519,RMSmag=0.352.
+Theanglesω,Ω,andirefertoEquinoxJ2000.0.Epoch:2022Jan21=JD2459600.5TDB.
+forwardintegration.Itisvisiblethatclonegroupsnear0,90, object.Tocomputestartingorbitalelementsoftheasteroid
+and180°. In particular, this is visible in the case of clones Orius,weusedtheOrbFitsoftwarewiththeJPLDE431ephe-
+thathavereachedtheirperiod’srotationequalto1,000h. merides,weightingandselectingobservationsaccordingto
+Table5showsthenumberofthefirstgroupofclones the(NEODyS-2)3,17additionalmassiveasteroids.Wedidnot
+forthethreespin-axisgroups.Itturnedoutthattheytake search for the non-gravitational parameter A2 because of
+onlythreespin-axisvalues:0,90,and180° (Table6). the long distance of the asteroid to the Sun and the high
+absolutemagnitudeoftheasteroid.Weusedall85observa-
+tionspublishedbytheIAUMPCfrom20020212.50951to2012
+3.4 Known rotation periods of asteroids
+0519.44276.
+According to the OrbFit v5.0.7, we used the error
+According to the recent reliable database of the asteroid
+modelvfcc17(Veresetal.,2017).Table5presentstheinitial
+rotationperiods:https://minplanobs.org/mpinfo/datazips/LCLIST_
+nominal Keplerian orbital elements of the 330836 Orius
+PUB_2023JUN.zipthereare32778asteroidswithdefinedphysical
+(2009HW77)asteroid.
+parameters.
+Accordingtothedatabase,theyintroducetheUcode,
+whichassessesthequalityoftheperiodsolution,notneces-
+4.2 Long-time orbital evolution
+sarilyofthedataperse,asstatedthere.
+If we selected asteroids with criterion U ≥ −2, we got
+The dynamical lifetime is the time between the start of
+31,079asteroids.Figure4presentstheirrotationalperiodvs.
+integrationandejectionfromtheintegration.Thestudied
+diameter.Forvisibility,onlyeveryfifthasteroidispresented.
+asteroid330836Orius(2009HW77),likeotherCentaurs,are
+Additionally, if we count objects which fulfill the fol-
+planet-crossing object and has relatively short dynamical
+lowingcriteria:
+lifetimes of around 1 Myr (Horner et al., 2004) and short
+H:<20 mag,
+Lyapunovtime,e.g.,ofabout4,260yearforCentaurasteroid
+P:<2hwegotonlyafewselectedasteroids.Hence,the
+(463,368)2012VU12(Wlodarczyketal.,2017).
+asteroid2008OS9,NEA,withstartingq = 0.5au,mayhave
+Due to the lack of sufficiently precise physical para-
+duringhisevolutionthetheoreticalrotationperiodaround
+metersoftheasteroid2009HW77,tostudyitsorbitalevo-
+1haswecomputedusingthemercurysoftware.
+lution we used SWIFT software, initially developed by H.
+Levison(https://www.boulder.swri.edu/~hal/swift.html).
+WeincludedperturbationsofallplanetsfromMercury
+4 Orbital evolution of the asteroid
+to Neptune. We computed clones using the multiple solu-
+330836 Orius (2009 HW77) tion methods for the 1σ uncertainty around the nominal
+orbitoftheasteroid.Wecomputedthetimeevolutionofall
+ThecentaurOrius,wholivedinthemountains,waskilled 1,001 starting clones during 100 Myr of forward integra-
+byHeracleswhenhetriedtostealthewinePholus. tion. The integration is similar to that of Wlodarczyk
+et al., (2011). Clones that reached the ejection distance
+(1,000 au) or that impacted the Sun or a planet were
+4.1 Starting orbital elements removed from our integration. The computed half-time,
+KCandIEdiscoveredAsteroid330836Orius(2009HW77)at
+
+Baldoneon2009-04-25.AnorbittypeofasteroidisaDistant 3 https://newton.spacedys.com/neodys/
+TheasteroidsdiscoveredattheBaldonein2017–2022  11
+Table8:StartingnominalKeplerianorbitalelementsofthe2017UW42asteroid
+a(au) e i(°) Ω(°) ω(°) M (°)
+vfcc17errormodel
+17additionalmassiveasteroids
+2.4556296374 0.4843383688 6.67099688 287.45079556 195.52571430 99.31791520
+2.394×10‒7 8.74×10‒8 5.28×10‒6 2.936×10‒5 4.233×10‒5 1.828×10‒5
+H =17.938,RMSast=0.4418,RMSmag=0.346,A =(1.24±1.66)×10‒12au/day2.
+2
+Theanglesω,Ω,andirefertoEquinoxJ2000.0.Epoch:2023Feb.25=JD2460000.5TDB.
+Figure6:Asteroid2017UW42.Theorbitalevolutionofthesemimajoraxis,eccentricity,inclination,periheliondistance,andapheliondistanceofthe
+asteroid2017UW42.
+12  IreneuszWlodarczyketal.
+i.e., when half of the clones are rejected, is 4.45 Myr, as Funding information: This work has been supported by
+shown in Figure 5. Wlodarczyk et al., (2011) computed a theERDFprojectNo.1.1.1.5/19/A/003madebyKCandIE.
+half-timeof5.25Myrinourpreviouspaper.Thedifferences
+resultfromamoreaccurateorbitbasedonalongerobser- Authorcontributions:Allauthorshaveacceptedresponsi-
+vationarc.Also,previouslystartingorbitalelementsofthe bility for the entire content of this manuscript and con-
+asteroid are computed only with added Ceres, Pallas, and sented to its submission to the journal, reviewing all the
+Vesta,now17additionalmassiveasteroids. resultsandapprovingthefinalversionofthemanuscript.
+KC and IE discovered all asteroids, and KC made Tables 1
+and2withdiscoveries.IWdevelopedthemodelcodeand
+performedthesimulations.IWpreparedthemanuscriptin
+5 Keplerian orbital elements of the
+Latexwithcontributionsfromallco-authors.
+asteroid 2017 UW42
+Conflictofinterest:Theauthorsstatenoconflictofinterest.
+Itisalsoworthpayingattentiontotheinterestingasteroid2017
+Dataavailabilitystatement:Allstartingdataoforbitalele-
+UW42. According to the MPC site: https://minorplanetcenter.
+ments and the source code of the OrbFit software were
+net/iau/mpc.htmlasteroid 2017 UW42 was first observed at
+accessed from: https://ssd.jpl.nasa.gov/tools/sbdb_lookup.
+Mt. Lemmon Survey on 2017-10-27. It was independently dis-
+html#/, https://minorplanetcenter.net/db_search and https://
+coveredby(KC,IE)onSep.26,2017.Discovererwillbedefined
+newton.spacedys.com/astdys/.
+whentheobjectisnumbered.Table7presentsinitialnominal
+Keplerian orbital elements of the 330836 Orius (2009 HW77)
+asteroid. Interestingly, that studied asteroid has a significant
+valueofthenon-gravitationalparameter A = (1.24 ± 1.66) × References
+2
+10−12 au/day2 in comparison with other asteroids, see e.g.,
+Figure 2, left panel in Wlodarczyk (2022). Table 8 presents
+BowellE,ChapmanCR,GradieJC,MorrisonD,ZellnerB.1978.Taxonomy
+starting nominal Keplerian orbital elements of the 2017 ofasteroids.Icarus.35:313–335.doi:https://doi.org/10.1016/0019-
+UW42asteroid. 1035(78)90085-4.
+Figure 6 presents the orbital evolution of semimajor ChambersJE1999.Ahybridsymplecticintegratorthatpermitsclose
+encountersbetweenmassivebodies.MonthlyNoticesRAstronSoc.
+axis,eccentricity,inclination,periheliondistance,andaphe-
+304:793–799.doi:https://doi.org/10.1046/j.1365-8711.1999.02379.x.
+liondistanceoftheasteroid2017UW42.
+ČernisK,EglitisI,WlodarczykI,ZdanavičiusJ,ZdanavičiusK.2010.The
+Allorbitalcomputationsandanalysesofresults,including
+Apollogroupasteroid2008OS9:Discovery,orbit,rotationandthe
+Figures1,2,3,4,5,6usingdifferentsoftwarepresentedinthis Yarkovsky/YORPeffects.BalticAstron.19:235–263.doi:https://doi.
+workwasmadebyoneofus(IW). org/10.1515/astro-2017-0424.
+ČernisK,WlodarczykI,EglitisI.2015.Observationaldataandorbitsofthe
+asteroidsdiscoveredattheBaldoneObservatoryin2008–2013.Baltic
+Astron.24:251–262.doi:https://doi.org/10.1515/astro-2017-0226.
+6 Summary DziaduraK,SpotoF,OszkiewiczD,CarryB,BartczakP,TangaP.2022.
+ComputingtheYarkovskyeffectforasteroidsinGaiaDR3.European
+PlanetaryScienceCongress.doi:https://doi.org/10.5194/
+We discovered 83 asteroids at the Baldone Astrophysical
+epsc2022-649.
+Observatory(MPC069)in2017–2022.Westudiedoneofthe
+FarnocchiaD,ChesleySR,VokrouhlickýD,MilaniA,SpotoF,BottkeWF.
+dynamicallyinterestingApollo(NEO)observedattheBaldone 2013a.NearEarthasteroidswithmeasurableYarkovskyeffect.
+Astronomical Observatory, namely 428694 Saule (2008 OS9)
+Icarus.224:1–13.doi:https://doi.org/10.1016/j.icarus.2013.02.004.
+FarnocchiaD,ChesleySR,ChodasPW,MicheliM,TholenDJ,MilaniA,
+and the Centaur-type asteroid 330836 Orius (2009 HW77).
+etal.2013b.Yarkovsky-drivenimpactriskanalysisforasteroid
+Additionally, we studied the orbit of the Amor-type
+(99942)Apophis.Icarus224:192–200.doi:https://doi.org/10.1016/j.
+asteroid 2017 UW42 with the significant non-gravita-
+icarus.2013.02.020.
+tional parameter A2. FenucciM,NovakovićB.2022.MERCURYandORBFITpackagesfor
+numericalintegrationofplanetarysystems:Implementationofthe
+Acknowledgement: We want to thank the anonymous
+YarkovskyandYORPeffects.SerbianAstronJ.204:51–63.doi:
+https://doi.org/10.2298/SAJ2204051F.
+reviewersfortheirmanyhelpfulsuggestions.IWthanksthe
+FenucciM,NovakovićB,VokrouhlickýD,WerykRJ.2021.Lowthermal
+SpaceResearchCenterofthePolishAcademyofSciencesin
+conductivityofthesuperfastrotator(499998)2011PT.Astron
+Warsawforthechancetoworkonacomputercluster.Our Astrophys.647:A61.doi:https://doi.org/10.1051/0004-6361/
+thanksgototheERDFProjectNo.1.1.1.5/19/A/003. 202039628.
+TheasteroidsdiscoveredattheBaldonein2017–2022  13
+GustafssonA,TrillingDE,MommertM,McNeillA,HoraJL,SmithHA,etal. PravecP,VokrouhlickýD,PolishookD,ScheeresDJ,HarrisAW,
+2019.Spitzeralbedosofnear-Earthobjects.AstronJ.158:67. GaladA,etal.2010.Formationofasteroidpairsbyrotational
+doi:https://doi.org/10.3847/1538-3881/ab29ea. fission.Nature466:1085–1088.doi:https://doi.org/10.1038/
+HornerJ,EvansNW,BaileyME.2004.Simulationsofthepopulationof nature09315.
+Centaurs-I.Thebulkstatistics.MonthlyNoticesRAstronSoc. VerešP,FarnocchiaD,ChesleySR,ChamberlinAB.2017.Statisticalana-
+354:798–810.doi:https://doi.org/10.1111/j.1365-2966.2004.08240.x. lysisofastrometricerrorsforthemostproductiveasteroidsurveys.
+HuS,RichardsonDC,ZhangY,JiJ.2021.Criticalspinperiodsofsub-km- Icarus.296:139–149.doi:https://doi.org/10.1016/j.icarus.2017.
+sizedcohesiverubble-pileasteroids:dependencesonmaterial 05.021.
+parameters.MonthlyNoticesRAstronomSoc.502:5277–5291.doi: WlodarczykI,CernisK,EglitisI.2011.Analysisoftheorbitofthe
+https://doi.org/10.1093/mnras/stab412. Centaurasteroid2009HW77.MonthlyNoticesRAstronomSoc
+MilaniA2006.Asteroidimpactmonitoring.SerbianAstronomJ.172:1–11. 418:2330–2335.doi:https://doi.org/10.1111/j.1365-2966.2011.
+doi:https://doi.org/10.2298/SAJ0672001M. 19621.x.
+MilaniA,ChesleySR,SansaturioME,TommeiG,ValsecchiGB.2005a. WlodarczykI2015.ThePotentiallyHazardousAsteroid(410777)2009FD.
+Nonlinearimpactmonitoring:lineofvariationsearchesforimpactors. ActaAstronom.65:215–231.
+Icarus173:362–384.doi:https://doi.org/10.1016/j.icarus.2004.09.002. WlodarczykI,ČernisK,BoyleRP.2017.Discovery,orbitandorbitalevo-
+MilaniA,SansaturioME,TommeiG,ArratiaO,ChesleySR.2005b. lutionofthedistantobject(463368)2012VU85.ActaAstronom.
+Multiplesolutionsforasteroidorbits:Computationalprocedureand 67:81.doi:https://doi.org/10.32023/0001-5237/67.1.6.
+applications.AstronAstrophys.431:729–746.doi:https://doi.org/10. WłodarczykI.2018.Non-gravitationalparametersinmotionofasteroid.
+1051/0004-6361:20041737. XXXVIIIPolishAstronSocMeet.7:141–143.
+NovakovicB,FenucciM.2022.MercuryandOrbFitpackagesfor WlodarczykI,Leliwa-KopystynskiJ2018.Forwardorbitalevolutionofthe
+numericalorbitpropagation:ImplementationoftheYarkovskyand VestaFamilywithandwithouttheYarkovskyeffect.Bulgarian
+YORPeffects.16thEuroplanetScienceCongress.Spain:Palaciode AstronJ.28:79.
+CongresosdeGranada. WlodarczykI.2020.BulgarianAstronJ.32:27.
+NovakovićB,VokrouhlickýD,SpotoF,Nesvorn&#1acute;D2022.Asteroid WlodarczykI,CernisK,BoyleRP.2022a.Observationaldataandorbitsof
+families:properties,recentadvances,andfutureopportunities. theasteroidsdiscoveredattheVATTObservatoryin2010–2012.
+CelestialMechDynAstron.134:34.doi:https://doi.org/10.1007/ BulgarianAstronJ.2022;37:31.
+s10569-022-10091-7. WlodarczykI.2022b.Non-gravitationalparametersandorbital
+Perez-HernandezJ,BenetL.2022.Non-zeroYarkovskyaccelerationfor stabilityofasteroidsinretrogradeorbits.MonthlyNoticesR
+near-Earthasteroid(99942)Apophis.AAS/DivisionDynamAstron AstronomSoc.516:6116–6122.doi:https://doi.org/10.1093/mnras/
+Meeting. stac2603.

@@ -1,0 +1,28 @@
+Orbital elements:  (330836)
+   Perihelion 2007 Jan 21.76923 +/- 0.0109 TT = 18:27:41 (JD 2454122.26923)
+Epoch 2015 Apr 27.0 TT = JDT 2457139.5                           Find_Orb
+M  29.86403561 +/- 0.0007           (J2000 ecliptic)
+n   0.00989782 +/- 2.1e-7           Peri.  140.52977 +/- 0.00026
+a  21.4837160 +/- 0.000304          Node    50.38835 +/- 0.000042
+e   0.4202285 +/- 7.46e-6           Incl.   17.87420 +/- 0.000029
+P  99.57816                H  9.75  G  0.15   U  2.5
+q 12.4556455 +/- 1.7e-5    Q 30.5117866 +/- 0.000592
+89 of 91 observations 2002 Feb. 12-2015 Apr. 27; mean residual 0".44
+# State vector (heliocentric equatorial J2000):
+#   -2.898584304174 -12.775036980733  -8.102833238798 AU
+#   +4.174940989746  -1.452319147256  -2.260301484017 mAU/day
+# MOIDs: Me 12.045701 Ve 11.742432 Ea 11.476249 Ma 10.848552
+# MOIDs: Ju  7.126157 Sa  2.986936 Ur  3.427373 Ne  1.823331
+# 10 oppositions
+# Elements written:  7 Jul 2026 20:01:43 (JD 2461229.334534)
+# Full range of obs: 2002 Feb. 12-2015 Apr. 27 (91 observations)
+# Find_Orb ver: 2026 May 26
+# Perturbers: 000001fe ;  not using JPL DE
+# Tisserand relative to Neptune: 2.85960
+# Diameter 46.1 km (assuming 10% albedo)
+# Score: 0.671913
+#  $Name=(330836)  $Ty=2007  $Tm=01  $Td=21.769233  $MA=29.86404
+#  $ecc=0.4202285  $Eqnx=2000.
+#  $a=21.4837161  $Peri=140.52978  $Node=50.38835  $Incl=17.87420
+#  $EpJD=2457139.500  $q=12.455646  $T=2454122.269234  $H=9.7
+# Sigmas avail: 1

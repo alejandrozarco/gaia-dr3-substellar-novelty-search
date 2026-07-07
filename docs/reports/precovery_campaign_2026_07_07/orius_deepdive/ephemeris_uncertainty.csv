@@ -1,0 +1,4 @@
+epoch,sky_sigma_arcsec_arc_only,sky_sigma_arcsec_with_our_6pts,shrink_factor,arc_only_minus_combined_pred_offset_arcsec,pred_offset_over_arc_sigma
+2026-07-01,3.69,1.11,3.32,6.93,1.88
+2030-01-01,4.27,1.34,3.19,8.09,1.89
+2040-01-01,7.33,2.51,2.92,14.08,1.92
