@@ -1,0 +1,33 @@
+# version=2022
+# comment
+! line DRAFT for user review — NOT yet submitted. Archival precovery astrometry of (330836) Orius
+! line measured from public DECam exposures (CTIO 4-m Blanco, obscode W84) indexed in NOIRLab
+! line Source Catalog DR2; positions are NSC deblended PSF measurements (Gaia-calibrated), each
+! line detection pixel-verified on the original InstCal science frames (PSF-like, unblended,
+! line absent at position in all other epochs). Per-detection exposure IDs in remarks.
+! line ACTION BEFORE SUBMISSION: contact the MPC SARC (Singletons and Archival observations
+! line Committee, minorplanetcenter.net/mpcops/documentation/sarc/) for first-time archival
+! line submitter verification and file review; confirm observers/telescope block conventions
+! line for third-party DECam archival data with the SARC member.
+# observatory
+! mpcCode W84
+! name Cerro Tololo - Blanco 4-m / DECam (archival)
+# submitter
+! name A. Keur
+# observers
+! name DECam survey operations (archival exposures; original observers unspecified)
+# measurers
+! name A. Keur
+# telescope
+! design reflector
+! aperture 4.0
+! detector CCD
+! name DECam
+
+permID |mode|stn |obsTime                 |ra         |dec        |rmsRA|rmsDec|astCat|mag  |rmsMag|band|remarks
+330836 |CCD |W84 |2013-03-02T07:46:18.91Z| 246.129500| -26.251832| 0.25|  0.25|Gaia2 |21.63|0.10  |r   |NSC DR2 meas; exposure tu2037227; pixel-verified
+330836 |CCD |W84 |2013-03-02T07:48:28.51Z| 246.129491| -26.251832| 0.25|  0.25|Gaia2 |21.57|0.10  |r   |NSC DR2 meas; exposure tu2037424; pixel-verified
+330836 |CCD |W84 |2014-06-27T01:48:56.16Z| 249.498565| -29.939206| 0.15|  0.15|Gaia2 |21.83|0.10  |VR  |NSC DR2 meas; exposure c4d_140627_015128; pixel-verified
+330836 |CCD |W84 |2014-06-29T02:09:17.85Z| 249.396348| -29.930352| 0.12|  0.12|Gaia2 |21.60|0.10  |VR  |NSC DR2 meas; exposure c4d_140629_021153; pixel-verified
+330836 |CCD |W84 |2015-04-27T05:30:20.16Z| 260.306990| -32.379144| 0.18|  0.18|Gaia2 |21.53|0.10  |VR  |NSC DR2 meas; exposure c4d_150427_053222; pixel-verified
+330836 |CCD |W84 |2015-04-27T05:35:28.60Z| 260.306891| -32.379149| 0.18|  0.18|Gaia2 |21.66|0.10  |VR  |NSC DR2 meas; exposure c4d_150427_053734; pixel-verified
