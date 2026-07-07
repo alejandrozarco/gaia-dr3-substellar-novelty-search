@@ -1,0 +1,218 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+
+
+*******************************************************************************
+Ephemeris / API_USER Tue Jul  7 12:17:13 2026 Pasadena, USA      / Horizons    
+*******************************************************************************
+Target body name: 144908 (2004 YH32)              {source: JPL#7}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: GEOCENTRIC
+*******************************************************************************
+Start time      : A.D. 2005-Apr-01 00:00:00.0000 UT      
+Stop  time      : A.D. 2005-Oct-01 00:00:00.0000 UT      
+Step-size       : 10080 minutes
+*******************************************************************************
+Target pole/equ : undefined
+Target radii    : undefined                                                    
+Center geodetic : 0.0, 0.0, -6378.137             {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}       
+Target primary  : Sun
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: DE441}
+Rel. light bend : Sun                             {source: DE441}
+Rel. lght bnd GM: 1.3271E+11 km^3/s^2                                          
+Small-body perts: Yes                             {source: SB441-N16}
+Atmos refraction: NO (AIRLESS)
+RA format       : DEG
+Time format     : CAL 
+Calendar mode   : Mixed Julian/Gregorian
+EOP file        : eop.260706.p261002                                           
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-JUL-06. PREDICTS-> 2026-OCT-01
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
+Table format    : Comma Separated Values (spreadsheet)
+*******************************************************************************
+Initial IAU76/J2000 heliocentric ecliptic osculating elements (au, days, deg.):
+  EPOCH=  2453643.5 ! 2005-Sep-30.00 (TDB)         Residual RMS= .43239        
+   EC= .5677272474421676   QR= 3.527739584671504   TP= 2453598.4042831166      
+   OM= 47.7663182854102    W=  348.8897669109424   IN= 79.11625349553336       
+  Equivalent ICRF heliocentric cartesian coordinates (au, au/d):
+   X= 2.401287667494447E+00  Y= 2.449293433786997E+00  Z= 8.811698830039678E-01
+  VX=-8.188333846817593E-04 VY=-2.340019057589255E-03 VZ= 1.116731636055717E-02
+Asteroid physical parameters (km, seconds, rotational period in hours):        
+   GM= n.a.                RAD= n.a.               ROTPER= n.a.                
+   H= 13.11                G= .150                 B-V= n.a.                   
+                           ALBEDO= n.a.            STYP= n.a.                  
+**************************************************************************************************************************
+ Date__(UT)__HR:MN, , , R.A._(ICRF), DEC_(ICRF),    APmag,  S-brt,     S-O-T,/r,     S-T-O,       phi,  PAB-LON,  PAB-LAT,
+**************************************************************************************************************************
+$$SOE
+ 2005-Apr-01 00:00, , ,    40.35477,  -14.34896,   19.759,   n.a.,   35.1749,/T,    9.0761,    9.0736,  36.2737, -31.9350,
+ 2005-Apr-08 00:00, , ,    41.60532,  -12.60825,   19.734,   n.a.,   31.5999,/T,    8.2944,    8.2921,  37.4600, -30.7082,
+ 2005-Apr-15 00:00, , ,    42.90118,  -10.94100,   19.708,   n.a.,   28.4457,/T,    7.5746,    7.5727,  38.6369, -29.5168,
+ 2005-Apr-22 00:00, , ,    44.23105,   -9.34507,   19.682,   n.a.,   25.8656,/T,    6.9684,    6.9672,  39.7999, -28.3578,
+ 2005-Apr-29 00:00, , ,    45.58538,   -7.81720,   19.659,   n.a.,   24.0438,/T,    6.5364,    6.5361,  40.9455, -27.2279,
+ 2005-May-06 00:00, , ,    46.95615,   -6.35412,   19.644,   n.a.,   23.1632,/T,    6.3372,    6.3379,  42.0711, -26.1240,
+ 2005-May-13 00:00, , ,    48.33432,   -4.95329,   19.638,   n.a.,   23.3389,/L,    6.4082,    6.4099,  43.1735, -25.0431,
+ 2005-May-20 00:00, , ,    49.71008,   -3.61161,   19.640,   n.a.,   24.5585,/L,    6.7486,    6.7512,  44.2490, -23.9823,
+ 2005-May-27 00:00, , ,    51.07471,   -2.32510,   19.648,   n.a.,   26.6939,/L,    7.3216,    7.3248,  45.2949, -22.9380,
+ 2005-Jun-03 00:00, , ,    52.42032,   -1.08979,   19.659,   n.a.,   29.5692,/L,    8.0723,    8.0759,  46.3089, -21.9073,
+ 2005-Jun-10 00:00, , ,    53.73726,    0.09766,   19.670,   n.a.,   33.0163,/L,    8.9440,    8.9478,  47.2877, -20.8871,
+ 2005-Jun-17 00:00, , ,    55.01453,    1.24117,   19.678,   n.a.,   36.9005,/L,    9.8874,    9.8913,  48.2273, -19.8743,
+ 2005-Jun-24 00:00, , ,    56.24157,    2.34562,   19.682,   n.a.,   41.1273,/L,   10.8634,   10.8672,  49.1244, -18.8655,
+ 2005-Jul-01 00:00, , ,    57.40803,    3.41600,   19.680,   n.a.,   45.6379,/L,   11.8404,   11.8440,  49.9756, -17.8572,
+ 2005-Jul-08 00:00, , ,    58.50088,    4.45687,   19.671,   n.a.,   50.3958,/L,   12.7903,   12.7937,  50.7760, -16.8463,
+ 2005-Jul-15 00:00, , ,    59.50503,    5.47361,   19.656,   n.a.,   55.3770,/L,   13.6872,   13.6902,  51.5202, -15.8291,
+ 2005-Jul-22 00:00, , ,    60.40515,    6.47264,   19.632,   n.a.,   60.5691,/L,   14.5079,   14.5105,  52.2025, -14.8016,
+ 2005-Jul-29 00:00, , ,    61.18531,    7.46061,   19.600,   n.a.,   65.9737,/L,   15.2304,   15.2326,  52.8171, -13.7599,
+ 2005-Aug-05 00:00, , ,    61.82578,    8.44393,   19.560,   n.a.,   71.5998,/L,   15.8307,   15.8323,  53.3563, -12.7001,
+ 2005-Aug-12 00:00, , ,    62.30406,    9.42977,   19.511,   n.a.,   77.4566,/L,   16.2830,   16.2842,  53.8114, -11.6175,
+ 2005-Aug-19 00:00, , ,    62.59697,   10.42615,   19.452,   n.a.,   83.5559,/L,   16.5625,   16.5630,  54.1734, -10.5076,
+ 2005-Aug-26 00:00, , ,    62.68039,   11.44082,   19.384,   n.a.,   89.9170,/L,   16.6439,   16.6438,  54.4330,  -9.3655,
+ 2005-Sep-02 00:00, , ,    62.52621,   12.48043,   19.306,   n.a.,   96.5649,/L,   16.4993,   16.4986,  54.5795,  -8.1870,
+ 2005-Sep-09 00:00, , ,    62.10472,   13.55098,   19.218,   n.a.,  103.5193,/L,   16.1007,   16.0993,  54.6014,  -6.9675,
+ 2005-Sep-16 00:00, , ,    61.38849,   14.65708,   19.121,   n.a.,  110.7951,/L,   15.4239,   15.4219,  54.4887,  -5.7032,
+ 2005-Sep-23 00:00, , ,    60.35352,   15.80006,   19.015,   n.a.,  118.4061,/L,   14.4502,   14.4474,  54.2334,  -4.3915,
+ 2005-Sep-30 00:00, , ,    58.97856,   16.97620,   18.902,   n.a.,  126.3636,/L,   13.1656,   13.1622,  53.8291,  -3.0319,
+$$EOE
+**************************************************************************************************************************
+Column meaning:
+ 
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+ 
+ 'R.A._(ICRF), DEC_(ICRF),' =
+  Astrometric right ascension and declination of the target center with
+respect to the observing site (coordinate origin) in the reference frame of
+the planetary ephemeris (ICRF). Compensated for down-leg light-time delay
+aberration.
+
+  Units: RA  in decimal degrees,  ddd.fffff{ffff}
+         DEC in decimal degrees,  sdd.fffff{ffff}
+ 
+ 'APmag,  S-brt,' =
+   The asteroids' approximate apparent airless visual magnitude and surface
+brightness using the standard IAU H-G system magnitude model:
+
+   APmag = H + 5*log10(delta) + 5*log10(r) - 2.5*log10((1-G)*phi_1 + G*phi_2)
+
+   For solar phase angles >90 deg, the error could exceed 1 magnitude. For
+phase angles >120 degrees, output values are rounded to the nearest integer to
+indicate error could be large and unknown. For Earth-based observers, the
+estimated dimming due to atmospheric absorption (extinction) is available as
+a separate, requestable quantity.
+
+   Surface brightness is the average airless visual magnitude of a
+square-arcsecond of the illuminated portion of the apparent disk. It is
+computed only if the target radius is known.
+
+   Units: MAGNITUDES & MAGNITUDES PER SQUARE ARCSECOND
+ 
+ 'S-O-T,/r,' =
+   Sun-Observer-Target apparent SOLAR ELONGATION ANGLE seen from the observers'
+location at print-time.
+
+   The '/r' column provides a code indicating the targets' apparent position
+relative to the Sun in the observers' sky, as described below:
+
+   Case A: For an observing location on the surface of a rotating body, that
+body rotational sense is considered:
+
+    /T indicates target TRAILS Sun   (evening sky: rises and sets AFTER Sun)
+    /L indicates target LEADS Sun    (morning sky: rises and sets BEFORE Sun)
+
+   Case B: For an observing point that does not have a rotational model (such
+as a spacecraft), the "leading" and "trailing" condition is defined by the
+observers' heliocentric ORBITAL motion:
+
+    * If continuing in the observers' current direction of heliocentric
+       motion would encounter the targets' apparent longitude first, followed
+       by the Sun's, the target LEADS the Sun as seen by the observer.
+
+    * If the Sun's apparent longitude would be encountered first, followed
+       by the targets', the target TRAILS the Sun.
+
+   Two other codes can be output:
+    /* indicates observer is Sun-centered    (undefined)
+    /? Target is aligned with Sun center     (no lead or trail)
+
+   The S-O-T solar elongation angle is numerically the minimum separation
+angle of the Sun and target in the sky in any direction. It does NOT indicate
+the amount of separation in the leading or trailing directions, which would
+be defined along the equator of a spherical coordinate system.
+
+   Units: DEGREES
+ 
+ 'S-T-O,' =
+   The Sun-Target-Observer angle; the interior vertex angle at target center
+formed by a vector from the target to the apparent center of the Sun (at
+reflection time on the target) and the apparent vector from target to the
+observer at print-time. Slightly different from true PHASE ANGLE (requestable
+separately) at the few arcsecond level in that it includes stellar aberration
+on the down-leg from target to observer.  Units: DEGREES
+ 
+ 'phi,  PAB-LON,  PAB-LAT,' =
+   "phi" is the true PHASE ANGLE at the observers' location at print time.
+"PAB-LON" and "PAB-LAT" are the J2000 ecliptic longitude and latitude of the
+phase angle bisector direction; the outward directed angle bisecting the arc
+created by the apparent vector from Sun to target center and the astrometric
+vector from observer to target center. For an otherwise uniform ellipsoid, the
+time when its long-axis is perpendicular to the PAB direction approximately
+corresponds to lightcurve maximum (or maximum brightness) of the body. PAB is
+discussed in Harris et al., Icarus 57, 251-258 (1984).
+
+   Units: DEGREES, DEGREES, DEGREES
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+**************************************************************************************************************************

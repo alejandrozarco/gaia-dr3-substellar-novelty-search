@@ -1,0 +1,17 @@
+epoch,instrument,n_frames,filter,pred_V,SMIA_3s_as,SMAA_3s_as,depth_or_limit,outcome,note
+2005-07-01,(gate epoch),0,,22.88,1.16,1.51,,NO_ARCHIVAL_COVERAGE,Earliest SSOIS-indexed image is 2006-04; tight 2005 ellipse predates all archival coverage
+2006-04-23,CFHT/MegaCam,16,"I,R (8+8 deep 400s)",22.82,1.54,2.68,i~23.0 (5sig),NULL_SEARCHED,Deep coadd + object-frame stack + digital-tracking scan +/-40in along-track at predicted rate: no source >3sig anywhere; predicted-pos SNR=-1.7; control stars g~20.5 at SNR~20. Non-detection ~1.2 mag below predicted brightness at tightest/most-reliable epoch
+2013-03-10,CTIO-4m/DECam (NSC DR2),12,,22.92,4.57,28.83,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2014-05-17,CTIO-4m/DECam (NSC DR2),24,,22.79,5.22,35.01,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2014-06-14,CTIO-4m/DECam (NSC DR2),1,,22.72,5.27,34.17,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2015-02-24,CTIO-4m/DECam (NSC DR2),24,,22.92,5.42,40.65,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2017-04-20,CTIO-4m/DECam (NSC DR2),24,,22.84,6.51,57.12,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2017-04-21,CTIO-4m/DECam (NSC DR2),12,,22.84,6.52,57.12,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2017-04-28,CTIO-4m/DECam (NSC DR2),8,,22.83,6.54,57.11,NSC DR2 catalog,NULL_SEARCHED,"1 flag id142966_190802 r=21.48 REJECTED (single 1-of-8 exposure, single r-band, not re-detected on adjacent deep griz nights 04-29/04-30/05-04, 1.35mag too bright; neg-ctrl TRUE=1 vs offset=0 = Poisson-level)"
+2017-04-29,CTIO-4m/DECam (NSC DR2),20,,22.82,6.55,57.1,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2017-04-30,CTIO-4m/DECam (NSC DR2),20,,22.82,6.55,57.1,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2017-05-04,CTIO-4m/DECam (NSC DR2),20,,22.81,6.56,57.06,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2019-05-02,CTIO-4m/DECam (NSC DR2),20,,22.81,7.46,74.53,NSC DR2 catalog,NULL_SEARCHED,2 flags REJECTED (r=19.28 cstar0.91 star 3.5mag too bright; g=16.8 cstar0.0003 galaxy 6mag too bright); neg-ctrl TRUE=2 vs offset 1-2 = background-consistent
+2019-07-19,CTIO-4m/DECam (NSC DR2),24,,22.78,7.59,71.33,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2023-06-10,CTIO-4m/DECam (NSC DR2),8,,22.7,9.35,115.49,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse
+2023-09-27,CTIO-4m/DECam (NSC DR2),8,,22.86,9.24,109.13,NSC DR2 catalog,NULL_SEARCHED,0 single-night sources inside 3-sigma ellipse

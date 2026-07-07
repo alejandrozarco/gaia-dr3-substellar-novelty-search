@@ -1,0 +1,5 @@
+Image	Ext	MJD	Filter	Exptime	Object_RA	Object_Dec	Image_target	Telescope/Instrument	Datalink
+J9RPE8IDQ_FLT	-9999	53949.2757993889	CLEAR2S	1200	64.5280477912604	63.3113507372736	04YH32	HST/ACS	https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/HST/product/j9rpe8idq_flt.fits
+J9RPE8IEQ_FLT	-9999	53949.2757993889	CLEAR2S	1200	64.5280477912604	63.3113507372736	04YH32	HST/ACS	https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/HST/product/j9rpe8ieq_flt.fits
+J9RPE8IFQ_FLT	-9999	53949.2757993889	CLEAR2S	1200	64.5280477912604	63.3113507372736	04YH32	HST/ACS	https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/HST/product/j9rpe8ifq_flt.fits
+J9RPE8IGQ_FLT	-9999	53949.2757993889	CLEAR2S	1200	64.5280477912604	63.3113507372736	04YH32	HST/ACS	https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/data/pub/HST/product/j9rpe8igq_flt.fits

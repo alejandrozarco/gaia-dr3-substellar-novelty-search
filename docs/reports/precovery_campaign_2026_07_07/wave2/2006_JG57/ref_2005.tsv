@@ -1,0 +1,44 @@
+<div class="script">
+  <script type="application/javascript">
+    document.getElementsByTagName('body')[0].style.overflowX = 'visible'
+  </script>
+</div>
+MJD range:  53370 to 53737<br/>
+Date range:  2004-12-31 to 2006-01-02
+&nbsp;&nbsp;&nbsp;367 days<br/>
+Searching for images of <strong>"2006 JG57"</strong><br/>
+Querying <a rel="external" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='2006+JG57'&MAKE_EPHEM=YES&EPHEM_TYPE=OBSERVER&START_TIME=2004-12-31&STOP_TIME=2006-01-02&STEP_SIZE='1+d'&QUANTITIES=1&CSV_FORMAT=YES&CENTER=500">JPL Horizons</a> to get ephemeris. This may take a few moments...<br/>
+Done<br/>
+368 days in ephemeris<br/>
+Looking for images on ephemeris<br/>
+No positional uncertainty<br/>
+<div class="table-responsive"><table class="table small">
+<thead class="small"><tr>  <th scope="col">Image</th>  <th scope="col">Date/Time</th>  <th scope="col">Filter</th>  <th scope="col">Exptime</th>  <th scope="col">Object&nbsp;RA</th>  <th scope="col">Object&nbsp;Dec</th>  <th scope="col">Image&nbsp;target</th>  <th scope="col">Telescope/<br/>Instrument</th>  <th scope="col">MetaData</th>  <th scope="col">Comparison<br/>Images</th>  </tr></thead>
+</table></div><br/>
+No matching images were found<br/>
+Query took 1 second(s) to execute<br/><br/>
+<hr/>
+<p>
+<a href='https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cadcbin/ssos/ssosclf.pl?lang=en;object=2006+JG57;search=bynameHorizons;epoch1=2005-01-01;epoch2=2006-01-01;eellipse=;eunits=arcseconds;format=tsv'>Query results in TSV format</a>
+</p>
+
+<p>
+Read the <a href="/en/ssois/documentation.html">documentation</a>.
+</p>
+
+<div class="background-highlight">
+<p>
+If you have used CADC facilities for your research, please include the following acknowledgment in your publications:
+</p>
+<p>
+This research used the facilities of the Canadian Astronomy Data
+Centre operated by the National Research Council of Canada with the
+support of the Canadian Space Agency.
+</p>
+<p>
+If you use SSOS for your research please cite the following paper in your publications:
+<a rel="external" href="http://adsabs.harvard.edu/abs/2012PASP..124..579G">Gwyn, Hill & Kavelaars (2012)</a>
+</p>
+</div>
+
+HTTP=200

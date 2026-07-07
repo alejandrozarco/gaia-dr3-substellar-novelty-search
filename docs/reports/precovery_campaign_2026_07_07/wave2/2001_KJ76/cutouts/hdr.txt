@@ -1,0 +1,41 @@
+HTTP/1.1 303 See Other
+server: OpenCADC/cadc-rest
+www-authenticate: ivoa_cookie
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#cookie", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#BasicAA", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#token", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509
+www-authenticate: ivoa_bearer standard_id="ivo://ivoa.net/sso#tls-with-password", access_url="https://ws-cadc.canfar.net/ac/login", HACK=temporary
+www-authenticate: Bearer
+location: https://cadc-west-01.canfar.net/raven/files/cadc:CFHT/844238p.fits.fz?SUB=%5B9%5D%5B1%3A502%2C1804%3A2383%5D
+content-length: 0
+date: Tue, 07 Jul 2026 16:01:50 GMT
+strict-transport-security: max-age=63072000
+
+HTTP/1.1 303 
+server: OpenCADC/cadc-rest + storage-inventory/raven-1.0
+www-authenticate: ivoa_cookie
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#cookie", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#BasicAA", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#token", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509
+www-authenticate: ivoa_bearer standard_id="ivo://ivoa.net/sso#tls-with-password", access_url="https://ws-cadc.canfar.net/ac/login", HACK=temporary
+www-authenticate: Bearer
+location: https://ws-uv.canfar.net/minoc/files/dXJpPWNhZGM6Q0ZIVC84NDQyMzhwLmZpdHMuZnomZ250PVJlYWRHcmFudA==~Z_UpJX34gcZsA5lu4G7FzQW8w-2ViuSUCPvQKYP1T6u95B-jgNIrNG06aTp2-Dz6aUiVxzS2gfLhPLe0ZhZxUJNMhZrz1kaeHbz_D6JQJxOhLurHcjA5zy_ieJqdJs6B-WAbRe2S1Ewf2LAE8_1faSCSLv5GTgHRZeIse2JIvKD-ReCJXUGj06nsnjZcqH7jYYeYR9vG6LLiWUuCrG1eRlLt0S8bzdnQi5kM53oDUgRI6KnZTWddDYx4wmGSHr_IcH5gCYlo5GvPNGomuwGvfWePFIS9oDDB092IZQxj_gM_Wja0gdBmLSgMXNq8BabFpF2qzQqag0Sx8GzVZbEFJYd0LOUDsWr1Af3mjkoIubKA-Sl1u0Nx_MKpHbmiuUI0oO9vCltfMF5_xUm-8ZnYK5c96LtjUymdDsmmpIbH75WMFIDCbUPM_6FeBiV7_TDR3w5Hm_oynL_UROEm6rlBJU9s_qpj2f9JVcidh1F3KCxIOgjKYiQiPH2h99QyOByc8GNaiZ2PFPfMyNnt2zVPSwi1azBBV9JxEMfbDdmNHELbVUCY27NUIpmUgEO2vs2VS8CG3Lb9KT6NcYN1o_Qx5rtdVOviq_FXG4ltQZcly3cm0ag2x83cXQUD78jK6DJyusY0Yb0HVmpbz_sELTtmrJf3LQ3DYaa4sKcZRg-wfvo=/cadc:CFHT/844238p.fits.fz?SUB=%5B9%5D%5B1%3A502%2C1804%3A2383%5D
+content-length: 0
+date: Tue, 07 Jul 2026 16:01:51 GMT
+
+HTTP/1.1 200 
+server: OpenCADC/cadc-rest + storage-inventory/minoc-1.0
+www-authenticate: ivoa_cookie
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#cookie", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#BasicAA", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509 standard_id="ivo://ivoa.net/sso#token", access_url="https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/cred/generate"
+www-authenticate: ivoa_x509
+www-authenticate: ivoa_bearer standard_id="ivo://ivoa.net/sso#tls-with-password", access_url="https://ws-cadc.canfar.net/ac/login", HACK=temporary
+www-authenticate: Bearer
+content-disposition: inline; filename="844238p.fits.9__1_502_1804_2383.fz"
+content-type: application/fits
+transfer-encoding: chunked
+date: Tue, 07 Jul 2026 16:01:53 GMT
+

@@ -1,0 +1,4 @@
+{
+  "error": "content_type_error",
+  "message": "Content-Type not supported, use application/json"
+}

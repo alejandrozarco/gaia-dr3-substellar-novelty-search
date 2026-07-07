@@ -1,0 +1,9 @@
+epoch_window,jd_center,ra_deg,dec_deg,pred_V,SMAA_3s_as,SMIA_3s_as,solar_elong_deg,channel,query,result,note
+2005-07-01,2453551.5,57.408,3.416,19.68,0.42,0.19,45.6,SSOIS_byname,ssosclf.pl object=2004+YH32 epoch 2005-04-01..2005-10-01 extres=yes,0_footprints,"authoritative multi-archive image index (DECam/CFHT/Subaru/ESO/PS1/KPNO/HST/WISE); zero footprints anywhere in 2005"
+2005-full,2453552.5,,,19.7,,,,SSOIS_byname,ssosclf.pl object=2004+YH32 epoch 2005-01-01..2005-12-31,0_footprints,"full calendar 2005 = zero images"
+2004-2022,,,,,,,,SSOIS_byname,ssosclf.pl object=2004+YH32 epoch 2004-01-01..2022-12-31,1407_footprints,"resolver OK; earliest footprint 2006-08-02; all coverage 2006+ where V~24 (fails brightness gate)"
+2005-06-10,2453531.5,53.737,0.098,19.67,0.44,0.20,33.0,SDSS_DR16,query_region r=2.9arcmin DR16,in_footprint_no_2005_epoch,"Stripe82 region (4961 objs); imaging MJDs 1998-2007 none near 2005-06; elong 33deg unobservable by SDSS anyway"
+2005-07-01,2453551.5,57.408,3.416,19.68,0.42,0.19,45.6,SDSS_DR16,query_region r=2.9arcmin DR16,0_objects,"outside SDSS imaging footprint"
+2005-07-25,2453576.5,60.755,6.897,19.62,0.40,0.19,62.9,SDSS_DR16,query_region r=2.9arcmin DR16,0_objects,"outside SDSS imaging footprint"
+2005-08-03,2453585.5,61.658,8.163,19.57,0.38,0.20,70.0,SDSS_DR16,query_region r=2.9arcmin DR16,0_objects,"outside SDSS imaging footprint"
+2005-07-01,2453551.5,58.408,3.416,,,,,negative_control,+1deg-offset-box concept,degenerate_moot,"no images exist in passing window for target OR offset -> no background to be cleaner than; control trivially satisfied"

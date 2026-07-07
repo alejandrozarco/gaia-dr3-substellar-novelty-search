@@ -1,0 +1,11 @@
+{
+ "nsc_nights": 13,
+ "ps1_nights": 35,
+ "nsc_real_in_ellipse_total": 599,
+ "nsc_neg_in_ellipse_total": 328,
+ "ps1_real_in_ellipse_total": 77,
+ "ps1_neg_in_ellipse_total": 91,
+ "distinct_nsc_objectids": 216,
+ "nsc_stationary_stars": 212,
+ "nsc_survivors": 4
+}
