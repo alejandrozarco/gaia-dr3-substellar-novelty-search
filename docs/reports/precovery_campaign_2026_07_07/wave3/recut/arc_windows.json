@@ -1,0 +1,821 @@
+{
+  "2009 QV38": {
+    "arc_start": 2009,
+    "arc_end": 2012,
+    "obs_years": [
+      2009,
+      2010,
+      2011,
+      2012
+    ],
+    "n_obs": 165,
+    "n_nights": 60,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2017 FP50": {
+    "arc_start": 2017,
+    "arc_end": 2017,
+    "obs_years": [
+      2017
+    ],
+    "n_obs": 24,
+    "n_nights": 7,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2002 KW14": {
+    "arc_start": 2002,
+    "arc_end": 2009,
+    "obs_years": [
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2009
+    ],
+    "n_obs": 41,
+    "n_nights": 26,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2008 SJ236": {
+    "arc_start": 2006,
+    "arc_end": 2011,
+    "obs_years": [
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011
+    ],
+    "n_obs": 103,
+    "n_nights": 45,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2015 HT171": {
+    "arc_start": 2011,
+    "arc_end": 2017,
+    "obs_years": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 100,
+    "n_nights": 47,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2004 HF79": {
+    "arc_start": 2004,
+    "arc_end": 2015,
+    "obs_years": [
+      2004,
+      2005,
+      2006,
+      2012,
+      2014,
+      2015
+    ],
+    "n_obs": 35,
+    "n_nights": 18,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2007 HV90": {
+    "arc_start": 2007,
+    "arc_end": 2016,
+    "obs_years": [
+      2007,
+      2011,
+      2013,
+      2014,
+      2015,
+      2016
+    ],
+    "n_obs": 32,
+    "n_nights": 25,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2008 HY21": {
+    "arc_start": 2004,
+    "arc_end": 2012,
+    "obs_years": [
+      2004,
+      2007,
+      2008,
+      2012
+    ],
+    "n_obs": 68,
+    "n_nights": 26,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2013 JV63": {
+    "arc_start": 2011,
+    "arc_end": 2016,
+    "obs_years": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016
+    ],
+    "n_obs": 30,
+    "n_nights": 21,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2012 GN12": {
+    "arc_start": 2006,
+    "arc_end": 2014,
+    "obs_years": [
+      2006,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014
+    ],
+    "n_obs": 92,
+    "n_nights": 26,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2017 GZ8": {
+    "arc_start": 2015,
+    "arc_end": 2017,
+    "obs_years": [
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 235,
+    "n_nights": 70,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2010 JK124": {
+    "arc_start": 2010,
+    "arc_end": 2014,
+    "obs_years": [
+      2010,
+      2011,
+      2013,
+      2014
+    ],
+    "n_obs": 26,
+    "n_nights": 17,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2006 HW122": {
+    "arc_start": 2006,
+    "arc_end": 2015,
+    "obs_years": [
+      2006,
+      2007,
+      2009,
+      2015
+    ],
+    "n_obs": 18,
+    "n_nights": 15,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 CN23": {
+    "arc_start": 2000,
+    "arc_end": 2017,
+    "obs_years": [
+      2000,
+      2001,
+      2006,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 91,
+    "n_nights": 32,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2010 GF65": {
+    "arc_start": 2010,
+    "arc_end": 2015,
+    "obs_years": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015
+    ],
+    "n_obs": 66,
+    "n_nights": 32,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2012 HG84": {
+    "arc_start": 2010,
+    "arc_end": 2017,
+    "obs_years": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 81,
+    "n_nights": 41,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2009 UF156": {
+    "arc_start": 2005,
+    "arc_end": 2013,
+    "obs_years": [
+      2005,
+      2008,
+      2009,
+      2010,
+      2013
+    ],
+    "n_obs": 19,
+    "n_nights": 14,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2015 SW20": {
+    "arc_start": 2014,
+    "arc_end": 2016,
+    "obs_years": [
+      2014,
+      2015,
+      2016
+    ],
+    "n_obs": 27,
+    "n_nights": 10,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 KY101": {
+    "arc_start": 2010,
+    "arc_end": 2017,
+    "obs_years": [
+      2010,
+      2011,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 86,
+    "n_nights": 45,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2002 VB131": {
+    "arc_start": 2002,
+    "arc_end": 2013,
+    "obs_years": [
+      2002,
+      2003,
+      2004,
+      2005,
+      2008,
+      2013
+    ],
+    "n_obs": 25,
+    "n_nights": 17,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2014 KS101": {
+    "arc_start": 2011,
+    "arc_end": 2017,
+    "obs_years": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 85,
+    "n_nights": 37,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2007 UM126": {
+    "arc_start": 2001,
+    "arc_end": 2018,
+    "obs_years": [
+      2001,
+      2004,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2016,
+      2017,
+      2018
+    ],
+    "n_obs": 141,
+    "n_nights": 64,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2005 LA54": {
+    "arc_start": 2005,
+    "arc_end": 2013,
+    "obs_years": [
+      2005,
+      2006,
+      2007,
+      2013
+    ],
+    "n_obs": 19,
+    "n_nights": 15,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 QJ562": {
+    "arc_start": 2014,
+    "arc_end": 2016,
+    "obs_years": [
+      2014,
+      2015,
+      2016
+    ],
+    "n_obs": 13,
+    "n_nights": 12,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2012 CN29": {
+    "arc_start": 2012,
+    "arc_end": 2012,
+    "obs_years": [
+      2012
+    ],
+    "n_obs": 17,
+    "n_nights": 8,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2012 DD61": {
+    "arc_start": 2012,
+    "arc_end": 2014,
+    "obs_years": [
+      2012,
+      2013,
+      2014
+    ],
+    "n_obs": 105,
+    "n_nights": 34,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2002 PQ152": {
+    "arc_start": 2001,
+    "arc_end": 2017,
+    "obs_years": [
+      2001,
+      2002,
+      2004,
+      2007,
+      2009,
+      2012,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 33,
+    "n_nights": 25,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": true,
+    "overlap_outside_arc": false
+  },
+  "2001 RX143": {
+    "arc_start": 2001,
+    "arc_end": 2017,
+    "obs_years": [
+      2001,
+      2002,
+      2005,
+      2006,
+      2008,
+      2011,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "n_obs": 77,
+    "n_nights": 62,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2014 SV349": {
+    "arc_start": 2012,
+    "arc_end": 2015,
+    "obs_years": [
+      2012,
+      2014,
+      2015
+    ],
+    "n_obs": 25,
+    "n_nights": 14,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 UE225": {
+    "arc_start": 2008,
+    "arc_end": 2017,
+    "obs_years": [
+      2008,
+      2013,
+      2014,
+      2015,
+      2017
+    ],
+    "n_obs": 110,
+    "n_nights": 46,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2005 JZ174": {
+    "arc_start": 2005,
+    "arc_end": 2016,
+    "obs_years": [
+      2005,
+      2006,
+      2008,
+      2016
+    ],
+    "n_obs": 20,
+    "n_nights": 16,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": true,
+    "overlap_outside_arc": false
+  },
+  "2002 PP149": {
+    "arc_start": 2002,
+    "arc_end": 2017,
+    "obs_years": [
+      2002,
+      2003,
+      2005,
+      2006,
+      2010,
+      2017
+    ],
+    "n_obs": 16,
+    "n_nights": 11,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 NE192": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 22,
+    "n_nights": 15,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 FU61": {
+    "arc_start": 2014,
+    "arc_end": 2015,
+    "obs_years": [
+      2014,
+      2015
+    ],
+    "n_obs": 42,
+    "n_nights": 14,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2001 KE76": {
+    "arc_start": 2001,
+    "arc_end": 2004,
+    "obs_years": [
+      2001,
+      2002,
+      2003,
+      2004
+    ],
+    "n_obs": 28,
+    "n_nights": 18,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2003 QF113": {
+    "arc_start": 2003,
+    "arc_end": 2013,
+    "obs_years": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2013
+    ],
+    "n_obs": 21,
+    "n_nights": 18,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 KM122": {
+    "arc_start": 2014,
+    "arc_end": 2017,
+    "obs_years": [
+      2014,
+      2016,
+      2017
+    ],
+    "n_obs": 33,
+    "n_nights": 10,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2014 YK92": {
+    "arc_start": 2013,
+    "arc_end": 2015,
+    "obs_years": [
+      2013,
+      2014,
+      2015
+    ],
+    "n_obs": 14,
+    "n_nights": 10,
+    "best_ep_year": 2013,
+    "overlap_in_reported_year": true,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": false
+  },
+  "2005 LB54": {
+    "arc_start": 2005,
+    "arc_end": 2015,
+    "obs_years": [
+      2005,
+      2006,
+      2007,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015
+    ],
+    "n_obs": 50,
+    "n_nights": 27,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 LP3": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 25,
+    "n_nights": 19,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 NW189": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 20,
+    "n_nights": 12,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 MB350": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 21,
+    "n_nights": 12,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2015 KL419": {
+    "arc_start": 2015,
+    "arc_end": 2016,
+    "obs_years": [
+      2015,
+      2016
+    ],
+    "n_obs": 26,
+    "n_nights": 11,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2018 JB15": {
+    "arc_start": 2018,
+    "arc_end": 2018,
+    "obs_years": [
+      2018
+    ],
+    "n_obs": 13,
+    "n_nights": 5,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 NR192": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 32,
+    "n_nights": 14,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 NK190": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 24,
+    "n_nights": 16,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 MF350": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 17,
+    "n_nights": 12,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 MT350": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 19,
+    "n_nights": 15,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 NR189": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 36,
+    "n_nights": 17,
+    "best_ep_year": 2021,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  },
+  "2025 LX2": {
+    "arc_start": 2025,
+    "arc_end": 2025,
+    "obs_years": [
+      2025
+    ],
+    "n_obs": 18,
+    "n_nights": 15,
+    "best_ep_year": 2017,
+    "overlap_in_reported_year": false,
+    "overlap_in_gap": false,
+    "overlap_outside_arc": true
+  }
+}

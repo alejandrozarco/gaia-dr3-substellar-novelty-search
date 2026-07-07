@@ -1,0 +1,2049 @@
+{
+  "passers": [
+    {
+      "desig": "2009 QV38",
+      "lane": "inner-system",
+      "lastobs": 2015,
+      "H": 12.0,
+      "a": 10.78,
+      "nopp": "5",
+      "deep_fp": 610,
+      "total_ssois": 680,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 18,
+          "by_survey": "ps118",
+          "V": 20.812,
+          "SMIA": 0.12,
+          "SMAA": 0.22,
+          "gal_b": 14.5,
+          "ra": 95.7617,
+          "dec": 45.914
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 18,
+        "by_survey": "ps118",
+        "V": 20.812,
+        "SMIA": 0.12,
+        "SMAA": 0.22,
+        "gal_b": 14.5,
+        "ra": 95.7617,
+        "dec": 45.914
+      },
+      "wave3_score": 0.5001
+    },
+    {
+      "desig": "2017 FP50",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 15.4,
+      "a": 5.69,
+      "nopp": "1",
+      "deep_fp": 452,
+      "total_ssois": 595,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 21.803,
+          "SMIA": 2.04,
+          "SMAA": 12.38,
+          "gal_b": 54.1,
+          "ra": 165.7603,
+          "dec": 2.2502
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 21.803,
+        "SMIA": 2.04,
+        "SMAA": 12.38,
+        "gal_b": 54.1,
+        "ra": 165.7603,
+        "dec": 2.2502
+      },
+      "wave3_score": 0.4754
+    },
+    {
+      "desig": "2002 KW14",
+      "lane": "distant-multiopp",
+      "lastobs": 2015,
+      "H": 5.51,
+      "a": 46.51,
+      "nopp": "10",
+      "deep_fp": 725,
+      "total_ssois": 1021,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 16,
+          "by_survey": "decam16",
+          "V": 21.811,
+          "SMIA": 0.21,
+          "SMAA": 0.54,
+          "gal_b": 12.8,
+          "ra": 252.079,
+          "dec": -24.789
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 16,
+        "by_survey": "decam16",
+        "V": 21.811,
+        "SMIA": 0.21,
+        "SMAA": 0.54,
+        "gal_b": 12.8,
+        "ra": 252.079,
+        "dec": -24.789
+      },
+      "wave3_score": 0.4536
+    },
+    {
+      "desig": "2008 SJ236",
+      "lane": "inner-system",
+      "lastobs": 2015,
+      "H": 12.3,
+      "a": 10.91,
+      "nopp": "9",
+      "deep_fp": 752,
+      "total_ssois": 1165,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 13,
+          "by_survey": "ps113",
+          "V": 21.421,
+          "SMIA": 0.11,
+          "SMAA": 0.13,
+          "gal_b": 34.9,
+          "ra": 137.177,
+          "dec": 9.7426
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 13,
+        "by_survey": "ps113",
+        "V": 21.421,
+        "SMIA": 0.11,
+        "SMAA": 0.13,
+        "gal_b": 34.9,
+        "ra": 137.177,
+        "dec": 9.7426
+      },
+      "wave3_score": 0.4509
+    },
+    {
+      "desig": "2015 HT171",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 12.4,
+      "a": 11.49,
+      "nopp": "7",
+      "deep_fp": 506,
+      "total_ssois": 614,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 8,
+          "by_survey": "ps18",
+          "V": 22.105,
+          "SMIA": 0.12,
+          "SMAA": 0.18,
+          "gal_b": 86.0,
+          "ra": 193.0819,
+          "dec": 31.0851
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 34,
+          "by_survey": "decam28+cfht6",
+          "V": 21.998,
+          "SMIA": 0.11,
+          "SMAA": 0.13,
+          "gal_b": 23.6,
+          "ra": 239.0165,
+          "dec": -21.9985
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 34,
+        "by_survey": "decam28+cfht6",
+        "V": 21.998,
+        "SMIA": 0.11,
+        "SMAA": 0.13,
+        "gal_b": 23.6,
+        "ra": 239.0165,
+        "dec": -21.9985
+      },
+      "wave3_score": 0.4217
+    },
+    {
+      "desig": "2004 HF79",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.44,
+      "a": 43.12,
+      "nopp": "7",
+      "deep_fp": 902,
+      "total_ssois": 1514,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 91,
+          "by_survey": "decam4+cfht87",
+          "V": 22.786,
+          "SMIA": 0.23,
+          "SMAA": 0.6,
+          "gal_b": 22.9,
+          "ra": 241.6141,
+          "dec": -20.5545
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 91,
+        "by_survey": "decam4+cfht87",
+        "V": 22.786,
+        "SMIA": 0.23,
+        "SMAA": 0.6,
+        "gal_b": 22.9,
+        "ra": 241.6141,
+        "dec": -20.5545
+      },
+      "wave3_score": 0.4185
+    },
+    {
+      "desig": "2007 HV90",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.6,
+      "a": 43.84,
+      "nopp": "6",
+      "deep_fp": 2584,
+      "total_ssois": 2915,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 28,
+          "by_survey": "decam28",
+          "V": 22.864,
+          "SMIA": 0.3,
+          "SMAA": 0.58,
+          "gal_b": 15.7,
+          "ra": 250.9808,
+          "dec": -21.3987
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 28,
+        "by_survey": "decam28",
+        "V": 22.864,
+        "SMIA": 0.3,
+        "SMAA": 0.58,
+        "gal_b": 15.7,
+        "ra": 250.9808,
+        "dec": -21.3987
+      },
+      "wave3_score": 0.4158
+    },
+    {
+      "desig": "2008 HY21",
+      "lane": "inner-system",
+      "lastobs": 2012,
+      "H": 12.2,
+      "a": 10.96,
+      "nopp": "4",
+      "deep_fp": 627,
+      "total_ssois": 958,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 4,
+          "by_survey": "ps14",
+          "V": 22.666,
+          "SMIA": 0.44,
+          "SMAA": 0.62,
+          "gal_b": -50.0,
+          "ra": 327.9893,
+          "dec": -25.4731
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 4,
+        "by_survey": "ps14",
+        "V": 22.666,
+        "SMIA": 0.44,
+        "SMAA": 0.62,
+        "gal_b": -50.0,
+        "ra": 327.9893,
+        "dec": -25.4731
+      },
+      "wave3_score": 0.4146
+    },
+    {
+      "desig": "2013 JV63",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.5,
+      "a": 46.29,
+      "nopp": "6",
+      "deep_fp": 736,
+      "total_ssois": 969,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 294,
+          "by_survey": "decam294",
+          "V": 23.124,
+          "SMIA": 0.15,
+          "SMAA": 0.28,
+          "gal_b": 21.6,
+          "ra": 235.7327,
+          "dec": -27.5187
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 294,
+        "by_survey": "decam294",
+        "V": 23.124,
+        "SMIA": 0.15,
+        "SMAA": 0.28,
+        "gal_b": 21.6,
+        "ra": 235.7327,
+        "dec": -27.5187
+      },
+      "wave3_score": 0.407
+    },
+    {
+      "desig": "2012 GN12",
+      "lane": "inner-system",
+      "lastobs": 2015,
+      "H": 10.75,
+      "a": 15.06,
+      "nopp": "9",
+      "deep_fp": 1285,
+      "total_ssois": 1448,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 4,
+          "by_survey": "ps14",
+          "V": 21.308,
+          "SMIA": 0.12,
+          "SMAA": 0.12,
+          "gal_b": 43.5,
+          "ra": 205.2086,
+          "dec": -17.7838
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 112,
+          "by_survey": "decam112",
+          "V": 21.945,
+          "SMIA": 0.24,
+          "SMAA": 0.82,
+          "gal_b": 12.1,
+          "ra": 243.0746,
+          "dec": -34.6843
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 4,
+        "by_survey": "ps14",
+        "V": 21.308,
+        "SMIA": 0.12,
+        "SMAA": 0.12,
+        "gal_b": 43.5,
+        "ra": 205.2086,
+        "dec": -17.7838
+      },
+      "wave3_score": 0.4055
+    },
+    {
+      "desig": "2017 GZ8",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 14.4,
+      "a": 7.49,
+      "nopp": "3",
+      "deep_fp": 759,
+      "total_ssois": 947,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 21.097,
+          "SMIA": 0.12,
+          "SMAA": 0.22,
+          "gal_b": 57.4,
+          "ra": 203.5369,
+          "dec": -3.8228
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 21.097,
+        "SMIA": 0.12,
+        "SMAA": 0.22,
+        "gal_b": 57.4,
+        "ra": 203.5369,
+        "dec": -3.8228
+      },
+      "wave3_score": 0.4008
+    },
+    {
+      "desig": "2010 JK124",
+      "lane": "distant-multiopp",
+      "lastobs": 2014,
+      "H": 5.35,
+      "a": 40.26,
+      "nopp": "4",
+      "deep_fp": 419,
+      "total_ssois": 672,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 8,
+          "by_survey": "decam8",
+          "V": 21.615,
+          "SMIA": 0.57,
+          "SMAA": 3.06,
+          "gal_b": 13.3,
+          "ra": 247.3423,
+          "dec": -29.0547
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 8,
+        "by_survey": "decam8",
+        "V": 21.615,
+        "SMIA": 0.57,
+        "SMAA": 3.06,
+        "gal_b": 13.3,
+        "ra": 247.3423,
+        "dec": -29.0547
+      },
+      "wave3_score": 0.3912
+    },
+    {
+      "desig": "2006 HW122",
+      "lane": "distant-multiopp",
+      "lastobs": 2015,
+      "H": 6.67,
+      "a": 45.3,
+      "nopp": "4",
+      "deep_fp": 1017,
+      "total_ssois": 1674,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 123,
+          "by_survey": "decam4+cfht119",
+          "V": 23.237,
+          "SMIA": 0.9,
+          "SMAA": 2.46,
+          "gal_b": 24.1,
+          "ra": 239.404,
+          "dec": -20.9139
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 123,
+        "by_survey": "decam4+cfht119",
+        "V": 23.237,
+        "SMIA": 0.9,
+        "SMAA": 2.46,
+        "gal_b": 24.1,
+        "ra": 239.404,
+        "dec": -20.9139
+      },
+      "wave3_score": 0.3888
+    },
+    {
+      "desig": "2014 CN23",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 8.89,
+      "a": 16.28,
+      "nopp": "9",
+      "deep_fp": 803,
+      "total_ssois": 1021,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 13,
+          "by_survey": "ps113",
+          "V": 22.339,
+          "SMIA": 0.11,
+          "SMAA": 0.15,
+          "gal_b": 37.9,
+          "ra": 211.9662,
+          "dec": -21.5841
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 13,
+        "by_survey": "ps113",
+        "V": 22.339,
+        "SMIA": 0.11,
+        "SMAA": 0.15,
+        "gal_b": 37.9,
+        "ra": 211.9662,
+        "dec": -21.5841
+      },
+      "wave3_score": 0.3757
+    },
+    {
+      "desig": "2010 GF65",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 7.28,
+      "a": 33.15,
+      "nopp": "8",
+      "deep_fp": 740,
+      "total_ssois": 954,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 3,
+          "by_survey": "ps13",
+          "V": 21.537,
+          "SMIA": 0.06,
+          "SMAA": 0.1,
+          "gal_b": 28.7,
+          "ra": 224.1763,
+          "dec": -26.2309
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 41,
+          "by_survey": "decam41",
+          "V": 21.158,
+          "SMIA": 0.12,
+          "SMAA": 0.18,
+          "gal_b": 18.3,
+          "ra": 236.2361,
+          "dec": -31.4989
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 3,
+        "by_survey": "ps13",
+        "V": 21.537,
+        "SMIA": 0.06,
+        "SMAA": 0.1,
+        "gal_b": 28.7,
+        "ra": 224.1763,
+        "dec": -26.2309
+      },
+      "wave3_score": 0.3516
+    },
+    {
+      "desig": "2012 HG84",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 5.54,
+      "a": 42.87,
+      "nopp": "8",
+      "deep_fp": 1011,
+      "total_ssois": 1260,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 21.703,
+          "SMIA": 0.18,
+          "SMAA": 0.28,
+          "gal_b": 21.2,
+          "ra": 239.2094,
+          "dec": -25.1516
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 4,
+        "by_survey": "decam4",
+        "V": 21.703,
+        "SMIA": 0.18,
+        "SMAA": 0.28,
+        "gal_b": 21.2,
+        "ra": 239.2094,
+        "dec": -25.1516
+      },
+      "wave3_score": 0.3512
+    },
+    {
+      "desig": "2009 UF156",
+      "lane": "distant-multiopp",
+      "lastobs": 2013,
+      "H": 6.5,
+      "a": 43.1,
+      "nopp": "5",
+      "deep_fp": 486,
+      "total_ssois": 646,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 8,
+          "by_survey": "decam8",
+          "V": 22.934,
+          "SMIA": 1.3,
+          "SMAA": 4.31,
+          "gal_b": -44.1,
+          "ra": 35.4078,
+          "dec": 13.2653
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 22.901,
+          "SMIA": 3.79,
+          "SMAA": 12.26,
+          "gal_b": -35.7,
+          "ra": 45.9798,
+          "dec": 16.7059
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 8,
+        "by_survey": "decam8",
+        "V": 22.934,
+        "SMIA": 1.3,
+        "SMAA": 4.31,
+        "gal_b": -44.1,
+        "ra": 35.4078,
+        "dec": 13.2653
+      },
+      "wave3_score": 0.3449
+    },
+    {
+      "desig": "2015 SW20",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.41,
+      "a": 43.68,
+      "nopp": "3",
+      "deep_fp": 954,
+      "total_ssois": 897,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 2,
+          "by_survey": "ps12",
+          "V": 22.988,
+          "SMIA": 3.01,
+          "SMAA": 19.68,
+          "gal_b": -58.9,
+          "ra": 349.2522,
+          "dec": -5.6345
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 29,
+          "by_survey": "decam29",
+          "V": 22.936,
+          "SMIA": 1.83,
+          "SMAA": 6.0,
+          "gal_b": -60.9,
+          "ra": 356.8554,
+          "dec": -2.4447
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 29,
+        "by_survey": "decam29",
+        "V": 22.936,
+        "SMIA": 1.83,
+        "SMAA": 6.0,
+        "gal_b": -60.9,
+        "ra": 356.8554,
+        "dec": -2.4447
+      },
+      "wave3_score": 0.3448
+    },
+    {
+      "desig": "2014 KY101",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.49,
+      "a": 39.24,
+      "nopp": "7",
+      "deep_fp": 643,
+      "total_ssois": 923,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 3,
+          "by_survey": "cfht3",
+          "V": 21.97,
+          "SMIA": 0.11,
+          "SMAA": 0.17,
+          "gal_b": 17.9,
+          "ra": 250.8169,
+          "dec": -18.0444
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 3,
+        "by_survey": "cfht3",
+        "V": 21.97,
+        "SMIA": 0.11,
+        "SMAA": 0.17,
+        "gal_b": 17.9,
+        "ra": 250.8169,
+        "dec": -18.0444
+      },
+      "wave3_score": 0.3376
+    },
+    {
+      "desig": "2002 VB131",
+      "lane": "distant-multiopp",
+      "lastobs": 2013,
+      "H": 6.4,
+      "a": 43.31,
+      "nopp": "6",
+      "deep_fp": 429,
+      "total_ssois": 649,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 1,
+          "by_survey": "ps11",
+          "V": 23.069,
+          "SMIA": 1.34,
+          "SMAA": 2.0,
+          "gal_b": -48.8,
+          "ra": 29.6213,
+          "dec": 10.7398
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 12,
+          "by_survey": "decam12",
+          "V": 23.06,
+          "SMIA": 2.52,
+          "SMAA": 6.81,
+          "gal_b": -41.6,
+          "ra": 39.0286,
+          "dec": 14.1003
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 1,
+        "by_survey": "ps11",
+        "V": 23.069,
+        "SMIA": 1.34,
+        "SMAA": 2.0,
+        "gal_b": -48.8,
+        "ra": 29.6213,
+        "dec": 10.7398
+      },
+      "wave3_score": 0.3313
+    },
+    {
+      "desig": "2014 KS101",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.5,
+      "a": 38.33,
+      "nopp": "7",
+      "deep_fp": 766,
+      "total_ssois": 996,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 3,
+          "by_survey": "cfht3",
+          "V": 22.314,
+          "SMIA": 0.15,
+          "SMAA": 0.21,
+          "gal_b": 19.7,
+          "ra": 256.7386,
+          "dec": -6.5804
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 3,
+        "by_survey": "cfht3",
+        "V": 22.314,
+        "SMIA": 0.15,
+        "SMAA": 0.21,
+        "gal_b": 19.7,
+        "ra": 256.7386,
+        "dec": -6.5804
+      },
+      "wave3_score": 0.3265
+    },
+    {
+      "desig": "2007 UM126",
+      "lane": "inner-system",
+      "lastobs": 2018,
+      "H": 10.32,
+      "a": 12.91,
+      "nopp": "14",
+      "deep_fp": 668,
+      "total_ssois": 873,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 4,
+          "by_survey": "ps14",
+          "V": 21.988,
+          "SMIA": 0.07,
+          "SMAA": 0.11,
+          "gal_b": -57.4,
+          "ra": 43.7987,
+          "dec": -12.284
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 4,
+        "by_survey": "ps14",
+        "V": 21.988,
+        "SMIA": 0.07,
+        "SMAA": 0.11,
+        "gal_b": -57.4,
+        "ra": 43.7987,
+        "dec": -12.284
+      },
+      "wave3_score": 0.3227
+    },
+    {
+      "desig": "2005 LA54",
+      "lane": "distant-multiopp",
+      "lastobs": 2013,
+      "H": 6.5,
+      "a": 44.13,
+      "nopp": "4",
+      "deep_fp": 1263,
+      "total_ssois": 1269,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 6,
+          "by_survey": "cfht6",
+          "V": 22.721,
+          "SMIA": 2.53,
+          "SMAA": 7.22,
+          "gal_b": 10.3,
+          "ra": 256.2667,
+          "dec": -23.9251
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 6,
+        "by_survey": "cfht6",
+        "V": 22.721,
+        "SMIA": 2.53,
+        "SMAA": 7.22,
+        "gal_b": 10.3,
+        "ra": 256.2667,
+        "dec": -23.9251
+      },
+      "wave3_score": 0.3186
+    },
+    {
+      "desig": "2014 QJ562",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 7.42,
+      "a": 37.88,
+      "nopp": "3",
+      "deep_fp": 993,
+      "total_ssois": 811,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 30,
+          "by_survey": "decam30",
+          "V": 23.266,
+          "SMIA": 1.86,
+          "SMAA": 11.46,
+          "gal_b": -55.9,
+          "ra": 334.3286,
+          "dec": -39.0743
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 30,
+        "by_survey": "decam30",
+        "V": 23.266,
+        "SMIA": 1.86,
+        "SMAA": 11.46,
+        "gal_b": -55.9,
+        "ra": 334.3286,
+        "dec": -39.0743
+      },
+      "wave3_score": 0.3088
+    },
+    {
+      "desig": "2012 CN29",
+      "lane": "inner-system",
+      "lastobs": 2012,
+      "H": 14.8,
+      "a": 6.46,
+      "nopp": "1",
+      "deep_fp": 347,
+      "total_ssois": 605,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 5,
+          "by_survey": "ps15",
+          "V": 22.0,
+          "SMIA": 11.21,
+          "SMAA": 104.46,
+          "gal_b": 47.5,
+          "ra": 192.2614,
+          "dec": -15.3856
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 5,
+        "by_survey": "ps15",
+        "V": 22.0,
+        "SMIA": 11.21,
+        "SMAA": 104.46,
+        "gal_b": 47.5,
+        "ra": 192.2614,
+        "dec": -15.3856
+      },
+      "wave3_score": 0.3084
+    },
+    {
+      "desig": "2012 DD61",
+      "lane": "inner-system",
+      "lastobs": 2014,
+      "H": 13.3,
+      "a": 7.51,
+      "nopp": "3",
+      "deep_fp": 528,
+      "total_ssois": 678,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 23.044,
+          "SMIA": 0.21,
+          "SMAA": 8.23,
+          "gal_b": -40.4,
+          "ra": 354.7571,
+          "dec": 19.2371
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 23.044,
+        "SMIA": 0.21,
+        "SMAA": 8.23,
+        "gal_b": -40.4,
+        "ra": 354.7571,
+        "dec": 19.2371
+      },
+      "wave3_score": 0.3082
+    },
+    {
+      "desig": "2002 PQ152",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 9.14,
+      "a": 25.85,
+      "nopp": "10",
+      "deep_fp": 600,
+      "total_ssois": 920,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 2,
+          "by_survey": "ps12",
+          "V": 22.935,
+          "SMIA": 0.2,
+          "SMAA": 0.53,
+          "gal_b": -50.2,
+          "ra": 10.4559,
+          "dec": 12.6161
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 2,
+        "by_survey": "ps12",
+        "V": 22.935,
+        "SMIA": 0.2,
+        "SMAA": 0.53,
+        "gal_b": -50.2,
+        "ra": 10.4559,
+        "dec": 12.6161
+      },
+      "wave3_score": 0.3014
+    },
+    {
+      "desig": "2001 RX143",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.61,
+      "a": 39.42,
+      "nopp": "11",
+      "deep_fp": 701,
+      "total_ssois": 1226,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 2,
+          "by_survey": "ps12",
+          "V": 23.163,
+          "SMIA": 0.22,
+          "SMAA": 0.4,
+          "gal_b": -49.8,
+          "ra": 23.0116,
+          "dec": 11.8925
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 2,
+        "by_survey": "ps12",
+        "V": 23.163,
+        "SMIA": 0.22,
+        "SMAA": 0.4,
+        "gal_b": -49.8,
+        "ra": 23.0116,
+        "dec": 11.8925
+      },
+      "wave3_score": 0.2941
+    },
+    {
+      "desig": "2014 SV349",
+      "lane": "distant-multiopp",
+      "lastobs": 2015,
+      "H": 5.1,
+      "a": 61.1,
+      "nopp": "3",
+      "deep_fp": 619,
+      "total_ssois": 811,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 23.123,
+          "SMIA": 1.59,
+          "SMAA": 7.63,
+          "gal_b": -55.8,
+          "ra": 333.9011,
+          "dec": -30.0959
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 23.123,
+        "SMIA": 1.59,
+        "SMAA": 7.63,
+        "gal_b": -55.8,
+        "ra": 333.9011,
+        "dec": -30.0959
+      },
+      "wave3_score": 0.2924
+    },
+    {
+      "desig": "2014 UE225",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.42,
+      "a": 43.86,
+      "nopp": "6",
+      "deep_fp": 617,
+      "total_ssois": 948,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 2,
+          "by_survey": "ps12",
+          "V": 23.26,
+          "SMIA": 0.38,
+          "SMAA": 0.56,
+          "gal_b": -51.0,
+          "ra": 19.6347,
+          "dec": 11.3346
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 1,
+          "by_survey": "cfht1",
+          "V": 23.254,
+          "SMIA": 1.33,
+          "SMAA": 2.58,
+          "gal_b": -46.4,
+          "ra": 28.1048,
+          "dec": 13.8776
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 2,
+        "by_survey": "ps12",
+        "V": 23.26,
+        "SMIA": 0.38,
+        "SMAA": 0.56,
+        "gal_b": -51.0,
+        "ra": 19.6347,
+        "dec": 11.3346
+      },
+      "wave3_score": 0.2909
+    },
+    {
+      "desig": "2005 JZ174",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.7,
+      "a": 42.49,
+      "nopp": "4",
+      "deep_fp": 907,
+      "total_ssois": 1094,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 3,
+          "by_survey": "ps13",
+          "V": 23.122,
+          "SMIA": 1.39,
+          "SMAA": 2.31,
+          "gal_b": 41.6,
+          "ra": 220.0913,
+          "dec": -13.3952
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 3,
+        "by_survey": "ps13",
+        "V": 23.122,
+        "SMIA": 1.39,
+        "SMAA": 2.31,
+        "gal_b": 41.6,
+        "ra": 220.0913,
+        "dec": -13.3952
+      },
+      "wave3_score": 0.2858
+    },
+    {
+      "desig": "2002 PP149",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.9,
+      "a": 40.97,
+      "nopp": "7",
+      "deep_fp": 991,
+      "total_ssois": 1284,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 8,
+          "by_survey": "ps18",
+          "V": 23.052,
+          "SMIA": 1.04,
+          "SMAA": 4.54,
+          "gal_b": -66.3,
+          "ra": 353.9565,
+          "dec": -11.3616
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 25,
+          "by_survey": "decam15+cfht10",
+          "V": 23.073,
+          "SMIA": 1.54,
+          "SMAA": 4.91,
+          "gal_b": -72.0,
+          "ra": 3.3336,
+          "dec": -11.5591
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 8,
+          "by_survey": "decam8",
+          "V": 23.122,
+          "SMIA": 1.92,
+          "SMAA": 3.21,
+          "gal_b": -74.7,
+          "ra": 5.9186,
+          "dec": -13.2824
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 8,
+        "by_survey": "decam8",
+        "V": 23.122,
+        "SMIA": 1.92,
+        "SMAA": 3.21,
+        "gal_b": -74.7,
+        "ra": 5.9186,
+        "dec": -13.2824
+      },
+      "wave3_score": 0.2828
+    },
+    {
+      "desig": "2025 NE192",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 6.27,
+      "a": 43.97,
+      "nopp": "1",
+      "deep_fp": 535,
+      "total_ssois": 1055,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 23.008,
+          "SMIA": 10.45,
+          "SMAA": 173.93,
+          "gal_b": -57.5,
+          "ra": 341.8815,
+          "dec": -12.4687
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 23.008,
+        "SMIA": 10.45,
+        "SMAA": 173.93,
+        "gal_b": -57.5,
+        "ra": 341.8815,
+        "dec": -12.4687
+      },
+      "wave3_score": 0.2684
+    },
+    {
+      "desig": "2014 FU61",
+      "lane": "inner-system",
+      "lastobs": 2015,
+      "H": 13.51,
+      "a": 9.15,
+      "nopp": "3",
+      "deep_fp": 714,
+      "total_ssois": 884,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 7,
+          "by_survey": "ps17",
+          "V": 21.739,
+          "SMIA": 0.93,
+          "SMAA": 31.62,
+          "gal_b": 79.7,
+          "ra": 186.0709,
+          "dec": 18.9557
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 23.015,
+          "SMIA": 1.3,
+          "SMAA": 39.65,
+          "gal_b": -12.1,
+          "ra": 277.1271,
+          "dec": -37.8098
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 7,
+        "by_survey": "ps17",
+        "V": 21.739,
+        "SMIA": 0.93,
+        "SMAA": 31.62,
+        "gal_b": 79.7,
+        "ra": 186.0709,
+        "dec": 18.9557
+      },
+      "wave3_score": 0.2681
+    },
+    {
+      "desig": "2001 KE76",
+      "lane": "distant-multiopp",
+      "lastobs": 2017,
+      "H": 6.68,
+      "a": 42.8,
+      "nopp": "6",
+      "deep_fp": 1440,
+      "total_ssois": 1395,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 2,
+          "by_survey": "cfht2",
+          "V": 23.097,
+          "SMIA": 2.08,
+          "SMAA": 2.39,
+          "gal_b": 10.7,
+          "ra": 256.7445,
+          "dec": -22.5912
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 2,
+        "by_survey": "cfht2",
+        "V": 23.097,
+        "SMIA": 2.08,
+        "SMAA": 2.39,
+        "gal_b": 10.7,
+        "ra": 256.7445,
+        "dec": -22.5912
+      },
+      "wave3_score": 0.2644
+    },
+    {
+      "desig": "2003 QF113",
+      "lane": "distant-multiopp",
+      "lastobs": 2013,
+      "H": 6.53,
+      "a": 43.77,
+      "nopp": "6",
+      "deep_fp": 526,
+      "total_ssois": 912,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 2,
+          "by_survey": "cfht2",
+          "V": 22.965,
+          "SMIA": 2.33,
+          "SMAA": 11.71,
+          "gal_b": -54.7,
+          "ra": 338.857,
+          "dec": -12.0152
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 2,
+        "by_survey": "cfht2",
+        "V": 22.965,
+        "SMIA": 2.33,
+        "SMAA": 11.71,
+        "gal_b": -54.7,
+        "ra": 338.857,
+        "dec": -12.0152
+      },
+      "wave3_score": 0.264
+    },
+    {
+      "desig": "2014 KM122",
+      "lane": "inner-system",
+      "lastobs": 2017,
+      "H": 14.23,
+      "a": 6.29,
+      "nopp": "4",
+      "deep_fp": 614,
+      "total_ssois": 963,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 5,
+          "by_survey": "ps15",
+          "V": 22.302,
+          "SMIA": 0.13,
+          "SMAA": 7.78,
+          "gal_b": 67.7,
+          "ra": 198.4309,
+          "dec": 5.4765
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 5,
+        "by_survey": "ps15",
+        "V": 22.302,
+        "SMIA": 0.13,
+        "SMAA": 7.78,
+        "gal_b": 67.7,
+        "ra": 198.4309,
+        "dec": 5.4765
+      },
+      "wave3_score": 0.262
+    },
+    {
+      "desig": "2014 YK92",
+      "lane": "distant-multiopp",
+      "lastobs": 2015,
+      "H": 7.16,
+      "a": 40.01,
+      "nopp": "2",
+      "deep_fp": 398,
+      "total_ssois": 565,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 11,
+          "by_survey": "ps111",
+          "V": 23.055,
+          "SMIA": 2.18,
+          "SMAA": 29.97,
+          "gal_b": -25.5,
+          "ra": 87.1584,
+          "dec": -28.5984
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 23.096,
+          "SMIA": 7.91,
+          "SMAA": 608.62,
+          "gal_b": -15.8,
+          "ra": 100.9741,
+          "dec": -32.7838
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2013-01-01",
+        "n_deep": 11,
+        "by_survey": "ps111",
+        "V": 23.055,
+        "SMIA": 2.18,
+        "SMAA": 29.97,
+        "gal_b": -25.5,
+        "ra": 87.1584,
+        "dec": -28.5984
+      },
+      "wave3_score": 0.2455
+    },
+    {
+      "desig": "2005 LB54",
+      "lane": "distant-multiopp",
+      "lastobs": 2015,
+      "H": 5.7,
+      "a": 43.5,
+      "nopp": "8",
+      "deep_fp": 1034,
+      "total_ssois": 1811,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 8,
+          "by_survey": "cfht8",
+          "V": 21.944,
+          "SMIA": 0.19,
+          "SMAA": 0.45,
+          "gal_b": 9.5,
+          "ra": 258.8063,
+          "dec": -22.0932
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 8,
+        "by_survey": "cfht8",
+        "V": 21.944,
+        "SMIA": 0.19,
+        "SMAA": 0.45,
+        "gal_b": 9.5,
+        "ra": 258.8063,
+        "dec": -22.0932
+      },
+      "wave3_score": 0.2429
+    },
+    {
+      "desig": "2025 LP3",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 6.28,
+      "a": 45.73,
+      "nopp": "1",
+      "deep_fp": 589,
+      "total_ssois": 787,
+      "searchable": [
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 8,
+          "by_survey": "decam8",
+          "V": 22.641,
+          "SMIA": 7.38,
+          "SMAA": 374.93,
+          "gal_b": -36.9,
+          "ra": 316.2397,
+          "dec": -16.8876
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 8,
+        "by_survey": "decam8",
+        "V": 22.641,
+        "SMIA": 7.38,
+        "SMAA": 374.93,
+        "gal_b": -36.9,
+        "ra": 316.2397,
+        "dec": -16.8876
+      },
+      "wave3_score": 0.2284
+    },
+    {
+      "desig": "2025 NW189",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 5.94,
+      "a": 44.32,
+      "nopp": "1",
+      "deep_fp": 589,
+      "total_ssois": 883,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 22.576,
+          "SMIA": 17.15,
+          "SMAA": 1776.46,
+          "gal_b": -59.4,
+          "ra": 347.014,
+          "dec": -8.7393
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 22.576,
+        "SMIA": 17.15,
+        "SMAA": 1776.46,
+        "gal_b": -59.4,
+        "ra": 347.014,
+        "dec": -8.7393
+      },
+      "wave3_score": 0.2207
+    },
+    {
+      "desig": "2025 MB350",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 5.83,
+      "a": 45.42,
+      "nopp": "1",
+      "deep_fp": 607,
+      "total_ssois": 803,
+      "searchable": [
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 12,
+          "by_survey": "decam12",
+          "V": 23.046,
+          "SMIA": 12.61,
+          "SMAA": 1086.78,
+          "gal_b": -40.1,
+          "ra": 319.3401,
+          "dec": -17.9073
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 12,
+        "by_survey": "decam12",
+        "V": 23.046,
+        "SMIA": 12.61,
+        "SMAA": 1086.78,
+        "gal_b": -40.1,
+        "ra": 319.3401,
+        "dec": -17.9073
+      },
+      "wave3_score": 0.2127
+    },
+    {
+      "desig": "2015 KL419",
+      "lane": "distant-multiopp",
+      "lastobs": 2016,
+      "H": 6.97,
+      "a": 40.39,
+      "nopp": "2",
+      "deep_fp": 2519,
+      "total_ssois": 2761,
+      "searchable": [
+        {
+          "epoch": "2013-01-01",
+          "n_deep": 8,
+          "by_survey": "ps18",
+          "V": 23.292,
+          "SMIA": 4.42,
+          "SMAA": 119.13,
+          "gal_b": 51.4,
+          "ra": 220.9735,
+          "dec": -0.3891
+        },
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 5,
+          "by_survey": "decam5",
+          "V": 23.22,
+          "SMIA": 4.46,
+          "SMAA": 22.66,
+          "gal_b": 47.7,
+          "ra": 224.7298,
+          "dec": -2.0291
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": false,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 5,
+        "by_survey": "decam5",
+        "V": 23.22,
+        "SMIA": 4.46,
+        "SMAA": 22.66,
+        "gal_b": 47.7,
+        "ra": 224.7298,
+        "dec": -2.0291
+      },
+      "wave3_score": 0.2055
+    },
+    {
+      "desig": "2018 JB15",
+      "lane": "inner-system",
+      "lastobs": 2018,
+      "H": 15.19,
+      "a": 6.05,
+      "nopp": "1",
+      "deep_fp": 350,
+      "total_ssois": 593,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 10,
+          "by_survey": "decam10",
+          "V": 22.927,
+          "SMIA": 546.81,
+          "SMAA": 893.41,
+          "gal_b": 63.5,
+          "ra": 187.3962,
+          "dec": 1.1974
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 10,
+        "by_survey": "decam10",
+        "V": 22.927,
+        "SMIA": 546.81,
+        "SMAA": 893.41,
+        "gal_b": 63.5,
+        "ra": 187.3962,
+        "dec": 1.1974
+      },
+      "wave3_score": 0.2033
+    },
+    {
+      "desig": "2025 NR192",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 6.2,
+      "a": 43.49,
+      "nopp": "1",
+      "deep_fp": 621,
+      "total_ssois": 865,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 4,
+          "by_survey": "cfht4",
+          "V": 22.452,
+          "SMIA": 15.37,
+          "SMAA": 1767.68,
+          "gal_b": -53.6,
+          "ra": 337.3789,
+          "dec": -12.1379
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 4,
+        "by_survey": "cfht4",
+        "V": 22.452,
+        "SMIA": 15.37,
+        "SMAA": 1767.68,
+        "gal_b": -53.6,
+        "ra": 337.3789,
+        "dec": -12.1379
+      },
+      "wave3_score": 0.1809
+    },
+    {
+      "desig": "2025 NK190",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 5.83,
+      "a": 46.1,
+      "nopp": "1",
+      "deep_fp": 774,
+      "total_ssois": 1117,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 5,
+          "by_survey": "decam5",
+          "V": 22.642,
+          "SMIA": 74.23,
+          "SMAA": 1418.66,
+          "gal_b": -38.1,
+          "ra": 320.7559,
+          "dec": -9.8584
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 5,
+        "by_survey": "decam5",
+        "V": 22.642,
+        "SMIA": 74.23,
+        "SMAA": 1418.66,
+        "gal_b": -38.1,
+        "ra": 320.7559,
+        "dec": -9.8584
+      },
+      "wave3_score": 0.1791
+    },
+    {
+      "desig": "2025 MF350",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 5.96,
+      "a": 47.66,
+      "nopp": "1",
+      "deep_fp": 571,
+      "total_ssois": 829,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 4,
+          "by_survey": "cfht4",
+          "V": 22.408,
+          "SMIA": 27.25,
+          "SMAA": 2605.88,
+          "gal_b": -35.0,
+          "ra": 316.4287,
+          "dec": -11.5973
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 22.541,
+          "SMIA": 15.01,
+          "SMAA": 1120.45,
+          "gal_b": -37.1,
+          "ra": 319.2396,
+          "dec": -10.682
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 4,
+        "by_survey": "decam4",
+        "V": 22.541,
+        "SMIA": 15.01,
+        "SMAA": 1120.45,
+        "gal_b": -37.1,
+        "ra": 319.2396,
+        "dec": -10.682
+      },
+      "wave3_score": 0.1765
+    },
+    {
+      "desig": "2025 MT350",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 6.13,
+      "a": 42.84,
+      "nopp": "1",
+      "deep_fp": 492,
+      "total_ssois": 684,
+      "searchable": [
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 22.814,
+          "SMIA": 12.4,
+          "SMAA": 661.93,
+          "gal_b": -40.2,
+          "ra": 318.6603,
+          "dec": -20.1811
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 4,
+        "by_survey": "decam4",
+        "V": 22.814,
+        "SMIA": 12.4,
+        "SMAA": 661.93,
+        "gal_b": -40.2,
+        "ra": 318.6603,
+        "dec": -20.1811
+      },
+      "wave3_score": 0.163
+    },
+    {
+      "desig": "2025 NR189",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 5.97,
+      "a": 45.68,
+      "nopp": "1",
+      "deep_fp": 559,
+      "total_ssois": 816,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 12,
+          "by_survey": "decam10+cfht2",
+          "V": 22.815,
+          "SMIA": 17.39,
+          "SMAA": 1350.68,
+          "gal_b": -43.2,
+          "ra": 325.7299,
+          "dec": -11.4675
+        },
+        {
+          "epoch": "2021-01-01",
+          "n_deep": 4,
+          "by_survey": "decam4",
+          "V": 22.896,
+          "SMIA": 9.43,
+          "SMAA": 651.3,
+          "gal_b": -44.2,
+          "ra": 327.1396,
+          "dec": -11.0711
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2021-01-01",
+        "n_deep": 4,
+        "by_survey": "decam4",
+        "V": 22.896,
+        "SMIA": 9.43,
+        "SMAA": 651.3,
+        "gal_b": -44.2,
+        "ra": 327.1396,
+        "dec": -11.0711
+      },
+      "wave3_score": 0.1589
+    },
+    {
+      "desig": "2025 LX2",
+      "lane": "distant-longarc",
+      "lastobs": 2025,
+      "H": 6.33,
+      "a": 43.06,
+      "nopp": "1",
+      "deep_fp": 453,
+      "total_ssois": 624,
+      "searchable": [
+        {
+          "epoch": "2017-07-01",
+          "n_deep": 3,
+          "by_survey": "cfht3",
+          "V": 22.853,
+          "SMIA": 21.36,
+          "SMAA": 1377.27,
+          "gal_b": -34.5,
+          "ra": 311.4568,
+          "dec": -22.1018
+        }
+      ],
+      "rule_v3_pass": true,
+      "single": true,
+      "best": {
+        "epoch": "2017-07-01",
+        "n_deep": 3,
+        "by_survey": "cfht3",
+        "V": 22.853,
+        "SMIA": 21.36,
+        "SMAA": 1377.27,
+        "gal_b": -34.5,
+        "ra": 311.4568,
+        "dec": -22.1018
+      },
+      "wave3_score": 0.1534
+    }
+  ],
+  "fails": [
+    "10370",
+    "2011 SR250",
+    "2013 SO107",
+    "2014 JU80",
+    "2005 JJ186",
+    "2013 LY35",
+    "2014 KT101",
+    "2001 KA77",
+    "2015 BW524",
+    "05145",
+    "2014 KC102",
+    "2008 SO218",
+    "2000 KK4",
+    "2002 GD32",
+    "2025 OF345",
+    "2025 NZ189",
+    "2025 NB192",
+    "2025 NO193",
+    "2003 KO20",
+    "2025 NA189",
+    "2025 LW3",
+    "2025 LU2",
+    "2025 LK2",
+    "2025 ND193",
+    "2025 LM3",
+    "2025 LY2",
+    "2025 NJ190",
+    "2025 MZ348",
+    "2025 ND189",
+    "2025 LC3",
+    "2025 MR349",
+    "2025 NO191",
+    "2025 NK192",
+    "2025 LR3",
+    "2015 KU178",
+    "2025 NN191",
+    "2025 NU189",
+    "2025 LL3",
+    "2025 LG3"
+  ]
+}

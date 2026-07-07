@@ -1,0 +1,4278 @@
+{
+  "2012 DD61": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2014,
+    "lane": "inner-system",
+    "best_V": 20.061,
+    "best_SMIA": 0.22,
+    "best_SMAA": 0.82,
+    "ssois": {
+      "total_frames": 678,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "10370": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2010,
+    "lane": "inner-system",
+    "best_V": 21.903,
+    "best_SMIA": 1.31,
+    "best_SMAA": 3.26,
+    "ssois": {
+      "total_frames": 1972,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 220,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 220,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 220
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2009 QV38": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "inner-system",
+    "best_V": 20.812,
+    "best_SMIA": 0.12,
+    "best_SMAA": 0.22,
+    "ssois": {
+      "total_frames": 680,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 18,
+          "n_deep_catalog": 18,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 18,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 18
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2010 JK124": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2014,
+    "lane": "distant-multiopp",
+    "best_V": 21.662,
+    "best_SMIA": 0.2,
+    "best_SMAA": 0.86,
+    "ssois": {
+      "total_frames": 672,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 54,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 8,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 45,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 45,
+            "CTIO-4m/DECam": 8,
+            "Skymapper": 1
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2017 FP50": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 21.803,
+    "best_SMIA": 2.04,
+    "best_SMAA": 12.38,
+    "ssois": {
+      "total_frames": 595,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2012 GN12": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "inner-system",
+    "best_V": 21.308,
+    "best_SMIA": 0.12,
+    "best_SMAA": 0.12,
+    "ssois": {
+      "total_frames": 1448,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 40,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 4,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 36,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 36,
+            "Pan-STARRS1": 4
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 112,
+          "n_deep_catalog": 112,
+          "by_survey": {
+            "decam": 112,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 112
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2011 SR250": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2012,
+    "lane": "inner-system",
+    "best_V": 22.517,
+    "best_SMIA": 0.2,
+    "best_SMAA": 0.35,
+    "ssois": {
+      "total_frames": 664,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2008 HY21": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2012,
+    "lane": "inner-system",
+    "best_V": 22.666,
+    "best_SMIA": 0.44,
+    "best_SMAA": 0.62,
+    "ssois": {
+      "total_frames": 958,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 4,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2013 SO107": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2013,
+    "lane": "inner-system",
+    "best_V": 22.14,
+    "best_SMIA": 0.28,
+    "best_SMAA": 0.91,
+    "ssois": {
+      "total_frames": 778,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2002 KW14": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 21.833,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.27,
+    "ssois": {
+      "total_frames": 1021,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 79,
+          "n_deep_catalog": 16,
+          "by_survey": {
+            "decam": 16,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 50,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 50,
+            "CTIO-4m/DECam": 16,
+            "ESO-NTT/EFOSC": 12,
+            "Skymapper": 1
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2005 LB54": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 22.058,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.22,
+    "ssois": {
+      "total_frames": 1811,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 8,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 8
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2008 SJ236": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "inner-system",
+    "best_V": 21.421,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.13,
+    "ssois": {
+      "total_frames": 1165,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 13,
+          "n_deep_catalog": 13,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 13,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 13
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2014 JU80": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 21.989,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.16,
+    "ssois": {
+      "total_frames": 505,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2005 JJ186": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2010,
+    "lane": "distant-multiopp",
+    "best_V": 22.906,
+    "best_SMIA": 0.56,
+    "best_SMAA": 4.72,
+    "ssois": {
+      "total_frames": 784,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2013 LY35": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 22.376,
+    "best_SMIA": 0.12,
+    "best_SMAA": 0.35,
+    "ssois": {
+      "total_frames": 788,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 30,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 30,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 30
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 1,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-0.9m/Imager": 1
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2005 LA54": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2013,
+    "lane": "distant-multiopp",
+    "best_V": 22.837,
+    "best_SMIA": 1.48,
+    "best_SMAA": 1.88,
+    "ssois": {
+      "total_frames": 1269,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 6,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 6,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 6,
+            "Skymapper": 2
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2003 QF113": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2013,
+    "lane": "distant-multiopp",
+    "best_V": 23.008,
+    "best_SMIA": 1.44,
+    "best_SMAA": 1.64,
+    "ssois": {
+      "total_frames": 912,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 2,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 2,
+            "Skymapper": 2
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 KT101": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 22.127,
+    "best_SMIA": 0.14,
+    "best_SMAA": 0.18,
+    "ssois": {
+      "total_frames": 1307,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 25,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 25,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 25
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2002 VB131": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2013,
+    "lane": "distant-multiopp",
+    "best_V": 23.069,
+    "best_SMIA": 1.34,
+    "best_SMAA": 2.0,
+    "ssois": {
+      "total_frames": 649,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 1,
+          "n_deep_catalog": 1,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 1,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 1
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 12,
+          "n_deep_catalog": 12,
+          "by_survey": {
+            "decam": 12,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 12
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2001 KA77": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 22.231,
+    "best_SMIA": 0.65,
+    "best_SMAA": 0.78,
+    "ssois": {
+      "total_frames": 1277,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2010 GF65": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 21.537,
+    "best_SMIA": 0.06,
+    "best_SMAA": 0.1,
+    "ssois": {
+      "total_frames": 954,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 3,
+          "n_deep_catalog": 3,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 3,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 3
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 41,
+          "n_deep_catalog": 41,
+          "by_survey": {
+            "decam": 41,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 41
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2015 BW524": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 21.582,
+    "best_SMIA": 0.26,
+    "best_SMAA": 0.55,
+    "ssois": {
+      "total_frames": 2085,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Skymapper": 2
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2017 GZ8": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 21.097,
+    "best_SMIA": 0.12,
+    "best_SMAA": 0.22,
+    "ssois": {
+      "total_frames": 947,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 11,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 1,
+          "telescopes": {
+            "CTIO-4m/DECam": 10,
+            "ESO-VISTA/VIRCAM": 1
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2012 HG84": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 21.823,
+    "best_SMIA": 0.09,
+    "best_SMAA": 0.14,
+    "ssois": {
+      "total_frames": 1260,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 66,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 60,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 60,
+            "CTIO-4m/DECam": 4,
+            "Skymapper": 2
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 SV349": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 23.265,
+    "best_SMIA": 0.45,
+    "best_SMAA": 0.91,
+    "ssois": {
+      "total_frames": 811,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 KY101": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 21.996,
+    "best_SMIA": 0.09,
+    "best_SMAA": 0.16,
+    "ssois": {
+      "total_frames": 923,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 7,
+          "n_deep_catalog": 3,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 3,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESA-OGS-ESACCD2": 4,
+            "CFHT/MegaCam": 3
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2015 HT171": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 21.998,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.13,
+    "ssois": {
+      "total_frames": 614,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 8,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 8
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 64,
+          "n_deep_catalog": 34,
+          "by_survey": {
+            "decam": 28,
+            "ps1": 0,
+            "cfht": 6,
+            "hsc": 0
+          },
+          "other_deep": 30,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 30,
+            "CTIO-4m/DECam": 28,
+            "CFHT/MegaCam": 6
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "05145": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2018,
+    "lane": "inner-system",
+    "best_V": 21.276,
+    "best_SMIA": 0.07,
+    "best_SMAA": 0.07,
+    "ssois": {
+      "total_frames": 620,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2004 HF79": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 22.88,
+    "best_SMIA": 0.13,
+    "best_SMAA": 0.35,
+    "ssois": {
+      "total_frames": 1514,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 121,
+          "n_deep_catalog": 91,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 87,
+            "hsc": 0
+          },
+          "other_deep": 30,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 87,
+            "ESO-VISTA/VIRCAM": 30,
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 KC102": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 22.279,
+    "best_SMIA": 0.14,
+    "best_SMAA": 0.19,
+    "ssois": {
+      "total_frames": 866,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2007 HV90": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 22.953,
+    "best_SMIA": 0.16,
+    "best_SMAA": 0.46,
+    "ssois": {
+      "total_frames": 2915,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 69,
+          "n_deep_catalog": 28,
+          "by_survey": {
+            "decam": 28,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 40,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 40,
+            "CTIO-4m/DECam": 28,
+            "Skymapper": 1
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 CN23": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 22.339,
+    "best_SMIA": 0.11,
+    "best_SMAA": 0.15,
+    "ssois": {
+      "total_frames": 1021,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 13,
+          "n_deep_catalog": 13,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 13,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 13
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2009 UF156": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2013,
+    "lane": "distant-multiopp",
+    "best_V": 22.934,
+    "best_SMIA": 1.3,
+    "best_SMAA": 4.31,
+    "ssois": {
+      "total_frames": 646,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 8,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 8
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2014 KS101": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 22.427,
+    "best_SMIA": 0.12,
+    "best_SMAA": 0.14,
+    "ssois": {
+      "total_frames": 996,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 3,
+          "n_deep_catalog": 3,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 3,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CFHT/MegaCam": 3
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2013 JV63": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 23.124,
+    "best_SMIA": 0.15,
+    "best_SMAA": 0.28,
+    "ssois": {
+      "total_frames": 969,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 294,
+          "n_deep_catalog": 294,
+          "by_survey": {
+            "decam": 294,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 294
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Skymapper": 2
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 KM122": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 22.489,
+    "best_SMIA": 0.29,
+    "best_SMAA": 0.36,
+    "ssois": {
+      "total_frames": 963,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 5,
+          "n_deep_catalog": 5,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 5,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 5
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2007 UM126": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2018,
+    "lane": "inner-system",
+    "best_V": 21.988,
+    "best_SMIA": 0.07,
+    "best_SMAA": 0.11,
+    "ssois": {
+      "total_frames": 873,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 4,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 4
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 88,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "LCO/coj_0m4b_kb56": 88
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2008 SO218": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 22.097,
+    "best_SMIA": 0.09,
+    "best_SMAA": 0.14,
+    "ssois": {
+      "total_frames": 1314,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2006 HW122": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 23.293,
+    "best_SMIA": 0.54,
+    "best_SMAA": 1.83,
+    "ssois": {
+      "total_frames": 1674,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 157,
+          "n_deep_catalog": 123,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 119,
+            "hsc": 0
+          },
+          "other_deep": 34,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 119,
+            "ESO-VISTA/VIRCAM": 34,
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2000 KK4": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 22.896,
+    "best_SMIA": 0.16,
+    "best_SMAA": 0.23,
+    "ssois": {
+      "total_frames": 505,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2002 PQ152": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "inner-system",
+    "best_V": 22.935,
+    "best_SMIA": 0.2,
+    "best_SMAA": 0.53,
+    "ssois": {
+      "total_frames": 920,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 2,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 2
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 75,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESA-Schiaparelli": 71,
+            "LCO/elp_1m0a_fa05": 4
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2001 RX143": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 23.163,
+    "best_SMIA": 0.22,
+    "best_SMAA": 0.4,
+    "ssois": {
+      "total_frames": 1226,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 2,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 2
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 UE225": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 23.26,
+    "best_SMIA": 0.38,
+    "best_SMAA": 0.56,
+    "ssois": {
+      "total_frames": 948,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 2,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 2
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 1,
+          "n_deep_catalog": 1,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 1,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CFHT/MegaCam": 1
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2002 GD32": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 23.285,
+    "best_SMIA": 0.72,
+    "best_SMAA": 1.86,
+    "ssois": {
+      "total_frames": 1134,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2005 JZ174": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 23.122,
+    "best_SMIA": 1.39,
+    "best_SMAA": 2.31,
+    "ssois": {
+      "total_frames": 1094,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 3,
+          "n_deep_catalog": 3,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 3,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 3
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 OF345": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.094,
+    "best_SMIA": 82.68,
+    "best_SMAA": 138.76,
+    "ssois": {
+      "total_frames": 847,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2001 KE76": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 23.191,
+    "best_SMIA": 1.39,
+    "best_SMAA": 1.96,
+    "ssois": {
+      "total_frames": 1395,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 2,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 2
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2012 CN29": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2012,
+    "lane": "inner-system",
+    "best_V": 22.0,
+    "best_SMIA": 11.21,
+    "best_SMAA": 104.46,
+    "ssois": {
+      "total_frames": 605,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 5,
+          "n_deep_catalog": 5,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 5,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 5
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 NZ189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.218,
+    "best_SMIA": 14.26,
+    "best_SMAA": 169.26,
+    "ssois": {
+      "total_frames": 934,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NB192": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.914,
+    "best_SMIA": 4.78,
+    "best_SMAA": 96.94,
+    "ssois": {
+      "total_frames": 773,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 3,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Skymapper": 3
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NE192": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.045,
+    "best_SMIA": 5.82,
+    "best_SMAA": 91.55,
+    "ssois": {
+      "total_frames": 1055,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 11,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10,
+            "Skymapper": 1
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NO193": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.707,
+    "best_SMIA": 6.14,
+    "best_SMAA": 126.57,
+    "ssois": {
+      "total_frames": 848,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2002 PP149": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2017,
+    "lane": "distant-multiopp",
+    "best_V": 23.122,
+    "best_SMIA": 1.92,
+    "best_SMAA": 3.21,
+    "ssois": {
+      "total_frames": 1284,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 8,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 8
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 43,
+          "n_deep_catalog": 25,
+          "by_survey": {
+            "decam": 15,
+            "ps1": 0,
+            "cfht": 10,
+            "hsc": 0
+          },
+          "other_deep": 18,
+          "telescopes": {
+            "ESO-VISTA/VIRCAM": 18,
+            "CTIO-4m/DECam": 15,
+            "ESO-VST/OMEGACAM": 10
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 8,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 8
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2015 SW20": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 22.936,
+    "best_SMIA": 1.83,
+    "best_SMAA": 6.0,
+    "ssois": {
+      "total_frames": 897,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 2,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 2,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 2
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 29,
+          "n_deep_catalog": 29,
+          "by_survey": {
+            "decam": 29,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 29
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2003 KO20": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 23.277,
+    "best_SMIA": 2.29,
+    "best_SMAA": 2.71,
+    "ssois": {
+      "total_frames": 1209,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 FU61": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "inner-system",
+    "best_V": 21.739,
+    "best_SMIA": 0.93,
+    "best_SMAA": 31.62,
+    "ssois": {
+      "total_frames": 884,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 7,
+          "n_deep_catalog": 7,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 7,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 7
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 NA189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.804,
+    "best_SMIA": 14.46,
+    "best_SMAA": 168.17,
+    "ssois": {
+      "total_frames": 645,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LW3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.969,
+    "best_SMIA": 5.21,
+    "best_SMAA": 216.51,
+    "ssois": {
+      "total_frames": 747,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LU2": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.512,
+    "best_SMIA": 5.43,
+    "best_SMAA": 328.82,
+    "ssois": {
+      "total_frames": 918,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LK2": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.023,
+    "best_SMIA": 5.92,
+    "best_SMAA": 235.06,
+    "ssois": {
+      "total_frames": 1283,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 YK92": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 23.055,
+    "best_SMIA": 2.18,
+    "best_SMAA": 29.97,
+    "ssois": {
+      "total_frames": 565,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 11,
+          "n_deep_catalog": 11,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 11,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 11
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 ND193": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.78,
+    "best_SMIA": 16.97,
+    "best_SMAA": 322.85,
+    "ssois": {
+      "total_frames": 1618,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 184,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESA-CAHA": 180,
+            "NEOSSat": 4
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2014 QJ562": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 23.266,
+    "best_SMIA": 1.86,
+    "best_SMAA": 11.46,
+    "ssois": {
+      "total_frames": 811,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 30,
+          "n_deep_catalog": 30,
+          "by_survey": {
+            "decam": 30,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 30
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 LP3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.641,
+    "best_SMIA": 7.38,
+    "best_SMAA": 374.93,
+    "ssois": {
+      "total_frames": 787,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 8,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 8
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2015 KL419": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2016,
+    "lane": "distant-multiopp",
+    "best_V": 23.22,
+    "best_SMIA": 4.46,
+    "best_SMAA": 22.66,
+    "ssois": {
+      "total_frames": 2761,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 8,
+          "n_deep_catalog": 8,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 8,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Pan-STARRS1": 8
+          },
+          "searchable": true
+        },
+        "2017-07-01": {
+          "n_frames_near": 5,
+          "n_deep_catalog": 5,
+          "by_survey": {
+            "decam": 5,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 5
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LM3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.83,
+    "best_SMIA": 6.88,
+    "best_SMAA": 343.47,
+    "ssois": {
+      "total_frames": 714,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LY2": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.079,
+    "best_SMIA": 10.03,
+    "best_SMAA": 281.14,
+    "ssois": {
+      "total_frames": 969,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NJ190": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.74,
+    "best_SMIA": 16.0,
+    "best_SMAA": 396.2,
+    "ssois": {
+      "total_frames": 608,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 1,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Skymapper": 1
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 MZ348": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.301,
+    "best_SMIA": 66.77,
+    "best_SMAA": 627.54,
+    "ssois": {
+      "total_frames": 725,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 ND189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.655,
+    "best_SMIA": 13.69,
+    "best_SMAA": 686.93,
+    "ssois": {
+      "total_frames": 549,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NK190": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.745,
+    "best_SMIA": 25.84,
+    "best_SMAA": 680.38,
+    "ssois": {
+      "total_frames": 1117,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 5,
+          "n_deep_catalog": 5,
+          "by_survey": {
+            "decam": 5,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 5
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 MT350": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.814,
+    "best_SMIA": 12.4,
+    "best_SMAA": 661.93,
+    "ssois": {
+      "total_frames": 684,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 LC3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.099,
+    "best_SMIA": 11.57,
+    "best_SMAA": 479.7,
+    "ssois": {
+      "total_frames": 1207,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NR189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.896,
+    "best_SMIA": 9.43,
+    "best_SMAA": 651.3,
+    "ssois": {
+      "total_frames": 816,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 16,
+          "n_deep_catalog": 12,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 2,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10,
+            "ESA-OGS-ESACCD2": 4,
+            "ESO-VST/OMEGACAM": 2
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 MR349": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.908,
+    "best_SMIA": 16.97,
+    "best_SMAA": 724.77,
+    "ssois": {
+      "total_frames": 621,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LX2": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.941,
+    "best_SMIA": 11.78,
+    "best_SMAA": 607.51,
+    "ssois": {
+      "total_frames": 624,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 3,
+          "n_deep_catalog": 3,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 3,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CFHT/MegaCam": 3
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NO191": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.962,
+    "best_SMIA": 10.51,
+    "best_SMAA": 709.77,
+    "ssois": {
+      "total_frames": 758,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NK192": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.132,
+    "best_SMIA": 13.38,
+    "best_SMAA": 730.67,
+    "ssois": {
+      "total_frames": 688,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "NEOSSat": 10
+          },
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NR192": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.522,
+    "best_SMIA": 8.42,
+    "best_SMAA": 813.68,
+    "ssois": {
+      "total_frames": 865,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 4,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "ESO-VST/OMEGACAM": 4
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 MF350": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.541,
+    "best_SMIA": 15.01,
+    "best_SMAA": 1120.45,
+    "ssois": {
+      "total_frames": 829,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 4,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CFHT/MegaCam": 4
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 4,
+          "n_deep_catalog": 4,
+          "by_survey": {
+            "decam": 4,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 4
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 NW189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.641,
+    "best_SMIA": 9.59,
+    "best_SMAA": 829.06,
+    "ssois": {
+      "total_frames": 883,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10
+          },
+          "searchable": true
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LR3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.697,
+    "best_SMIA": 22.01,
+    "best_SMAA": 855.29,
+    "ssois": {
+      "total_frames": 2917,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2015 KU178": {
+    "best_epoch": "2013-01-01",
+    "lastobs": 2015,
+    "lane": "distant-multiopp",
+    "best_V": 23.057,
+    "best_SMIA": 12.77,
+    "best_SMAA": 149.08,
+    "ssois": {
+      "total_frames": 723,
+      "epochs": {
+        "2013-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2017-07-01": {
+          "n_frames_near": 2,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "Skymapper": 2
+          },
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NN191": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.781,
+    "best_SMIA": 40.03,
+    "best_SMAA": 922.22,
+    "ssois": {
+      "total_frames": 854,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 NU189": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.791,
+    "best_SMIA": 24.54,
+    "best_SMAA": 1394.36,
+    "ssois": {
+      "total_frames": 631,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2025 LL3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.877,
+    "best_SMIA": 9.25,
+    "best_SMAA": 845.8,
+    "ssois": {
+      "total_frames": 707,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  },
+  "2018 JB15": {
+    "best_epoch": "2017-07-01",
+    "lastobs": 2018,
+    "lane": "inner-system",
+    "best_V": 22.927,
+    "best_SMIA": 546.81,
+    "best_SMAA": 893.41,
+    "ssois": {
+      "total_frames": 593,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 10,
+          "n_deep_catalog": 10,
+          "by_survey": {
+            "decam": 10,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 10
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 MB350": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 23.046,
+    "best_SMIA": 12.61,
+    "best_SMAA": 1086.78,
+    "ssois": {
+      "total_frames": 803,
+      "epochs": {
+        "2017-07-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        },
+        "2021-01-01": {
+          "n_frames_near": 12,
+          "n_deep_catalog": 12,
+          "by_survey": {
+            "decam": 12,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {
+            "CTIO-4m/DECam": 12
+          },
+          "searchable": true
+        }
+      }
+    }
+  },
+  "2025 LG3": {
+    "best_epoch": "2021-01-01",
+    "lastobs": 2025,
+    "lane": "distant-longarc",
+    "best_V": 22.932,
+    "best_SMIA": 13.04,
+    "best_SMAA": 2724.28,
+    "ssois": {
+      "total_frames": 696,
+      "epochs": {
+        "2021-01-01": {
+          "n_frames_near": 0,
+          "n_deep_catalog": 0,
+          "by_survey": {
+            "decam": 0,
+            "ps1": 0,
+            "cfht": 0,
+            "hsc": 0
+          },
+          "other_deep": 0,
+          "telescopes": {},
+          "searchable": false
+        }
+      }
+    }
+  }
+}
