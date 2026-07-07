@@ -1,0 +1,26 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+JPL/HORIZONS                    (2001 QU297)               2026-Jul-07 03:13:03
+Rec #:50003034 (+COV) Soln.date: 2021-Apr-14_21:08:20        # obs: 6 (23 days)
+ 
+IAU76/J2000 helio. ecliptic osc. elements (au, days, deg., period=Julian yrs):
+ 
+  EPOCH=  2452149.5 ! 2001-Aug-28.00 (TDB)         Residual RMS= .21238
+   EC= 7.912911014102138E-5QR= 43.69946662561198   TP= 2403327.0318861138
+   OM= 115.2964770164983   W=  43.73144079993105   IN= 3.385473315046406
+   A= 43.70292479916191    MA= 166.5551438874052   ADIST= 43.70638297271183
+   PER= 288.91757          N= .003411445           ANGMOM= .113719958
+   DAN= 43.70043           DDN= 43.70542           L= 158.9779298
+   B= 2.3395953            MOID= 42.68799973       TP= 1867-Dec-26.5318861138
+ 
+Asteroid physical parameters (km, seconds, rotational period in hours):
+   GM= n.a.                RAD= n.a.               ROTPER= n.a.
+   H= 6.                   G= .150                 B-V= n.a.
+                           ALBEDO= n.a.            STYP= n.a.
+
+ASTEROID comments: 
+1: soln ref.= JPL#6, OCC=9
+2: source=ORB; JPLCOV;MPCREF=MPO41721
+*******************************************************************************

@@ -1,0 +1,51 @@
+archive,MJD_night,decimal_year,filters,approx_depth,pred_RA_deg,pred_Dec_deg,pred_V,SMAA_3sig_as,SMIA_3sig_as,box_diam_as,n_cat_sources,n_in_3sigma,n_nonstationary,chain_result,outcome_note
+PS1_DR2,55088,2009.7,grizy,PS1 3pi ~21.5-22,3.40481,2.80818,21.8,1.23,0.75,7.4,3,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55089,2009.7,grizy,PS1 3pi ~21.5-22,3.38409,2.79923,21.79,1.24,0.75,7.4,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55103,2009.74,grizy,PS1 3pi ~21.5-22,3.09556,2.67337,21.75,1.35,0.76,8.1,2,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55104,2009.75,grizy,PS1 3pi ~21.5-22,3.07408,2.66392,21.75,1.36,0.76,8.2,3,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55105,2009.75,grizy,PS1 3pi ~21.5-22,3.05522,2.65559,21.76,1.37,0.76,8.2,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55399,2010.55,grizy,PS1 3pi ~21.5-22,5.70114,3.74048,21.95,2.37,0.86,14.2,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55449,2010.69,grizy,PS1 3pi ~21.5-22,5.01741,3.45947,21.82,2.09,0.9,12.6,3,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55452,2010.7,grizy,PS1 3pi ~21.5-22,4.95924,3.43453,21.81,2.08,0.9,12.5,4,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55478,2010.77,grizy,PS1 3pi ~21.5-22,4.42496,3.20141,21.79,2.14,0.91,12.9,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55483,2010.78,grizy,PS1 3pi ~21.5-22,4.32421,3.15661,21.81,2.18,0.91,13.1,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55501,2010.83,grizy,PS1 3pi ~21.5-22,3.99489,3.00757,21.87,2.36,0.92,14.2,8,3,3,NULL,in3sig=3; nonstationary=3; NO coherent moving track
+PS1_DR2,55555,2010.98,grizy,PS1 3pi ~21.5-22,3.60974,2.80728,21.98,2.76,0.92,16.5,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55557,2010.99,grizy,PS1 3pi ~21.5-22,3.61812,2.80951,21.98,2.76,0.92,16.5,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55743,2011.5,grizy,PS1 3pi ~21.5-22,7.22269,4.33945,21.98,3.44,1.0,20.6,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55751,2011.52,grizy,PS1 3pi ~21.5-22,7.23775,4.34937,21.97,3.47,1.01,20.8,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55850,2011.79,grizy,PS1 3pi ~21.5-22,5.81443,3.75317,21.81,3.12,1.07,18.7,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55853,2011.8,grizy,PS1 3pi ~21.5-22,5.75711,3.72761,21.82,3.13,1.07,18.8,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55859,2011.81,grizy,PS1 3pi ~21.5-22,5.64372,3.67673,21.84,3.15,1.08,18.9,1,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55878,2011.87,grizy,PS1 3pi ~21.5-22,5.33496,3.53506,21.9,3.25,1.08,19.5,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,55895,2011.91,grizy,PS1 3pi ~21.5-22,5.15606,3.4481,21.94,3.34,1.08,20.0,7,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56141,2012.58,grizy,PS1 3pi ~21.5-22,8.63539,4.91041,21.94,4.77,1.19,28.6,4,4,0,NULL,in3sig=4; nonstationary=0; NO coherent moving track
+PS1_DR2,56204,2012.76,grizy,PS1 3pi ~21.5-22,7.57323,4.46439,21.75,4.37,1.24,26.2,2,1,0,NULL,in3sig=1; nonstationary=0; NO coherent moving track
+PS1_DR2,56211,2012.78,grizy,PS1 3pi ~21.5-22,7.4313,4.40228,21.79,4.33,1.24,26.0,4,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56220,2012.8,grizy,PS1 3pi ~21.5-22,7.24948,4.32197,21.82,4.31,1.24,25.8,1,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56222,2012.81,grizy,PS1 3pi ~21.5-22,7.21144,4.30502,21.83,4.3,1.24,25.8,6,3,0,NULL,in3sig=3; nonstationary=0; NO coherent moving track
+PS1_DR2,56469,2013.48,grizy,PS1 3pi ~21.5-22,10.17437,5.50372,21.99,6.17,1.32,37.0,1,1,0,NULL,in3sig=1; nonstationary=0; NO coherent moving track
+PS1_DR2,56481,2013.52,grizy,PS1 3pi ~21.5-22,10.2257,5.53009,21.98,6.26,1.33,37.6,1,1,1,NULL,in3sig=1; nonstationary=1; NO coherent moving track
+PS1_DR2,56524,2013.63,grizy,PS1 3pi ~21.5-22,9.94734,5.42645,21.9,6.23,1.37,37.4,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56559,2013.73,grizy,PS1 3pi ~21.5-22,9.31506,5.16156,21.79,5.93,1.4,35.6,7,5,1,NULL,in3sig=5; nonstationary=1; NO coherent moving track
+PS1_DR2,56569,2013.76,grizy,PS1 3pi ~21.5-22,9.10586,5.07161,21.74,5.84,1.41,35.1,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56573,2013.77,grizy,PS1 3pi ~21.5-22,9.02297,5.03568,21.77,5.81,1.41,34.9,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56632,2013.93,grizy,PS1 3pi ~21.5-22,8.11959,4.62538,21.95,5.58,1.42,33.5,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56644,2013.96,grizy,PS1 3pi ~21.5-22,8.07418,4.59842,21.97,5.58,1.41,33.5,1,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56838,2014.49,grizy,PS1 3pi ~21.5-22,11.68303,6.09516,21.99,7.89,1.49,47.3,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56872,2014.59,grizy,PS1 3pi ~21.5-22,11.64851,6.09256,21.95,8.04,1.53,48.2,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56913,2014.7,grizy,PS1 3pi ~21.5-22,11.06781,5.8561,21.84,7.77,1.56,46.6,4,4,3,NULL,in3sig=4; nonstationary=3; NO coherent moving track
+PS1_DR2,56934,2014.76,grizy,PS1 3pi ~21.5-22,10.64237,5.67569,21.75,7.54,1.58,45.2,0,0,0,NULL,in3sig=0; nonstationary=0; NO coherent moving track
+PS1_DR2,56942,2014.78,grizy,PS1 3pi ~21.5-22,10.47217,5.60239,21.78,7.45,1.58,44.7,4,4,0,NULL,in3sig=4; nonstationary=0; NO coherent moving track
+NSC_DR2_DECam,56951,2014.8,grizY,DECam ~23-24,9.85528,5.32945,21.9,7.17,1.59,43.0,5,5,0,NULL,in3sig=5; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,56959,2014.82,grizY,DECam ~23-24,10.085,5.43281,21.86,7.26,1.58,43.6,3,3,0,NULL,in3sig=3; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,57192,2015.46,grizY,DECam ~23-24,13.20174,6.68608,21.99,9.83,1.66,59.0,5,4,0,NULL,in3sig=4; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,57193,2015.47,grizY,DECam ~23-24,12.26147,6.30951,21.78,9.49,1.75,57.0,6,3,0,NULL,in3sig=3; all clusters stationary-star or single-exposure noise; negctrl_in3sig=1
+NSC_DR2_DECam,57199,2015.48,grizY,DECam ~23-24,11.66516,6.0531,21.84,9.12,1.76,54.7,0,0,0,NULL,in3sig=0; all clusters stationary-star or single-exposure noise; negctrl_in3sig=2
+NSC_DR2_DECam,57210,2015.51,grizY,DECam ~23-24,11.0572,5.76674,21.98,8.73,1.75,52.4,0,0,0,NULL,in3sig=0; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,57295,2015.75,grizY,DECam ~23-24,13.13468,6.65445,22.0,9.7,1.65,58.2,4,2,0,NULL,in3sig=2; all clusters stationary-star or single-exposure noise; negctrl_in3sig=8
+NSC_DR2_DECam,57324,2015.82,grizY,DECam ~23-24,13.07821,6.62895,22.0,9.62,1.64,57.7,0,0,0,NULL,in3sig=0; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,57384,2015.99,grizY,DECam ~23-24,13.06764,6.62424,22.0,9.6,1.64,57.6,11,8,0,NULL,in3sig=8; all clusters stationary-star or single-exposure noise; negctrl_in3sig=2
+NSC_DR2_DECam,57611,2016.61,grizY,DECam ~23-24,14.5974,7.22825,21.94,12.08,1.87,72.5,0,0,0,NULL,in3sig=0; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,58016,2017.72,grizY,DECam ~23-24,15.49363,7.55358,21.84,14.05,2.08,84.3,0,0,0,NULL,in3sig=0; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0
+NSC_DR2_DECam,58017,2017.72,grizY,DECam ~23-24,15.51331,7.56167,21.84,14.07,2.08,84.4,11,7,0,NULL,in3sig=7; all clusters stationary-star or single-exposure noise; negctrl_in3sig=0

@@ -1,0 +1,10 @@
+survey,epoch_UT,pred_RA_deg,pred_DEC_deg,pred_V,survey_depth_mag,SMAA_3sigma_arcsec,SMIA_3sigma_arcsec,SMAA_3sigma_arcmin,mag_reachable,uncertainty_usable_<10amin,outcome
+CFHT-MegaCam,2003-04-15,208.5832,-12.8022,24.28,24.5,290044,1988,4834.1,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=4834 arcmin >> 10 arcmin gate; not searched
+PS1-3pi,2010-04-15,219.6004,-21.7466,23.55,22.0,866001,42325,14433.3,NO(too faint),NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=14433 arcmin >> 10 arcmin gate; not searched
+PS1-3pi,2012-04-15,223.9170,-24.8321,23.31,22.0,959283,77931,15988.0,NO(too faint),NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=15988 arcmin >> 10 arcmin gate; not searched
+DECam-DES/DECaLS,2013-04-15,226.3856,-26.4689,23.19,24.0,984504,104920,16408.4,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=16408 arcmin >> 10 arcmin gate; not searched
+HSC-SSP,2014-04-15,229.0925,-28.1631,23.07,26.0,993895,141094,16564.9,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=16565 arcmin >> 10 arcmin gate; not searched
+DECam,2016-04-15,235.3434,-31.6954,22.82,24.0,972476,254499,16207.9,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=16208 arcmin >> 10 arcmin gate; not searched
+DECam,2017-04-15,239.0074,-33.5057,22.69,24.0,957254,336336,15954.2,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=15954 arcmin >> 10 arcmin gate; not searched
+DECam/VISTA,2019-04-15,247.6432,-37.0881,22.44,23.5,1091514,480546,18191.9,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=18192 arcmin >> 10 arcmin gate; not searched
+DECam,2023-04-15,271.5471,-42.6897,21.97,24.0,2944921,401601,49082.0,YES,NO,UNUSABLE_UNCERTAINTY: 3sigma SMAA=49082 arcmin >> 10 arcmin gate; not searched

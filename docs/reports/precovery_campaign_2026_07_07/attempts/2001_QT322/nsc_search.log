@@ -1,0 +1,14 @@
+MJD56976: FAILED HTTP Error 504: Gateway Time-out
+MJD56962: FAILED HTTP Error 502: Bad Gateway
+MJD56959: V=21.86 SMAA=7.26" ndet=3 n_in3sig=3 motion_ok=False best_resid=None
+MJD56951: V=21.90 SMAA=7.17" ndet=5 n_in3sig=5 motion_ok=True best_resid=0.02
+MJD57384: V=22.00 SMAA=9.60" ndet=11 n_in3sig=8 motion_ok=False best_resid=2.25
+MJD57324: V=22.00 SMAA=9.62" ndet=0 n_in3sig=0 motion_ok=False best_resid=None
+MJD57295: V=22.00 SMAA=9.70" ndet=4 n_in3sig=2 motion_ok=True best_resid=0.07
+MJD57192: V=21.99 SMAA=9.83" ndet=5 n_in3sig=4 motion_ok=False best_resid=None
+MJD57193: V=21.78 SMAA=9.49" ndet=6 n_in3sig=3 motion_ok=True best_resid=0.31
+MJD57199: V=21.84 SMAA=9.12" ndet=0 n_in3sig=0 motion_ok=False best_resid=None
+MJD57210: V=21.98 SMAA=8.73" ndet=0 n_in3sig=0 motion_ok=False best_resid=None
+MJD57611: V=21.94 SMAA=12.08" ndet=0 n_in3sig=0 motion_ok=False best_resid=None
+MJD58017: V=21.84 SMAA=14.07" ndet=11 n_in3sig=7 motion_ok=False best_resid=None
+MJD58016: V=21.84 SMAA=14.05" ndet=0 n_in3sig=0 motion_ok=False best_resid=None

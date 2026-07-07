@@ -1,0 +1,3 @@
+MJD 59819.2268 RA 353.88002 Dec -5.78438 V 22.45 image DECam(2022-09)
+NSC DR2 r=6arcmin nominal: 4399 sources, 638 within 1.5mag of V
+NSC DR2 r=6arcmin +1deg Dec control: 2933 sources, 679 within 1.5mag of V
