@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>404 Page not found</title>
+    <link rel="icon" type="image/ico" href="/static/favicon.ico">
+
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/static/jquery-ui/jquery-ui.theme.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/static/styles/main.css" type="text/css" media="screen">
+    
+<link rel="stylesheet" href="/static/theme/404.css" type="text/css"  media="screen">
+
+    <script type="text/javascript" src="/static/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/static/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body >
+      <div id="page-wrapper">
+          <div id="header">
+              <div class="container">
+                <div class="">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a 
+                                        class="btn btn-outline-light"
+                                    
+                                    href="/portal/search">Search</a>
+                            </li>
+                            <li>
+                                <a 
+                                        class="btn btn-outline-light"
+                                    
+                                    href="/api/docs/">Documents</a>
+                            </li>
+                            <li>
+                              <a class="btn btn-outline-light" href="/about">About</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-light" href="/faq/">Help</a>
+                            </li>
+                            <li>
+                                
+                                <a class="btn btn-outline-light" href="/login">Login</a>
+                                
+                            </li>
+
+                        </ul>
+                        
+                    </nav>
+                    <!-- Logo -->
+                    <h1 class="logo"><img src="/static/images/noirlab_nsf_logo_db.svg" title="NOIRLab is funded by the National Science Foundation"/> <a href="/" id="logo">Astro Data Archive</a></h1>
+
+                        <div class="release-notes-link-wrapper text-right">
+                            <a href="/release">Release Notes</a>
+                        </div>
+                </div>
+              </div>
+        </div>
+
+        <!-- Main -->
+        <section class="wrapper style1">
+            <div id="content">
+
+
+                <!-- Content -->
+
+                
+
+                
+    
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+                <h1>404 Page Not Found</h1>
+                <p>Here are some links that might help out in your quest:</p>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/portal/search">Search</a>
+                    </li>
+                    <li>
+                        <a href="/api/docs/">Documentation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        
+
+            </div>
+        </section>
+      </div><!-- /page-wrapper -->
+
+      <div id="footer">
+          
+          
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-md-2">
+                      <h4>Info</h4>
+                      <ul class="list-unstyled">
+                          <li>
+                              <a href="/about">About</a>
+                          </li>
+                          <li>
+                              <a href="/release">Release Notes</a>
+                          </li>
+                          <li><a href="https://sso.csdc.noirlab.edu/">Login/Change Password</a></li>
+                          <li>
+                              <a href="/api/docs">Documentation</a>
+                          </li>
+                          <li>
+                              <a href="/faq/">Help</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-2">
+                    <h4>Affiliates</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://www.nsf.gov/">NSF</a>
+                        </li>
+                        <li>
+                            <a href="https://noirlab.edu/">NOIRLab</a>
+                        </li>
+                        <li>
+                            <a href="https://datalab.noirlab.edu/">Astro Data Lab</a>
+                        </li>
+                        <li>
+                            <a href="https://antares.noirlab.edu/">ANTARES</a>
+                        </li>
+                        <li>
+                          <a href="https://time-allocation.noirlab.edu/">Telescope Time Allocation</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <ul class="logos list-inline">
+                        <li class="list-inline-item align-middle">
+                            <img alt="NSF Logo" src="/static/images/nsf_logo_sm.png">
+                        </li>
+                        <li class="list-inline-item align-middle">
+                            <img alt="AURA Logo" src="/static/images/aura_logo_sm.png">
+                        </li>
+                      </ul>
+                      <div class="version">
+                         <div>v2.12.8 - 2017.11.20_12.43</div>
+                          <div> DB HOST: pgserv0.csdc.noirlab.edu </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div><!-- /container -->
+          
+      </div>
+
+      <script src="/static/main.js"></script>
+      
+
+  </body>
+</html>

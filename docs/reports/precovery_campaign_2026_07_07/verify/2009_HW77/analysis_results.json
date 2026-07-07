@@ -1,0 +1,260 @@
+[
+ {
+  "tag": "d1_2013_a",
+  "expo": "tu2037227",
+  "filt": "r",
+  "cat_mag": 21.629,
+  "cat_ra": 246.129499624612,
+  "cat_dec": -26.25183161814656,
+  "img_shape": [
+   293,
+   293
+  ],
+  "sky_std": 25.098439546334482,
+  "cat_px": [
+   146.12,
+   145.83
+  ],
+  "detected": false,
+  "dao_sep_arcsec": null,
+  "centroid_px": [
+   146.19,
+   145.84
+  ],
+  "peak_adu": 108.8,
+  "peak_snr": 4.3,
+  "fwhm_pix": 5.3,
+  "fwhm_arcsec": 1.4,
+  "ellip": 0.22,
+  "centroid_shift_vs_cat_arcsec": 0.02,
+  "recentroid_radec": [
+   246.12951,
+   -26.251822
+  ],
+  "nearest_neighbor_arcsec": null,
+  "n_sources_in_cutout": 40,
+  "comp_star_fwhm_arcsec": [
+   1.27,
+   2.57,
+   1.25,
+   1.27,
+   2.96,
+   3.05
+  ]
+ },
+ {
+  "tag": "d2_2013_b",
+  "expo": "tu2037424",
+  "filt": "r",
+  "cat_mag": 21.569,
+  "cat_ra": 246.1294909909256,
+  "cat_dec": -26.25183157419499,
+  "img_shape": [
+   293,
+   293
+  ],
+  "sky_std": 25.024695570257567,
+  "cat_px": [
+   145.81,
+   146.44
+  ],
+  "detected": false,
+  "dao_sep_arcsec": null,
+  "centroid_px": [
+   146.22,
+   146.37
+  ],
+  "peak_adu": 113.2,
+  "peak_snr": 4.5,
+  "fwhm_pix": 6.06,
+  "fwhm_arcsec": 1.6,
+  "ellip": 0.39,
+  "centroid_shift_vs_cat_arcsec": 0.108,
+  "recentroid_radec": [
+   246.129494,
+   -26.251798
+  ],
+  "nearest_neighbor_arcsec": null,
+  "n_sources_in_cutout": 34,
+  "comp_star_fwhm_arcsec": [
+   1.27,
+   2.68,
+   1.27,
+   1.24,
+   3.3,
+   3.22
+  ]
+ },
+ {
+  "tag": "d3_2014a",
+  "expo": "c4d_140627_015128",
+  "filt": "VR",
+  "cat_mag": 21.831,
+  "cat_ra": 249.49856500448158,
+  "cat_dec": -29.93920598146915,
+  "img_shape": [
+   283,
+   283
+  ],
+  "sky_std": 21.411358468226542,
+  "cat_px": [
+   141.03,
+   141.52
+  ],
+  "detected": false,
+  "dao_sep_arcsec": null,
+  "centroid_px": [
+   141.6,
+   141.32
+  ],
+  "peak_adu": 124.9,
+  "peak_snr": 5.8,
+  "fwhm_pix": 6.59,
+  "fwhm_arcsec": 1.74,
+  "ellip": 0.39,
+  "centroid_shift_vs_cat_arcsec": 0.158,
+  "recentroid_radec": [
+   249.498557,
+   -29.93916
+  ],
+  "nearest_neighbor_arcsec": 6.69,
+  "n_sources_in_cutout": 80,
+  "comp_star_fwhm_arcsec": [
+   1.51,
+   1.5,
+   1.49,
+   1.5,
+   1.49,
+   1.49
+  ]
+ },
+ {
+  "tag": "d4_2014b",
+  "expo": "c4d_140629_021153",
+  "filt": "VR",
+  "cat_mag": 21.602,
+  "cat_ra": 249.39634804501515,
+  "cat_dec": -29.9303515609225,
+  "img_shape": [
+   283,
+   283
+  ],
+  "sky_std": 20.980646750762762,
+  "cat_px": [
+   141.01,
+   141.49
+  ],
+  "detected": true,
+  "dao_sep_arcsec": 0.136,
+  "centroid_px": [
+   141.07,
+   141.44
+  ],
+  "peak_adu": 186.6,
+  "peak_snr": 8.9,
+  "fwhm_pix": 4.59,
+  "fwhm_arcsec": 1.21,
+  "ellip": 0.08,
+  "centroid_shift_vs_cat_arcsec": 0.02,
+  "recentroid_radec": [
+   249.396353,
+   -29.930343
+  ],
+  "nearest_neighbor_arcsec": 0.14,
+  "n_sources_in_cutout": 119,
+  "comp_star_fwhm_arcsec": [
+   1.23,
+   1.23,
+   1.23,
+   1.22,
+   1.23,
+   1.23
+  ]
+ },
+ {
+  "tag": "d5_2015a1",
+  "expo": "c4d_150427_053222",
+  "filt": "VR",
+  "cat_mag": 21.529,
+  "cat_ra": 260.30698958638607,
+  "cat_dec": -32.379144338174186,
+  "img_shape": [
+   275,
+   275
+  ],
+  "sky_std": 29.26396457664901,
+  "cat_px": [
+   137.02,
+   136.95
+  ],
+  "detected": false,
+  "dao_sep_arcsec": null,
+  "centroid_px": [
+   137.49,
+   136.31
+  ],
+  "peak_adu": 128.3,
+  "peak_snr": 4.4,
+  "fwhm_pix": 3.95,
+  "fwhm_arcsec": 1.04,
+  "ellip": 0.11,
+  "centroid_shift_vs_cat_arcsec": 0.21,
+  "recentroid_radec": [
+   260.306934,
+   -32.379109
+  ],
+  "nearest_neighbor_arcsec": 2.73,
+  "n_sources_in_cutout": 136,
+  "comp_star_fwhm_arcsec": [
+   1.14,
+   1.18,
+   1.17,
+   1.22,
+   1.18,
+   1.23
+  ]
+ },
+ {
+  "tag": "d6_2015a2",
+  "expo": "c4d_150427_053734",
+  "filt": "VR",
+  "cat_mag": 21.663,
+  "cat_ra": 260.306890530669,
+  "cat_dec": -32.37914878273369,
+  "img_shape": [
+   275,
+   276
+  ],
+  "sky_std": 29.79281301826155,
+  "cat_px": [
+   137.09,
+   137.31
+  ],
+  "detected": false,
+  "dao_sep_arcsec": null,
+  "centroid_px": [
+   137.81,
+   135.92
+  ],
+  "peak_adu": 171.6,
+  "peak_snr": 5.8,
+  "fwhm_pix": 3.83,
+  "fwhm_arcsec": 1.01,
+  "ellip": 0.16,
+  "centroid_shift_vs_cat_arcsec": 0.412,
+  "recentroid_radec": [
+   260.306771,
+   -32.379096
+  ],
+  "nearest_neighbor_arcsec": 4.68,
+  "n_sources_in_cutout": 90,
+  "comp_star_fwhm_arcsec": [
+   1.44,
+   1.46,
+   1.44,
+   1.49,
+   1.43,
+   1.52
+  ]
+ }
+]

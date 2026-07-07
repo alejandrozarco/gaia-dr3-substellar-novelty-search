@@ -1,0 +1,5 @@
+key,exposure,utc_iso,mjd,cat_ra_deg,cat_dec_deg,recentroid_ra_deg,recentroid_dec_deg,recentroid_shift_as,pixel_note
+2013A_tu2088892,tu2088892,2013-03-11T06:22:11.8,56362.265414,228.8012394,-20.8267605,228.80128477,-20.8267549,0.154,"PSF, aper SNR~8.5, remeas FWHM 1.05in (seeing 1.13in); absent from deep multiband coadd -> real mover"
+2013B_tu2092162,tu2092162,2013-03-11T06:25:11.0,56362.267488,228.8012123,-20.8267731,228.80123752,-20.8267648,0.09,"PSF, aper SNR~9.0, remeas FWHM 1.27in (seeing 1.24in); clean"
+2015A_012457,c4d_150715_012457_ooi_r_ls9,2015-07-15T01:23:18.3,57218.057851,229.7975286,-21.0925339,229.79752812,-21.09252858,0.019,"marginal, aper SNR~2.6, remeas FWHM 1.15in (seeing 1.26in); present all 4 same-night r-frames; NOT stationary (absent indep i/z coadd)"
+2015B_012616,c4d_150715_012616_ooi_r_ls9,2015-07-15T01:24:35.5,57218.058744,229.7974849,-21.092547,229.7974849,-21.092547,,"marginal, aper SNR~3.5, forced FWHM 1.15in -> NOT sub-seeing artifact (catalog 0.77in spurious); no independent DAO centroid, catalog posn retained"
