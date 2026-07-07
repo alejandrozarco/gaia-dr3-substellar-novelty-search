@@ -90,6 +90,12 @@ method-level twin of the "known ⇒ not novel" object gate.
 
 - The **no-telescope filter**: a lane pays off only if the public archive both
   *finds* and *confirms*; else it's telescope-gated → park it.
+  **Amended 2026-07-07 (user decision): *community-confirm* mode is also
+  acceptable** — we find archivally and an established external mechanism
+  confirms/credits **by name** (MPC astrometry attribution, VSX/AAVSO named
+  submissions, TNS, pro-team pickup of a posted candidate). Still NO telescope
+  owned or scheduled by us; strict archive-only remains the gold standard where
+  available. Adopted with the 2026-07-07 pivot menu (see RESEARCH_LOG).
 - **Compact ≠ cascade mass** — defer to Shahaf AMRF for triple-vs-compact.
 - **No sin-i inflation** for dark companions (photocentric mass function is direct).
 - **Single-phase ≠ corroboration**; **photometry FPs** need masked periodograms + permutation FAP.
