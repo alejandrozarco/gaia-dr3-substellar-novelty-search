@@ -14,14 +14,12 @@ resuming campaign work in any session.** All results below are LOCAL (unpushed) 
 | 2001 KJ76 | strongest null (pixel-level CFHT ±40″ tracking scan) | — | none |
 | 2001 KP76 | two-channel catalog null | — | none |
 | 2001 KK76 blind-DECam / 2006 JG57 / 2004 YH32 | soft null / NO_COVERAGE ×2 (see wave2/) | — | none |
+| 2007 HV90 / 2002 KW14 / 2010 JK124 (wave 4) | **3/3 NULL_SEARCHED, referee-confirmed 2026-07-08.** HV90 + KW14 = honest single-night/single-sequence nulls (2017-05-17 windows can never chain a slow TNO). **JK124: agent's 3-epoch CANDIDATE_CHAIN OVERTURNED by referee** — 2 of 3 detections were ndet=1 and absent from same-night equal-depth partner frames minutes later (a real SNR~17–19 TNO must reappear); only the 2015-06-20 ndet=2 epoch was real, and one epoch ≠ chain. Bycatch 3/3 clean (0 unknowns). | — (JK124 `wave4/2010_JK124/candidate_astrometry.csv` = REFUTED, do not use) | none — file nothing for wave 4 |
 
 ## In flight (background workflows; resume with the run IDs below if a session limit killed them)
 
-| task | workflow | runId (resumeFromRunId) | script (repo copy in `workflow_scripts/`) |
-|---|---|---|---|
-| #148 wave 4: 2007 HV90, 2002 KW14, 2010 JK124 | w3ue4aqw0 (resumed wx2rl3dlv) | `wf_dcc746e5-6e3` | `precovery_wave4.mjs` |
-
-(#147 KK76 refit COMPLETED + referee-confirmed 2026-07-08 — artifacts in `kk76_refit/`.)
+**NOTHING in flight (2026-07-08).** #147 KK76 refit + #148 wave 4 both COMPLETED and banked
+(`kk76_refit/`, `wave4/`). The only open task is **#141 (USER): MPC filing for Orius + KK76.**
 
 Resume pattern: `Workflow({scriptPath: <scratchpad or repo copy>, resumeFromRunId: "<runId>"})` —
 completed agents replay from cache. Scratchpad originals:
@@ -40,6 +38,12 @@ Outputs land in `/tmp/kk76_refit/` and `/tmp/precovery_wave4/` → preserve into
 7. Arc-ends from fresh MPC get-obs parse at run time (wave-3 recut failure).
 8. Self-arc test before searching any window (wave-3 recut failure).
 9. Prior-art gates MUST include web/press search, not arXiv-only (missed ADAM::THOR twice-class lesson).
+10. **Chain members must reproduce in a same-night, equal-depth partner exposure** — reject ndet=1
+    detections as chain members (wave-4 JK124 overturn: 2/3 claimed epochs were single-exposure
+    spurious; a real SNR~17–19 TNO moves <0.1″ in minutes and MUST reappear).
+11. **Pre-gate requires ≥2 distinct post-arc imaging nights spanning real baseline (months)** —
+    never dispatch single-night/single-sequence windows; they are guaranteed nulls for slow TNOs
+    and burn a full referee cycle for no information (wave-4 HV90/KW14).
 
 ## Closed lanes (do not reopen without new data)
 
@@ -50,5 +54,7 @@ Outputs land in `/tmp/kk76_refit/` and `/tmp/precovery_wave4/` → preserve into
 
 ## Queue after in-flight work
 
-- Wave-3 referee-salvaged trio = wave 4 (running). Next pool: repaired full rule-v3 re-cut over the remaining ~90 gate passers (repairs = rules 7+8 in the recut script) — optional, user decides.
+- Wave 4 DONE (3/3 null). Next pool (optional, user decides): repaired full re-cut over the
+  remaining ~90 gate passers with rules 7+8 AND the new rules 10+11 baked into the cut itself
+  (require ≥2 post-arc imaging nights with baseline before a target is even dispatched).
 - KK76 pointed-HST 2010 WFC3 field: revisit with the 2006-refined orbit (bounded non-detection could become a localization).

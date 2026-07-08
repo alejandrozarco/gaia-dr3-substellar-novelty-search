@@ -1,0 +1,15 @@
+{
+ "n_detections": 6792,
+ "n_static_sources": 5310,
+ "n_tracklets": 0,
+ "n_known": 0,
+ "n_unknown_candidate": 0,
+ "n_unidentified_offline": 0,
+ "rejections": {
+  "stationary_rate": 1756,
+  "too_fast": 16569104,
+  "on_static_source": 24919,
+  "mag_inconsistent": 0,
+  "not_same_night": 6466457
+ }
+}

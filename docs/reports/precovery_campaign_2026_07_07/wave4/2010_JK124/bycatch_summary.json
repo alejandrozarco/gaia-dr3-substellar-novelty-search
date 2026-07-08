@@ -1,0 +1,26 @@
+{
+ "2014-06-06": {
+  "n_detections": 1410,
+  "n_static": 1563,
+  "n_tracklets": 0,
+  "n_known": 0,
+  "n_unknown_candidate": 0,
+  "n_offline": 0
+ },
+ "2015-06-20": {
+  "n_detections": 1655,
+  "n_static": 1627,
+  "n_tracklets": 0,
+  "n_known": 0,
+  "n_unknown_candidate": 0,
+  "n_offline": 0
+ },
+ "2016-03-08": {
+  "n_detections": 2705,
+  "n_static": 2373,
+  "n_tracklets": 0,
+  "n_known": 0,
+  "n_unknown_candidate": 0,
+  "n_offline": 0
+ }
+}

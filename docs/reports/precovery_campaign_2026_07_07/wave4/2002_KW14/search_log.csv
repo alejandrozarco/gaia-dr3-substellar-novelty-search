@@ -1,0 +1,5 @@
+epoch_mjd,exposure,filter,exptime_s,pred_ra,pred_dec,eph_SMAA3s_as,eph_SMIA3s_as,V_pred,target_on_ccd,faint_limit_Y,n_src_in_72box,nearest_src_sep_as,nearest_src_objid,nearest_src_status,detection_in_3sig_ellipse,note
+57890.138207,c4d_170517_031953_ooi_Y_v1,Y,3,252.079046,-24.789008,0.442,0.201,21.78,NO,22.65,0,NA,NA,NA,NO,target ~1.08deg from pointing center 250.938/-24.493 -> off DECam array (0 src within 72")
+57890.139413,c4d_170517_032252_ooi_Y_v1,Y,150,252.079021,-24.789007,0.442,0.201,21.78,NO,22.65,0,NA,NA,NA,NO,target ~1.04deg from center 250.966/-24.537 -> off array (0 src within 72")
+57890.141491,c4d_170517_032551_ooi_Y_v1,Y,150,252.078978,-24.789004,0.442,0.201,21.78,NO,22.42,0,78.14,139366_91143,NA,NO,target in chip-gap/edge on this dither (center 251.109/-24.801); nearest src 78in
+57890.143547,c4d_170517_032849_ooi_Y_v1,Y,150,252.078935,-24.789001,0.442,0.201,21.78,YES,22.65,377,1.73,139366_91157,STATIONARY(ndet33/1106d),NO,ONLY usable exposure; deep (Y22.65 >> target Y~20-21); nearest src is confirmed static star at 1.73in outside 0.44in ellipse -> non-detection
