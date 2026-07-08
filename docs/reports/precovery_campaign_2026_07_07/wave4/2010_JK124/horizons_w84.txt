@@ -1,0 +1,291 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+
+
+*******************************************************************************
+Ephemeris / API_USER Tue Jul  7 14:01:13 2026 Pasadena, USA      / Horizons    
+*******************************************************************************
+Target body name: (2010 JK124)                    {source: JPL#5}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: Cerro Tololo-DECam
+*******************************************************************************
+Start time      : A.D. 2017-May-17 00:00:00.0000 UT      
+Stop  time      : A.D. 2017-Aug-16 00:00:00.0000 UT      
+Step-size       : 1440 minutes
+*******************************************************************************
+Target pole/equ : undefined
+Target radii    : undefined                                                    
+Center geodetic : 289.1936, -30.1695802, 2.21112  {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 289.1936,5520.74486,-3187.75111 {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}       
+Target primary  : Sun
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: DE441}
+Rel. light bend : Sun                             {source: DE441}
+Rel. lght bnd GM: 1.3271E+11 km^3/s^2                                          
+Small-body perts: Yes                             {source: SB441-N16}
+Atmos refraction: NO (AIRLESS)
+RA format       : DEG
+Time format     : CAL 
+Calendar mode   : Mixed Julian/Gregorian
+EOP file        : eop.260706.p261002                                           
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-JUL-06. PREDICTS-> 2026-OCT-01
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s 
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )                           
+*******************************************************************************
+Initial IAU76/J2000 heliocentric ecliptic osculating elements (au, days, deg.):
+  EPOCH=  2456328.5 ! 2013-Feb-05.00 (TDB)         Residual RMS= .22455        
+   EC= .1189508712431341   QR= 35.49941133358018   TP= 2432224.7844727994      
+   OM= 277.4746539373181   W=  220.6239671535473   IN= 15.54713838468939       
+  Equivalent ICRF heliocentric cartesian coordinates (au, au/d):
+   X=-1.695708757907139E+01  Y=-3.150275187413182E+01  Z=-2.021368167030291E+01
+  VX= 2.170108204655172E-03 VY=-1.531100680333808E-03 VZ=-6.783458772001752E-05
+Asteroid physical parameters (km, seconds, rotational period in hours):        
+   GM= n.a.                RAD= n.a.               ROTPER= n.a.                
+   H= 5.35                 G= .150                 B-V= n.a.                   
+                           ALBEDO= n.a.            STYP= n.a.                  
+*******************************************************************************************************************************************************
+ Date__(UT)__HR:MN     R.A.___(ICRF)___DEC    APmag   S-brt  RA_3sigma DEC_3sigma  SMAA_3sig SMIA_3sig    Theta Area_3sig             delta      deldot
+*******************************************************************************************************************************************************
+$$SOE
+ 2017-May-17 00:00     248.60496 -29.32015   21.575    n.a.      3.220      0.627      3.231     0.565    4.898 5.7364929  40.6082703596980  -7.8341272
+ 2017-May-18 00:00     248.58280 -29.31722   21.572    n.a.      3.215      0.627      3.227     0.565    4.926 5.7278192  40.6040875565723  -7.3465573
+ 2017-May-19 00:00     248.56053 -29.31421   21.569    n.a.      3.211      0.628      3.222     0.565    4.955 5.7191227  40.6001867182951  -6.8564034
+ 2017-May-20 00:00     248.53816 -29.31114   21.566    n.a.      3.206      0.628      3.218     0.565    4.984 5.7104183  40.5965692573789  -6.3637285
+ 2017-May-21 00:00     248.51570 -29.30800   21.563    n.a.      3.201      0.629      3.213     0.565    5.013 5.7017216  40.5932365471374  -5.8686073
+ 2017-May-22 00:00     248.49315 -29.30480   21.560    n.a.      3.197      0.629      3.209     0.565    5.043 5.6930478  40.5901899117047  -5.3711384
+ 2017-May-23 00:00     248.47051 -29.30153   21.557    n.a.      3.192      0.630      3.204     0.565    5.072 5.6844126  40.5874306074046  -4.8714618
+ 2017-May-24 00:00     248.44781 -29.29819   21.554    n.a.      3.188      0.630      3.200     0.565    5.102 5.6758318  40.5849597931255  -4.3697786
+ 2017-May-25 00:00     248.42505 -29.29479   21.551    n.a.      3.183      0.631      3.195     0.565    5.132 5.6673211  40.5827784905891  -3.8663647
+ 2017-May-26 00:00     248.40224 -29.29133   21.548    n.a.      3.178      0.631      3.191     0.565    5.162 5.6588966  40.5808875407661  -3.3615688
+ 2017-May-27 00:00     248.37938 -29.28780   21.546    n.a.      3.174      0.632      3.186     0.564    5.192 5.6505743  40.5792875677383  -2.8557882
+ 2017-May-28 00:00  m  248.35648 -29.28422   21.543    n.a.      3.169      0.632      3.182     0.564    5.222 5.6423702  40.5779789618951  -2.3494282
+ 2017-May-29 00:00  m  248.33357 -29.28057   21.541    n.a.      3.165      0.633      3.178     0.564    5.252 5.6343000  40.5769618883171  -1.8428584
+ 2017-May-30 00:00  m  248.31063 -29.27687   21.540    n.a.      3.160      0.633      3.173     0.564    5.282 5.6263794  40.5762363165837  -1.3363841
+ 2017-May-31 00:00  m  248.28769 -29.27311   21.538    n.a.      3.156      0.634      3.169     0.564    5.312 5.6186237  40.5758020612571  -0.8302382
+ 2017-Jun-01 00:00  m  248.26475 -29.26929   21.538    n.a.      3.151      0.634      3.165     0.564    5.342 5.6110478  40.5756588216543  -0.3245906
+ 2017-Jun-02 00:00  m  248.24181 -29.26542   21.538    n.a.      3.147      0.635      3.160     0.564    5.372 5.6036662  40.5758062137123   0.1804355
+ 2017-Jun-03 00:00  m  248.21890 -29.26149   21.538    n.a.      3.143      0.636      3.156     0.564    5.402 5.5964933  40.5762437919256   0.6847468
+ 2017-Jun-04 00:00  m  248.19601 -29.25751   21.539    n.a.      3.138      0.636      3.152     0.564    5.432 5.5895428  40.5769710627883   1.1882674
+ 2017-Jun-05 00:00  m  248.17315 -29.25348   21.541    n.a.      3.134      0.637      3.148     0.565    5.462 5.5828283  40.5779874924520   1.6909311
+ 2017-Jun-06 00:00  m  248.15033 -29.24940   21.543    n.a.      3.130      0.637      3.144     0.565    5.491 5.5763629  40.5792925111339   2.1926776
+ 2017-Jun-07 00:00  m  248.12756 -29.24527   21.545    n.a.      3.126      0.638      3.140     0.565    5.521 5.5701592  40.5808855160322   2.6934511
+ 2017-Jun-08 00:00  m  248.10485 -29.24110   21.548    n.a.      3.121      0.639      3.136     0.565    5.550 5.5642296  40.5827658736754   3.1931996
+ 2017-Jun-09 00:00  m  248.08220 -29.23688   21.551    n.a.      3.117      0.639      3.132     0.565    5.579 5.5585860  40.5849329219780   3.6918742
+ 2017-Jun-10 00:00  m  248.05963 -29.23261   21.554    n.a.      3.113      0.640      3.128     0.565    5.607 5.5532400  40.5873859718805   4.1894283
+ 2017-Jun-11 00:00  m  248.03713 -29.22829   21.557    n.a.      3.109      0.641      3.124     0.565    5.636 5.5482025  40.5901243082946   4.6858163
+ 2017-Jun-12 00:00  m  248.01472 -29.22394   21.560    n.a.      3.106      0.641      3.120     0.566    5.664 5.5434843  40.5931471901155   5.1809915
+ 2017-Jun-13 00:00     247.99240 -29.21954   21.563    n.a.      3.102      0.642      3.117     0.566    5.692 5.5390955  40.5964538492035   5.6749046
+ 2017-Jun-14 00:00     247.97018 -29.21510   21.566    n.a.      3.098      0.643      3.113     0.566    5.719 5.5350460  40.6000434883769   6.1675020
+ 2017-Jun-15 00:00     247.94807 -29.21063   21.569    n.a.      3.094      0.644      3.109     0.566    5.746 5.5313450  40.6039152784814   6.6587243
+ 2017-Jun-16 00:00     247.92608 -29.20611   21.572    n.a.      3.091      0.644      3.106     0.567    5.773 5.5280014  40.6080683544260   7.1485038
+ 2017-Jun-17 00:00     247.90422 -29.20156   21.575    n.a.      3.087      0.645      3.102     0.567    5.800 5.5250235  40.6125018096534   7.6367616
+ 2017-Jun-18 00:00     247.88248 -29.19697   21.578    n.a.      3.084      0.646      3.099     0.567    5.826 5.5224192  40.6172146878971   8.1234008
+ 2017-Jun-19 00:00     247.86089 -29.19235   21.581    n.a.      3.080      0.647      3.096     0.568    5.852 5.5201958  40.6222059704215   8.6082977
+ 2017-Jun-20 00:00     247.83944 -29.18769   21.584    n.a.      3.077      0.648      3.092     0.568    5.877 5.5183602  40.6274745566428   9.0912879
+ 2017-Jun-21 00:00     247.81815 -29.18300   21.587    n.a.      3.074      0.649      3.089     0.568    5.902 5.5169187  40.6330192367035   9.5721527
+ 2017-Jun-22 00:00     247.79702 -29.17829   21.590    n.a.      3.070      0.649      3.086     0.569    5.927 5.5158771  40.6388386569330  10.0506095
+ 2017-Jun-23 00:00     247.77607 -29.17354   21.593    n.a.      3.067      0.650      3.083     0.569    5.951 5.5152406  40.6449312832110  10.5263154
+ 2017-Jun-24 00:00     247.75529 -29.16877   21.596    n.a.      3.064      0.651      3.080     0.570    5.974 5.5150138  40.6512953715223  10.9988891
+ 2017-Jun-25 00:00     247.73471 -29.16397   21.599    n.a.      3.061      0.652      3.077     0.570    5.998 5.5152005  40.6579289562439  11.4679491
+ 2017-Jun-26 00:00  m  247.71432 -29.15914   21.601    n.a.      3.058      0.653      3.075     0.571    6.020 5.5158039  40.6648298623323  11.9331554
+ 2017-Jun-27 00:00  m  247.69413 -29.15430   21.604    n.a.      3.055      0.654      3.072     0.572    6.043 5.5168266  40.6719957388864  12.3942395
+ 2017-Jun-28 00:00  m  247.67416 -29.14943   21.607    n.a.      3.053      0.655      3.069     0.572    6.065 5.5182702  40.6794241038538  12.8510124
+ 2017-Jun-29 00:00  m  247.65440 -29.14454   21.610    n.a.      3.050      0.656      3.067     0.573    6.086 5.5201357  40.6871123876732  13.3033542
+ 2017-Jun-30 00:00  m  247.63487 -29.13964   21.612    n.a.      3.048      0.657      3.064     0.574    6.107 5.5224234  40.6950579674135  13.7511934
+ 2017-Jul-01 00:00  m  247.61558 -29.13472   21.615    n.a.      3.045      0.658      3.062     0.574    6.128 5.5251329  40.7032581887767  14.1944869
+ 2017-Jul-02 00:00  m  247.59652 -29.12979   21.618    n.a.      3.043      0.659      3.060     0.575    6.148 5.5282631  40.7117103776855  14.6332044
+ 2017-Jul-03 00:00  m  247.57770 -29.12484   21.620    n.a.      3.040      0.660      3.057     0.576    6.167 5.5318124  40.7204118449711  15.0673199
+ 2017-Jul-04 00:00  m  247.55914 -29.11988   21.623    n.a.      3.038      0.661      3.055     0.577    6.186 5.5357783  40.7293598875545  15.4968078
+ 2017-Jul-05 00:00  m  247.54083 -29.11491   21.626    n.a.      3.036      0.662      3.053     0.578    6.205 5.5401581  40.7385517885539  15.9216429
+ 2017-Jul-06 00:00  m  247.52279 -29.10994   21.628    n.a.      3.034      0.663      3.051     0.578    6.223 5.5449482  40.7479848176693  16.3418010
+ 2017-Jul-07 00:00  m  247.50502 -29.10496   21.631    n.a.      3.032      0.665      3.049     0.579    6.241 5.5501447  40.7576562322996  16.7572606
+ 2017-Jul-08 00:00  m  247.48752 -29.09997   21.633    n.a.      3.030      0.666      3.048     0.580    6.258 5.5557429  40.7675632792196  17.1680033
+ 2017-Jul-09 00:00  m  247.47030 -29.09497   21.636    n.a.      3.028      0.667      3.046     0.581    6.275 5.5617379  40.7777031962429  17.5740130
+ 2017-Jul-10 00:00  m  247.45337 -29.08998   21.638    n.a.      3.027      0.668      3.044     0.582    6.291 5.5681240  40.7880732131283  17.9752741
+ 2017-Jul-11 00:00  m  247.43673 -29.08498   21.641    n.a.      3.025      0.669      3.043     0.583    6.307 5.5748952  40.7986705510049  18.3717684
+ 2017-Jul-12 00:00     247.42039 -29.07998   21.643    n.a.      3.023      0.670      3.041     0.584    6.323 5.5820450  40.8094924197569  18.7634710
+ 2017-Jul-13 00:00     247.40435 -29.07499   21.645    n.a.      3.022      0.672      3.040     0.585    6.338 5.5895666  40.8205360130472  19.1503466
+ 2017-Jul-14 00:00     247.38862 -29.06999   21.648    n.a.      3.020      0.673      3.038     0.586    6.353 5.5974525  40.8317985008305  19.5323443
+ 2017-Jul-15 00:00     247.37321 -29.06500   21.650    n.a.      3.019      0.674      3.037     0.587    6.367 5.6056950  40.8432770192310  19.9093933
+ 2017-Jul-16 00:00     247.35811 -29.06002   21.652    n.a.      3.018      0.675      3.036     0.589    6.381 5.6142859  40.8549686574910  20.2813977
+ 2017-Jul-17 00:00     247.34334 -29.05505   21.655    n.a.      3.017      0.677      3.035     0.590    6.395 5.6232168  40.8668704414524  20.6482292
+ 2017-Jul-18 00:00     247.32890 -29.05008   21.657    n.a.      3.016      0.678      3.034     0.591    6.408 5.6324785  40.8789793129640  21.0097204
+ 2017-Jul-19 00:00     247.31480 -29.04512   21.659    n.a.      3.015      0.679      3.033     0.592    6.421 5.6420619  40.8912921051413  21.3656577
+ 2017-Jul-20 00:00     247.30104 -29.04017   21.661    n.a.      3.014      0.680      3.032     0.593    6.434 5.6519573  40.9038055149072  21.7157797
+ 2017-Jul-21 00:00     247.28763 -29.03524   21.663    n.a.      3.013      0.682      3.031     0.595    6.446 5.6621546  40.9165160767273  22.0597840
+ 2017-Jul-22 00:00     247.27457 -29.03032   21.666    n.a.      3.012      0.683      3.031     0.596    6.459 5.6726434  40.9294201440165  22.3973467
+ 2017-Jul-23 00:00     247.26188 -29.02542   21.668    n.a.      3.012      0.684      3.030     0.597    6.471 5.6834129  40.9425138854714  22.7281542
+ 2017-Jul-24 00:00     247.24954 -29.02053   21.670    n.a.      3.011      0.686      3.030     0.598    6.482 5.6944522  40.9557933007887  23.0519367
+ 2017-Jul-25 00:00     247.23758 -29.01567   21.672    n.a.      3.010      0.687      3.029     0.600    6.494 5.7057499  40.9692542541360  23.3684937
+ 2017-Jul-26 00:00  m  247.22599 -29.01082   21.674    n.a.      3.010      0.689      3.029     0.601    6.505 5.7172946  40.9828925174845  23.6777026
+ 2017-Jul-27 00:00  m  247.21477 -29.00600   21.676    n.a.      3.010      0.690      3.028     0.602    6.516 5.7290745  40.9967038133056  23.9795082
+ 2017-Jul-28 00:00  m  247.20394 -29.00121   21.678    n.a.      3.009      0.691      3.028     0.603    6.527 5.7410779  41.0106838483835  24.2739040
+ 2017-Jul-29 00:00  m  247.19350 -28.99643   21.680    n.a.      3.009      0.693      3.028     0.605    6.538 5.7532930  41.0248283354209  24.5609101
+ 2017-Jul-30 00:00  m  247.18344 -28.99169   21.682    n.a.      3.009      0.694      3.028     0.606    6.548 5.7657078  41.0391330035832  24.8405573
+ 2017-Jul-31 00:00  m  247.17378 -28.98697   21.684    n.a.      3.009      0.696      3.028     0.607    6.559 5.7783103  41.0535936014340  25.1128773
+ 2017-Aug-01 00:00  m  247.16452 -28.98229   21.685    n.a.      3.009      0.697      3.028     0.609    6.569 5.7910887  41.0682058959789  25.3778983
+ 2017-Aug-02 00:00  m  247.15565 -28.97763   21.687    n.a.      3.009      0.698      3.028     0.610    6.580 5.8040310  41.0829656706847  25.6356456
+ 2017-Aug-03 00:00  m  247.14718 -28.97301   21.689    n.a.      3.009      0.700      3.028     0.611    6.590 5.8171254  41.0978687242004  25.8861432
+ 2017-Aug-04 00:00  m  247.13912 -28.96842   21.691    n.a.      3.009      0.701      3.029     0.613    6.600 5.8303599  41.1129108704819  26.1294168
+ 2017-Aug-05 00:00  m  247.13147 -28.96387   21.693    n.a.      3.010      0.703      3.029     0.614    6.610 5.8437229  41.1280879402335  26.3654953
+ 2017-Aug-06 00:00  m  247.12423 -28.95935   21.694    n.a.      3.010      0.704      3.029     0.615    6.621 5.8572027  41.1433957829845  26.5944110
+ 2017-Aug-07 00:00  m  247.11740 -28.95487   21.696    n.a.      3.011      0.705      3.030     0.617    6.631 5.8707877  41.1588302687073  26.8161982
+ 2017-Aug-08 00:00  m  247.11099 -28.95042   21.698    n.a.      3.011      0.707      3.031     0.618    6.641 5.8844665  41.1743872876656  27.0308884
+ 2017-Aug-09 00:00  m  247.10499 -28.94602   21.699    n.a.      3.012      0.708      3.031     0.619    6.651 5.8982278  41.1900627472191  27.2385043
+ 2017-Aug-10 00:00     247.09942 -28.94165   21.701    n.a.      3.012      0.710      3.032     0.621    6.662 5.9120605  41.2058525646416  27.4390525
+ 2017-Aug-11 00:00     247.09427 -28.93733   21.703    n.a.      3.013      0.711      3.033     0.622    6.672 5.9259535  41.2217526555824  27.6325160
+ 2017-Aug-12 00:00     247.08954 -28.93305   21.704    n.a.      3.014      0.713      3.033     0.623    6.683 5.9398960  41.2377589184621  27.8188476
+ 2017-Aug-13 00:00     247.08524 -28.92882   21.706    n.a.      3.015      0.714      3.034     0.625    6.694 5.9538770  41.2538672156365  27.9979653
+ 2017-Aug-14 00:00     247.08137 -28.92463   21.707    n.a.      3.016      0.715      3.035     0.626    6.705 5.9678861  41.2700733524570  28.1697496
+ 2017-Aug-15 00:00     247.07793 -28.92048   21.709    n.a.      3.016      0.717      3.036     0.627    6.716 5.9819127  41.2863730554570  28.3340436
+ 2017-Aug-16 00:00     247.07493 -28.91639   21.710    n.a.      3.018      0.718      3.038     0.628    6.727 5.9959464  41.3027619510313  28.4906546
+$$EOE
+*******************************************************************************************************************************************************
+Column meaning:
+ 
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+ 
+SOLAR PRESENCE (OBSERVING SITE)
+  Time tag is followed by a blank, then a solar-presence symbol:
+
+       '*'  Daylight (refracted solar upper-limb on or above apparent horizon)
+       'C'  Civil twilight/dawn
+       'N'  Nautical twilight/dawn
+       'A'  Astronomical twilight/dawn
+       ' '  Night OR geocentric ephemeris
+
+LUNAR PRESENCE (OBSERVING SITE)
+  The solar-presence symbol is immediately followed by a lunar-presence symbol:
+
+       'm'  Refracted upper-limb of Moon on or above apparent horizon
+       ' '  Refracted upper-limb of Moon below apparent horizon OR geocentric
+            ephemeris
+ 
+STATISTICAL UNCERTAINTIES
+
+  Output includes formal +/- 3 standard-deviation statistical orbit uncertainty
+quantities. There is a 99.7% (1-D) or 98.9% (2-D) chance the actual value is
+within given bounds.  These statistical calculations assume observational data
+errors are random. If there are systematic biases (such as timing, reduction or
+star-catalog errors), results can be optimistic. Because the epoch covariance
+is mapped using linearized variational partial derivatives, results can also
+be optimistic for times far from the solution epoch, particularly for objects
+having close planetary encounters.
+ 
+ 'R.A.___(ICRF)___DEC' =
+  Astrometric right ascension and declination of the target center with
+respect to the observing site (coordinate origin) in the reference frame of
+the planetary ephemeris (ICRF). Compensated for down-leg light-time delay
+aberration.
+
+  Units: RA  in decimal degrees,  ddd.fffff{ffff}
+         DEC in decimal degrees,  sdd.fffff{ffff}
+ 
+ 'APmag   S-brt' =
+   The asteroids' approximate apparent airless visual magnitude and surface
+brightness using the standard IAU H-G system magnitude model:
+
+   APmag = H + 5*log10(delta) + 5*log10(r) - 2.5*log10((1-G)*phi_1 + G*phi_2)
+
+   For solar phase angles >90 deg, the error could exceed 1 magnitude. For
+phase angles >120 degrees, output values are rounded to the nearest integer to
+indicate error could be large and unknown. For Earth-based observers, the
+estimated dimming due to atmospheric absorption (extinction) is available as
+a separate, requestable quantity.
+
+   Surface brightness is the average airless visual magnitude of a
+square-arcsecond of the illuminated portion of the apparent disk. It is
+computed only if the target radius is known.
+
+   Units: MAGNITUDES & MAGNITUDES PER SQUARE ARCSECOND
+ 
+ 'RA_3sigma DEC_3sigma' =
+  Uncertainty in Right-Ascension and Declination. Output values are the formal
++/- 3 standard-deviations (sigmas) around nominal position. Units: ARCSECONDS
+ 
+ 'SMAA_3sig SMIA_3sig    Theta Area_3sig' =
+  Plane-of-sky (POS) error ellipse data. These quantities summarize the
+targets' 3-dimensional 3-standard-deviation formal uncertainty volume projected
+into a reference plane perpendicular to the observers' line-of-sight.
+
+   SMAA_3sig = Angular width of the 3-sigma error ellipse semi-major
+                axis in POS. Units: ARCSECONDS.
+
+   SMIA_3sig = Angular width of the 3-sigma error ellipse semi-minor
+                axis in POS. Units: ARCSECONDS.
+
+   Theta     = Orientation angle of the error ellipse in POS; the
+                clockwise angle from the direction of increasing RA to
+                the semi-major axis of the error ellipse, in the
+                direction of increasing DEC.  Units: DEGREES.
+
+                              +DEC
+                                ^
+                              \ |
+                          theta\|
+                      +RA  <----+-----
+                                |\
+                                | \
+
+   Area_3sig = Area of sky enclosed by the 3-sigma error ellipse.
+                Units: ARCSECONDS ^ 2.
+ 
+ 'delta      deldot' =
+   Apparent range ("delta", light-time aberrated) and range-rate ("delta-dot")
+of the target center relative to the observer. A positive "deldot" means the
+target center is moving away from the observer, negative indicates movement
+toward the observer.  Units: AU and KM/S
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+*******************************************************************************************************************************************************

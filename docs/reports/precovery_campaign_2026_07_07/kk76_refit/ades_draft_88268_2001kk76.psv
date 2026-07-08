@@ -1,0 +1,41 @@
+# version=2022
+# comment
+! line DRAFT for user review — NOT yet submitted. Archival space-based precovery astrometry of
+! line (88268) = 2001 KK76 (TNO), measured from four public HST ACS/HRC CLEAR exposures (GO
+! line program 10514; rootnames J9FW91HPQ/HQQ/HRQ/HSQ), 2006-05-02, retrieved from MAST.
+! line Object positions were solved against the Gaia-DR3-registered Hubble Source Catalog v3.0
+! line (HSC30) astrometric reference frame; astCat therefore reported as Gaia3 (HSC30 is the
+! line intermediary — see remarks). Per-axis uncertainties are set to rmsRA=0.16" / rmsDec=0.10"
+! line by referee mandate (conservative floor; the internal centroiding formal errors are a few
+! line tens of mas and are NOT used). The HST obscode is 250; because 250 is a spacecraft with no
+! line geocentric coordinates, each row carries the geocentric equatorial-J2000 (ICRF) position of
+! line HST (sys=ICRF_KM, ctr=399, pos1/2/3 in km) taken from the JPL Horizons HST ephemeris
+! line (body -48) at each mid-exposure UTC; find_orb applies this satellite parallax (verified:
+! line dropping the offsets makes 250 unusable, confirming the parallax is genuinely in the fit).
+! line obsTime is UTC (the CSV column jd_tdb_mid actually held UTC JD; treated as UTC throughout;
+! line TT-UTC = 65.184 s in 2006 is handled internally by the orbit code, ~0.05" along-track).
+! line PHOTOMETRY: exposures are unfiltered CLEAR(HRC); the source magnitudes are non-standard
+! line lower bounds only, so NO calibrated photometry is reported (mag/band deliberately omitted).
+! line ACTION BEFORE SUBMISSION: contact the MPC SARC (Singletons and Archival observations
+! line Committee, minorplanetcenter.net/mpcops/documentation/sarc/) for first-time archival-
+! line submitter verification and file review; confirm the space-based (obscode 250) block and
+! line satellite-offset conventions and the HSC30/Gaia3 astCat choice with the SARC member.
+# observatory
+! mpcCode 250
+! name Hubble Space Telescope (ACS/HRC, archival; GO-10514)
+# submitter
+! name A. Keur
+# observers
+! name HST GO-10514 archival exposures (original observers unspecified)
+# measurers
+! name A. Keur
+# telescope
+! design reflector
+! aperture 2.4
+! detector CCD
+! name HST ACS/HRC
+permID |mode|stn |sys     |ctr|pos1        |pos2        |pos3        |obsTime                  |ra          |dec         |rmsRA|rmsDec|astCat|remarks
+88268  |CCD |250 |ICRF_KM |399|  -6826.7694|   -677.0280|  -1088.6847|2006-05-02T08:34:12.556Z |253.861466  |-22.186202  | 0.16| 0.10 |Gaia3 |HST ACS/HRC CLEAR, GO-10514 rootname J9FW91HPQ; posn vs HSC30 (Gaia-DR3 tied); HST geocentric posn from JPL Horizons (-48); mag CLEAR lower-bound, omitted
+88268  |CCD |250 |ICRF_KM |399|  -6039.0228|  -2723.6208|  -2092.5581|2006-05-02T08:39:32.557Z |253.861387  |-22.186194  | 0.16| 0.10 |Gaia3 |HST ACS/HRC CLEAR, GO-10514 rootname J9FW91HQQ; posn vs HSC30 (Gaia-DR3 tied); HST geocentric posn from JPL Horizons (-48); mag CLEAR lower-bound, omitted
+88268  |CCD |250 |ICRF_KM |399|  -4522.8322|  -4442.3519|  -2843.6900|2006-05-02T08:44:52.556Z |253.861323  |-22.186188  | 0.16| 0.10 |Gaia3 |HST ACS/HRC CLEAR, GO-10514 rootname J9FW91HRQ; posn vs HSC30 (Gaia-DR3 tied); HST geocentric posn from JPL Horizons (-48); mag CLEAR lower-bound, omitted
+88268  |CCD |250 |ICRF_KM |399|  -2461.6022|  -5625.7860|  -3251.2231|2006-05-02T08:50:12.556Z |253.861260  |-22.186182  | 0.16| 0.10 |Gaia3 |HST ACS/HRC CLEAR, GO-10514 rootname J9FW91HSQ; posn vs HSC30 (Gaia-DR3 tied); HST geocentric posn from JPL Horizons (-48); mag CLEAR lower-bound, omitted

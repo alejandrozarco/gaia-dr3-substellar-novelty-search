@@ -1,0 +1,32 @@
+[
+ {
+  "META": {
+   "endpoint": "sia/voimg"
+  },
+  "PARAMETERS": {
+   "POS": "250.9809,-21.39874",
+   "SIZE": "0.05",
+   "format": "json",
+   "limit": null,
+   "default_limit": "None",
+   "default_offset": 0,
+   "default_sort": "md5sum",
+   "oldest": null,
+   "previd": null,
+   "last": null,
+   "endpoint": "sia/voimg"
+  },
+  "RESULTS": {
+   "MORE": false,
+   "COUNT": 0
+  },
+  "HEADER": {
+   "archive_filename": "string",
+   "file_dateobs": "string",
+   "dec_center": "float",
+   "instrument": "string",
+   "ra_center": "float",
+   "url": "string"
+  }
+ }
+]

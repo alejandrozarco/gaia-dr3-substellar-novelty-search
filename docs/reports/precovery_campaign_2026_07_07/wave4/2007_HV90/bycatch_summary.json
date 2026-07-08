@@ -1,0 +1,31 @@
+{
+ "n_detections": 120,
+ "n_static_sources": 65,
+ "n_tracklets": 0,
+ "n_known": 0,
+ "n_unknown_candidate": 0,
+ "n_unidentified_offline": 0,
+ "rejections": {
+  "stationary_rate": 186,
+  "too_fast": 3150,
+  "on_static_source": 2788,
+  "mag_inconsistent": 0,
+  "not_same_night": 1016
+ },
+ "config": {
+  "rate_min_arcsec_hr": 0.5,
+  "rate_max_arcsec_hr": 120.0,
+  "same_night_max_hr": 8.0,
+  "static_tol_arcsec": 1.5,
+  "mag_tol": 1.0,
+  "cross_filter_mag_tol": 2.0,
+  "direction_tol_deg": 20.0,
+  "rate_ratio_tol": 0.6,
+  "mpc_match_arcsec": 30.0,
+  "mpc_search_radius_arcmin": 5.0,
+  "mpc_limit_mag": 24.0,
+  "default_obscode": "500"
+ },
+ "out_csv": "bycatch_tracklets.csv",
+ "tracklets": []
+}

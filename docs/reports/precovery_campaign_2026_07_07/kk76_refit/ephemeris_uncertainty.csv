@@ -1,0 +1,4 @@
+epoch_UTC,geocentric_code,RA_arc_deg,Dec_arc_deg,sky_sigma_without_arcsec,RA_joint_deg,Dec_joint_deg,sky_sigma_with_arcsec,pred_offset_arcsec,offset_in_units_of_without_sigma,sigma_shrink_factor
+2026-07-01T00:00:00,500,282.187572,-23.440954,11.200,282.198376,-23.439560,0.855,36.03,3.22,13.1
+2030-01-01T00:00:00,500,287.068447,-23.111328,13.700,287.081821,-23.109316,0.834,44.87,3.28,16.4
+2040-01-01T00:00:00,500,301.086572,-21.375455,24.000,301.110406,-21.370198,0.312,82.11,3.42,76.9

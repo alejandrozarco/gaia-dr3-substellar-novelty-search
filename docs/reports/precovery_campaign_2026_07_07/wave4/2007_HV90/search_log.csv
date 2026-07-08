@@ -1,0 +1,9 @@
+epoch_mjd,exposure,filter,pred_ra,pred_dec,eph_SMAA3s_as,eph_SMIA3s_as,V_pred,n_cat_src_in_frame,nearest_src_sep_as,nearest_src_mag,nearest_src_objid,detection_in_3sig_ellipse,note
+57890.11914,c4d_170517_025456_ooi_Y_v1,Y,250.980970,-21.398750,0.622,0.296,22.83,18,3.04,20.08,134244_29995,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15100,c4d_170517_033821_ooi_Y_v1,Y,250.980970,-21.398750,0.622,0.296,22.83,12,9.27,16.75,134244_29970,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15135,c4d_170517_034119_ooi_Y_v1,Y,250.980970,-21.398750,0.622,0.296,22.83,22,3.08,19.95,134244_29995,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15344,c4d_170517_034420_ooi_Y_v1,Y,250.980900,-21.398740,0.622,0.296,22.83,22,3.04,20.01,134244_29995,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15551,c4d_170517_034719_ooi_Y_v1,Y,250.980850,-21.398740,0.622,0.296,22.83,18,10.16,20.83,134244_31814,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15758,c4d_170517_035017_ooi_Y_v1,Y,250.980810,-21.398730,0.622,0.296,22.83,8,7.59,19.66,134244_29981,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.15964,c4d_170517_035315_ooi_Y_v1,Y,250.980770,-21.398730,0.622,0.296,22.83,18,2.75,20.17,134244_29995,NO,nearest src is stationary obj 134244_29995 (rejected)
+57890.16172,c4d_170517_035615_ooi_Y_v1,Y,250.980730,-21.398720,0.622,0.296,22.83,2,18.60,19.77,134244_29973,NO,nearest src is stationary obj 134244_29995 (rejected)
