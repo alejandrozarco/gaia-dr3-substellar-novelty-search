@@ -8,7 +8,7 @@ resuming campaign work in any session.** All results below are LOCAL (unpushed) 
 | object | state | astrometry | user action |
 |---|---|---|---|
 | ★ (330836) Orius = 2009 HW77 | **pixel-CONFIRMED, submission-ready** (6 DECam det., 4 epochs 2013–15, +2.9 yr arc) | `verify/2009_HW77/updated_astrometry.csv` (authoritative); **ADES draft: `verify/2009_HW77/ades_draft_330836_orius.psv`** | **task #141: contact SARC → review → file to obs@cfa → WAMO.** Deep-dive: our points cut its recovery box ~10× in area + recenter a ~1.9σ-biased track — re-enables Lucky Star/RECON occultation prediction. Journal: `docs/object_journals/mp_330836_orius.md` |
-| ★ (88268) = 2001 KK76 | **HST 4-point chain MEASURED, referee-clean** (2006-05-02 ACS/HRC, prog 10514/Noll, obscode 250, σ 0.16″/0.10″, +1.9 yr); 2010 WFC3 = bounded non-detection | `wave3/hst_kk76/candidate_astrometry.csv` (NOTE: `jd_tdb_mid` column actually holds UTC JD — use `obsTime_UTC`) | refit + ADES draft in flight (task #147); then same SARC/file path |
+| ★ (88268) = 2001 KK76 | **REFIT REFEREE-CONFIRMED, submission-ready** (2026-07-08): joint fo fit retains all 4 HST points (max pull 0.66σ); sky-plane 1σ 2026/2030/2040 = 11.2″→0.86″ / 13.7″→0.83″ / 24″→0.31″ (13–77×) + ~3.2–3.4σ bias correction; referee independently re-ran both fits + proved satellite parallax genuine. Caveats: fo no-JPL-DE (arc-only covariance optimistic — the point); astCat Gaia3 = confirm with SARC. 2010 WFC3 = bounded non-detection | `wave3/hst_kk76/candidate_astrometry.csv` (NOTE: `jd_tdb_mid` column actually holds UTC JD — use `obsTime_UTC`); **ADES draft: `kk76_refit/ades_draft_88268_2001kk76.psv`**; full fit artifacts `kk76_refit/` | **task #141: same SARC → obs@cfa → WAMO path as Orius** |
 | 2001 KN76 | PARKED — real mover (pixels passed) but joint refit inconclusive | `verify/2001_KN76/updated_astrometry.csv` | do NOT submit; needs 3rd epoch + DE-ephemeris refit |
 | 2001 QT322 | valid catalog-level null (after epoch-shuffle bug fix) | — | none (optional pixel-level pass unspent) |
 | 2001 KJ76 | strongest null (pixel-level CFHT ±40″ tracking scan) | — | none |
@@ -19,8 +19,9 @@ resuming campaign work in any session.** All results below are LOCAL (unpushed) 
 
 | task | workflow | runId (resumeFromRunId) | script (repo copy in `workflow_scripts/`) |
 |---|---|---|---|
-| #147 KK76/(88268) joint refit + ADES draft | wnmbzfu6s | `wf_16b7135e-77d` | `kk76_refit.mjs` |
-| #148 wave 4: 2007 HV90, 2002 KW14, 2010 JK124 | w3ue4aqw0 | `wf_dcc746e5-6e3` | `precovery_wave4.mjs` |
+| #148 wave 4: 2007 HV90, 2002 KW14, 2010 JK124 | w3ue4aqw0 (resumed wx2rl3dlv) | `wf_dcc746e5-6e3` | `precovery_wave4.mjs` |
+
+(#147 KK76 refit COMPLETED + referee-confirmed 2026-07-08 — artifacts in `kk76_refit/`.)
 
 Resume pattern: `Workflow({scriptPath: <scratchpad or repo copy>, resumeFromRunId: "<runId>"})` —
 completed agents replay from cache. Scratchpad originals:
