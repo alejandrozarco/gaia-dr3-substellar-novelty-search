@@ -1,0 +1,24 @@
+[
+ {
+  "idx": 23,
+  "ra_pix": 27.520756504305115,
+  "dec_pix": -43.95326878335072,
+  "dRA_pix_nsc": -0.0607,
+  "dDec_pix_nsc": 0.0382,
+  "dRA_pix_pub": -0.0687,
+  "dDec_pix_pub": 0.0332,
+  "dRA_pix_hor": -0.0956,
+  "dDec_pix_hor": -0.1537
+ },
+ {
+  "idx": 29,
+  "ra_pix": 28.024626108535635,
+  "dec_pix": -46.99140045747609,
+  "dRA_pix_nsc": -0.0186,
+  "dDec_pix_nsc": 0.0268,
+  "dRA_pix_pub": -0.039,
+  "dDec_pix_pub": 0.0272,
+  "dRA_pix_hor": -0.1721,
+  "dDec_pix_hor": -0.2922
+ }
+]

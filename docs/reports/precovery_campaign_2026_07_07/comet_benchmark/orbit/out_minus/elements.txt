@@ -1,0 +1,25 @@
+Orbital elements:  C/2014 UN271
+   Perihelion 2031 Jan 16.46343 +/- 0.00377 TT = 11:07:20 (JD 2462882.96343)
+Epoch 2026 Jul  4.0 TT = JDT 2461225.5                           Find_Orb
+q  10.9601040 +/- 3.14e-5           (J2000 ecliptic)
+H    4.67 G 0.15                    Peri.  326.08587 +/- 0.00021
+z  -0.0003806867 +/- 4.34e-7        Node   190.00071 +/- 0.000020
+e   1.0041723 +/- 4.77e-6           Incl.   95.44648 +/- 0.000006
+2086 of 2239 observations 2010 Nov. 15-2026 July 4; mean residual 0".60
+# State vector (heliocentric equatorial J2000):
+#   -0.227210049029  +4.215620410193 -13.174263888551 AU
+#   -5.690157887563  -1.899006974480  +2.628387450038 mAU/day
+# MOIDs: Me 10.624411 Ve 10.374636 Ea 10.115981 Ma  9.584289
+# MOIDs: Ju  6.190101 Sa  2.420309 Ur  6.062420 Ne 17.675234
+# 14 oppositions
+# Elements written:  8 Jul 2026  1:53:05 (JD 2461229.578530)
+# Full range of obs: 2010 Nov. 15-2026 July 4 (2239 observations)
+# Find_Orb ver: 2026 May 26
+# Perturbers: 000001fe ;  not using JPL DE
+# Diameter 477.7 km (assuming 10% albedo)
+# Score: 1.101614
+#  $Name=C/2014%20UN271  $Ty=2031  $Tm=01  $Td=16.463433  $MA=359.98787
+#  $ecc=1.0041724  $Eqnx=2000.
+#  $a=-2626.8321709  $Peri=326.08588  $Node=190.00072  $Incl=95.44648
+#  $EpJD=2461225.500  $q=10.960104  $T=2462882.963434  $H=4.7
+# Sigmas avail: 1
