@@ -31,7 +31,11 @@ The counterpart is a point source in Legacy Surveys DR10 (ls_id 1099538319278575
 FIRST, VLASS QL), no mid-IR (CatWISE2020/AllWISE null; LS DR10 forced W1=22.1),
 and no UV counterpart. The apparent extreme i-band excess in the LS DR10 coadd
 SED (i=20.8 vs r=23.1) is variability aliasing: the i coadd epochs post-date the
-2018 turn-on. Lomb-Scargle searches of ZTF photometry yield no stable period.
+2018 turn-on. A deep period search (1,687 de-trended ZTF forced-photometry epochs
+over 8.1 yr; Lomb-Scargle 30 min - 2 d with bootstrap thresholds, BLS eclipse
+search 1.4-48 h, injection-recovery calibration) finds no coherent periodicity:
+any modulation with semi-amplitude >~0.06 mag at hour-scale periods is excluded,
+as are eclipses — consistent with a low-inclination system.
 Two DECam exposures 13 min apart (MJD 58372.098/58372.107, r=23.1/22.0, vs ZTF
 r~20.3 days before/after) suggest possible deep brief dips, pending pixel-level
 verification.

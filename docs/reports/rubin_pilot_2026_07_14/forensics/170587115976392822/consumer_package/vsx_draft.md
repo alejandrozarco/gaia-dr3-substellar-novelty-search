@@ -7,7 +7,12 @@ Variability type: CV: (uncertain; VY Scl-like/Z Cam-like state cycling; "AGN:" a
   cannot be fully excluded without spectroscopy — state this in the notes field)
 Maximum: 17.98 r (ZTF DR, MJD 59218.078 = 2021-01-04; the 2021-Aug window MJD 59470-59500 contains only faint points zr 20.8-21.2 — bright and faint states ~8 months apart, not one-season swings)
 Minimum: 23.4 r (DECam/NSC DR2, MJD 56511)
-Period: none detected (Lomb-Scargle null; stochastic flickering)
+Period: none detected. Deep search 2026-07-15 on 1,687 de-trended ZTF forced-photometry
+  epochs (8.1 yr): Lomb-Scargle 30 min - 2 d null in g/r/i (one marginal 46.6-min r-band
+  alias family refuted by split-sample + color tests); BLS eclipse search 1.4-48 h null;
+  injection-recovery sensitivity: coherent semi-amplitude >=0.06 mag (bright state)
+  would have been detected at P = 1.5-4 h. No eclipses; low-inclination system or
+  non-periodic variable.
 Epoch: turn-on between MJD 57987 and 58285.400 (2017-08-22 .. 2018-06-16; first ZTF detection zr=21.24+/-0.26, first zr<=20.5 at MJD 58363.27)
 Discovery references: ZTF alert stream (ZTF19abxfaon, first alert MJD 58732.230);
   Rubin/LSST diaObject 170587115976392822 (Fink flag 2026-07).
