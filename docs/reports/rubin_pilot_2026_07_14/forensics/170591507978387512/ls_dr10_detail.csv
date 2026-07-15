@@ -1,0 +1,2 @@
+ls_id,ra,dec,type,flux_g,flux_r,flux_i,flux_z,flux_ivar_g,flux_ivar_r,flux_ivar_i,flux_ivar_z,nobs_g,nobs_r,nobs_i,nobs_z,snr_g,snr_r,snr_i,snr_z,shape_r,sersic,sep_as
+10995375804519828,313.2265161717997,-14.8403079415443,PSF,0.12794738,0.32543632,0,0,908.08954,516.7766,0,0,1,2,0,0,3.8556333,7.398053,0,0,0,0,0.4758953278810547

@@ -1,0 +1,2 @@
+ls_id,ra,dec,type,nobs_g,nobs_r,nobs_i,nobs_z,flux_g,flux_r,flux_i,flux_z,flux_ivar_g,flux_ivar_r,flux_ivar_i,flux_ivar_z,fracflux_i,fracmasked_i,anymask_i,allmask_i,fitbits,ebv
+10995383192785753,326.8283361757109,-13.47469060983648,PSF,2,4,4,4,0.48782673,0.56424046,4.7608194,2.093611,963.8921,607.7906,195.06775,161.9462,0,0.25840116,2048,0,0,0.040492333

@@ -1,0 +1,1580 @@
+
+
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+<link rel="icon" type="image/png" href="/viewer/static/favicon.png" />
+<link rel="shortcut icon" href="/viewer/static/favicon.ico" />
+
+
+
+<style type="text/css">
+.ccds { text-align: center; border-bottom: 2px solid #6678b1; margin: 15px; }
+.ccds td { padding: 5px; }
+.ccds th { border-bottom: 2px solid #6678b1; }
+</style>
+
+
+<title>
+
+Legacy Survey Sky Browser
+
+</title>
+<style type="text/css">
+
+
+</style>
+</head>
+
+
+
+
+<body>
+
+  <table>
+    
+    <tr>
+      <th>release</th>
+      
+      <td>10000</td>
+      
+    </tr>
+    
+    <tr>
+      <th>brickid</th>
+      
+      <td>247504</td>
+      
+    </tr>
+    
+    <tr>
+      <th>brickname</th>
+      
+      <td>3131m147</td>
+      
+    </tr>
+    
+    <tr>
+      <th>objid</th>
+      
+      <td>5524</td>
+      
+    </tr>
+    
+    <tr>
+      <th>brick_primary</th>
+      
+      <td>True</td>
+      
+    </tr>
+    
+    <tr>
+      <th>maskbits</th>
+      
+      <td>32</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fitbits</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>type</th>
+      
+      <td>PSF</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ra</th>
+      
+      <td>313.2265161717997</td>
+      
+    </tr>
+    
+    <tr>
+      <th>dec</th>
+      
+      <td>-14.840307941544296</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ra_ivar</th>
+      
+      <td>1.2554228e+09</td>
+      
+    </tr>
+    
+    <tr>
+      <th>dec_ivar</th>
+      
+      <td>1.8539619e+09</td>
+      
+    </tr>
+    
+    <tr>
+      <th>bx</th>
+      
+      <td>486.8771</td>
+      
+    </tr>
+    
+    <tr>
+      <th>by</th>
+      
+      <td>558.33655</td>
+      
+    </tr>
+    
+    <tr>
+      <th>dchisq</th>
+      
+      <td>[68.56952  69.253204  0.        0.        0.      ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ebv</th>
+      
+      <td>0.058838975</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mjd_min</th>
+      
+      <td>56817.364331612596</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mjd_max</th>
+      
+      <td>57523.347654216675</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ref_cat</th>
+      
+      <td>  </td>
+      
+    </tr>
+    
+    <tr>
+      <th>ref_id</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>pmra</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>pmdec</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>parallax</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>pmra_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>pmdec_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>parallax_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ref_epoch</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_g_mean_mag</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_g_mean_flux_over_error</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_g_n_obs</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_bp_mean_mag</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_bp_mean_flux_over_error</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_bp_n_obs</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_rp_mean_mag</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_rp_mean_flux_over_error</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_rp_n_obs</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_variable_flag</th>
+      
+      <td>False</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_excess_noise</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_excess_noise_sig</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_n_obs_al</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_n_good_obs_al</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_weight_al</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_duplicated_source</th>
+      
+      <td>False</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_a_g_val</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_e_bp_min_rp_val</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_phot_bp_rp_excess_factor</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_sigma5d_max</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>gaia_astrometric_params_solved</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_g</th>
+      
+      <td>0.12794738</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_r</th>
+      
+      <td>0.32543632</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_w1</th>
+      
+      <td>-0.5688536</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_w2</th>
+      
+      <td>-2.907323</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_w3</th>
+      
+      <td>-10.20523</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_w4</th>
+      
+      <td>-47.098873</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_g</th>
+      
+      <td>908.08954</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_r</th>
+      
+      <td>516.7766</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_w1</th>
+      
+      <td>3.3024054</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_w2</th>
+      
+      <td>0.64319295</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_w3</th>
+      
+      <td>0.00055655</td>
+      
+    </tr>
+    
+    <tr>
+      <th>flux_ivar_w4</th>
+      
+      <td>1.8454173e-06</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fiberflux_g</th>
+      
+      <td>0.09960459</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fiberflux_r</th>
+      
+      <td>0.25334597</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fiberflux_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fiberflux_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fibertotflux_g</th>
+      
+      <td>0.09960459</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fibertotflux_r</th>
+      
+      <td>0.25334597</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fibertotflux_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fibertotflux_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_g</th>
+      
+      <td>[0.01293876 0.04244895 0.05361446 0.0893381  0.10243578 0.10178741
+ 0.08067343 0.05706276]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_r</th>
+      
+      <td>[ 0.0888724   0.13190022  0.15526     0.26460075  0.26149672  0.19992083
+  0.18717033 -0.22507554]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_i</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_z</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_g</th>
+      
+      <td>[-0.00653539  0.00122251 -0.00767588  0.00235217  0.00408035 -0.00556171
+ -0.02923002 -0.08609111]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_r</th>
+      
+      <td>[ 0.0028214  -0.02296127 -0.05352759 -0.00265305 -0.02875937 -0.10885208
+ -0.12677126 -0.59394014]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_i</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_z</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_blobresid_g</th>
+      
+      <td>[-0.0065353   0.00122277 -0.00767525  0.00235653  0.00478115  0.00177333
+ -0.01934067 -0.05911396]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_blobresid_r</th>
+      
+      <td>[ 0.00282165 -0.02296057 -0.05352591 -0.00267151 -0.02705815 -0.09360199
+ -0.10635259 -0.54443175]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_blobresid_i</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_blobresid_z</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_g</th>
+      
+      <td>[15056.39      5762.946     3047.678     1275.2766     697.9816
+   219.87311    106.20875     53.668934]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_r</th>
+      
+      <td>[1089.7915    641.4156    432.07104   238.75931   153.06277    61.827522
+   33.50055    18.413258]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_i</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_z</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_masked_g</th>
+      
+      <td>[0.32430783 0.21968973 0.16566072 0.11086171 0.08325625 0.04762927
+ 0.03334987 0.02382449]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_masked_r</th>
+      
+      <td>[0. 0. 0. 0. 0. 0. 0. 0.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_masked_i</th>
+      
+      <td>[1. 1. 1. 1. 1. 1. 1. 1.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_masked_z</th>
+      
+      <td>[1. 1. 1. 1. 1. 1. 1. 1.]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_w1</th>
+      
+      <td>[ 0.39413512  1.3857061   4.0111895  11.183834   28.039532  ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_w2</th>
+      
+      <td>[-0.396679   -0.5634581   0.10556529  3.8274693  13.767705  ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_w3</th>
+      
+      <td>[ 1.1528752  5.232327  20.62569   36.24331   63.168266 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_w4</th>
+      
+      <td>[31.906017 61.80981  59.421284 44.54706  59.220413]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_w1</th>
+      
+      <td>[ 0.02992658  0.02189233  0.05674672 -0.10741439 -0.7672521 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_w2</th>
+      
+      <td>[ 0.22204517  0.12148733 -0.61016744 -1.3548611  -1.1566501 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_w3</th>
+      
+      <td>[-0.49840805 -0.4287887   5.0232987   1.3467157  -2.0562713 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_resid_w4</th>
+      
+      <td>[ 28.309723  48.357353  22.7806   -35.478985 -88.63044 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_w1</th>
+      
+      <td>[14.163866   5.0992026  2.5874705  1.5470594  1.0139011]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_w2</th>
+      
+      <td>[3.4207137  1.2217946  0.6208803  0.37339747 0.2478283 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_w3</th>
+      
+      <td>[0.00844665 0.00302051 0.0015347  0.00092674 0.0006218 ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>apflux_ivar_w4</th>
+      
+      <td>[3.5786259e-04 1.3165937e-04 6.8107496e-05 4.1655519e-05 2.8025492e-05]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_g</th>
+      
+      <td>0.8401496</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_r</th>
+      
+      <td>0.88929415</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_i</th>
+      
+      <td>0.9173421</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_z</th>
+      
+      <td>0.93647975</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_w1</th>
+      
+      <td>0.9900781</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_w2</th>
+      
+      <td>0.99389493</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_w3</th>
+      
+      <td>0.99869484</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mw_transmission_w4</th>
+      
+      <td>0.99950695</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_g</th>
+      
+      <td>1</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_r</th>
+      
+      <td>2</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_i</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_z</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_w1</th>
+      
+      <td>173</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_w2</th>
+      
+      <td>175</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_w3</th>
+      
+      <td>10</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nobs_w4</th>
+      
+      <td>10</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_g</th>
+      
+      <td>0.79800564</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_r</th>
+      
+      <td>0.661206</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_w1</th>
+      
+      <td>0.37416172</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_w2</th>
+      
+      <td>0.5850485</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_w3</th>
+      
+      <td>0.59047234</td>
+      
+    </tr>
+    
+    <tr>
+      <th>rchisq_w4</th>
+      
+      <td>0.121540725</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_g</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_r</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_w1</th>
+      
+      <td>8.060644</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_w2</th>
+      
+      <td>1.243032</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_w3</th>
+      
+      <td>6.024533</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracflux_w4</th>
+      
+      <td>15.037452</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracmasked_g</th>
+      
+      <td>0.19880714</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracmasked_r</th>
+      
+      <td>0.16299602</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracmasked_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracmasked_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracin_g</th>
+      
+      <td>0.9695339</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracin_r</th>
+      
+      <td>0.9656893</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracin_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>fracin_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ngood_g</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ngood_r</th>
+      
+      <td>2</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ngood_i</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>ngood_z</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>anymask_g</th>
+      
+      <td>1</td>
+      
+    </tr>
+    
+    <tr>
+      <th>anymask_r</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>anymask_i</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>anymask_z</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>allmask_g</th>
+      
+      <td>1</td>
+      
+    </tr>
+    
+    <tr>
+      <th>allmask_r</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>allmask_i</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>allmask_z</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>wisemask_w1</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>wisemask_w2</th>
+      
+      <td>0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfsize_g</th>
+      
+      <td>1.7226908</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfsize_r</th>
+      
+      <td>1.4865317</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfsize_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfsize_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_g</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_r</th>
+      
+      <td>704.81616</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>galdepth_g</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>galdepth_r</th>
+      
+      <td>451.77692</td>
+      
+    </tr>
+    
+    <tr>
+      <th>galdepth_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>galdepth_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nea_g</th>
+      
+      <td>6.704084</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nea_r</th>
+      
+      <td>5.0073814</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nea_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>nea_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>blob_nea_g</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>blob_nea_r</th>
+      
+      <td>5.0117807</td>
+      
+    </tr>
+    
+    <tr>
+      <th>blob_nea_i</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>blob_nea_z</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_w1</th>
+      
+      <td>3.6075144</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_w2</th>
+      
+      <td>0.70039326</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_w3</th>
+      
+      <td>0.00066882104</td>
+      
+    </tr>
+    
+    <tr>
+      <th>psfdepth_w4</th>
+      
+      <td>9.309789e-06</td>
+      
+    </tr>
+    
+    <tr>
+      <th>wise_coadd_id</th>
+      
+      <td>3130m152</td>
+      
+    </tr>
+    
+    <tr>
+      <th>wise_x</th>
+      
+      <td>46.29325</td>
+      
+    </tr>
+    
+    <tr>
+      <th>wise_y</th>
+      
+      <td>53.551342</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_flux_w1</th>
+      
+      <td>[-4.560928    4.886041   -2.6990352   0.6185915  -4.082791   -3.9713416
+ -2.7005544  -0.88598    -3.6541429   0.7092128  -2.4481122  -1.6189485
+ -0.05412838  0.06623419 -1.0502464  -4.1071506   0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_flux_w2</th>
+      
+      <td>[ -5.630964    -8.416292    -5.063458     5.45562     -0.6274914
+ -12.636196    -3.5318227   -2.3447897   -0.7731086   -9.852898
+  -2.7898939   -1.0827174   -7.779569    -2.4968667    1.3971947
+  -0.06717388   0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_flux_ivar_w1</th>
+      
+      <td>[0.18086492 0.1670396  0.22696038 0.17913043 0.19254781 0.21717729
+ 0.2693416  0.25433075 0.25590786 0.25888708 0.252359   0.23888937
+ 0.24946196 0.267839   0.24516027 0.22125801 0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_flux_ivar_w2</th>
+      
+      <td>[0.04139749 0.04091043 0.04710575 0.02783216 0.04077336 0.04741192
+ 0.05111268 0.05071002 0.04876962 0.04987954 0.0466396  0.04599072
+ 0.04092298 0.04837716 0.0454189  0.03906731 0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_nobs_w1</th>
+      
+      <td>[ 9  8 11 10 10 11 12 12 13 11 13 10 12 11 13  9  0]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_nobs_w2</th>
+      
+      <td>[ 9  8 11 10 10 11 12 12 13 11 13 10 12 11 13  9  0]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_fracflux_w1</th>
+      
+      <td>[ 1.020278   1.0136372  1.5509673  6.7640095  0.9649526  1.1147861
+  1.5811062  4.9221535  1.1398445  6.303668   1.788626   2.47666
+ 50.28311   56.85311    4.0564938  1.0598578  0.       ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_fracflux_w2</th>
+      
+      <td>[ 0.60214376  0.46947592  0.6864518   0.67093354  4.5237346   0.28959566
+  0.9817723   1.5779009   4.653026    0.2900557   1.3661293   2.648302
+  0.41010422  1.4105525   2.494766   54.298515    0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_rchisq_w1</th>
+      
+      <td>[0.5547122  0.7299345  0.6293341  0.67460847 0.48039502 0.6670366
+ 0.5076101  0.4627115  1.0084224  0.38514653 0.5104451  0.38401425
+ 1.0715783  0.9004259  0.6279623  0.738033   0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_rchisq_w2</th>
+      
+      <td>[0.5125271  0.7288898  0.40302348 0.3862557  1.0205803  0.5492409
+ 0.866307   0.5226419  0.3215741  0.6390216  0.32059655 0.65047777
+ 0.6301276  0.6734475  0.5282124  0.73699784 0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_mjd_w1</th>
+      
+      <td>[55318.93879228 55499.05009723 56781.68424003 56962.29027992
+ 57143.63458713 57322.90058835 57509.30765651 57681.83934517
+ 57874.81209738 58042.44735958 58241.85244815 58402.99217869
+ 58606.24613132 58770.14260955 58970.38623634 59134.36073432
+     0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_mjd_w2</th>
+      
+      <td>[55317.05336176 55499.05009723 56781.68424003 56962.29027992
+ 57143.63458713 57322.90058835 57509.30765651 57681.83934517
+ 57874.81209738 58042.44735958 58239.0380886  58402.99217869
+ 58606.24606767 58770.14260955 58970.38623634 59134.36073432
+     0.        ]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_epoch_index_w1</th>
+      
+      <td>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 -1]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>lc_epoch_index_w2</th>
+      
+      <td>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 -1]</td>
+      
+    </tr>
+    
+    <tr>
+      <th>sersic</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>sersic_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_r</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_r_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_e1</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_e1_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_e2</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>shape_e2_ivar</th>
+      
+      <td>0.0</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_g</th>
+      
+      <td>24.732422</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_r</th>
+      
+      <td>23.718834</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_i</th>
+      
+      <td>inf</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_z</th>
+      
+      <td>inf</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_w1</th>
+      
+      <td>nan</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_w2</th>
+      
+      <td>nan</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_w3</th>
+      
+      <td>nan</td>
+      
+    </tr>
+    
+    <tr>
+      <th>mag_w4</th>
+      
+      <td>nan</td>
+      
+    </tr>
+    
+  </table>
+
+</body>
+
+</html>

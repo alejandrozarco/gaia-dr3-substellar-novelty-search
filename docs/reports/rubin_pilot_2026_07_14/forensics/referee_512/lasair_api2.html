@@ -1,0 +1,831 @@
+<!--
+
+=========================================================
+* Volt Free - Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>
+             Home 
+        </title>
+
+        <!-- Primary Meta Tags -->
+<meta name="title" content="Lasair. A UK Alert Stream Broker and Transient Science Platform.">
+<meta name="description" content="Lasair is developed by The University of Edinburgh and Queen's University Belfast with the ultimate goal of serving transient alerts from the Rubin Legacy Survey of Space and Time (LSST) to the astronomical community. Lasair (pronounced 'L-AH-s-uh-r') means flame or flash in Scots and Irish Gaelic.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="Lasair. A UK Alert Stream Broker and Transient Science Platform.">
+<meta property="og:description" content="Lasair is developed by The University of Edinburgh and Queen's University Belfast with the ultimate goal of serving transient alerts from the Rubin Legacy Survey of Space and Time (LSST) to the astronomical community. Lasair (pronounced 'L-AH-s-uh-r') means flame or flash in Scots and Irish Gaelic.">
+<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="Lasair. A UK Alert Stream Broker and Transient Science Platform.">
+<meta property="twitter:description" content="Lasair is developed by The University of Edinburgh and Queen's University Belfast with the ultimate goal of serving transient alerts from the Rubin Legacy Survey of Space and Time (LSST) to the astronomical community. Lasair (pronounced 'L-AH-s-uh-r') means flame or flash in Scots and Irish Gaelic.">
+<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+        <!-- GLOBAL SITE TAG (GTAG.JS) - GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130805761-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130805761-1');
+</script>
+
+        <!-- Favicon -->
+<!-- For old IEs -->
+<link rel="shortcut icon" href="/lasair/static//img/favicon/favicon.ico" />
+
+<!-- For new browsers - multisize ico  -->
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/lasair/static//img/favicon/favicon.ico">
+
+<!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+<link rel="apple-touch-icon" sizes="152x152" href="/lasair/static//img/favicon/favicon-152-precomposed.png">
+
+<!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+<link rel="apple-touch-icon" sizes="144x144" href="/lasair/static//img/favicon/favicon-144-precomposed.png">
+
+<!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+<link rel="apple-touch-icon" sizes="120x120" href="/lasair/static//img/favicon/favicon-120-precomposed.png">
+
+<!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+<link rel="apple-touch-icon" sizes="114x114" href="/lasair/static//img/favicon/favicon-114-precomposed.png">
+
+<!-- For iPhone 6+ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/lasair/static//img/favicon/favicon-180-precomposed.png">
+
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon" sizes="72x72" href="/lasair/static//img/favicon/favicon-72-precomposed.png">
+
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon" sizes="57x57" href="/lasair/static//img/favicon/favicon-57.png">
+
+<!-- For Old Chrome -->
+<link rel="icon" sizes="32x32" href="/lasair/static//img/favicon/favicon-32.png" >
+
+<!-- For IE10 Metro -->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/lasair/static//img/favicon/favicon-144-precomposed.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Chrome for Android -->
+<link rel="manifest" href="/lasair/static//img/favicon/manifest.json">
+<link rel="icon" sizes="192x192" href="/lasair/static//img/favicon/favicon-192.png">
+
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+        <!-- CSS LINKS -->
+<link type="text/css" href="/lasair/static//css/vendor.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/lasair/static//vendor/js9/js9support.css">
+<link type="text/css" rel="stylesheet" href="/lasair/static//vendor/js9/js9.css">
+<link type="text/css" href="/lasair/static//css/main.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/lasair/static//vendor/bootstrap-multiselect/css/bootstrap-multiselect.css">
+
+
+        <!-- Specific Page CSS goes HERE  -->
+        
+
+    </head>
+    <body>
+
+
+
+        <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+    <a class="navbar-brand me-lg-5" href="/">
+        <img class="navbar-brand-dark" src="/lasair/static//img/brand/icon.svg" alt="Volt logo" /> <img class="navbar-brand-light" src="/lasair/static//img/brand/dark.svg" alt="Volt logo" />
+    </a>
+    <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<nav id="sidebarMenu" class="sidebar d-lg-block text-white collapse" data-simplebar style="background-color: #563B70;">
+    <div class="sidebar-inner px-2 pt-3">
+        <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+            <div class="d-flex align-items-center">
+                
+
+                    <a href="/login/" class="btn btn-info">Sign In</a>
+
+                
+
+            </div>
+            <div class="collapse-close d-md-none">
+                <a href="#sidebarMenu" data-bs-toggle="collapse"
+                    data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                    <svg class="icon icon-xs mb-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+        <ul class="nav flex-column pt-3 pt-md-0">
+
+
+
+            <li class="nav-item">
+                <a href="/" class="nav-link align-items-center">
+                    <img src="/lasair/static//img/brand/logo_light.svg" alt="brand logo">
+                </a>
+            </li>
+
+            <li class="nav-item pt-3">
+
+
+
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/filters/">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m56.25 75c3.4531 0 6.25 2.7969 6.25 6.25s-2.7969 6.25-6.25 6.25h-12.5c-3.4531 0-6.25-2.7969-6.25-6.25s2.7969-6.25 6.25-6.25zm18.75-31.25c3.4531 0 6.25 2.7969 6.25 6.25s-2.7969 6.25-6.25 6.25h-50c-3.4531 0-6.25-2.7969-6.25-6.25s2.7969-6.25 6.25-6.25zm18.75-31.25c3.4531 0 6.25 2.7969 6.25 6.25s-2.7969 6.25-6.25 6.25h-87.5c-3.4531 0-6.25-2.7969-6.25-6.25s2.7969-6.25 6.25-6.25z"/>
+                            </svg>
+
+                        </span>
+                        <span class="sidebar-text">Filters</span>
+                        
+
+    <span class="sidebar-icon text-secondary"  data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Transients dynamically matched against a pre-defined set of filtering criteria. <a href='https://lasair.readthedocs.io/en/main/concepts/querying.html' target='_blank'>Learn more</a>" data-bs-delay='{"show":0,"hide":500}' data-bs-html="true"><svg class="icon icon-xxs mb-2"  fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
+
+
+                    </a>
+                </li>
+
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/watchlists/">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <span class="sidebar-text">Watchlists</span>
+                        
+
+    <span class="sidebar-icon text-secondary"  data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Transients matched within a given radius of a pre-defined catalogue of sky-positions. <a href='https://lasair.readthedocs.io/en/main/core_functions/watchlists.html' target='_blank'>Learn more</a>" data-bs-delay='{"show":0,"hide":500}' data-bs-html="true"><svg class="icon icon-xxs mb-2"  fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
+
+
+                    </a>
+                </li>
+
+
+
+
+
+
+                <li class="nav-item ">
+
+                    <a class="nav-link" href="/watchmaps/">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+
+                        </span>
+                        <span class="sidebar-text">Watchmaps</span>
+                        
+
+    <span class="sidebar-icon text-secondary"  data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Transients found within a defined sky-region. <a href='https://lasair.readthedocs.io/en/main/core_functions/watchmaps.html' target='_blank'>Learn more</a>" data-bs-delay='{"show":0,"hide":500}' data-bs-html="true"><svg class="icon icon-xxs mb-2"  fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
+
+
+                    </a>
+                </li>
+
+
+                <li class="nav-item ">
+
+                    <a class="nav-link" href="/annotators/">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" stroke="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m90.668 47.168l-34.836-34.836c-4.832-4.832-11.5-7.332-18.332-7l-19.168 1c-6.5 0.33594-11.664 5.5-12 12l-1 19.168c-0.33203 6.832 2.168 13.5 7 18.332l34.832 34.832c2.668 2.668 6.168 4.168 10 4.168 3.832 0 7.332-1.5 10-4.168l23.5-23.5c2.668-2.668 4.168-6.168 4.168-10 0-3.832-1.5-7.332-4.1641-9.9961zm-56.836-13.336c-2.668 2.668-6.832 2.668-9.5 0s-2.668-6.832 0-9.5c1.332-1.332 3-2 4.668-2s3.332 0.66797 4.668 2c2.832 2.668 2.832 7 0.16406 9.5z"/>
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">Annotators</span>
+                        
+
+    <span class="sidebar-icon text-secondary"  data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Value added metadata from third party and user supplied codes. <a href='https://lasair.readthedocs.io/en/main/concepts/annotations.html' target='_blank'>Learn more</a>" data-bs-delay='{"show":0,"hide":500}' data-bs-html="true"><svg class="icon icon-xxs mb-2"  fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
+
+
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <span
+                        class="nav-link collapsed d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#submenu-pages">
+                        <span>
+                            <span class="sidebar-icon">
+                                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+
+
+                                    <path d="m55 7.5c-22 0-40.199 16.801-42.301 38.301h-6c-2.3008 0-4.1992 1.8984-4.1992 4.1992s1.8984 4.1992 4.1992 4.1992h32.398c1.6016 0 3-0.89844 3.6992-2.3008l3.5-6.8008 10.703 20.703c0.69922 1.3984 2.1016 2.3008 3.6992 2.3008 1.6016 0 3-0.89844 3.6992-2.3008l6-11.699h6c2.3008 0 4.1992-1.8984 4.1992-4.1992 0-2.3008-1.8984-4.1992-4.1992-4.1992h-8.5c-1.6016 0-3 0.89844-3.6992 2.3008l-3.5 6.8008-10.699-20.605c-1.3984-2.8008-6-2.8008-7.3984 0l-6 11.699h-15.5c2.1016-16.898 16.5-30 33.898-30 18.801 0 34.199 15.301 34.199 34.199 0 18.902-15.398 34.102-34.199 34.102-14.199 0-26.5-8.8008-31.602-21.199h-8.8984c5.5 17.102 21.602 29.5 40.5 29.5 23.398 0 42.5-19.102 42.5-42.5s-19.102-42.5-42.5-42.5z"/>
+                                </svg>
+
+                            </span>
+                            <span class="sidebar-text">Status</span>
+                        </span>
+                        <span class="link-arrow">
+                            <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                    </span>
+
+
+
+                    <div class="multi-level  collapse " role="list"
+                        id="submenu-pages" aria-expanded="false">
+                        <ul class="flex-column nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/status/">
+                                    <span class="sidebar-text">Today</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://lasair-ztf-svc.lsst.ac.uk/d/iILmd8-Wz/alerts?orgId=1&refresh=5m&from=now-24h&to=now&viewPanel=8'">
+                                    <span class="sidebar-text">Grafana</span>
+
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
+
+
+                <li role="separator" class="dropdown-divider mt-4 mb-5 border-gray-700"><hr></li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="https://lasair.readthedocs.io/en/main/quickstart.html">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" stroke="currentColor" viewBox="0 0 95 95" xmlns="http://www.w3.org/2000/svg">
+
+                                <path d="m25 7.8125c-5.168 0-9.375 4.207-9.375 9.375v65.617c0 0.058593 0.003906 0.11719 0.011719 0.17578 0.09375 5.0859 4.2617 9.207 9.3672 9.207h57.801c0.86328 0 1.5664-0.69531 1.5703-1.5586v-81.262c-0.003906-0.86328-0.70703-1.5586-1.5703-1.5547zm24.953 9.3789c0.42188-0.015625 0.83203 0.14062 1.1367 0.43359 0.30469 0.29688 0.47656 0.69922 0.48047 1.1211v17.195h14.672c0.55469 0 1.0703 0.30078 1.3477 0.78125 0.27734 0.48047 0.27734 1.0742 0 1.5586l-16.238 28.145c-0.35547 0.60547-1.0742 0.89453-1.7539 0.71094-0.67969-0.18359-1.1523-0.79688-1.1523-1.5v-17.191h-14.684c-0.55469 0-1.0703-0.30078-1.3477-0.78125-0.27734-0.48047-0.27734-1.0742 0-1.5586l16.238-28.145c0.26953-0.46484 0.76172-0.75391 1.3008-0.76953zm-24.953 59.371h56.242v2.8906h0.003906v9.6055h-56.242c-3.4883 0-6.2539-2.7617-6.2539-6.2539 0-3.4922 2.7656-6.2422 6.2539-6.2422z"/>
+                            </svg>
+
+
+                        </span>
+                        <span class="sidebar-text">Quick Start</span>
+                    </a>
+                </li>
+
+
+
+                <li class="nav-item ">
+
+                    <a class="nav-link" href="https://lasair.readthedocs.io/en/main">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" stroke="none" viewBox="0 0 95 95" xmlns="http://www.w3.org/2000/svg">
+
+                                <path d="m50 5c-11.934 0-23.379 4.7422-31.82 13.18-8.4375 8.4414-13.18 19.887-13.18 31.82s4.7422 23.379 13.18 31.82c8.4414 8.4375 19.887 13.18 31.82 13.18s23.379-4.7422 31.82-13.18c8.4375-8.4414 13.18-19.887 13.18-31.82s-4.7422-23.379-13.18-31.82c-8.4414-8.4375-19.887-13.18-31.82-13.18zm5 65c0 2.7617-2.2383 5-5 5s-5-2.2383-5-5v-20c-2.7617 0-5-2.2383-5-5s2.2383-5 5-5h5c1.3242 0 2.5977 0.52734 3.5352 1.4648s1.4648 2.2109 1.4648 3.5352zm-5-35c-2.0234 0-3.8438-1.2188-4.6211-3.0859-0.77344-1.8672-0.34375-4.0195 1.0859-5.4492 1.4297-1.4297 3.582-1.8594 5.4492-1.0859 1.8672 0.77734 3.0859 2.5977 3.0859 4.6211 0 1.3242-0.52734 2.5977-1.4648 3.5352s-2.2109 1.4648-3.5352 1.4648z"/>
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">About</span>
+                    </a>
+                </li>
+
+                <li class="nav-item ">
+
+                    <a class="nav-link" href="https://lasair.readthedocs.io/en/main/more_info/faqs.html">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs mb-1 me-1" fill="currentColor" stroke="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+
+                                <path d="m50 0c-27.668 0-50 22.332-50 50s22.332 50 50 50 50-22.332 50-50-22.332-50-50-50zm4.8906 80.445h-10.555v-11h10.555zm13.219-39.113c-2.2227 3-4.8906 5.7773-7.668 8.332-2.1094 1.7773-3.7773 3.8906-5.1094 6.332-0.89062 2.4453-1.2227 5-1.1094 7.5547v1.1094l-9.7773 0.007813v-1.1094c-0.10937-3.4453 0.44531-6.8906 1.5547-10.109 1-2.668 3.2227-5.5547 6.668-8.8906l3.4453-3.332c0.89062-0.77734 1.668-1.7773 2.332-2.7773 1-1.4453 1.5547-3.2227 1.668-5 0.10938-2.332-0.77734-4.668-2.2227-6.4453s-4-2.668-7.4453-2.668c-4.332 0-7.332 1.5547-8.8906 4.668-1.1094 2.4453-1.668 5.2227-1.668 7.8906v1.1094l-9.8867-0.003906v-1.1094c0-6.332 1.8906-11.555 5.5547-15.445 3.668-3.8906 8.668-5.8906 15-5.8906 5.8906 0 10.668 1.668 14.223 5 3.5547 3.332 5.5547 8 5.4453 12.891 0 2.7773-0.66797 5.5547-2.1133 7.8867z"/>
+                            </svg>
+
+
+                        </svg>
+                    </span>
+                    <span class="sidebar-text">FAQ</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item ">
+
+                <a class="nav-link" href="/schema/">
+                    <span class="sidebar-icon">
+                        <svg class="icon icon-xs mb-1 me-1" fill="currentColor" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+
+
+
+                            <path d="m71 20h-42c-4.9688 0-9 4.0312-9 9v42c0 4.9688 4.0312 9 9 9h42c4.9688 0 9-4.0312 9-9v-42c0-4.9688-4.0312-9-9-9zm-42 6h42c1.6562 0 3 1.3438 3 3v9h-48v-9c0-1.6562 1.3438-3 3-3zm15 30v-12h12v12zm12 6v12h-12v-12zm-18-6h-12v-12h12zm24-12h12v12h-12zm-36 27v-9h12v12h-9c-1.6562 0-3-1.3438-3-3zm45 3h-9v-12h12v9c0 1.6562-1.3438 3-3 3z"/>
+                        </svg>
+
+
+                    </span>
+                    <span class="sidebar-text">Schema Browser</span>
+                    
+
+    <span class="sidebar-icon text-secondary"  data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Search the Lasair Database Schema" data-bs-delay='{"show":0,"hide":500}' data-bs-html="true"><svg class="icon icon-xxs mb-2"  fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
+
+
+                </a>
+            </li>
+
+            <li class="nav-item ">
+
+                <a class="nav-link" href="https://lasair.readthedocs.io/en/main/more_info/contact.html">
+                    <span class="sidebar-icon">
+                        <svg class="icon icon-xs mb-1 me-1" fill="currentColor" stroke="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+                            <g>
+                                <path d="m12.848 18.707c-3.6133 0-6.6016 2.9688-6.6016 6.582v44.797c0 3.6133 2.9844 6.582 6.6016 6.582h4.6758v13.949h-0.003907c0.007813 0.82031 0.49219 1.5625 1.2422 1.8945s1.625 0.19141 2.2344-0.35547l17.195-15.488h37.707c3.6133 0 6.5977-2.9688 6.5977-6.582v-44.793c0-3.6133-2.9805-6.582-6.5977-6.582zm13.5 22.516c3.6133 0 6.6016 2.9844 6.6016 6.6016 0 3.6133-2.9844 6.5781-6.6016 6.5781-3.6133 0-6.5781-2.9648-6.5781-6.5781s2.9648-6.6016 6.5781-6.6016zm18.027 0c3.6133 0 6.582 2.9844 6.582 6.6016 0 3.6133-2.9688 6.5781-6.582 6.5781s-6.582-2.9648-6.582-6.5781 2.9688-6.6016 6.582-6.6016zm18.027 0c3.6133 0 6.5781 2.9844 6.5781 6.6016 0 3.6133-2.9648 6.5781-6.5781 6.5781-3.6133 0-6.6016-2.9648-6.6016-6.5781s2.9844-6.6016 6.6016-6.6016z"/>
+                                <path d="m62.398 45.387c-1.3633 0-2.4336 1.0703-2.4336 2.4336 0 1.3633 1.0703 2.4141 2.4336 2.4141 1.3633 0 2.4141-1.0508 2.4141-2.4141 0-1.3633-1.0508-2.4336-2.4141-2.4336z"/>
+                                <path d="m44.371 45.387c-1.3633 0-2.4141 1.0703-2.4141 2.4336 0 1.3633 1.0508 2.4141 2.4141 2.4141 1.3633 0 2.4297-1.0508 2.4297-2.4141 0-1.3633-1.0664-2.4336-2.4297-2.4336z"/>
+                                <path d="m26.348 45.387c-1.3633 0-2.4141 1.0703-2.4141 2.4336 0 1.3633 1.0508 2.4141 2.4141 2.4141 1.3633 0 2.4297-1.0508 2.4297-2.4141 0-1.3633-1.0664-2.4336-2.4297-2.4336z"/>
+                                <path d="m24.105 7.3086c-3.6133 0-6.582 2.9844-6.582 6.6016v0.62891h58.379c5.8984 0 10.762 4.8438 10.762 10.75v40h0.50781c3.6172 0 6.582-2.9805 6.582-6.5977v-44.781c0-3.6133-2.9688-6.6016-6.582-6.6016z"/>
+                            </g>
+                        </svg>
+
+                    </svg>
+                </span>
+                <span class="sidebar-text">Contact</span>
+            </a>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+
+
+</ul>
+</div>
+</nav>
+
+
+        <main class="content">
+
+            <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
+    <div class="container-fluid px-0">
+        <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+            <div class="d-flex align-items-center">
+                <!-- Search form -->
+                <form class="navbar-search form-inline" id="navbar-search-main" method="post" action="/search/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="8pRzIB8uZGyDjzTXtYLYXO3B6z4jabVwX4IE6H5BQEhyr6zNQqWACXmfnLs4fxFt">
+                    <div class="input-group input-group-merge search-bar">
+                        <span class="input-group-text" id="topbar-addon">
+                            <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <input type="text"  list="datalistOptions" class="form-control" id="topbarInputIconLeft" placeholder="Object Search" aria-label="Search" aria-describedby="topbar-addon" name="query" value="">
+                        <datalist id="datalistOptions">
+                            <option value="ZTF22aafxzfb">Object Name</option>
+                            <option value="SN2022ffg">TNS Id</option>
+                            <option value="ATLAS22jsz">TNS Associated Names</option>
+                            <option value="CGCG093-074">Host Galaxy</option>
+                            <option value="153.450963 18.127326">RA Dec (decimal)</option>
+                            <option value="153.450963 18.127326 5.0">RA Dec ArsecRadius (decimal)</option>
+                            <option value="10.13:48.231 18:07.38.377 5.6">RA Dec ArsecRadius (sexigesimal)</option>
+                            <option value="10 13 48.231 |  18 07 38.377  | 5.6">RA Dec ArsecRadius (pipe separated)</option>
+                        </datalist>
+                    </div>
+                </form>
+                <!-- / Search form -->
+            </div>
+            <!-- Navbar links -->
+            <ul class="navbar-nav align-items-center">
+
+                
+
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a href="/login/?next=/" class="btn btn-info">Sign In</a>
+                    </li>
+
+
+                
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+            
+
+
+
+
+            
+
+
+    <div class="container">
+        
+            <div class="d-flex mt-3 justify-content-center">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0" viewBox="0 0 100 100" role="img">
+                        <path d="m38.551 79.289c10.559 6.0898 22.109 10.711 29.008 10.711 2.5195 0 4.4414-0.62891 5.4297-2.0391 0.089844-0.089844 0.17969-0.21094 0.23828-0.32813l0.23828-0.44922 3.5703-6.1211c0.62891-1.1094 0.83984-2.4609 0.57031-3.7812l-0.53906-2.8203c-1.3203-6.6289-0.32812-13.02 2.7891-18.449l4.3516-7.5312c2.7617-4.7383 3.1211-10.469 1.0195-16.109-1.5-4.0781-4.1719-7.8008-7.6797-10.738 1.1719-0.51172 2.1289-1.3516 2.7617-2.4609 0.80859-1.4102 1.0195-3.0586 0.60156-4.6484-0.42188-1.5586-1.4414-2.8789-2.8516-3.6914-1.4102-0.83984-3.0312-1.0508-4.6211-0.62891-1.5586 0.42188-2.8789 1.4414-3.7188 2.8516-0.66016 1.1406-0.89844 2.4297-0.75 3.6602-4.2891-1.5898-8.8516-2.0391-13.141-1.3203-5.9414 1.0195-10.711 4.1992-13.441 8.9414l-4.3516 7.5312c-3.1484 5.4297-8.1914 9.4492-14.578 11.641l-2.7305 0.92969c-1.2617 0.44922-2.3086 1.2891-2.9688 2.3984l-3.8086 6.6016c-1.5586 2.6992 0.30078 6.6914 5.5195 11.879 4.6328 4.5547 11.402 9.5352 19.082 13.973zm33.777-64.73c0.42188-0.71875 1.0781-1.2305 1.8906-1.4414 0.26953-0.089844 0.53906-0.12109 0.80859-0.12109 0.53906 0 1.0508 0.14844 1.5312 0.42188 1.5 0.87109 2.0117 2.7617 1.1406 4.2617-0.42188 0.69141-1.0781 1.2305-1.8906 1.4414-0.78125 0.21094-1.6211 0.089844-2.3398-0.30078-1.5-0.87109-2.0078-2.7891-1.1406-4.2617zm-55.758 40.371 0.12109-0.17969c0.35938-0.35938 1.2617-0.69141 2.9102-0.69141 1.5 0 3.6602 0.26953 6.6289 1.0781 6.0312 1.6484 13.469 4.9219 20.941 9.2383 15.258 8.8242 23.598 17.824 23.598 21.066 0 0.26953-0.03125 0.51172-0.14844 0.69141-1.4414 2.5195-14.07 0.089844-30.57-9.4492-7.4688-4.2891-14.012-9.0898-18.48-13.5-4.8789-4.8633-5.4492-7.4727-5-8.2539z"/>
+                    </svg>
+
+                    Welcome to the Lasair web for ZTF transient alerts.<br />
+2026-05-07 16:00:00 UTC: All systems are running normally.<br />
+
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        
+
+        <div class="row mt-4">
+            <div class="col-12 mb-4">
+
+                <div class="card border-0 shadow h-100 p-2">
+
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-tertiary" data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Total number of recent ZTF alerts">0</span>
+
+                    <div class="card-header border-0">
+
+
+                        <div class="row d-flex px-4">
+                            <div class="col-12 col-sm-11 mb-3 d-flex align-items-center">
+                                <div class="icon-shape icon-shape-tertiary rounded me-sm-0">
+                                    <svg class="w-6 h-6" style="height: 3rem;" fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+
+    <path d="m83.66 0c-0.84375-0.011719-1.6523 0.32031-2.25 0.91406l-8.8359 8.8359h0.003906c-1.2227 1.2227-1.2227 3.1992 0 4.418l0.27344 0.27344v0.003906c-0.11328 0.085938-0.22266 0.17969-0.32422 0.28125l-6.6328 6.6328c-4.9922-1.6875-10.332-2.6133-15.895-2.6133-27.66 0-50 22.566-50 50.445v11.988-0.003907 0.082031 15.621-0.003906c0 1.7266 1.3984 3.125 3.125 3.125h93.75c1.7266 0 3.125-1.3984 3.125-3.125v-15.297-0.082031-12.309c0-15.508-6.9219-29.371-17.82-38.621l3.3984-3.3984 0.25391 0.25391v0.003906c0.58594 0.58594 1.3789 0.91797 2.2109 0.91797 0.82812 0 1.6211-0.33203 2.2109-0.91797l8.832-8.8359h-0.003907c0.58984-0.58594 0.91797-1.3789 0.91797-2.2109 0-0.82812-0.32812-1.625-0.91797-2.2109l-13.25-13.254c-0.57812-0.57422-1.3555-0.90234-2.1719-0.91406zm-0.039062 7.5469 8.832 8.8359-4.418 4.418-8.8359-8.832zm-6.3984 11.266 3.9336 3.9375-4.043 4.0469c-1.6016-1.043-3.2617-1.9961-4.9805-2.8516l4.8086-4.8086c0.10156-0.10156 0.19531-0.20703 0.28125-0.32422zm-30.328 6.6914-0.03125 52.625h-21.703c0.66797-15.164 3.832-28.602 8.4141-38.098 3.9102-8.0977 8.6445-13.004 13.32-14.527zm6.2539 0.019532c4.7031 1.5508 9.4648 6.5273 13.383 14.719 4.5352 9.4883 7.6484 22.84 8.3125 37.887h-21.73zm-19.641 2.6953c-2.0586 2.6289-3.918 5.6992-5.5586 9.1055-5.1133 10.586-8.3711 24.828-9.0391 40.805h-12.66v-8.9375c0-18.641 11.23-34.438 27.258-40.969zm32.996 0.003906c16.023 6.5352 27.242 22.328 27.242 40.969v8.9375h-12.645c-0.66016-15.855-3.8828-30.004-8.9336-40.574-1.6719-3.4922-3.5625-6.6484-5.6641-9.332zm-60.254 56.398h87.496v9.125h-87.496z" fill-rule="evenodd"/>
+
+
+</svg>
+
+
+
+
+
+                                </div>
+                                <h2 class="h2 fw-extrabold mb-0 ps-2">Latest ZTF Transient Alerts Map</h2>
+
+                            </div>
+
+                            
+
+                            <div class="col-12 px-4">
+
+                                <small class="text-gray-500">
+                                    This skymap shows the most recent, bright (&lt17 Mag) ZTF transient detections, coloured by their predicted type.
+                                    The longer ago the transient was last detected, the smaller and fainter its marker.
+                                    Click on a markers for information about an object, and then on the 'ZTF' transient ID for full information.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="card-body pt-0">
+
+                        <div class="row mx-4">
+                            <div class="col-12  mb-4">
+                                <div id="aladin-lite-div" style="aspect-ratio: 3 / 2;">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="d-flex justify-content-center">
+
+
+
+
+                            <div class="p-1 mb-2 me-2"><span class="sidebar-icon" id="class0">
+                                <svg class="icon icon-xs mb-1"  fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="m93.699 50.301c0 24.133-19.562 43.699-43.699 43.699s-43.699-19.566-43.699-43.699c0-24.137 19.562-43.699 43.699-43.699s43.699 19.562 43.699 43.699"/>
+</svg>
+
+                            </span>Possible Supernova</div>
+                            <div class="p-1 mb-2 me-2"><span class="sidebar-icon" id="class1">
+                                <svg class="icon icon-xs mb-1"  fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="m93.699 50.301c0 24.133-19.562 43.699-43.699 43.699s-43.699-19.566-43.699-43.699c0-24.137 19.562-43.699 43.699-43.699s43.699 19.562 43.699 43.699"/>
+</svg>
+
+                            </span>Nuclear Transient</div>
+                            <div class="p-1 mb-2 me-2"><span class="sidebar-icon" id="class2">
+                                <svg class="icon icon-xs mb-1"  fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="m93.699 50.301c0 24.133-19.562 43.699-43.699 43.699s-43.699-19.566-43.699-43.699c0-24.137 19.562-43.699 43.699-43.699s43.699 19.562 43.699 43.699"/>
+</svg>
+
+                            </span>Cataclysmic Variable</div>
+                            <div class="p-1 mb-2 me-2"><span class="sidebar-icon" id="class3">
+                                <svg class="icon icon-xs mb-1"  fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="m93.699 50.301c0 24.133-19.562 43.699-43.699 43.699s-43.699-19.566-43.699-43.699c0-24.137 19.562-43.699 43.699-43.699s43.699 19.562 43.699 43.699"/>
+</svg>
+
+                            </span>Active Galaxy</div>
+
+
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <small class="text-gray-500" style="font-size:0.7em;">Mellinger color optical survey - Copyright 2000-2017 Axel Mellinger. All rights reserved.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 mb-4">
+                
+
+<div class="card border-0 shadow h-100 p-3">
+
+
+    
+        <div class="card-header border-0 pb-1">
+            <div class="row d-flex">
+                <div class="col-12 col-sm-11 mb-3 d-flex align-items-center">
+                    <div class="icon-shape icon-shape-tertiary rounded me-sm-0">
+                        <svg class="w-6 h-6" style="height: 3rem;" fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+
+    <g fill-rule="evenodd">
+        <path d="m20.23 15.582c0-1.2422-0.49219-2.4336-1.3711-3.3164-0.87891-0.87891-2.0703-1.3711-3.3164-1.3711h-10.336c-1.2422 0-2.4336 0.49219-3.3164 1.3711-0.87891 0.87891-1.3711 2.0703-1.3711 3.3164v10.336c0 1.2422 0.49219 2.4336 1.3711 3.3164 0.87891 0.87891 2.0703 1.3711 3.3164 1.3711h10.336c1.2422 0 2.4336-0.49219 3.3164-1.3711 0.87891-0.87891 1.3711-2.0703 1.3711-3.3164zm-3.125 0v10.336c0 0.41406-0.16406 0.8125-0.45703 1.1055-0.29297 0.29297-0.69141 0.45703-1.1055 0.45703h-10.336c-0.41406 0-0.8125-0.16406-1.1055-0.45703-0.29297-0.29297-0.45703-0.69141-0.45703-1.1055v-10.336c0-0.41406 0.16406-0.8125 0.45703-1.1055 0.29297-0.29297 0.69141-0.45703 1.1055-0.45703h10.336c0.41406 0 0.8125 0.16406 1.1055 0.45703 0.29297 0.29297 0.45703 0.69141 0.45703 1.1055z"/>
+        <path d="m20.23 44.832c0-1.2422-0.49219-2.4336-1.3711-3.3164-0.87891-0.87891-2.0703-1.3711-3.3164-1.3711h-10.336c-1.2422 0-2.4336 0.49219-3.3164 1.3711-0.87891 0.87891-1.3711 2.0703-1.3711 3.3164v10.336c0 1.2422 0.49219 2.4336 1.3711 3.3164 0.87891 0.87891 2.0703 1.3711 3.3164 1.3711h10.336c1.2422 0 2.4336-0.49219 3.3164-1.3711 0.87891-0.87891 1.3711-2.0703 1.3711-3.3164zm-3.125 0v10.336c0 0.41406-0.16406 0.8125-0.45703 1.1055-0.29297 0.29297-0.69141 0.45703-1.1055 0.45703h-10.336c-0.41406 0-0.8125-0.16406-1.1055-0.45703-0.29297-0.29297-0.45703-0.69141-0.45703-1.1055v-10.336c0-0.41406 0.16406-0.8125 0.45703-1.1055 0.29297-0.29297 0.69141-0.45703 1.1055-0.45703h10.336c0.41406 0 0.8125 0.16406 1.1055 0.45703 0.29297 0.29297 0.45703 0.69141 0.45703 1.1055z"/>
+        <path d="m20.23 74.082c0-1.2422-0.49219-2.4336-1.3711-3.3164-0.87891-0.87891-2.0703-1.3711-3.3164-1.3711h-10.336c-1.2422 0-2.4336 0.49219-3.3164 1.3711-0.87891 0.87891-1.3711 2.0703-1.3711 3.3164v10.336c0 1.2422 0.49219 2.4336 1.3711 3.3164 0.87891 0.87891 2.0703 1.3711 3.3164 1.3711h10.336c1.2422 0 2.4336-0.49219 3.3164-1.3711 0.87891-0.87891 1.3711-2.0703 1.3711-3.3164zm-3.125 0v10.336c0 0.41406-0.16406 0.8125-0.45703 1.1055-0.29297 0.29297-0.69141 0.45703-1.1055 0.45703h-10.336c-0.41406 0-0.8125-0.16406-1.1055-0.45703-0.29297-0.29297-0.45703-0.69141-0.45703-1.1055v-10.336c0-0.41406 0.16406-0.8125 0.45703-1.1055 0.29297-0.29297 0.69141-0.45703 1.1055-0.45703h10.336c0.41406 0 0.8125 0.16406 1.1055 0.45703 0.29297 0.29297 0.45703 0.69141 0.45703 1.1055z"/>
+        <path d="m29.469 14.02h68.445c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-68.445c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+        <path d="m29.469 43.27h68.445c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-68.445c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+        <path d="m29.469 72.52h68.445c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-68.445c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+        <path d="m29.469 30.605h31.465c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-31.465c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+        <path d="m29.469 59.855h31.465c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-31.465c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+        <path d="m29.469 89.105h31.465c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625h-31.465c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625z"/>
+    </g>
+</svg>
+
+
+
+
+
+                    </div>
+                    <h2 class="h3 fw-extrabold mb-0 ps-2">Latest ZTF Transient Alerts Table</h2>
+
+                </div>
+
+                
+
+                <div class="col-12 px-4">
+
+                    
+                </div>
+            </div>
+        </div>
+
+
+    
+
+
+    <div class="card-body pt-0">
+
+        
+            <div class="card-body p-2 pt-4">
+
+    <div class="vstack gap-3 align-items-center justify-content-center">
+        <div class="icon icon-xxl rounded me-4 me-sm-0 text-gray-200">
+            <svg class="w-1 h-1 pe-1" style="height: 1.1rem;" fill="currentColor" stroke="currentColor" stroke-width="1"  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path d="m80.699 11.102c-2.8008 0-5.1016 2.3008-5.1016 5.1016v9l8.3008 8.1992c0.80078 0.69922 1.3984 1.6016 2 2.5v-19.602c-0.097657-2.9023-2.3984-5.1992-5.1992-5.1992z"/>
+        <path d="m85.801 42.898c0-3-1.1992-5.8984-3.3984-8l-28.801-28.398c-1-1-2.3008-1.5-3.6016-1.5s-2.6992 0.5-3.6016 1.5c-2 2-2 5.3008 0 7.3008l22.703 23.199c0.39844 0.39844 0.39844 1 0 1.3984-0.39844 0.39844-1 0.39844-1.3984 0l-26.305-25.797c-1-1-2.3008-1.5-3.6016-1.5s-2.6992 0.5-3.6016 1.5c-1 1-1.5 2.3008-1.5 3.6016 0 1.3984 0.5 2.6992 1.5 3.6016l15.199 15.199c0.30078 0.30078 0.39844 0.80078 0.19922 1.1992s-0.69922 0.60156-1.1016 0.39844c-6.6992-2-14.102-1.1992-20.199 2.1016-1.1992 0.69922-2.1016 1.6992-2.5 3.1016-0.39844 1.3984-0.19922 2.6992 0.39844 3.8984 0.19922 0.39844 0.5 0.80078 0.80078 1.1016l0.19922 0.19922c1.6016 1.5 4 1.8984 6 0.80078 2.3984-1.3008 5-2 7.8008-2 9 0 16.301 7.3008 16.301 16.301s-7.3008 16.301-16.301 16.301-16.301-7.3008-16.301-16.301c0-2.8008 0.69922-5.3984 2-7.8008 1.1016-2 0.69922-4.3984-0.80078-6l-0.19922-0.19922c-0.30078-0.30078-0.69922-0.60156-1.1016-0.80078-0.80078-0.39844-1.6016-0.60156-2.3984-0.60156-1.8008 0-3.6016 1-4.5 2.6992-2.1016 3.8984-3.1992 8.1992-3.1992 12.699-0.29297 18.199 15.809 32.898 35.508 32.898s35.801-14.699 35.801-32.699z"/>
+    </g>
+</svg>
+
+        </div>
+        <h2 class="h1 fw-extrabold mb-0 text-gray-200">ZERO MATCHES</h2>
+        <small class="text-gray-500">
+            Zero objects have been matched against this front-page filter. Check back later to see if any new objects have been matched.
+        </small>
+    </div>
+</div>
+
+        
+
+    </div>
+</div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+            
+<div class="theme-settings card bg-gray-800 pt-2 collapse " id="theme-settings">
+    <div class="card-body bg-gray-800 text-white pt-4">
+
+        Need Help?
+
+
+        <small class="text-gray-400 mt-5">
+
+            <p>Start with our <a href="https://lasair.readthedocs.io/en/main">documentation on readthedocs</a>, you might find the <a href="https://lasair.readthedocs.io/en/main/more_info/faqs.html">FAQ section</a> especially useful.</p>
+
+            <p>If you still have questions, want to report a bug, or make a feature request, please reach out to us on the <a href="https://community.lsst.org/c/support/support-lasair/55">Lasair topic on the Rubin Community pages.</a></p>
+        </small>
+
+        <a href="https://lasair.readthedocs.io/en/main" class="btn btn-sm btn-secondary d-inline-flex align-items-center m-2  ms-0">
+            <img src="/lasair/static//img/icons/Read-the-docs.png" class="image-fluid image-xs me-1">
+            readthedocs
+        </a>
+
+        <a href="https://community.lsst.org/c/support/support-lasair/55" class="btn btn-sm btn-primary d-inline-flex align-items-center m-2  ms-0">
+            <img src="/lasair/static//img/icons/vera_rubin_observatory_icon.png" class="image-fluid image-xs me-1">
+            Lasair Community
+        </a>
+
+
+
+
+        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
+            href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
+
+    </div>
+</div>
+
+<div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+    <div class="card-body d-flex  justify-content-center bg-gray-800 text-white rounded-top ps-3 py-2">
+        <span class="fw-bold d-inline-flex align-items-center h6">
+            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+                <path d="m83.602 16.398c-18.5-18.5-48.699-18.5-67.199 0s-18.5 48.699 0 67.199 48.699 18.5 67.199 0c18.5-18.496 18.5-48.699 0-67.199zm6.7969 47l-15.199-5.1016c1.8008-5.3984 1.8008-11.301 0-16.699l15.199-5.1016c2.8008 8.8047 2.8008 18.203 0 26.902zm-80.797-26.797l15.199 5.1016c-1.8008 5.3984-1.8008 11.301 0 16.699l-15.199 5.1016c-2.8008-8.8047-2.8008-18.203 0-26.902zm25.199 28.598c-8.3984-8.3984-8.3984-22.102 0-30.5 8.3984-8.3984 22.102-8.3984 30.5 0 8.3984 8.3984 8.3984 22.102 0 30.5-8.5 8.4023-22.102 8.4023-30.5 0zm28.598-55.598l-5.1016 15.199c-5.3984-1.8008-11.301-1.8008-16.699 0l-5.1016-15.199c8.8047-2.8008 18.203-2.8008 26.902 0zm-26.797 80.797l5.1016-15.199c5.3984 1.8008 11.301 1.8008 16.699 0l5.1016 15.199c-8.8047 2.8008-18.203 2.8008-26.902 0z"/>
+            </svg>
+            Help
+        </span>
+    </div>
+</div>
+
+<div  id="theme-settings-expand">
+</div>
+
+
+            
+
+<footer class="rounded p-5 mb-1 mt-7">
+    <div class="d-flex justify-content-center" >
+        <div class="d-flex flex-column" >
+            <div class="d-flex justify-content-end" >
+                <div class="mx-1">
+                    <a href="https://www.lsst.ac.uk/"><img style="height:70px"src="/lasair/static/img/lusc.png"></a></div>
+
+                <div class="mx-1"><a href="https://www.ed.ac.uk/">
+                    <img style="height:70px" src="/lasair/static/img/uoe.png" ></a></div>
+
+                <div class="mx-1"><a href="https://www.qub.ac.uk/">
+                    <img style="height:70px" src="/lasair/static/img/qub.png" ></a></div>
+
+                <div class="mx-1"><a href="https://www.ox.ac.uk/">
+                    <img style="height:70px" src="/lasair/static/img/oxford-logo.png" ></a></div>
+
+                <div class="mx-1"><a href="http://www.ztf.caltech.edu/">
+                    <img style="height:70px" src="/lasair/static/img/ztf.png" ></a></div>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-start" >
+                <small class="text-gray-500">Lasair is funded by UK STFC grants ST/X001334/1 and ST/X001253/1</small>
+
+            </div>
+            <div class=" d-flex justify-content-start" >
+
+                <small><a href="/privacy">Privacy statement</a></small>
+            </div>
+	    <div class=" d-flex justify-content-start" >
+
+		 <small><a style="color: #F2F4F6" href="/objects/ZTF26ahdjakas">ZTF26ahdjakas</a></small>
+
+	    </div>
+        </div>
+    </div>
+</footer>
+
+
+        </main>
+
+        <script src="/lasair/static//js/vendor.js"></script>
+<script src="/lasair/static//js/main.js"></script>
+<script type="text/javascript" src="https://aladin.cds.unistra.fr/AladinLite/api/v3/3.5.1-beta/aladin.js"></script>
+<script type="text/javascript" src="/lasair/static//js/lasair_js9prefs.js"></script>
+<script type="text/javascript" src="/lasair/static//vendor/js9/js9support.min.js"></script>
+<script type="text/javascript" src="/lasair/static//vendor/js9/js9.js"></script>
+<script type="text/javascript" src="/lasair/static//vendor/js9/js9plugins.js"></script>
+<script src="/lasair/static//vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+
+
+        <!-- Specific Page JS goes HERE  -->
+        
+
+    <script>
+
+        var colors = [['#dc322f', '#b02825', '#8c201e', '#701918', '#5a1413'], ['#268bd2', '#1e6fa8', '#185886', '#13476b', '#0f3856'], ['#2aa198', '#218079', '#1a6761', '#15524d', '#11413e'], ['#b58900', '#906d00', '#735700', '#5c4600', '#4a3800']];
+        var alerts = [[[], [], [], [], []], [[], [], [], [], []], [[], [], [], [], []], [[], [], [], [], []]];
+
+        // These much match the code in ../views.py
+        var nclass = 4;   // Number of classe
+        var nage = 5;     // Number of age brackets
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+
+            var imageSurvey = 'P/Mellinger/color'
+
+            var aladin;
+            A.init.then(() => {
+                aladin = A.aladin('#aladin-lite-div', {
+                    fov:360,
+                    cooFrame: 'ICRSd',
+                    projection: 'AIT',
+                    target: 'Arp 240',
+                    showReticle: false,
+                    showCooGrid: false,
+                    showCooGridControl: true,
+                    showFullscreenControl: false,
+                    showProjectionControl: false,
+                    showLayersControl: false,
+                    showFrame: false,
+                    showGotoControl: false
+                });
+
+                aladin.setBaseImageLayer(aladin.newImageSurvey(imageSurvey ));
+
+                for (iclass = 0; iclass < nclass; iclass++) {
+                    for (iage = 0; iage < nage; iage++) {
+                        // For each class and age bracket, make a catalog and insert the markers
+                        var size = 28 - 5*iage;
+                        var color = colors[iclass][iage];
+                        var markers = A.catalog({name: 'markers'+iclass+iage, sourceSize: size, color:color});
+                        aladin.addCatalog(markers);
+                        console.log(iclass, iage, alerts[iclass][iage].length);
+                        L = new Array;
+                        for(k=0; k<alerts[iclass][iage].length; k++){
+                            a = alerts[iclass][iage][k];
+                            var title = '<a href="/objects/' + a.objectId + '/" target="_blank">' + a.objectId + '</a>';
+                            var desc = 'Class:' + a.class + ' Mag:' + a.mag.toFixed(1) + ' Age:' + a.age.toFixed(1) +' days';
+                            L.push(A.marker(a.coordinates[0], a.coordinates[1], {popupTitle: title, popupDesc: desc}));
+                        }
+                        markers.addSources(L);
+                    }
+                }
+            });
+        });
+
+    </script>
+
+
+    <script>
+        for (var iclass = 0; iclass < nclass; iclass++){
+            console.log(colors[iclass][0]);
+            document.getElementById("class"+iclass).style.color = colors[iclass][0];
+        }
+    </script>
+
+
+
+    </body>
+</html>

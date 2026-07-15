@@ -1,0 +1,2 @@
+https://fallingstar-data.com/forcedphot/queue/4542361/
+# corrected 2026-07-15: 4541121 was a stale/prior task id; 4542361 is the position-exact task (referee-verified ra/dec/mjd_min), completed 2026-07-14T20:14:49Z

@@ -1,0 +1,20 @@
+{
+  "_comment": "DRAFT Lasair-LSST annotation. Requires: (1) user login at https://lasair.lsst.ac.uk (old ZTF-instance token verified INVALID on 2026-07-14), (2) an approved annotator topic (request via Lasair 'My Annotators'), then POST to https://lasair.lsst.ac.uk/api/annotate/",
+  "topic": "keur_archival_forensics",
+  "objectId": "170591519677875016",
+  "classification": "transient_real_notSS",
+  "explanation": "Real month-long transient, TNS-unreported. ATLAS FP pre-discovery: onset MJD 61199-61202 (o=19.99 at 61202.53, 5.1sig), >=16 d before first Rubin det; no precursor in 11 yr. Not hostless at template depth: template forced flux r=23.96+/-0.05, i=23.8-24.0 at position (blue, r-i~0); empty in LS DR10/PS1/Gaia/WISE/NSC/ZTF. Fixed position 15 d excludes asteroid. Plausible: SN in dwarf host (z~0.1-0.15) or large-amplitude dwarf nova.",
+  "classdict": {
+    "real": true,
+    "solar_system": false,
+    "hostless_archival": true,
+    "hostless_template": false,
+    "atlas_onset_mjd": 61200.5,
+    "atlas_peak_o_mag": 19.99,
+    "template_r_mag": 23.96,
+    "template_i_mag": 23.9,
+    "precursor_outbursts_11yr": 0,
+    "candidate_classes": ["SN", "dwarf_nova_superoutburst"]
+  },
+  "url": ""
+}

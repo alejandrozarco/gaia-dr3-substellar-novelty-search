@@ -1,0 +1,713 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lasair API and Client</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/rtd_sphinx_search.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/design-style.<Mock name='mock()' id='140283300276112'>.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/core.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/style.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/dryx.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/rtd_search_config.js"></script>
+        <script src="../_static/js/rtd_sphinx_search.min.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+        
+        <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script src="../_static/whistles-theme/Contents/Resources/main.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Notebooks" href="python-notebooks.html" />
+    <link rel="prev" title="Watchmaps (Sky Regions)" href="watchmaps.html" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          messageStyle: "none",
+          tex2jax: {preview: "none"}
+        });
+    </script>
+  
+  <!-- REMOTE SCRIPTS AND STYLES -->
+
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-number.min.css">
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai-sublime.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js"></script>
+
+  
+
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2023-04-17T16:41:10Z", "builder": "sphinx", "canonical_url": null, "commit": "4d912517", "docroot": "/docs/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "core_functions/rest-api", "programming_language": "py", "project": "lasair", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "", "version": "develop"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+
+
+<!-- end RTD <extrahead> -->
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="lasair" /><meta name="readthedocs-version-slug" content="develop" /><meta name="readthedocs-resolver-filename" content="/core_functions/rest-api.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+          
+
+
+          
+              
+          
+
+
+<!--           
+            <a href="../index.html" class="icon icon-home"> lasair
+          
+
+          
+            
+            <img src="../_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/>
+          
+          </a> -->
+
+
+
+          
+            <a href="../index.html" class="icon icon-home"> lasair</a> <p>Documentation for the Lasair Transient Science Platform</p> <a href="../index.html"><img src="../_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/> </a>
+          
+
+
+          
+          
+            
+            
+            
+              <div class="version">
+                develop
+              </div>
+            
+          
+
+          
+              <a class="github-button" href="https://github.com/lsst-uk/lasair_api" data-size="large" data-show-count="true" aria-label="Star lsst-uk/lasair_api on GitHub">Star</a>
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About Lasair</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#the-lasair-approach">The Lasair approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#how-lasair-works">How Lasair Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#ztf-and-lsst">ZTF and LSST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#scientific-goals-of-lasair">Scientific goals of Lasair</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/objects_sources.html">Objects and Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/lightcurve.html">Lightcurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sky-context.html">Sky Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/querying.html">Queries and Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/coding.html">Coding with Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/added-value.html">Lasair’s Added Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/annotations.html">Annotations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Functions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sky-search.html">Sky Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sherlock.html">Sherlock (Sky Context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_filter.html">Make a Lasair Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watchlists.html">Watchlists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watchmaps.html">Watchmaps (Sky Regions)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lasair API and Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ways-to-use-the-api">Ways to use the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#throttling-of-api-usage">Throttling of API Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#authorisation-token">Authorisation Token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-your-token">Get Your Token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-cone-">/api/cone/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-query-">/api/query/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-streams---and--api-streams-">/api/streams// and /api/streams/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-objects-">/api/objects/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-lightcurves-">/api/lightcurves/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-sherlock-objects-">/api/sherlock/objects/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#--api-sherlock-position-">/api/sherlock/position/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python-notebooks.html">Python Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alert-streams.html">Alert Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_annotator.html">Making an Annotator</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/account.html">Lasair account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/faqs.html">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/contact.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/status.html">Lasair Ingestion Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">lasair</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Lasair API and Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/lsst-uk/lasair4/blob/develop/docs/source/core_functions/rest-api.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lasair-api-and-client">
+<h1>Lasair API and Client<a class="headerlink" href="#lasair-api-and-client" title="Permalink to this headline">  ∞</a></h1>
+<p>The Lasair-Sherlock API allows developers to run queries and cone-searches, to see outputs from streaming queries, and to query the Sherlock sky-context system.</p>
+<div class="section" id="ways-to-use-the-api">
+<h2>Ways to use the API<a class="headerlink" href="#ways-to-use-the-api" title="Permalink to this headline">  ∞</a></h2>
+<p>The Lasair API uses either HTTP GET or POST. Arguments can be passed in the query string, as JSON or form encoded. Responses are JSON. There is a throttling system in the backend: users with an account get up to 100 calls per hour, but “power” users get up to 10,000 calls per hour. If you wish your account to be upgraded to power user, 
+<a class="reference external" href="mailto:lasair-help&#37;&#52;&#48;lists&#46;roe&#46;ac&#46;uk?subject=power user">email Lasair-help</a></p>
+<p>The examples below show how to drive the API with either GET URL, POST curl or python with the ‘lasair’ package. The URL should be pasted into a web browser. The curl script pasted into a terminal window, and the python code copied into a file and executed as a python program.</p>
+</div>
+<div class="section" id="throttling-of-api-usage">
+<h2>Throttling of API Usage<a class="headerlink" href="#throttling-of-api-usage" title="Permalink to this headline">  ∞</a></h2>
+<p>The Lasair API counts numbers of calls on a per-user basis, and restricts the number that can be executed in any hour time period. There are also restrictions on the number of rows that can be returned by the ‘query’ method. To use the API with less throttling, please get your own token from your Lasair account, as explained below “Get Your Token”. If you would like to use the system for serious work, please <a class="reference external" href="mailto:lasair-help&#37;&#52;&#48;lists&#46;roe&#46;ac&#46;uk?subject=throttling problem">email Lasair-help</a>, explain what you are doing, and you will be put into the “Power Users” category. The limits for these three categories of user are:</p>
+<ul class="simple">
+<li><p>User token (see ‘Get Your Token’) below: 100 API calls per hour, maximum 10,000 rows from query.</p></li>
+<li><p>Power user token (on request): 10,000 API calls per hour, maximum 1,000,000 rows from query.</p></li>
+</ul>
+<p><strong>Note: WE ASK YOU TO PLEASE NOT SHARE THESE TOKENS.</strong> If you share code that uses the Lasair API, please put the token in a separate, imported file or environment variable, that you do not share, and is not put in github.</p>
+<div class="section" id="authorisation-token">
+<h3>Authorisation Token<a class="headerlink" href="#authorisation-token" title="Permalink to this headline">  ∞</a></h3>
+<p>Request authentication is via the API key. For GET queries, the key can go in the parameter string, and for POST queries, the key goes in the headers. In the following, the string of xxxxxxxxxxxxxx characters should be replaced by your own key.</p>
+</div>
+<div class="section" id="get-your-token">
+<h3>Get Your Token<a class="headerlink" href="#get-your-token" title="Permalink to this headline">  ∞</a></h3>
+<p>Once you are logged in on the website, clik on your name at the top right, and choose “My Profile”. The API key is shown there.</p>
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">  ∞</a></h2>
+<p>Click on the method name to jump to documentation in the reference below.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#cone">/api/cone/</a>: runs a cone search on all the objects in the Lasair database.</p></li>
+<li><p><a class="reference external" href="#query">/api/query/</a>: runs a SQL SELECT query on the Lasair database.</p></li>
+<li><p><a class="reference external" href="#streams">/api/streams/</a>: returns a record of the output from a Lasair streaming query.</p></li>
+<li><p><a class="reference external" href="#objects">/api/objects/</a>: returns a machine-readable version of the object web page.</p></li>
+<li><p><a class="reference external" href="#lightcurves">/api/lightcurves/</a>: returns simple lightcurves for a number of objects.</p></li>
+<li><p><a class="reference external" href="#sherlockobjects">/api/sherlock/objects/</a>: returns Sherlock information about a list of named objects.</p></li>
+<li><p><a class="reference external" href="#sherlockposition">/api/sherlock/position/</a>: returns Sherlock information about a sky position.</p></li>
+</ul>
+</div>
+<div class="section" id="--api-cone-">
+<h2><a class="reference external" href="#"></a>/api/cone/<a class="headerlink" href="#--api-cone-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method runs a cone search on all the objects in the Lasair database. The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ra</span></code>: (float) the right ascension in decimal degrees,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dec</span></code>: (float) the declination in decimal degrees,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code>: (float) the angular radius of the cone in arcseconds, the maximum being 1000 arcseconds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requestType</span></code>: (string) the type of request, which can be:<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">nearest</span></code>: returns only the nearest objects within the cone</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all</span></code>: returns all the objects within the cone</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: returns the number of objects within the cone</p></li>
+</ul>
+</p></li>
+</ul>
+<p>GET URL Example</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/cone/?&amp;ra=194.494&amp;dec=48.851&amp;radius=240.0&amp;requestType=all&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example: The API key (token) goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;ra=194.494&amp;dec=48.851&amp;radius=240.0&amp;requestType=all&quot; https://lasair-ztf.lsst.ac.uk/api/cone/
+</pre></div>
+</div>
+<p>Python Example: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+c = L.cone(ra, dec, radius=240.0, requestType=&#39;all&#39;)
+print(c)
+</pre></div>
+</div>
+<p>and the return has object identifiers, and their separations in arcseconds, something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[
+    {
+        &quot;object&quot;: &quot;ZTF17aaajmtw&quot;,
+        &quot;separation&quot;: 2.393511865261539
+    }
+]
+</pre></div>
+</div>
+</div>
+<div class="section" id="--api-query-">
+<h2><a class="reference external" href="#"></a>/api/query/<a class="headerlink" href="#--api-query-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method runs a query on the Lasair database. There is an <a class="reference external" href="query">interactive query builder</a>, and a <a class="reference external" href="schema">schema description</a>. The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">selected</span></code>: (string) the list of attributes to be returned,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tables</span></code>: (string) the list of tables to be joined,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conditions</span></code>: (string) the “WHERE” criteria to restrict what is returned</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">limit</span></code>: (int) (not required) the maximum number of records to return (default is 1000)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: (int) (not required) offset of record number (default is 0)</p></li>
+</ul>
+<p>GET URL Example</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/query/?selected=objectId%2Cgmag&amp;tables=objects&amp;conditions=gmag%3C12.0&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example: The authorization token goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;selected=objectId,gmag&amp;tables=objects&amp;conditions=gmag&lt;12.0&amp;limit=3&quot; https://lasair-ztf.lsst.ac.uk/api/query/
+</pre></div>
+</div>
+<p>Python Example: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+selected    = &#39;objectId, gmag&#39;
+tables      = &#39;objects&#39;
+conditions  = &#39;gmag &lt; 12.0&#39;
+c = L.query(selected, tables, conditions, limit=10)
+print(c)
+</pre></div>
+</div>
+<p>and the return is something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>status= 200
+[
+  {
+    &quot;objectId&quot;: &quot;ZTF17aaagaie&quot;,
+    &quot;gmag&quot;: 11.4319
+  },
+  {
+    &quot;objectId&quot;: &quot;ZTF18aaadvxy&quot;,
+    &quot;gmag&quot;: 11.8582
+  },
+.... ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="--api-streams---and--api-streams-">
+<h2><a class="reference external" href="#"></a>/api/streams// and /api/streams/<a class="headerlink" href="#--api-streams---and--api-streams-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method returns a record of the output from a Lasair streaming query. It represents an alternative to using a Kafka client to fetch from the Kafka server.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">topic</span></code> URL is provided (with optional <code class="docutils literal notranslate"><span class="pre">limit</span></code>), the contents of the stream are returned. Alternatively, if the topic is not provided, a <code class="docutils literal notranslate"><span class="pre">regex</span></code> argument may be provided, and a list of matching topic names will be returned. A list of all topics can be obtained with the regex <code class="docutils literal notranslate"><span class="pre">.*</span></code> or by omitting the <code class="docutils literal notranslate"><span class="pre">regex</span></code>.</p>
+<p>The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">limit</span></code>: (int) (not required) the maximum number of records to return (default 1000)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regex</span></code>: (str) (not required) an expression used to select from the set of topics (regular expression)</p></li>
+</ul>
+<p>GET URL Example with Regex</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/streams/?regex=.%2ASN.%2A&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example with Regex</p>
+<p>The authorization token goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;regex=.\*SN.\*&quot; https://lasair-ztf.lsst.ac.uk/api/streams/
+</pre></div>
+</div>
+<p>and the return is a list of topic names, and a URL to get more information:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>status= 200
+[
+  {
+    &quot;topic&quot;: &quot;2SN-likecandidates&quot;,
+    &quot;more_info&quot;: &quot;https://lasair-ztf.lsst.ac.uk/query/2/&quot;
+  },
+... ]
+</pre></div>
+</div>
+<p>GET URL Example with Topic:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/streams/2SN-likecandidates/?limit=1&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example with Topic: The authorization token goes in the header of the request, and the data in the data section. For more information about this stream, see <a class="reference external" href="https://lasair-ztf.lsst.ac.uk/query/2/">here</a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;2SN-likecandidates&amp;limit=1&quot; https://lasair-ztf.lsst.ac.uk/api/streams/
+</pre></div>
+</div>
+<p>and the return is something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>status= 200
+[
+  {
+    &quot;objectId&quot;: &quot;ZTF19abrokxg&quot;,
+    &quot;ramean&quot;: 35.82811567,
+    &quot;decmean&quot;: -27.79242059,
+    &quot;mjdmin&quot;: 59134.39827550016,
+    &quot;mjdmax&quot;: 59164.37175930012,
+    &quot;magrmin&quot;: 18.33,
+    &quot;rmag&quot;: 19.4124,
+    &quot;classification&quot;: &quot;NT&quot;,
+    &quot;score&quot;: &quot;Not Near PS1 star&quot;,
+    &quot;UTC&quot;: &quot;2020-11-11 09:08:49&quot;
+  }
+]
+</pre></div>
+</div>
+<p>Python Example with Topic: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+print(L.streams_topics())
+c = L.streams(&#39;2SN-likecandidates&#39;, limit=10)
+</pre></div>
+</div>
+<p>and the return is as above with the curl example</p>
+</div>
+<div class="section" id="--api-objects-">
+<h2><a class="reference external" href="#"></a>/api/objects/<a class="headerlink" href="#--api-objects-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method returns a machine-readable version of the information on a list of objects, which replicates the information on the object page of the web server. The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">objectIds</span></code>: a list of objectIds for which data is wanted</p></li>
+</ul>
+<p>GET URL Example</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/objects/?objectIds=ZTF18abdphvf,ZTF21aapzzgf&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example: The API key goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;objectIds=ZTF18abdphvf,ZTF21aapzzgf&quot; https://lasair-ztf.lsst.ac.uk/api/objects/
+</pre></div>
+</div>
+<p>Python Example: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+c = L.objects(objectIds)
+print(c)
+</pre></div>
+</div>
+<p>and the return something like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>status= 200
+[
+{&quot;objectId&quot;:&quot;ZTF18abdphvf&quot;,
+&quot;objectData&quot;:{
+    &quot;ncand&quot;:8,
+    &quot;ramean&quot;:293.54591006249996,
+    &quot;decmean&quot;:49.429229975,
+    &quot;glonmean&quot;:81.77021010499132,
+    &quot;glatmean&quot;:13.829346704017533,
+.... }
+]
+</pre></div>
+</div>
+<p>The data includes everything on the object page, including the object and candidates, as well as the Sherlock and TNS information. The candidate section has bot detections, that have a <code class="docutils literal notranslate"><span class="pre">candid</span></code> attribute, and the much smaller non-detections (upper limits). Each candidate 
+
+has links to the cutout images that are shown on the object web page. A complete example
+
+is <a class="reference external" href="ZTF23aabplmy.html">shown here</a>.</p>
+</div>
+<div class="section" id="--api-lightcurves-">
+<h2><a class="reference external" href="#"></a>/api/lightcurves/<a class="headerlink" href="#--api-lightcurves-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method returns simple lightcurves for a number of objects. <strong>NOTE:</strong> these are difference magnitudes from a reference source, not apparent magnitudes. See <a class="reference external" href="lasair/static/mag.py">this python code</a> to convert the quantities below to apparent magnitude. Each lightcurve is a sequence of detections, or <em>candidates</em>, each of which has the quantities:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">candid</span></code>: the candidate ID for the detection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fid</span></code>: The filter ID for the detection (1 = g and 2 = r)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jd</span></code>: Julian Day for the detection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">magpsf</span></code>: The difference magnitude</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sigmapsf</span></code>: the error in the difference magnitude.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">magnr</span></code>: Magnitude of the reference source</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sigmagnr</span></code>: the error in the reference magnitude</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">magzpsci</span></code>: Zero-point magnitude of the science image</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isdiffpos</span></code>:set to ‘t’ if positive difference magnitude, ‘f’ for negative</p></li>
+</ul>
+<p>The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">objectIds</span></code>: (string) comma-separated string of objectIds to be fetched</p></li>
+<li><p>There is a upper limit on the number of lightcurves that can be fetched, currently 50. If you need to do serious data mining on Lasair light curves, please write to <a class="reference external" href="mailto:lasair-help&#37;&#52;&#48;lists&#46;roe&#46;ac&#46;uk?subject=Notebooks">contact the Lasair team</a>.</p></li>
+</ul>
+<p>GET URL Example</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/lightcurves/?objectIds=ZTF20acgrvqo%2CZTF19acylwtd%2CZTF18acmziob&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example: The authorization token goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; 
+--data &quot;objectIds=ZTF20acgrvqo,ZTF19acylwtd,ZTF18acmziob&quot; 
+https://lasair-ztf.lsst.ac.uk/api/lightcurves/
+</pre></div>
+</div>
+<p>Python Example: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+c = L.lightcurves([&#39;ZTF20acgrvqo&#39;,&#39;ZTF19acylwtd&#39;,&#39;ZTF18acmziob&#39;])
+print(c)
+</pre></div>
+</div>
+<p>and the return is something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
+  &quot;objectId&quot;: &quot;ZTF20acpwljl&quot;,
+  &quot;candidates&quot;:[
+    {
+      &quot;candid&quot;:1961223331015015002,
+      &quot;fid&quot;:1,
+      &quot;magpsf&quot;:19.46470069885254,
+      &quot;sigmapsf&quot;:0.12973499298095703,
+      &quot;magnr&quot;:21.349000930786133,
+      &quot;sigmagnr&quot;:0.0989999994635582,
+      &quot;magzpsci&quot;:26.41069984436035,
+      &quot;isdiffpos&quot;:&quot;t&quot;,
+      &quot;jd&quot;:2459715.7233333,
+    },
+    ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="--api-sherlock-objects-">
+<h2><a class="reference external" href="#"></a>/api/sherlock/objects/<a class="headerlink" href="#--api-sherlock-objects-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method returns Sherlock information for a collection of named objects, either the “lite” record that is also in the Lasair database, or the full record including many possible crossmatches. The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">objectIds</span></code>: a comma-separated list of objectIds, maximum number is 10</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lite</span></code>: Set to ‘true’ to get the lite information only</p></li>
+</ul>
+<p>GET URL Example with objects</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/sherlock/objects/?objectIds=ZTF20acpwljl%2CZTF20acqqbkl%2CZTF20acplggt&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;lite=true&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example with list of objects: The authorization token goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;objectIds=ZTF20acpwljl,ZTF20acqqbkl,ZTF20acplggt&amp;lite=True&quot; https://lasair-ztf.lsst.ac.uk/api/sherlock/objects/
+</pre></div>
+</div>
+<p>Python Example with list of objects: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+c = L.sherlock_objects([&#39;ZTF20acgrvqo&#39;,&#39;ZTF19acylwtd&#39;,&#39;ZTF18acmziob&#39;])
+print(c)
+</pre></div>
+</div>
+<p>and the return is something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
+    &quot;ZTF20acpwljl&quot;: {
+        &quot;classifications&quot;: {
+            &quot;ZTF20acpwljl&quot;: [
+                &quot;SN&quot;,
+                &quot;The transient is possibly associated with &lt;em&gt;&lt;a href=&#39;http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?id=1237673709862061782&#39;&gt;SDSS J081931-060114.9&lt;/a&gt;&lt;/em&gt;; a J=17.01 mag galaxy found in the SDSS/2MASS/PS1 catalogues. It&#39;s located 1.09 arcsec N, 1.11 arcsec W from the galaxy centre.&quot;
+            ]
+        },
+        &quot;crossmatches&quot;: [
+            {
+                &quot;catalogue_object_id&quot;: &quot;1237673709862061782&quot;,
+                &quot;J&quot;: 17.007,
+                &quot;JErr&quot;: 0.215,
+                &quot;H&quot;: 15.974,
+                &quot;HErr&quot;: 0.179,
+                &quot;K&quot;: 15.389,
+</pre></div>
+</div>
+</div>
+<div class="section" id="--api-sherlock-position-">
+<h2><a class="reference external" href="#"></a>/api/sherlock/position/<a class="headerlink" href="#--api-sherlock-position-" title="Permalink to this headline">  ∞</a></h2>
+<p>This method returns Sherlock information for an arbitrary position in the sky, either the “lite” record that is also in the Lasair database, or the full record including many possible crossmatches. It is meant as an illustration of what Sherlock can do. If you would like to use Sherlock for high volume work, please <a class="reference external" href="mailto:lasair-help&#37;&#52;&#48;lists&#46;roe&#46;ac&#46;uk?subject=sherlock">Email Lasair-help</a>. The arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ra</span></code>: Right ascension of a point in the sky in degrees</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dec</span></code>: Declination of a point in the sky in degrees</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lite</span></code>: Set to ‘true’ to get the lite information only</p></li>
+</ul>
+<p>GET URL Example</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://lasair-ztf.lsst.ac.uk/api/sherlock/position/?ra=16.851866&amp;dec=34.53307&amp;token=xxxxxxxxxxxxxxxxxxxxxxxx&amp;format=json
+</pre></div>
+</div>
+<p>Curl Example: The authorization token goes in the header of the request, and the data in the data section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl --header &quot;Authorization: Token xxxxxxxxxxxxxxxxxxxxxxxx&quot; --data &quot;ra=16.851866&amp;dec=34.53307&quot; https://lasair-ztf.lsst.ac.uk/api/sherlock/position/
+</pre></div>
+</div>
+<p>Python Example: This code requires the <code class="docutils literal notranslate"><span class="pre">lasair</span></code> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import lasair
+token = &#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;
+L = lasair.lasair_client(token)
+c = L.sherlock_position([&#39;ZTF20acgrvqo&#39;,&#39;ZTF19acylwtd&#39;,&#39;ZTF18acmziob&#39;])
+print(c)
+</pre></div>
+</div>
+<p>and the return is something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>status= 200
+{
+  &quot;classifications&quot;: {
+    &quot;query&quot;: [
+      &quot;VS&quot;,
+      &quot;The transient is synonymous with
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python-notebooks.html" class="btn btn-neutral float-right" title="Python Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="watchmaps.html" class="btn btn-neutral float-left" title="Watchmaps (Sky Regions)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2023, The University of Edinburgh and Queen&#39;s University Belfast. Funded by UK STFC grants ST/X001334/1 and ST/X001253/1
+      <span class="commit">
+        Revision <code>4d912517</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

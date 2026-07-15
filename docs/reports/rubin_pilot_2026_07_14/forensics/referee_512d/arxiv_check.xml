@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/UGSYfmdQCVukUjIOMEEkvAFFaOQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=2605.22407,2404.08798&amp;start=0&amp;max_results=10</title>
+  <updated>2026-07-15T01:07:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2605.22407,2404.08798" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2404.08798v2</id>
+    <title>Transient Classifiers for Fink: Benchmarks for LSST</title>
+    <updated>2024-11-29T15:04:42Z</updated>
+    <link href="https://arxiv.org/abs/2404.08798v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.08798v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The upcoming Legacy Survey of Space and Time (LSST) is expected to detect a few million transients per night, which will generate a live alert stream during the entire ten years of the survey. This stream will be distributed via community brokers whose task is to select subsets of the stream and direct them to scientific communities. Given the volume and complexity of the anticipated data, machine learning algorithms will be paramount for this task. We present the infrastructure tests and classification methods developed within the Fink broker in preparation for LSST. This work aims to provide detailed information regarding the underlying assumptions and methods behind each classifier and enable users to make informed follow-up decisions from Fink photometric classifications. Using simulated data from ELAsTiCC, we showcase the performance of binary and multi-class ML classifiers available in Fink. These include tree-based classifiers coupled with tailored feature extraction strategies as well as deep learning algorithms. Moreover, we introduce CATS, a deep learning architecture specifically designed for this task. Our results show that Fink classifiers are able to handle the extra complexity that is expected from LSST data. CATS achieved $\geq 93\%$ precision for all classes except `long' (for which it achieved $\sim 83\%$), while our best performing binary classifier achieves $\geq 98\%$ precision and $\geq 99\%$ completeness when classifying the periodic class. ELAsTiCC was an important milestone in preparing the Fink infrastructure to deal with LSST-like data. Our results demonstrate that Fink classifiers are well prepared for the arrival of the new stream, but this work also highlights that transitioning from the current infrastructures to Rubin will require significant adaptation of the currently available tools. This work was the first step in the right direction.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-12T20:14:56Z</published>
+    <arxiv:comment>19 pages, 28 figures. Revised version accepted to A&amp;A</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>A&amp;A 692, A208 (2024)</arxiv:journal_ref>
+    <author>
+      <name>B. M. O. Fraga</name>
+    </author>
+    <author>
+      <name>C. R. Bom</name>
+    </author>
+    <author>
+      <name>A. Santos</name>
+    </author>
+    <author>
+      <name>E. Russeil</name>
+    </author>
+    <author>
+      <name>M. Leoni</name>
+    </author>
+    <author>
+      <name>J. Peloton</name>
+    </author>
+    <author>
+      <name>E. E. O. Ishida</name>
+    </author>
+    <author>
+      <name>A. Möller</name>
+    </author>
+    <author>
+      <name>S. Blondin</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202450370</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202450370" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22407v1</id>
+    <title>Hostless extragalactic transients in Fink: Results from the ELEPHANT pipeline</title>
+    <updated>2026-05-21T12:35:01Z</updated>
+    <link href="https://arxiv.org/abs/2605.22407v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22407v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The ExtragaLactic alErt Pipeline for Hostless AstroNomical Transients (ELEPHANT), has been developed as a framework for filtering hostless candidates, in real time alert systems, and implemented as a filter in the Fink broker. ELEPHANT works on stamps and requires minimal information, thus allowing for fast identification of extragalactic transient events. In this work we evaluate the performance of the ELEPHANT pipeline by systematically analyzing flagged hostless candidates identified between 1 September 2023 and 31 December 2025. Our goal is to quantifying its accuracy and identify dominant sources of contamination. For each flagged candidate we collected additional information from multiple catalogues and archival repositories. We further examined their light-curve evolution and astrometric consistency (coordinate dispersion over time) to refine source classification. Results. Out of 877 flagged events, 67 are confidently confirmed as genuinely hostless candidates, with no detectable host galaxy in either existing catalogues or archival imaging, representing a high-purity sample of intrinsically faint or absent hosts. Additional 51 events are linked to visually identifiable hosts that are entirely absent from both catalogues and ZTF stamps. For the confirmed hostless subset, the inferred upper limits on host-galaxy absolute magnitudes extend well below the luminosity range of typical dwarf galaxies. The pipeline showed an overall accuracy of 0.84, with the majority of the classified flagged events being Type Ia supernovae, and the second most detected class being Type I superluminous supernova. ELEPHANT has been adapted to deal with the Rubin alert stream and has been processing its alerts since February 2026.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T12:35:01Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>R. Durgesh</name>
+    </author>
+    <author>
+      <name>P. J. Pessi</name>
+    </author>
+    <author>
+      <name>E. E. O. Ishida</name>
+    </author>
+    <author>
+      <name>J. Peloton</name>
+    </author>
+  </entry>
+</feed>

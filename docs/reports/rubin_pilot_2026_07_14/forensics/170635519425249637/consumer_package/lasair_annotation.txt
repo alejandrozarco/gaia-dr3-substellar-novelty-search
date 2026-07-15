@@ -1,0 +1,23 @@
+Lasair-LSST annotation draft for diaObject 170635519425249637
+(topic suggestion: <username>:archival-forensics ; classification: SN candidate)
+
+classification: SN
+explanation: Real, still-active, TNS-unreported transient. Archival forced photometry:
+ZTF/ZFPS first detection MJD 61206.46 (g 20.87 4.5sig, r 20.83 4.9sig), 22 d before first
+Rubin alert; ATLAS FP confirms MJD 61213.28 (o 20.50, 5.8sig) + 61214.29 (o 20.21, 5.4sig).
+ZTF r plateau 20.7-21.0 over MJD 61206-61231; Rubin i fades 21.36->21.60 (61228-61235),
+r-i~0. Historical null: 0/707 ZTF and 0/1041 ATLAS nightly stacks >4sig in 2015-2026 before
+MJD 61206. No Gaia/WISE/NSC/GALEX counterpart; candidate faint red host = PS1-stack-only
+source at 0.71" (r=23.47, z=22.94). Position stable <0.1" over 7 d (SSO excluded despite
+beta=-3.3). ALeRCE stamp bogus 0.90 (v201) is contradicted by its own v202 (bogus 0.17) and
+by 10 epochs at SNR up to 44 -> stamp-model immaturity, not the data. Slow rise + ~25 d
+plateau + dwarf-host candidate favor SN II at z~0.1-0.2.
+properties (machine-readable suggestion):
+  {"class":"SN","subclass_hint":"II","first_forced_det_mjd":61206.46,
+   "atlas_pre_rubin_confirmation_mjd":[61213.279,61214.285],"tns_crossmatch":"none_20260714",
+   "quiescent_counterpart":"PS1-stack PSO J332.3912-14.8697 sep 0.71as r=23.47"}
+
+NOTE (gate result, 2026-07-14): the lasair-ztf API token does NOT authenticate on
+lasair-lsst (401 Invalid token) — user must register/log in on https://lasair.lsst.ac.uk,
+obtain a new token, and create an annotator (https://lasair.lsst.ac.uk/annotators/) before
+this can be ingested.

@@ -1,0 +1,10 @@
+{
+ "nsc_dr2": {
+  "status": 200,
+  "csv": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<VOTABLE xmlns=\"http://www.ivoa.net/xml/VOTable/v1.2\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"1.2\">\r\n  <RESOURCE type=\"results\">\r\n    <INFO name=\"QUERY_STATUS\" value=\"ERROR\">IllegalArgumentException: Column [variable10] does not exist.</INFO>\r\n  </RESOURCE>\r\n</VOTABLE>\r\n"
+ },
+ "ls_dr10": {
+  "status": 200,
+  "csv": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<VOTABLE xmlns=\"http://www.ivoa.net/xml/VOTable/v1.2\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"1.2\">\r\n  <RESOURCE type=\"results\">\r\n    <INFO name=\"QUERY_STATUS\" value=\"ERROR\">PSQLException: ERROR: function point(unknown, double precision, double precision) does not exist\r\n  Hint: No function matches the given name and argument types. You might need to add explicit type casts.\r\n  Position: 92</INFO>\r\n  </RESOURCE>\r\n</VOTABLE>\r\n"
+ }
+}

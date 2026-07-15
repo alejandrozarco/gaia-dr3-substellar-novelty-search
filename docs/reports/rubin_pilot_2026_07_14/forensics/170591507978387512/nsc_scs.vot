@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="xmlns:http://www.ivoa.net/xml/VOTable-1.2.xsd" version="1.2">
+<RESOURCE type="results">
+<DESCRIPTION>DALServer cone search</DESCRIPTION>
+<INFO name="QUERY_STATUS" value="OK"/>
+<INFO name="INPUT:RA" value="313.22651"/>
+<INFO name="INPUT:DEC" value="-14.84044"/>
+<INFO name="INPUT:SR" value="0.00416667"/>
+<INFO name="ServiceEngine" value="scs-nsc_dr2-object: SCS version 1.0 DALServer version 0.7"/>
+<INFO name="dbName" value="tapdb"/>
+<INFO name="tableName" value="object"/>
+<INFO name="SQL_QUERY" value="SELECT * FROM nsc_dr2.object WHERE q3c_radial_query(ra,dec,313.22651,-14.84044,0.00416667)"/>
+<INFO name="TableRows" value="5"/>
+<TABLE>
+<FIELD ID="ra" name="ra" datatype="double" ucd="POS_EQ_RA_MAIN" utype="object.ra"/>
+<FIELD ID="dec" name="dec" datatype="double" ucd="POS_EQ_DEC_MAIN" utype="object.dec"/>
+<FIELD ID="mjd" name="mjd" datatype="double" utype="object.mjd"/>
+<FIELD ID="glon" name="glon" datatype="double" utype="object.glon"/>
+<FIELD ID="glat" name="glat" datatype="double" utype="object.glat"/>
+<FIELD ID="elon" name="elon" datatype="double" utype="object.elon"/>
+<FIELD ID="elat" name="elat" datatype="double" utype="object.elat"/>
+<FIELD ID="pix" name="pix" datatype="int" utype="object.pix"/>
+<FIELD ID="raerr" name="raerr" datatype="double" utype="object.raerr"/>
+<FIELD ID="decerr" name="decerr" datatype="double" utype="object.decerr"/>
+<FIELD ID="pmra" name="pmra" datatype="double" utype="object.pmra"/>
+<FIELD ID="pmdec" name="pmdec" datatype="double" utype="object.pmdec"/>
+<FIELD ID="pmraerr" name="pmraerr" datatype="double" utype="object.pmraerr"/>
+<FIELD ID="pmdecerr" name="pmdecerr" datatype="double" utype="object.pmdecerr"/>
+<FIELD ID="deltamjd" name="deltamjd" datatype="double" utype="object.deltamjd"/>
+<FIELD ID="umag" name="umag" datatype="double" utype="object.umag"/>
+<FIELD ID="urms" name="urms" datatype="double" utype="object.urms"/>
+<FIELD ID="uerr" name="uerr" datatype="double" utype="object.uerr"/>
+<FIELD ID="uasemi" name="uasemi" datatype="double" utype="object.uasemi"/>
+<FIELD ID="ubsemi" name="ubsemi" datatype="double" utype="object.ubsemi"/>
+<FIELD ID="utheta" name="utheta" datatype="double" utype="object.utheta"/>
+<FIELD ID="gmag" name="gmag" datatype="double" utype="object.gmag"/>
+<FIELD ID="grms" name="grms" datatype="double" utype="object.grms"/>
+<FIELD ID="gerr" name="gerr" datatype="double" utype="object.gerr"/>
+<FIELD ID="gasemi" name="gasemi" datatype="double" utype="object.gasemi"/>
+<FIELD ID="gbsemi" name="gbsemi" datatype="double" utype="object.gbsemi"/>
+<FIELD ID="gtheta" name="gtheta" datatype="double" utype="object.gtheta"/>
+<FIELD ID="rmag" name="rmag" datatype="double" utype="object.rmag"/>
+<FIELD ID="rrms" name="rrms" datatype="double" utype="object.rrms"/>
+<FIELD ID="rerr" name="rerr" datatype="double" utype="object.rerr"/>
+<FIELD ID="rasemi" name="rasemi" datatype="double" utype="object.rasemi"/>
+<FIELD ID="rbsemi" name="rbsemi" datatype="double" utype="object.rbsemi"/>
+<FIELD ID="rtheta" name="rtheta" datatype="double" utype="object.rtheta"/>
+<FIELD ID="imag" name="imag" datatype="double" utype="object.imag"/>
+<FIELD ID="irms" name="irms" datatype="double" utype="object.irms"/>
+<FIELD ID="ierr" name="ierr" datatype="double" utype="object.ierr"/>
+<FIELD ID="iasemi" name="iasemi" datatype="double" utype="object.iasemi"/>
+<FIELD ID="ibsemi" name="ibsemi" datatype="double" utype="object.ibsemi"/>
+<FIELD ID="itheta" name="itheta" datatype="double" utype="object.itheta"/>
+<FIELD ID="zmag" name="zmag" datatype="double" utype="object.zmag"/>
+<FIELD ID="zrms" name="zrms" datatype="double" utype="object.zrms"/>
+<FIELD ID="zerr" name="zerr" datatype="double" utype="object.zerr"/>
+<FIELD ID="zasemi" name="zasemi" datatype="double" utype="object.zasemi"/>
+<FIELD ID="zbsemi" name="zbsemi" datatype="double" utype="object.zbsemi"/>
+<FIELD ID="ztheta" name="ztheta" datatype="double" utype="object.ztheta"/>
+<FIELD ID="ymag" name="ymag" datatype="double" utype="object.ymag"/>
+<FIELD ID="yrms" name="yrms" datatype="double" utype="object.yrms"/>
+<FIELD ID="yerr" name="yerr" datatype="double" utype="object.yerr"/>
+<FIELD ID="yasemi" name="yasemi" datatype="double" utype="object.yasemi"/>
+<FIELD ID="ybsemi" name="ybsemi" datatype="double" utype="object.ybsemi"/>
+<FIELD ID="ytheta" name="ytheta" datatype="double" utype="object.ytheta"/>
+<FIELD ID="vrmag" name="vrmag" datatype="double" utype="object.vrmag"/>
+<FIELD ID="vrrms" name="vrrms" datatype="double" utype="object.vrrms"/>
+<FIELD ID="vrerr" name="vrerr" datatype="double" utype="object.vrerr"/>
+<FIELD ID="vrasemi" name="vrasemi" datatype="double" utype="object.vrasemi"/>
+<FIELD ID="vrbsemi" name="vrbsemi" datatype="double" utype="object.vrbsemi"/>
+<FIELD ID="vrtheta" name="vrtheta" datatype="double" utype="object.vrtheta"/>
+<FIELD ID="asemi" name="asemi" datatype="double" utype="object.asemi"/>
+<FIELD ID="asemierr" name="asemierr" datatype="double" utype="object.asemierr"/>
+<FIELD ID="bsemi" name="bsemi" datatype="double" utype="object.bsemi"/>
+<FIELD ID="bsemierr" name="bsemierr" datatype="double" utype="object.bsemierr"/>
+<FIELD ID="theta" name="theta" datatype="double" utype="object.theta"/>
+<FIELD ID="thetaerr" name="thetaerr" datatype="double" utype="object.thetaerr"/>
+<FIELD ID="fwhm" name="fwhm" datatype="double" utype="object.fwhm"/>
+<FIELD ID="class_star" name="class_star" datatype="double" utype="object.class_star"/>
+<FIELD ID="ebv" name="ebv" datatype="double" utype="object.ebv"/>
+<FIELD ID="rmsvar" name="rmsvar" datatype="double" utype="object.rmsvar"/>
+<FIELD ID="madvar" name="madvar" datatype="double" utype="object.madvar"/>
+<FIELD ID="iqrvar" name="iqrvar" datatype="double" utype="object.iqrvar"/>
+<FIELD ID="etavar" name="etavar" datatype="double" utype="object.etavar"/>
+<FIELD ID="jvar" name="jvar" datatype="double" utype="object.jvar"/>
+<FIELD ID="kvar" name="kvar" datatype="double" utype="object.kvar"/>
+<FIELD ID="chivar" name="chivar" datatype="double" utype="object.chivar"/>
+<FIELD ID="romsvar" name="romsvar" datatype="double" utype="object.romsvar"/>
+<FIELD ID="nsigvar" name="nsigvar" datatype="double" utype="object.nsigvar"/>
+<FIELD ID="htm9" name="htm9" datatype="int" utype="object.htm9"/>
+<FIELD ID="ring256" name="ring256" datatype="int" utype="object.ring256"/>
+<FIELD ID="nest4096" name="nest4096" datatype="int" utype="object.nest4096"/>
+<FIELD ID="random_id" name="random_id" datatype="double" utype="object.random_id"/>
+<FIELD ID="ndet" name="ndet" datatype="int" utype="object.ndet"/>
+<FIELD ID="nphot" name="nphot" datatype="int" utype="object.nphot"/>
+<FIELD ID="ndetu" name="ndetu" datatype="int" utype="object.ndetu"/>
+<FIELD ID="nphotu" name="nphotu" datatype="int" utype="object.nphotu"/>
+<FIELD ID="ndetg" name="ndetg" datatype="int" utype="object.ndetg"/>
+<FIELD ID="nphotg" name="nphotg" datatype="int" utype="object.nphotg"/>
+<FIELD ID="ndetr" name="ndetr" datatype="int" utype="object.ndetr"/>
+<FIELD ID="nphotr" name="nphotr" datatype="int" utype="object.nphotr"/>
+<FIELD ID="ndeti" name="ndeti" datatype="int" utype="object.ndeti"/>
+<FIELD ID="nphoti" name="nphoti" datatype="int" utype="object.nphoti"/>
+<FIELD ID="ndetz" name="ndetz" datatype="int" utype="object.ndetz"/>
+<FIELD ID="nphotz" name="nphotz" datatype="int" utype="object.nphotz"/>
+<FIELD ID="ndety" name="ndety" datatype="int" utype="object.ndety"/>
+<FIELD ID="nphoty" name="nphoty" datatype="int" utype="object.nphoty"/>
+<FIELD ID="ndetvr" name="ndetvr" datatype="int" utype="object.ndetvr"/>
+<FIELD ID="nphotvr" name="nphotvr" datatype="int" utype="object.nphotvr"/>
+<FIELD ID="flags" name="flags" datatype="int" utype="object.flags"/>
+<FIELD ID="variable10sig" name="variable10sig" datatype="int" utype="object.variable10sig"/>
+<FIELD ID="parent" name="parent" datatype="int" utype="object.parent"/>
+<FIELD ID="id" name="id" datatype="char" ucd="ID_MAIN" utype="object.id" arraysize="*"/>
+<DATA>
+<TABLEDATA>
+<TR><TD>313.22606102720385</TD><TD>-14.843940063291955</TD><TD>57523.34498520638</TD><TD>32.5758910917831</TD><TD>-33.484986402747076</TD><TD>311.5059168329409</TD><TD>2.5862511350869237</TD><TD>124093</TD><TD>0.01844</TD><TD>0.018226</TD><TD>7.098319e+06</TD><TD>4.1604012e+06</TD><TD>6.4082285e+06</TD><TD>6.376546e+06</TD><TD>0.004505</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>21.9375</TD><TD>NaN</TD><TD>0.050415</TD><TD>0.818359</TD><TD>0.667969</TD><TD>51</TD><TD>20.1875</TD><TD>NaN</TD><TD>0.013084</TD><TD>1.050781</TD><TD>0.805664</TD><TD>50.9375</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0.93457</TD><TD>0.018158</TD><TD>0.736816</TD><TD>0.01445</TD><TD>50.96875</TD><TD>27.90863</TD><TD>2.044922</TD><TD>0.241333</TD><TD>0.058751</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>3111556</TD><TD>494971</TD><TD>200428530</TD><TD>79.71318</TD><TD>2</TD><TD>2</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>1</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>124093_8705</TD></TR>
+<TR><TD>313.22279137546104</TD><TD>-14.83866740329221</TD><TD>57523.34498520638</TD><TD>32.58023239303123</TD><TD>-33.480018567802674</TD><TD>311.50431226027314</TD><TD>2.592185843598735</TD><TD>124093</TD><TD>0.080453</TD><TD>0.080442</TD><TD>-4.508229e+06</TD><TD>1.2536311e+06</TD><TD>1.6048284e+07</TD><TD>1.6035651e+07</TD><TD>0.004505</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>23.46875</TD><TD>NaN</TD><TD>0.111267</TD><TD>0.466309</TD><TD>0.397217</TD><TD>89.75</TD><TD>22.6875</TD><TD>NaN</TD><TD>0.073059</TD><TD>0.533203</TD><TD>0.494873</TD><TD>35.78125</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0.499756</TD><TD>0.030906</TD><TD>0.446045</TD><TD>0.027451</TD><TD>62.765625</TD><TD>22.486526</TD><TD>2.290039</TD><TD>0.452026</TD><TD>0.058938</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>3111556</TD><TD>494971</TD><TD>200428536</TD><TD>67.14415</TD><TD>2</TD><TD>2</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>1</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>124093_8744</TD></TR>
+<TR><TD>313.2253778124674</TD><TD>-14.836908422984528</TD><TD>57288.01796564305</TD><TD>32.58334407670639</TD><TD>-33.481633825558525</TD><TD>311.50720032079835</TD><TD>2.5931963599413344</TD><TD>124093</TD><TD>0.009777</TD><TD>0.009412</TD><TD>-19.476664</TD><TD>-28.094105</TD><TD>12.909789</TD><TD>12.934954</TD><TD>705.98334</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>17.671875</TD><TD>NaN</TD><TD>0.002914</TD><TD>0.918457</TD><TD>0.900879</TD><TD>65.75</TD><TD>17.248686</TD><TD>0.010161</TD><TD>0.001872</TD><TD>0.894775</TD><TD>0.848145</TD><TD>114</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0.902669</TD><TD>0.001722</TD><TD>0.865723</TD><TD>0.001609</TD><TD>97.916664</TD><TD>29.428522</TD><TD>1.398763</TD><TD>0.985677</TD><TD>0.058938</TD><TD>0.010161</TD><TD>0.011583</TD><TD>0.005791</TD><TD>0.845854</TD><TD>-0.420549</TD><TD>0.768842</TD><TD>0.508069</TD><TD>1.104854</TD><TD>1.650145</TD><TD>3111556</TD><TD>494971</TD><TD>200428536</TD><TD>30.048538</TD><TD>3</TD><TD>3</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>1</TD><TD>2</TD><TD>2</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>124093_4</TD></TR>
+<TR><TD>313.2294734287209</TD><TD>-14.839216754715395</TD><TD>57523.34273285791</TD><TD>32.58264882923885</TD><TD>-33.48617983077063</TD><TD>311.5103830330821</TD><TD>2.589895835948031</TD><TD>124093</TD><TD>0.068176</TD><TD>0.06781</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>21.4375</TD><TD>NaN</TD><TD>0.031097</TD><TD>1.048828</TD><TD>0.885254</TD><TD>18.3125</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>1.048828</TD><TD>0.030533</TD><TD>0.885254</TD><TD>0.025772</TD><TD>18.3125</TD><TD>73.8125</TD><TD>3.466797</TD><TD>0.010315</TD><TD>0.058828</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>3111556</TD><TD>494971</TD><TD>200428530</TD><TD>20.89154</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>124093_8714</TD></TR>
+<TR><TD>313.22793218852786</TD><TD>-14.836744945858579</TD><TD>57523.347237554844</TD><TD>32.58468015404946</TD><TD>-33.48384333498844</TD><TD>311.5096230007264</TD><TD>2.5926802588613227</TD><TD>124093</TD><TD>0.165161</TD><TD>0.165039</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>23.0625</TD><TD>NaN</TD><TD>0.121765</TD><TD>0.523926</TD><TD>0.444824</TD><TD>7.175781</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>99.99</TD><TD>NaN</TD><TD>9.99</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0.523926</TD><TD>0.048859</TD><TD>0.444824</TD><TD>0.041931</TD><TD>7.175781</TD><TD>81.875</TD><TD>2.212891</TD><TD>0.594727</TD><TD>0.058906</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>3111556</TD><TD>494971</TD><TD>200428536</TD><TD>8.72918</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>124093_11411</TD></TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>

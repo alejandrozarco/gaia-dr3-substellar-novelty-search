@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+  <head>
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/astrot/favicon.png" type="image/png" />
+
+    <title>AstroNotes | Transient Name Server</title>
+
+        <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/progress.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/ajax-progress.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/align.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/fieldgroup.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/container-inline.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/clearfix.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/details.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/hidden.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/item-list.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/js.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/nowrap.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/position-container.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/reset-appearance.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/resize.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-counter.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-report-counters.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-report-general-info.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/tablesort.module.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/modules/custom/astronotes/css/astronotes.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/libraries/select2/src/css/select2.min.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
+<link rel="stylesheet" media="all" href="/modules/contrib/captcha/css/captcha.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/assets/vendor/normalize-css/normalize.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/normalize-fixes.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/custom/astrot/css/comments.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/custom/astrot/css/global.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/custom/astrot/css/object_tables.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/progress.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/action-links.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/breadcrumb.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/button.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/collapse-processed.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/container-inline.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/details.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/exposed-filters.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/field.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/form.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/icons.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/inline-form.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/item-list.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/link.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/links.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/menu.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/more-link.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/pager.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tabledrag.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tableselect.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tablesort.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tabs.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/textarea.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/ui-dialog.css?ti6fmp" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/messages.css?ti6fmp" />
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc1YZ4aAAAAAEQJotvlPckhauunPIr3-v592Utv&amp;hl=en" async defer></script>
+
+  </head>
+  <body class="astrot page- page--astronotes">
+
+    <div class="loading-overlay hidden">
+      <div class="ajax-loader-wrapper"><img src="/themes/custom/astrot/images/ajax_loader_white.gif"></div>
+    </div>
+    <div class="overlay hidden">
+      <div class="overlay-wrapper">
+        <span class="close-overlay"></span>
+        <div class="overlay-content"></div>
+      </div>
+    </div>
+    
+    <div id="body-wrapper">
+        
+          <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div id="header" >
+  <div id="additional-image-warpper"><div id="additional-image"><div id="additional-image-inside"></div></div></div>
+  <div class="section clearfix">
+
+    <a href="/" title="TNS" rel="home" class="header__logo" id="logo">
+            <img src="/themes/custom/astrot/tns2_logo.png" alt="TNS" class="header__logo-image" />
+    </a>
+    <div id="top-red-bg"></div>
+      
+          <div id="main-menu" class="navigation">
+        
+              <ul id="main-menu-links" class="links clearfix menu" }}>
+                    <li class="menu-item menu-link-content0800c209-d5a8-4f5b-ae13-2d3406d738a7">
+        <a href="/search" data-drupal-link-system-path="search">Search</a>
+              </li>
+                <li class="menu-item menu-link-content14ff0aed-5e60-460f-b11a-db7b052206c8 menu-item--active-trail">
+        <a href="/astronotes" data-drupal-link-system-path="astronotes" class="is-active" aria-current="page">AstroNotes</a>
+              </li>
+                <li class="menu-item menu-link-contentc0fdde8d-046b-4f5e-bfd0-5c10943910f2">
+        <a href="/groups" data-drupal-link-system-path="groups">Groups</a>
+              </li>
+                <li class="menu-item menu-link-content40d20ea5-3b17-480b-b2f5-8d6d5f4e7782">
+        <a href="/bots" data-drupal-link-system-path="bots">Bots</a>
+              </li>
+                <li class="menu-item menu-link-contentf025333d-685e-4a3d-a651-6c37b5d94940">
+        <a href="/ligo/events" data-drupal-link-system-path="ligo/events">LVK GW</a>
+              </li>
+                <li class="menu-item menu-link-contente66187d8-60c8-48ff-bd26-c95ffd918e73">
+        <a href="/stats-maps" data-drupal-link-system-path="stats-maps">Stats</a>
+              </li>
+                <li class="menu-item menu-link-content2cc97295-41af-408b-91fb-c1bb32360711">
+        <a href="/content/tns-newsfeed" data-drupal-link-system-path="node/41146">News</a>
+              </li>
+                <li class="menu-item menu-link-content4cbc561d-3f0b-476d-b8cc-4d5e7183cc4a">
+        <a href="/content/tns-getting-started" title="Help" data-drupal-link-system-path="node/20752">?</a>
+              </li>
+                <li class="menu-item menu-link-contentec536dfb-44da-4b12-b85e-fabdf3ced179">
+        <a href="/contact-us" data-drupal-link-system-path="node/27322">✉</a>
+              </li>
+                <li class="menu-item menu-link-content7634ed84-c5a8-4b16-99c5-acf101e9d936">
+        <a href="/user" data-drupal-link-system-path="user">Login</a>
+              </li>
+        </ul>
+  
+
+
+              </div> <!-- /#main-menu -->
+    
+    <div id="iau-wrapper"><img width="129" height="114" alt="IAU" title="IAU Supernova Working Group" src="/themes/custom/astrot/images/supernova_working_logo.png"/></div>
+    <div id="title-wrapper">
+      <div class="mobile-only">
+        <div class="mobile-menu-show"><span class="mobile-menu-icon"></span></div>
+      </div>
+      <h1 class="title" id="page-title">
+        AstroNotes
+      </h1>
+    </div>
+
+  </div> <!-- /.section -->
+</div> <!-- /#header -->
+
+
+                  
+  <div class="layout-container">
+    <div id="block-astrot-primary-local-tasks" class="block block-core block-local-tasks-block">
+  
+    
+        <nav class="tabs" role="navigation" aria-label="Tabs">
+        <h2 class="visually-hidden">Primary tabs</h2>
+  <ul class="tabs primary"><li class="tabs__tab active is-active"><a href="/astronotes" data-drupal-link-system-path="astronotes" class="is-active" aria-current="page">AstroNotes</a></li>
+<li class="tabs__tab"><a href="/astronotes/stats" data-drupal-link-system-path="astronotes/stats">Stats</a></li>
+</ul>
+
+    </nav>
+  </div>
+
+  
+    
+    <main class="page-content clearfix" role="main">
+      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+        <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+              <div class="help">
+          
+        </div>
+              <div class="region region-content">
+    <div id="block-astrot-content" class="block block-system block-system-main-block">
+  
+    
+      <div id="astronotoes-main"><div class="form-overall-wrapper"><form data-drupal-selector="astronotes-search" action="/astronotes" method="post" id="astronotes-search" accept-charset="UTF-8">
+  <div class="posted-period-value-wrapper">
+
+<div class="js-form-item form-item js-form-type-textfield form-item-posted-period-value js-form-item-posted-period-value">
+      <label for="edit-posted-period-value">Posted in the last</label>
+          <input data-drupal-selector="edit-posted-period-value" type="text" id="edit-posted-period-value" name="posted_period_value" value="" size="5" maxlength="128" class="form-text" />
+
+          </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-posted-period-units js-form-item-posted-period-units">
+      <label for="edit-posted-period-units"> </label>
+          <select data-drupal-selector="edit-posted-period-units" id="edit-posted-period-units" name="posted_period_units" class="form-select"><option value="days" selected="selected">Days</option><option value="months">Months</option><option value="years">Years</option></select>
+          </div>
+</div><div class="posted-between-wrapper clearfix">
+
+<div class="js-form-item form-item js-form-type-date form-item-date-start js-form-item-date-start">
+      <label for="edit-date-start">Posted between dates</label>
+          <input type="date" data-drupal-selector="edit-date-start" id="edit-date-start" name="date_start" value="2026-7-14" size="12" class="form-date" />
+
+          </div>
+<span class="to-span">to</span>
+
+<div class="js-form-item form-item js-form-type-date form-item-date-end js-form-item-date-end form-no-label">
+          <input type="date" data-drupal-selector="edit-date-end" id="edit-date-end" name="date_end" value="" size="12" class="form-date" />
+
+          </div>
+<div class="clear"></div></div><div class="clear"></div>
+
+<div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
+      <label for="edit-title">Title Includes</label>
+          <input data-drupal-selector="edit-title" aria-describedby="edit-title--description" type="text" id="edit-title" name="title" value="" size="12" maxlength="128" class="form-text" />
+
+              <div id="edit-title--description" class="description">
+      Comma-separated list of search strings; e.g. "str1, str2"
+    </div>
+  </div>
+
+
+<div class="js-form-item form-item js-form-type-textfield form-item-coauthors js-form-item-coauthors">
+      <label for="edit-coauthors">Authors Includes</label>
+          <input data-drupal-selector="edit-coauthors" aria-describedby="edit-coauthors--description" type="text" id="edit-coauthors" name="coauthors" value="" size="12" maxlength="128" class="form-text" />
+
+              <div id="edit-coauthors--description" class="description">
+      Comma-separated list of search strings; e.g. "str1, str2"
+    </div>
+  </div>
+<div class="clear"></div>
+
+<div class="js-form-item form-item js-form-type-select form-item-astronotes-indexes js-form-item-astronotes-indexes">
+      <label for="edit-astronotes-indexes">AstroNotes Indexes</label>
+          <select data-drupal-selector="edit-astronotes-indexes" multiple="multiple" name="astronotes_indexes[]" id="edit-astronotes-indexes" class="form-select"></select>
+          </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-keywords js-form-item-keywords">
+      <label for="edit-keywords">Keywords Includes<span class="link-all-keywords-wrapper">&nbsp;&nbsp;<a href="javascript:void(0)"class="link-all-keywords">Show All</a></span></label>
+          <select data-drupal-selector="edit-keywords" multiple="multiple" name="keywords[]" id="edit-keywords" class="form-select"><option value="45">AGN</option><option value="66">Asteroid</option><option value="120">Astrometry</option><option value="14">Astronomical Databases</option><option value="48">Binary</option><option value="46">Black Hole</option><option value="22">Cataclysmic Variable</option><option value="12">Catalogs</option><option value="47">Cluster</option><option value="67">Comet</option><option value="87">Cosmic Rays</option><option value="11">Cosmology</option><option value="62">Earth</option><option value="73">Exoplanet</option><option value="27">Fast Radio Burst</option><option value="49">Galaxy</option><option value="51">Galaxy Cluster</option><option value="85">Gamma Rays</option><option value="26">Gamma-Ray Burst</option><option value="88">Gravitational Waves</option><option value="81">Infra-Red</option><option value="17">Instrumentation</option><option value="53">Inter-Galactic-Medium</option><option value="52">Inter-Stellar-Medium</option><option value="71">Kuiper Belt</option><option value="28">Lensing</option><option value="70">Meteorites</option><option value="69">Meteors</option><option value="16">Methods</option><option value="29">Microlensing</option><option value="65">Minor Planet</option><option value="61">Moon</option><option value="68">Near-Earth-Object</option><option value="86">Neutrinos</option><option value="42">Neutron Star</option><option value="23">Nova</option><option value="72">Oort Cloud</option><option value="82">Optical</option><option value="18">Photometry</option><option value="64">Planet</option><option value="43">Pulsar</option><option value="44">Quasar</option><option value="80">Radio</option><option value="63">Solar System Object</option><option value="19">Spectroscopy</option><option value="40">Star</option><option value="50">Star Cluster</option><option value="60">Sun</option><option value="24">Supernova</option><option value="25">Supernova Remnant</option><option value="13">Surveys</option><option value="30">TDE</option><option value="15">Techniques</option><option value="10">Time-domain</option><option value="21">Transient</option><option value="83">Ultra-Violet</option><option value="20">Variable Star</option><option value="41">White Dwarf</option><option value="84">X-rays</option></select>
+          </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-note-typeid js-form-item-note-typeid">
+      <label for="edit-note-typeid">Type</label>
+          <select data-drupal-selector="edit-note-typeid" multiple="multiple" name="note_typeid[]" id="edit-note-typeid" size="3" class="form-select"><option value="1">Announcement-Tool/Utility</option><option value="2">Announcement-Campaign/Survey</option><option value="3">Announcement-Data Release</option><option value="9">Announcement-General</option><option value="10">Object/s-Discovery/Classification</option><option value="11">Object/s-Data/Analysis</option></select>
+          </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-groupid js-form-item-groupid">
+      <label for="edit-groupid">Source Group</label>
+          <select data-drupal-selector="edit-groupid" multiple="multiple" name="groupid[]" id="edit-groupid" size="3" class="form-select"><option value="0">None</option><option value="138">1M2H</option><option value="203">AAS2RTO</option><option value="79">adH0cc</option><option value="101">AHTS</option><option value="161">AISV-survey</option><option value="74">ALeRCE</option><option value="106">ALERT</option><option value="82">AMPEL</option><option value="190">AndesQuants</option><option value="115">ANTARES</option><option value="193">Argus ADDem </option><option value="3">ASAS-SN</option><option value="50">ASO</option><option value="199">astropunk-transients</option><option value="173">ATALab</option><option value="18">ATLAS</option><option value="26">ATS</option><option value="156">AUTOGLASS</option><option value="52">AZTEC</option><option value="159">BHTOM</option><option value="60">BlackGEM</option><option value="7">BOSS</option><option value="54">BraTS</option><option value="73">BTDG</option><option value="72">C-SNAILS</option><option value="145">CET-3PO</option><option value="194">ChengPersonalGroup</option><option value="86">CHIMEFRB</option><option value="153">COIN</option><option value="155">CONGRESS</option><option value="58">CRAFT</option><option value="122">CRAFTS</option><option value="13">CRTS</option><option value="53">CSNS</option><option value="32">CSP</option><option value="9">DAO_OTS</option><option value="195">DCAP</option><option value="124">DEBASS</option><option value="68">DECam-GROWTH</option><option value="88">Decameron</option><option value="92">DEHVILS</option><option value="15">DES</option><option value="71">DESGW</option><option value="136">DESI</option><option value="114">DESIRT</option><option value="30">DLT40</option><option value="80">DogsHeavenTS</option><option value="132">DSA-110</option><option value="104">DWF</option><option value="31">EHSSP</option><option value="120">ENGRAVE</option><option value="37">ePESSTO</option><option value="63">ePESSTO+</option><option value="181">ESO-SoXS</option><option value="148">Euclid STSWG</option><option value="130">F. D. Romanov</option><option value="184">FATE</option><option value="70">FDST</option><option value="103">Fink</option><option value="187">Firstlight</option><option value="99">FLEET</option><option value="91">FRBCAT</option><option value="24">GaiaAlerts</option><option value="191">GATSby</option><option value="67">Gattini</option><option value="93">GBNCC</option><option value="202">GeminiClass</option><option value="116">GEOTS</option><option value="143">GIT</option><option value="84">GLGW</option><option value="121">GLO</option><option value="38">Global SN Project</option><option value="59">GOTO</option><option value="200">GRANDMA</option><option value="75">GRAWITA</option><option value="40">GREAT</option><option value="55">GSNST</option><option value="135">GW-MMADS</option><option value="56">GWAC-ToP</option><option value="134">Hermes_group</option><option value="47">HETH</option><option value="97">HOLISMOKES</option><option value="35">HSC</option><option value="204">I Spy</option><option value="146">ILMT</option><option value="109">IMSNG</option><option value="2">iPTF</option><option value="27">ISSP</option><option value="158">J-PAS</option><option value="108">J-VAR</option><option value="133">JADES</option><option value="175">JCAST</option><option value="164">JIST</option><option value="44">JWST-ERS</option><option value="179">JWST-NEXUS</option><option value="21">KEGS</option><option value="113">Kinder</option><option value="126">KNTraP</option><option value="62">KSP</option><option value="111">Lasair</option><option value="139">LAST</option><option value="11">LCOGT SN-KP</option><option value="125">LiONS</option><option value="8">LOSS</option><option value="20">LSQ</option><option value="169">MAGNIF</option><option value="36">MASTER</option><option value="61">MeerLICHT</option><option value="119">MeerTRAP</option><option value="197">MolGiz</option><option value="129">Moonbase search SN South</option><option value="42">MUSSES</option><option value="201">MWA-BLINK</option><option value="117">NAOCToO</option><option value="196">NASA-ACROSS</option><option value="183">NGDEEP</option><option value="186">NOIRLab</option><option value="28">NUTS2</option><option value="182">OASIS</option><option value="17">OGLE</option><option value="29">OOICLE</option><option value="123">OxQUB</option><option value="16">Padova-Asiago</option><option value="118">PALEO</option><option value="102">PALFA</option><option value="4">Pan-STARRS</option><option value="177">PASSTA</option><option value="1">PESSTO</option><option value="33">PIKA</option><option value="112">POISE</option><option value="6">POSS</option><option value="57">POTS</option><option value="189">PRESTO</option><option value="39">PSH</option><option value="162">PSST-XL</option><option value="22">PTSS</option><option value="12">RANSSP</option><option value="174">RAPAS</option><option value="98">REFITT</option><option value="205">RISOTTO</option><option value="185">ROTS</option><option value="110">RTSG</option><option value="165">Rubin</option><option value="147">SAAO IO</option><option value="66">SAGUARO</option><option value="94">SALT</option><option value="51">SCAT</option><option value="192">SDSS</option><option value="81">SGLF</option><option value="178">Shadow</option><option value="160">SIMBAD</option><option value="85">SIRAH</option><option value="5">SkyMapper</option><option value="41">SKYS</option><option value="95">SNAD</option><option value="14">SNHunt</option><option value="96">SOS</option><option value="100">StarDestroyers</option><option value="46">STARGATE</option><option value="131">STEP</option><option value="144">STSP</option><option value="34">SUNBIRD</option><option value="163">Super-Kamiokande</option><option value="180">Supernova Alliance</option><option value="78">Swift</option><option value="127">SwiftXRT</option><option value="45">Swope SN Survey</option><option value="167">SZCYS</option><option value="19">TAROT</option><option value="65">TCD</option><option value="43">TexSNs</option><option value="128">Tianlai</option><option value="168">TiDES</option><option value="69">TMTS</option><option value="152">TNS</option><option value="25">TNTS</option><option value="64">Tomo-e Gozen</option><option value="150">TRAPUM</option><option value="142">TRex</option><option value="176">TROVE</option><option value="171">TSST</option><option value="157">TSST_COSMOS</option><option value="170">TSST_COSMOS_3D</option><option value="198">TSST_VENUS</option><option value="77">UCSC</option><option value="76">ULL-ASTRO-MASTER</option><option value="140">ULTRASAT</option><option value="166">USTC-TDE</option><option value="105">UTMOST</option><option value="172">VHU-TDA</option><option value="90">VLA-realfast</option><option value="107">VLITE-Fast</option><option value="154">WFST</option><option value="151">WINTER</option><option value="137">WL-GW</option><option value="141">WOTS</option><option value="89">WTFU</option><option value="10">XOSS</option><option value="23">XTSS</option><option value="149">XYO</option><option value="188">YNTS</option><option value="83">YSE</option><option value="48">ZTF</option><option value="87">ZUDS</option></select>
+          </div>
+<div class="clear"></div><div class="related-objects-wrapper">
+
+<div class="js-form-item form-item js-form-type-textfield form-item-related-objects js-form-item-related-objects">
+      <label for="edit-related-objects">Related-objects Name/s</label>
+          <input data-drupal-selector="edit-related-objects" aria-describedby="edit-related-objects--description" type="text" id="edit-related-objects" name="related_objects" value="" size="60" maxlength="128" class="form-text" />
+
+              <div id="edit-related-objects--description" class="description">
+      comma-separated list of names (IAU or internal/alternate)
+    </div>
+  </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-objtype js-form-item-objtype">
+      <label for="edit-objtype">Object Type</label>
+          <select data-drupal-selector="edit-objtype" multiple="multiple" name="objtype[]" id="edit-objtype" size="3" class="form-select"><option value="23">Afterglow</option><option value="29">AGN</option><option value="32">Blazar</option><option value="1003">Computed-Ia</option><option value="1014">Computed-IIb</option><option value="1021">Computed-IIn</option><option value="1011">Computed-IIP</option><option value="1020">Computed-PISN</option><option value="27">CV</option><option value="66">FBOT</option><option value="130">FRB</option><option value="30">Galaxy</option><option value="60">Gap</option><option value="61">Gap I</option><option value="62">Gap II</option><option value="25">ILRT</option><option value="99">Impostor-SN</option><option value="70">Kilonova</option><option value="24">LBV</option><option value="40">Light-Echo</option><option value="65">LRN</option><option value="210">M dwarf</option><option value="998">NA/Unknown</option><option value="26">Nova</option><option value="31">QSO</option><option value="18">SLSN-I</option><option value="19">SLSN-II</option><option value="20">SLSN-R</option><option value="1">SN</option><option value="2">SN I</option><option value="15">SN I-faint</option><option value="16">SN I-rapid</option><option value="3">SN Ia</option><option value="103">SN Ia-91bg-like</option><option value="104">SN Ia-91T-like</option><option value="118">SN Ia-Ca-rich</option><option value="106">SN Ia-CSM</option><option value="100">SN Ia-pec</option><option value="102">SN Ia-SC</option><option value="105">SN Iax[02cx-like]</option><option value="4">SN Ib</option><option value="115">SN Ib-Ca-rich</option><option value="107">SN Ib-pec</option><option value="6">SN Ib/c</option><option value="116">SN Ib/c-Ca-rich</option><option value="9">SN Ibn</option><option value="110">SN Ibn/Icn</option><option value="5">SN Ic</option><option value="7">SN Ic-BL</option><option value="117">SN Ic-Ca-rich</option><option value="108">SN Ic-pec</option><option value="109">SN Icn</option><option value="114">SN Ien</option><option value="10">SN II</option><option value="111">SN II-pec</option><option value="14">SN IIb</option><option value="12">SN IIL</option><option value="13">SN IIn</option><option value="112">SN IIn-pec</option><option value="11">SN IIP</option><option value="50">Std-spec</option><option value="120">TDE</option><option value="124">TDE-featureless</option><option value="121">TDE-H</option><option value="123">TDE-H-He</option><option value="122">TDE-He</option><option value="28">Varstar</option><option value="190">WD</option><option value="200">WR</option><option value="202">WR-WC</option><option value="201">WR-WN</option><option value="203">WR-WO</option><option value="0">Other</option></select>
+          </div>
+</div><div class="coords-wrapper clearfix">
+
+<div class="js-form-item form-item js-form-type-textfield form-item-ra js-form-item-ra">
+      <label for="edit-ra">RA</label>
+          <input data-drupal-selector="edit-ra" aria-describedby="edit-ra--description" type="text" id="edit-ra" name="ra" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-ra--description" class="description">
+      Degrees (0..360, with decimal point) or sexagesimal: HH:MM:SS.SS / HH MM SS.SS
+    </div>
+  </div>
+
+
+<div class="js-form-item form-item js-form-type-textfield form-item-decl js-form-item-decl">
+      <label for="edit-decl">DEC</label>
+          <input data-drupal-selector="edit-decl" aria-describedby="edit-decl--description" type="text" id="edit-decl" name="decl" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-decl--description" class="description">
+      Degrees (-90..+90, with decimal point) or sexagesimal: ±DD:MM:SS.SS / ±DD MM SS.SS
+    </div>
+  </div>
+
+
+<div class="js-form-item form-item js-form-type-textfield form-item-radius js-form-item-radius">
+      <label for="edit-radius">Search radius</label>
+          <input data-drupal-selector="edit-radius" type="text" id="edit-radius" name="radius" value="" size="10" maxlength="128" class="form-text" />
+
+          </div>
+
+
+<div class="js-form-item form-item js-form-type-select form-item-coords-unit js-form-item-coords-unit form-no-label">
+          <select data-drupal-selector="edit-coords-unit" id="edit-coords-unit" name="coords_unit" class="form-select"><option value="arcsec">arcsec</option><option value="arcmin">arcmin</option><option value="deg">deg</option></select>
+          </div>
+<div class="clear"></div></div><div class="advance-first-row"><div class="ra-range-wrapper">
+
+<div class="js-form-item form-item js-form-type-textfield form-item-ra-range-min js-form-item-ra-range-min">
+      <label for="edit-ra-range-min">RA range</label>
+          <input data-drupal-selector="edit-ra-range-min" aria-describedby="edit-ra-range-min--description" type="text" id="edit-ra-range-min" name="ra_range_min" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-ra-range-min--description" class="description">
+      Degrees (0..360, with decimal point) or sexagesimal: HH:MM:SS.SS / HH MM SS.SS
+    </div>
+  </div>
+<span class="to-span">to</span>
+
+<div class="js-form-item form-item js-form-type-textfield form-item-ra-range-max js-form-item-ra-range-max form-no-label">
+          <input data-drupal-selector="edit-ra-range-max" aria-describedby="edit-ra-range-max--description" type="text" id="edit-ra-range-max" name="ra_range_max" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-ra-range-max--description" class="description">
+      Degrees (0..360, with decimal point) or sexagesimal: HH:MM:SS.SS / HH MM SS.SS
+    </div>
+  </div>
+<div class="clear"></div></div><div class="decl-range-wrapper">
+
+<div class="js-form-item form-item js-form-type-textfield form-item-decl-range-min js-form-item-decl-range-min">
+      <label for="edit-decl-range-min">DEC range</label>
+          <input data-drupal-selector="edit-decl-range-min" aria-describedby="edit-decl-range-min--description" type="text" id="edit-decl-range-min" name="decl_range_min" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-decl-range-min--description" class="description">
+      Degrees (0..360, with decimal point) or sexagesimal: HH:MM:SS.SS / HH MM SS.SS
+    </div>
+  </div>
+<span class="to-span">to</span>
+
+<div class="js-form-item form-item js-form-type-textfield form-item-decl-range-max js-form-item-decl-range-max form-no-label">
+          <input data-drupal-selector="edit-decl-range-max" aria-describedby="edit-decl-range-max--description" type="text" id="edit-decl-range-max" name="decl_range_max" value="" size="10" maxlength="128" class="form-text" />
+
+              <div id="edit-decl-range-max--description" class="description">
+      Degrees (-90..+90, with decimal point) or sexagesimal: ±DD:MM:SS.SS / ±DD MM SS.SS
+    </div>
+  </div>
+<div class="clear"></div></div></div>
+
+  <input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="12954169" />
+<input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="pZ6xHM4ooCJeMN8qcvDqfqwnhuiLKfhihX9sAzYRrS8" />
+<input id="recaptcha-v3-token" class="recaptcha-v3-token" data-recaptcha-v3-action="v3_default" data-recaptcha-v3-site-key="6Lc1YZ4aAAAAAEQJotvlPckhauunPIr3-v592Utv" data-drupal-selector="edit-captcha-response" type="hidden" name="captcha_response" value="" />
+<input data-drupal-selector="edit-is-recaptcha-v3" type="hidden" name="is_recaptcha_v3" value="1" />
+
+<input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit" class="button js-form-submit form-submit" />
+
+
+<div class="js-form-item form-item js-form-type-select form-item-num-page js-form-item-num-page">
+      <label for="edit-num-page">Results in page</label>
+          <select data-drupal-selector="edit-num-page" id="edit-num-page" name="num_page" class="form-select"><option value="25">25</option><option value="50" selected="selected">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select>
+          </div>
+<div class="clear"></div><input autocomplete="off" data-drupal-selector="form-ypzdudu0alh-r-eogwtfb7xiluvfjbyq585zssonmvw" type="hidden" name="form_build_id" value="form-ypZDudu0aLH_R_eoGWtFb7XIluVFjByq585zsSonmVw" />
+<input data-drupal-selector="edit-searchnotesform" type="hidden" name="form_id" value="SearchNotesForm" />
+
+</form>
+</div><div class="table-container"><div id="notes-wrapper"><div class="count-resutls">Showing results 1 to 2 out of 2</div><div id="note-2026-216" class="note note-2026-216 clearfix note-public" note-id="2026-216" row-index="0"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2026-216" target="_blank" class="note-link note-link-2026-216">AstroNote 2026-216</a></div><div class="note-top-param type">Type: <a href="https://www.wis-tns.org/astronotes?note_typeid%5B%5D=10" target="_blank" class="note-type-link">Object/s-Discovery/Classification</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2026-07-14 05:47:45</span></div></div><div class="obj-images"><div id="obj-image-2026-216" class="obj-image" coords="20:07:41.012 -29:34:37.01"></div></div><div class="row-data"><div class="note-title">Classification of a Fast and Red Optical Transient in the LSST Alert Stream (170631094842425480 / AT 2026tim)</div><div class="note-coauthors">K-Ryan Hinds (Caltech), Daniel Perley (LJMU), Mansi Kasliwal (Caltech), Sam Whitebook (Caltech), Andrei-Alexandru Crist…</div><div class="note-keywords"><span class="field-title">Source Group: </span><a href="https://www.wis-tns.org/astronotes?groupid%5B%5D=48" target="_blank" title="Click to query by this Group" class="link-groupid">ZTF</a></div><div class="note-objects"><span class="field-title">Related Objects: </span><div class="object-wrapper"><a href="javascript:void(0)" ra="20:07:41.012" dec="-29:34:37.01" class="object-tooltip-link">2026tim [170631094842425480]</a><div class="object-tooltip description"><span class="tooltip-arrow-outer"></span><div class="tooltip-line"><span class="tootip-line-title">RA, DEC:</span>20:07:41.012, -29:34:37.01</div><div class="tooltip-line"><span class="tootip-line-title"></span>(301.920885, -29.576947)</div><div class="tooltip-line"><span class="tootip-line-title">Redshift:</span></div><div class="tooltip-line"><span class="tootip-line-title">Type:</span></div><div class="tooltip-line"><a href="https://www.wis-tns.org/object/2026tim" target="_blank" class="link-object">See object 2026tim [170631094842425480]</a></div><span class="tooltip-arrow-inner"></span></div></div></div><div class="note-notes"><span class="field-title">Related Notes: </span><div class="related-note-wrapper"><a href="javascript:void(0)" class="related-note-tooltip-link">2026-212</a><span class="tooltip-arrow-outer"></span><div class="related-note-tooltip description"><div class="tooltip-line"><a href="https://www.wis-tns.org/astronotes/astronote/2026-212" target="_blank" class="link-related-note">2026-216</a><span class="tooltip-date">2026-07-10 01:26:15</span><div class="clear"></div></div><div class="tooltip-line"><span class="tootip-line-title">Title: </span>Identification of a Fast and Red Optical Transient in the LSST Alert Stream (170631094842425480 / AT 2026tim)</div><div class="tooltip-line"><span class="tootip-line-title">Authors: </span>Michael Camilo (Cornell), Anna Y. Q. Ho (Cornell), Daniel P…</div><div class="tooltip-line"><span class="tootip-line-title">Source Group: </span>ZTF</div><div class="clear"></div><span class="tooltip-arrow-inner"></span></div></div></div><div class="note-abstract">We report the classification of a fast and red transient in the LSST alert stream (170631094842425480 / AT 2026tim) as stellar variability.</div></div></div></div><div id="note-2026-215" class="note note-2026-215 clearfix note-public" note-id="2026-215" row-index="1"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2026-215" target="_blank" class="note-link note-link-2026-215">AstroNote 2026-215</a></div><div class="note-top-param type">Type: <a href="https://www.wis-tns.org/astronotes?note_typeid%5B%5D=10" target="_blank" class="note-type-link">Object/s-Discovery/Classification</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2026-07-14 00:57:55</span></div></div><div class="obj-images"><div id="obj-image-2026-215" class="obj-image" coords="21:42:45.018 -17:41:11.12"></div></div><div class="row-data"><div class="note-title">Spectroscopic classification of SN 2026rcy/LSST 170587110502301802 as a hydrogen-poor superluminous supernova (SLSN-I) at a redshift of 0.7</div><div class="note-coauthors">Maggie L. Li, Sam Whitebook, Lin Yan (Caltech), Andrei-Alexandru Cristea (Institute of Science and Technology Austria),…</div><div class="note-keywords"><span class="field-title">Keywords: </span><a href="https://www.wis-tns.org/astronotes?keywords%5Bvalue_field%5D=%22%22Spectroscopy%22%22" target="_blank" title="Click to query by this Keyword" class="link-keyword">Spectroscopy</a>, <a href="https://www.wis-tns.org/astronotes?keywords%5Bvalue_field%5D=%22%22Transient%22%22" target="_blank" title="Click to query by this Keyword" class="link-keyword">Transient</a>, <a href="https://www.wis-tns.org/astronotes?keywords%5Bvalue_field%5D=%22%22Supernova%22%22" target="_blank" title="Click to query by this Keyword" class="link-keyword">Supernova</a>, <a href="https://www.wis-tns.org/astronotes?keywords%5Bvalue_field%5D=%22%22Optical%22%22" target="_blank" title="Click to query by this Keyword" class="link-keyword">Optical</a></div><div class="note-objects"><span class="field-title">Related Objects: </span><div class="object-wrapper"><a href="javascript:void(0)" ra="21:42:45.018" dec="-17:41:11.12" class="object-tooltip-link">2026rcy [LSST-AP-DO-170587110502301802]</a><div class="object-tooltip description"><span class="tooltip-arrow-outer"></span><div class="tooltip-line"><span class="tootip-line-title">RA, DEC:</span>21:42:45.018, -17:41:11.12</div><div class="tooltip-line"><span class="tootip-line-title"></span>(325.687576, -17.686422)</div><div class="tooltip-line"><span class="tootip-line-title">Redshift:</span>0.71</div><div class="tooltip-line"><span class="tootip-line-title">Type:</span>SLSN-I</div><div class="tooltip-line"><a href="https://www.wis-tns.org/object/2026rcy" target="_blank" class="link-object">See object 2026rcy [LSST-AP-DO-170587110502301802]</a></div><span class="tooltip-arrow-inner"></span></div></div></div><div class="note-abstract">We report the spectroscopic classification of SN 2026rcy as a hydrogen-poor superluminous supernova (SLSN-I) at z ~ 0.7.</div></div></div></div></div></div></div><div id="astronotoes-additions" class="clearfix"><div id="most-viewd"><h2 class="block-title">Most Viewed</h2><div id="most-viewd-notes-wrapper"><div id="note-2022-145" class="note note-2022-145 clearfix note-public note-public" note-id="2022-145" row-index="0"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2022-145" target="_blank" class="note-link note-link-2022-145">AstroNote 2022-145</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2022-07-16</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">6191</span></div></div><div class="note-title">Discovery of Possible Transient in JWST NIRCam Images of SDSS J141930.11+525159.3</div><div class="note-coauthors">Mike Engesser (STScI), Gabriel Brammer (University of Copenhagen), Katriona Gould (University of Co…</div></div></div><div id="note-2023-136" class="note note-2023-136 clearfix note-public note-public" note-id="2023-136" row-index="1"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2023-136" target="_blank" class="note-link note-link-2023-136">AstroNote 2023-136</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2023-05-23</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">5770</span></div></div><div class="note-title">Early multiband light curve of SN 2023ixf</div><div class="note-coauthors">Juan-Luis González-Carballo, R. G. Farfán, F. Limón, J. L. Salto, C. Botana, A. Mantero, G. Locatel…</div></div></div><div id="note-2023-119" class="note note-2023-119 clearfix note-public note-public" note-id="2023-119" row-index="2"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2023-119" target="_blank" class="note-link note-link-2023-119">AstroNote 2023-119</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2023-05-19</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">5163</span></div></div><div class="note-title">LT Classification of SN 2023ixf as a Type II Supernova in M101</div><div class="note-coauthors">Daniel A. Perley (LJMU), Avishay Gal-Yam (Weizmann), Ido Irani (Weizmann), Erez Zimmerman (Weizmann)</div></div></div><div id="note-2020-100" class="note note-2020-100 clearfix note-public note-public" note-id="2020-100" row-index="3"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2020-100" target="_blank" class="note-link note-link-2020-100">AstroNote 2020-100</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2020-05-07</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2713</span></div></div><div class="note-title">Classification of SN 2020jfo (ZTF20aaynrrh) as a young Type II supernova</div><div class="note-coauthors">Daniel Perley (LJMU), Cristina Barbarino (Stockholm), Jesper Sollerman (Stockholm), Tassilo Schweye…</div></div></div><div id="note-2023-265" class="note note-2023-265 clearfix note-public note-public" note-id="2023-265" row-index="4"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2023-265" target="_blank" class="note-link note-link-2023-265">AstroNote 2023-265</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2023-10-11</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2406</span></div></div><div class="note-title">SN 2023tyk: discovery to spectroscopic classification performed fully automatically</div><div class="note-coauthors">Nabeel Rehemtulla (NU), Adam Miller (NU), Christoffer Fremling (Caltech), D. A. Perley (LJMU), Yu-J…</div></div></div><div id="note-2020-89" class="note note-2020-89 clearfix note-public note-public" note-id="2020-89" row-index="5"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2020-89" target="_blank" class="note-link note-link-2020-89">AstroNote 2020-89</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2020-04-22</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2401</span></div></div><div class="note-title">ATLAS20ktt (AT2020hvp): discovery of a candidate supernova in NGC 6118 (27 Mpc)</div><div class="note-coauthors">M. Fulton, K. W. Smith, S. Srivastav, O. McBrien, S. J. Smartt, J. Gillanders, P. Clark, D. O&#039;…</div></div></div><div id="note-2023-130" class="note note-2023-130 clearfix note-public note-public" note-id="2023-130" row-index="6"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2023-130" target="_blank" class="note-link note-link-2023-130">AstroNote 2023-130</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2023-05-22</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2399</span></div></div><div class="note-title">Onset of SN 2023ixf observed over East Asian longitudes</div><div class="note-coauthors">Yiming Mao, Mi Zhang, Guangyao Cai, Jinan Chen, Jin Chen, Xing Gao, Keying Li, Xiaodong Lyu, Yujing…</div></div></div><div id="note-2019-163" class="note note-2019-163 clearfix note-public note-public" note-id="2019-163" row-index="7"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2019-163" target="_blank" class="note-link note-link-2019-163">AstroNote 2019-163</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2019-12-31</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2225</span></div></div><div class="note-title">ePESSTO+ re-classification of AT2019xis as a light echo of SN 1987A in the LMC.</div><div class="note-coauthors">S. Taubenberger (MPA), D. Malesani (DTU Space), G. Terreran (Northwestern), S. J. Smartt (QUB), A. …</div></div></div><div id="note-2020-126" class="note note-2020-126 clearfix note-public note-public" note-id="2020-126" row-index="8"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2020-126" target="_blank" class="note-link note-link-2020-126">AstroNote 2020-126</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2020-06-25</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2157</span></div></div><div class="note-title">ATLAS20qoq (AT2020nlb): discovery of a candidate SN in MESSIER 85 (17 Mpc)</div><div class="note-coauthors">A. Townsend (Queen&#039;s University Belfast / University of Manchester), K. W. Smith, S. Srivastav…</div></div></div><div id="note-2020-70" class="note note-2020-70 clearfix note-public note-public" note-id="2020-70" row-index="9"><div class="note-data-wrapper"><div class="note-top"><div class="note-top-param note-id"><a href="https://www.wis-tns.org/astronotes/astronote/2020-70" target="_blank" class="note-link note-link-2020-70">AstroNote 2020-70</a></div><div class="note-top-param latmodified">Released: <span class="note-lastmodified">2020-03-30</span></div><div class="note-top-param views-count">Views Count: <span class="note-lastmodified">2026</span></div></div><div class="note-title">Fast Radio Bursts (FRBs) now reported to and distributed via the TNS</div><div class="note-coauthors">O. Yaron, E. Ofek, A. Gal-Yam, A. Sass (Weizmann)</div></div></div></div></div><div id="tech-pub"><h2 class="block-title">Recent Released Tools</h2><div id="tech-pub-notes-wrapper"></div></div></div>
+  </div>
+
+  </div>
+
+    </main>
+
+  </div>
+  
+  </div>
+
+        
+
+        <div id="footer-wrapper">
+          <div class="section">
+            <div class="reights-reserved">Copyright © 2015</div>
+            <div class="builder-credit">Built by <a href="http://www.klido.net" target="_blank" title="Open source programming">klido.net</a></div>
+            <div class="clear"></div>
+          </div>
+        </div>
+
+
+      </div></div>
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"astronotes","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJx9jkEOwjAMBD8UkgMPqtxg0qDELraLFF5PaUFtD3BZze7askFNOMBb_aJdhUxuQWJDDRt6vGT7Uf3ZUgSJw1paiFwrkunXp8I9lJNaK5mSizBaHCD0oOhiAdV24IqqkFBdZMFwkWmE4q8sdQ0yGQrN0e0-obRdQzNByU90gp8j3eMcEnMq6LcM6TiwN06bGtbloRelXXn6","theme":"astrot","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/astronotes?date_start%5Bdate%5D=2026-7-14\u0026ajax_form=1":true},"astronotes":{"astronotesRawKeywords":[{"id":45,"name":"AGN","family":"Systems"},{"id":66,"name":"Asteroid","family":"Planetary"},{"id":120,"name":"Astrometry","family":"General"},{"id":14,"name":"Astronomical Databases","family":"General"},{"id":48,"name":"Binary","family":"Systems"},{"id":46,"name":"Black Hole","family":"Systems"},{"id":22,"name":"Cataclysmic Variable","family":"Events"},{"id":12,"name":"Catalogs","family":"General"},{"id":47,"name":"Cluster","family":"Systems"},{"id":67,"name":"Comet","family":"Planetary"},{"id":87,"name":"Cosmic Rays","family":"Messengers"},{"id":11,"name":"Cosmology","family":"General"},{"id":62,"name":"Earth","family":"Planetary"},{"id":73,"name":"Exoplanet","family":"Planetary"},{"id":27,"name":"Fast Radio Burst","family":"Events"},{"id":49,"name":"Galaxy","family":"Systems"},{"id":51,"name":"Galaxy Cluster","family":"Systems"},{"id":85,"name":"Gamma Rays","family":"Messengers"},{"id":26,"name":"Gamma-Ray Burst","family":"Events"},{"id":88,"name":"Gravitational Waves","family":"Messengers"},{"id":81,"name":"Infra-Red","family":"Messengers"},{"id":17,"name":"Instrumentation","family":"General"},{"id":53,"name":"Inter-Galactic-Medium","family":"Systems"},{"id":52,"name":"Inter-Stellar-Medium","family":"Systems"},{"id":71,"name":"Kuiper Belt","family":"Planetary"},{"id":28,"name":"Lensing","family":"Events"},{"id":70,"name":"Meteorites","family":"Planetary"},{"id":69,"name":"Meteors","family":"Planetary"},{"id":16,"name":"Methods","family":"General"},{"id":29,"name":"Microlensing","family":"Events"},{"id":65,"name":"Minor Planet","family":"Planetary"},{"id":61,"name":"Moon","family":"Planetary"},{"id":68,"name":"Near-Earth-Object","family":"Planetary"},{"id":86,"name":"Neutrinos","family":"Messengers"},{"id":42,"name":"Neutron Star","family":"Systems"},{"id":23,"name":"Nova","family":"Events"},{"id":72,"name":"Oort Cloud","family":"Planetary"},{"id":82,"name":"Optical","family":"Messengers"},{"id":18,"name":"Photometry","family":"General"},{"id":64,"name":"Planet","family":"Planetary"},{"id":43,"name":"Pulsar","family":"Systems"},{"id":44,"name":"Quasar","family":"Systems"},{"id":80,"name":"Radio","family":"Messengers"},{"id":63,"name":"Solar System Object","family":"Planetary"},{"id":19,"name":"Spectroscopy","family":"General"},{"id":40,"name":"Star","family":"Systems"},{"id":50,"name":"Star Cluster","family":"Systems"},{"id":60,"name":"Sun","family":"Planetary"},{"id":24,"name":"Supernova","family":"Events"},{"id":25,"name":"Supernova Remnant","family":"Events"},{"id":13,"name":"Surveys","family":"General"},{"id":30,"name":"TDE","family":"Events"},{"id":15,"name":"Techniques","family":"General"},{"id":10,"name":"Time-domain","family":"General"},{"id":21,"name":"Transient","family":"Events"},{"id":83,"name":"Ultra-Violet","family":"Messengers"},{"id":20,"name":"Variable Star","family":"Events"},{"id":41,"name":"White Dwarf","family":"Systems"},{"id":84,"name":"X-rays","family":"Messengers"}],"astronotesKeywords":"\u003Cdiv id=\u0022available-keywords\u0022 class=\u0022clearfix\u0022\u003E\u003Cdiv id=\u0022available-keywords-link-wrapper\u0022 class=\u0022clearfix\u0022\u003E\u003Cdiv class=\u0022keyword-family\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002245\u0022 keyword=\u0022AGN\u0022 class=\u0022keyword-link\u0022\u003EAGN\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002248\u0022 keyword=\u0022Binary\u0022 class=\u0022keyword-link\u0022\u003EBinary\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002246\u0022 keyword=\u0022Black Hole\u0022 class=\u0022keyword-link\u0022\u003EBlack Hole\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002247\u0022 keyword=\u0022Cluster\u0022 class=\u0022keyword-link\u0022\u003ECluster\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002249\u0022 keyword=\u0022Galaxy\u0022 class=\u0022keyword-link\u0022\u003EGalaxy\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002251\u0022 keyword=\u0022Galaxy Cluster\u0022 class=\u0022keyword-link\u0022\u003EGalaxy Cluster\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002253\u0022 keyword=\u0022Inter-Galactic-Medium\u0022 class=\u0022keyword-link\u0022\u003EInter-Galactic-Medium\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002252\u0022 keyword=\u0022Inter-Stellar-Medium\u0022 class=\u0022keyword-link\u0022\u003EInter-Stellar-Medium\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002242\u0022 keyword=\u0022Neutron Star\u0022 class=\u0022keyword-link\u0022\u003ENeutron Star\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002243\u0022 keyword=\u0022Pulsar\u0022 class=\u0022keyword-link\u0022\u003EPulsar\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002244\u0022 keyword=\u0022Quasar\u0022 class=\u0022keyword-link\u0022\u003EQuasar\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002240\u0022 keyword=\u0022Star\u0022 class=\u0022keyword-link\u0022\u003EStar\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002250\u0022 keyword=\u0022Star Cluster\u0022 class=\u0022keyword-link\u0022\u003EStar Cluster\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002241\u0022 keyword=\u0022White Dwarf\u0022 class=\u0022keyword-link\u0022\u003EWhite Dwarf\u003C\/a\u003E\u003C\/div\u003E\u003Cdiv class=\u0022keyword-family\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002266\u0022 keyword=\u0022Asteroid\u0022 class=\u0022keyword-link\u0022\u003EAsteroid\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002267\u0022 keyword=\u0022Comet\u0022 class=\u0022keyword-link\u0022\u003EComet\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002262\u0022 keyword=\u0022Earth\u0022 class=\u0022keyword-link\u0022\u003EEarth\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002273\u0022 keyword=\u0022Exoplanet\u0022 class=\u0022keyword-link\u0022\u003EExoplanet\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002271\u0022 keyword=\u0022Kuiper Belt\u0022 class=\u0022keyword-link\u0022\u003EKuiper Belt\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002270\u0022 keyword=\u0022Meteorites\u0022 class=\u0022keyword-link\u0022\u003EMeteorites\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002269\u0022 keyword=\u0022Meteors\u0022 class=\u0022keyword-link\u0022\u003EMeteors\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002265\u0022 keyword=\u0022Minor Planet\u0022 class=\u0022keyword-link\u0022\u003EMinor Planet\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002261\u0022 keyword=\u0022Moon\u0022 class=\u0022keyword-link\u0022\u003EMoon\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002268\u0022 keyword=\u0022Near-Earth-Object\u0022 class=\u0022keyword-link\u0022\u003ENear-Earth-Object\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002272\u0022 keyword=\u0022Oort Cloud\u0022 class=\u0022keyword-link\u0022\u003EOort Cloud\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002264\u0022 keyword=\u0022Planet\u0022 class=\u0022keyword-link\u0022\u003EPlanet\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002263\u0022 keyword=\u0022Solar System Object\u0022 class=\u0022keyword-link\u0022\u003ESolar System Object\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002260\u0022 keyword=\u0022Sun\u0022 class=\u0022keyword-link\u0022\u003ESun\u003C\/a\u003E\u003C\/div\u003E\u003Cdiv class=\u0022keyword-family\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u0022120\u0022 keyword=\u0022Astrometry\u0022 class=\u0022keyword-link\u0022\u003EAstrometry\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002214\u0022 keyword=\u0022Astronomical Databases\u0022 class=\u0022keyword-link\u0022\u003EAstronomical Databases\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002212\u0022 keyword=\u0022Catalogs\u0022 class=\u0022keyword-link\u0022\u003ECatalogs\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002211\u0022 keyword=\u0022Cosmology\u0022 class=\u0022keyword-link\u0022\u003ECosmology\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002217\u0022 keyword=\u0022Instrumentation\u0022 class=\u0022keyword-link\u0022\u003EInstrumentation\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002216\u0022 keyword=\u0022Methods\u0022 class=\u0022keyword-link\u0022\u003EMethods\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002218\u0022 keyword=\u0022Photometry\u0022 class=\u0022keyword-link\u0022\u003EPhotometry\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002219\u0022 keyword=\u0022Spectroscopy\u0022 class=\u0022keyword-link\u0022\u003ESpectroscopy\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002213\u0022 keyword=\u0022Surveys\u0022 class=\u0022keyword-link\u0022\u003ESurveys\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002215\u0022 keyword=\u0022Techniques\u0022 class=\u0022keyword-link\u0022\u003ETechniques\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002210\u0022 keyword=\u0022Time-domain\u0022 class=\u0022keyword-link\u0022\u003ETime-domain\u003C\/a\u003E\u003C\/div\u003E\u003Cdiv class=\u0022keyword-family\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002222\u0022 keyword=\u0022Cataclysmic Variable\u0022 class=\u0022keyword-link\u0022\u003ECataclysmic Variable\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002227\u0022 keyword=\u0022Fast Radio Burst\u0022 class=\u0022keyword-link\u0022\u003EFast Radio Burst\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002226\u0022 keyword=\u0022Gamma-Ray Burst\u0022 class=\u0022keyword-link\u0022\u003EGamma-Ray Burst\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002228\u0022 keyword=\u0022Lensing\u0022 class=\u0022keyword-link\u0022\u003ELensing\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002229\u0022 keyword=\u0022Microlensing\u0022 class=\u0022keyword-link\u0022\u003EMicrolensing\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002223\u0022 keyword=\u0022Nova\u0022 class=\u0022keyword-link\u0022\u003ENova\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002224\u0022 keyword=\u0022Supernova\u0022 class=\u0022keyword-link\u0022\u003ESupernova\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002225\u0022 keyword=\u0022Supernova Remnant\u0022 class=\u0022keyword-link\u0022\u003ESupernova Remnant\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002230\u0022 keyword=\u0022TDE\u0022 class=\u0022keyword-link\u0022\u003ETDE\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002221\u0022 keyword=\u0022Transient\u0022 class=\u0022keyword-link\u0022\u003ETransient\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002220\u0022 keyword=\u0022Variable Star\u0022 class=\u0022keyword-link\u0022\u003EVariable Star\u003C\/a\u003E\u003C\/div\u003E\u003Cdiv class=\u0022keyword-family\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002287\u0022 keyword=\u0022Cosmic Rays\u0022 class=\u0022keyword-link\u0022\u003ECosmic Rays\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002285\u0022 keyword=\u0022Gamma Rays\u0022 class=\u0022keyword-link\u0022\u003EGamma Rays\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002288\u0022 keyword=\u0022Gravitational Waves\u0022 class=\u0022keyword-link\u0022\u003EGravitational Waves\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002281\u0022 keyword=\u0022Infra-Red\u0022 class=\u0022keyword-link\u0022\u003EInfra-Red\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002286\u0022 keyword=\u0022Neutrinos\u0022 class=\u0022keyword-link\u0022\u003ENeutrinos\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002282\u0022 keyword=\u0022Optical\u0022 class=\u0022keyword-link\u0022\u003EOptical\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002280\u0022 keyword=\u0022Radio\u0022 class=\u0022keyword-link\u0022\u003ERadio\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002283\u0022 keyword=\u0022Ultra-Violet\u0022 class=\u0022keyword-link\u0022\u003EUltra-Violet\u003C\/a\u003E\u003Ca href=\u0022javascript:void(0)\u0022keywordid=\u002284\u0022 keyword=\u0022X-rays\u0022 class=\u0022keyword-link\u0022\u003EX-rays\u003C\/a\u003E\u003C\/div\u003E\u003C\/div\u003E\u003Cinput type=\u0022button\u0022 class=\u0022clear-group form-submit insert-keywords\u0022 value=\u0022Insert selected\u0022\u003E\u003Ca href=\u0022javascript:void(0)\u0022 class=\u0022clear-keywords\u0022\u003EClean\u003C\/a\u003E\u003C\/div\u003E"},"ajax":{"edit-captcha-response":{"callback":"recaptcha_v3_ajax_callback","event":"change","url":"\/astronotes?date_start%5Bdate%5D=2026-7-14\u0026ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"captcha_response"}}},"user":{"uid":0,"permissionsHash":"521799509240fb8f458518db8ba8f51ae7a2bcd57bb0f192ce191a8a9a922c56"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=10.6.12"></script>
+<script src="/core/misc/drupal.js?v=10.6.12"></script>
+<script src="/core/misc/drupal.init.js?v=10.6.12"></script>
+<script src="/core/assets/vendor/tabbable/index.umd.min.js?v=6.3.0"></script>
+<script src="/core/misc/progress.js?v=10.6.12"></script>
+<script src="/core/assets/vendor/loadjs/loadjs.min.js?v=4.3.0"></script>
+<script src="/core/misc/debounce.js?v=10.6.12"></script>
+<script src="/core/misc/announce.js?v=10.6.12"></script>
+<script src="/core/misc/message.js?v=10.6.12"></script>
+<script src="/core/misc/ajax.js?v=10.6.12"></script>
+<script src="/themes/contrib/stable/js/ajax.js?v=10.6.12"></script>
+<script src="/modules/custom/astro/js/astro_main.js?v=10.6.12"></script>
+<script src="/modules/custom/astronotes/js/astronotes_edit.js?v=10.6.12"></script>
+<script src="/libraries/select2/src/js/select2.min.js?v=10.6.12"></script>
+<script src="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js"></script>
+<script src="/modules/custom/astronotes/js/astronotes_search.js?v=10.6.12"></script>
+<script src="/core/misc/form.js?v=10.6.12"></script>
+<script src="/core/misc/jquery.form.js?v=4.3.0"></script>
+<script src="/modules/contrib/recaptcha_v3/js/recaptcha_v3.js?ti6fmp"></script>
+
+     </div>
+  </body>
+</html>

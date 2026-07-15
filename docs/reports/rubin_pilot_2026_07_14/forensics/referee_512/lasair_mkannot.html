@@ -1,0 +1,450 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making an Annotator</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-design.<Mock name='mock()' id='140113604395888'>.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/core.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/style.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/whistles-theme/Contents/Resources/dryx.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+        <script src="../_static/whistles-theme/Contents/Resources/main.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lasair account" href="../more_info/account.html" />
+    <link rel="prev" title="Alert Streams" href="alert-streams.html" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          messageStyle: "none",
+          tex2jax: {preview: "none"}
+        });
+    </script>
+  
+  <!-- REMOTE SCRIPTS AND STYLES -->
+
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-number.min.css">
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai-sublime.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js"></script>
+
+  
+
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="lasair" /><meta name="readthedocs-version-slug" content="main" /><meta name="readthedocs-resolver-filename" content="/core_functions/make_annotator.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+          
+
+
+          
+              
+          
+
+
+<!--           
+            <a href="../index.html" class="icon icon-home"> lasair
+          
+
+          
+            
+            <img src="../_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/>
+          
+          </a> -->
+
+
+
+          
+            <a href="../index.html" class="icon icon-home"> lasair</a> <p>Documentation for the Lasair Transient Science Platform</p> <a href="../index.html"><img src="../_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/> </a>
+          
+
+
+          
+          
+            
+            
+              <div class="version">
+                v4.1.0
+              </div>
+            
+          
+
+          
+              <a class="github-button" href="https://github.com/lsst-uk/lasair_api" data-size="large" data-show-count="true" aria-label="Star lsst-uk/lasair_api on GitHub">Star</a>
+          
+
+          
+<div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <input type="search" name="q" placeholder="Search docs" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">Videos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About Lasair</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#the-lasair-approach">The Lasair approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#how-lasair-works">How Lasair Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#scientific-goals-of-lasair">Scientific goals of Lasair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/objects_sources.html">Objects and Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/lightcurve.html">Lightcurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sky-context.html">Sky Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/querying.html">Queries and Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/coding.html">Coding with Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/annotations.html">Annotations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Functions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sky-search.html">Sky Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sherlock.html">Sherlock (Sky Context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_filter.html">Make a Lasair Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watchlists.html">Watchlists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watchmaps.html">Watchmaps (Sky Regions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Lasair Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest-api.html">Lasair API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alert-streams.html">Alert Streams</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making an Annotator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#request-to-lasair-team">Request to Lasair team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#make-the-code">Make the code</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/account.html">Lasair account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/faqs.html">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/contact.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/status.html">Lasair Ingestion Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_info/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">lasair</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Making an Annotator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/core_functions/make_annotator.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="making-an-annotator">
+<h1>Making an Annotator<a class="headerlink" href="#making-an-annotator" title="Permalink to this heading">  ∞</a></h1>
+<section id="request-to-lasair-team">
+<h2>Request to Lasair team<a class="headerlink" href="#request-to-lasair-team" title="Permalink to this heading">  ∞</a></h2>
+<p>Annotation means that external users push information to the Lasair database.
+
+Therefore it requires that user to inform the Lasair team and be approved
+
+before it will work. The team will use the admin interface to create an <code class="docutils literal notranslate"><span class="pre">annotator</span></code>
+
+object in the database, which is a conneciton between the API token of that user
+
+with the name (<code class="docutils literal notranslate"><span class="pre">topic</span></code>) assigned to the annotator. </p>
+<p>In the first case, write to 
+<a class="reference external" href="mailto:lasair-help&#37;&#52;&#48;mlist&#46;is&#46;ed&#46;ac&#46;uk?subject=New Annotator">Lasair Team</a>
+
+to propose your annotator.</p>
+<p>Here we see that admin interface that the Lasair team uses to make your annotator,
+
+if it is approved.:</p>
+<p><a class="reference internal" href="../_images/fastfinder.png"><img alt="" src="../_images/fastfinder.png" style="width: 500px;" /></a></p>
+<p>You can see that your new annotator is a name (or <em>topic</em>) and description. 
+
+It is bound to your own Lasair account, meaning that you must use your own API token 
+
+to run your annotator code (see below). There is also a URL for further information.
+
+If the annotator is <code class="docutils literal notranslate"><span class="pre">active</span></code>, it can receive annotations, meaning that if the external system
+
+goes wild, the annotator can be switched off by setting <code class="docutils literal notranslate"><span class="pre">active=0</span></code>. Finally, the annotator
+
+can be <code class="docutils literal notranslate"><span class="pre">public</span></code> or not, meaning that it is visible or not to others building Lasair filters.</p>
+</section>
+<section id="make-the-code">
+<h2>Make the code<a class="headerlink" href="#make-the-code" title="Permalink to this heading">  ∞</a></h2>
+<p>The following code reads the stream from a Lasair filter, and for each <code class="docutils literal notranslate"><span class="pre">objectId</span></code>, 
+
+it pulls the complete object information so it could analyse the lightcurve 
+
+and other information before making a classification decision. 
+
+This information is collected up as the annotation and sent back to Lasair,
+
+where it will be available for others to query.</p>
+<p>There should be a file <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> file to accomany the code below with these variables defined::</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TOPIC_IN</span></code>: The name of your streaming query as seen in the filter detail, where it says “The filter is streamed via kafka with the topic name”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GROUP_ID</span></code>: Choose a new one evey run when testing; keep it constant for long-term running</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">API_TOKEN</span></code>: As found in ‘My Profile’ top right of the web page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TOPIC_OUT</span></code>: The name of your annotator as agreed with the Lasair team (above)</p></li>
+</ul>
+<p>If the code below is not clear, it would be good for you to read about how 
+
+the (Lasair client)[rest-api.html] works.</p>
+<p>For more information about what is returned as <code class="docutils literal notranslate"><span class="pre">objectInfo</span></code>, a complete example 
+
+is <a class="reference external" href="ZTF23aabplmy.html">shown here</a>.</p>
+<p>For testing purposes, the <code class="docutils literal notranslate"><span class="pre">GROUP_ID</span></code> will change frequently, and you get all of the alerts
+
+the come from the given stream. Then you will set up your annotator program to run continuously,
+
+perhaps in a <code class="docutils literal notranslate"><span class="pre">screen</span></code> session on a server machine, or started every hour by <code class="docutils literal notranslate"><span class="pre">cron</span></code>. 
+
+In that case, the <code class="docutils literal notranslate"><span class="pre">GROUP_ID</span></code> will remain constant, so you won’t get any alerts twice.</p>
+<p>A much simpler code is possible if for example the annotation is the classification
+
+results from another broker. In that case, only the call to <code class="docutils literal notranslate"><span class="pre">L.annotator()</span></code> is necessary.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>import json, sys, settings
+import lasair
+
+# This function deals with an object once it is received from Lasair
+def handle_object(objectId, L, topic_out):
+    # from the objectId, we can get all the info that Lasair has
+    objectInfo = L.objects([objectId])[0]
+    print(objectInfo.keys())
+    if not objectInfo:
+        return 0
+    # objectInfo.keys():
+    #  -- objectData: about the object and its features
+    #  -- candidates: the lightcurve of detections and nondetections
+    #  -- sherlock: the sherlock information
+    #  -- TNS: any crossmatch with the TNS database
+
+    # analyse object here. The following is a toy annotation
+    classdict      = {&#39;fruit&#39;: &#39;apple&#39;}
+    classification = &#39;ripe&#39;
+    explanation    = &#39;another nice apple&#39;
+
+    # now we annotate the Lasair data with the classification
+    L.annotate(
+        topic_out, 
+        objectId, 
+        classification,
+        version=&#39;0.1&#39;, 
+        explanation=explanation, 
+        classdict=classdict, 
+        url=&#39;&#39;)
+    print(objectId, &#39;-- annotated!&#39;)
+    return 1
+
+#####################################
+# first we set up pulling the stream from Lasair
+# a fresh group_id gets all, an old group_id starts where it left off
+group_id = settings.GROUP_ID
+
+# a filter from Lasair, example &#39;lasair_2SN-likecandidates&#39;
+topic_in = settings.TOPIC_IN
+
+# kafka consumer that we can suck from
+consumer = lasair.lasair_consumer(&#39;kafka.lsst.ac.uk:9092&#39;, group_id, topic_in)
+
+# the lasair client will be used for pulling all the info about the object
+# and for annotating it
+L = lasair.lasair_client(settings.API_TOKEN)
+
+# TOPIC_OUT is an annotator owned by a user. API_TOKEN must be that users token.
+topic_out = settings.TOPIC_OUT
+
+# just get a few to start
+max_alert = 5
+
+n_alert = n_annotate = 0
+while n_alert &lt; max_alert:
+    msg = consumer.poll(timeout=20)
+    if msg is None:
+        break
+    if msg.error():
+        print(str(msg.error()))
+        break
+    jsonmsg = json.loads(msg.value())
+    objectId       = jsonmsg[&#39;objectId&#39;]
+    n_alert += 1
+    n_annotate += handle_object(objectId, L, topic_out)
+
+print(&#39;Annotated %d of %d objects&#39; % (n_annotate, n_alert))
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../more_info/account.html" class="btn btn-neutral float-right" title="Lasair account" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="alert-streams.html" class="btn btn-neutral float-left" title="Alert Streams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2026, The University of Edinburgh and Queen&#39;s University Belfast. Funded by UK STFC grants ST/X001334/1 and ST/X001253/1
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

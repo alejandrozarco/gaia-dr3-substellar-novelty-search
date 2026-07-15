@@ -1,0 +1,16 @@
+projcell subcell ra dec filter mjd type filename shortname badflag
+1043 29 313.22651 -14.84044 r 55442.31054 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55442_31054.fits rings.v3.skycell.1043.029.wrp.r.55442_31054.fits 0
+1043 29 313.22651 -14.84044 r 55768.43407 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55768_43407.fits rings.v3.skycell.1043.029.wrp.r.55768_43407.fits 0
+1043 29 313.22651 -14.84044 r 55768.43468 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55768_43468.fits rings.v3.skycell.1043.029.wrp.r.55768_43468.fits 0
+1043 29 313.22651 -14.84044 r 55776.42148 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55776_42148.fits rings.v3.skycell.1043.029.wrp.r.55776_42148.fits 0
+1043 29 313.22651 -14.84044 r 55776.42209 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55776_42209.fits rings.v3.skycell.1043.029.wrp.r.55776_42209.fits 0
+1043 29 313.22651 -14.84044 r 55776.43189 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55776_43189.fits rings.v3.skycell.1043.029.wrp.r.55776_43189.fits 0
+1043 29 313.22651 -14.84044 r 55835.25421 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55835_25421.fits rings.v3.skycell.1043.029.wrp.r.55835_25421.fits 0
+1043 29 313.22651 -14.84044 r 55835.25547 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55835_25547.fits rings.v3.skycell.1043.029.wrp.r.55835_25547.fits 0
+1043 29 313.22651 -14.84044 r 55835.26656 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.55835_26656.fits rings.v3.skycell.1043.029.wrp.r.55835_26656.fits 0
+1043 29 313.22651 -14.84044 r 56173.34682 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56173_34682.fits rings.v3.skycell.1043.029.wrp.r.56173_34682.fits 0
+1043 29 313.22651 -14.84044 r 56176.34565 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56176_34565.fits rings.v3.skycell.1043.029.wrp.r.56176_34565.fits 0
+1043 29 313.22651 -14.84044 r 56475.50159 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56475_50159.fits rings.v3.skycell.1043.029.wrp.r.56475_50159.fits 0
+1043 29 313.22651 -14.84044 r 56475.51125 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56475_51125.fits rings.v3.skycell.1043.029.wrp.r.56475_51125.fits 0
+1043 29 313.22651 -14.84044 r 56479.51979 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56479_51979.fits rings.v3.skycell.1043.029.wrp.r.56479_51979.fits 0
+1043 29 313.22651 -14.84044 r 56479.53016 warp /rings.v3.skycell/1043/029/rings.v3.skycell.1043.029.wrp.r.56479_53016.fits rings.v3.skycell.1043.029.wrp.r.56479_53016.fits 0

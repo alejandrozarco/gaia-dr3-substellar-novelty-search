@@ -1,0 +1,385 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lasair: A UK Alert Stream Broker</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx-design.<Mock name='mock()' id='140113604395888'>.min.css" type="text/css" />
+  <link rel="stylesheet" href="_static/whistles-theme/Contents/Resources/core.css" type="text/css" />
+  <link rel="stylesheet" href="_static/whistles-theme/Contents/Resources/style.css" type="text/css" />
+  <link rel="stylesheet" href="_static/whistles-theme/Contents/Resources/dryx.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+        <script src="_static/whistles-theme/Contents/Resources/main.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quickstart.html" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          messageStyle: "none",
+          tex2jax: {preview: "none"}
+        });
+    </script>
+  
+  <!-- REMOTE SCRIPTS AND STYLES -->
+
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-number.min.css">
+  <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai-sublime.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.3/flowchart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js"></script>
+
+  
+
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="lasair" /><meta name="readthedocs-version-slug" content="main" /><meta name="readthedocs-resolver-filename" content="/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+          
+
+
+          
+              
+          
+
+
+<!--           
+            <a href="#" class="icon icon-home"> lasair
+          
+
+          
+            
+            <img src="_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/>
+          
+          </a> -->
+
+
+
+          
+            <a href="#" class="icon icon-home"> lasair</a> <p>Documentation for the Lasair Transient Science Platform</p> <a href="#"><img src="_static/lasair_icon_transparent_small.png" class="logo" alt="Logo"/> </a>
+          
+
+
+          
+          
+            
+            
+              <div class="version">
+                v4.1.0
+              </div>
+            
+          
+
+          
+              <a class="github-button" href="https://github.com/lsst-uk/lasair_api" data-size="large" data-show-count="true" aria-label="Star lsst-uk/lasair_api on GitHub">Star</a>
+          
+
+          
+<div role="search">
+    <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+        <input type="search" name="q" placeholder="Search docs" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">Videos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About Lasair</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#the-lasair-approach">The Lasair approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#how-lasair-works">How Lasair Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#scientific-goals-of-lasair">Scientific goals of Lasair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/objects_sources.html">Objects and Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/lightcurve.html">Lightcurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/sky-context.html">Sky Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/querying.html">Queries and Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/coding.html">Coding with Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/annotations.html">Annotations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/sky-search.html">Sky Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/sherlock.html">Sherlock (Sky Context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/make_filter.html">Make a Lasair Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/watchlists.html">Watchlists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/watchmaps.html">Watchmaps (Sky Regions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/client.html">Lasair Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/rest-api.html">Lasair API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/alert-streams.html">Alert Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/make_annotator.html">Making an Annotator</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">More Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="more_info/account.html">Lasair account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/faqs.html">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/contact.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/status.html">Lasair Ingestion Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">lasair</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Lasair: A UK Alert Stream Broker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p><a class="reference internal" href="_images/lasair_logo_transparent.png"><img alt="" src="_images/lasair_logo_transparent.png" style="width: 500px;" /></a></p>
+<section id="lasair:-a-uk-alert-stream-broker">
+<h1><a class="reference external" href="https://lasair-ztf.lsst.ac.uk">Lasair: A UK Alert Stream Broker</a><a class="headerlink" href="#lasair:-a-uk-alert-stream-broker" title="Permalink to this heading">  ∞</a></h1>
+<p><a class="reference external" href="https://lasair-ztf.lsst.ac.uk"><em>Lasair</em></a> is being developed by The University of Edinburgh, Queen’s University Belfast,
+
+and Oxford University with the ultimate goal of serving transient alerts from the 
+
+future <a class="reference external" href="https://www.lsst.org">Rubin Legacy Survey of Space and Time (LSST)</a> to the 
+
+astronomical community. <em>Lasair</em> (pronounced ‘<em>L-AH-s-uh-r</em>’) means flame or 
+
+flash in Scots and Irish gaelic. To prototype functionality needed to process transient 
+
+event alerts from LSST, Lasair is currently processing and serving data from the 
+
+public stream of the <a class="reference external" href="http://www.ztf.caltech.edu/">Zwicky Transient Facility (ZTF)</a>, 
+
+which is releasing a transient alert stream in a format similar to that 
+
+envisaged for LSST. We thank ZTF for access to this valuable public data stream.</p>
+<p>If you make use of <a class="reference external" href="https://lasair-ztf.lsst.ac.uk">Lasair</a> in any of your work, please remember to cite our paper: <a class="reference external" href="https://doi.org/10.1093/rasti/rzae024">R.D.Williams et. al., 
+
+Enabling science from the Rubin alert stream with Lasair</a>, 
+
+RAS Techniques and Instruments, <strong>3</strong>,1, 362  (2024).</p>
+<p>To start using Lasair to filter the deluge of alerts:</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">Videos</a></li>
+</ul>
+</div>
+<p>The following is about the astronomical science enabled by Lasair:</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">About Lasair</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#the-lasair-approach">The Lasair approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#how-lasair-works">How Lasair Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#scientific-goals-of-lasair">Scientific goals of Lasair</a></li>
+</ul>
+</div>
+<p>Please start here to discover the key ideas of Lasair:</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/objects_sources.html">Objects and Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/lightcurve.html">Lightcurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/sky-context.html">Sky Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/querying.html">Queries and Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/coding.html">Coding with Lasair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/annotations.html">Annotations</a></li>
+</ul>
+</div>
+<p>Lasair’s core features are described in more detail here:</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Core Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/sky-search.html">Sky Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/sherlock.html">Sherlock (Sky Context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/make_filter.html">Make a Lasair Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/watchlists.html">Watchlists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/watchmaps.html">Watchmaps (Sky Regions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/client.html">Lasair Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/rest-api.html">Lasair API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/alert-streams.html">Alert Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_functions/make_annotator.html">Making an Annotator</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">More Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="more_info/account.html">Lasair account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/faqs.html">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/contact.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/status.html">Lasair Ingestion Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2026, The University of Edinburgh and Queen&#39;s University Belfast. Funded by UK STFC grants ST/X001334/1 and ST/X001253/1
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

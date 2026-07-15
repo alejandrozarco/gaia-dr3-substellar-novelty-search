@@ -1,0 +1,5 @@
+survey,filter,mjd,jd,mag,magerr,kind,sep_as,note
+PS1-DR2,y,55765.440945,2455765.940945,18.667,0.14,detection-ARTIFACT,0.84,single-exposure only; absent in same-night partner exposure MJD 55765.452704 (partner detects to y~19.4); psfQfPerfect=0.539; member of low-Qf artifact swarm around G=14.8 star 20.6as away; NOT a precursor
+PS1-DR2,z,56420.610791,2456421.110791,21.372,0.2,detection-neighbor,3.21,"3.2as neighbor (quiescent), not the transient position"
+PS1-DR2,z,56588.228209,2456588.728209,21.294,0.2,detection-neighbor,3.17,"3.2as neighbor (quiescent), not the transient position"
+NSC-DR2,i,58704.144222,2458704.644222,21.78,0.1,detection-neighbor,2.97,DECam; nearest NSC object 118452_13190; single epoch; nothing at transient position

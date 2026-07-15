@@ -1,0 +1,72 @@
+[
+ {
+  "classifier_name": "stamp_classifier_rubin_beta",
+  "classifier_version": 201,
+  "class_name": "SN",
+  "probability": 0.00032299964,
+  "ranking": 5
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta_20260421",
+  "classifier_version": 202,
+  "class_name": "SN",
+  "probability": 0.018037783,
+  "ranking": 3
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta",
+  "classifier_version": 201,
+  "class_name": "AGN",
+  "probability": 0.003693288,
+  "ranking": 4
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta_20260421",
+  "classifier_version": 202,
+  "class_name": "AGN",
+  "probability": 0.0028035487,
+  "ranking": 4
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta",
+  "classifier_version": 201,
+  "class_name": "VS",
+  "probability": 0.00604468,
+  "ranking": 3
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta_20260421",
+  "classifier_version": 202,
+  "class_name": "VS",
+  "probability": 0.0014488875,
+  "ranking": 5
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta_20260421",
+  "classifier_version": 202,
+  "class_name": "asteroid",
+  "probability": 0.80869323,
+  "ranking": 1
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta",
+  "classifier_version": 201,
+  "class_name": "asteroid",
+  "probability": 0.09132012,
+  "ranking": 2
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta",
+  "classifier_version": 201,
+  "class_name": "bogus",
+  "probability": 0.8986189,
+  "ranking": 1
+ },
+ {
+  "classifier_name": "stamp_classifier_rubin_beta_20260421",
+  "classifier_version": 202,
+  "class_name": "bogus",
+  "probability": 0.16901657,
+  "ranking": 2
+ }
+]

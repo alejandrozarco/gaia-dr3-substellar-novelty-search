@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="xmlns:http://www.ivoa.net/xml/VOTable-1.2.xsd" version="1.2">
+<RESOURCE type="results">
+<DESCRIPTION>DALServer cone search</DESCRIPTION>
+<INFO name="QUERY_STATUS" value="OK"/>
+<INFO name="INPUT:RA" value="313.2265057"/>
+<INFO name="INPUT:DEC" value="-14.8404352"/>
+<INFO name="INPUT:SR" value="0.00278"/>
+<INFO name="ServiceEngine" value="scs-ls_dr10-tractor: SCS version 1.0 DALServer version 0.7"/>
+<INFO name="dbName" value="tapdb"/>
+<INFO name="tableName" value="tractor"/>
+<INFO name="SQL_QUERY" value="SELECT * FROM ls_dr10.tractor WHERE q3c_radial_query(ra,dec,313.2265057,-14.8404352,0.00278)"/>
+<INFO name="TableRows" value="1"/>
+<TABLE>
+<FIELD ID="ls_id" name="ls_id" datatype="int" utype="tractor.ls_id"/>
+<FIELD ID="ref_id" name="ref_id" datatype="int" utype="tractor.ref_id"/>
+<FIELD ID="ra" name="ra" datatype="double" ucd="POS_EQ_RA_MAIN" utype="tractor.ra"/>
+<FIELD ID="dec" name="dec" datatype="double" ucd="POS_EQ_DEC_MAIN" utype="tractor.dec"/>
+<FIELD ID="mjd_min" name="mjd_min" datatype="double" utype="tractor.mjd_min"/>
+<FIELD ID="mjd_max" name="mjd_max" datatype="double" utype="tractor.mjd_max"/>
+<FIELD ID="glon" name="glon" datatype="double" utype="tractor.glon"/>
+<FIELD ID="glat" name="glat" datatype="double" utype="tractor.glat"/>
+<FIELD ID="elon" name="elon" datatype="double" utype="tractor.elon"/>
+<FIELD ID="elat" name="elat" datatype="double" utype="tractor.elat"/>
+<FIELD ID="random_id" name="random_id" datatype="double" utype="tractor.random_id"/>
+<FIELD ID="brickid" name="brickid" datatype="int" utype="tractor.brickid"/>
+<FIELD ID="objid" name="objid" datatype="int" utype="tractor.objid"/>
+<FIELD ID="maskbits" name="maskbits" datatype="int" utype="tractor.maskbits"/>
+<FIELD ID="ra_ivar" name="ra_ivar" datatype="double" utype="tractor.ra_ivar"/>
+<FIELD ID="dec_ivar" name="dec_ivar" datatype="double" utype="tractor.dec_ivar"/>
+<FIELD ID="bx" name="bx" datatype="double" utype="tractor.bx"/>
+<FIELD ID="by" name="by" datatype="double" utype="tractor.by"/>
+<FIELD ID="dchisq_1" name="dchisq_1" datatype="double" utype="tractor.dchisq_1"/>
+<FIELD ID="dchisq_2" name="dchisq_2" datatype="double" utype="tractor.dchisq_2"/>
+<FIELD ID="dchisq_3" name="dchisq_3" datatype="double" utype="tractor.dchisq_3"/>
+<FIELD ID="dchisq_4" name="dchisq_4" datatype="double" utype="tractor.dchisq_4"/>
+<FIELD ID="dchisq_5" name="dchisq_5" datatype="double" utype="tractor.dchisq_5"/>
+<FIELD ID="ebv" name="ebv" datatype="double" utype="tractor.ebv"/>
+<FIELD ID="pmra" name="pmra" datatype="double" utype="tractor.pmra"/>
+<FIELD ID="pmdec" name="pmdec" datatype="double" utype="tractor.pmdec"/>
+<FIELD ID="parallax" name="parallax" datatype="double" utype="tractor.parallax"/>
+<FIELD ID="pmra_ivar" name="pmra_ivar" datatype="double" utype="tractor.pmra_ivar"/>
+<FIELD ID="pmdec_ivar" name="pmdec_ivar" datatype="double" utype="tractor.pmdec_ivar"/>
+<FIELD ID="parallax_ivar" name="parallax_ivar" datatype="double" utype="tractor.parallax_ivar"/>
+<FIELD ID="ref_epoch" name="ref_epoch" datatype="double" utype="tractor.ref_epoch"/>
+<FIELD ID="gaia_phot_g_mean_mag" name="gaia_phot_g_mean_mag" datatype="double" utype="tractor.gaia_phot_g_mean_mag"/>
+<FIELD ID="gaia_phot_g_mean_flux_over_error" name="gaia_phot_g_mean_flux_over_error" datatype="double" utype="tractor.gaia_phot_g_mean_flux_over_error"/>
+<FIELD ID="gaia_phot_g_n_obs" name="gaia_phot_g_n_obs" datatype="int" utype="tractor.gaia_phot_g_n_obs"/>
+<FIELD ID="gaia_phot_bp_mean_mag" name="gaia_phot_bp_mean_mag" datatype="double" utype="tractor.gaia_phot_bp_mean_mag"/>
+<FIELD ID="gaia_phot_bp_mean_flux_over_error" name="gaia_phot_bp_mean_flux_over_error" datatype="double" utype="tractor.gaia_phot_bp_mean_flux_over_error"/>
+<FIELD ID="gaia_phot_rp_mean_mag" name="gaia_phot_rp_mean_mag" datatype="double" utype="tractor.gaia_phot_rp_mean_mag"/>
+<FIELD ID="gaia_phot_rp_mean_flux_over_error" name="gaia_phot_rp_mean_flux_over_error" datatype="double" utype="tractor.gaia_phot_rp_mean_flux_over_error"/>
+<FIELD ID="gaia_astrometric_excess_noise" name="gaia_astrometric_excess_noise" datatype="double" utype="tractor.gaia_astrometric_excess_noise"/>
+<FIELD ID="gaia_astrometric_excess_noise_sig" name="gaia_astrometric_excess_noise_sig" datatype="double" utype="tractor.gaia_astrometric_excess_noise_sig"/>
+<FIELD ID="gaia_astrometric_weight_al" name="gaia_astrometric_weight_al" datatype="double" utype="tractor.gaia_astrometric_weight_al"/>
+<FIELD ID="gaia_a_g_val" name="gaia_a_g_val" datatype="double" utype="tractor.gaia_a_g_val"/>
+<FIELD ID="gaia_e_bp_min_rp_val" name="gaia_e_bp_min_rp_val" datatype="double" utype="tractor.gaia_e_bp_min_rp_val"/>
+<FIELD ID="gaia_phot_bp_rp_excess_factor" name="gaia_phot_bp_rp_excess_factor" datatype="double" utype="tractor.gaia_phot_bp_rp_excess_factor"/>
+<FIELD ID="gaia_astrometric_sigma5d_max" name="gaia_astrometric_sigma5d_max" datatype="double" utype="tractor.gaia_astrometric_sigma5d_max"/>
+<FIELD ID="flux_g" name="flux_g" datatype="double" utype="tractor.flux_g"/>
+<FIELD ID="flux_r" name="flux_r" datatype="double" utype="tractor.flux_r"/>
+<FIELD ID="flux_i" name="flux_i" datatype="double" utype="tractor.flux_i"/>
+<FIELD ID="flux_z" name="flux_z" datatype="double" utype="tractor.flux_z"/>
+<FIELD ID="flux_w1" name="flux_w1" datatype="double" utype="tractor.flux_w1"/>
+<FIELD ID="flux_w2" name="flux_w2" datatype="double" utype="tractor.flux_w2"/>
+<FIELD ID="flux_w3" name="flux_w3" datatype="double" utype="tractor.flux_w3"/>
+<FIELD ID="flux_w4" name="flux_w4" datatype="double" utype="tractor.flux_w4"/>
+<FIELD ID="flux_ivar_g" name="flux_ivar_g" datatype="double" utype="tractor.flux_ivar_g"/>
+<FIELD ID="flux_ivar_r" name="flux_ivar_r" datatype="double" utype="tractor.flux_ivar_r"/>
+<FIELD ID="flux_ivar_i" name="flux_ivar_i" datatype="double" utype="tractor.flux_ivar_i"/>
+<FIELD ID="flux_ivar_z" name="flux_ivar_z" datatype="double" utype="tractor.flux_ivar_z"/>
+<FIELD ID="flux_ivar_w1" name="flux_ivar_w1" datatype="double" utype="tractor.flux_ivar_w1"/>
+<FIELD ID="flux_ivar_w2" name="flux_ivar_w2" datatype="double" utype="tractor.flux_ivar_w2"/>
+<FIELD ID="flux_ivar_w3" name="flux_ivar_w3" datatype="double" utype="tractor.flux_ivar_w3"/>
+<FIELD ID="flux_ivar_w4" name="flux_ivar_w4" datatype="double" utype="tractor.flux_ivar_w4"/>
+<FIELD ID="fiberflux_g" name="fiberflux_g" datatype="double" utype="tractor.fiberflux_g"/>
+<FIELD ID="fiberflux_r" name="fiberflux_r" datatype="double" utype="tractor.fiberflux_r"/>
+<FIELD ID="fiberflux_i" name="fiberflux_i" datatype="double" utype="tractor.fiberflux_i"/>
+<FIELD ID="fiberflux_z" name="fiberflux_z" datatype="double" utype="tractor.fiberflux_z"/>
+<FIELD ID="fibertotflux_g" name="fibertotflux_g" datatype="double" utype="tractor.fibertotflux_g"/>
+<FIELD ID="fibertotflux_r" name="fibertotflux_r" datatype="double" utype="tractor.fibertotflux_r"/>
+<FIELD ID="fibertotflux_i" name="fibertotflux_i" datatype="double" utype="tractor.fibertotflux_i"/>
+<FIELD ID="fibertotflux_z" name="fibertotflux_z" datatype="double" utype="tractor.fibertotflux_z"/>
+<FIELD ID="mw_transmission_g" name="mw_transmission_g" datatype="double" utype="tractor.mw_transmission_g"/>
+<FIELD ID="mw_transmission_r" name="mw_transmission_r" datatype="double" utype="tractor.mw_transmission_r"/>
+<FIELD ID="mw_transmission_i" name="mw_transmission_i" datatype="double" utype="tractor.mw_transmission_i"/>
+<FIELD ID="mw_transmission_z" name="mw_transmission_z" datatype="double" utype="tractor.mw_transmission_z"/>
+<FIELD ID="mw_transmission_w1" name="mw_transmission_w1" datatype="double" utype="tractor.mw_transmission_w1"/>
+<FIELD ID="mw_transmission_w2" name="mw_transmission_w2" datatype="double" utype="tractor.mw_transmission_w2"/>
+<FIELD ID="mw_transmission_w3" name="mw_transmission_w3" datatype="double" utype="tractor.mw_transmission_w3"/>
+<FIELD ID="mw_transmission_w4" name="mw_transmission_w4" datatype="double" utype="tractor.mw_transmission_w4"/>
+<FIELD ID="rchisq_g" name="rchisq_g" datatype="double" utype="tractor.rchisq_g"/>
+<FIELD ID="rchisq_r" name="rchisq_r" datatype="double" utype="tractor.rchisq_r"/>
+<FIELD ID="rchisq_i" name="rchisq_i" datatype="double" utype="tractor.rchisq_i"/>
+<FIELD ID="rchisq_z" name="rchisq_z" datatype="double" utype="tractor.rchisq_z"/>
+<FIELD ID="rchisq_w1" name="rchisq_w1" datatype="double" utype="tractor.rchisq_w1"/>
+<FIELD ID="rchisq_w2" name="rchisq_w2" datatype="double" utype="tractor.rchisq_w2"/>
+<FIELD ID="rchisq_w3" name="rchisq_w3" datatype="double" utype="tractor.rchisq_w3"/>
+<FIELD ID="rchisq_w4" name="rchisq_w4" datatype="double" utype="tractor.rchisq_w4"/>
+<FIELD ID="fracflux_g" name="fracflux_g" datatype="double" utype="tractor.fracflux_g"/>
+<FIELD ID="fracflux_r" name="fracflux_r" datatype="double" utype="tractor.fracflux_r"/>
+<FIELD ID="fracflux_i" name="fracflux_i" datatype="double" utype="tractor.fracflux_i"/>
+<FIELD ID="fracflux_z" name="fracflux_z" datatype="double" utype="tractor.fracflux_z"/>
+<FIELD ID="fracflux_w1" name="fracflux_w1" datatype="double" utype="tractor.fracflux_w1"/>
+<FIELD ID="fracflux_w2" name="fracflux_w2" datatype="double" utype="tractor.fracflux_w2"/>
+<FIELD ID="fracflux_w3" name="fracflux_w3" datatype="double" utype="tractor.fracflux_w3"/>
+<FIELD ID="fracflux_w4" name="fracflux_w4" datatype="double" utype="tractor.fracflux_w4"/>
+<FIELD ID="fracmasked_g" name="fracmasked_g" datatype="double" utype="tractor.fracmasked_g"/>
+<FIELD ID="fracmasked_r" name="fracmasked_r" datatype="double" utype="tractor.fracmasked_r"/>
+<FIELD ID="fracmasked_i" name="fracmasked_i" datatype="double" utype="tractor.fracmasked_i"/>
+<FIELD ID="fracmasked_z" name="fracmasked_z" datatype="double" utype="tractor.fracmasked_z"/>
+<FIELD ID="fracin_g" name="fracin_g" datatype="double" utype="tractor.fracin_g"/>
+<FIELD ID="fracin_r" name="fracin_r" datatype="double" utype="tractor.fracin_r"/>
+<FIELD ID="fracin_i" name="fracin_i" datatype="double" utype="tractor.fracin_i"/>
+<FIELD ID="fracin_z" name="fracin_z" datatype="double" utype="tractor.fracin_z"/>
+<FIELD ID="psfsize_g" name="psfsize_g" datatype="double" utype="tractor.psfsize_g"/>
+<FIELD ID="psfsize_r" name="psfsize_r" datatype="double" utype="tractor.psfsize_r"/>
+<FIELD ID="psfsize_i" name="psfsize_i" datatype="double" utype="tractor.psfsize_i"/>
+<FIELD ID="psfsize_z" name="psfsize_z" datatype="double" utype="tractor.psfsize_z"/>
+<FIELD ID="psfdepth_g" name="psfdepth_g" datatype="double" utype="tractor.psfdepth_g"/>
+<FIELD ID="psfdepth_r" name="psfdepth_r" datatype="double" utype="tractor.psfdepth_r"/>
+<FIELD ID="psfdepth_i" name="psfdepth_i" datatype="double" utype="tractor.psfdepth_i"/>
+<FIELD ID="psfdepth_z" name="psfdepth_z" datatype="double" utype="tractor.psfdepth_z"/>
+<FIELD ID="galdepth_g" name="galdepth_g" datatype="double" utype="tractor.galdepth_g"/>
+<FIELD ID="galdepth_r" name="galdepth_r" datatype="double" utype="tractor.galdepth_r"/>
+<FIELD ID="galdepth_i" name="galdepth_i" datatype="double" utype="tractor.galdepth_i"/>
+<FIELD ID="galdepth_z" name="galdepth_z" datatype="double" utype="tractor.galdepth_z"/>
+<FIELD ID="nea_g" name="nea_g" datatype="double" utype="tractor.nea_g"/>
+<FIELD ID="nea_r" name="nea_r" datatype="double" utype="tractor.nea_r"/>
+<FIELD ID="nea_i" name="nea_i" datatype="double" utype="tractor.nea_i"/>
+<FIELD ID="nea_z" name="nea_z" datatype="double" utype="tractor.nea_z"/>
+<FIELD ID="blob_nea_g" name="blob_nea_g" datatype="double" utype="tractor.blob_nea_g"/>
+<FIELD ID="blob_nea_r" name="blob_nea_r" datatype="double" utype="tractor.blob_nea_r"/>
+<FIELD ID="blob_nea_i" name="blob_nea_i" datatype="double" utype="tractor.blob_nea_i"/>
+<FIELD ID="blob_nea_z" name="blob_nea_z" datatype="double" utype="tractor.blob_nea_z"/>
+<FIELD ID="psfdepth_w1" name="psfdepth_w1" datatype="double" utype="tractor.psfdepth_w1"/>
+<FIELD ID="psfdepth_w2" name="psfdepth_w2" datatype="double" utype="tractor.psfdepth_w2"/>
+<FIELD ID="psfdepth_w3" name="psfdepth_w3" datatype="double" utype="tractor.psfdepth_w3"/>
+<FIELD ID="psfdepth_w4" name="psfdepth_w4" datatype="double" utype="tractor.psfdepth_w4"/>
+<FIELD ID="wise_x" name="wise_x" datatype="double" utype="tractor.wise_x"/>
+<FIELD ID="wise_y" name="wise_y" datatype="double" utype="tractor.wise_y"/>
+<FIELD ID="sersic" name="sersic" datatype="double" utype="tractor.sersic"/>
+<FIELD ID="sersic_ivar" name="sersic_ivar" datatype="double" utype="tractor.sersic_ivar"/>
+<FIELD ID="shape_r" name="shape_r" datatype="double" utype="tractor.shape_r"/>
+<FIELD ID="shape_r_ivar" name="shape_r_ivar" datatype="double" utype="tractor.shape_r_ivar"/>
+<FIELD ID="shape_e1" name="shape_e1" datatype="double" utype="tractor.shape_e1"/>
+<FIELD ID="shape_e1_ivar" name="shape_e1_ivar" datatype="double" utype="tractor.shape_e1_ivar"/>
+<FIELD ID="shape_e2" name="shape_e2" datatype="double" utype="tractor.shape_e2"/>
+<FIELD ID="shape_e2_ivar" name="shape_e2_ivar" datatype="double" utype="tractor.shape_e2_ivar"/>
+<FIELD ID="htm9" name="htm9" datatype="int" utype="tractor.htm9"/>
+<FIELD ID="ring256" name="ring256" datatype="int" utype="tractor.ring256"/>
+<FIELD ID="nest4096" name="nest4096" datatype="int" utype="tractor.nest4096"/>
+<FIELD ID="mag_g" name="mag_g" datatype="double" utype="tractor.mag_g"/>
+<FIELD ID="mag_r" name="mag_r" datatype="double" utype="tractor.mag_r"/>
+<FIELD ID="mag_i" name="mag_i" datatype="double" utype="tractor.mag_i"/>
+<FIELD ID="mag_z" name="mag_z" datatype="double" utype="tractor.mag_z"/>
+<FIELD ID="mag_w1" name="mag_w1" datatype="double" utype="tractor.mag_w1"/>
+<FIELD ID="mag_w2" name="mag_w2" datatype="double" utype="tractor.mag_w2"/>
+<FIELD ID="mag_w3" name="mag_w3" datatype="double" utype="tractor.mag_w3"/>
+<FIELD ID="mag_w4" name="mag_w4" datatype="double" utype="tractor.mag_w4"/>
+<FIELD ID="dered_flux_g" name="dered_flux_g" datatype="double" utype="tractor.dered_flux_g"/>
+<FIELD ID="dered_flux_r" name="dered_flux_r" datatype="double" utype="tractor.dered_flux_r"/>
+<FIELD ID="dered_flux_i" name="dered_flux_i" datatype="double" utype="tractor.dered_flux_i"/>
+<FIELD ID="dered_flux_z" name="dered_flux_z" datatype="double" utype="tractor.dered_flux_z"/>
+<FIELD ID="dered_flux_w1" name="dered_flux_w1" datatype="double" utype="tractor.dered_flux_w1"/>
+<FIELD ID="dered_flux_w2" name="dered_flux_w2" datatype="double" utype="tractor.dered_flux_w2"/>
+<FIELD ID="dered_flux_w3" name="dered_flux_w3" datatype="double" utype="tractor.dered_flux_w3"/>
+<FIELD ID="dered_flux_w4" name="dered_flux_w4" datatype="double" utype="tractor.dered_flux_w4"/>
+<FIELD ID="dered_mag_g" name="dered_mag_g" datatype="double" utype="tractor.dered_mag_g"/>
+<FIELD ID="dered_mag_r" name="dered_mag_r" datatype="double" utype="tractor.dered_mag_r"/>
+<FIELD ID="dered_mag_i" name="dered_mag_i" datatype="double" utype="tractor.dered_mag_i"/>
+<FIELD ID="dered_mag_z" name="dered_mag_z" datatype="double" utype="tractor.dered_mag_z"/>
+<FIELD ID="dered_mag_w1" name="dered_mag_w1" datatype="double" utype="tractor.dered_mag_w1"/>
+<FIELD ID="dered_mag_w2" name="dered_mag_w2" datatype="double" utype="tractor.dered_mag_w2"/>
+<FIELD ID="dered_mag_w3" name="dered_mag_w3" datatype="double" utype="tractor.dered_mag_w3"/>
+<FIELD ID="dered_mag_w4" name="dered_mag_w4" datatype="double" utype="tractor.dered_mag_w4"/>
+<FIELD ID="snr_g" name="snr_g" datatype="double" utype="tractor.snr_g"/>
+<FIELD ID="snr_r" name="snr_r" datatype="double" utype="tractor.snr_r"/>
+<FIELD ID="snr_i" name="snr_i" datatype="double" utype="tractor.snr_i"/>
+<FIELD ID="snr_z" name="snr_z" datatype="double" utype="tractor.snr_z"/>
+<FIELD ID="snr_w1" name="snr_w1" datatype="double" utype="tractor.snr_w1"/>
+<FIELD ID="snr_w2" name="snr_w2" datatype="double" utype="tractor.snr_w2"/>
+<FIELD ID="snr_w3" name="snr_w3" datatype="double" utype="tractor.snr_w3"/>
+<FIELD ID="snr_w4" name="snr_w4" datatype="double" utype="tractor.snr_w4"/>
+<FIELD ID="g_r" name="g_r" datatype="double" utype="tractor.g_r"/>
+<FIELD ID="r_i" name="r_i" datatype="double" utype="tractor.r_i"/>
+<FIELD ID="r_z" name="r_z" datatype="double" utype="tractor.r_z"/>
+<FIELD ID="i_z" name="i_z" datatype="double" utype="tractor.i_z"/>
+<FIELD ID="z_w1" name="z_w1" datatype="double" utype="tractor.z_w1"/>
+<FIELD ID="w1_w2" name="w1_w2" datatype="double" utype="tractor.w1_w2"/>
+<FIELD ID="w2_w3" name="w2_w3" datatype="double" utype="tractor.w2_w3"/>
+<FIELD ID="w3_w4" name="w3_w4" datatype="double" utype="tractor.w3_w4"/>
+<FIELD ID="release" name="release" datatype="int" utype="tractor.release"/>
+<FIELD ID="brick_primary" name="brick_primary" datatype="int" utype="tractor.brick_primary"/>
+<FIELD ID="fitbits" name="fitbits" datatype="int" utype="tractor.fitbits"/>
+<FIELD ID="gaia_phot_bp_n_obs" name="gaia_phot_bp_n_obs" datatype="int" utype="tractor.gaia_phot_bp_n_obs"/>
+<FIELD ID="gaia_phot_rp_n_obs" name="gaia_phot_rp_n_obs" datatype="int" utype="tractor.gaia_phot_rp_n_obs"/>
+<FIELD ID="gaia_phot_variable_flag" name="gaia_phot_variable_flag" datatype="int" utype="tractor.gaia_phot_variable_flag"/>
+<FIELD ID="gaia_astrometric_n_obs_al" name="gaia_astrometric_n_obs_al" datatype="int" utype="tractor.gaia_astrometric_n_obs_al"/>
+<FIELD ID="gaia_astrometric_n_good_obs_al" name="gaia_astrometric_n_good_obs_al" datatype="int" utype="tractor.gaia_astrometric_n_good_obs_al"/>
+<FIELD ID="gaia_duplicated_source" name="gaia_duplicated_source" datatype="int" utype="tractor.gaia_duplicated_source"/>
+<FIELD ID="gaia_astrometric_params_solved" name="gaia_astrometric_params_solved" datatype="int" utype="tractor.gaia_astrometric_params_solved"/>
+<FIELD ID="nobs_g" name="nobs_g" datatype="int" utype="tractor.nobs_g"/>
+<FIELD ID="nobs_r" name="nobs_r" datatype="int" utype="tractor.nobs_r"/>
+<FIELD ID="nobs_i" name="nobs_i" datatype="int" utype="tractor.nobs_i"/>
+<FIELD ID="nobs_z" name="nobs_z" datatype="int" utype="tractor.nobs_z"/>
+<FIELD ID="nobs_w1" name="nobs_w1" datatype="int" utype="tractor.nobs_w1"/>
+<FIELD ID="nobs_w2" name="nobs_w2" datatype="int" utype="tractor.nobs_w2"/>
+<FIELD ID="nobs_w3" name="nobs_w3" datatype="int" utype="tractor.nobs_w3"/>
+<FIELD ID="nobs_w4" name="nobs_w4" datatype="int" utype="tractor.nobs_w4"/>
+<FIELD ID="ngood_g" name="ngood_g" datatype="int" utype="tractor.ngood_g"/>
+<FIELD ID="ngood_r" name="ngood_r" datatype="int" utype="tractor.ngood_r"/>
+<FIELD ID="ngood_i" name="ngood_i" datatype="int" utype="tractor.ngood_i"/>
+<FIELD ID="ngood_z" name="ngood_z" datatype="int" utype="tractor.ngood_z"/>
+<FIELD ID="anymask_g" name="anymask_g" datatype="int" utype="tractor.anymask_g"/>
+<FIELD ID="anymask_r" name="anymask_r" datatype="int" utype="tractor.anymask_r"/>
+<FIELD ID="anymask_i" name="anymask_i" datatype="int" utype="tractor.anymask_i"/>
+<FIELD ID="anymask_z" name="anymask_z" datatype="int" utype="tractor.anymask_z"/>
+<FIELD ID="allmask_g" name="allmask_g" datatype="int" utype="tractor.allmask_g"/>
+<FIELD ID="allmask_r" name="allmask_r" datatype="int" utype="tractor.allmask_r"/>
+<FIELD ID="allmask_i" name="allmask_i" datatype="int" utype="tractor.allmask_i"/>
+<FIELD ID="allmask_z" name="allmask_z" datatype="int" utype="tractor.allmask_z"/>
+<FIELD ID="wisemask_w1" name="wisemask_w1" datatype="int" utype="tractor.wisemask_w1"/>
+<FIELD ID="wisemask_w2" name="wisemask_w2" datatype="int" utype="tractor.wisemask_w2"/>
+<FIELD ID="brickname" name="brickname" datatype="char" utype="tractor.brickname" arraysize="*"/>
+<FIELD ID="type" name="type" datatype="char" utype="tractor.type" arraysize="*"/>
+<FIELD ID="ref_cat" name="ref_cat" datatype="char" utype="tractor.ref_cat" arraysize="*"/>
+<FIELD ID="wise_coadd_id" name="wise_coadd_id" datatype="char" utype="tractor.wise_coadd_id" arraysize="*"/>
+<DATA>
+<TABLEDATA>
+<TR><TD>10995375804519828</TD><TD>0</TD><TD>313.2265161717997</TD><TD>-14.8403079415443</TD><TD>56817.3643316126</TD><TD>57523.34765421668</TD><TD>32.58010646580448</TD><TD>-33.48397386710923</TD><TD>311.507332069475</TD><TD>2.589625607069086</TD><TD>99.093544</TD><TD>247504</TD><TD>5524</TD><TD>32</TD><TD>1.2554228e+09</TD><TD>1.8539619e+09</TD><TD>486.8771</TD><TD>558.33655</TD><TD>68.56952</TD><TD>69.253204</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0.058838975</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0.12794738</TD><TD>0.32543632</TD><TD>0</TD><TD>0</TD><TD>-0.5688536</TD><TD>-2.907323</TD><TD>-10.20523</TD><TD>-47.098873</TD><TD>908.08954</TD><TD>516.7766</TD><TD>0</TD><TD>0</TD><TD>3.3024054</TD><TD>0.64319295</TD><TD>0.00055655</TD><TD>1.8454173e-06</TD><TD>0.09960459</TD><TD>0.25334597</TD><TD>0</TD><TD>0</TD><TD>0.09960459</TD><TD>0.25334597</TD><TD>0</TD><TD>0</TD><TD>0.8401496</TD><TD>0.88929415</TD><TD>0.9173421</TD><TD>0.93647975</TD><TD>0.9900781</TD><TD>0.99389493</TD><TD>0.99869484</TD><TD>0.99950695</TD><TD>0.79800564</TD><TD>0.661206</TD><TD>0</TD><TD>0</TD><TD>0.37416172</TD><TD>0.5850485</TD><TD>0.59047234</TD><TD>0.12154073</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>8.060644</TD><TD>1.243032</TD><TD>6.024533</TD><TD>15.037452</TD><TD>0.19880714</TD><TD>0.16299602</TD><TD>0</TD><TD>0</TD><TD>0.9695339</TD><TD>0.9656893</TD><TD>0</TD><TD>0</TD><TD>1.7226908</TD><TD>1.4865317</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>704.81616</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>451.77692</TD><TD>0</TD><TD>0</TD><TD>6.704084</TD><TD>5.0073814</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>5.0117807</TD><TD>0</TD><TD>0</TD><TD>3.6075144</TD><TD>0.70039326</TD><TD>0.00066882104</TD><TD>9.309789e-06</TD><TD>46.29325</TD><TD>53.551342</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>3111556</TD><TD>494971</TD><TD>200428530</TD><TD>24.732422</TD><TD>23.718836</TD><TD>Infinity</TD><TD>Infinity</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>0.15229118</TD><TD>0.36594903</TD><TD>0</TD><TD>0</TD><TD>-0.57455426</TD><TD>-2.9251814</TD><TD>-10.218567</TD><TD>-47.12211</TD><TD>24.543314</TD><TD>23.591448</TD><TD>Infinity</TD><TD>Infinity</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>3.8556333</TD><TD>7.398053</TD><TD>0</TD><TD>0</TD><TD>-1.0337504</TD><TD>-2.3316529</TD><TD>-0.24075475</TD><TD>-0.063982</TD><TD>1.013586</TD><TD>Infinity</TD><TD>Infinity</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>NaN</TD><TD>10000</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>2</TD><TD>0</TD><TD>0</TD><TD>173</TD><TD>175</TD><TD>10</TD><TD>10</TD><TD>0</TD><TD>2</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>1</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>3131m147</TD><TD>PSF</TD><TD></TD><TD>3130m152</TD></TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>

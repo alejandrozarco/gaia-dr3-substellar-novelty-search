@@ -1,0 +1,18 @@
+Rubin/LSST diaObject 170591519677875016 (RA 306.74802, Dec -11.81856) — archival forensics annotation, 2026-07-14.
+
+REAL, TNS-unreported transient; not an asteroid; "hostless" only at archival depth.
+
+Measurements:
+1. Rubin alert photometry (public stream via ALeRCE): i = 20.815+/-0.018 (MJD 61218.316), i = 21.198+/-0.020 (61228.329), i = 21.135+/-0.043 (61231.235), r = 21.122+/-0.016 (61233.308). Positional scatter ~6 mas over 15.0 d; reliability 0.9999-1.0000; ssObjectId=0. Fixed position over 15 d excludes solar-system origin (ALeRCE beta "asteroid" label is incorrect).
+2. ATLAS forced photometry (11-yr history, 4,579 epochs, MJD 57227-61232): PRE-DISCOVERY detections — o = 19.99 (MJD 61202.53, 5.1 sigma), c = 19.95 (61207.51, 6.8 sigma), c = 20.10 (61208.57, 6.8 sigma), c = 20.28 (61214.48, 5.3 sigma), plus 3-4 sigma nights 61198-61228. Onset MJD ~61199-61202, i.e. >=16 d before the first Rubin detection; total event duration >=30 d with slow decline. NO precursor outburst in 11 years (two single-sub-night ATLAS spikes at MJD 59024.483 and 57955.48 are non-stationary — SkyBoT-negative movers/glints, excluded at exposure level).
+3. Underlying source: Rubin deep-template forced flux at the position r = 23.96+/-0.05, i = 23.8-24.0 (8-21 sigma; template color r-i ~ 0). The object is NOT hostless at template depth — the quiescent counterpart/host is simply below archival limits: no source at position in LS DR10 (i-only field, 5-sigma 22.8-23.3; nearest 3.04"), PS1 DR2 stack (r~23.2/i~23.1; nearest 3.08", a red PSF unrelated to the blue template source), Gaia DR3 (<10"), CatWISE/unWISE (<11.2"), NSC DR2 (single i epoch, MJD 58704), ZTF DRs (0 detections 2018-2024, ~20.5 limit).
+4. Plausible classes: SN at z~0.1-0.15 in a dwarf host (M~-15), or a large-amplitude (>=3.8 mag) long dwarf-nova superoutburst of a faint blue r~24 counterpart. AGN disfavored (no IR/optical archival counterpart, no prior variability).
+
+Data: ATLAS FP job 4539055; ALeRCE object 170591519677875016; SkyBoT conesearches at MJD 59024.48297 / 57955.4774 / 61208.554; ZTF forced photometry (req 479160, completed 2026-07-14 08:32 UT): 22 usable diff-image epochs MJD 60515.4-61148.5 (g+r; field has sparse ZTF coverage), zero detections at SNR>3, median diffmaglim g=19.7/r=19.5; no epochs during the 2026 event; ZTF DR light curve empty; no ZTF alert within 30 arcsec ever (Lasair-ZTF cone).
+
+Caveat (referee, 2026-07-15): the "quiescent counterpart" interpretation of the
+Rubin template flux (r=23.96) assumes the year-1 incremental template epochs
+predate the ~MJD 61198-61202 onset; this was not verified from template metadata.
+If event-epoch images entered the template, the template flux partially contains
+the transient and the underlying-source magnitude is a lower limit (fainter).
+The measurement itself (nonzero template flux at the position) stands either way.

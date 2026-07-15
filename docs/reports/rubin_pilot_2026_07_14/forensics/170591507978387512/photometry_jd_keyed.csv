@@ -1,0 +1,52 @@
+mjd,jd,timescale,band,mag_diff_AB,magerr_diff,mag_total_AB,magerr_total,mag_template_AB,survey,status,note
+55027.444746,2455027.944746,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55027.45542,2455027.95542,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55089.3038,2455089.8038,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55089.31126,2455089.81126,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55089.31201,2455089.81201,UTC,i,,,21.591,0.27,,PS1 DR2 detection,ARTIFACT,REJECTED: psfQfPerfect~0.64; masked columns in warp; NOT reproduced in same-night partner warp (SNR 2.3 / 0.9)
+55397.43978,2455397.93978,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55397.44926,2455397.94926,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55397.45063,2455397.95063,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55442.28587,2455442.78587,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55442.28653,2455442.78653,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55442.29707,2455442.79707,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55442.29774,2455442.79774,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55443.28466,2455443.78466,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55443.28535,2455443.78535,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55443.29568,2455443.79568,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55443.29635,2455443.79635,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55762.48675,2455762.98675,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55762.48741,2455762.98741,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55762.49733,2455762.99733,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55762.49799,2455762.99799,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55789.425087,2455789.925087,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+55789.43667,2455789.93667,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56137.47705,2456137.97705,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56137.48844,2456137.98844,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56472.50426,2456473.00426,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56472.504932,2456473.004932,UTC,i,,,21.15,0.25,,PS1 DR2 detection,ARTIFACT,REJECTED: psfQfPerfect~0.64; masked columns in warp; NOT reproduced in same-night partner warp (SNR 2.3 / 0.9)
+56472.51576,2456473.01576,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56475.52637,2456476.02637,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56475.53743,2456476.03743,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56527.38631,2456527.88631,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56873.385914,2456873.885914,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56873.39858,2456873.89858,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56873.41163,2456873.91163,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56874.424162,2456874.924162,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56874.4367,2456874.9367,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56874.46258,2456874.96258,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56885.42895,2456885.92895,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56885.44203,2456885.94203,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56885.4551,2456885.9551,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56885.46815,2456885.96815,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56912.28744,2456912.78744,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56912.29936,2456912.79936,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56912.3113,2456912.8113,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+56912.32325,2456912.82325,UTC,i,,,>21.5,,,PS1 warp,NONDETECTION,approx single-warp 5-sigma limit i~21.5 (typical); no credible source at position
+57523.344985,2457523.844985,UTC,r,,,>23.0,,,DECam/NSC DR2,NONDETECTION,"no NSC DR2 object within 10""; limit approx from faintest detected neighbours in same exposure set"
+57523.344985,2457523.844985,UTC,g,,,>23.4,,,DECam/NSC DR2,NONDETECTION,"no NSC DR2 object within 10""; limit approx from faintest detected neighbours in same exposure set"
+61218.269544,2461218.769544,TAI,z,22.273,0.069,21.851,0.043,23.67,Rubin/LSST (Fink diaSource),DETECTION,visit=2026062600595 snr=15.2 reliability=0.99911
+61218.297847,2461218.797847,TAI,i,22.009,0.047,21.808,0.038,24.164,Rubin/LSST (Fink diaSource),DETECTION,visit=2026062600647 snr=22.8 reliability=0.99926
+61228.326103,2461228.826103,TAI,i,21.285,0.022,21.108,0.018,24.232,Rubin/LSST (Fink diaSource),DETECTION,visit=2026070600700 snr=48.0 reliability=1.00000
+61228.351994,2461228.851994,TAI,z,21.672,0.053,21.448,0.039,23.482,Rubin/LSST (Fink diaSource),DETECTION,visit=2026070600752 snr=20.3 reliability=0.99995
+61235.247397,2461235.747397,TAI,i,21.244,0.025,21.106,0.021,23.888,Rubin/LSST (Fink diaSource),DETECTION,visit=2026071300495 snr=41.9 reliability=0.99999

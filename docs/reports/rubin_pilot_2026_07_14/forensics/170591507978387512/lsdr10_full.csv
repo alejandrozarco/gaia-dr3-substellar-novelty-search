@@ -1,0 +1,2 @@
+flux_g,flux_r,flux_i,flux_z,flux_ivar_g,flux_ivar_r,flux_ivar_i,flux_ivar_z,nobs_g,nobs_r,nobs_i,nobs_z,flux_w1,flux_ivar_w1,flux_w2,flux_ivar_w2,dchisq_1,dchisq_2,fitbits,ref_cat,ref_id,gaia_phot_g_mean_mag
+0.12794738,0.32543632,0,0,908.08954,516.7766,0,0,1,2,0,0,-0.5688536,3.3024054,-2.907323,0.64319295,68.56952,69.253204,0,,0,0

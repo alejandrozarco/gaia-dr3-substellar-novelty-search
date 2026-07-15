@@ -1,0 +1,42 @@
+Rubin diaObjectId 170587105461272950 = ZTF26abfwqfp (sep 0.12") — unreported PSN, live.
+RA, Dec (J2000) = 334.2496225, -18.2079475 (22:16:59.909 -18:12:28.611).
+
+What we measured (all epochs MJD/TAI-keyed; full table in photometry_master.csv):
+- Rubin/LSST (Fink): 7 diaSources over 4 nights, MJD 61217.37-61235.36 (2026-06-26
+  to 2026-07-14 UT). i: 22.07 +/- 0.04 -> 20.56 +/- 0.01 (peak MJD 61232.36) ->
+  20.75 +/- 0.01; z: 22.30 -> 21.26 -> 21.30. ~15-d rise, rollover, slow decline.
+  SNR up to 83, reliability 1.0, point-source, no dipole/streak/CR/saturation flags.
+- ZTF public alerts (ALeRCE): 7 detections MJD 61228.44-61232.37, r 20.46 -> 20.20,
+  g 20.42/20.39; g-r ~ 0 near peak (blue/hot). Pre-detection ZTF 5-sigma limits back
+  to MJD 61201 (g,r,i ~ 19.5-20.5): no precursor in the prior 2 weeks at that depth.
+- ATLAS forced photometry 2015-2026 (task 4542361, position-exact, completed
+  2026-07-14T20:14:49Z; per-epoch data in atlas_fp.csv, 4,525 epochs MJD 57227-61235):
+  no precursor — 0 of 1,023 pre-event nightly inverse-variance stacks (chi/N<=4,
+  err=0 quality cut) reach 4 sigma; the two raw single-epoch >5-sigma points
+  (MJD 57228.52 chi/N=264; MJD 58363.43, absent from same-night partner exposures)
+  are non-reproducing artifacts (rule-10 adjudication, referee-verified).
+- Archival non-detections: NSC DR2 DECam i epoch MJD 58705.21 (2019-08-10), nothing
+  to i ~ 22.2 within 12"; PS1 DR2 no source < 2"; Gaia DR3 none < 15";
+  CatWISE2020/unWISE none < 10"; VLASS and Milliquas negative.
+- Host: Legacy Survey DR10 REX at 1.01" (g=22.88, r undet., i=22.29, z=22.62,
+  shape_r=0.72" => offset ~1.4 Re); LS photo-z unavailable (-99). Lasair Sherlock
+  (position): "SN", possible assoc. GALEX ASC J221659.77-181227.3 at 2.4".
+  "Hostless" (ELEPHANT) is a near-miss: faint host candidate exists at 1".
+- MW E(B-V)_SFD = 0.027 (negligible).
+
+Interpretation: real astrophysical SN-like transient, not an artifact (two
+independent surveys, clean pixel flags, stationary, no mover within Rubin epochs).
+Not AGN (1" offset from host center; no WISE/radio/X-ray/Milliquas counterpart; no
+prior variability 2015-2026). Not a CV/stellar flare (no quiescent counterpart to
+i~23.1 LS DR10 at the exact position; 15-d rise). Rest-frame rise ~15 d/(1+z) with
+g-r~0 favors a normal young SN (II or Ia near peak) at z ~ 0.1-0.3
+(M_i ~ -17.8 at z=0.1, -20.4 at z=0.3). SLSN-I (cf. SN 2026uid, same alert-night
+family) not excluded but disfavored by the fast rise unless z >~ 0.35.
+Spectroscopy is the discriminator; object is at i ~ 20.75 and observable now.
+
+Why unadopted: Fink ELEPHANT hostless flag (host below its threshold) +
+ALeRCE stamp-classifier "bogus" 0.65 on marginal ZTF stamps; no TNS entry
+(public cone 10" negative 2026-07-14).
+
+AI-assistance disclosure: archival search, photometry retrieval and drafting done
+by an AI agent (Claude); human (A. Keur) reviews and files.

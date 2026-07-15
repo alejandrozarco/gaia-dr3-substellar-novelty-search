@@ -1,0 +1,59 @@
+mjd,jd,survey,band,mag,magerr,limit_flag,note
+58705.20941,2458705.70941,NSC-DR2/DECam,i,22.2,,upperlim,"no object within 12as; field median depth i=22.2, faintest 22.9"
+61201.41344910022,2461201.9134491,ZTF-alert(ZTF26abfwqfp),r,20.0081,,upperlim,5sig diffmaglim
+61201.428611100186,2461201.9286111,ZTF-alert(ZTF26abfwqfp),g,19.7891,,upperlim,5sig diffmaglim
+61201.45508099999,2461201.955081,ZTF-alert(ZTF26abfwqfp),i,19.5828,,upperlim,5sig diffmaglim
+61203.42520829989,2461203.9252083,ZTF-alert(ZTF26abfwqfp),g,20.0572,,upperlim,5sig diffmaglim
+61204.4311573999,2461204.9311574,ZTF-alert(ZTF26abfwqfp),i,19.7043,,upperlim,5sig diffmaglim
+61205.41180559993,2461205.9118056,ZTF-alert(ZTF26abfwqfp),r,20.0748,,upperlim,5sig diffmaglim
+61205.43543979991,2461205.9354398,ZTF-alert(ZTF26abfwqfp),i,19.732,,upperlim,5sig diffmaglim
+61205.458865699824,2461205.9588657,ZTF-alert(ZTF26abfwqfp),g,20.2771,,upperlim,5sig diffmaglim
+61206.45474540023,2461206.9547454,ZTF-alert(ZTF26abfwqfp),g,20.2104,,upperlim,5sig diffmaglim
+61206.461064800154,2461206.9610648,ZTF-alert(ZTF26abfwqfp),r,20.1863,,upperlim,5sig diffmaglim
+61207.46498840023,2461207.9649884,ZTF-alert(ZTF26abfwqfp),i,19.4724,,upperlim,5sig diffmaglim
+61208.45783559978,2461208.9578356,ZTF-alert(ZTF26abfwqfp),i,19.5128,,upperlim,5sig diffmaglim
+61209.45572920004,2461209.9557292,ZTF-alert(ZTF26abfwqfp),i,19.4622,,upperlim,5sig diffmaglim
+61210.419733799994,2461210.9197338,ZTF-alert(ZTF26abfwqfp),g,20.2975,,upperlim,5sig diffmaglim
+61210.46234950004,2461210.9623495,ZTF-alert(ZTF26abfwqfp),r,20.4939,,upperlim,5sig diffmaglim
+61211.45460649999,2461211.9546065,ZTF-alert(ZTF26abfwqfp),i,19.7213,,upperlim,5sig diffmaglim
+61212.459294000175,2461212.959294,ZTF-alert(ZTF26abfwqfp),i,19.9974,,upperlim,5sig diffmaglim
+61214.45480319997,2461214.9548032,ZTF-alert(ZTF26abfwqfp),r,20.5458,,upperlim,5sig diffmaglim
+61216.45833329996,2461216.9583333,ZTF-alert(ZTF26abfwqfp),i,19.7549,,upperlim,5sig diffmaglim
+61217.3685039615,2461217.8685039617,Rubin/LSST-diaSource,z,22.298,0.077,det,snr=13.6 reliability=0.9987
+61217.37881939998,2461217.8788194,ZTF-alert(ZTF26abfwqfp),g,19.4122,,upperlim,5sig diffmaglim
+61217.3933786508,2461217.893378651,Rubin/LSST-diaSource,i,22.071,0.04,det,snr=26.3 reliability=0.9992
+61217.3933786508,2461217.893378651,Rubin/LSST-forced,i,22.053,0.04,det,diaForcedSource
+61217.457615700085,2461217.9576157,ZTF-alert(ZTF26abfwqfp),r,20.4154,,upperlim,5sig diffmaglim
+61218.48760419991,2461218.9876042,ZTF-alert(ZTF26abfwqfp),r,18.6466,,upperlim,5sig diffmaglim
+61219.3952314998,2461219.8952315,ZTF-alert(ZTF26abfwqfp),r,19.2233,,upperlim,5sig diffmaglim
+61220.38317129994,2461220.8831713,ZTF-alert(ZTF26abfwqfp),r,19.1151,,upperlim,5sig diffmaglim
+61220.417129599955,2461220.9171296,ZTF-alert(ZTF26abfwqfp),i,19.2231,,upperlim,5sig diffmaglim
+61220.459641200025,2461220.9596412,ZTF-alert(ZTF26abfwqfp),g,19.0227,,upperlim,5sig diffmaglim
+61221.45565970009,2461221.9556597,ZTF-alert(ZTF26abfwqfp),i,18.8389,,upperlim,5sig diffmaglim
+61222.439942100085,2461222.9399421,ZTF-alert(ZTF26abfwqfp),i,18.8755,,upperlim,5sig diffmaglim
+61223.35836810013,2461223.8583681,ZTF-alert(ZTF26abfwqfp),r,19.0024,,upperlim,5sig diffmaglim
+61223.418576399796,2461223.9185764,ZTF-alert(ZTF26abfwqfp),g,19.1397,,upperlim,5sig diffmaglim
+61223.4397454001,2461223.9397454,ZTF-alert(ZTF26abfwqfp),i,19.2589,,upperlim,5sig diffmaglim
+61227.431585600134,2461227.9315856,ZTF-alert(ZTF26abfwqfp),r,19.8566,,upperlim,5sig diffmaglim
+61227.46109949984,2461227.9610995,ZTF-alert(ZTF26abfwqfp),g,19.7412,,upperlim,5sig diffmaglim
+61228.348796300124,2461228.8487963,ZTF-alert(ZTF26abfwqfp),i,19.7039,,upperlim,5sig diffmaglim
+61228.366647362,2461228.866647362,Rubin/LSST-forced,z,21.246,0.031,det,diaForcedSource
+61228.366647362,2461228.866647362,Rubin/LSST-diaSource,z,21.257,0.031,det,snr=34.7 reliability=1.0000
+61228.3978552934,2461228.8978552935,Rubin/LSST-forced,i,20.733,0.015,det,diaForcedSource
+61228.3978552934,2461228.8978552935,Rubin/LSST-diaSource,i,20.752,0.015,det,snr=70.2 reliability=1.0000
+61228.41438659979,2461228.9143866,ZTF-alert(ZTF26abfwqfp),g,19.7995,,upperlim,5sig diffmaglim
+61228.439444399904,2461228.9394444,ZTF-alert(ZTF26abfwqfp),r,20.4551,0.2766,det,rb=0.384286
+61229.391655100044,2461229.8916551,ZTF-alert(ZTF26abfwqfp),g,20.0487,,upperlim,5sig diffmaglim
+61229.41784719983,2461229.9178472,ZTF-alert(ZTF26abfwqfp),r,20.4036,0.269166,det,rb=0.347143
+61230.4131018999,2461230.9131019,ZTF-alert(ZTF26abfwqfp),r,20.453299,0.18946913,det,rb=0.51285714
+61230.45728009986,2461230.9572801,ZTF-alert(ZTF26abfwqfp),g,20.4168,0.252696,det,rb=0.621429
+61231.41490740003,2461231.9149074,ZTF-alert(ZTF26abfwqfp),r,20.330677,0.21355288,det,rb=0.5971429
+61231.41923609981,2461231.9192361,ZTF-alert(ZTF26abfwqfp),i,20.0373,,upperlim,5sig diffmaglim
+61231.45750000002,2461231.9575,ZTF-alert(ZTF26abfwqfp),g,20.3908,0.240805,det,rb=0.735714
+61232.3570780141,2461232.857078014,Rubin/LSST-diaSource,i,20.558,0.014,det,snr=74.4 reliability=1.0000
+61232.3570780141,2461232.857078014,Rubin/LSST-forced,i,20.54,0.014,det,diaForcedSource
+61232.371678200085,2461232.8716782,ZTF-alert(ZTF26abfwqfp),r,20.196592,0.19512637,det,rb=0.3642857
+61235.3293955577,2461235.8293955578,Rubin/LSST-forced,i,20.743,0.013,det,diaForcedSource
+61235.3293955577,2461235.8293955578,Rubin/LSST-diaSource,i,20.753,0.013,det,snr=82.6 reliability=1.0000
+61235.3556491221,2461235.855649122,Rubin/LSST-forced,z,21.29,0.045,det,diaForcedSource
+61235.3556491221,2461235.855649122,Rubin/LSST-diaSource,z,21.3,0.045,det,snr=23.8 reliability=1.0000
