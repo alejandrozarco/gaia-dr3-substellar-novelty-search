@@ -1,0 +1,174 @@
+% Research Note of the AAS — DRAFT (prepared 2026-07-15; NOT yet submitted)
+% Class: AASTeX v7 with the RNAAS style option (journals.aas.org/aastexguide).
+% Current RNAAS rules (verified 2026-07-15 at journals.aas.org):
+%   <=1500 words INCLUDING title, headers, captions, references;
+%   a <=150-word abstract is REQUIRED (since 2020 May 1);
+%   at most ONE figure OR ONE table (not both); table contents are excluded
+%   from the word count, captions are not.
+\documentclass[RNAAS]{aastex701}
+
+\begin{document}
+
+\title{Artifact Rates in Year-1 Rubin/LSST Public Alert-Broker Channels Are a Channel Property: A Stratified Vetting Measurement}
+
+% ORCID PLACEHOLDER — replace with your real ORCID iD before submission.
+\author[0000-0000-0000-0000]{Alexander Keur}
+\affiliation{Independent researcher}
+\email{alexander.keur@gmail.com}
+
+\begin{abstract}
+We report a stratified, human-vetted measurement of artifact rates in public
+year-1 Rubin/LSST alert-broker channels. Over six observing nights in
+MJD 61228--61235 (2026 July 7--14), three Fink/LSST channels --- hostless
+(ELEPHANT), faint extragalactic-new, and bright ($<$20\,mag) extragalactic ---
+produced 772 alerts from 738 unique objects. We vetted 40 objects (a complete
+census of the hostless channel plus seeded-random draws from the other two)
+against difference-image cutouts, deep-coadd host checks, Gaia~DR3, and
+solar-system and pixel-flag tests. Artifact fractions are strongly
+channel-dependent: 0/10 (hostless), 0/10 (bright), but 15/20 (faint channel;
+Wilson 68\% interval 64--83\%), implying a stream-weighted rate of
+$\approx$71\%. The dominant contaminant is a year-1 incremental-template
+subtraction residual on stars present in the template. Curated channels are
+already follow-up-grade; per-channel rates should be remeasured once DR1
+templates replace incremental ones.
+\end{abstract}
+
+\section{Motivation}
+
+Rubin Observatory began streaming public alerts in early 2026, while
+difference imaging still relies on incremental year-1 templates built from
+commissioning and early-operations data \citep{Robinson2024}. Community
+brokers re-expose the stream as curated channels
+\citep[e.g., Fink;][]{Moller2021}, and for small teams the practical question
+is not the purity of the full stream but the purity of the specific channel
+they monitor. We are not aware of a published, channel-resolved artifact-rate
+measurement for the live year-1 stream; broker purity figures to date derive
+from ZTF operations or simulations \citep[e.g.,][]{Pessi2024, Durgesh2026,
+CarrascoDavis2021}. This note supplies such a measurement for one week of one
+broker's public channels.
+
+\section{Data and method}
+
+We harvested all alerts carried by three Fink/LSST channels over the window
+2026 July 7--14 (six nights with flags in MJD 61228--61235; MJD 61229 produced
+no alerts in any of the three): \texttt{hostless\_candidate} (ELEPHANT;
+\citealt{Pessi2024}), 15 alerts from 10 unique objects;
+\texttt{extragalactic\_new\_candidate}, 717 alerts from 702 objects; and
+\texttt{extragalactic\_lt20mag\_candidate}, 40 alerts from 26 objects ---
+772 alerts and 738 unique objects in total. All epochs are keyed by
+\texttt{midpointMjdTai}, with per-object asserts that every alert falls inside
+the window.
+
+From these we vetted a stratified sample of 40 objects: the complete census of
+all 10 hostless objects, plus random draws (seed 20260714) of 20/702 faint-channel
+and 10/26 bright-channel objects. Each object was tested against (a) visual
+inspection of Science/Template/Difference cutouts; (b) a Legacy Surveys DR10
+\citep{Dey2019} deep-coadd counterpart check; (c) a Gaia~DR3
+\citep{GaiaDR3} crossmatch; (d) solar-system exclusion via Rubin's MPCORB
+association plus multi-night fixed-position persistence; (e) duplicate, dipole,
+negative, and pixel-flag checks; and (f) the MJD-keyed light-curve trend.
+Objects were classed as artifact, genuine transient, genuine non-transient
+(AGN or variable star), or ambiguous.
+
+\section{Results}
+
+Table~\ref{tab:rates} gives per-channel artifact fractions with Wilson 68.27\%
+($z{=}1$) binomial intervals. The overall sample fraction is 15/40, but the
+rate is a channel property, not a stream property: the two curated channels
+show zero artifacts in 20 objects, while the faint
+($m \gtrsim 21.8$) extragalactic-new channel shows 15/20. Weighting the
+per-channel rates by unique-object counts yields a stream-weighted artifact
+rate of 0.71 (bounds 0.61--0.80); counting the two ambiguous single-night
+faint-channel objects as artifacts would raise the faint-channel fraction to
+17/20 (0.75--0.91).
+
+Every faint-channel artifact has the same phenotype: a weak or offset
+difference-image residual, magnitude 22--24 and 1--3 detections, on a star
+that is present in both the science and the year-1 incremental template image
+--- i.e., imperfect subtraction, not a new source. All 10 hostless-channel
+objects are clean multi-night transients (2--5 nights, 7--18 day spans,
+reliability $\approx$1.0, zero pixel flags); three were already on TNS
+(SN\,2026uid, AT\,2026pun, SN\,2026pec). The bright channel is artifact-free
+but transient-poor: 3/10 transients versus 7/10 persistent astrophysical
+variables (5 AGN, 2 variable stars). Year-1 stamp classifiers mislabel the
+pure channel: the ALeRCE beta stamp classifier \citep[v2.0.1
+lineage;][]{CarrascoDavis2021} assigned ``asteroid'' ($p \approx 0.89$--$0.98$)
+to seven and ``bogus'' ($p \approx 0.83$--$0.90$) to three of the ten hostless
+objects, including the three TNS-confirmed supernovae --- all physically
+excluded as movers by their multi-night fixed positions.
+
+\begin{deluxetable}{lcccc}
+\tablecaption{Channel-resolved artifact rates, Fink/LSST public channels, MJD
+61228--61235. Intervals are Wilson 68.27\% ($z{=}1$). The stream-weighted row
+combines per-channel rates weighted by unique-object counts.
+\label{tab:rates}}
+\tablehead{
+\colhead{Channel} & \colhead{Objects (alerts)} & \colhead{Vetted} &
+\colhead{Artifacts} & \colhead{Fraction [68\% CI]}
+}
+\startdata
+hostless (ELEPHANT)        & 10 (15)   & 10 (census) & 0  & 0.00 [0, 0.09] \\
+extragalactic $<$20 mag    & 26 (40)   & 10          & 0  & 0.00 [0, 0.09] \\
+extragalactic new (faint)  & 702 (717) & 20          & 15 & 0.75 [0.64, 0.83] \\
+\hline
+stream-weighted            & 738 (772) & 40          & \nodata & 0.71 [0.61, 0.80] \\
+\enddata
+\end{deluxetable}
+
+\section{Scope and implications}
+
+This is one week of one broker's channel definitions, with small per-channel
+samples (the Wilson intervals carry that uncertainty), under year-1
+incremental templates only; visual classification of the faintest residuals
+involves judgment, and two single-night objects remain ambiguous. The
+measurement will age quickly by design: once DR1 full-depth templates replace
+incremental ones, the faint-channel rate should be remeasured and can be
+expected to drop.
+
+The practical implication stands independently: for community follow-up,
+channel selection beats stream-wide vetting. At current rates the hostless
+channel is essentially pure at $\sim$2--3 objects per night all-sky ---
+small-team follow-up-grade today --- whereas the faint channel requires
+per-object template-image inspection before any claim. Multi-night
+fixed-position persistence and archival photometry, not year-1 stamp scores,
+are the reliable discriminants.
+
+\begin{acknowledgments}
+This measurement was produced with an agentic AI pipeline (Claude, Anthropic),
+which performed the alert harvesting, crossmatching, vetting bookkeeping, and
+manuscript drafting, including adversarial automated cross-checks of every
+verdict; the human author directed the work, reviewed the classifications and
+text, and takes sole responsibility for the content, in line with the AAS
+Publishing policy on AI tools
+(\url{https://doi.org/10.3847/25c2cfeb.c3619710}). This work made use of the
+Fink and ALeRCE broker APIs, Legacy Surveys DR10, Gaia DR3, and the
+Transient Name Server.
+\end{acknowledgments}
+
+\begin{thebibliography}{}
+
+\bibitem[Carrasco-Davis et al.(2021)]{CarrascoDavis2021}
+Carrasco-Davis, R., Reyes, E., Valenzuela, C., et al.\ 2021, AJ, 162, 231
+
+\bibitem[Dey et al.(2019)]{Dey2019}
+Dey, A., Schlegel, D.~J., Lang, D., et al.\ 2019, AJ, 157, 168
+
+\bibitem[Durgesh et al.(2026)]{Durgesh2026}
+Durgesh, R., Pessi, P.~J., Ishida, E.~E.~O., \& Peloton, J.\ 2026,
+arXiv:2605.22407
+
+\bibitem[Gaia Collaboration et al.(2023)]{GaiaDR3}
+Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al.\ 2023, A\&A, 674, A1
+
+\bibitem[M{\"o}ller et al.(2021)]{Moller2021}
+M{\"o}ller, A., Peloton, J., Ishida, E.~E.~O., et al.\ 2021, MNRAS, 501, 3272
+
+\bibitem[Pessi et al.(2024)]{Pessi2024}
+Pessi, P.~J., et al.\ 2024, arXiv:2404.18165
+
+\bibitem[Robinson et al.(2024)]{Robinson2024}
+Robinson, J.~E., et al.\ 2024, arXiv:2411.19796
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,1253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/s+7iJvJhb7vozvo51BJy3psgJJ8</id>
+  <title>arXiv Query: search_query=all:"Rubin" AND all:"alert stream"&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-08-12T23:22:59Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22Rubin%22+AND+all:%22alert+stream%22&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>36</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2607.28510v1</id>
+    <title>Uncertainty-Aware Tidal Disruption Event Classification : A Host-Agnostic Probabilistic Random Forest Approach</title>
+    <updated>2026-07-30T16:49:06Z</updated>
+    <link href="https://arxiv.org/abs/2607.28510v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.28510v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The classification of Tidal Disruption Events in large-scale photometric surveys is challenging because deterministic machine learning models produce overconfident misclassifications under varying data quality and low signal-to-noise conditions. Existing lightcurve-based approaches fail to incorporate measurement uncertainties, consequently generating brittle outputs. We present a host-agnostic, uncertainty-aware classification framework using a Probabilistic Random Forest (PRF). Our pipeline extracts 11 characteristic features from nuclear transients in the ZTF alert stream, including rise and decay timescales, blackbody temperature evolution, and pre-transient variability metrics. Relying exclusively on photometric data without host galaxy information ensures effectiveness for the faint transient population expected from the Rubin Observatory. The PRF, which treats feature measurements as distributions, was evaluated against XGBoost through Leave-One-Out Cross-Validation. It yields higher stability and robustness for ambiguous candidates than XGBoost. The two classifiers occupy complementary regimes. XGBoost achieves higher recall in balanced and high-precision scenarios, where its rigid decision boundaries efficiently isolate TDE-like sources, while PRF rejects more false positives by penalizing sources with large feature uncertainties. Applying this framework to archival data identified 11 new candidate TDEs from the unclassified population and 3 potential photometric TDEs within existing training labels previously misclassified as supernovae or active galactic nuclei. This work demonstrates that TDEs can be reliably identified using photometric lightcurve features, providing a host-independent framework. Uncertainty-aware, probabilistic classifiers are essential for the Rubin era to prevent the overconfident misclassifications inherent in deterministic models at low signal-to-noise.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-30T16:49:06Z</published>
+    <arxiv:comment>20 pages,16 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>Vysakh Anilkumar</name>
+    </author>
+    <author>
+      <name>Sjoert van Velzen</name>
+    </author>
+    <author>
+      <name>Marek Kowalski</name>
+    </author>
+    <author>
+      <name>Simeon Reusch</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03532v1</id>
+    <title>How Low Can We Go? Minimum Spectroscopic Requirements For Supernova Subtype Classification</title>
+    <updated>2026-07-03T18:00:00Z</updated>
+    <link href="https://arxiv.org/abs/2607.03532v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03532v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Millions of supernovae will be discovered with the Vera C. Rubin Observatory Legacy Survey of Space and Time (LSST). As a result, spectrographs around the world will have to make difficult decisions about which supernova candidates receive spectroscopic follow-ups. This work identifies the minimum spectral resolution, $R_λ = \fracλ{Δλ}$, as a function of signal-to-noise ratio (SNR) at which spectral classification of supernova subtypes becomes impossible. We include supernova types Ia, Ia-91T, Ia-91bg, Iax, Ib, Ic, broad-lined Ic, IIb, IIP, and Ibn in this work. We produce a definition of SNR based on specific lines for each SN subtype that allows us to generate homogeneous datasets at 16 different values of $R_λ$ and 14 different SNR's and we tested the classification performance of a recently developed deep-learning classifier, ABC-SN, on each $R_λ$ and SNR combination. We find that classification of supernova spectra into a refined taxonomy that separates, for example, between different subtypes of stripped envelope supernovae, is possible at low resolution and low SNR with no loss in model performance down to $R_λ = 50$ and $\text{SNR} = 5$. Classification performance is only minimally impacted even as low as $R_λ = 25$. We hope that astronomers using the LSST alert stream, as well as designers of future instruments and observatories, will benefit from knowing what spectral resolution is necessary to classify a supernova for arbitrary \SNR{}.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-03T18:00:00Z</published>
+    <arxiv:comment>21 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Willow Fox Fortino</name>
+    </author>
+    <author>
+      <name>Federica B. Bianco</name>
+    </author>
+    <author>
+      <name>Maryam Modjaz</name>
+    </author>
+    <author>
+      <name>Thomas Matheson</name>
+    </author>
+    <author>
+      <name>Umer Zubair</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.28645v1</id>
+    <title>GOATS: The next generation software infrastructure for time-domain astronomy at Gemini/NOIRLab. Application to alerts from Vera C. Rubin Observatory's Legacy Survey of Space and Time</title>
+    <updated>2026-06-26T23:03:29Z</updated>
+    <link href="https://arxiv.org/abs/2606.28645v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.28645v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Time-domain and multimessenger astronomy (MMA/TDA) targets demand rapid-response follow-up observations. In many cases, it is the only way to make discoveries and advance our understanding of the astrophysical phenomena, for example, kilonovae accompanying gravitational waves from compact object mergers, shock breakout in supernovae, prompt emission from GRBs, etc. Presently the MMA/TDA follow-up workflow requires wrangling disparate software packages and user interfaces. We present an end-to-end software tool for the community, the Gemini Observation and Analysis of Targets System (GOATS), which unifies and simplifies the workflow, particularly for Gemini follow-up observations. GOATS achieves this by integrating services from Gemini Observatory and its parent organization, NSF NOIRLab. From a single platform, GOATS enables enhanced target selection via NOIRLab's ANTARES alert broker, triggering of Gemini (and other facilities within the Astronomical Event Observatory Network), automated data retrieval from the Gemini Observatory Archive, and interactive data reduction and analysis through Gemini's DRAGONS software and NOIRLab's Astro Data Lab science platform. GOATS was successfully deployed in an end-to-end demonstration of real-time follow-up of Rubin/LSST alerts with NOIRLab facilities. As part of this demonstration, we selected targets from the Rubin alert stream and triggered follow-up observations within minutes of the Rubin detections. We obtained spectra for several targets and classified them as supernova of various types (Ia, IIP, Ib/c) with redshifts ranging from 0.05 to 0.35. By eliminating the need to manually connect tools and automating repetitive tasks, GOATS lowers the entry barrier and allows users to focus on the scientific interpretation of the observation results.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-26T23:03:29Z</published>
+    <arxiv:comment>34 pages, 23 figures, submitted to AAS Journals</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Monika Soraisam</name>
+    </author>
+    <author>
+      <name>Louis Avner</name>
+    </author>
+    <author>
+      <name>Miguel Gómez</name>
+    </author>
+    <author>
+      <name>William Vacca</name>
+    </author>
+    <author>
+      <name>Bryan Miller</name>
+    </author>
+    <author>
+      <name>Andrew Stephens</name>
+    </author>
+    <author>
+      <name>Arturo Núñez</name>
+    </author>
+    <author>
+      <name>Andrew Adamson</name>
+    </author>
+    <author>
+      <name>César Briceño</name>
+    </author>
+    <author>
+      <name>Hernán Chacana</name>
+    </author>
+    <author>
+      <name>Guillermo Damke</name>
+    </author>
+    <author>
+      <name>Nicolás Esquivel</name>
+    </author>
+    <author>
+      <name>Paul Hirst</name>
+    </author>
+    <author>
+      <name>Kathleen Labrie</name>
+    </author>
+    <author>
+      <name>Thomas Matheson</name>
+    </author>
+    <author>
+      <name>Chadd Myers</name>
+    </author>
+    <author>
+      <name>Robert Nikutta</name>
+    </author>
+    <author>
+      <name>Abhijit Saha</name>
+    </author>
+    <author>
+      <name>Chris Simpson</name>
+    </author>
+    <author>
+      <name>Olesja Smirnova</name>
+    </author>
+    <author>
+      <name>D. J. Teal</name>
+    </author>
+    <author>
+      <name>Sergio Troncoso</name>
+    </author>
+    <author>
+      <name>James Turner</name>
+    </author>
+    <author>
+      <name>Sebastián Vicencio</name>
+    </author>
+    <author>
+      <name>Hubert Condoretti</name>
+    </author>
+    <author>
+      <name>Scott Dahm</name>
+    </author>
+    <author>
+      <name>Tómas Ahumada</name>
+    </author>
+    <author>
+      <name>Eric Bellm</name>
+    </author>
+    <author>
+      <name>Robert Blum</name>
+    </author>
+    <author>
+      <name>Aleksandar Cikota</name>
+    </author>
+    <author>
+      <name>Hannah Crayton</name>
+    </author>
+    <author>
+      <name>Diego Gómez</name>
+    </author>
+    <author>
+      <name>Melissa Graham</name>
+    </author>
+    <author>
+      <name>Stephen Heathcote</name>
+    </author>
+    <author>
+      <name>Leanne Guy</name>
+    </author>
+    <author>
+      <name>Fredrik Rantakyrö</name>
+    </author>
+    <author>
+      <name>Kevin Reil</name>
+    </author>
+    <author>
+      <name>Rachel Street</name>
+    </author>
+    <author>
+      <name>Sandrine Thomas</name>
+    </author>
+    <author>
+      <name>Simón Torres</name>
+    </author>
+    <author>
+      <name>Kathy Vivas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.01295v1</id>
+    <title>PSF-like Alpha-Particle Events in LSST Images</title>
+    <updated>2026-05-31T15:32:07Z</updated>
+    <link href="https://arxiv.org/abs/2606.01295v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.01295v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Rare $α$-particle-induced charge clusters appear in LSST images as compact, PSF-like sources with a median FWHM of $0.\!\!^{\prime\prime}95$ and median ellipticity consistent with zero, closely resembling unresolved astrophysical point sources. These events are detected in both dark and science exposures at a rate of approximately $10^{-12}\ \mathrm{pixel}^{-1}\ \mathrm{s}^{-1}$. Their collected charge and morphology are consistent with energy deposition from $\sim$5 MeV $α$-particles in silicon CCDs, and their spatial distribution across the focal plane suggests a localized material origin, plausibly associated with trace radioactive contamination in the cryostat aluminum. Despite their deceptive appearance, we demonstrate that a simple broadness statistic based on fourth-order moments cleanly separates these events from stellar PSFs, enabling efficient rejection in coadded images and real-time alert streams. Such charge clusters do not impose an intrinsic bright-end contamination floor for Rubin transient searches, as genuine fast astrophysical events would exhibit characteristically different morphological signatures.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ins-det" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-31T15:32:07Z</published>
+    <arxiv:comment>7 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>PASP 138 6 (2026) 064506</arxiv:journal_ref>
+    <author>
+      <name>Guillem Megias Homar</name>
+    </author>
+    <author>
+      <name>Craig S. Lage</name>
+    </author>
+    <author>
+      <name>Pierre-François Léget</name>
+    </author>
+    <author>
+      <name>Steven M. Kahn</name>
+    </author>
+    <author>
+      <name>Christopher W. Stubbs</name>
+    </author>
+    <author>
+      <name>S. R. Kulkarni</name>
+    </author>
+    <author>
+      <name>Ian S. Sullivan</name>
+    </author>
+    <author>
+      <name>James F. Bosch</name>
+    </author>
+    <author>
+      <name>Eli S. Rykoff</name>
+    </author>
+    <arxiv:doi>10.1088/1538-3873/ae7690</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1088/1538-3873/ae7690" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.27527v2</id>
+    <title>Probabilistic Data-Driven Modelling of Astrophysical Transients: The Neural Process Family for Ultrafast and Class-Agnostic Light Curve Reconstruction with NightLANP</title>
+    <updated>2026-06-01T16:48:58Z</updated>
+    <link href="https://arxiv.org/abs/2605.27527v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.27527v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Astrophysical observations from Earth are subject to weather, environmental, and scientific constraints that lead to sparse, irregular light curves. On the eve of the Vera C. Rubin Observatory Legacy Survey of Space and Time, its dataset offers unprecedented opportunities for transient science. Yet a key challenge remains its cadence, sparse and irregular across six bands, limiting inference. Interpolation helps mitigate this, with Gaussian Processes the standard, but they struggle with cross-band correlations, require a priori kernel specification, and must be fit to each light curve individually, hence scaling poorly. Here, we introduce the neural process family for light curve reconstruction, combining the probabilistic framework of Gaussian Processes with the scalability of deep learning. By meta-learning on diverse simulated transients, Attentive Neural Processes shift the bulk of computation to training, enabling rapid, amortized inference with a class-agnostic model. Evaluated on realistic Rubin cadences across 15 transient classes, we show that even an unoptimized, out-of-the-box Attentive Neural Process consistently outperforms all benchmarks -- a suite of Gaussian Processes and neural networks -- on every tested metric, spanning regression quality, astrophysical feature recovery, and probabilistic calibration. Our model interpolates all bands simultaneously in microseconds, over four orders of magnitude faster than the next-best neural benchmark and five faster than Gaussian Processes, demonstrating the potential of neural processes for the nightly Rubin alert stream. Attentive Neural Processes avoid the overconfidence of standard neural networks and the underconfidence of Gaussian Processes, delivering sharp, well-calibrated uncertainties. This work establishes the neural process family as a scalable, probabilistic foundation for real-time transient science in the Rubin era.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-26T18:01:39Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Siddharth Chaini</name>
+    </author>
+    <author>
+      <name>Federica B. Bianco</name>
+    </author>
+    <author>
+      <name>Ashish Mahabal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22407v1</id>
+    <title>Hostless extragalactic transients in Fink: Results from the ELEPHANT pipeline</title>
+    <updated>2026-05-21T12:35:01Z</updated>
+    <link href="https://arxiv.org/abs/2605.22407v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22407v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The ExtragaLactic alErt Pipeline for Hostless AstroNomical Transients (ELEPHANT), has been developed as a framework for filtering hostless candidates, in real time alert systems, and implemented as a filter in the Fink broker. ELEPHANT works on stamps and requires minimal information, thus allowing for fast identification of extragalactic transient events. In this work we evaluate the performance of the ELEPHANT pipeline by systematically analyzing flagged hostless candidates identified between 1 September 2023 and 31 December 2025. Our goal is to quantifying its accuracy and identify dominant sources of contamination. For each flagged candidate we collected additional information from multiple catalogues and archival repositories. We further examined their light-curve evolution and astrometric consistency (coordinate dispersion over time) to refine source classification. Results. Out of 877 flagged events, 67 are confidently confirmed as genuinely hostless candidates, with no detectable host galaxy in either existing catalogues or archival imaging, representing a high-purity sample of intrinsically faint or absent hosts. Additional 51 events are linked to visually identifiable hosts that are entirely absent from both catalogues and ZTF stamps. For the confirmed hostless subset, the inferred upper limits on host-galaxy absolute magnitudes extend well below the luminosity range of typical dwarf galaxies. The pipeline showed an overall accuracy of 0.84, with the majority of the classified flagged events being Type Ia supernovae, and the second most detected class being Type I superluminous supernova. ELEPHANT has been adapted to deal with the Rubin alert stream and has been processing its alerts since February 2026.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T12:35:01Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>R. Durgesh</name>
+    </author>
+    <author>
+      <name>P. J. Pessi</name>
+    </author>
+    <author>
+      <name>E. E. O. Ishida</name>
+    </author>
+    <author>
+      <name>J. Peloton</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05318v1</id>
+    <title>HOLISMOKES XXI: Detecting strongly lensed type Ia supernovae from time series of multi-band LSST-like imaging data -- Part II</title>
+    <updated>2026-05-06T18:00:10Z</updated>
+    <link href="https://arxiv.org/abs/2605.05318v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05318v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Strong gravitationally lensed supernovae (LSNe) are rare but extremely valuable probes of cosmology and astrophysics. Prompt identification within the alert streams of time-domain surveys such as the Rubin Legacy Survey of Space and Time (LSST) is essential for timely follow-up observations. In our previous study, Bag et al. (2026), we introduced a deep-learning framework for detecting LSNe Ia directly from multi-band, multi-epoch image cutouts. The model employs a convolutional LSTM architecture to capture spatiotemporal correlations in time-series imaging data, enabling classification updates as new observations arrive. In this work, we extend that framework by incorporating greater realism into the simulations. In particular, we present a method to construct realistic image time series from single-epoch observations by introducing epoch-to-epoch point spread function variations with corresponding variance-map corrections. The dataset is based on HSC PDR3 observations and includes simulated lensed host-galaxy arcs, SN light-curve variations, and Poisson noise. We also introduce an additional negative class consisting of SN Ia occurring in the foreground lens galaxy, representing a challenging source of false positives. Despite these additional complexities, the model retains strong performance. The receiver operating characteristic improves rapidly during the first few observations, reaching a true-positive rate of $\sim60\%$ at a false-positive rate of $\mathcal{O}(10^{-4})$ by the seventh observation and $\sim80\%$ by the tenth. We also investigate potential confusion with sibling SNe occurring in LRGs and identify the configurations that best mimic lensed systems. These results demonstrate that the image-time-series approach remains robust under more realistic observing conditions, and is well suited for real-time LSN searches in LSST and other time-domain surveys.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-06T18:00:10Z</published>
+    <arxiv:comment>19 pages, 12 figures, submitted to A&amp;A</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Satadru Bag</name>
+    </author>
+    <author>
+      <name>Raoul Canameras</name>
+    </author>
+    <author>
+      <name>Sherry H. Suyu</name>
+    </author>
+    <author>
+      <name>Stefan Schuldt</name>
+    </author>
+    <author>
+      <name>Stefan Taubenberger</name>
+    </author>
+    <author>
+      <name>Irham Taufik Andika</name>
+    </author>
+    <author>
+      <name>Alejandra Melo</name>
+    </author>
+    <author>
+      <name>Ming Kei Chan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.14761v1</id>
+    <title>NOMAI : A real-time photometric classifier for superluminous supernovae identification. A science module for the Fink broker</title>
+    <updated>2026-04-16T08:22:04Z</updated>
+    <link href="https://arxiv.org/abs/2604.14761v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.14761v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Superluminous supernovae (SLSNe) are one of the most luminous stellar explosions known, yet they remain poorly understood. Because they are intrinsically rare, efficiently identifying them in the large alert streams produced by modern time-domain surveys is essential for enabling spectroscopic follow-up. We present NOMAI, a machine learning classifier designed to identify SLSN candidates directly from photometric alerts in the ZTF stream, using light curves accumulated over at least 30 days. It does not require any spectroscopic redshift and is running in real time within the Fink broker. ZTF light curves are transformed into a set of physically motivated features derived primarily from model-fitting procedures using SALT2 and Rainbow, a blackbody-based multi-band fitting framework. These features are used to train an XGBoost classifier on a curated dataset of labeled ZTF sources constructed using literature samples of SLSNe, along with TNS and internal ZTF labeled sources. The final training dataset contains 5280 unique sources, including 225 spectroscopically classified SLSNe. On the training sample, the classifier reaches 66% completeness and 58% purity. Deployed within the Fink broker, NOMAI has been running continuously since 18/12/2025 on the ZTF alert stream and publicly reports SLSN candidates every night by automatically posting them to dedicated communication channels. Based on this, we also report the first two-month as an evaluation period, where the classifier successfully recovered 22 of the 24 active SLSNe reported on the Transient Name Server. The achieved performances demonstrate that the classifier provides a valuable tool for experts to efficiently scan the alert stream and identify promising candidates. In the near future, NOMAI is intended to be adapted to operate on the Legacy Survey of Space and Time conducted by the Vera C. Rubin Observatory.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.data-an" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-16T08:22:04Z</published>
+    <arxiv:comment>13 pages, 9 figures, submitted to Astronomy &amp; Astrophysics (A&amp;A)</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>E. Russeil</name>
+    </author>
+    <author>
+      <name>R. Lunnan</name>
+    </author>
+    <author>
+      <name>J. Peloton</name>
+    </author>
+    <author>
+      <name>S. Schulze</name>
+    </author>
+    <author>
+      <name>P. J. Pessi</name>
+    </author>
+    <author>
+      <name>D. Perley</name>
+    </author>
+    <author>
+      <name>J. Sollerman</name>
+    </author>
+    <author>
+      <name>A. Gkini</name>
+    </author>
+    <author>
+      <name>Y. Hu</name>
+    </author>
+    <author>
+      <name>T. -W. Chen</name>
+    </author>
+    <author>
+      <name>E. C. Bellm</name>
+    </author>
+    <author>
+      <name>T. X. Chen</name>
+    </author>
+    <author>
+      <name>B. Rusholme</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.00206v1</id>
+    <title>Predictions of the LSST Solar System (non-)Yield</title>
+    <updated>2026-03-31T20:19:06Z</updated>
+    <link href="https://arxiv.org/abs/2604.00206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.00206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present predictions for solar system objects the Vera C.\ Rubin Observatory Legacy Survey of Space and Time (LSST) will not detect over its ten-year baseline survey. Employing state-of-the-art synthetic population models and the \texttt{Sorcha} survey simulator, we identify non-yield populations spanning geometric, photometric, kinematic, temporal, and computational failure modes. Notable subpopulations include objects whose peak brightness coincides exclusively with scheduled telescope downtime, objects whose detections fall within Rubin focal plane chip gaps, and objects whose orbital arcs expire before linking jobs are dispatched from the compute queue. We additionally characterise the non-yield arising from the Death Star (DS-1; $D \approx 160$~km), whose orbital mechanics (when constrained by the well-established Endor engagement geometry \citep{lucas83}) place it at a maximum heliocentric distance of $27.5$~au and an apparent magnitude of $m_r \approx 19$-23, squarely within the LSST operational photometric window. Its absence from the LSST alert stream is interpreted as confirmation of its destruction at the Battle of Endor. The failure to detect the Sun within the LSST should be a stark warning to the community of the LSST's inability to catalogue the solar system (by mass).</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-31T20:19:06Z</published>
+    <arxiv:comment>6 pages, 4 figures, 1 table</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Joseph Murtagh</name>
+    </author>
+    <author>
+      <name>Ian Chow</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.13814v1</id>
+    <title>A Hybrid Framework for Kilonova Anomaly Detection using Single-Epoch SEDs from the 7-Dimensional Telescope</title>
+    <updated>2026-03-14T07:36:51Z</updated>
+    <link href="https://arxiv.org/abs/2603.13814v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.13814v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We develop a hybrid framework to identify kilonovae (KNe), using single-epoch, medium-band spectral energy distributions from the 7-Dimensional Telescope (7DT). The framework integrates an unsupervised anomaly classifier (\texttt{Isolation Forest}) to flag unusual events with a supervised multi-class classifier (\texttt{XGBoost}) that characterizes eight common transient types. Trained on realistically simulated 7DT photometry accounting for per-filter sensitivity, the classifier achieves macro $F_{1}\sim0.80$ ($\sim0.82$) with 20 (40) filters across eight classes, Type~Ia/Ibc/II SNe, SLSNe, TDEs, AGN, stellar variables, and asteroids. Without direct training, the anomaly detector recovers $&gt;$90\% of simulated and observed optically detectable KNe (AT~2017gfo) with a low contamination fraction, with a caveat of limitations of the training sample such as limited redshift range of SNe ($z &lt; 0.15$), and a relatively small number of early non-KNe spectra. A SHAP-based feature analysis reveals that only $\sim$40--50\% of the most informative filters are sufficient to retain near-baseline performance, while red-end filters contribute little. Combining the top-ranked half of the 40 7DT filters with a single LSST band reproduces the full-model accuracy within 1--2\%, suggesting practical follow-up strategies. These results demonstrate that 7DT's medium-band system enables rapid, interpretable classifications and reliable anomaly alerts from single-epoch data -- promising for gravitational-wave follow-up, Rubin alert stream filtering, and serendipitous transient discovery in the 7DT survey.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-14T07:36:51Z</published>
+    <arxiv:comment>Accepted for publication in The Astrophysical Journal</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Gregory S. H. Paek</name>
+    </author>
+    <author>
+      <name>Myungshin Im</name>
+    </author>
+    <author>
+      <name>Seo-Won Chang</name>
+    </author>
+    <author>
+      <name>Hyeonho Choi</name>
+    </author>
+    <author>
+      <name>Ji Hoon Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.12955v1</id>
+    <title>Anomaly Hunter for Alerts (AHA): Anomaly Detection in the ZTF Transient Alert Stream</title>
+    <updated>2026-02-13T14:21:32Z</updated>
+    <link href="https://arxiv.org/abs/2602.12955v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.12955v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern time-domain surveys produce alert streams at a scale that makes exhaustive manual inspection infeasible, requiring automated methods to identify unusual transients for follow-up. In this work, we present an unsupervised anomaly detection pipeline applied to the ZTF alert stream using the Lasair broker. We define normal objects as SN Ia, SN II, and SN Ib/c. Anomalous objects include (i) more exotic transients (AGN, TDEs, SLSNe, CVs, and nuclear transients) and (ii) supernova-labeled objects, either spectroscopically or by Lasair, with anomalous properties, such as incorrect or absent host associations, or non-supernova-like light curves. Our pipeline consists of three independently trained simple autoencoders operating on distinct alert stream data products: object features, triplet image cutouts, and light curves. Each model is trained on predominantly normal transients, and performance is assessed using the recall of exotic objects and the purity of all anomalous objects across both a spectroscopically classified held-out test set and the live alert stream. In the test set, performance is evaluated at a fixed rank corresponding to the top ten scoring candidates, while in the alert stream it is evaluated using an anomaly threshold defined from test set behavior. Across both settings, the algorithms consistently recover exotic transients and anomalous supernovae among their top-ranked candidates. Over 25 days of live alert stream application, we identify 87 unusual supernova candidates for follow-up. The overlap between anomalies flagged by different autoencoders in the test set is non-existent, and in the alert stream is small, with maximum overlap between any two algorithms being 11 objects. The framework is data-efficient, requiring only a few thousand training examples, making it well suited for early and ongoing application to the Rubin Observatory alert stream.</summary>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-13T14:21:32Z</published>
+    <arxiv:comment>22 pages, 5 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.SR"/>
+    <author>
+      <name>Leyla Iskandarli</name>
+    </author>
+    <author>
+      <name>Chris J. Lintott</name>
+    </author>
+    <author>
+      <name>Steve Croft</name>
+    </author>
+    <author>
+      <name>Heloise Stevance</name>
+    </author>
+    <author>
+      <name>Joshua Weston</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.10454v1</id>
+    <title>Alertissimo -- a tool for orchestration of LSST broker streams</title>
+    <updated>2026-01-15T14:46:17Z</updated>
+    <link href="https://arxiv.org/abs/2601.10454v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.10454v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Vera C. Rubin Observatory, through its Legacy Survey of Space and Time, will soon start producing 10 million alerts on transient astronomical objects per night. Due to logistics and bandwidth, alerts will not be dispatched directly to the public but to 'brokers' i.e. tools selected by LSST to handle alert streams. Brokers offer both common, specific and micro-specific functionalities related to alert handling, analysis, representation and dissemination. In this ecosystem, potentially augmented by data streams from other astronomical sources, there is a - need demonstrated by the community - for use cases which combine features of individual brokers. In this paper we present initial efforts and a prototype of such a tool, along with a language that would allow users to define use cases / workflows in a manner tailored for the domain.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-15T14:46:17Z</published>
+    <arxiv:comment>To appear in CAOSP</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>V. Vujcic</name>
+    </author>
+    <author>
+      <name>V. A. Sreckovic</name>
+    </author>
+    <author>
+      <name>S. Babarogic</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.00164v2</id>
+    <title>BOOM and Babamul: a real-time, multi-survey, optical alert broker system operating at scale</title>
+    <updated>2026-05-07T09:17:03Z</updated>
+    <link href="https://arxiv.org/abs/2511.00164v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.00164v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With the arrival of ever higher throughput wide-field surveys and a multitude of multi-messenger and multi-wavelength instruments to complement them, software capable of harnessing these associated data streams is urgently required. To meet these needs, a number of community supported alert brokers have been built, currently focused on processing of Zwicky Transient Facility (ZTF; $\sim 10^5$-$10^6$ alerts per night) with an eye towards Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST; $\sim 2 \times 10^7$ alerts per night). Building upon the system that successfully ran in production for ZTF's first seven years of operation, we introduce BOOM (Burst &amp; Outburst Observations Monitor), an analysis framework focused on real-time, joint brokering of these alert streams. BOOM harnesses the performance of a Rust-based software stack relying on a non-relational MongoDB database combined with a Valkey in-memory processing queue and a Kafka cluster for message sharing. With this system, we demonstrate feature parity with the existing ZTF system with a throughput $\sim 7 \times$ higher. We describe the workflow that enables the real-time processing as well as the results with custom filters we have built to demonstrate the system's capabilities. In conclusion, we present the development roadmap for both BOOM and Babamul - the public-facing LSST alert broker built atop BOOM - as we begin the Rubin era.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-31T18:10:39Z</published>
+    <arxiv:comment>16 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Theophile Jegou du Laz</name>
+    </author>
+    <author>
+      <name>Michael W. Coughlin</name>
+    </author>
+    <author>
+      <name>Peter Bachant</name>
+    </author>
+    <author>
+      <name>Jacob E. Simones</name>
+    </author>
+    <author>
+      <name>Thomas Culino</name>
+    </author>
+    <author>
+      <name>Antoine Le Calloch</name>
+    </author>
+    <author>
+      <name>Sushant Sharma Chaudhary</name>
+    </author>
+    <author>
+      <name>Xander J. Hall</name>
+    </author>
+    <author>
+      <name>Tyler Barna</name>
+    </author>
+    <author>
+      <name>Daniel Warshofsky</name>
+    </author>
+    <author>
+      <name>Matthew Graham</name>
+    </author>
+    <author>
+      <name>Mansi M. Kasliwal</name>
+    </author>
+    <author>
+      <name>Ashish Mahabal</name>
+    </author>
+    <author>
+      <name>Joshua S. Bloom</name>
+    </author>
+    <author>
+      <name>Antonella Palmese</name>
+    </author>
+    <author>
+      <name>Frank J. Masci</name>
+    </author>
+    <author>
+      <name>Steven L. Groom</name>
+    </author>
+    <author>
+      <name>Richard Dekany</name>
+    </author>
+    <author>
+      <name>Reed L. Riddle</name>
+    </author>
+    <author>
+      <name>George Helou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.17499v1</id>
+    <title>Early Identification of Optical Tidal Disruption Events: A science module for the Fink broker</title>
+    <updated>2025-07-23T13:34:32Z</updated>
+    <link href="https://arxiv.org/abs/2507.17499v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.17499v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The detection of tidal disruption events (TDEs) is one of the key science goals of large optical time-domain surveys such as the Zwicky Transient Facility (ZTF) and the upcoming Vera C. Rubin Observatory Legacy Survey of Space and Time. However, identifying TDEs in the vast alert streams produced by these surveys requires automated and reliable classification pipelines that can select promising candidates in real time. We developed a module within the Fink alert broker to identify TDEs during their rising phase. It was built to autonomously operate within the ZTF alert stream, producing a list of candidates every night and enabling spectral and multi-wavelength follow-up near peak brightness. All rising alerts are submitted to selection cuts and feature extraction using the Rainbow multi-band lightcurve fit. Best-fit values were used as input to train an XGBoost classifier with the goal of identifying TDEs. The training set was constructed using ZTF observations for objects with available classification in the Transient Name Server. Finally, candidates with high enough probability were visually inspected. The classifier achieves 76% recall, indicating strong performance in early-phase identification, despite the limited available information before peak. We show that, out of the known TDEs that pass the selection cuts, half of them are flagged as TDE before halfway in their rise, proving the feasibility of early classification. Additionally, new candidates were identified by applying the classifier on archival data, including a likely repeated TDE and some potential TDEs occurring in active galaxies. The module is implemented into the Fink alert processing framework, reporting each night a small number of candidates to dedicated communication channels through a user-friendly interface, for manual vetting and potential follow-up.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-23T13:34:32Z</published>
+    <arxiv:comment>Submitted to A&amp;A. 12 pages + 1 appendix, 6 (+1) Figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <arxiv:journal_ref>A&amp;A 705, A144 (2026)</arxiv:journal_ref>
+    <author>
+      <name>Miguel Llamas Lanza</name>
+    </author>
+    <author>
+      <name>Sergey Karpov</name>
+    </author>
+    <author>
+      <name>Etienne Russeil</name>
+    </author>
+    <author>
+      <name>Erwan Quintin</name>
+    </author>
+    <author>
+      <name>Emille Ishida</name>
+    </author>
+    <author>
+      <name>Julien Peloton</name>
+    </author>
+    <author>
+      <name>Maria Pruzhinskaya</name>
+    </author>
+    <author>
+      <name>Anais Möller</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202556558</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202556558" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.19698v1</id>
+    <title>ALeRCE light curve classifier: Tidal disruption event expansion pack</title>
+    <updated>2025-03-25T14:25:42Z</updated>
+    <link href="https://arxiv.org/abs/2503.19698v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.19698v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>ALeRCE (Automatic Learning for the Rapid Classification of Events) processes the Zwicky Transient Facility (ZTF) alert stream in preparation for the Vera C. Rubin Observatory, classifying objects using a broad taxonomy. The ALeRCE light curve classifier is a balanced random forest (BRF) algorithm with a two-level scheme that uses variability features from the ZTF alert stream and colors from AllWISE and ZTF photometry. This work presents an updated version of the ALeRCE broker light curve classifier that includes tidal disruption events (TDEs) as a new subclass. We incorporated 24 new features, including the distance to the nearest source detected in ZTF science images and a parametric model of the power-law decay for transients. The labeled set was expanded to 219792 spectroscopically classified sources, including 60 TDEs. To integrate TDEs into ALeRCE's taxonomy, we identified specific characteristics that distinguish them from other transients: their central position in a galaxy, their typical decay pattern when fully disrupted, and their lack of color variability after disruption. We developed features to separate TDEs from other transient events. The updated classifier improves performance across all classes and integrates the TDE class with 91 percent recall. It also identifies a large number of potential TDE candidates in the ZTF alert stream's unlabeled data.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-25T14:25:42Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>M. Pavez-Herrera</name>
+    </author>
+    <author>
+      <name>P. Sánchez-Sáez</name>
+    </author>
+    <author>
+      <name>L. Hernández-García</name>
+    </author>
+    <author>
+      <name>F. E. Bauer</name>
+    </author>
+    <author>
+      <name>F. Förster</name>
+    </author>
+    <author>
+      <name>M. Catelan</name>
+    </author>
+    <author>
+      <name>A. Muñoz Arancibia</name>
+    </author>
+    <author>
+      <name>C. Ricci</name>
+    </author>
+    <author>
+      <name>I. Reyes-Jainaga</name>
+    </author>
+    <author>
+      <name>A. Bayo</name>
+    </author>
+    <author>
+      <name>P. Huijse</name>
+    </author>
+    <author>
+      <name>G. Cabrera-Vives</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.03735v1</id>
+    <title>Peaky Finders: Characterizing Double-Peaked Type IIb Supernovae in Large-Scale Live-Stream Photometric Surveys</title>
+    <updated>2025-03-05T18:44:49Z</updated>
+    <link href="https://arxiv.org/abs/2503.03735v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.03735v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the first photometric population study of double-peaked Type IIb supernovae (SNe IIb). SNe IIb are produced from the core-collapse of massive stars whose outermost Hydrogen layer has been partially stripped prior to explosion. These double-peaked light curves, consisting of a shock-cooling emission peak (SCE) followed by the main nickel-powered peak, contain more crucial information about the progenitor system than the typical single-peaked light curves. We compiled and analyzed a sample of 14 spectroscopically confirmed SNe IIb -- including previously unpublished and re-classified -- with publicly available photometric observations, discovered between 2018--2022, from the ZTF and ATLAS surveys. We developed and fit a piecewise linear model, referred to as the ``lightning bolt model,'' to describe the early-time behavior of these objects to measure population statistics. Notably, we find the SCE peak lasts, on average, fewer than five days above half-maximum light with a mean rise time of $2.07\pm1.0$ and $1.1\pm0.8$ mags/day in the g- and r-band respectively. These SCE rise rates are over 10x faster than -- and last only a third the duration of -- the rise to the nickel-powered peak. These rise times are comparable to those of fast blue optical transient (FBOT) events and we discuss the implications in the text. Finally, we present a proof-of-concept alert filter, using the ANTARES broker, to demonstrate how to translate these population statistics into simple and effective filters to find potential double-peaked SNe IIb in large-scale survey alert streams, like the imminent Vera C. Rubin Observatory Legacy Survey of Space and Time (Rubin LSST).</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-05T18:44:49Z</published>
+    <arxiv:comment>Key figures are Fig 3 and Fig 5. 23 pages, 6 figures, submitted to ApJ</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>Adrian Crawford</name>
+    </author>
+    <author>
+      <name>Tyler A. Pritchard</name>
+    </author>
+    <author>
+      <name>Maryam Modjaz</name>
+    </author>
+    <author>
+      <name>Craig Pellegrino</name>
+    </author>
+    <author>
+      <name>Sahana Kumar</name>
+    </author>
+    <author>
+      <name>Raphael Baer-Way</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.16511v1</id>
+    <title>AMPEL workflows for LSST: Modular and reproducible real-time photometric classification</title>
+    <updated>2025-01-27T21:19:23Z</updated>
+    <link href="https://arxiv.org/abs/2501.16511v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.16511v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern time-domain astronomical surveys produce high throughput data streams which require tools for processing and analysis. This will be critical for programs making full use of the alert stream from the Vera Rubin Observatory (VRO), where spectroscopic labels will only be available for a small subset of all transients. In this context, the AMPEL toolset can work as a code-to-data platform for the development of efficient, reproducible and flexible workflows for real-time astronomical application.
+  We here introduce three different AMPEL channels constructed to highlight different uses of alert streams: to rapidly find infant transients (SNGuess), to provide unbiased transient samples for follow-up (FollowMe) and to deliver final transient classifications (FinalBet). These pipelines already contain placeholders for mechanisms which will be essential for the optimal usage of VRO alerts: combining different classifiers, including host galaxy information, population priors and sampling non-gaussian photometric redshift distributions. Based on the ELAsTiCC simulation, all three channels are already working at a high level: SNGuess correctly tags 99% of all young supernovae, FollowMe illustrates how an unbiased subset of alerts can be selected for spectroscopic follow-up in the context of cosmological probes and FinalBet includes priors to achieve successful classifications for &gt;~80% of all extragalactic transients.
+  The fully functional workflows presented here are all public and can be used as starting points for any group wishing to optimize pipelines for their specific VRO science programs. AMPEL is designed to allow this to be done in accordance with FAIR principles: both software and results can be easily shared and results reproduced. The code-to-data environment ensures that models developed this way can be directly applied to the real-time LSST stream parsed by AMPEL.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-27T21:19:23Z</published>
+    <arxiv:comment>Submitted to Astronomy &amp; Astrophysics</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>A&amp;A 698, A13 (2025)</arxiv:journal_ref>
+    <author>
+      <name>Jakob Nordin</name>
+    </author>
+    <author>
+      <name>Valery Brinnel</name>
+    </author>
+    <author>
+      <name>Jakob van Santen</name>
+    </author>
+    <author>
+      <name>Simeon Reusch</name>
+    </author>
+    <author>
+      <name>Marek Kowalski</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202452481</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202452481" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.06968v1</id>
+    <title>AAS2RTO: Automated Alert Streams to Real-Time Observations: Preparing for rapid follow-up of transient objects in the era of LSST</title>
+    <updated>2025-01-12T22:55:32Z</updated>
+    <link href="https://arxiv.org/abs/2501.06968v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.06968v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The upcoming Vera C. Rubin Legacy Survey of Space and Time (LSST) will discover tens of thousands of astrophysical transients per night, far outpacing available spectroscopic follow-up capabilities. Carefully prioritising candidates for follow-up observations will maximise the scientific return from small telescopes with a single-object spectrograph. We introduce AAS2RTO, an astrophysical transient candidate prioritisation tool written in Python. AAS2RTO is flexible in that any number of criteria that consider observed properties of transients can be implemented. The visibility of candidates from a given observing site is also considered. The prioritised list of candidates provided by AAS2RTO is continually updated when new transient data are made available. Therefore, it can be applied to observing campaigns with a wide variety of scientific motivations. AAS2RTO uses a greedy algorithm to prioritise candidates. Candidates are represented by a single numerical value, or `score'. Scores are computed by constructing simple numerical factors which individually consider the competing facets of a candidate which make it suitable for follow-up observation. AAS2RTO is currently configured to work primarily with photometric data from the Zwicky Transient Facility (ZTF), distributed by certified LSST community brokers. We provide an example of how AAS2RTO can be used by defining a set of criteria to prioritise observations of type Ia supernovae (SNe Ia) close to peak brightness, in preparation for observations with the spectrograph at the Danish-1.54m telescope. Using a sample of archival alerts from ZTF, we evaluate the criteria we have designed to estimate the number of SNe Ia that we will be able to observe with a 1.5m telescope. Finally, we evaluate the performance of our criteria when applied to mock LSST observations of SNe Ia.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-12T22:55:32Z</published>
+    <arxiv:comment>18 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Aidan Sedgewick</name>
+    </author>
+    <author>
+      <name>Christa Gall</name>
+    </author>
+    <author>
+      <name>Luca Izzo</name>
+    </author>
+    <author>
+      <name>Adriano Agnello</name>
+    </author>
+    <author>
+      <name>Charlotte R. Angus</name>
+    </author>
+    <author>
+      <name>Jens Hjorth</name>
+    </author>
+    <author>
+      <name>Arthur Kadela</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.05061v1</id>
+    <title>Search for Orphan Gamma-Ray Burst Afterglows with the Vera C. Rubin Observatory and the alert broker Fink</title>
+    <updated>2024-12-06T14:17:00Z</updated>
+    <link href="https://arxiv.org/abs/2412.05061v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.05061v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Orphan gamma-ray burst afterglows are good candidates to learn more about the GRB physics and progenitors or for the development of multi-messenger analysis with gravitational waves. Our objective is to identify orphan afterglows in Rubin LSST data, by using the characteristic features of their light curves. In this work, we generated a population of short GRBs based on the Swift SBAT4 catalogue, and we simulated their off-axis afterglow light curves with afterglowpy. We then used the rubin_sim package to simulate observations of these orphan afterglows with Rubin LSST and proceeded with the characterisation of orphan light curves by extracting a number of parameters. The same parameters are computed for the ELAsTiCC (Extended LSST Astronomical Time-series Classification Challenge) data set, a simulated alert stream of the Rubin LSST data. We then started to develop a machine learning filter able to discriminate orphan-like events among all the variable objects. We present here the performance of our filter as implemented in the Fink broker and tested on the ELAsTiCC data set and our own Rubin pseudo-observation simulations.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-06T14:17:00Z</published>
+    <arxiv:comment>Contribution to the 2024 Very High Energy Phenomena in the Universe session of the 58th Rencontres de Moriond</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>Marina Masson</name>
+    </author>
+    <author>
+      <name>Johan Bregeon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2411.03258v2</id>
+    <title>Tuning into spatial frequency space: Satellite and space debris detection in the ZTF alert stream</title>
+    <updated>2025-04-08T00:53:01Z</updated>
+    <link href="https://arxiv.org/abs/2411.03258v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.03258v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A significant challenge in the study of transient astrophysical phenomena is the identification of bogus events, among which human-made satellites and debris in Earth orbit remain major contaminants. Existing pipelines effectively identify satellite trails but can miss more complex signatures, such as collections of satellite glints. In the Rubin Observatory era, the scale of operations will increase tenfold compared to its precursor, the Zwicky Transient Facility (ZTF), requiring improvements in classification purity, data compression for informative alerts, and pipeline speed.
+  We explore the use of the 2D Fast Fourier Transform (FFT) on difference images as a tool to enhance machine learning models for satellite detection. Using the ALeRCE single-stamp classifier as a baseline, we adapt its architecture to incorporate a cutout of the FFT of the difference image alongside the standard ZTF image triplet (science, reference, and difference stamps). We evaluate several stamp sizes and resolutions, focusing on regimes where data compression is critical due to alert size limits and real-time constraints.
+  Incorporating the FFT significantly improves satellite classification, especially in the smallest field-of-view model (16 arcsec), where accuracy increases from 72.0\pm2.9% to 87.8\pm1.3%. This demonstrates the FFT's value in compressing and capturing extended satellite features. However, the FFT alone does not match the full-context performance of the 63 arcsec (95.9\pm1.3%) or multiscale (90.6\pm0.8%) models, highlighting the complementary role of spatial context. We show how FFTs can be leveraged to cull satellite and debris signatures from alert streams in current and future time-domain surveys.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-05T16:55:08Z</published>
+    <arxiv:comment>10 pages, 8 figures, accepted in A&amp;A. Abstract shortened here</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>A&amp;A 697, A119 (2025)</arxiv:journal_ref>
+    <author>
+      <name>J. P. Carvajal</name>
+    </author>
+    <author>
+      <name>F. E. Bauer</name>
+    </author>
+    <author>
+      <name>I. Reyes-Jainaga</name>
+    </author>
+    <author>
+      <name>F. Förster</name>
+    </author>
+    <author>
+      <name>A. M. Muñoz Arancibia</name>
+    </author>
+    <author>
+      <name>M. Catelan</name>
+    </author>
+    <author>
+      <name>P. Sánchez-Sáez</name>
+    </author>
+    <author>
+      <name>C. Ricci</name>
+    </author>
+    <author>
+      <name>A. Bayo</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202452880</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202452880" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.18589v2</id>
+    <title>Candidate strongly lensed type Ia supernovae in the Zwicky Transient Facility archive</title>
+    <updated>2025-01-25T15:15:09Z</updated>
+    <link href="https://arxiv.org/abs/2405.18589v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.18589v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gravitationally lensed type Ia supernovae (glSNe Ia) are unique astronomical tools that can be used to study cosmological parameters, distributions of dark matter, the astrophysics of the supernovae, and the intervening lensing galaxies themselves. A small number of highly magnified glSNe Ia have been discovered by ground-based telescopes such as the Zwicky Transient Facility (ZTF), but simulations predict that a fainter population may also exist. We present a systematic search for glSNe Ia in the ZTF archive of alerts distributed from June 1 2019 to September 1 2022. Using the AMPEL platform, we developed a pipeline that distinguishes candidate glSNe Ia from other variable sources. Initial cuts were applied to the ZTF alert photometry before forced photometry was obtained for the remaining candidates. Additional cuts were applied to refine the candidates based on their light curve colours, lens galaxy colours, and the resulting parameters from fits to the SALT2 SN Ia template. The candidates were also cross-matched with the DESI spectroscopic catalogue. Seven transients were identified that had an associated galaxy DESI redshift, which we present as glSN Ia candidates. Although superluminous supernovae (SLSNe) cannot be fully rejected as contaminants, two events, ZTF19abpjicm and ZTF22aahmovu, are significantly different from typical SLSNe and their light curves can be modelled as two-image glSN Ia systems. From this two-image modelling, we estimate time delays of 22 $\pm$ 3 and 34 $\pm$ 1 days for the two events, respectively, which suggests that we have uncovered a population of glSNe Ia with longer time delays. The pipeline is currently being applied to the live ZTF alert stream to identify and follow-up future candidates while active, and it could be the foundation for glSNe Ia searches in future surveys, such as the Rubin Observatory Legacy Survey of Space and Time.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-28T21:08:43Z</published>
+    <arxiv:comment>29 pages, 15 figures. Accepted in A&amp;A</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <arxiv:journal_ref>A&amp;A 694, A146 (2025)</arxiv:journal_ref>
+    <author>
+      <name>A. Townsend</name>
+    </author>
+    <author>
+      <name>J. Nordin</name>
+    </author>
+    <author>
+      <name>A. Sagués Carracedo</name>
+    </author>
+    <author>
+      <name>M. Kowalski</name>
+    </author>
+    <author>
+      <name>N. Arendse</name>
+    </author>
+    <author>
+      <name>S. Dhawan</name>
+    </author>
+    <author>
+      <name>A. Goobar</name>
+    </author>
+    <author>
+      <name>J. Johansson</name>
+    </author>
+    <author>
+      <name>E. Mörtsell</name>
+    </author>
+    <author>
+      <name>S. Schulze</name>
+    </author>
+    <author>
+      <name>I. Andreoni</name>
+    </author>
+    <author>
+      <name>E. Fernández</name>
+    </author>
+    <author>
+      <name>A. G. Kim</name>
+    </author>
+    <author>
+      <name>P. E. Nugent</name>
+    </author>
+    <author>
+      <name>F. Prada</name>
+    </author>
+    <author>
+      <name>M. Rigault</name>
+    </author>
+    <author>
+      <name>N. Sarin</name>
+    </author>
+    <author>
+      <name>D. Sharma</name>
+    </author>
+    <author>
+      <name>E. C. Bellm</name>
+    </author>
+    <author>
+      <name>M. W. Coughlin</name>
+    </author>
+    <author>
+      <name>R. Dekany</name>
+    </author>
+    <author>
+      <name>S. L. Groom</name>
+    </author>
+    <author>
+      <name>L. Lacroix</name>
+    </author>
+    <author>
+      <name>R. R. Laher</name>
+    </author>
+    <author>
+      <name>R. Riddle</name>
+    </author>
+    <author>
+      <name>J. Aguilar</name>
+    </author>
+    <author>
+      <name>S. Ahlen</name>
+    </author>
+    <author>
+      <name>S. Bailey</name>
+    </author>
+    <author>
+      <name>D. Brooks</name>
+    </author>
+    <author>
+      <name>T. Claybaugh</name>
+    </author>
+    <author>
+      <name>A. de la Macorra</name>
+    </author>
+    <author>
+      <name>A. Dey</name>
+    </author>
+    <author>
+      <name>B. Dey</name>
+    </author>
+    <author>
+      <name>P. Doel</name>
+    </author>
+    <author>
+      <name>K. Fanning</name>
+    </author>
+    <author>
+      <name>J. E. Forero-Romero</name>
+    </author>
+    <author>
+      <name>E. Gaztañaga</name>
+    </author>
+    <author>
+      <name>S. Gontcho A Gontcho</name>
+    </author>
+    <author>
+      <name>K. Honscheid</name>
+    </author>
+    <author>
+      <name>C. Howlett</name>
+    </author>
+    <author>
+      <name>T. Kisner</name>
+    </author>
+    <author>
+      <name>A. Kremin</name>
+    </author>
+    <author>
+      <name>A. Lambert</name>
+    </author>
+    <author>
+      <name>M. Landriau</name>
+    </author>
+    <author>
+      <name>L. Le Guillou</name>
+    </author>
+    <author>
+      <name>M. E. Levi</name>
+    </author>
+    <author>
+      <name>M. Manera</name>
+    </author>
+    <author>
+      <name>A. Meisner</name>
+    </author>
+    <author>
+      <name>R. Miquel</name>
+    </author>
+    <author>
+      <name>J. Moustakas</name>
+    </author>
+    <author>
+      <name>E. Mueller</name>
+    </author>
+    <author>
+      <name>A. D. Myers</name>
+    </author>
+    <author>
+      <name>J. Nie</name>
+    </author>
+    <author>
+      <name>N. Palanque-Delabrouille</name>
+    </author>
+    <author>
+      <name>C. Poppett</name>
+    </author>
+    <author>
+      <name>M. Rezaie</name>
+    </author>
+    <author>
+      <name>G. Rossi</name>
+    </author>
+    <author>
+      <name>E. Sanchez</name>
+    </author>
+    <author>
+      <name>D. Schlegel</name>
+    </author>
+    <author>
+      <name>M. Schubnell</name>
+    </author>
+    <author>
+      <name>H. Seo</name>
+    </author>
+    <author>
+      <name>D. Sprayberry</name>
+    </author>
+    <author>
+      <name>G. Tarlé</name>
+    </author>
+    <author>
+      <name>H. Zou</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202451082</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202451082" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.03078v2</id>
+    <title>ATAT: Astronomical Transformer for time series And Tabular data</title>
+    <updated>2024-05-16T20:19:33Z</updated>
+    <link href="https://arxiv.org/abs/2405.03078v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.03078v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The advent of next-generation survey instruments, such as the Vera C. Rubin Observatory and its Legacy Survey of Space and Time (LSST), is opening a window for new research in time-domain astronomy. The Extended LSST Astronomical Time-Series Classification Challenge (ELAsTiCC) was created to test the capacity of brokers to deal with a simulated LSST stream. We describe ATAT, the Astronomical Transformer for time series And Tabular data, a classification model conceived by the ALeRCE alert broker to classify light-curves from next-generation alert streams. ATAT was tested in production during the first round of the ELAsTiCC campaigns. ATAT consists of two Transformer models that encode light curves and features using novel time modulation and quantile feature tokenizer mechanisms, respectively. ATAT was trained on different combinations of light curves, metadata, and features calculated over the light curves. We compare ATAT against the current ALeRCE classifier, a Balanced Hierarchical Random Forest (BHRF) trained on human-engineered features derived from light curves and metadata. When trained on light curves and metadata, ATAT achieves a macro F1-score of 82.9 +- 0.4 in 20 classes, outperforming the BHRF model trained on 429 features, which achieves a macro F1-score of 79.4 +- 0.1. The use of Transformer multimodal architectures, combining light curves and tabular data, opens new possibilities for classifying alerts from a new generation of large etendue telescopes, such as the Vera C. Rubin Observatory, in real-world brokering scenarios.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-05T23:13:02Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>A&amp;A 689, A289 (2024)</arxiv:journal_ref>
+    <author>
+      <name>G. Cabrera-Vives</name>
+    </author>
+    <author>
+      <name>D. Moreno-Cartagena</name>
+    </author>
+    <author>
+      <name>N. Astorga</name>
+    </author>
+    <author>
+      <name>I. Reyes-Jainaga</name>
+    </author>
+    <author>
+      <name>F. Förster</name>
+    </author>
+    <author>
+      <name>P. Huijse</name>
+    </author>
+    <author>
+      <name>J. Arredondo</name>
+    </author>
+    <author>
+      <name>A. M. Muñoz Arancibia</name>
+    </author>
+    <author>
+      <name>A. Bayo</name>
+    </author>
+    <author>
+      <name>M. Catelan</name>
+    </author>
+    <author>
+      <name>P. A. Estévez</name>
+    </author>
+    <author>
+      <name>P. Sánchez-Sáez</name>
+    </author>
+    <author>
+      <name>A. Álvarez</name>
+    </author>
+    <author>
+      <name>P. Castellanos</name>
+    </author>
+    <author>
+      <name>P. Gallardo</name>
+    </author>
+    <author>
+      <name>A. Moya</name>
+    </author>
+    <author>
+      <name>D. Rodriguez-Mancini</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202449475</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202449475" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.08798v2</id>
+    <title>Transient Classifiers for Fink: Benchmarks for LSST</title>
+    <updated>2024-11-29T15:04:42Z</updated>
+    <link href="https://arxiv.org/abs/2404.08798v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.08798v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The upcoming Legacy Survey of Space and Time (LSST) is expected to detect a few million transients per night, which will generate a live alert stream during the entire ten years of the survey. This stream will be distributed via community brokers whose task is to select subsets of the stream and direct them to scientific communities. Given the volume and complexity of the anticipated data, machine learning algorithms will be paramount for this task. We present the infrastructure tests and classification methods developed within the Fink broker in preparation for LSST. This work aims to provide detailed information regarding the underlying assumptions and methods behind each classifier and enable users to make informed follow-up decisions from Fink photometric classifications. Using simulated data from ELAsTiCC, we showcase the performance of binary and multi-class ML classifiers available in Fink. These include tree-based classifiers coupled with tailored feature extraction strategies as well as deep learning algorithms. Moreover, we introduce CATS, a deep learning architecture specifically designed for this task. Our results show that Fink classifiers are able to handle the extra complexity that is expected from LSST data. CATS achieved $\geq 93\%$ precision for all classes except `long' (for which it achieved $\sim 83\%$), while our best performing binary classifier achieves $\geq 98\%$ precision and $\geq 99\%$ completeness when classifying the periodic class. ELAsTiCC was an important milestone in preparing the Fink infrastructure to deal with LSST-like data. Our results demonstrate that Fink classifiers are well prepared for the arrival of the new stream, but this work also highlights that transitioning from the current infrastructures to Rubin will require significant adaptation of the currently available tools. This work was the first step in the right direction.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-12T20:14:56Z</published>
+    <arxiv:comment>19 pages, 28 figures. Revised version accepted to A&amp;A</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>A&amp;A 692, A208 (2024)</arxiv:journal_ref>
+    <author>
+      <name>B. M. O. Fraga</name>
+    </author>
+    <author>
+      <name>C. R. Bom</name>
+    </author>
+    <author>
+      <name>A. Santos</name>
+    </author>
+    <author>
+      <name>E. Russeil</name>
+    </author>
+    <author>
+      <name>M. Leoni</name>
+    </author>
+    <author>
+      <name>J. Peloton</name>
+    </author>
+    <author>
+      <name>E. E. O. Ishida</name>
+    </author>
+    <author>
+      <name>A. Möller</name>
+    </author>
+    <author>
+      <name>S. Blondin</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202450370</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202450370" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.08315v1</id>
+    <title>Enabling Science from the Rubin Alert Stream with Lasair</title>
+    <updated>2024-04-12T08:22:05Z</updated>
+    <link href="https://arxiv.org/abs/2404.08315v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.08315v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lasair is the UK Community Broker for transient alerts from the Legacy Survey of Space and Time (LSST) from the Vera C. Rubin Observatory. We explain the system's capabilities, how users can achieve their scientific goals, and how Lasair is implemented. Lasair offers users a kit of parts that they can use to build filters to concentrate their desired alerts. The kit has novel lightcurve features, sky context, watchlists of special sky objects and regions of the sky, dynamic crossmatching with catalogues of known astronomical sources, and classifications and annotations from other users and partner projects. These resources can be shared with other users, copied, and modified. Lasair offers real-time machine-to-machine notifications of filtered transient alerts. Even though the Rubin Observatory is not yet complete, Lasair is a mature system: it has been processing and serving data from the similarly formatted stream of the Zwicky Transient Facility (ZTF) alerts.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-12T08:22:05Z</published>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>Roy D. Williams</name>
+    </author>
+    <author>
+      <name>Gareth P. Francis</name>
+    </author>
+    <author>
+      <name>Andy Lawrence</name>
+    </author>
+    <author>
+      <name>Terence M. Sloan</name>
+    </author>
+    <author>
+      <name>Stephen J. Smartt</name>
+    </author>
+    <author>
+      <name>Ken W. Smith</name>
+    </author>
+    <author>
+      <name>David R. Young</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.01235v2</id>
+    <title>Anomaly Detection and Approximate Similarity Searches of Transients in Real-time Data Streams</title>
+    <updated>2024-07-24T19:56:55Z</updated>
+    <link href="https://arxiv.org/abs/2404.01235v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.01235v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present LAISS (Lightcurve Anomaly Identification and Similarity Search), an automated pipeline to detect anomalous astrophysical transients in real-time data streams. We deploy our anomaly detection model on the nightly ZTF Alert Stream via the ANTARES broker, identifying a manageable $\sim$1-5 candidates per night for expert vetting and coordinating follow-up observations. Our method leverages statistical light-curve and contextual host-galaxy features within a random forest classifier, tagging transients of rare classes (spectroscopic anomalies), of uncommon host-galaxy environments (contextual anomalies), and of peculiar or interaction-powered phenomena (behavioral anomalies). Moreover, we demonstrate the power of a low-latency ($\sim$ms) approximate similarity search method to find transient analogs with similar light-curve evolution and host-galaxy environments. We use analogs for data-driven discovery, characterization, (re-)classification, and imputation in retrospective and real-time searches. To date we have identified $\sim$50 previously known and previously missed rare transients from real-time and retrospective searches, including but not limited to: SLSNe, TDEs, SNe IIn, SNe IIb, SNe Ia-CSM, SNe Ia-91bg-like, SNe Ib, SNe Ic, SNe Ic-BL, and M31 novae. Lastly, we report the discovery of 325 total transients, all observed between 2018-2021 and absent from public catalogs ($\sim$1% of all ZTF Astronomical Transient reports to the Transient Name Server through 2021). These methods enable a systematic approach to finding the "needle in the haystack" in large-volume data streams. Because of its integration with the ANTARES broker, LAISS is built to detect exciting transients in Rubin data.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-01T16:53:04Z</published>
+    <arxiv:comment>44 pages (68 pages with Appendix), 15 figures, accepted to ApJ</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>P. D. Aleo</name>
+    </author>
+    <author>
+      <name>A. W. Engel</name>
+    </author>
+    <author>
+      <name>G. Narayan</name>
+    </author>
+    <author>
+      <name>C. R. Angus</name>
+    </author>
+    <author>
+      <name>K. Malanchev</name>
+    </author>
+    <author>
+      <name>K. Auchettl</name>
+    </author>
+    <author>
+      <name>V. F. Baldassare</name>
+    </author>
+    <author>
+      <name>A. Berres</name>
+    </author>
+    <author>
+      <name>T. J. L. de Boer</name>
+    </author>
+    <author>
+      <name>B. M. Boyd</name>
+    </author>
+    <author>
+      <name>K. C. Chambers</name>
+    </author>
+    <author>
+      <name>K. W. Davis</name>
+    </author>
+    <author>
+      <name>N. Esquivel</name>
+    </author>
+    <author>
+      <name>D. Farias</name>
+    </author>
+    <author>
+      <name>R. J. Foley</name>
+    </author>
+    <author>
+      <name>A. Gagliano</name>
+    </author>
+    <author>
+      <name>C. Gall</name>
+    </author>
+    <author>
+      <name>H. Gao</name>
+    </author>
+    <author>
+      <name>S. Gomez</name>
+    </author>
+    <author>
+      <name>M. Grayling</name>
+    </author>
+    <author>
+      <name>D. O. Jones</name>
+    </author>
+    <author>
+      <name>C. -C. Lin</name>
+    </author>
+    <author>
+      <name>E. A. Magnier</name>
+    </author>
+    <author>
+      <name>K. S. Mandel</name>
+    </author>
+    <author>
+      <name>T. Matheson</name>
+    </author>
+    <author>
+      <name>S. I. Raimundo</name>
+    </author>
+    <author>
+      <name>V. G. Shah</name>
+    </author>
+    <author>
+      <name>M. D. Soraisam</name>
+    </author>
+    <author>
+      <name>K. M. de Soto</name>
+    </author>
+    <author>
+      <name>S. Vicencio</name>
+    </author>
+    <author>
+      <name>V. A. Villar</name>
+    </author>
+    <author>
+      <name>R. J. Wainscoat</name>
+    </author>
+  </entry>
+</feed>

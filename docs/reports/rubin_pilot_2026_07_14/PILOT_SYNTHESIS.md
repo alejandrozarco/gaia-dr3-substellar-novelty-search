@@ -10,9 +10,10 @@ corrections applied main-thread 2026-07-15 (see per-package notes below).
 - **Gate 1 (year-1 artifact ratio): PASS** — measured, not assumed. 772 flags/6 nights
   (MJD 61228–61235); stratified vetted n=40 → 37.5% artifact overall, but strongly
   channel-dependent: hostless/ELEPHANT 0/10 artifact, bright lt20mag 0/10 artifact
-  (6/10 AGN/varstar but real), faint extragalactic_new 15/20 artifact (year-1
-  incremental-template residuals). Condition: restrict lane to the pure channels
-  until DR1 templates.
+  (7/10 non-transient — 5 AGN + 2 variables — but real; corrected 2026-07-15 from
+  "6/10" during RNAAS drafting, per flags_sample.csv), faint extragalactic_new 15/20
+  artifact (year-1 incremental-template residuals). Condition: restrict lane to the
+  pure channels until DR1 templates.
 - **Gate 2 (demonstrated consumer): PREPARED, mechanisms live-verified** — four
   referee-audited consumer packages on disk; actual ingestion = USER filing (project
   guardrail). In-sample proof the loop works: same-night Rubin hostless object became

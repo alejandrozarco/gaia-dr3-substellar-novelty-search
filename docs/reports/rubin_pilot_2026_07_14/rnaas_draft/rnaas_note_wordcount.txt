@@ -1,0 +1,14 @@
+RNAAS word count for rnaas_note.tex  (counted 2026-07-15)
+Method: LaTeX commands stripped; each \cite* counted as 1 word;
+table CONTENTS excluded per RNAAS rules (caption counted).
+
+  title                                   16
+  abstract                               129
+  section headers                          8
+  body text (sections, excl. table)      618
+  table caption                           24
+  acknowledgments                         79
+  references                              83
+  TOTAL (everything RNAAS counts)        957   (limit: 1500)
+  BODY (headers+text+caption+acks)       729   (target: <=1000)
+  abstract                               129   (limit: 150)

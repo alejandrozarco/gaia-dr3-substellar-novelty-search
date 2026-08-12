@@ -1,0 +1,24 @@
+Per-channel Wilson 68.27% (z=1) intervals
+hostless_candidate (census)                    0/10 =  0.000  Wilson68% [0.0000, 0.0909]
+extragalactic_lt20mag (bright)                 0/10 =  0.000  Wilson68% [0.0000, 0.0909]
+extragalactic_new_candidate (faint tail)      15/20 =  0.750  Wilson68% [0.6429, 0.8333]
+overall stratified sample (NOT stream-rep.)   15/40 =  0.375  Wilson68% [0.3024, 0.4537]
+
+Sensitivity: the 2 AMBIGUOUS faint-channel objects counted as artifacts
+extragalactic_new, ambiguous->artifact        17/20 =  0.850  Wilson68% [0.7537, 0.9130]
+
+Stream-weighted by unique objects (N=738):  p = 0.7134  bounds [0.6115, 0.7971]
+  weights: hostless 0.0136, lt20mag 0.0352, faint-new 0.9512
+
+Stream-weighted by alerts         (N=772):  p = 0.6966  bounds [0.5971, 0.7804]
+  weights: hostless 0.0194, lt20mag 0.0518, faint-new 0.9288
+
+Arithmetic spot-checks (by hand):
+  0/10:  z^2/n = 0.1 -> denom 1.1; center = 0.05/1.1 = 0.045455;
+         half = (1/1.1)*sqrt(0 + 1/400) = 0.045455  -> [0, 0.090909]
+  15/20: denom 1.05; center = 0.775/1.05 = 0.738095;
+         half = (1/1.05)*sqrt(0.009375 + 0.000625) = 0.095238 -> [0.642857, 0.833333]
+  15/40: denom 1.025; center = 0.3875/1.025 = 0.378049;
+         half = (1/1.025)*sqrt(0.0058594 + 0.00015625) = 0.075669 -> [0.302380, 0.453718]
+  weighted (unique): 0.75 * 702/738 = 0.713415
+
