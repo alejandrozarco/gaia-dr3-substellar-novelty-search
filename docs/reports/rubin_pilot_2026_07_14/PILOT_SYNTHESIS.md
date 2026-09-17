@@ -28,7 +28,7 @@ corrections applied main-thread 2026-07-15 (see per-package notes below).
 
 | diaObjectId | verdict | one-line |
 |---|---|---|
-| 170587105461272950 | INTERESTING | Unreported SN-like transient (=ZTF26abfwqfp, 0.12″), fell between Fink-hostless + ALeRCE-"bogus" heuristics; TNS AT draft ready; near peak i~20.75 — TIME-SENSITIVE |
+| 170587105461272950 | INTERESTING — **SCOOPED 2026-07-16, see below** | Unreported SN-like transient (=ZTF26abfwqfp, 0.12″), fell between Fink-hostless + ALeRCE-"bogus" heuristics; TNS AT draft was ready 2026-07-15 but never filed |
 | 170635519425249637 | INTERESTING | Still-active unreported SN II-plateau candidate; ZFPS recovers it 22 d before Rubin's first alert; TNS AT draft ready — TIME-SENSITIVE |
 | 170591519677875016 | INTERESTING | Month-long blue transient, ATLAS pre-discovery ≥16 d; Rubin template reveals r=23.96 sub-archival counterpart → ELEPHANT "hostless" is depth-limited; Fink-feedback + AstroNote drafts ready |
 | 170587115976392822 | INTERESTING | =ZTF19abxfaon: uncatalogued 8-yr ~5.2-mag state-cycling variable, best read CV (ALeRCE ZTF FP classifiers CV/Nova 0.95–0.97); AstroNote + VSX drafts ready (time-axis corrections APPLIED 2026-07-15) |
@@ -102,3 +102,31 @@ All filings carry the adopted disclosure: algorithm-found / human-refereed / use
 5. ZTF/ATLAS forced photometry is the decisive archival lever (recovered events 16–22 d
    before Rubin; killed every false precursor). ZFPS procstatus 56/57 are warnings, not
    failures (parsing lesson in zfps/ZFPS_ANALYSIS.md).
+
+
+## STATUS UPDATE 2026-09-18 — TNS cone re-check before filing
+
+Both SN positions re-queried live (10″ and 60″ cones, HTTP 200 both):
+
+- **170587105461272950 — SCOOPED.** Now **AT 2026uxw** (TNS id 214935) at
+  22:16:59.909 −18:12:28.62 — our exact position. Reported **2026-07-16 08:34:55 UT**
+  by R. Durgesh (independent), P. Pessi, E. E. O. Ishida, J. Peloton **for the Fink
+  collaboration** — i.e. the authors of the ELEPHANT hostless module that flagged it.
+  Their discovery epoch (2026-06-26 08:50:38 UT, z-LSST 21.95) is the same Rubin
+  alert as ours (MJD/TAI 61217.3685 = 08:50:02 TAI; the 37 s offset is exactly
+  TAI−UTC, confirming it is the identical detection). Their remarks quote the same
+  1.31-mag/15-d i-band rise we measured. **Our draft was complete 2026-07-15 and
+  went unfiled for ~17 hours.** Discovery credit is theirs. Still **unclassified**
+  ("Type ---", no classification reports) — the only residual contribution available
+  is our archival depth (8-yr ZTF forced-photometry null over 857 pre-event epochs;
+  11-yr ATLAS null, 0/1,023 nightly stacks ≥4σ; independent ZTF26abfwqfp confirmation
+  at 0.12″), which could be offered as an AstroNote or to the reporters directly.
+- **170635519425249637 — STILL CLEAN.** Zero TNS objects within 60″ as of
+  2026-09-18. Unreported by anyone, two months after discovery. The TNS AT draft
+  remains valid and filable (discovery epoch MJD 61228.3877); spectroscopic
+  classification is no longer realistic at ~2 months post-plateau, but the
+  discovery record is not time-limited.
+
+LESSON: a completed, referee-clean package is worth nothing unfiled — the scoop
+window on a Rubin-year-1 hostless transient was under one day, and the party most
+likely to scoop is the broker team whose own module flagged it.
