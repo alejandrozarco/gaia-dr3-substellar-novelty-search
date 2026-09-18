@@ -11,8 +11,8 @@ values (from a wiped scratch run) are independently REPRODUCED by this analysis.
 | RA (J2000) | 22 34 25.33 (338.605525 deg) — Gaia DR3 |
 | Dec (J2000) | +08 06 59.6 (+8.116548 deg) — Gaia DR3 |
 | Variability type | **EA** (detached; flat out-of-eclipse baseline, narrow eclipses, secondary at phase 0.5) |
-| Period | **3.727026 ± 0.000082 d** (5 resolved primary eclipses over 3.0 yr, timing rms 23 min; fold-maximisation gives 3.726867 d — quote the timing value) |
-| Epoch Min I (HJD) | **2458257.8225 ± 0.0348** |
+| Period | **3.727023 ± 0.000063 d** (night-resampled bootstrap on the folded eclipse contrast; see CORRECTION below) |
+| Epoch Min I (HJD) | **2458257.856 ± 0.029** (±41 min — set by sampling, not by a measured contact) |
 | Max (out of eclipse) | 12.712 (zr) · 13.263 (zg) · 12.483 (zi) |
 | Min I (primary) | 12.928 (zr) · 13.513 (zg) · 12.672 (zi) → depth **0.216 / 0.250 / 0.189 mag** |
 | Min II (secondary) | 12.817 (zr) · 13.377 (zg) · 12.593 (zi) → depth **0.105 / 0.114 / 0.110 mag** |
@@ -80,3 +80,29 @@ satisfies.
    quoting a V magnitude**; do not assert it from this note.
 2. A finding chart is optional at G=12.7 (manual: most 14th-mag stars are identifiable
    from DSS with good coordinates) but cheap to add if a moderator asks.
+
+
+---
+
+# CORRECTION (2026-09-18, before filing) — the ephemeris justification was wrong
+
+Plotting the five "resolved eclipses" individually exposed the error: each is a single
+night of 3–5 ZTF exposures spanning ~12 minutes, all at the same magnitude. **No ingress
+or egress is sampled anywhere in the dataset** (largest within-night span of in-eclipse
+points: well under an hour). They are therefore not measured minima, and the quoted
+"5 eclipse timings, rms 23 min" overstated what the data support.
+
+**Refit properly:** a 2-D grid search over (P, T₀) maximising the mean in-eclipse depth,
+with a 120-iteration bootstrap resampling whole nights:
+
+- **P = 3.727023 ± 0.000063 d** — value essentially unchanged (3.727026 → 3.727023), but
+  now justified by *phase coherence of 36 in-eclipse nights over 7.4 yr* rather than by
+  five pseudo-timings.
+- **Min I (HJD) = 2458257.856 ± 0.029** (±41 min; the uncertainty reflects where in the
+  eclipse the sampling happens to fall).
+- Eclipse duration ≈ **8.9 h** (0.10 in phase) from the 60-bin fold; folded primary depth
+  0.177 mag, per-epoch maximum depth 0.216 mag.
+
+Nothing about the classification changes — it is an EA, and the period is solid. Only the
+epoch precision and the stated provenance change. `ZTF18abxnwmb_five_eclipses.png` is kept
+in this folder as the evidence that forced the correction.
