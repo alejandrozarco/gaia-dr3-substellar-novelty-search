@@ -115,8 +115,9 @@ Both SN positions re-queried live (10″ and 60″ cones, HTTP 200 both):
   Their discovery epoch (2026-06-26 08:50:38 UT, z-LSST 21.95) is the same Rubin
   alert as ours (MJD/TAI 61217.3685 = 08:50:02 TAI; the 37 s offset is exactly
   TAI−UTC, confirming it is the identical detection). Their remarks quote the same
-  1.31-mag/15-d i-band rise we measured. **Our draft was complete 2026-07-15 and
-  went unfiled for ~17 hours.** Discovery credit is theirs. Still **unclassified**
+  1.31-mag/15-d i-band rise we measured. **Our package was committed complete at 2026-07-15 07:37:58 UTC (bff17af) and went
+  unfiled for 24 h 57 m.** (An earlier note in this file said "~17 hours" — that was
+  unverified arithmetic; the commit clock gives 24.95 h.) Discovery credit is theirs. Still **unclassified**
   ("Type ---", no classification reports) — the only residual contribution available
   is our archival depth (8-yr ZTF forced-photometry null over 857 pre-event epochs;
   11-yr ATLAS null, 0/1,023 nightly stacks ≥4σ; independent ZTF26abfwqfp confirmation
@@ -130,3 +131,19 @@ Both SN positions re-queried live (10″ and 60″ cones, HTTP 200 both):
 LESSON: a completed, referee-clean package is worth nothing unfiled — the scoop
 window on a Rubin-year-1 hostless transient was under one day, and the party most
 likely to scoop is the broker team whose own module flagged it.
+
+### Remaining objects re-checked the same day (2026-09-18) — all still unreported
+
+| Object | TNS 60″ | VSX 30″ | SIMBAD 10″ |
+|---|---|---|---|
+| 170635519425249637 (SN II-plateau cand) | CLEAN | — | — |
+| 170591519677875016 (hostless blue transient) | CLEAN | — | — |
+| 170587115976392822 = ZTF19abxfaon (the 8-yr CV) | CLEAN | CLEAN | no entry |
+| 170591507978387512 (mundane SN control) | CLEAN | — | — |
+| ZTF18abxnwmb (EA bycatch, RA 338.60553 Dec +8.11656) | — | CLEAN | no entry |
+| ZTF18abtqnkv (variable bycatch, RA 355.37745 Dec +3.75413) | — | CLEAN | no entry |
+
+VSX parser positive-controlled on SS Cyg and RR Lyr (both return their entries; a
+field offset by 1° returns zero) — the CLEANs are real, not a parsing artifact.
+Only the one hostless SN was scooped; every other novelty from the pilot and the
+state-cycler run remains unclaimed, and the non-transients are not time-critical.
