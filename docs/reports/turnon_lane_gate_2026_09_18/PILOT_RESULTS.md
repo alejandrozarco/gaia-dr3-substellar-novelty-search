@@ -232,10 +232,11 @@ frames on which a turn-on of a given brightness clears `mag ≤ limitmag − 0.3
 | r = 20.5 | 34.3% | 2.5 mag |
 | r = 21.0 | 9.6% | 2.0 mag |
 
-**The null applies at near-full sensitivity only to turn-ons reaching r ≲ 19.5
-(amp ≳ 3.5 from an r=23 source).** At the nominal amp>2.5 threshold the per-frame
-efficiency is only ~34%, and below r≈21 the lane is effectively blind. Any density
-limit must be quoted against this curve, not against the raw position count.
+**CORRECTED 2026-09-18 (see §10).** The table above is *per-frame* efficiency, which is
+NOT completeness. An earlier version of this section concluded "near-full sensitivity only
+for turn-ons reaching r ≲ 19.5" — that was wrong: with hundreds of epochs, even a 34%
+per-frame rate yields abundant detections. End-to-end injection gives **100% recovery of
+sustained turn-ons down to r = 20.5**. Quote §10, not this table, for completeness.
 
 ### The bug class bit the referee too
 
@@ -279,3 +280,60 @@ behaviour of any query whose empty return is a plausible value.
   200s, so an unthrottled scraper does not crash — it quietly manufactures a null.
   Any bulk archive job needs a request-rate budget and a positive-control check that
   the last query still returns data (bin the outcome by completion order).
+
+
+---
+
+## 10. END-TO-END LANE TEST — injected turn-ons in real ZTF cadences
+
+External review (gpt-6-astra, 2026-09-18) made the fair objection that recovering two
+bright dwarf novae validates the filters on two examples and says nothing about
+completeness across amplitude or turn-on date. Measured properly here: synthetic sources
+injected into **real ZTF observing dates with real per-frame limiting magnitudes**, passed
+through the **identical classifier** from `turnon_pilot2.py` (script:
+`lane_injection_test.py`; 3 real cadences, 442–1,146 zr epochs each, median limitmag
+20.45–20.80; 60 trials per cell).
+
+### Sustained turn-on, archival NSC r = 23.0
+
+| reaches | amp | pre-ZTF | 2019 | 2021 | 2023 |
+|---|---|---|---|---|---|
+| r = 18.5 | 4.5 | 100% | 100% | 100% | 100% |
+| r = 19.5 | 3.5 | 100% | 100% | 100% | 100% |
+| r = 20.0 | 3.0 | 100% | 100% | 100% | 100% |
+| r = 20.5 | 2.5 | 100% | 100% | 100% | 100% |
+| r = 21.0 | 2.0 | 0% | 0% | 0% | 2% |
+
+**Recovery is complete down to r = 20.5 and independent of when the turn-on happened.**
+The cliff at r = 21.0 is the `amp > 2.5` CUT, not a sensitivity limit — at NSC r = 23.0 a
+source reaching r = 21.0 has amp = 2.0 and is rejected by construction.
+
+**This overturns §9's earlier conclusion.** Per-frame efficiency (34% of frames at r = 20.5)
+is not completeness: hundreds of epochs over 8 years convert a modest per-frame rate into
+certain detection. The lane is considerably more sensitive than the frame-level table
+implied, and the null is correspondingly stronger for sustained events.
+
+### Outburst (dwarf-nova-like), 30-day events
+
+| reaches | 1 outburst | 2 | 4 | 8 |
+|---|---|---|---|---|
+| r = 18.0 | 58% | 72% | 97% | 100% |
+| r = 19.0 | 57% | 75% | 100% | 100% |
+| r = 19.5 | 55% | 80% | 93% | 100% |
+| r = 20.0 | 50% | 77% | 93% | 100% |
+
+**This is where the lane actually leaks.** A single 30-day outburst is recovered only
+~50–58% of the time, driven by the ≥2-bright-nights requirement against seasonal gaps.
+Rare-outburst systems (WZ Sge-like) are the class most likely to be missed, and any
+statement about their absence must carry ~55% completeness for single events.
+
+### Scope limits of this test (stated, not glossed)
+
+- **Catalogue-level, not image-level.** It tests the cadence, the depth model and the
+  classifier. It does NOT test source extraction, deblending or association, so it cannot
+  measure losses from crowding or from absence in ZTF's reference catalogue.
+- ZTF light curves are seeded from reference-catalogue sources, so a target missing from
+  or misassociated with that reference escapes the lookup entirely and is invisible to
+  both the pilot and this test.
+- Noise is modelled as growing toward the frame limit; real photometry has correlated
+  systematics this does not reproduce.
