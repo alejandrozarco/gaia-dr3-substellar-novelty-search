@@ -112,3 +112,41 @@ would both hide quiescent counterparts and inflate the false-match rate.
 **Gate zero is cleared. The remaining pre-registered kills stand:** >90% of raw candidates
 already in the published CV/variable catalogues → close; 0 verified survivors → density
 limit and close.
+
+---
+
+# PILOT BUILD NOTES (2026-09-18) — feasibility findings that change the design
+
+**1. No server-side join exists.** Data Lab hosts NSC DR2 (object/meas/exposure/variable) and
+~60 pre-computed 1.5″ crossmatch tables — but **none to ZTF** (only user `mydb` entries).
+IRSA hosts the ZTF object tables (`ztf_objects_dr20…dr24`, 70 columns: ra, dec, fid,
+medianmag, minmag, maxmag, magrms, chisq, con, ngoodobsrel, refmag, lineartrend …).
+So the cross-match must be **pulled from two services and joined locally** → the pilot must
+be area-bounded. IRSA TAP counts on the ZTF object tables are slow (a COUNT over 4 deg²
+exceeded 500 s), so the ZTF side should be pulled per small tile, not per large region.
+
+**2. Population sizing** (2×2° anticentre test box, RA 117.3–119.3, Dec +9.4–11.4):
+NSC DR2 objects 284,874 total → **107,789 with 22 < r < 24** → **66,304 of those stellar
+(class_star > 0.5)**, i.e. **~16,500 faint stellar archival sources per deg²**. A 25 deg²
+pilot therefore pulls ~400 k archival rows — fine locally, but it means the join is
+dominated by chance alignments unless isolation is enforced (see 4).
+
+**3. `nsc_dr2.object` carries what the selection needs:** per-band mags (u,g,r,i,z,y),
+`mjd` + `deltamjd` (so "all epochs pre-2018" is expressible at object level),
+`class_star`, `ndet`/`ndetr`, and a full variability block (`rmsvar, madvar, chivar,
+etavar, nsigvar, variable10sig`).
+
+**4. Dominant false-positive mode = BLENDING, not astrophysics.** ZTF pixels are 1.0″ with
+~2″ effective resolution; NSC/DECam resolves ~0.9″. A faint NSC source 1–2″ from a bright
+star will "match" a bright ZTF object and mimic a turn-on. **Mandatory cut: the faint NSC
+source must be isolated — no NSC source brighter than r = 21 within 3″** — plus a check
+that the ZTF position centroid is closer to the faint source than to any neighbour.
+
+**5. DESIGN REFINEMENT (raises the lane's novelty value).** Objects that turned on *before*
+ZTF began and have stayed on are **photometrically ordinary inside ZTF** — ZTF sees a
+constant star. They are therefore invisible to every ZTF-internal variability search
+(SNAD, ZTF SCP, Szkody's CV catalogues, the alert-stream ML classifiers) and can only be
+found by comparison with the deeper pre-ZTF archive. **Select `magrms` LOW as well as
+`medianmag` bright** — that subset is the genuinely unscooped part of the parameter space,
+and it is the complement of the state-cycler lane we already closed (which required
+variability *within* ZTF).
