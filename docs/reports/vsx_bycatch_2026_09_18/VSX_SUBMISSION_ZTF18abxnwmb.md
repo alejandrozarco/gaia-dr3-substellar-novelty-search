@@ -17,7 +17,7 @@ values (from a wiped scratch run) are independently REPRODUCED by this analysis.
 | Min I (primary) | 12.928 (zr) · 13.513 (zg) · 12.672 (zi) → depth **0.216 / 0.250 / 0.189 mag** |
 | Min II (secondary) | 12.817 (zr) · 13.377 (zg) · 12.593 (zi) → depth **0.105 / 0.114 / 0.110 mag** |
 | Band/system | ZTF zg, zr, zi (AB, PSF photometry, catflags==0 only) |
-| Eclipse duration | **~0.05–0.067 in phase (4.5–6 h)** — see DURATION CORRECTION at end |
+| Eclipse duration | **0.057 in phase = 5.7% of period ≈ 5.1 h** — see DURATION CORRECTION at end. **The value entered at submission was 10%, which is ~1.75× too long.** |
 | Discoverer / submitter | A. Keur (independent) |
 | Data source | ZTF Data Release PSF photometry via IRSA (2,564 epochs total; 1,146 clean zr), MJD 58252–60969 (7.4 yr) |
 
@@ -112,22 +112,36 @@ in this folder as the evidence that forced the correction.
 
 # DURATION CORRECTION (2026-09-18, after filing)
 
-The document carried **two inconsistent eclipse durations**: the form table said ~0.08 in
-phase (≈7 h) while the CORRECTION section said 0.10 (8.9 h) — the earlier correction
-updated one section and not the other.
+The document carried **two inconsistent eclipse durations** — the form table said ~0.08 in
+phase (≈7 h), the earlier CORRECTION section said 0.10 (8.9 h); that correction updated one
+section and not the other. **The value actually entered in the VSX wizard was 10%**
+(confirmed from the submission session record: "Period / Epoch / Eclipse duration =
+3.727023 d · HJD 2458257.856 · 10%").
 
-Re-derived from the 1,146 clean zr epochs (catflags==0), folded on P = 3.727023 d in 60
-bins: contiguous bins more than 0.03 mag below the 12.712 baseline span **3 bins across
-the primary (phase 0.983–1.017) and 3 across the secondary (0.483–0.517)** = 0.05 in
-phase = 4.5 h; extending to a >0.015 mag threshold gives 4 bins = 0.067 = 6.0 h.
+**Re-derived per-epoch** (not binned) from the 1,146 clean zr epochs, folded on
+P = 3.727023 d with the primary centred on phase 0. Out-of-eclipse baseline
+zr = 12.7088, σ = 0.0177 (n = 462); in-eclipse = points more than 3σ faint:
 
-**Both previously stated values were too long.** Best estimate: **0.05–0.067 in phase
-(4.5–6 h)**, threshold-dependent.
+- The eclipse is a **contiguous** structure from phase **−0.0303 to +0.0264**, with egress
+  resolved in the fold (depth falls smoothly 0.19 → 0.058 between phase +0.019 and +0.025).
+- **Duration = 0.057 in phase = 5.7% of period = 5.1 h.**
+- Centre lies at phase −0.002, i.e. **T₀ is confirmed correct**; no ephemeris shift needed.
 
-Unaffected and independently reproduced in the same check: baseline zr = 12.712 (matches
-the quoted maximum), folded primary depth 0.170–0.184 (matches the stated 0.177),
-secondary centred at phase 0.500. **Classification (EA), period and depths all stand.**
+**METHODOLOGICAL TRAP, recorded because it nearly reversed this result.** A naive 3σ
+bracket over all faint points gives 0.120 in phase (12%) — which would have appeared to
+*confirm* the filed 10%. That span is produced by a **single** point at phase +0.0894 with
+depth 0.064 (3.6σ), isolated by 0.063 in phase from the nearest in-eclipse point. One
+straggler inflated the duration by more than 2×. **A min-to-max span over threshold-passing
+points is not a duration measurement unless the points are contiguous** — the same
+"span criterion" flaw already banked from the turn-on pilot, reappearing in a different guise.
 
-IMPACT ON THE FILED RECORD: eclipse duration is an optional VSX field. If a duration was
-entered at submission, it is ~1–3 h too long and worth a correction note to the moderator;
-nothing else in the submission is affected.
+Unaffected and independently reproduced: baseline zr = 12.712 (matches the quoted maximum),
+folded primary depth 0.170–0.184 (matches the stated 0.177), secondary centred at phase
+0.500. **Classification (EA), period, epoch and depths all stand.**
+
+IMPACT ON THE FILED RECORD: eclipse duration is an optional VSX field, entered as **10%**
+against a measured **5.7%**. Worth a short correction note to the moderator; nothing else
+in the submission is affected. The passband entries were verified correct from the session
+record: max 12.712 and min 12.928 both submitted under band **"r"** (Sloan r from the VSX
+passband list), NOT V — so the unresolved APASS/UCAC4 column-mapping question never reached
+the filing.
