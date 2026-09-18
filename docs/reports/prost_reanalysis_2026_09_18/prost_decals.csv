@@ -1,0 +1,5 @@
+name,RA,Dec,idx,best_cat,best_cat_release,query_time,smallcone_posterior,missedcat_posterior,extra_cat_cols
+R950_unreportedSN,334.249623,-18.207948,0,,,,,,{}
+R512_mundane_SN,313.226506,-14.840435,1,,,,,,{}
+R016_hostless_blue,306.748024,-11.818564,2,,,,,,{}
+R637_SNII_cand,332.391259,-14.8699,3,,,,,,{}
