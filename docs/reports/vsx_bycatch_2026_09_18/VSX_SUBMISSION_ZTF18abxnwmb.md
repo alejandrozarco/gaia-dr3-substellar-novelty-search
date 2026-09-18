@@ -17,7 +17,7 @@ values (from a wiped scratch run) are independently REPRODUCED by this analysis.
 | Min I (primary) | 12.928 (zr) · 13.513 (zg) · 12.672 (zi) → depth **0.216 / 0.250 / 0.189 mag** |
 | Min II (secondary) | 12.817 (zr) · 13.377 (zg) · 12.593 (zi) → depth **0.105 / 0.114 / 0.110 mag** |
 | Band/system | ZTF zg, zr, zi (AB, PSF photometry, catflags==0 only) |
-| Eclipse duration | ~0.08 in phase (≈7 h) |
+| Eclipse duration | **~0.05–0.067 in phase (4.5–6 h)** — see DURATION CORRECTION at end |
 | Discoverer / submitter | A. Keur (independent) |
 | Data source | ZTF Data Release PSF photometry via IRSA (2,564 epochs total; 1,146 clean zr), MJD 58252–60969 (7.4 yr) |
 
@@ -106,3 +106,28 @@ with a 120-iteration bootstrap resampling whole nights:
 Nothing about the classification changes — it is an EA, and the period is solid. Only the
 epoch precision and the stated provenance change. `ZTF18abxnwmb_five_eclipses.png` is kept
 in this folder as the evidence that forced the correction.
+
+
+---
+
+# DURATION CORRECTION (2026-09-18, after filing)
+
+The document carried **two inconsistent eclipse durations**: the form table said ~0.08 in
+phase (≈7 h) while the CORRECTION section said 0.10 (8.9 h) — the earlier correction
+updated one section and not the other.
+
+Re-derived from the 1,146 clean zr epochs (catflags==0), folded on P = 3.727023 d in 60
+bins: contiguous bins more than 0.03 mag below the 12.712 baseline span **3 bins across
+the primary (phase 0.983–1.017) and 3 across the secondary (0.483–0.517)** = 0.05 in
+phase = 4.5 h; extending to a >0.015 mag threshold gives 4 bins = 0.067 = 6.0 h.
+
+**Both previously stated values were too long.** Best estimate: **0.05–0.067 in phase
+(4.5–6 h)**, threshold-dependent.
+
+Unaffected and independently reproduced in the same check: baseline zr = 12.712 (matches
+the quoted maximum), folded primary depth 0.170–0.184 (matches the stated 0.177),
+secondary centred at phase 0.500. **Classification (EA), period and depths all stand.**
+
+IMPACT ON THE FILED RECORD: eclipse duration is an optional VSX field. If a duration was
+entered at submission, it is ~1–3 h too long and worth a correction note to the moderator;
+nothing else in the submission is affected.
