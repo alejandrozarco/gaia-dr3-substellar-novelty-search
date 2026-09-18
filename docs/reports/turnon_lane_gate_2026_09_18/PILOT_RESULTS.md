@@ -191,6 +191,67 @@ explicit `ZTF_ERROR` status, covering all 4,403 positions including the ~3,300 t
 first pass never actually queried. Output: `ztf_assess2.jsonl`,
 `turnon_candidates2.json`.
 
+## 9. Self-recovery test (standing rule) — filters validated, selection NOT
+
+Standing rule: a template-driven search must recover its own template before any
+absence claim. Targets = the 3 catalogued dwarf novae inside the pilot's own tiles
+(VSX), pushed through the **identical** v2 epoch filters and classifier.
+
+| object | NSC r | ZTF offset | amp | duty | bright nights | verdict |
+|---|---|---|---|---|---|---|
+| CSS 140121:075258−000709 | 20.79 | 0.06″ | 3.00 | 0.58 | 11 | **RECOVERED** |
+| ASASSN-15tr | 20.10 | 0.03″ | 3.45 | 0.17 | 5 | **RECOVERED** |
+| SDSS J075117.00+100016.2 | 18.44 | 0.09″ | 0.45 | 1.00 | 302 | REJECTED: CONSTANT |
+
+**2/3 recovered; the third rejection is correct** — in the ZTF era that object sits at
+r≈18.0 with duty 1.00 and amp 0.45, i.e. it is genuinely not a turn-on on this baseline.
+
+The specific worry that the `mag ≤ limitmag − 0.3` cut would reject genuine
+modest-amplitude events is **not** borne out: CSS 140121 lost 58% of its epochs to the
+quality filters and still passed comfortably, because a real outburst yields many good
+epochs. Aggressive per-epoch filtering is affordable when the signal is real.
+
+**Honest limitation — the selection is NOT validated end-to-end.** All three templates
+have NSC r = 18.4–20.8, *outside* the pilot's 22–24 selection window. There is no known
+object of the target class at the target faintness anywhere in this footprint to
+recover. So this test validates the **filters**, not the **selection**; the lane hunts a
+regime where no confirmed template exists, and that must be stated with any null.
+
+### Faint-end sensitivity (measured, 963 real zr frames in-field)
+
+Frame depth: median limitmag 20.50 (10th pct 19.89, 90th pct 21.30). Fraction of
+frames on which a turn-on of a given brightness clears `mag ≤ limitmag − 0.3`:
+
+| turn-on reaches | frames usable | amp from r=23 |
+|---|---|---|
+| r = 18.0 | 100.0% | 5.0 mag |
+| r = 19.0 | 98.2% | 4.0 mag |
+| r = 19.5 | 91.4% | 3.5 mag |
+| r = 20.0 | 70.7% | 3.0 mag |
+| r = 20.3 | 44.7% | 2.7 mag |
+| r = 20.5 | 34.3% | 2.5 mag |
+| r = 21.0 | 9.6% | 2.0 mag |
+
+**The null applies at near-full sensitivity only to turn-ons reaching r ≲ 19.5
+(amp ≳ 3.5 from an r=23 source).** At the nominal amp>2.5 threshold the per-frame
+efficiency is only ~34%, and below r≈21 the lane is effectively blind. Any density
+limit must be quoted against this curve, not against the raw position count.
+
+### The bug class bit the referee too
+
+The first pass of this recovery test reported 2/3 REJECTED: BLEND with offsets
+~1.3″ and 2.8″. Both were artifacts of the test, not the pipeline:
+(a) **VSX catalogue positions are 1.25–1.35″ off** the true source here (NSC and Gaia
+agree with each other to 0.03″), so anchoring on VSX manufactured a fake offset; and
+(b) a hardcoded anchor for ASASSN-15tr was wrong, and the re-resolution query — a 2″
+box centred on that wrong position — **returned empty and the code kept the bad
+value**. Anchored correctly on the NSC source at the ZTF centroid, the offsets are
+0.03″ and 0.06″.
+
+That is the same silent-empty-result failure this whole report is about, occurring
+inside the tool written to referee it. It is not a rare bug; it is the default
+behaviour of any query whose empty return is a plausible value.
+
 ## 9. Lessons banked
 
 - **A default value must never double as a finding.** v1's `else 1` converted network
@@ -202,6 +263,12 @@ first pass never actually queried. Output: `ztf_assess2.jsonl`,
 - **`limitmag` is the honest reference for a detection, not the magnitude.** Comparing
   mag to the frame's own limit exposes depth-driven pseudo-variability that any
   amplitude cut will otherwise pass.
+- **The referee needs the same rigour as the pipeline.** The self-recovery test
+  initially "failed" 2/3 purely through its own coordinate bugs — including one empty
+  query whose result was silently kept. Validate the validator.
+- **Catalogue positions are not truth.** VSX positions here are 1.25–1.35″ off sources
+  where NSC and Gaia agree to 0.03″; anchor astrometric tests on survey catalogues,
+  never on variable-star catalogue coordinates.
 - **A cross-survey depth gap is a systematic generator**, not just a discovery lever;
   a search built on one must budget for all three artifact channels up front.
 - **Apparent sky structure in a result can be processing-order structure.** The 13
