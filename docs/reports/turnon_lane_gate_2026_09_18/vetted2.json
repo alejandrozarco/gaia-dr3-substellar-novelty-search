@@ -1,0 +1,790 @@
+[
+ {
+  "id": "80807_1921",
+  "ra": 117.75853081315488,
+  "dec": 10.286739745625654,
+  "nsc_r": 22.937824,
+  "nsc_g": 23.499964,
+  "status": "CANDIDATE",
+  "amp": 6.87,
+  "band": "zr",
+  "n": 6,
+  "bright": 16.067,
+  "nights": 5,
+  "bright_nights": 2,
+  "span": 369.988,
+  "faint": 21.523,
+  "nsc_neighbours": [],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   117.758382,
+   10.286512
+  ],
+  "ztf_offset_from_target_as": 0.97,
+  "ztf_matches_nsc": {
+   "id": "80807_1921",
+   "sep": 0.97,
+   "rmag": 22.937824
+  },
+  "is_target": true,
+  "astrometry": "ON_TARGET",
+  "duty_cycle": 0.2,
+  "lc_band": "zr",
+  "lc_nights": 5,
+  "lc_bright_nights": 1,
+  "morph": "AMBIGUOUS",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80297_8992",
+  "ra": 118.73208318137026,
+  "dec": 10.461787950170814,
+  "nsc_r": 23.35947,
+  "nsc_g": 23.467644,
+  "status": "CANDIDATE",
+  "amp": 4.2,
+  "band": "zr",
+  "n": 15,
+  "bright": 19.158,
+  "nights": 15,
+  "bright_nights": 2,
+  "span": 134.73,
+  "faint": 22.196,
+  "nsc_neighbours": [
+   {
+    "id": "80297_2382",
+    "sep": 2.27,
+    "rmag": 22.28915
+   },
+   {
+    "id": "80297_2391",
+    "sep": 4.46,
+    "rmag": 23.003939
+   },
+   {
+    "id": "80297_2386",
+    "sep": 4.92,
+    "rmag": 99.99
+   },
+   {
+    "id": "80297_11907",
+    "sep": 9.27,
+    "rmag": 99.99
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.732412,
+   10.461203
+  ],
+  "ztf_offset_from_target_as": 2.41,
+  "ztf_matches_nsc": {
+   "id": "80297_2382",
+   "sep": 0.14,
+   "rmag": 22.28915
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zi",
+  "lc_nights": 19,
+  "lc_bright_nights": 19,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80808_9311",
+  "ra": 118.47327550917161,
+  "dec": 9.932551219917308,
+  "nsc_r": 22.866014,
+  "nsc_g": 22.984375,
+  "status": "CANDIDATE",
+  "amp": 3.94,
+  "band": "zr",
+  "n": 113,
+  "bright": 18.925,
+  "nights": 73,
+  "bright_nights": 73,
+  "span": 2713.36,
+  "faint": 19.415,
+  "nsc_neighbours": [
+   {
+    "id": "80808_10770",
+    "sep": 2.14,
+    "rmag": 99.99
+   },
+   {
+    "id": "80808_2042",
+    "sep": 2.57,
+    "rmag": 19.19503
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.472664,
+   9.932953
+  ],
+  "ztf_offset_from_target_as": 2.61,
+  "ztf_matches_nsc": {
+   "id": "80808_2042",
+   "sep": 0.08,
+   "rmag": 19.19503
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zr",
+  "lc_nights": 73,
+  "lc_bright_nights": 73,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": {
+   "source_id": "3150303437253565440",
+   "phot_g_mean_mag": "19.217566",
+   "bp_rp": "1.0487862",
+   "parallax": "-0.15263215442822883",
+   "parallax_error": "0.33751497",
+   "pmra": "-1.388063401262545",
+   "pmdec": "-0.40163050778128156",
+   "ruwe": "0.9781675"
+  },
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80297_8940",
+  "ra": 118.7384654095592,
+  "dec": 10.588104786811899,
+  "nsc_r": 23.115992,
+  "nsc_g": 23.488226,
+  "status": "CANDIDATE",
+  "amp": 3.7,
+  "band": "zr",
+  "n": 6,
+  "bright": 19.421,
+  "nights": 5,
+  "bright_nights": 2,
+  "span": 322.092,
+  "faint": 22.242,
+  "nsc_neighbours": [
+   {
+    "id": "80297_1270",
+    "sep": 4.6,
+    "rmag": 21.399416
+   },
+   {
+    "id": "80297_8473",
+    "sep": 5.29,
+    "rmag": 99.99
+   },
+   {
+    "id": "80297_11520",
+    "sep": 5.69,
+    "rmag": 22.403667
+   },
+   {
+    "id": "80297_9290",
+    "sep": 5.91,
+    "rmag": 22.90625
+   },
+   {
+    "id": "80297_13749",
+    "sep": 6.36,
+    "rmag": 99.99
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.738081,
+   10.58791
+  ],
+  "ztf_offset_from_target_as": 1.53,
+  "ztf_matches_nsc": {
+   "id": "80297_8940",
+   "sep": 1.53,
+   "rmag": 23.115992
+  },
+  "is_target": true,
+  "astrometry": "OFFSET_AMBIGUOUS",
+  "duty_cycle": 0.2,
+  "lc_band": "zr",
+  "lc_nights": 5,
+  "lc_bright_nights": 1,
+  "morph": "AMBIGUOUS",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80807_5663",
+  "ra": 118.12252900582993,
+  "dec": 10.200907194980104,
+  "nsc_r": 22.882656,
+  "nsc_g": 22.84375,
+  "status": "CANDIDATE",
+  "amp": 3.62,
+  "band": "zr",
+  "n": 963,
+  "bright": 19.264,
+  "nights": 363,
+  "bright_nights": 363,
+  "span": 2731.346,
+  "faint": 19.731,
+  "nsc_neighbours": [
+   {
+    "id": "80807_5662",
+    "sep": 2.87,
+    "rmag": 19.525621
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.123254,
+   10.200541
+  ],
+  "ztf_offset_from_target_as": 2.89,
+  "ztf_matches_nsc": {
+   "id": "80807_5662",
+   "sep": 0.03,
+   "rmag": 19.525621
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zr",
+  "lc_nights": 363,
+  "lc_bright_nights": 363,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": {
+   "source_id": "3150350029058532352",
+   "phot_g_mean_mag": "19.470324",
+   "bp_rp": "1.9047108",
+   "parallax": "1.412916383853858",
+   "parallax_error": "0.3717967",
+   "pmra": "0.41513671663485274",
+   "pmdec": "-0.051404092870369414",
+   "ruwe": "0.9981636"
+  },
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80808_8766",
+  "ra": 118.50915290214809,
+  "dec": 10.380569161631891,
+  "nsc_r": 22.849148,
+  "nsc_g": 23.429852,
+  "status": "CANDIDATE",
+  "amp": 3.35,
+  "band": "zg",
+  "n": 5,
+  "bright": 19.495,
+  "nights": 5,
+  "bright_nights": 4,
+  "span": 376.972,
+  "faint": 20.728,
+  "nsc_neighbours": [
+   {
+    "id": "80808_12501",
+    "sep": 2.66,
+    "rmag": 99.99
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.508857,
+   10.380847
+  ],
+  "ztf_offset_from_target_as": 1.45,
+  "ztf_matches_nsc": {
+   "id": "80808_8766",
+   "sep": 1.45,
+   "rmag": 22.849148
+  },
+  "is_target": true,
+  "astrometry": "OFFSET_AMBIGUOUS",
+  "duty_cycle": 0.8,
+  "lc_band": "zg",
+  "lc_nights": 5,
+  "lc_bright_nights": 4,
+  "morph": "SUSTAINED_TURNON",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "81320_8463",
+  "ra": 118.26818304041029,
+  "dec": 10.035177967237646,
+  "nsc_r": 22.982279,
+  "nsc_g": 22.703125,
+  "status": "CANDIDATE",
+  "amp": 3.04,
+  "band": "zr",
+  "n": 631,
+  "bright": 19.945,
+  "nights": 268,
+  "bright_nights": 265,
+  "span": 2731.346,
+  "faint": 20.69,
+  "nsc_neighbours": [
+   {
+    "id": "81320_2511",
+    "sep": 2.16,
+    "rmag": 20.29025
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.268553,
+   10.034672
+  ],
+  "ztf_offset_from_target_as": 2.24,
+  "ztf_matches_nsc": {
+   "id": "81320_2511",
+   "sep": 0.09,
+   "rmag": 20.29025
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zr",
+  "lc_nights": 268,
+  "lc_bright_nights": 268,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": {
+   "source_id": "3150297110764828160",
+   "phot_g_mean_mag": "20.367947",
+   "bp_rp": "0.69838524",
+   "parallax": "0.2533826232081212",
+   "parallax_error": "1.0432339",
+   "pmra": "-0.9320213409600989",
+   "pmdec": "0.23522276645312978",
+   "ruwe": "0.95310843"
+  },
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "79784_9255",
+  "ra": 118.5223067896973,
+  "dec": 10.814018619618142,
+  "nsc_r": 23.300104,
+  "nsc_g": 23.34343,
+  "status": "CANDIDATE",
+  "amp": 2.98,
+  "band": "zr",
+  "n": 59,
+  "bright": 20.321,
+  "nights": 35,
+  "bright_nights": 3,
+  "span": 1043.991,
+  "faint": 22.097,
+  "nsc_neighbours": [
+   {
+    "id": "79784_3158",
+    "sep": 3.04,
+    "rmag": 21.943142
+   },
+   {
+    "id": "79784_10194",
+    "sep": 5.87,
+    "rmag": 99.99
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.523133,
+   10.814405
+  ],
+  "ztf_offset_from_target_as": 3.24,
+  "ztf_matches_nsc": {
+   "id": "79784_3158",
+   "sep": 0.21,
+   "rmag": 21.943142
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 0.657,
+  "lc_band": "zr",
+  "lc_nights": 35,
+  "lc_bright_nights": 23,
+  "morph": "SUSTAINED_TURNON",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80296_6037",
+  "ra": 118.11811161383399,
+  "dec": 10.44333881660946,
+  "nsc_r": 22.815292,
+  "nsc_g": 22.699213,
+  "status": "CANDIDATE",
+  "amp": 2.92,
+  "band": "zr",
+  "n": 7,
+  "bright": 19.896,
+  "nights": 6,
+  "bright_nights": 2,
+  "span": 1389.042,
+  "faint": 21.859,
+  "nsc_neighbours": [
+   {
+    "id": "80296_12750",
+    "sep": 5.09,
+    "rmag": 99.99
+   },
+   {
+    "id": "80296_11015",
+    "sep": 9.51,
+    "rmag": 15.390625
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.118072,
+   10.442996
+  ],
+  "ztf_offset_from_target_as": 1.24,
+  "ztf_matches_nsc": {
+   "id": "80296_6037",
+   "sep": 1.24,
+   "rmag": 22.815292
+  },
+  "is_target": true,
+  "astrometry": "OFFSET_AMBIGUOUS",
+  "duty_cycle": 0.333,
+  "lc_band": "zr",
+  "lc_nights": 6,
+  "lc_bright_nights": 2,
+  "morph": "AMBIGUOUS",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "81321_8668",
+  "ra": 118.65423056097812,
+  "dec": 10.001577564647445,
+  "nsc_r": 23.28685,
+  "nsc_g": 22.95428,
+  "status": "CANDIDATE",
+  "amp": 2.8,
+  "band": "zr",
+  "n": 115,
+  "bright": 20.489,
+  "nights": 70,
+  "bright_nights": 6,
+  "span": 661.003,
+  "faint": 21.732,
+  "nsc_neighbours": [
+   {
+    "id": "81321_8669",
+    "sep": 1.9,
+    "rmag": 22.364235
+   },
+   {
+    "id": "81321_2491",
+    "sep": 3.2,
+    "rmag": 21.222044
+   }
+  ],
+  "bright_neighbour_5as": 0,
+  "ztf_centroid": [
+   118.654927,
+   10.001021
+  ],
+  "ztf_offset_from_target_as": 3.18,
+  "ztf_matches_nsc": {
+   "id": "81321_2491",
+   "sep": 0.09,
+   "rmag": 21.222044
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 0.943,
+  "lc_band": "zr",
+  "lc_nights": 70,
+  "lc_bright_nights": 66,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80808_1820",
+  "ra": 118.3382178594696,
+  "dec": 10.033660113851102,
+  "nsc_r": 22.3168,
+  "nsc_g": 22.328125,
+  "status": "CANDIDATE",
+  "amp": 2.76,
+  "band": "zr",
+  "n": 797,
+  "bright": 19.559,
+  "nights": 315,
+  "bright_nights": 315,
+  "span": 2731.346,
+  "faint": 20.098,
+  "nsc_neighbours": [
+   {
+    "id": "80808_1821",
+    "sep": 2.43,
+    "rmag": 19.858355
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.337538,
+   10.033705
+  ],
+  "ztf_offset_from_target_as": 2.42,
+  "ztf_matches_nsc": {
+   "id": "80808_1821",
+   "sep": 0.02,
+   "rmag": 19.858355
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zr",
+  "lc_nights": 315,
+  "lc_bright_nights": 315,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": {
+   "source_id": "3150308689996658048",
+   "phot_g_mean_mag": "19.90207",
+   "bp_rp": "1.1745262",
+   "parallax": "-0.3104709030960062",
+   "parallax_error": "0.6259649",
+   "pmra": "-1.8109567359347518",
+   "pmdec": "-0.6259643423336623",
+   "ruwe": "1.0298234"
+  },
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80296_3714",
+  "ra": 118.19684166643617,
+  "dec": 10.394403688702976,
+  "nsc_r": 22.013762,
+  "nsc_g": 22.34375,
+  "status": "CANDIDATE",
+  "amp": 2.61,
+  "band": "zr",
+  "n": 889,
+  "bright": 19.401,
+  "nights": 344,
+  "bright_nights": 343,
+  "span": 2731.346,
+  "faint": 20.648,
+  "nsc_neighbours": [
+   {
+    "id": "80296_3713",
+    "sep": 2.44,
+    "rmag": 19.6463
+   },
+   {
+    "id": "80296_3712",
+    "sep": 3.96,
+    "rmag": 21.356659
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.197482,
+   10.394693
+  ],
+  "ztf_offset_from_target_as": 2.49,
+  "ztf_matches_nsc": {
+   "id": "80296_3713",
+   "sep": 0.05,
+   "rmag": 19.6463
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 0.994,
+  "lc_band": "zr",
+  "lc_nights": 344,
+  "lc_bright_nights": 342,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": {
+   "source_id": "3150377654288122240",
+   "phot_g_mean_mag": "19.704496",
+   "bp_rp": "1.1731606",
+   "parallax": "0.08979990166296999",
+   "parallax_error": "0.5347358",
+   "pmra": "-0.573698956579692",
+   "pmdec": "-0.27454417382245144",
+   "ruwe": "0.97940403"
+  },
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ },
+ {
+  "id": "80808_9176",
+  "ra": 118.5002990246827,
+  "dec": 10.240458819353046,
+  "nsc_r": 22.830002,
+  "nsc_g": 23.3125,
+  "status": "CANDIDATE",
+  "amp": 2.56,
+  "band": "zr",
+  "n": 246,
+  "bright": 20.27,
+  "nights": 105,
+  "bright_nights": 19,
+  "span": 2498.002,
+  "faint": 21.403,
+  "nsc_neighbours": [
+   {
+    "id": "80808_8491",
+    "sep": 2.67,
+    "rmag": 20.822813
+   }
+  ],
+  "bright_neighbour_5as": 1,
+  "ztf_centroid": [
+   118.499547,
+   10.240546
+  ],
+  "ztf_offset_from_target_as": 2.68,
+  "ztf_matches_nsc": {
+   "id": "80808_8491",
+   "sep": 0.06,
+   "rmag": 20.822813
+  },
+  "is_target": false,
+  "astrometry": "BLEND_WRONG_STAR",
+  "duty_cycle": 1.0,
+  "lc_band": "zr",
+  "lc_nights": 105,
+  "lc_bright_nights": 105,
+  "morph": "CONSTANT_BRIGHT",
+  "gaia_at_target": null,
+  "gaia_at_ztf": null,
+  "catalogue_hits": {
+   "VSX": 0,
+   "Chen2020": 0,
+   "GaiaEB": 0,
+   "ASASSN": 0,
+   "GCVS": 0,
+   "Milliquas": 0,
+   "SIMBAD": 0
+  },
+  "uncatalogued": true
+ }
+]
