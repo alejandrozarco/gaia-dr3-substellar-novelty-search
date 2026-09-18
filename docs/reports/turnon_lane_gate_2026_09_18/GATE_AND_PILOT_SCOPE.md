@@ -62,3 +62,53 @@ ZTF18abxnwmb.
 VSX-fileable object of exactly the ZTF19abxfaon class.
 
 **Cost:** gate zero ~1 h; full pilot ~1 day of agent time. No new accounts, no telescope.
+
+---
+
+# GATE ZERO RESULT (2026-09-18) — **PASS, decisively**
+
+Measured, not assumed, from `nsc_dr2.exposure` (NOIRLab Data Lab TAP) — the deep-archive
+side — plus live ZTF spot-checks.
+
+## Deep pre-2018 coverage in the ZTF-overlapping low-latitude band
+Query: mjd < 58119 (pre-2018), exptime ≥ 60 s, filter ∈ griz, |b| = 5–20°, −30° < dec < +32°.
+
+- 214,009 deep pre-2018 griz exposures all-sky → **4,046 in the band**, of which
+  **3,023 reach depth95 > 22** (c4d/DECam 2,931 · ksb 67 · k4m 25); 1,729 are r-band.
+- Sky area covered (per-instrument FOV radii: DECam 1.1°, Bok 0.6°, Mosaic 0.3°;
+  0.15°-grid, 192,432 cells over a 4,330 deg² band):
+  - **any deep griz: 1,458 deg²**
+  - **deep r-band: 1,190 deg²**
+- **Kill threshold was <50 deg². Actual is 1,190 deg² — passes by ~24×.**
+
+## Depth is sufficient for the selection
+r-band depth95: median **23.09**, quartiles 22.72 / 23.45, max 25.22; **58% of exposures
+reach deeper than 23.0**. The method needs r ≈ 23 quiescence detections — this is exactly
+that depth, and it is the same DECam/NSC data that measured ZTF19abxfaon at r = 23.05–23.44.
+
+## Where the coverage is (deg² by galactic longitude)
+| l bin | deg² | note |
+|---|---|---|
+| 200–220 | 273.9 | **anticentre** |
+| 0–20 | 259.0 | inner Galaxy — high extinction/crowding, southern dec |
+| 180–200 | 244.9 | **anticentre** |
+| 220–240 | 155.3 | **anticentre** |
+| 340–360 | 142.0 | inner Galaxy |
+| 40–60 | 137.9 | |
+| 240–260 | 136.7 | |
+
+## ZTF side verified live
+Five random deep-exposure centres in l = 195–235 queried against ZTF DR (30″ cones):
+13–42 ZTF objects each, median **16–73 epochs per object**, baselines **2,609–2,764 days**
+(7.1–7.6 yr). ZTF coverage is not a constraint in this region.
+
+## RECOMMENDED PILOT FIELD
+**Galactic anticentre, l = 195–235°** — 1,163 deep exposures, median depth95 23.03,
+dec −22° to +23.5°, ~400–500 deg² of deep coverage inside the l = 180–240 block (674 deg²).
+Chosen over the l = 0–20 / 340–360 inner-Galaxy blocks because those sit at southern
+declinations at the edge of ZTF's range and carry far worse extinction and crowding, which
+would both hide quiescent counterparts and inflate the false-match rate.
+
+**Gate zero is cleared. The remaining pre-registered kills stand:** >90% of raw candidates
+already in the published CV/variable catalogues → close; 0 verified survivors → density
+limit and close.
