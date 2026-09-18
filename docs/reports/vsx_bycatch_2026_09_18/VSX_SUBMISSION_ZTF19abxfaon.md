@@ -1,4 +1,4 @@
-# VSX submission draft — ZTF19abxfaon (uncatalogued high-amplitude state-cycling variable)
+# VSX submission draft — ZTF19abxfaon (uncatalogued high-amplitude variable, one observed transition)
 **DRAFT ONLY — filing is the USER's action via their AAVSO/VSX account.**
 Prepared 2026-09-18 to the same standard as ZTF18abxnwmb. Supersedes the 2026-07-15
 draft in `rubin_pilot_2026_07_14/forensics/170587115976392822/consumer_package/vsx_draft.md`.
@@ -10,7 +10,7 @@ draft in `rubin_pilot_2026_07_14/forensics/170587115976392822/consumer_package/v
 | Primary name (survey ID, manual §V.a) | **ZTF19abxfaon** |
 | RA (J2000) | **21 47 18.80** (326.828336) — Legacy Survey DR10 tractor, Gaia-referenced astrometry |
 | Dec (J2000) | **−13 28 28.9** (−13.474691) |
-| Astrometric ID | **LS DR10 ls_id 10995383192785753** (type PSF, sep 0.04″ from the Rubin position). NOTE: **no Gaia DR3, 2MASS, UCAC4, GSC 2.3, PS1 DR1 or CatWISE counterpart** — the star is below all of their depths in quiescence, so LS DR10 is the only astrometric anchor available (manual §III.a permits "another astrometric catalog"). |
+| Astrometric ID | **LS DR10 ls_id 10995383192785753** (type PSF, sep 0.04″ from the Rubin position). NOTE: **no Gaia DR3, 2MASS, UCAC4, GSC 2.3, PS1 DR1 or CatWISE counterpart** — no counterpart is FOUND in any of them (optical faintness alone does not establish infrared faintness, and catalogue absence has several possible causes), so LS DR10 is the only astrometric anchor available (manual §III.a permits "another astrometric catalog"). |
 | Variability type | **VAR** recommended (see REVISION 2). Large-amplitude variable showing a transition from a sparsely sampled faint state to prolonged activity; **CV candidate**, extragalactic origin unresolved. `CV:` is offered only if the moderator prefers it. **Z Cam is withdrawn** (no dwarf-nova outbursts with standstills are observed); **VY Scl is not demonstrated** (though a rise does not exclude it, since a low state could predate our coverage) |
 | Maximum (brightest) | **17.98 r** (ZTF zr, MJD 59218.078 = 2021-01-04) |
 | Minimum (faintest) | **23.44 r** (DECam r via NSC DR2, MJD 56511.240 = 2013-08-07) |
@@ -51,8 +51,7 @@ pointlike morphology are all compatible with it.
 
 **Honest status: AGN is disfavoured but NOT excluded.** Arguments, with their real limits:
 
-- **Mid-IR.** AllWISE (2010–2011) and CatWISE2020 (2010–2018) **predate the bright state**
-  and therefore cannot test whether IR emission appeared after the 2018 turn-on. The
+- **Mid-IR.** AllWISE (2010–2011) predates the bright state. **CatWISE2020 runs to 2018-12-13, so it partially OVERLAPS the turn-on** — it is dominated by pre-event epochs and its combined photometry is not a clean bright-state measurement, but it does not categorically predate the event as an earlier version of this draft claimed. The
   LS DR10 forced values are **noise-level flux estimates, not limits**, and are on the **AB**
   system: W1 = 22.1, W2 = 21.8 AB correspond to ≈ **19.40 / 18.46 Vega**. Quoting them as
   deep Vega limits was an error.
@@ -84,10 +83,13 @@ pointlike morphology are all compatible with it.
   data. Note that **0.88 vs 0.97 is not a Bayesian contest** — different models, inputs,
   taxonomies and training sets; the published ALeRCE stamp model was trained on ZTF.
 
-**Spectroscopic check performed 2026-09-18: NO spectrum exists.** DESI DR1 (`desi_dr1.zpix`)
-and SDSS DR17 (`sdss_dr17.specobj`) both return **zero rows within 30″**; both queries were
-positive-controlled (each returns its own rows when re-queried at a known source position).
-So the decisive test is not currently available from public archives.
+**Spectroscopic check (2026-09-18, re-verified 2026-09-19): no spectrum FOUND.**
+DESI DR1 (`desi_dr1.zpix`) returns zero rows within 30″, and its coverage here is dense
+(1,278 spectra in the surrounding 2×2°, vs 502 in a control field) — **a genuine null.**
+SDSS DR17 also returns zero, but **SDSS does NOT COVER this position** (0 spectra in the
+same 2×2° box vs 1,633 in the control) — **its null is meaningless and must not be cited.**
+Correct wording: *no matching spectrum in DESI DR1*; this is not the same as "no spectrum
+exists", and it is evidence about archive contents, not about the object's nature.
 
 **Galactic plausibility.** b = **−45.00°**. High latitude does not exclude a CV, but it
 penalises a luminous nova-like interpretation: at M_r = +5 with negligible extinction,
@@ -112,15 +114,15 @@ spectrum.** The object is currently ~18.5–19 and reachable by a 2 m class tele
 ## Qualification check against the AAVSO VSX manual
 | Requirement | Status |
 |---|---|
-| Proven variable; no sparse/incomplete light curves | **PASS, overwhelmingly** — 13 yr, ~840 calibrated epochs + 2,354 forced-photometry epochs, 5.5 mag |
+| Proven variable; no sparse/incomplete light curves | **PASS, overwhelmingly** — 13 yr, 5.46 mag range. NOTE: the ~840 catalogue epochs and 2,354 ZFPS epochs are **overlapping measurement records of shared exposures, NOT unique independent observations** — do not sum them |
 | Data-mined submissions held to a higher bar ("do some work, such as period analysis") | **PASS** — full period + eclipse search with injection-tested sensitivity limits (scoped as in the Period field), a quantified null rather than silence |
 | Accurate coordinates from an astrometric catalog | **PASS** — LS DR10, Gaia-referenced. Note PSF morphology is not proof of a stellar nature, and the 0.04″ agreement with the Rubin position is a consistency check, not a measure of absolute astrometric accuracy; quote the LS positional uncertainty if the moderator asks |
 | Max and min magnitudes | **PASS, with two caveats stated** — (a) cross-system (ZTF zr max vs DECam r min); (b) the faintest single point is not automatically the best faint-state estimate; five consecutive exposures spanning 0.39 mag would be better represented by a weighted flux estimate with uncertainties |
-| Period + epoch **for periodic variables** | **N/A** — documented aperiodic; turn-on epoch given instead |
+| Period + epoch **for periodic variables** | **N/A** — **no period detected** under the searches and sampling described (not the same as proven aperiodic); turn-on epoch given instead |
 | Supporting plot, magnitude inverted | **PASS** |
 | Primary name should not be a Gaia designation | **PASS** — ZTF survey ID used |
-| Galactic object | **NOT PROVEN — the one open criterion.** No spectrum exists (DESI DR1 + SDSS DR17 both null within 30″, positive-controlled). Disclosed to the moderator rather than glossed |
-| Minor-planet check | **PASS** — two asteroid contaminants identified and excluded; the source itself persists across 8 yr at a fixed position |
+| Galactic object | **NOT PROVEN.** (Not the *only* open criterion — see the outstanding list in REVISION 6.) No spectrum exists (DESI DR1 + SDSS DR17 both null within 30″, positive-controlled). Disclosed to the moderator rather than glossed |
+| Minor-planet check | **PARTIAL** — the source itself persists 8 yr at a fixed position, which establishes it is stationary. The two rejected single-epoch measurements are **suspect, not identified**: no ephemeris or trajectory check was run, so they cannot be called confirmed asteroids |
 
 **Verdict: qualifies as a variable; the Galactic-vs-extragalactic question is NOT closed.**
 Recommended action: submit as **VAR** with the AGN alternative disclosed in the remarks,
@@ -200,8 +202,8 @@ Galactic (CV) reading.**
 
 ## 1. NEOWISE-R: NO mid-IR counterpart — and this test covers the bright state
 
-AllWISE (2010–11) and CatWISE2020 (2010–18) predate the 2017–18 turn-on and could not test
-it. **NEOWISE-R (2014–2024) does.** Single-exposure query within 5″:
+AllWISE (2010–11) predates the 2017–18 turn-on. CatWISE2020 runs to 2018-12-13 and so only
+partially overlaps it, dominated by pre-event epochs — neither gives a clean bright-state test. **NEOWISE-R (2014–2024) does.** Single-exposure query within 5″:
 
 | | detections within 5″ |
 |---|---|
@@ -251,3 +253,81 @@ optical brightness where an AGN should be an easy WISE source.
 a spectrum, and none exists — but the extragalactic alternative is now the weaker of the two.
 Recommended submission type remains **VAR** pending review; `CV:` is more defensible than it
 was in REVISION 2.
+
+
+---
+
+# REVISION 6 (2026-09-19) — second adversarial review; internal contradictions repaired
+
+Second independent adversarial review commissioned (gpt-6-astra). **Verdict: HOLD.**
+*"File only after an object-specific provenance and photometry audit, actual spectrum
+searches, and credible affirmative evidence of Galactic stellar membership, or explicit
+moderator agreement to accept the unresolved case; `VAR` plus disclosure alone is
+insufficient."*
+
+## Reviewer error caused by a faulty prompt — recorded for honesty
+
+The review's headline finding was *"results from the wrong object — the NEOWISE detections
+and DESI/SDSS searches are not evidence about this target."* **That is wrong, and it is our
+fault.** The prompt supplied to the reviewer stated that NEOWISE and the spectrum checks had
+not been run for this object. They HAD been, at this object's own coordinates
+(326.828336, −13.474691), and an independent re-run on 2026-09-19 reproduced them exactly
+(5 NEOWISE detections, W1 ≈ 16.7–16.9; DESI/SDSS both zero). The sibling object returns 180
+NEOWISE detections at a completely different position. The reviewer reasoned correctly from
+a false premise we gave it.
+**Lesson: a referee is only as good as its brief; verify the context you hand it.**
+
+## CONFIRMED CONTRADICTIONS — all repaired in this revision
+
+The earlier revisions corrected claims in one part of the document and left the old wording
+elsewhere. Every one of these was real:
+
+| was | now |
+|---|---|
+| title: "state-cycling variable" | "one observed transition" (REVISION 2 withdrew cycling; the title had not been updated) |
+| "below all of their depths in quiescence" | "no counterpart is FOUND" — optical faintness does not establish IR faintness |
+| "~840 calibrated epochs + 2,354 forced-photometry epochs" | labelled as overlapping records of shared exposures, **not** to be summed |
+| "documented aperiodic" | "no period detected under the searches described" |
+| minor-planet check "PASS — two asteroid contaminants identified" | "PARTIAL — suspect, not identified; no ephemeris check was run" |
+| "CatWISE2020 (2010–2018) predates the bright state" | CatWISE2020 runs to **2018-12-13** and partially OVERLAPS the turn-on |
+| "NO spectrum exists" | "no matching spectrum in DESI DR1"; **SDSS does not cover this position** so its null is void |
+
+**This is the same failure as the ZTF18abxnwmb eclipse duration: a correction written in one
+section and not propagated. Standing rule, now twice earned — when a correction is made,
+grep the entire document for the superseded wording.**
+
+## The strongest remaining argument AGAINST a Galactic CV (reviewer's, and it is good)
+
+**Luminosity–scale-height tension.** b = −45.00°. With the draft's assumed M_r = +5
+(appropriate for a nova-like/high-state CV) and negligible extinction, r = 18 gives
+d ≈ 4 kpc and **|z| ≈ 2.8 kpc above the Galactic plane**. Published CV population studies
+use scale heights of a few hundred parsecs. That is uncomfortable for an ordinary
+disc-population CV.
+
+**Conditional, not fatal:** M_r is unmeasured; a less luminous system sits closer. But this
+is the one substantive anti-CV argument in the file and it must be stated in any submission.
+
+The reviewer also notes the DECaLS photo-z is **not** independent evidence of a galaxy —
+Legacy states its photo-z product performs no star–galaxy separation, so a stellar source
+can receive a meaningless redshift. That weakens the pro-AGN side.
+
+## OUTSTANDING before filing (none are text edits)
+
+1. **ZFPS flux-reconstruction audit.** A reference containing the source is *normal* for
+   difference photometry; the question is whether total flux was correctly reconstructed.
+   Reference dates alone do not settle it. Until audited, the ZFPS-derived magnitudes and
+   the injection sensitivity that depends on them should be omitted.
+2. **Quantitative bright-state mid-IR limit** with uncertainties and coverage — a catalogue
+   non-detection is a first step, not the discriminator. LS DR10 WISE incorporates NEOWISE
+   through year 7; retrieve fluxes and errors rather than treating two magnitudes as limits.
+3. **Measurement uncertainties on the extrema**, and a check that the faintest single point
+   is a sound faint-state estimate rather than a downward excursion.
+4. **A finding chart** — VSX asks for one where a faint object lacks major-catalogue
+   counterparts and identification could be confused. That is exactly this object.
+5. **ALeRCE classifier provenance** — record object ID, input survey, model name and
+   version. ALeRCE now runs a separate Rubin stamp classifier; citing the published ZTF
+   model does not identify what produced the 0.88.
+6. **Pre-submission eligibility inquiry to a VSX moderator** is the reviewer's recommended
+   route, rather than filing and hoping disclosure settles eligibility.
+
+**Status: HELD. Not filable in its current state.**
