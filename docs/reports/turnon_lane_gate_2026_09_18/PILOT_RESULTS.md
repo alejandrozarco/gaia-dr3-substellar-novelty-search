@@ -337,3 +337,69 @@ statement about their absence must carry ~55% completeness for single events.
   both the pilot and this test.
 - Noise is modelled as growing toward the frame limit; real photometry has correlated
   systematics this does not reproduce.
+
+---
+
+## 11. LANE CLOSE-OUT — full footprint, corrected pipeline (2026-09-19)
+
+The rebuilt pilot (`turnon_pilot2.py`, randomised order, retries, explicit error status,
+eight artifact filters in-pipeline, duty veto removed) completed **all 4,403 positions**
+over 10.1 deg².
+
+| status | n | % |
+|---|---|---|
+| NO_ZTF | 3,182 | 72.3% |
+| ZTF_SPARSE | 1,154 | 26.2% |
+| BLEND | 59 | 1.3% |
+| NO_TURNON | 6 | 0.1% |
+| SINGLE_NIGHT | 1 | — |
+| ZTF_ERROR | 1 | 0.02% |
+| **CANDIDATE** | **0** | — |
+
+**One hard query failure in 4,403**, recorded as `ZTF_ERROR` rather than silently filed as
+`NO_ZTF`. Contrast v1, whose *zero* errors across a 12-thread run were the tell that it was
+manufacturing nulls; here the single error is a genuine, reported failure after 4 retries.
+
+### The null, quantified
+
+`NO_ZTF` is an informative non-detection, not an unsearched position: a source that turned
+on to r ≤ 20.5 **would** appear in ZTF, and injection shows it would be recovered with 100%
+efficiency. So the searched sample is 4,402 (excluding the one error).
+
+- **0 sustained turn-ons** among 4,402 faint (r 22–24) archival sources.
+- 95% upper limit on recoverable discovery probability: **3/4,402 ≈ 6.8 × 10⁻⁴ per target**.
+- Surface-density limit for this selection: **< 0.30 deg⁻² (95%)** over 10.1 deg².
+- Valid at **100% completeness for sustained events reaching r ≤ 20.5**, and only
+  **~55% for single 30-day outbursts** (see §10) — rare-outburst systems are NOT
+  constrained at the same level.
+
+### Caveats that bound the null
+
+- **Reference-catalogue seeding.** ZTF DR light curves are built around reference-catalogue
+  seed sources. A target absent from, or misassociated with, that reference escapes the
+  lookup entirely — invisible to both the pilot and the injection test. This is the largest
+  unquantified hole in the null.
+- The injection test is **catalogue-level**: it validates cadence, depth model and
+  classifier, not source extraction, deblending or association.
+- 26% of positions returned ZTF data too sparse to classify after quality cuts; those are
+  weaker non-detections than the `NO_ZTF` majority.
+
+### What the lane produced
+
+**One object, and only via a bug fix.** J075308.47+003535.6 sits at amp 2.44 against the
+2.5 threshold — it was rejected outright until external review showed the `duty > 0.9` veto
+was discarding the lane's primary target class. It is a real ~1.9 mag sustained brightening,
+**unconfirmed as to nature** (see `docs/object_journals/nsc_97192_2072.md`, REVISION 2).
+
+That is the honest yield: **0 formal candidates, 1 sub-threshold object of uncertain class,
+from 4,403 positions over 10.1 deg².**
+
+### Verdict
+
+The selection works as specified and is now completeness-characterised, but its yield at
+this depth and footprint is consistent with zero. External review independently recommended
+abandoning `NSC r=22–24 → bright ZTF counterpart` as a primary discovery programme and
+moving to selections with a *temporal* reason to query (NSC `meas` time series rather than
+object averages), a brighter window (r ≈ 18.5–21.5), and bulk access via IRSA's HATS/S3
+endpoint rather than per-position API calls. **Lane status: CLOSED as a primary programme**;
+the tooling and the artifact catalogue carry forward.
