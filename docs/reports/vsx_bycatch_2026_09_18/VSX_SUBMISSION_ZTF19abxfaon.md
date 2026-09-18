@@ -189,3 +189,65 @@ included.
 2. Compute a contemporaneous mid-IR limit from unWISE/unTimely coadds.
 3. Specify or drop the X-ray and VLASS constraints.
 4. Optionally re-derive the faint state as a weighted flux estimate with uncertainties.
+
+
+---
+
+# REVISION 5 (2026-09-19) — the two missing checks, now run
+
+Both gaps flagged at the end of REVISION 1 have been closed. **Both outcomes favour the
+Galactic (CV) reading.**
+
+## 1. NEOWISE-R: NO mid-IR counterpart — and this test covers the bright state
+
+AllWISE (2010–11) and CatWISE2020 (2010–18) predate the 2017–18 turn-on and could not test
+it. **NEOWISE-R (2014–2024) does.** Single-exposure query within 5″:
+
+| | detections within 5″ |
+|---|---|
+| target position | **5** (over ~10 yr; W1 16.2–17.0, at/below the ~16.5 single-exposure limit) |
+| **blank-sky control, 60″ away** | **10** |
+| position scatter at target | median 3.74″, max 4.37″ |
+
+The target yields FEWER detections than adjacent blank sky, and they scatter over 3–4.4″,
+which no real point source does. **There is no mid-IR counterpart.**
+(Contrast the sibling object nsc_97192_2072, a probable AGN: 180 NEOWISE detections,
+tightly clustered, W1 = 15.4.)
+
+**Why this matters for classification.** In the bright state the object is r ≈ 18.5. Typical
+quasar colours are r − W1 ≈ 3.5–5.5 (Vega), implying **W1 ≈ 13–15** — two to three
+magnitudes above NEOWISE's limit, an unmissable detection. Even an unusually IR-weak AGN
+(r − W1 ≈ 2) would sit at W1 ≈ 16.5, marginally detectable. **A non-detection at this
+optical brightness is difficult to reconcile with an AGN**, and is exactly what a
+cataclysmic variable (hot accretion disc, no dust) predicts.
+This replaces the earlier, invalid version of the argument, which used epochs predating the
+bright state and quoted AB fluxes as Vega limits.
+
+## 2. Spectroscopy: DESI covers this field and has no spectrum here
+
+| survey | spectra within 30″ | spectra in surrounding 2×2 deg | verdict |
+|---|---|---|---|
+| **DESI DR1** (`desi_dr1.zpix`) | **0** | **1,278** (control field: 502) | **genuine null — field densely covered** |
+| SDSS DR17 (`sdss_dr17.specobj`) | 0 | **0** (control field: 1,633) | **NO COVERAGE — null is meaningless, do not cite** |
+
+**Do not quote SDSS as a spectroscopic non-detection for this object.** It does not observe
+this position. The coverage test that caught this is the same one that withdrew the FIRST
+radio claim in REVISION 1.
+
+DESI's null is real and means only that no spectrum has been taken — it is not evidence
+about the object's nature either way.
+
+## Net effect
+
+The strongest pro-AGN evidence remains the ALeRCE **stamp** classifier (AGN 0.88) and the
+DECaLS DR9 photo-z (~0.93), both of which are weak instruments here: the stamp model was
+trained on ZTF, and Legacy excludes stars from photo-z training so a stellar object can
+receive a meaningless redshift.
+
+Against them now stands a **contemporaneous, control-verified mid-IR non-detection** at an
+optical brightness where an AGN should be an easy WISE source.
+
+**The Galactic CV reading is materially strengthened.** It is still not proven — that needs
+a spectrum, and none exists — but the extragalactic alternative is now the weaker of the two.
+Recommended submission type remains **VAR** pending review; `CV:` is more defensible than it
+was in REVISION 2.
