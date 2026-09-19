@@ -16,7 +16,7 @@ Hardening carried over from the turn-on pilot post-mortem (same day):
 import csv, io, json, math, os, subprocess, sys, threading, time, collections
 import numpy as np
 from astropy.timeseries import BoxLeastSquares
-from harmonic import refine_period
+from harmonic import refine_period, top_peaks
 
 OUT = "eb_out"; os.makedirs(OUT, exist_ok=True)
 RES = f"{OUT}/assess.jsonl"
@@ -83,12 +83,16 @@ def analyse(t):
         res = bls.power(periods, durations, objective="snr")
     except Exception as e:
         return dict(source_id=t["source_id"], status="BLS_FAIL", err=str(e)[:80])
-    i = int(np.argmax(res.power))
-    P0 = float(res.period[i])
+    # Seed from the top-5 distinct periodogram peaks, not the global max alone:
+    # the single-max approach was GRID-DEPENDENT and lost our own template at
+    # 5,000 and 7,000 grid points (see RESEARCH_LOG 2026-09-19).
+    peaks = top_peaks(res.period, res.power, k=5)
+    P0 = peaks[0]
     # BLS fits integer MULTIPLES of a short-duty period; adopt the max-snr sub-harmonic
     # and resolve the EB half-period ambiguity. Verified: recovers our own filed
     # discovery ZTF18abxnwmb to 0.0001% (raw BLS returns 3x its true period).
-    P, hsnr, hn, hinfo = refine_period(mjd, flux, ferr, P0, durations)
+    P, hsnr, hn, hinfo = refine_period(mjd, flux, ferr, P0, durations,
+                                       extra_seeds=tuple(peaks[1:]))
     res = bls.power(np.array([P]), durations, objective="snr")
     i = 0
     dur = float(res.duration[i])
