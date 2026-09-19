@@ -403,3 +403,67 @@ moving to selections with a *temporal* reason to query (NSC `meas` time series r
 object averages), a brighter window (r ≈ 18.5–21.5), and bulk access via IRSA's HATS/S3
 endpoint rather than per-position API calls. **Lane status: CLOSED as a primary programme**;
 the tooling and the artifact catalogue carry forward.
+
+
+---
+
+## 12. SELECTION CORRECTED (2026-09-19) — the null covered 45% of its own target population
+
+The selection used `nsc_dr2.object` with `mjd + deltamjd/2 < 58119` to require a pre-ZTF
+archival epoch. **Both columns are aggregates over ALL bands**, so the cut used a multi-band
+epoch aggregate to test a single-band temporal condition: an object whose r-band history is
+entirely pre-2018 was excluded if it happened to have, say, a z-band measurement in 2019.
+
+**v2 states the condition directly on dated r-band `meas` rows** (script:
+`turnon_select_v2.py`):
+
+```sql
+JOIN nsc_dr2.meas m ON m.objectid = o.id
+WHERE m.filter = 'r' AND m.mjd < 58119
+GROUP BY o.id HAVING COUNT(m.mjd) >= 2 AND AVG(m.mag_auto) BETWEEN 22 AND 24
+```
+
+### What the flaw actually did — incompleteness, not contamination
+
+Decomposed on a 0.2×0.2° test box:
+
+| cut | surviving |
+|---|---|
+| base (rmag 22–24, class_star > 0.5, g−r < 0.6) | 122 |
+| + `ndetr >= 2` | 97 |
+| + `ndetg >= 1` | 97 (no further loss) |
+| **+ `mjd + deltamjd/2 < 58119`** | **41** |
+| dated `meas` selection | **96** |
+
+**Zero objects selected by v1 fail the dated test** — the cut produced no false positives.
+It discarded **58%** of otherwise-valid objects on that box.
+
+### Full-footprint impact
+
+| tile | v2 (dated) | v1 (object) | ratio |
+|---|---|---|---|
+| 118.3_10.4 | 2,835 | 959 | 2.96 |
+| 119.3_6.1 | 2,603 | 1,287 | 2.02 |
+| 120.0_8.0 | 1,906 | 434 | 4.39 |
+| 118.5_0.0 | 1,857 | 1,672 | 1.11 |
+| **116.0_12.0** | **520** | **26** | **20.00** |
+| 84.0_0.1 | 10 | 9 | 1.11 |
+| 83.0_-3.9 | 14 | 16 | 0.88 |
+| **TOTAL** | **9,745** | **4,403** | **2.21** |
+
+### CORRECTED NULL
+
+The lane assessed 4,403 positions of the **9,745** meeting its own stated criteria — a
+completeness of **45%** with respect to its target population. The per-searched-target limit
+is unchanged (0 detections in 4,402 → 95% UL 6.8 × 10⁻⁴), but the population statement is not:
+
+- **Surface-density limit corrected from < 0.30 deg⁻² to < 0.66 deg⁻² (95%)**, i.e. a factor
+  2.2 weaker, scaling 3 detections to the full population (3 × 9745/4403 ÷ 10.1 deg²).
+- The null remains valid and the artifact analysis is unaffected — the missing 55% were never
+  looked at, so they can only have hidden candidates, not created them.
+
+**LESSON: never use a multi-band aggregate column to test a single-band condition.** The
+object-table `mjd`/`deltamjd` pair describes the whole record; a statement about r-band
+history has to be made on r-band rows. This is the same class of error as the earlier
+epoch-shuffle and "average vs dated" problems — a summary column silently standing in for
+the measurement it summarises.
