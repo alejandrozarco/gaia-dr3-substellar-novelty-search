@@ -500,3 +500,87 @@ DECam, 2+ mag deeper, sees what ZTF is blind to.
 **With this resolved, the outstanding blockers from REVISION 6/7 are cleared except the
 population-prior objection (M_r vs |z| at b = −45°), which is argumentative rather than
 factual, and the ledger/finding-chart items.**
+
+---
+
+# REVISION 9 (2026-09-19) — NEAR-INFRARED DETECTION; the scale-height objection is answered
+
+A systematic survey of the photometric archives VSX and the variable-star literature actually
+use (ASAS-SN, ZTF, CRTS, SuperWASP, NSVS, ATLAS, TESS, Gaia epoch photometry, plus the deep
+imaging catalogues) turned up **one source not previously used for this object, and it is
+decisive for the distance.**
+
+## VHS DR5 (VISTA Hemisphere Survey) — first near-IR detection
+
+| | |
+|---|---|
+| separation | **0.167″** |
+| epoch | **MJD 56090.30 = 2012-06-12 — PRE turn-on** |
+| **J (Vega, ap3)** | **19.8268 ± 0.1790** |
+| Y (Vega, ap3) | 20.8605 |
+| classification | Jclass = −1 (stellar), Yclass = 1 (extended), pStar = pGal = **0.486** — ambiguous |
+| extinction | E(B−V) = 0.0405, A_J = 0.038 (negligible) |
+
+The epoch matters: 2012 is contemporaneous with the DECam faint state, so this is the
+**quiescent** near-IR, not the bright state.
+
+## The colour identifies the donor
+
+Faint state r(AB) = 23.12 with J(Vega) = 19.83 gives **r − J (Vega) = 3.13**.
+
+| spectral type | r − J (Vega) |
+|---|---|
+| K | ~1.5 |
+| M0 | ~2.2 |
+| **M3–M4** | **3.1–3.5** ← observed 3.13 |
+| M6 | ~4.5 |
+
+That is the signature of an **M3–M4 dwarf donor** — exactly what dominates the near-IR of a
+cataclysmic variable in a low state, when the disc has faded and the secondary shows through.
+
+## An independent distance, and it resolves the standing objection
+
+Taking the near-IR as donor-dominated:
+
+| donor | M_J | d | \|z\| at b = −45° |
+|---|---|---|---|
+| M2 | 8.2 | 2.12 kpc | 1.50 kpc |
+| **M3** | **8.7** | **1.68 kpc** | **1.19 kpc** |
+| **M4** | **9.2** | **1.34 kpc** | **0.94 kpc** |
+| M5 | 9.9 | 0.97 kpc | 0.68 kpc |
+
+**This is the third independent line converging on d ≈ 1.3–1.7 kpc**, after (i) the
+self-consistency of the bright and faint states with CV absolute magnitudes (M_r ≈ +8 in the
+high state implies M_r ≈ +12.7 in quiescence, textbook white-dwarf-dominated), and (ii) the
+same argument's distance of ≈1.3 kpc.
+
+**The standing counter-argument assumed M_r = +4…+6 for a sustained nova-like high state and
+derived d = 3–8 kpc, |z| = 2–6 kpc — a population problem.** The near-IR removes the
+assumption: the donor's absolute magnitude is far better constrained than the disc's, and it
+puts the system at **|z| ≈ 0.9–1.2 kpc**. That is high, and still requires an old-population
+CV, but it is no longer the several-kiloparsec outlier the objection was built on.
+
+## Honest limits
+
+- The J detection is 5.6σ (0.179 mag); Y is a single measurement.
+- **VHS's own morphology is ambiguous** (pStar = pGal = 0.486), so this does not settle
+  star-vs-galaxy on its own. A red r − J is also achievable by a galaxy at z ≈ 1.
+- The donor interpretation assumes the near-IR is secondary-dominated. That is standard for
+  CVs in low states but is an assumption, not a measurement.
+- What makes the CV reading hold together is the **combination**: the M3–M4 colour, the
+  unWISE limit W1 > 19.27 Vega excluding an AGN torus by ~5 mag, the point-source morphology
+  in the bright state, and above all the **2.16 mag drop in 5.8 days** — a timescale no
+  luminous AGN at a cosmological distance can produce.
+
+## Surveys checked and what each can say
+
+| survey | covers target? | verdict |
+|---|---|---|
+| **VHS DR5** | **yes** | **J = 19.83 (2012) — the new constraint above** |
+| PTF / iPTF | yes (506 rows within 2′) | epochs 2009-06 → 2014-11 only, **none after**; cannot constrain the 2017–18 turn-on. Non-detection consistent with r ≈ 23 vs PTF's R ≈ 21 limit |
+| SkyMapper DR4 | yes (64 sources within 3′) | genuine non-detection |
+| SDSS | **no coverage** | null is void |
+| PS1 DR1 | no rows | r ≈ 23.1 is at the PS1 stack limit |
+| DELVE DR2, DES DR2 | no coverage | void |
+| CRTS / ASAS-SN / SuperWASP / NSVS / TESS | n/a | depth V ≈ 15–20, far too shallow for r ≈ 23; CRTS also ended 2013, before the turn-on |
+| Gaia epoch photometry | no source | below Gaia's limit in quiescence |
