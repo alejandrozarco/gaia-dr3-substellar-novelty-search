@@ -11,8 +11,10 @@ Period: none detected. Deep search 2026-07-15 on 1,687 de-trended ZTF forced-pho
   epochs (8.1 yr): Lomb-Scargle 30 min - 2 d null in g/r/i (one marginal 46.6-min r-band
   alias family refuted by split-sample + color tests); BLS eclipse search 1.4-48 h null;
   injection-recovery sensitivity: coherent semi-amplitude >=0.06 mag (bright state)
-  would have been detected at P = 1.5-4 h. No eclipses; low-inclination system or
-  non-periodic variable.
+  would have been detected at P = 1.5-4 h. No eclipses DETECTED under this sampling
+  and these search assumptions — this does NOT establish low inclination, nor that the
+  system is aperiodic. (Corrected 2026-09-19. NOTE: this draft is SUPERSEDED by
+  docs/reports/vsx_bycatch_2026_09_18/VSX_SUBMISSION_ZTF19abxfaon.md — do not file this one.)
 Epoch: turn-on between MJD 57987 and 58285.400 (2017-08-22 .. 2018-06-16; first ZTF detection zr=21.24+/-0.26, first zr<=20.5 at MJD 58363.27)
 Discovery references: ZTF alert stream (ZTF19abxfaon, first alert MJD 58732.230);
   Rubin/LSST diaObject 170587115976392822 (Fink flag 2026-07).

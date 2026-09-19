@@ -27,7 +27,8 @@ median (removes 5-mag state cycling + the two reference-frame offsets per band);
 
 No coherent periodicity with semi-amplitude ≳0.06 mag at hour-scale periods, and no
 eclipses. This EXCLUDES an eclipsing CV and high-amplitude superhumpers at these
-periods over the 8-yr baseline, but is fully consistent with a low-inclination CV
-(orbital modulation below ~0.06 mag is common) — or a non-CV interpretation.
+periods over the 8-yr baseline. **CORRECTED 2026-09-19:** an earlier version read this
+as "fully consistent with a low-inclination CV". That is a logical error — no eclipses were DETECTED under this sampling and these search assumptions. This does NOT establish low inclination — moderate inclinations can be non-eclipsing and narrow or shallow eclipses can be missed — and a photometrically aperiodic light curve does not imply the system lacks an orbital period. Orbital modulation below ~0.06 mag is common in CVs at a range of inclinations, so the
+null constrains the searched amplitude/period space and nothing about geometry.
 Spectroscopy remains the discriminator. VSX/AstroNote drafts updated to carry the
 quantified null instead of "Lomb-Scargle null".

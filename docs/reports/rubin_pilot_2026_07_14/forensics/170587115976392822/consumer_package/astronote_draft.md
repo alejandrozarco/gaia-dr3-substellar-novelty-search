@@ -35,7 +35,9 @@ SED (i=20.8 vs r=23.1) is variability aliasing: the i coadd epochs post-date the
 over 8.1 yr; Lomb-Scargle 30 min - 2 d with bootstrap thresholds, BLS eclipse
 search 1.4-48 h, injection-recovery calibration) finds no coherent periodicity:
 any modulation with semi-amplitude >~0.06 mag at hour-scale periods is excluded,
-as are eclipses — consistent with a low-inclination system.
+as are eclipses at those periods. **no eclipses were DETECTED under this sampling and these search assumptions. This does NOT establish low inclination — moderate inclinations can be non-eclipsing and narrow or shallow eclipses can be missed — and a photometrically aperiodic light curve does not imply the system lacks an orbital period.** (Corrected 2026-09-19: an earlier
+version inferred a low-inclination system from the absence of eclipses, which is a
+logical error.)
 Two DECam exposures 13 min apart (MJD 58372.098/58372.107, r=23.1/22.0, vs ZTF
 r~20.3 days before/after) suggest possible deep brief dips, pending pixel-level
 verification.
