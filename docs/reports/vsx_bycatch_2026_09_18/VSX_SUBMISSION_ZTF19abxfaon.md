@@ -1,4 +1,4 @@
-# VSX submission draft — ZTF19abxfaon (uncatalogued high-amplitude variable, one observed transition)
+# VSX submission draft — ZTF19abxfaon (uncatalogued high-amplitude state-changing variable)
 **DRAFT ONLY — filing is the USER's action via their AAVSO/VSX account.**
 Prepared 2026-09-18 to the same standard as ZTF18abxnwmb. Supersedes the 2026-07-15
 draft in `rubin_pilot_2026_07_14/forensics/170587115976392822/consumer_package/vsx_draft.md`.
@@ -11,10 +11,10 @@ draft in `rubin_pilot_2026_07_14/forensics/170587115976392822/consumer_package/v
 | RA (J2000) | **21 47 18.80** (326.828336) — Legacy Survey DR10 tractor, Gaia-referenced astrometry |
 | Dec (J2000) | **−13 28 28.9** (−13.474691) |
 | Astrometric ID | **LS DR10 ls_id 10995383192785753** (type PSF, sep 0.04″ from the Rubin position). NOTE: **no Gaia DR3, 2MASS, UCAC4, GSC 2.3, PS1 DR1 or CatWISE counterpart** — no counterpart is FOUND in any of them (optical faintness alone does not establish infrared faintness, and catalogue absence has several possible causes), so LS DR10 is the only astrometric anchor available (manual §III.a permits "another astrometric catalog"). |
-| Variability type | **VAR** recommended (see REVISION 2). Large-amplitude variable showing a transition from a sparsely sampled faint state to prolonged activity; **CV candidate**, extragalactic origin unresolved. `CV:` is offered only if the moderator prefers it. **Z Cam is withdrawn** (no dwarf-nova outbursts with standstills are observed); **VY Scl is not demonstrated** (though a rise does not exclude it, since a low state could predate our coverage) |
-| Maximum (brightest) | **17.98 r** (ZTF zr, MJD 59218.078 = 2021-01-04) |
-| Minimum (faintest) | **23.44 r** (DECam r via NSC DR2, MJD 56511.240 = 2013-08-07) |
-| Amplitude | **5.46 mag observed range** (23.44 − 17.98; ≈153× in flux). This is a **cross-system observed range, NOT a single-passband amplitude**: max is ZTF zr, min is DECam r. Quote both filters and uncertainties in the remarks |
+| Variability type | **VAR**, with `CV:` proposed in the remarks. The record (REVISION 7) is a turn-on before mid-2018 followed by **repeated ~2-mag reversals** between ~19 and ~21, never returning to the pre-2018 level — VY Scl-like state changing. **Z Cam remains withdrawn** (no dwarf-nova outbursts with standstills). Galactic origin argued from the mid-IR limit, not asserted |
+| Maximum (brightest) | **18.34 r** (ZTF zr, MJD 60577.254 = 2024-09-21). **The previously quoted 17.98 is WITHDRAWN** — see REVISION 7: it sits on the single shallowest of 272 zr frames (limitmag 18.29 vs median 20.69) with sharp +0.682 against −0.089…+0.026 for its peers, at airmass 2.03. The adopted value sits on a limitmag 21.04 frame (2.70 mag above the limit), sharp −0.062, with a confirming partner frame at 18.405 seconds later |
+| Minimum (faintest) | **23.12 ± 0.08 r** — Legacy Survey DR10 **coadd** (0.564 ± 0.041 nMgy, 13.9σ), which averages the pre-2018 DECam imaging. Preferred over the single NSC exposure of 23.44 (MJD 56511.240), which is one measurement at the frame limit. Both are quoted in the remarks |
+| Amplitude | **≈ 4.8 mag observed range** (23.12 − 18.34 ≈ 78× in flux). Revised down from the withdrawn 5.46 (REVISION 7). Still a **cross-system range, NOT a single-passband amplitude** — max is ZTF zr, min is DECam r via the LS DR10 coadd. Quote both filters and uncertainties |
 | Period | **NONE.** Deep search (1,687 de-trended ZTF forced-photometry epochs, 8.1 yr): Lomb–Scargle 30 min–2 d null in g/r/i (one marginal 46.6-min r alias refuted by split-sample + colour tests); BLS eclipse search 1.4–48 h null. **Injection–recovery: 20/20 sinusoidal signals of semi-amplitude ≥0.06 mag at P = 1.5–4 h were recovered** — a 95% binomial lower bound of 0.83 on that recovery rate, for those injected waveforms/phases only; it is NOT a completeness proof across all periods, phases, aliases or eclipse duty cycles. **No eclipses were DETECTED under this sampling and these search assumptions** — this does not imply low inclination, and an aperiodic light curve does not imply the system lacks an orbital period. |
 | Epoch | Turn-on constrained between **MJD 57987 (2017-08-22, DECam g = 23.45)** and **MJD 58285.400 (2018-06-16, ZTF zr = 21.24 ± 0.26)**; first zr ≤ 20.5 at MJD 58363.27 |
 | Discoverer / submitter | A. Keur (independent) |
@@ -331,3 +331,105 @@ can receive a meaningless redshift. That weakens the pro-AGN side.
    route, rather than filing and hoping disclosure settles eligibility.
 
 **Status: HELD. Not filable in its current state.**
+
+
+---
+
+# REVISION 7 (2026-09-19) — second independent review (Fable); three verified corrections
+
+A second, independent adversarial review was run in parallel with the gpt-6-astra pass,
+pointed at the repository files rather than at a summary. It re-derived the numbers from raw
+photometry and found three substantive errors, **all verified here before acceptance**.
+
+## 1. The quoted MAXIMUM was a bad measurement — WITHDRAWN
+
+| epoch | mag | limitmag | mag−lim | sharp | airmass |
+|---|---|---|---|---|---|
+| MJD 59218.078 (**old max, withdrawn**) | 17.976 | **18.29** | −0.31 | **+0.682** | 2.03 |
+| MJD 60577.254 (**adopted max**) | 18.337 | 21.04 | −2.70 | −0.062 | 1.60 |
+| MJD 60577.254 (partner frame) | 18.405 | 21.34 | −2.94 | +0.026 | 1.38 |
+
+`limitmag 18.29` is **the shallowest of all 272 clean zr frames** (median 20.69; next
+shallowest 18.77), and `sharp +0.682` is far outside the −0.089…+0.026 spread of the next
+five brightest epochs.
+**This is the identical diagnostic signature — shallow frame plus anomalous `sharp` — that
+this project used to convict a turn-on-lane candidate as a single-epoch artifact on the same
+day (commit 1c1263b). It was applied there and missed here.**
+
+Consequence: **maximum 17.98 → 18.34; amplitude 5.46 → ≈ 4.8.**
+
+## 2. "State cycling" was REAL — REVISION 2 over-corrected, and is reversed
+
+REVISION 2 withdrew the state-cycling description on a reviewer's assertion that it
+"misdescribed a single observed transition." **That assertion is false against our own data.**
+Clean ZTF zr yearly medians:
+
+| 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|---|---|
+| 20.42 | 19.72 | 18.89 | 18.63 | **20.61** | 19.31 | 19.00 | **21.33** |
+
+A turn-on, then **~2-mag reversals in 2022 and 2025 with recoveries in between**, never
+returning to the pre-2018 level (~23). That is state changing, and it is VY Scl-like.
+**Lesson, and the worst error in this file's history: a confident reviewer assertion was
+accepted over data already in hand. Verify the referee against the data, not only the data
+against the referee.**
+
+## 3. The strongest Galactic evidence was mislabelled "not yet done"
+
+The draft said a contemporaneous mid-IR limit "requires coadd forced photometry
+(unWISE/unTimely), **not yet done**" — two lines after quoting the LS DR10 forced W1/W2,
+which **is** exactly that product. LS DR10 force-photometers all imaging through NEOWISE-R
+year 7 in the unWISE maps.
+
+| | |
+|---|---|
+| `nobs_w1` | **192** |
+| flux_w1 | 1.425 ± 0.545 nMgy (2.6σ) |
+| **3σ limit** | **W1 > 19.27 (Vega)**, on a 2010–2020 coadd including ~2.5 yr of bright state |
+
+Expected W1 at r ≈ 19: quasar with a dust torus ≈ **14.3** (excluded by ~5 mag); IR-weak AGN
+≈ **16.3** (excluded by ~3 mag); hot dust-free accretion disc ≈ 17.8 or fainter (consistent).
+The measured colour is **r − W1 ≈ −0.6** — very blue, which is what an accretion disc looks
+like and what an AGN does not. Even allowing for coadd dilution of the bright state, a normal
+torus would appear at ~80σ.
+
+**This, not the spectrum, is the primary Galactic argument. Promoted accordingly.**
+
+## 4. Further corrections applied
+
+- **Photo-z was misquoted.** Not "z ≈ 0.93": LS DR10 gives median **1.118**, mean 1.267,
+  σ 0.430, **95% range 0.778–2.270**, `training = f`, no spectroscopic z. A galaxy-trained
+  estimate with that range on a **PSF** source is content-free. Quote the range or drop it.
+- **ZTF reference epochs, previously "OUTSTANDING", resolved in one query.** Both zr
+  references (field 391 ccd 4 q 3; field 340 ccd 14 q 2) were built from 28 and 23 frames,
+  **2018-06-07 → 2018-11-21** — entirely post-turn-on, containing the source at its 2018
+  level. Therefore **a ZFPS "non-detection" means "at the 2018 reference level", not
+  "faint"**, and ZFPS difference magnitudes are biased faint. Any ZFPS-derived magnitude or
+  injection sensitivity must be recomputed before use, or omitted.
+- **Minimum re-derived** from the LS DR10 coadd (23.12 ± 0.08, 13.9σ) rather than a single
+  NSC exposure at the frame limit.
+- **The MJD 58372 DECam pair must be disclosed**: r = 23.13 and 22.03 thirteen minutes apart
+  on 2018-09-11, while ZTF measured 20.34/20.36 three days earlier. Either the source drops
+  ≥2.8 mag within hours, or NSC single-exposure photometry is unreliable by 1–3 mag here —
+  and the same photometry supplied the old minimum. **Unresolved; state it rather than drop it.**
+- The inclination error ("consistent with a low-inclination system") still survives in
+  `rubin_pilot_2026_07_14/forensics/170587115976392822/consumer_package/astronote_draft.md`,
+  in `RESEARCH_LOG.md`, and in the object journal. **If the AstroNote is ever sent, the error
+  ships.** Fix before any use.
+
+## Net effect on classification
+
+The Galactic CV reading is **materially stronger** than at REVISION 6: the object genuinely
+cycles between states, the mid-IR coadd limit excludes a dusty AGN by ~5 mag, the source is
+PSF-like, and the photo-z that anchored the extragalactic case is content-free.
+
+The one substantive counter-argument remains the **population prior**: a sustained
+accretion-disc high state at M_r ≈ +4…+6 puts r ≈ 19 at d ≈ 3–8 kpc and |z| ≈ 2–6 kpc at
+b = −45°, where nova-likes are rare. The reviewer explicitly rejects the escape offered in
+an earlier note — that a less luminous disc sits closer — on the grounds that a disc that
+faint does not hold r ≈ 19 for eight years. **That objection stands unanswered and must be
+carried into any filing.**
+
+**Status: still HELD, but the blocking issue has changed.** It is no longer "we need a
+spectrum" — this reviewer's position is that no spectrum is needed to file a **VAR**. The
+remaining blockers are the plot regeneration, the MJD 58372 pair, and the ledger rows.
