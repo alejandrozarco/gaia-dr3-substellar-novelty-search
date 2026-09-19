@@ -109,9 +109,33 @@ def analyse(t):
     # duty floor: a fit pinned at the minimum duration on a long period is BLS
     # fitting noise spikes, not an eclipse (every WEAK hit in the opening batch
     # had duty ~0.001 = duration 0.012 d, the grid edge). n_inecl floor likewise.
+    # SHAPE TEST (added after the first CANDIDATE turned out to be a contact binary):
+    # the hold-out verifies PERIODICITY, not MORPHOLOGY. BLS happily fits a segment of a
+    # sinusoid and the hold-out passes, because sinusoidal modulation is genuinely
+    # periodic. A detached eclipse of duty d puts ~d of the phase bins in eclipse; a
+    # contact binary / spotted rotator puts ~half of them there.
+    NB = 24
+    phb = ((mjd - t0)/P) % 1.0
+    prof = np.array([np.median(mag[(phb >= b/NB) & (phb < (b+1)/NB)])
+                     if ((phb >= b/NB) & (phb < (b+1)/NB)).sum() >= 5 else np.nan
+                     for b in range(NB)])
+    fin = np.isfinite(prof)
+    if fin.sum() >= 12:
+        lvl = float(np.nanmedian(prof))
+        rng = float(np.nanmax(prof) - np.nanmin(prof))
+        frac_dev = float(np.sum(np.abs(prof[fin] - lvl) > 0.3*rng)/fin.sum())
+        rec_shape = dict(frac_bins_deviating=round(frac_dev, 3))
+    else:
+        frac_dev = None; rec_shape = {}
+    # Only TRUE sampling aliases. Day FRACTIONS (0.8, 0.4, 2/3 ...) are heavily
+    # populated by real short-period binaries - rejecting them would discard the
+    # signal. The shape test above is the correct discriminator for those.
     ALIAS = [0.5, 0.9973, 1.0, 1.0027, 2.0]
     if any(abs(P-a)/a < 0.004 for a in ALIAS):
         rec["status"] = "DAY_ALIAS"; return rec
+    rec.update(rec_shape)
+    if frac_dev is not None and frac_dev > max(0.25, 3*duty):
+        rec["status"] = "CONTINUOUS_MODULATION"; return rec
     if (depth < 0.045 or snr < 10 or not (0.005 <= duty <= 0.15)
             or len(nights) < 3
             or int(inecl.sum()) < max(4, 0.5*len(best)*duty)):
