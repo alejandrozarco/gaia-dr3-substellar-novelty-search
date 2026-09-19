@@ -433,3 +433,70 @@ carried into any filing.**
 **Status: still HELD, but the blocking issue has changed.** It is no longer "we need a
 spectrum" — this reviewer's position is that no spectrum is needed to file a **VAR**. The
 remaining blockers are the plot regeneration, the MJD 58372 pair, and the ledger rows.
+
+
+---
+
+# REVISION 8 (2026-09-19) — the MJD 58372 DECam pair is RESOLVED
+
+The last blocking item. Both parts resolve, and the second one is **new evidence for the
+classification**.
+
+## Part 1 — the 13-minute 1.1 mag difference is INSTRUMENTAL
+
+`c4d_180911_022036_ooi_r_ls9` → r = 23.133 ± 0.125; `c4d_180911_023339_ooi_r_ls9`
+→ r = 22.026 ± 0.073, 13 minutes later. Both `flags = 0`, both real detections, formally
+a 7.6σ difference.
+
+**Control: 368 objects measured in BOTH exposures within ~6′ of the target.**
+
+| mag | n | scatter (A−B) | max \|A−B\| |
+|---|---|---|---|
+| 17–19 | 27 | 0.007–0.017 | 0.05 |
+| 20 | 34 | 0.070 | 0.36 |
+| 21 | 67 | 0.111 | 0.43 |
+| 22 | 125 | 0.221 | 0.62 |
+| **23** | **108** | **0.282** | **1.107** |
+
+Our target's +1.107 **is the maximum of the mag-23 bin**, and **1 of 305** faint objects
+exceeding 1.0 mag. Against the empirical scatter that is 3.9σ — about the expected extreme
+of 305 draws. **No astrophysical variability is required; this is the tail of faint-end
+single-exposure scatter.**
+
+Adopted combined value: weighted mean **r = 22.31 ± 0.06 (formal)**, and with the empirical
+exposure-pair systematic, **r ≈ 22.3 ± 0.3**.
+
+## Part 2 — the DECam-vs-ZTF discrepancy is CENSORING, not conflict
+
+ZTF said zr = 20.146 ± 0.147 on MJD 58366.32, **1.13 mag above that frame's limit — a secure
+detection.** DECam then measured r ≈ 22.3 on MJD 58372.10. That looked irreconcilable.
+
+It is not. **ZTF DR light curves list only DETECTIONS.** With a limiting magnitude near
+20.5–21.3, ZTF *cannot* record this source at r ≈ 22–23 — those epochs produce no row at all.
+DECam, 2+ mag deeper, sees what ZTF is blind to.
+
+| MJD | instrument | r | note |
+|---|---|---|---|
+| 58363.27 | ZTF | 20.48 | at frame limit |
+| **58366.32** | **ZTF** | **20.15** | **secure, 1.13 mag above limit** |
+| 58369.36 | ZTF | 20.34 / 20.36 | |
+| **58372.10** | **DECam** | **≈ 22.3 ± 0.3** | **below ZTF's limit — invisible to ZTF** |
+| 58378.02 | DECam | z = 21.39 | recovering |
+| 58406.02 | DECam | z = 21.49 | |
+
+**This records a real ~2.2 mag drop in 5.8 days, and a recovery within ~6 days.**
+
+### Why this matters for the classification
+
+1. **It is direct evidence of fast, deep state changes** — exactly VY Scl behaviour, and it
+   strengthens the REVISION 7 reinstatement of state changing over "one transition".
+2. **It shows the ZTF light curve is CENSORED, so every ZTF-only statement about this object
+   is biased bright.** The annual zr medians in REVISION 7 are medians *of detections*; the
+   true low states are deeper than they appear. "Never returning to the pre-2018 level"
+   remains supported by the DECam data, but must not be argued from ZTF alone.
+3. The pair should be **disclosed and explained** in the submission, not dropped — it is the
+   single best-sampled low-state measurement in the record.
+
+**With this resolved, the outstanding blockers from REVISION 6/7 are cleared except the
+population-prior objection (M_r vs |z| at b = −45°), which is argumentative rather than
+factual, and the ledger/finding-chart items.**
