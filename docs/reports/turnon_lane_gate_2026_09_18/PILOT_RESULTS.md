@@ -467,3 +467,43 @@ object-table `mjd`/`deltamjd` pair describes the whole record; a statement about
 history has to be made on r-band rows. This is the same class of error as the earlier
 epoch-shuffle and "average vs dated" problems — a summary column silently standing in for
 the measurement it summarises.
+
+---
+
+## 13. CORRECTED-SELECTION RE-RUN COMPLETE (2026-09-20) — the full stated population is now searched
+
+The 5,373 objects that the dated `meas` selection (§12) added were assessed with the
+corrected pipeline (`turnon_pilot3.py`; amplitude now from the dated pre-ZTF r-band mean,
+not the object-table average). Combined with the 4,372 overlap objects already assessed in
+§11, **all 9,745 objects meeting the lane's stated criteria have now been searched.**
+
+| status (5,373 new objects) | n |
+|---|---|
+| NO_ZTF | 3,431 |
+| ZTF_SPARSE | 1,848 |
+| BLEND | 77 |
+| NO_TURNON | 16 |
+| SINGLE_NIGHT | 1 |
+| ZTF_ERROR | 0 |
+| **CANDIDATE** | **0** |
+
+The blend channel again dominates what does get a ZTF counterpart (77 of 94 classifiable),
+and the centroid test removed every one of them automatically.
+
+### The null, now at full completeness with respect to its own population
+
+- **0 sustained turn-ons among 9,744 searched targets** (9,745 minus the single hard
+  query error in §11). 95% upper limit **3.1 × 10⁻⁴ per target**.
+- Surface density over 10.1 deg²: **< 0.30 deg⁻² (95%)** — the same number §11 quoted,
+  but that quote was only valid for 45% of the population; it is now valid for 100%.
+- Completeness caveats unchanged from §10–11: 100% for sustained events reaching r ≤ 20.5,
+  ~55% for single 30-day outbursts, catalogue-level injection only, ZTF reference-seeding
+  hole unquantified.
+
+### What the lane produced in total
+
+9,745 positions over 10.1 deg², two pipeline generations, five pipeline bugs found by
+controls, **0 formal candidates**, and **one sub-threshold object of real interest**
+(J075308.47+003535.6, amp 2.44 vs a 2.5 cut; probable z ≈ 1 AGN turn-on, image-level
+confirmed, nature unconfirmed). **Lane CLOSED.** Tooling, the artifact catalogue, and the
+astrometric blend test carry forward.
