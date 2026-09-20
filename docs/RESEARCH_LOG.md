@@ -851,3 +851,47 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - **VALIDATION NOW PASSES ON TWO OBJECTS WITH DIFFERENT PERIOD STRUCTURE.** ZTF18abxnwmb (our filing, P=3.727023) recovers on grids of 5,000 / 7,000 / 9,000 / 12,000 points at 0.0001–0.0006% error; AISV-BD J337.653+6.035 (VSX, P=9.216540) recovers at **0.003%**, correctly DOUBLED, with its two eclipse depths differing at **7.8σ** (0.343 vs 0.403) — a genuine primary/secondary pair. An earlier crude measurement of those depths gave only 1.7σ and made the pair look degenerate; the difference was a poor epoch and duration, not the data.
 - **This is a pipeline RECOVERY of a catalogued EA, which is exactly the method validation CLAUDE.md asks for** — the lane demonstrably finds real detached eclipsing binaries of the target morphology, and the novelty front-filter correctly identified this one as known.
 - **LESSON: a template test must be run on the PIPELINE'S OWN configuration, not a convenient one.** The template passed at 12,000 grid points and failed at 7,000 — and the hunt used 7,000. Testing a pipeline under settings it does not actually use is not a test. Grid resolution, thread count and any tuned constant are part of the thing under test.
+
+## 2026-09-20 — EB hunt: the hold-out gate was rejecting our own filed discovery (0/11,938 was an artifact)
+
+The shallow-EB hunt reached 11,938 of 20,007 objects and had returned **zero** candidates:
+264 WEAK, no CANDIDATE. Among the WEAK were objects that look nothing like marginal
+detections — Gaia DR3 2709919102994455168 at P=0.842 d, depth 0.32 mag, **58 distinct
+eclipse nights, SNR 205**. A one-sided verdict distribution of that shape is a bug signal,
+not a null.
+
+**Diagnosis.** Histogramming the failure clauses: **229 of 264 (87%) failed on the period
+clause alone**, and 38 of those sat at clean harmonic ratios (×2, /3, /4, /8…). The
+hold-out re-fitted BLS on the first half of the light curve and took the **raw periodogram
+argmax**, then compared it against `P` from the main path — which **is** harmonically
+refined. It was comparing a refined period to an unrefined one: exactly the error the
+harmonic module was written to correct.
+
+**Proof, on our own filed discovery.** Running the broken hold-out on ZTF18abxnwmb
+(2MASS J22342534+0806596, P=3.727023 d, accepted by VSX):
+
+    OLD hold-out raw argmax on half 1 : P1 = 1.863422 d
+    full-fit refined period           : P  = 3.727043 d
+    ratio                             : 0.5000
+    |P1-P|/P = 0.5000, gate required < 0.02  ->  WEAK
+
+**The gate rejected our own known-good, catalogued discovery**, at exactly the half-period.
+
+**Fix.** The half-baseline fit now runs the *same* pipeline as the full fit (`top_peaks` +
+`refine_period`), and the period clause accepts any low-order harmonic (×1,2,3,4 and
+/2,3,4) — a half-baseline fit legitimately lands on 2P or P/2 for an EB with unequal
+minima. The test's teeth are unchanged and are the right ones: ≥3 in-eclipse epochs at the
+predicted phase, at >0.5× the full-fit depth, in data that played no part in finding it.
+Post-fix the template returns **CANDIDATE**, hold-out ratio 0.9999, period correct to
+0.0005%.
+
+395 objects (264 WEAK + 6 ZTF_ERROR + 125 NO_ZTF) re-queued; 11,543 pre-hold-out verdicts
+(NO_ECLIPSE / CONTINUOUS_MODULATION / SPARSE / DAY_ALIAS) retained, as those are decided
+before the hold-out runs and are unaffected. Run resumed, 8,464 to go.
+
+**Lesson, now banked in memory.** *A gate added after the last template test is untested.*
+The template test existed and passed — it had only ever been run against the main path, and
+the hold-out was added afterwards. This is the **fourth** filter in this lane to silently
+delete the target class (after the duty>0.9 veto, the BLS sign inversion, and
+grid-dependent period seeding). Every one presented as a clean null rather than an error.
+Assert on the FINAL verdict string, end-to-end, not on an intermediate quantity.
