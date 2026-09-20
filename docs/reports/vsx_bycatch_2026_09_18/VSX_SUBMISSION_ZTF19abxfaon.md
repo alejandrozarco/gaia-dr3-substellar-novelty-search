@@ -584,3 +584,88 @@ CV, but it is no longer the several-kiloparsec outlier the objection was built o
 | DELVE DR2, DES DR2 | no coverage | void |
 | CRTS / ASAS-SN / SuperWASP / NSVS / TESS | n/a | depth V ≈ 15–20, far too shallow for r ≈ 23; CRTS also ended 2013, before the turn-on |
 | Gaia epoch photometry | no source | below Gaia's limit in quiescence |
+
+---
+
+# REVISION 10 (2026-09-20) — the two remaining items verified; ALeRCE provenance retrieved
+
+REVISION 8 closed with: *"the outstanding blockers from REVISION 6/7 are cleared except the
+population-prior objection … and the ledger/finding-chart items."* REVISION 9 then answered the
+population-prior objection. **No status line was written after REVISION 9**, so the headline at the
+top of this document still reads "HELD" from REVISION 6 and is stale. The remaining items were
+checked one by one.
+
+## Item-by-item verification of the six REVISION 6 blockers
+
+| # | item | state |
+|---|---|---|
+| 1 | ZFPS flux-reconstruction audit | **DONE** (rev 7): a ZFPS "non-detection" means *at the 2018 reference level*, not faint; ZFPS difference magnitudes are biased faint and are excluded from the quoted extrema |
+| 2 | Quantitative bright-state mid-IR limit | **DONE**: unWISE W1 > 19.27 Vega, excluding an AGN torus by ~5 mag |
+| 3 | Uncertainties on the extrema | **DONE** (rev 7): max 17.98 **withdrawn** → 18.34 on frame-quality grounds; min re-derived as 23.12 ± 0.08 from the LS DR10 coadd (13.9σ) rather than a single exposure |
+| 4 | Finding chart | **DONE this revision** — `ZTF19abxfaon_finding_chart.png` |
+| 5 | ALeRCE classifier provenance | **PARTIAL** — ZTF side fully retrieved below; the Rubin side could not be reached |
+| 6 | Pre-submission moderator eligibility inquiry | **USER ACTION** by design, not a defect of the package |
+
+## Item 4 — finding chart produced
+
+`ZTF19abxfaon_finding_chart.png`: two panels from Legacy Survey DR10 grz — a 5′ × 5′ pointing
+field and a 52″ × 52″ identification zoom, with N/E compass, scale bars, and **8 comparison stars
+from PS1 DR2 (r = 16.37–18.16)** labelled A–H with g and r magnitudes.
+
+Two deliberate choices. A ninth, brighter star at r = 13.65 was **excluded**: it is saturated in the
+coadd with visible diffraction spikes and a bleed trail, and would be unusable as a photometric
+comparison. And the chart carries an explicit warning that **the DR10 coadd averages mostly
+pre-2018 DECam imaging, where the object sits near its faint state (r ≈ 23.1)** — it is currently
+r ≈ 18.5–19 and will appear far brighter at the telescope. A finding chart that silently showed the
+faint state would mislead an observer into doubting the identification.
+
+## Item 5 — ALeRCE provenance, and a correction that matters
+
+The blocker was that "ALeRCE stamp classifier AGN 0.88" did not identify *which* model produced it.
+The **ZTF-side** record is now retrieved in full from the ALeRCE API: oid `ZTF19abxfaon`,
+**ndet = 660**, firstmjd 58732.23, **lastmjd 61303.25 (still being detected as of 2026-09-19/20)**,
+`corrected = True`, `stellar = False`. Nineteen classifiers report, with names and versions:
+
+| classifier | version | top class | p |
+|---|---|---|---|
+| LC_classifier_ATAT_forced_phot (beta) | 0.3.1 | **CV/Nova** | **0.954** |
+| LC_classifier_ATAT_forced_phot (beta) | 1.0.0 | **CV/Nova** | **0.936** |
+| lc_classifier_stochastic | hierarchical_rf_1.1.0 | **CV/Nova** | **0.888** |
+| lc_classifier_BHRF_forced_phot_stochastic | 2.1.0 | CV/Nova | 0.672 |
+| stamp_classifier_2025_beta | 2.1.1_beta | SN | 0.920 |
+| stamp_classifier | stamp_classifier_1.0.4 | SN | 0.705 |
+
+**Across all nineteen ZTF-side classifiers the maximum AGN probability is 0.069** (stamp_classifier
+1.0.0); the light-curve classifiers put AGN at 0.012–0.031. On ZTF data, ALeRCE does not support an
+AGN reading at all — its best models call this a CV.
+
+**A coincidence that should be checked, not asserted.** The value 0.88 appears in the ZTF record as
+**CV/Nova 0.8880** from `lc_classifier_stochastic`. This document attributes "AGN 0.88" to the
+*Rubin* stamp classifier, which is a different pipeline on different data, so this is **not proof of
+a transcription error** — but the numerical coincidence is close enough that the Rubin-side value
+should be re-read from its source before "AGN 0.88" is repeated in a submission.
+
+**What could not be done from here:** the ALeRCE **LSST/Rubin** API endpoints
+(`/lsst/v1/objects/170587115976392822`, `…/probabilities`, `/v2/objects/…`) all failed to respond.
+The Rubin-side model name, version and probability therefore remain unverified, and item 5 stays
+**PARTIAL**. Note also that the Rubin public alert stream has been dark since MJD 61235, so the
+Rubin-side record is in any case a snapshot of a stalled feed.
+
+## Item — ledger rows verified complete
+
+`docs/object_journals/170587115976392822.md` carries a 15-row cross-check ledger, and it already
+includes rows for the two newest evidence items: **NSC DR2 meas — MJD 58372 exposure pair**
+(rev 8) and **VHS DR5 near-IR** (rev 9). It was last committed with REVISION 9, so it is current.
+This item is **DONE**.
+
+## Status
+
+**The package's own blockers are cleared.** What remains is (a) the Rubin-side ALeRCE provenance,
+unreachable from this machine and weak evidence in any case given the ZTF-side result and the
+mid-IR limit, and (b) the moderator eligibility inquiry, which is the user's action by design.
+`stellar = False` from ALeRCE is recorded here as an honest point against the stellar reading,
+though that flag derives from star–galaxy separation that is unreliable for faint blue objects.
+
+**This revision does not itself authorise filing.** It records that the technical blockers listed
+in REVISION 6 are closed, and that the "HELD" headline at line 333 is stale and should be read
+together with this section.
