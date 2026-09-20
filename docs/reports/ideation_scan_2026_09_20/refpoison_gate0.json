@@ -1,0 +1,750 @@
+[
+ {
+  "name": "SSS 110312:084128-231726",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ZTF18abcrbtv",
+  "type": "UG",
+  "n": 713,
+  "n_in": 10,
+  "n_out": 703,
+  "out_med": 20.212,
+  "span": 30,
+  "nframes": 15,
+  "in_med": 20.692,
+  "in_bright": 20.403,
+  "delta_med": -0.48,
+  "delta_bright": -0.191,
+  "status": "CLEAN"
+ },
+ {
+  "name": "OGLE-BLG-DN-0082",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "MGAB-V622",
+  "type": "UG",
+  "n": 581,
+  "n_in": 0,
+  "n_out": 581,
+  "out_med": 19.328,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "DDE 184",
+  "type": "UGSU",
+  "n": 404,
+  "n_in": 0,
+  "n_out": 404,
+  "out_med": 20.472,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "OGLE-BLG-DN-0267",
+  "type": "UG",
+  "n": 158,
+  "n_in": 0,
+  "n_out": 158,
+  "out_med": 19.859,
+  "span": 0,
+  "nframes": 40,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ZTF19aaatepo",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia18dll",
+  "type": "UG:",
+  "n": 838,
+  "n_in": 138,
+  "n_out": 700,
+  "out_med": 18.996,
+  "span": 27,
+  "nframes": 40,
+  "in_med": 19.007,
+  "in_bright": 18.876,
+  "delta_med": -0.012,
+  "delta_bright": 0.119,
+  "status": "CLEAN"
+ },
+ {
+  "name": "TCP J05060907+0838026",
+  "type": "UG",
+  "n": 399,
+  "n_in": 0,
+  "n_out": 399,
+  "out_med": 19.982,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "Romanov V40",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ATLAS24gej",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ZTF21abwgnjk",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia16bio",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ZTF22aajwrqd",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia18dkf",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "MGAB-V3564",
+  "type": "UG",
+  "n": 32,
+  "n_in": 3,
+  "n_out": 29,
+  "out_med": 18.651,
+  "span": 0,
+  "nframes": 40,
+  "in_med": 21.237,
+  "in_bright": 21.182,
+  "delta_med": -2.586,
+  "delta_bright": -2.531,
+  "status": "CLEAN"
+ },
+ {
+  "name": "MASTER OT J180539.49+342329.1",
+  "type": "UG",
+  "n": 153,
+  "n_in": 3,
+  "n_out": 150,
+  "out_med": 21.427,
+  "span": 30,
+  "nframes": 15,
+  "in_med": 21.398,
+  "in_bright": 21.342,
+  "delta_med": 0.028,
+  "delta_bright": 0.085,
+  "status": "CLEAN"
+ },
+ {
+  "name": "SDSS J131504.96+281243.6",
+  "type": "UG",
+  "n": 811,
+  "n_in": 0,
+  "n_out": 811,
+  "out_med": 19.511,
+  "span": 30,
+  "nframes": 21,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "CSS 071231:082822+105344",
+  "status": "SPARSE",
+  "n": 27
+ },
+ {
+  "name": "V0832 Aur",
+  "type": "UGSU",
+  "n": 587,
+  "n_in": 0,
+  "n_out": 587,
+  "out_med": 20.139,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ZTF18acrdnse",
+  "type": "UGZ:",
+  "n": 246,
+  "n_in": 0,
+  "n_out": 246,
+  "out_med": 19.499,
+  "span": 30,
+  "nframes": 25,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ATLAS20leg",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ASASSN-15uc",
+  "type": "UG",
+  "n": 329,
+  "n_in": 0,
+  "n_out": 329,
+  "out_med": 19.935,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "SDSS J090221.35+381941.9",
+  "type": "UGSU/IBWD",
+  "n": 677,
+  "n_in": 0,
+  "n_out": 677,
+  "out_med": 20.378,
+  "span": 30,
+  "nframes": 19,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "OGLE-BLG-DN-0746",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "TCP J08173864-2421209",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ZTF18abaaqcg",
+  "type": "UGSU:",
+  "n": 481,
+  "n_in": 5,
+  "n_out": 476,
+  "out_med": 21.049,
+  "span": 23,
+  "nframes": 15,
+  "in_med": 18.728,
+  "in_bright": 18.111,
+  "delta_med": 2.321,
+  "delta_bright": 2.938,
+  "status": "POISONED"
+ },
+ {
+  "name": "MGAB-V631",
+  "type": "UG",
+  "n": 787,
+  "n_in": 0,
+  "n_out": 787,
+  "out_med": 19.019,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "AT 2024aur",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia19dtv",
+  "type": "UG",
+  "n": 874,
+  "n_in": 132,
+  "n_out": 742,
+  "out_med": 19.648,
+  "span": 0,
+  "nframes": 40,
+  "in_med": 18.048,
+  "in_bright": 17.94,
+  "delta_med": 1.6,
+  "delta_bright": 1.708,
+  "status": "POISONED"
+ },
+ {
+  "name": "TCP J05012986+2250118",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ASASSN-20fa",
+  "status": "SPARSE",
+  "n": 7
+ },
+ {
+  "name": "CSS 111021:175633+572927",
+  "type": "UGSU:",
+  "n": 517,
+  "n_in": 9,
+  "n_out": 508,
+  "out_med": 20.958,
+  "span": 23,
+  "nframes": 15,
+  "in_med": 20.884,
+  "in_bright": 20.711,
+  "delta_med": 0.074,
+  "delta_bright": 0.248,
+  "status": "CLEAN"
+ },
+ {
+  "name": "CSS 080702:130030+115101",
+  "type": "UGSU",
+  "n": 46,
+  "n_in": 0,
+  "n_out": 46,
+  "out_med": 20.04,
+  "span": 30,
+  "nframes": 17,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "CSS 130414:125147+410301",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ASASSN-15ui",
+  "type": "UG",
+  "n": 69,
+  "n_in": 0,
+  "n_out": 69,
+  "out_med": 20.115,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ASASSN-21eb",
+  "status": "SPARSE",
+  "n": 16
+ },
+ {
+  "name": "TCP J00392037+5822091",
+  "type": "UG",
+  "n": 165,
+  "n_in": 0,
+  "n_out": 165,
+  "out_med": 17.745,
+  "span": 15,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ASASSN-22fh",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "BMAM-V773",
+  "type": "UG",
+  "n": 832,
+  "n_in": 0,
+  "n_out": 832,
+  "out_med": 17.923,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "Gaia24bqz",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "NSV 18230",
+  "type": "UG",
+  "n": 837,
+  "n_in": 0,
+  "n_out": 837,
+  "out_med": 19.678,
+  "span": 29,
+  "nframes": 17,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "MGAB-V3489",
+  "type": "UG",
+  "n": 237,
+  "n_in": 0,
+  "n_out": 237,
+  "out_med": 19.777,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ZTF19aaagvvv",
+  "type": "UG:",
+  "n": 1440,
+  "n_in": 20,
+  "n_out": 1420,
+  "out_med": 18.844,
+  "span": 30,
+  "nframes": 15,
+  "in_med": 18.7,
+  "in_bright": 18.619,
+  "delta_med": 0.145,
+  "delta_bright": 0.225,
+  "status": "CLEAN"
+ },
+ {
+  "name": "CSS 080207:052034-000530",
+  "type": "UG",
+  "n": 370,
+  "n_in": 0,
+  "n_out": 370,
+  "out_med": 19.504,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "CSS 081101:031913+223844",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "TCP J05002724+1334199",
+  "type": "UGSS",
+  "n": 110,
+  "n_in": 0,
+  "n_out": 110,
+  "out_med": 16.762,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "Gaia24bhi",
+  "type": "UG",
+  "n": 35,
+  "n_in": 5,
+  "n_out": 30,
+  "out_med": 20.533,
+  "span": 3,
+  "nframes": 40,
+  "in_med": 20.401,
+  "in_bright": 20.099,
+  "delta_med": 0.132,
+  "delta_bright": 0.434,
+  "status": "CLEAN"
+ },
+ {
+  "name": "ASASSN-23iq",
+  "type": "UG",
+  "n": 135,
+  "n_in": 0,
+  "n_out": 135,
+  "out_med": 20.922,
+  "span": 0,
+  "nframes": 11,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "OGLE-BLG-DN-0623",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "CSS 081207:052522-105015",
+  "type": "UG",
+  "n": 241,
+  "n_in": 0,
+  "n_out": 241,
+  "out_med": 19.998,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ASASSN-21et",
+  "type": "UGWZ",
+  "n": 94,
+  "n_in": 1,
+  "n_out": 93,
+  "out_med": 20.072,
+  "span": 28,
+  "nframes": 40,
+  "in_med": 19.981,
+  "in_bright": 19.981,
+  "delta_med": 0.091,
+  "delta_bright": 0.091,
+  "status": "CLEAN"
+ },
+ {
+  "name": "ASASSN-18um",
+  "status": "SPARSE",
+  "n": 9
+ },
+ {
+  "name": "ATLAS23vve",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia21eyl",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "GY Cet",
+  "type": "UGWZ+ZZ",
+  "n": 633,
+  "n_in": 64,
+  "n_out": 569,
+  "out_med": 18.448,
+  "span": 29,
+  "nframes": 15,
+  "in_med": 18.688,
+  "in_bright": 18.535,
+  "delta_med": -0.24,
+  "delta_bright": -0.088,
+  "status": "CLEAN"
+ },
+ {
+  "name": "ASASSN-22ce",
+  "type": "UGSU",
+  "n": 398,
+  "n_in": 0,
+  "n_out": 398,
+  "out_med": 21.096,
+  "span": 28,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "MGAB-V774",
+  "type": "UGSU",
+  "n": 520,
+  "n_in": 209,
+  "n_out": 311,
+  "out_med": 20.611,
+  "span": 2,
+  "nframes": 40,
+  "in_med": 20.683,
+  "in_bright": 18.478,
+  "delta_med": -0.072,
+  "delta_bright": 2.133,
+  "status": "PARTIAL"
+ },
+ {
+  "name": "ATLAS24opo",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "OGLE-BLG-DN-1041",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "V0355 UMa",
+  "type": "UGWZ+ZZ/GWLIB",
+  "n": 837,
+  "n_in": 0,
+  "n_out": 837,
+  "out_med": 17.606,
+  "span": 30,
+  "nframes": 17,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "MACHO 179.22103.2421",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia DR3 5646742251661416064",
+  "type": "UG",
+  "n": 36,
+  "n_in": 20,
+  "n_out": 16,
+  "out_med": 18.774,
+  "span": 20,
+  "nframes": 40,
+  "in_med": 20.827,
+  "in_bright": 20.466,
+  "delta_med": -2.053,
+  "delta_bright": -1.692,
+  "status": "CLEAN"
+ },
+ {
+  "name": "OGLE-BLG-DN-0738",
+  "type": "UG+E",
+  "n": 98,
+  "n_in": 63,
+  "n_out": 35,
+  "out_med": 18.169,
+  "span": 23,
+  "nframes": 40,
+  "in_med": 18.183,
+  "in_bright": 17.866,
+  "delta_med": -0.014,
+  "delta_bright": 0.302,
+  "status": "CLEAN"
+ },
+ {
+  "name": "CX298",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "AT 2026nxf",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "Gaia16axk",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ASASSN-22fe",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "SY Cnc",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "ZTF18actacfv",
+  "type": "UGZ",
+  "n": 782,
+  "n_in": 0,
+  "n_out": 782,
+  "out_med": 16.739,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "NSV 18704",
+  "type": "UG",
+  "n": 1321,
+  "n_in": 0,
+  "n_out": 1321,
+  "out_med": 18.827,
+  "span": 30,
+  "nframes": 22,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "ZTF17aabpicg",
+  "type": "UG",
+  "n": 727,
+  "n_in": 0,
+  "n_out": 727,
+  "out_med": 19.777,
+  "span": 0,
+  "nframes": 15,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "RU LMi",
+  "type": "UGSS",
+  "n": 979,
+  "n_in": 0,
+  "n_out": 979,
+  "out_med": 17.394,
+  "span": 30,
+  "nframes": 19,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "Gaia18dkq",
+  "type": "UG",
+  "n": 431,
+  "n_in": 125,
+  "n_out": 306,
+  "out_med": 18.952,
+  "span": 1,
+  "nframes": 40,
+  "in_med": 18.956,
+  "in_bright": 18.602,
+  "delta_med": -0.004,
+  "delta_bright": 0.35,
+  "status": "CLEAN"
+ },
+ {
+  "name": "ZTF18abtvbct",
+  "type": "UG",
+  "n": 116,
+  "n_in": 0,
+  "n_out": 116,
+  "out_med": 19.746,
+  "span": 27,
+  "nframes": 40,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ },
+ {
+  "name": "MNIC V87",
+  "type": "UGSS",
+  "n": 909,
+  "n_in": 119,
+  "n_out": 790,
+  "out_med": 17.845,
+  "span": 17,
+  "nframes": 40,
+  "in_med": 16.993,
+  "in_bright": 16.58,
+  "delta_med": 0.851,
+  "delta_bright": 1.265,
+  "status": "PARTIAL"
+ },
+ {
+  "name": "ZTF19aaxrsyu",
+  "type": "UGSU:",
+  "n": 457,
+  "n_in": 124,
+  "n_out": 333,
+  "out_med": 17.701,
+  "span": 0,
+  "nframes": 40,
+  "in_med": 16.972,
+  "in_bright": 16.908,
+  "delta_med": 0.73,
+  "delta_bright": 0.793,
+  "status": "CLEAN"
+ },
+ {
+  "name": "OGLE-BLG-DN-1058",
+  "type": "UG:",
+  "n": 295,
+  "n_in": 127,
+  "n_out": 168,
+  "out_med": 19.657,
+  "span": 2,
+  "nframes": 40,
+  "in_med": 19.706,
+  "in_bright": 19.448,
+  "delta_med": -0.049,
+  "delta_bright": 0.209,
+  "status": "CLEAN"
+ },
+ {
+  "name": "ZTF22aayluxo",
+  "status": "SPARSE",
+  "n": 0
+ },
+ {
+  "name": "DV UMa",
+  "type": "UGSU+E",
+  "n": 1218,
+  "n_in": 0,
+  "n_out": 1218,
+  "out_med": 18.817,
+  "span": 28,
+  "nframes": 18,
+  "status": "NO_EPOCHS_IN_WINDOW"
+ }
+]
