@@ -977,3 +977,70 @@ and duration are screening quantities, not measurements.** Any candidate's durat
 re-derived from the epochs with a trapezoid fit before it is quoted anywhere, which is
 already the procedure that produced the 4.34 ± 0.07 h figure for
 2716884161263924224.
+
+## 2026-09-20 — ADS sweep (user token): literature hole closed, and the ATLAS "dubious" reservoir is UNWORKED
+
+The automated prior-art sweep could not reach ADS (no token; 401 unauthenticated, JS-only UI),
+and that was logged as the largest remaining hole. The user supplied an API token and it was run.
+
+### Part 1 — the object: ZERO hits, twelve designations
+
+`ATO J338.7153+09.0962`, `ZTF18accrxjd`, `2MASS J22345167+0905464`, `J223451.69+090546.4`,
+`J223451.68+090546.4`, `2716884161263924224`, **`394_000547_zg_c04_q1`** (Arevalo's own internal
+OID), `TIC 415929979`, `PSO J338.7154+09.0962`, `SDSS J223451.68+090546.4`,
+`DESI J338.7153+09.0962`, `ATO J338.7153` — **0 full-text hits for every one.**
+
+No paper discusses this star in prose under any name it carries. The claim being filed —
+*first published ephemeris and eclipse solution* — now rests on a closed literature search as
+well as a closed catalogue search. Novelty (C5) is unaffected and stays ≈0.03: Arevalo+2026 is a
+machine-readable table entry, which no full-text search could ever surface.
+
+Confirmed at source: **Arevalo+2026 = 2026A&A...705A.247A, cited 5×, titled "Unlocking AGN
+variability with custom ZTF photometry…"** — an AGN-selection paper. The EA label really is an
+unvetted byproduct of an AGN classifier, exactly as the review said; nobody has ever looked at
+this star *as a binary*. **Heinze+2018 = 2018AJ....156..241H, cited 390×.**
+
+### A query-construction failure, recorded
+
+The first attempt at the "is anyone mining the dubious class?" question was **worthless** and was
+nearly reported as a finding. Full-text search on a common word returns noise — `full:"dubious"`
+surfaced matrix exponentials, dolphin populations and foundation-model papers — and
+`abs:"classif"` returned 0 against 390 citers, which is a tokenisation artifact, not a result.
+**A keyword that is common English cannot be used as a discriminating full-text query.** The
+question had to be re-asked as a *bounded* one.
+
+### Part 2 (corrected) — the ATLAS "dubious" class has NOT been systematically mined
+
+Bounded test: every paper citing Heinze+2018 that contains "dubious" anywhere (70 papers), titles
+scanned individually. **Not one is a dubious-mining or reclassification study.** They are Gaia
+DR3 cross-match/classification papers, ASAS-SN/OGLE/NGTS/ZTF catalogues, single-object studies
+(CzeV502, THOR 42, Romanov V48, U Sco), ML/methods papers, and unrelated fields.
+
+The only genuine follow-up work on the ATLAS variable catalogue is **narrow or tiny**:
+
+| paper | scope |
+|---|---|
+| Bernhard+2021 (2021MNRAS.506.4561B) | magnetic chemically peculiar stars only — a *class-targeted* mine |
+| Toth+2021 (2021OEJV..214....1T) | "Confirmation of **seven** faint ATLAS variable star candidates" |
+| Khruslov+2019 (2019MNRAS.490.1283K) | "**three** short period ATLAS variable stars" |
+| Toth+2021 (2021JAVSO..49...12T) | "**Three** faint variable stars… and eleven others" |
+
+Nobody has swept the **dubious** class. Combined with the propagation gap measured by the
+adversarial review — within 1°, **12/12 non-dubious ATLAS entries reach the Gavras+2023 Gaia
+known-variable compilation but only 4/32 dubious ones do** — this is an open, quantified lane,
+and **we already hold a worked example**: ZTF J223451.69+090546.4 is itself an ATLAS "dubious"
+entry with a correct period that we independently rediscovered and characterised.
+
+### Competitor check — who publishes new EBs from ZTF?
+
+2023–2026 ZTF eclipsing-binary papers are all *specialised*: ELM Survey South (low-mass WD
+binaries), a 13.7-minute accreting binary, doubly-eclipsing quadruples, post-common-envelope
+WD+MS, accretion-disk EBs from LAMOST+ZTF. **No one is running a systematic new-EB sweep of ZTF
+DR.** Note also **2022RNAAS...6...96H, "370 New Eclipsing Binary Candidates from TESS Sectors
+1-26" (18 citations)** — a concrete precedent for the venue and format a candidate list of this
+kind would take.
+
+**Standing consequence for the lane:** the EB hunt's target list should be reconsidered against
+the ATLAS dubious catalogue directly, rather than only the Gaia-selected sample it currently
+uses. The dubious class is a pre-filtered reservoir of objects that already have a measured
+period and no classification.
