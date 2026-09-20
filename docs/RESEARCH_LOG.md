@@ -895,3 +895,58 @@ the hold-out was added afterwards. This is the **fourth** filter in this lane to
 delete the target class (after the duty>0.9 veto, the BLS sign inversion, and
 grid-dependent period seeding). Every one presented as a clean null rather than an error.
 Assert on the FINAL verdict string, end-to-end, not on an intermediate quantity.
+
+## 2026-09-20 — EB lane FIRST FIND: a new EA that three surveys saw and none typed
+
+Immediately after the hold-out fix (previous entry), the corrected gate was run against
+the five highest-SNR objects the broken gate had buried. Three became CANDIDATE. Two of
+those are already catalogued and serve as **recoveries that validate the pipeline against
+catalogued truth**:
+
+- **CSS J223442.2+072335** (VSX EA, P = 1.684270 d) — we recover 0.842152 d = exactly P/2,
+  the classic equal-minima fold.
+- **AISV-BD J337.653+6.035** (VSX EA, P = 9.216540 d) — we recover 9.216247 d, 0.003%.
+
+The third is in no variable-star catalogue at all.
+
+### Gaia DR3 2716884161263924224 = ZTF J223451.69+090546.4 (22 34 51.69 +09 05 46.4)
+
+Detached eclipsing binary, **P = 1.9846349 d**, T0 = HJD 2458258.63656, zr 16.318 → 17.004
+(0.686 ± 0.013 mag), zg 16.816 → 17.515 (0.699 ± 0.015), **T14 = 4.3 h = 9.1% duty**,
+V-shaped (T23 ≈ 0, partial), out-of-eclipse flat at 0.020 mag rms. 701 clean zr + 594 clean
+zg epochs over 2695 d; **49 distinct eclipse nights**. Gaia: G = 16.375, BP−RP = 0.916,
+parallax 0.336 ± 0.057 mas, RUWE 0.91; nearest neighbour 18.03″ at G = 20.7, so unblended.
+
+**Novelty, every null with coverage proved:** absent from VSX, SIMBAD, Gaia DR3
+variability (37 classified variables in the same 30′), Chen+2020 ZTF periodic variables
+(4 in 30′), and ASAS-SN (4 in 30′, including one at V = 17.16 — *fainter* than this
+target). Gaia DR3 carries the source with `phot_variable_flag = NOT_AVAILABLE`.
+
+**The ATLAS record is the lane's thesis in one row.** Heinze+2018 has it at 0.02″ as
+`ATO J338.7153+09.0962` with `fp-period = 1.984637 d` — **our period to 2×10⁻⁶ d** — and
+classifies it `dubious`, P(dubious) = 0.813, with **all four eclipsing-binary class
+probabilities exactly 0.000**. ATLAS recovered the periodicity and could not type it,
+because a Fourier series cannot represent a 9%-duty box. The star has consequently never
+been typed, and never entered VSX. Three surveys had the photons; none produced a
+classification.
+
+**Period ambiguity, stated not suppressed.** Folded at 2P the minima at phase 0.0 and 0.5
+are equal to within **0.08 mag (3σ)**, and zr and zg disagree even on the sign
+(−0.036 ± 0.027 vs +0.002 ± 0.032). The orbital period is therefore 1.9846349 d *or twice
+that* with two near-identical eclipses — the latter more natural for a detached pair of
+similar stars. The shorter period is adopted and the ambiguity goes into the VSX remarks.
+
+Two method notes banked while characterising it: the BLS **duration grid was truncated at
+0.09 d** while the eclipse is 0.159 d, so duty was railed at the grid edge and
+under-reported; and **period/epoch must be fitted in the HJD frame** — a median HJD−MJD
+offset is wrong by up to ±8 min across a year and corrupts an ephemeris spanning 1358
+cycles.
+
+A false null caught in passing: VizieR `II/366/catalog` and `II/366/table` return zero rows
+**anywhere**, target and control alike. Only the bare `II/366` is live. A wrong table name
+manufactures a clean-looking non-detection — the control-field density test is what exposed it.
+
+Package: `docs/reports/eb_lane_2026_09_20/VSX_SUBMISSION_2716884161263924224.md`.
+Journal: `docs/object_journals/2716884161263924224.md`. **PREPARED, NOT FILED** — filing
+is the user's action, and the authoritative VSX native-API duplicate check returns a
+Cloudflare interstitial here, so it must be re-run in the wizard at filing.
