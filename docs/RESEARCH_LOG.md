@@ -950,3 +950,30 @@ Package: `docs/reports/eb_lane_2026_09_20/VSX_SUBMISSION_2716884161263924224.md`
 Journal: `docs/object_journals/2716884161263924224.md`. **PREPARED, NOT FILED** — filing
 is the user's action, and the authoritative VSX native-API duplicate check returns a
 Cloudflare interstitial here, so it must be re-run in the wizard at filing.
+
+### Addendum (same day) — the truncated duration grid was checked, and does NOT cost detections
+
+The BLS duration grid `[0.012, 0.025, 0.05, 0.09]` d tops out at 2.2 h, so any longer
+eclipse is fitted railed at the maximum. **2,746 of 11,938 records (23%) sit at that rail.**
+Since `duty` feeds both the detection floor (`0.005 ≤ duty ≤ 0.15`) and the shape gate
+(`frac_dev > max(0.25, 3·duty)`), this could in principle have been suppressing real
+detections. It was quantified rather than assumed:
+
+- At the **short**-period end (0.2–1 d) 1,213 records are railed, and railing *inflates*
+  duty above the 0.15 ceiling — which rejects contact binaries and rotators. That is the
+  gate doing its job, not a loss.
+- At the **long**-period end, 118 records in the 15–20 d bin were rejected with duty under
+  the 0.005 floor. Of those, only **36** would have passed every other cut (depth ≥ 0.045,
+  snr ≥ 10, ≥3 eclipse nights).
+- Those 36 are all snr 10–16, 3–5 eclipse nights, depth 0.05–0.11 mag, at periods of
+  **18–55 d** — i.e. *outside* the 0.2–20 d search grid, reachable only as harmonic
+  multiples from `refine_period`. They are noise fits at long trial periods, and the duty
+  floor removes them for the wrong reason but with the right outcome.
+
+**Verdict: no restart.** The rail distorts *reported* duration and duty for long eclipses —
+our own new EA is fitted at 0.09 d when the true T14 is 0.159 d — but costs no genuine
+detections inside the intended period range. Standing consequence: **the pipeline's duty
+and duration are screening quantities, not measurements.** Any candidate's duration must be
+re-derived from the epochs with a trapezoid fit before it is quoted anywhere, which is
+already the procedure that produced the 4.34 ± 0.07 h figure for
+2716884161263924224.
