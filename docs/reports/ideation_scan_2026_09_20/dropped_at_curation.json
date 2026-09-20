@@ -1,0 +1,100 @@
+[
+ {
+  "title": "DROPPED -- Non-DECam ecliptic-frame activity audit: known asteroids in CFHT MegaCam (2009-2025) and VST OmegaCAM (2011-2025) single exposures",
+  "merged_from": [
+   "N8: Non-DECam ecliptic-frame activity audit: known asteroids in CFHT MegaCam (2009-2025) and VST OmegaCAM (2011-2025) single exposures"
+  ],
+  "summary": "2-8 unreported activity detections on known asteroids from ~300k prioritised stamps cut from ~150k public ecliptic-zone frames (|beta|<15 deg, t_exp>=60 s, seeing<=1.2\"), Chandler-rate ~5e-5 per stamp => 10-15 flags, ~half already known; ~3k stamps of human inspection; CBET/MPC credit.",
+  "data_sources": [
+   "CADC CFHT MegaCam Elixir frames (cutout syntax), ESO OmegaCAM raw frames and KiDS/VST-ATLAS/VPHAS+ dithers",
+   "SSOIS, SkyBoT, MPCORB + JPL Horizons, static list of ~60 known active asteroids"
+  ],
+  "credit_channel": "MPC ADES astrometry plus CBAT telegram credited by name; Chandler/Hsieh confirm with new imaging.",
+  "why_not_already_done": "Chandler+2024 state DECam is the sole data source of Active Asteroids; Gilbert & Wiegert 2009/2010 searched only CFHTLS 2003-08; Mahlke+2018 extracted KiDS detections without an activity screen; Ly and Deen use SSOIS per object.",
+  "dropped_reason": "Recycles a decision already taken: the 2026-07-08 frontier scan ruled NO standalone asteroid/comet lane, with activity bycatch to be handed to Chandler as one of two opportunistic triggers, and the user shelved solar-system propagation lanes under the 2026-07-15 novelty-first objective. Nothing here changes that: the method is owned by a live competitor (Chandler's HARVEST can be pointed at MegaCam/OmegaCAM at any time), the labour is ~3k stamps of human image inspection plus a 2-3 week pipeline, and the author's own estimate is MEDIUM with 2-8 objects, half already known. Keep only as the existing bycatch trigger."
+ },
+ {
+  "title": "DROPPED -- Missed Galactic novae: dated H-alpha excess in VPHAS+ (2012-2018) and IGAPS/IPHAS (2003-2012) crossed with a >=2.5-mag optical fade at later epochs",
+  "merged_from": [
+   "N9: Missed Galactic novae: dated H-alpha excess in VPHAS+ (2012-2018, south) and IGAPS/IPHAS (2003-2012, north) crossed with a >= 2.5-mag optical fade at later epochs"
+  ],
+  "summary": "3-8 unrecorded classical novae caught in early decline at the narrow-band epoch (r 15-20, r-Halpha excess >=0.8-1.0 mag, >=5 sigma) and >=2.5 mag fainter in every later broadband epoch (DECaPS, ZTF, SkyMapper, Gaia) with coverage proven per catalogue; arithmetic 25 missed/yr x 0.75 footprint x 0.4 yr window ~ 6-8 expected (3-12); ~50k seeds x 6 catalogues, laptop-scale, 1-2 weeks; template test on novae that erupted 2012-2017 inside VPHAS+ and 2003-2011 inside IPHAS fields.",
+  "data_sources": [
+   "VPHAS+ DR4 (ESO Phase 3), IGAPS + Fratta+2021 Halpha-excess catalogue (28,496)",
+   "DECaPS1/2 and NSC DR2 meas, Gaia DR3, ZTF DR24, SkyMapper DR4, VVV/VVVX Ks + 2MASS, LS DR10 forced unWISE",
+   "VSX, GCVS, OGLE nova lists, VVV-NOV (Saito+2013/2015), ASAS-SN and Gattini-IR nova lists, SIMBAD"
+  ],
+  "credit_channel": "VSX (type N/NA:) -> GCVS naming; CBAT/nova-group announcement by a pro partner after nebular-phase or shell spectroscopy; HASH/Parker group for shell imaging.",
+  "why_not_already_done": "VPHAS+/IGAPS consortia mined Halpha excess for OB stars, PNe, CVs and spectroscopic outliers, never the excess x cross-epoch-fade join; nova-rate groups (Shafter; Kawash/Shappee; De+2021) work forward from 2014+; VVV-NOV covered only |b|<2. Not a recycle of the parked IR-nova lane: dated emission-line excess plus optical fade on data that lane never touched.",
+  "dropped_reason": "A sound lane and the first reserve, cut only by the 10-lane cap on novelty-per-labor: its 3-8 yield is the product of four uncertain multiplicative factors (missed rate 15-35/yr, footprint 0.75, single-visit sensitivity window 0.3-0.5 yr, survivor fraction), the dominant contaminants (symbiotics in outburst, Miras with Halpha) are explicitly Merc/Munari turf to be excluded rather than claimed, and the confirmation of each survivor needs a pro spectrum of a faded remnant, whereas the lanes ranked 8-10 either cost days (non-thermal mismatch) or deliver tens of objects per week (NIR archive, frozen-state). Revive first if any of the top 10 closes early."
+ },
+ {
+  "title": "DROPPED -- DECam-epoch state snapshot: NSC DR2 per-exposure measurements >=2 mag off the ZTF bright state (both directions, detections only)",
+  "merged_from": [
+   "R7: DECam-epoch state snapshot: NSC DR2 per-exposure measurements >=2 mag off the ZTF bright state (both directions, detections only)"
+  ],
+  "summary": "Join ~10-15M ZTF sources (17.5<r<19.5, -30<dec<+30) to dated NSC DR2 DECam exposures 2012-2019: (a) ZTF-bright stable sources recorded 2-5 mag fainter by DECam (a low state before/straddling the ZTF era); (b) DECam-bright point sources (17<r<19.5 on >=2 nights) whose ZTF object is >=2 mag fainter and flat; expected 150-300 undiscovered polars/NLs in the window, 20-70 uncatalogued state-changers after vetting, ~2 weeks, ~10k 1-deg^2 Data Lab queries.",
+  "data_sources": [
+   "nsc_dr2.object/meas/exposure via anonymous Data Lab TAP",
+   "ZTF DR24 objects/HATS (medianmag, magrms, refmag, ngoodobs)",
+   "Gaia DR3 for PM propagation and neighbour flux-sum blend test; LS DR10; DES-SN deep fields inside ZTF (~8 deg^2)"
+  ],
+  "credit_channel": "VSX for Galactic variables with the DECam faint-state epoch quoted; TNS with historical DECam discovery date for unreported 2013-2019 transients; AstroNote if currently low.",
+  "why_not_already_done": "NSC variability metrics are within-NSC MAD statistics; the NSC, Legacy Surveys and ZTF teams never do cross-survey state comparison; only VASCO-scale century comparisons exist.",
+  "dropped_reason": "This is the cross-instrument deep-sharp (DECam) vs shallow-coarse (ZTF) comparison that the CLOSED turn-on lane identified as definitionally satisfied by blends, sub-threshold noise and cosmic rays (9,745 objects, 0 formal candidates); a Gaia flux-sum blend test and a >=2-night rule are mitigations, not a structural fix, and the lane does not state what else changed. Its fade direction is served by the frozen-state lane's survivors, for which nsc_dr2.meas becomes a dated bracketing epoch at the ~100-object stage; its DECam-bright direction is served same-instrument by the DECam dwarf-nova census. Running it standalone would cost ~10k Data Lab queries (3-4 days) to reproduce a known failure mode."
+ },
+ {
+  "title": "DROPPED -- Appeared-and-stayed at matched depth: absent in every PS1 3pi epoch (2010-14, r>22.5), bright and constant in ZTF (2018-26, r<20.5), plus the 'appeared' Direction B of the frozen-state idea",
+  "merged_from": [
+   "R10: Appeared-and-stayed at matched depth: absent in every PS1 3pi epoch (2010-14, r>22.5), bright and constant in ZTF (2018-26, r<20.5)",
+   "N2 (Direction B only): ZTF objects median r<18.5, >=50 epochs, MAD<0.1, with no Gaia DR3 source within 2\" and no PS1 OTMO source within 2\" (r<23)"
+  ],
+  "summary": "Constant-bright new point sources with delta-r >=2.5-4 mag between the PS1 era and the ZTF era that never alerted because they were bright when the references were built: (i) AGN turned on 2014-2018 and stayed on (J075308 archetype), ~50-300 over ~20,000 deg^2; (ii) Galactic objects at r 19-20.5 below ASAS-SN/ATLAS/Gaia-alert depth, ~5-30 at |b|<15; (iii) sub-Gaia PM>0.2\"/yr bycatch. Selection inverted vs the closed turn-on lane: start from the ZTF end (zr 17.0-20.5, >=30 detections on >=15 nights over >=3 yr, centroid rms <0.3\", drift <0.4\") and require absence in PS1 DR2 (no object within 1.5\" in grizy, no Detection on >=8 epochs over >=2 yr, local stack limit >=22.5, >=5 PS1 objects at 21.5<r<22.5 within 30\"); funnel ~1e8 -> 1e3-1e4 -> 200-500 -> 50-300; TB-scale lsdb crossmatch, ~3 weeks. N2-B: honest yield 0-5.",
+  "data_sources": [
+   "ZTF DR24 object + light-curve HATS; PS1 DR2 object-thin HATS at data.lsdb.io; PS1 DR2 Detection table via MAST catalogs API; ps1images cutouts",
+   "unTimely / unWISE epochal W1-W2 (2010-2020), LS DR10 forced unWISE; Gaia DR3 classifiers, CatWISE2020; DESI DR1 / SDSS / LAMOST spectra; VSX/TNS/SIMBAD/Gaia-alert gates"
+  ],
+  "credit_channel": "Galactic branch VSX (CV/N/FU/RCB types); AGN branch TNS AstroNote or an RNAAS sample note (refereed/co-authored per publication policy).",
+  "why_not_already_done": "Changing-look AGN groups select on variability inside ZTF or spectroscopic pairs; VASCO compares USNO-B/POSS to PS1 in the opposite direction; PS1 was always the reference, never an earlier epoch tested for absence; the 1e8 x 1e9 crossmatch was a cluster job before HATS.",
+  "dropped_reason": "An inverted-margin version of the CLOSED turn-on lane. The inversion (bright in shallow-coarse, absent in deep-sharp) does answer the structural lesson, but what remains is below the cutoff: the dominant AGN branch yields sample-level novelty that needs a refereed co-authored paper rather than a registry filing, the Galactic branch is 5-30 objects for ~3 weeks of TB-scale crossmatching, N2's own honest Direction-B estimate is 0-5, and Gaia DR4 (2 Dec 2026) exposes the G<20.7 subset to DPAC and changing-look miners within 10 weeks. The idea's own text says it should be merged, not run twice, if a corrected re-run inverted the selection. If the frozen-state lane is built, its Gaia x ZTF crossmatch yields this direction for one extra query and it can be added then at near-zero cost."
+ },
+ {
+  "title": "DROPPED -- Sub-Gaia parallax census of the DES supernova deep fields (5-parameter refits of nsc_dr2.meas)",
+  "merged_from": [
+   "R9: Sub-Gaia parallax census of the DES supernova deep fields (5-parameter refits of nsc_dr2.meas)"
+  ],
+  "summary": "5-sigma trigonometric parallaxes from ~300-1,400 dated DECam exposures per band for objects at r or z 21-24 (G>20.7) in 27 deg^2: ~5-10 cool/ultracool WDs at 80-200 pc and ~5-10 L/T dwarfs at 35-100 pc, plus ultracool halo subdwarfs; ~2e4 pre-selected objects x 300-1,400 rows = 6-30M meas rows; parallax is the proof; ~2-3 weeks.",
+  "data_sources": [
+   "nsc_dr2.object/meas/exposure via Data Lab TAP; DES DR2 / LS DR10 deep coadd colours + forced unWISE; VISTA VIDEO and VHS J/H/Ks; Euclid Q1 EDF-F; Gaia DR3 control stars G 19-20.7"
+  ],
+  "credit_channel": "Not VSX/TNS/MPC: an RNAAS note or AJ paper co-authored with a WD or brown-dwarf specialist (precedent: Kiwy 2021 RNAAS / 2022 AJ with Backyard Worlds professionals).",
+  "why_not_already_done": "DES-SN used the deep coadds for SN hosts and quasars, never stellar astrometry from the cadence; NSC DR2 fits proper motions only, no parallax term; Fajardo-Acosta+2022 measured PMs not parallaxes in COSMOS; Euclid Q1 UCD candidates are photometric.",
+  "dropped_reason": "No codified credit channel: the deliverable is a co-authored RNAAS/AJ paper, which the user's publication policy gates on peer review and co-authorship, and 10-20 parallax-secure faint WDs/L-T dwarfs in 27 deg^2 is catalogue-completion rather than the novelty-first objective; per-object novelty is 'another nearby cool WD'. Ranks below the 10-lane cutoff on novelty-per-labor at 2-3 weeks. Not dead: the same nsc_dr2.meas pulls made by the DECam dwarf-nova lane can be refit for parallax later as a by-product if a co-author materialises."
+ },
+ {
+  "title": "DROPPED -- Sub-Gaia reduced-proper-motion census of the DECam south (dec<-30): cool, IR-faint and halo white dwarfs beyond Gaia's limit from NSC DR2 proper motions",
+  "merged_from": [
+   "R11: Sub-Gaia reduced-proper-motion census of the DECam south (dec < -30): cool, IR-faint and halo white dwarfs beyond Gaia's limit from NSC DR2 proper motions"
+  ],
+  "summary": "~3,000-8,000 new WD candidates at 20.7<r<22.5 (170-400 pc) over ~8,000 deg^2 south of dec -30 (where GPS1+ stops) from NSC DR2 PM>40 mas/yr at S/N>8 in the RPM diagram with DES/DELVE/LS DR10 colours; tails: ~100-150 ultracool WDs (T_eff<4,000 K, r-z<0.1, unWISE W1>19.3), ~100-250 halo-kinematics WDs (PM>140 mas/yr at 300 pc), plus split-object fast movers (PM>0.3\"/yr fragmented into 2+ NSC entries); catalogue-level SQL, ~1-2 weeks.",
+  "data_sources": [
+   "nsc_dr2.object (pmra/pmdec/errors, ndet, deltamjd, class_star), nsc_dr2.meas for top ~200; DELVE DR2 / DES DR2 griz, LS DR10 tractor + forced unWISE; VHS DR5/6 J/Ks; Gaia DR3 negative crossmatch; Gaia/LS QSO lists as zero-PM control"
+  ],
+  "credit_channel": "Not VSX/TNS/MPC: catalogue paper or RNAAS with a WD co-author; objects enter SIMBAD via publication; consumers 4MOST WD survey, Kilic/Bergeron.",
+  "why_not_already_done": "GPS1+ (Tian+2020) covers only dec>-30; the WD community works from Gaia (RPM extension ~10,200 objects Gaia-based); DES Y6 Gold carries Gaia PMs not internal ones; NSC advertised faint-WD PMs as a use case and did not follow up; Backyard Worlds start from WISE-bright red UCDs.",
+  "dropped_reason": "Catalogue-building with population-level rather than per-object novelty (thousands of WD candidates, ~200 individually interesting) and no registry credit channel: output is a co-authored catalogue paper under the peer-review publication policy, and archival PM+RPM+colour candidates need 4MOST-era spectra to become discoveries. Below the 10-lane cutoff on the novelty-first objective; cheap enough (pure SQL) to revive as a by-product of the DECam dwarf-nova lane's NSC object-table pulls if a WD co-author is found."
+ },
+ {
+  "title": "DROPPED -- Beyond-Gaia X-ray counterparts: faint, blue, W1-dark, variable point sources at 5XMM-DR15 / CSC 2.1 / eRASS:3 positions",
+  "merged_from": [
+   "R13: Beyond-Gaia X-ray counterparts: faint, blue, W1-dark, variable point sources at 5XMM-DR15 / CSC 2.1 / eRASS:3 positions"
+  ],
+  "summary": "Galactic accretors with 20.5<r<23 optical counterparts (below Gaia and below ZTF's per-epoch limit) at 5XMM-DR15 (~1.1M sources, 9 Jun 2026), CSC 2.1 (~400k) and eRASS:3 (1.91M) positions, filed 'extragalactic' by NWAY/MUWCLASS by default; faint magnetic CVs and DN at 1-5 kpc, AM CVn, qLMXBs; tens of uncatalogued faint X-ray CVs per few weeks, ~300-600 visual vettings.",
+  "data_sources": [
+   "5XMM-DR15, CSC 2.1, eROSITA-DE DR2 eRASS:3; LS DR10 south (type PSF, forced unWISE); NSC DR2 meas; ZTF DR light curves; GALEX GUVcat; VHS/VVV/UKIDSS; Gaia DR3 negative match"
+  ],
+  "credit_channel": "VSX (new CV / AM CVn / X-ray binary with X-ray association), TNS AstroNote for exotica; eROSITA/Chandra CV groups (Rodriguez, Galiullin, Schwope) for spectra.",
+  "why_not_already_done": "Every 2024-2026 X-ray CV search is Gaia-anchored (Rodriguez X-ray main sequence, Galiullin+2024/2025, Schwope+2024, Munoz-Giraldo+2025); Salvato's NWAY counterpart catalogues classify rather than chase; Yang+2022 MUWCLASS needs Gaia/2MASS/WISE features.",
+  "dropped_reason": "Recycles the eRASS1 X-ray accretor lane that was run twice (v1 and fixed-gate v2) to null. The stated change (sub-Gaia regime, XMM/Chandra added, LS DR10 depth) is real but does not fix the failure mode: at r>20.5 the ZTF light curve is censored and NSC gives 2-10 epochs, so 'varies like a star' cannot be established archivally for most candidates and the AGN default of the counterpart pipelines cannot be overturned without spectra; the output is candidate-grade after 300-600 visual vettings. The referee note carried in this batch (N6) independently concludes the X-ray accretor lane stays consortium-owned: eROSITA-DE has held eRASS:5 internally since 2022 and already publishes period-bouncer selections. Revisit only with Rubin forced photometry (post-2028) or DR4-era distances."
+ }
+]
