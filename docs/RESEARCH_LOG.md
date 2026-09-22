@@ -1044,3 +1044,45 @@ kind would take.
 the ATLAS dubious catalogue directly, rather than only the Gaia-selected sample it currently
 uses. The dubious class is a pre-filtered reservoir of objects that already have a measured
 period and no classification.
+
+## 2026-09-22 — Literature re-check of open candidates
+
+Method: all-table VizieR cone (6″) and ADS full text on every designation.
+
+| object | result |
+|---|---|
+| UCAC4 313-025977 (5612039087715504640) | Bailer-Jones & Kreidberg 2026 (A&A 708, A249) table 1: M₂ = 0.0104 M☉ (10.9 M_J), P = 592.32 d. Shahaf+2023 table 1: AMRF class I. ESMORGA (Pérez-Couto+2024): two-M-dwarf model. |
+| UCAC4 499-043649 (3155543945892767232) | Müller-Horn+2026 (A&A 709, A62): companion 2.1 (+2.1/−1.1) M☉, P ≈ 908 d. LAMOST RV variable (Qian+2019; Tian+2020). |
+| 3161546596480983040 (Object B) | Schwope+2026 (arXiv:2607.28066), entry 45: CV, "MCV or DN"; no period reported. eRASS:3 counterpart: this source. |
+| WDJ060042.75-293041.36, WDJ020915.51+380425.92 | WD catalogues only; no binary publication found; ADS 0 hits. |
+| TYC 3477-27-1 (1593152388271709824) | Green+2023 table 2 (score 0.83, P = 0.678 d); Kostov+2025 table 2. |
+| 5858574810404752256 | No publication found. |
+
+The 2026-05-30 ledger rows for UCAC4 313 (not in Bailer-Jones & Kreidberg 2026, not in Shahaf+2023) are superseded by the rows of 2026-09-22.
+
+## 2026-09-22 — EB hunt: re-runs complete
+
+- 96 ZTF_ERROR targets re-queried: 0 candidates.
+- 212 NO_ZTF targets re-run with a 3″ cone and a 2″ per-epoch filter: 29 with data (8 NO_ECLIPSE, 15 SPARSE, 4 DAY_ALIAS, 2 WEAK), 0 candidates; 183 without ZTF light curves.
+- Totals: 20,007 targets → 6 CANDIDATE (2 known EBs, 1 listed by Arévalo+2026, 3 without a classification in the checked catalogues), 420 WEAK, 183 without ZTF data.
+
+## 2026-09-22 — Loose-end checks
+
+| item | result |
+|---|---|
+| TYC 3477-27-1 | 0.6776-d periodic signal (0.8% semi-amplitude) in 5 TESS sectors, 2019–2024, centred on the star. |
+| (88268) 2001 KK76, 2010 WFC3 | Search around the July-orbit prediction: no detection (superseded; see the KK76 entry below). |
+| J075308.47+003535.6 | NED: WISEA J075308.45+003535.7 only; no redshift or classification. |
+| MGAB-V774 | Outburst detection (r = 18.48, MJD 58291) is in a programid-3 exposure; public ZTF alerts are programid 1. |
+| Rubin public alerts | Newest alerts in Fink at MJD 61235 (2026-07-14/15). |
+| 2001 KN76 | SBDB arc ends 2008-04-13 (unchanged). |
+
+Pilot started: Arévalo+2026 reservoir (1,281 stars: predClass nonvar-star, Pvar ≥ 0.99, Std ≥ 0.04) and 1,127 controls (Pvar < 0.5), same EB pipeline with a 3″ cone.
+
+## 2026-09-22 — (88268) 2001 KK76: HST positions re-measured against Gaia DR3
+
+- 12 public HST frames: 4 × ACS/HRC 2006-05-02 (GO-10514); 8 × WFC3 2010-03-13 (GO-11644).
+- Positions tied to Gaia DR3 stars in each frame (proper motions to the epoch). The 2006 positions differ from the July package by 1.10–1.19″. KK76 is present in all 8 frames of 2010.
+- Two independent measurements agree to 0.008–0.021″.
+- find_orb: ground + 2006 predicts the 2010 positions within 0.43″; all 53 observations fit with HST residuals ≤ 0.031″. Predicted 2026-09-22 position: 41″ from the July orbit, 58″ from the JPL orbit; two fitting codes agree to 1.7″ (2026) and 2.0″ (2040).
+- Revised ADES draft (12 rows): `precovery_campaign_2026_07_07/kk76_gaia_fix_2026_09_22/`. Not submitted.
