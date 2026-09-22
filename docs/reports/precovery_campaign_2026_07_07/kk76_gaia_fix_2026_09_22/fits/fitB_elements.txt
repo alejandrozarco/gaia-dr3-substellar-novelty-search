@@ -1,0 +1,28 @@
+Orbital elements:  (88268)
+   Perihelion 2042 Jan 30.14344 +/- 124 TT =  3:26:33 (JD 2466914.64344)
+Epoch 2006 May  2.0 TT = JDT 2453857.5                           Find_Orb
+M 313.89028975 +/- 0.44             (J2000 ecliptic)
+n   0.00353137 +/- 6.64e-7          Peri.  214.99994 +/- 0.46
+a  42.7077380 +/- 0.00535           Node    86.97140 +/- 0.0015
+e   0.0183185 +/- 0.000127          Incl.    1.88532 +/- 0.00022
+P 279.10001                H  6.30  G  0.15   U  4.2
+q 41.9253958 +/- 0.00659    Q 43.4900803 +/- 0.00857
+From 45 observations 2001 May 24-2006 May 2; mean residual 0".21
+# State vector (heliocentric equatorial J2000):
+#  -11.389557315674 -37.374929083863 -15.872924924453 AU
+#   +2.574284562548  -0.594990856282  -0.351489987036 mAU/day
+# MOIDs: Me 41.485102 Ve 41.197430 Ea 40.909772 Ma 40.517593
+# MOIDs: Ju 36.762891 Sa 31.918646 Ur 21.987496 Ne 11.791966
+# 5 oppositions
+# Elements written: 22 Sep 2026 14:38:46 (JD 2461306.110254)
+# Full range of obs: 2001 May 24-2006 May 2 (45 observations)
+# Find_Orb ver: 2026 Sep 21
+# Perturbers: 000000fc ;  not using JPL DE
+# Tisserand relative to Neptune: 3.08592
+# Diameter 226.2 km (assuming 10% albedo)
+# Score: 0.215218
+#  $Name=(88268)  $Ty=2042  $Tm=01  $Td=30.143444  $MA=313.89029
+#  $ecc=0.0183185  $Eqnx=2000.
+#  $a=42.7077381  $Peri=214.99995  $Node=86.97141  $Incl=1.88533
+#  $EpJD=2453857.500  $q=41.925396  $T=2466914.643445  $H=6.3
+# Sigmas avail: 1

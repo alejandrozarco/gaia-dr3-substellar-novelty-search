@@ -1,3 +1,5 @@
+> **Superseded 2026-09-22** by `../kk76_gaia_fix_2026_09_22/REPORT.md`. Do not file.
+
 # (88268) = 2001 KK76 — HST precovery measurement: fit-validation + ADES draft
 Date: 2026-07-07 | workdir /tmp/kk76_refit/ | zero telescope, NO submission (draft only).
 Tooling: existing find_orb console build /tmp/precovery_verify/2001_KN76/build/find_orb/fo

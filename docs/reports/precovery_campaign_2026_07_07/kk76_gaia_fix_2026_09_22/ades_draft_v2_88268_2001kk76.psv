@@ -1,0 +1,55 @@
+# version=2022
+# observatory
+! mpcCode 250
+! name Hubble Space Telescope (ACS/HRC, archival; GO-10514)
+# submitter
+! name A. Keur
+# observers
+! name HST GO-10514 archival exposures (original observers not named in the archive)
+# measurers
+! name A. Keur
+# telescope
+! design reflector
+! aperture 2.4
+! detector CCD
+! name HST ACS/HRC
+# comment
+! line DRAFT - NOT SUBMITTED. Archival astrometry of (88268) 2001 KK76 from public HST frames (MAST).
+! line Positions are tied to Gaia DR3 stars in each frame (proper motions propagated to the epoch;
+! line shift fit on 6, 6, 6, 5 Gaia stars per frame, rms 0.02-0.03 arcsec). HST parallax: pos1-3 = geocentric ICRF position of HST (km) from JPL Horizons
+! line (body -48) at obsTime (mid-exposure UTC). Photometry omitted (non-standard HST bands).
+permID |mode|stn |sys     |ctr|pos1        |pos2        |pos3        |obsTime                  |ra           |dec          |rmsRA|rmsDec|astCat|remarks
+88268  |CCD |250 |ICRF_KM |399|  -6826.7902|   -676.9128|  -1088.6256|2006-05-02T08:34:12.556Z | 253.8612037 | -22.1863882 | 0.03| 0.03 |Gaia3 |HST ACS/HRC CLEAR J9FW91HPQ; 6 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -6038.8640|  -2723.8803|  -2092.6790|2006-05-02T08:39:32.557Z | 253.8611255 | -22.1863800 | 0.03| 0.03 |Gaia3 |HST ACS/HRC CLEAR J9FW91HQQ; 6 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -4522.7335|  -4442.4320|  -2843.7220|2006-05-02T08:44:52.556Z | 253.8610415 | -22.1863725 | 0.03| 0.03 |Gaia3 |HST ACS/HRC CLEAR J9FW91HRQ; 6 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -2461.6631|  -5625.7627|  -3251.2173|2006-05-02T08:50:12.556Z | 253.8609590 | -22.1863612 | 0.03| 0.03 |Gaia3 |HST ACS/HRC CLEAR J9FW91HSQ; 5 Gaia DR3 stars
+
+# version=2022
+# observatory
+! mpcCode 250
+! name Hubble Space Telescope (WFC3 UVIS+IR, archival; GO-11644)
+# submitter
+! name A. Keur
+# observers
+! name HST GO-11644 archival exposures (original observers not named in the archive)
+# measurers
+! name A. Keur
+# telescope
+! design reflector
+! aperture 2.4
+! detector CCD
+! name HST WFC3 UVIS+IR
+# comment
+! line DRAFT - NOT SUBMITTED. Archival astrometry of (88268) 2001 KK76 from public HST frames (MAST).
+! line Positions are tied to Gaia DR3 stars in each frame (proper motions propagated to the epoch;
+! line shift fit on 9-11 (UVIS) or ~475 (IR) Gaia stars per frame). HST parallax: pos1-3 = geocentric ICRF position of HST (km) from JPL Horizons
+! line (body -48) at obsTime (mid-exposure UTC). Photometry omitted (non-standard HST bands).
+permID |mode|stn |sys     |ctr|pos1        |pos2        |pos3        |obsTime                  |ra           |dec          |rmsRA|rmsDec|astCat|remarks
+88268  |CCD |250 |ICRF_KM |399|   4509.2678|  -5209.7058|    828.3000|2010-03-13T14:14:59.580Z | 260.0039676 | -22.8732572 | 0.03| 0.03 |Gaia3 |HST WFC3/UVIS F606W IB2K52CVQ; 9 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|   5488.5139|  -4246.5177|     91.3639|2010-03-13T14:18:25.564Z | 260.0039674 | -22.8732473 | 0.03| 0.03 |Gaia3 |HST WFC3/UVIS F814W IB2K52CWQ; 9 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -6652.1955|    907.6737|   1756.7624|2010-03-13T15:15:15.580Z | 260.0042312 | -22.8732589 | 0.03| 0.03 |Gaia3 |HST WFC3/UVIS F606W IB2K52CXQ; 11 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -6511.7335|   -531.3065|   2338.9981|2010-03-13T15:18:41.564Z | 260.0042367 | -22.8732699 | 0.03| 0.03 |Gaia3 |HST WFC3/UVIS F814W IB2K52CYQ; 11 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -5149.5740|  -3416.2092|   3155.4717|2010-03-13T15:26:00.051Z | 260.0042372 | -22.8732828 | 0.04| 0.04 |Gaia3 |HST WFC3/IR F139M IB2K52CZQ; 477 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|  -2348.6482|  -5673.5714|   3230.6201|2010-03-13T15:34:00.051Z | 260.0042273 | -22.8732899 | 0.04| 0.04 |Gaia3 |HST WFC3/IR F153M IB2K52D0Q; 478 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|   1454.1571|  -6381.7223|   2304.1214|2010-03-13T15:42:52.051Z | 260.0042091 | -22.8732906 | 0.04| 0.04 |Gaia3 |HST WFC3/IR F139M IB2K52D2Q; 473 Gaia DR3 stars
+88268  |CCD |250 |ICRF_KM |399|   4508.8673|  -5214.1107|    802.6946|2010-03-13T15:50:52.051Z | 260.0042020 | -22.8732736 | 0.04| 0.04 |Gaia3 |HST WFC3/IR F153M IB2K52D3Q; 475 Gaia DR3 stars
