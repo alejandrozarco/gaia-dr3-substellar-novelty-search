@@ -1086,3 +1086,12 @@ Pilot started: Arévalo+2026 reservoir (1,281 stars: predClass nonvar-star, Pvar
 - Two independent measurements agree to 0.008–0.021″.
 - find_orb: ground + 2006 predicts the 2010 positions within 0.43″; all 53 observations fit with HST residuals ≤ 0.031″. Predicted 2026-09-22 position: 41″ from the July orbit, 58″ from the JPL orbit; two fitting codes agree to 1.7″ (2026) and 2.0″ (2040).
 - Revised ADES draft (12 rows): `precovery_campaign_2026_07_07/kk76_gaia_fix_2026_09_22/`. Not submitted.
+
+## 2026-09-22 — (330836) Orius not detected in 2019 DECam frames
+
+- Six 180-s i-band frames of 2019-05-16 cover the predicted position on six different CCDs. Motion-aligned stack: -0.6 sigma at the position; 5-sigma limit i > 24.70. Predicted V = 22.45 (JPL, H = 9.73), i ~ 21.6-22.2.
+- Controls from the same frames: 2016 WZ80 (V = 22.9) detected at 5.7 sigma, 1.1" from its predicted position; 2008 GV40 (V = 20.9) at 13.4 sigma.
+- Position checks: JPL 3-sigma 6.45" x 0.61"; our combined fit within 0.97" of JPL; stamps +/-20"; nearest source static to 0.02" over 17 minutes (a star, not in Gaia).
+- No DECam frames >= 60 s cover the path between 2015-06 and 2019-05; 2021-2023 frames are being measured.
+- Task #141: Orius filing on hold; 2021-2023 epochs pending. KK76 unaffected.
+- Work continues in a separate project: `~/claude_projects/sso-recovery-2026-09-22/`.

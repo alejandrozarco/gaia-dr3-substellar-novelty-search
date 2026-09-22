@@ -22,6 +22,7 @@ referee-confirmed, ADES draft prepared; **MPC submission = user action (task #14
 | 2026-07-07 | CANDIDATE_CHAIN | wave-1 recovery attempt: 6 NSC-DR2 DECam detections, 4 epochs 2013–2015, residuals 0.03–0.41″ vs the 2002–2012 arc orbit |
 | 2026-07-07 | PIXEL-CONFIRMED / SUBMISSION-READY | all 6 detections verified on InstCal frames (PSF-like, moving-object tests pass all 4 epochs); referee reproduced from raw pixels; updated_astrometry.csv authoritative |
 | 2026-07-07 | DEEP-DIVE COMPLETE | literature/physical/occultation/ephemeris-impact dossier, referee-confirmed (one photometry-epoch bug caught + corrected) |
+| 2026-09-22 | FILING ON HOLD | not detected in 2019 DECam frames to i > 24.70 (5 sigma) while the catalogued H predicts V = 22.45; controls of comparable brightness detected in the same frames; identity of the 2013-2015 detections not established |
 
 ## Cross-check ledger
 
@@ -35,6 +36,8 @@ referee-confirmed, ADES draft prepared; **MPC submission = user action (task #14
 | 2026-07-07 | Our DECam astrometry (NSC DR2, pixel-verified) | 6 detections, 4 epochs 2013-03-02 → 2015-04-27, r/VR 21.53–21.83, per-axis σ 0.12–0.25″, obscode W84; +2.9 yr (+35% relative) arc extension on the post-perihelion outbound leg |
 | 2026-07-07 | Our photometry vs H (referee-corrected epochs) | consistent with catalog H at the ~1σ faint edge (H≈9.9–10.1, matching the Hv=9.9 the occultation campaigns already adopt); NO defensible variability (n=6, mixed bands, geometry accounts for most spread) |
 | 2026-07-07 | find_orb joint refit (85+6 obs; referee-reproduced EXACTLY) | all 6 points retained, max residual 0.33″; U 3.0→2.5; element σ's tighten 2–2.4×; **sky-plane 1σ ephemeris uncertainty: 2026 3.69″→1.11″, 2030 4.27″→1.34″, 2040 7.33″→2.51″ (~3× per axis, ~10× in area) AND the arc-only track is recentered by ~1.9σ (6.9–14.1″)** |
+| 2026-09-22 | DECam archive, 2019-05-16 (6 x 180 s i, programme CrA-F1) | **NOT DETECTED at the predicted position.** Motion-aligned stack: -0.6 sigma; 5-sigma limit i > 24.70; predicted V = 22.45 (JPL, H = 9.73), i ~ 21.6-22.2. Controls in the same frames: 2016 WZ80 (V = 22.9) 5.7 sigma, 2008 GV40 (V = 20.9) 13.4 sigma. Positions: JPL 3-sigma 6.45" x 0.61"; our combined fit agrees with JPL to 0.97"; stamps cover +/-20"; six different CCDs; nearest source static to 0.02" over 17 min (a star). |
+| 2026-09-22 | DECam archive coverage 2015-06 .. 2019-05 | No frames >= 60 s on the path. Frames exist 2021 (z), 2022 (i, z), 2023 (g, r, i, z); being measured in `../../../sso-recovery-2026-09-22/`. |
 
 ## Entries
 
@@ -60,3 +63,11 @@ Time-axis alignment must be asserted in EVERY comparison, not just ephemeris que
 
 Provenance: docs/reports/precovery_campaign_2026_07_07/{verify/2009_HW77/, orius_deepdive/};
 ADES draft verify/2009_HW77/ades_draft_330836_orius.psv; tasks wobg5jwvu + wjp0himu9.
+
+### 2026-09-22 — Measurement in 2019 archival DECam frames
+- **Data:** six 180-s i-band DECam frames of 2019-05-16 covering the predicted position, on six CCDs; Gaia DR3 ties (57-103 stars per frame); SkyBoT controls from the same frames.
+- **Result:** no source at the predicted position. Motion-aligned stack: -0.6 sigma; 5-sigma limit i > 24.70. Predicted brightness V = 22.45 (JPL, catalogued H = 9.73), i ~ 21.6-22.2.
+- **Controls (same frames):** 2016 WZ80, V = 22.9, detected at 5.7 sigma, 1.1" from its predicted position; 2008 GV40, V = 20.9, at 13.4 sigma.
+- **Position checks:** JPL 3-sigma 6.45" x 0.61"; combined fit within 0.97" of the JPL ephemeris; stamps cover +/-20"; nearest source static to 0.02" over 17 minutes (a star, not in Gaia).
+- **Status:** the 2013-2015 detections behind the ADES draft are r/VR 21.5-21.8. Their identity is not established by these frames; task #141 filing on hold pending measurements at 2021-2023 epochs.
+- **Provenance:** separate project `~/claude_projects/sso-recovery-2026-09-22/` (measurements, figures, code).
