@@ -3,12 +3,14 @@
 Authoritative list of candidate objects currently under investigation, with the
 evidence that produced each verdict.
 
-## Candidate roster — methods & results (current, 2026-06-04)
+## Candidate roster — methods & results (current, 2026-09-22)
 
 > **Theorized candidates, not discoveries.** Every object below is an *unconfirmed*
 > candidate from an archival search; **no discovery is claimed**, and there are
 > **0 confirmed novel compact objects**. Each entry gives the estimate, how it was
 > found, and the single observation that would confirm or refute it.
+
+> **Literature re-check (2026-09-22).** Three roster objects are in the literature: **Object B** (3161546596480983040) — Schwope et al. 2026 (arXiv:2607.28066), CV, "MCV or DN"; **UCAC4 313** (5612039087715504640) — Bailer-Jones & Kreidberg 2026 (A&A 708, A249), M₂ = 10.9 M_J, and Shahaf+2023 table 1 (AMRF class I); **3155543945892767232** — Müller-Horn et al. 2026 (A&A 709, A62), companion 2.1 (+2.1/−1.1) M⊙. WDJ060042 and WDJ020915: no publication found. Per-object records: `docs/object_journals/<source_id>.md`.
 
 **Methods — how candidates are identified.** Gaia DR3 non-single-star (NSS)
 astrometric orbital solutions → the photocentric mass function
@@ -17,28 +19,28 @@ f(M) = (a_phot/ϖ)³ / P² → a companion-mass estimate for *dark* (unseen) com
 primaries are identified in the Gentile Fusillo et al. 2021 catalogue; one
 candidate is X-ray-selected from eROSITA eRASS1 cross-matched to Gaia astrometry.
 Each candidate is screened against a multi-catalogue novelty gate (SIMBAD,
-Shahaf+2023, Halbwachs binary_masses, GF21, SPY/DBL/Munday), the Shahaf AMRF
+Shahaf+2023, Halbwachs binary_masses, GF21, SPY/DBL/Munday — *superseded 2026-09-22 by an all-table VizieR cone + ADS full-text check*), the Shahaf AMRF
 triple-vs-compact test, and a second method where archival data allow. The mass /
 class discriminant is gated on Gaia DR4 epoch astrometry (2 Dec 2026) or an
 optical spectrum.
 
-### Strong candidates — 2
+### Strong candidates — 1 (Object B: in the literature, see its row)
 | object (Gaia DR3 source_id) | estimate | how found | confirm / refute |
 |---|---|---|---|
 | **WDJ060042** · 2909342818326298112 | DA white dwarf (M₁≈0.61 M⊙) + **dark companion M₂≈1.37 [1.23–1.52] M⊙**, P=935 d, M_tot≈1.98 M⊙, d≈98 pc; clean astrometric orbit (F2=+0.79), P(M₂>1.4)=41% | Gaia DR3 NSS Orbital × GF21 white-dwarf catalogue; photocentric mass function | theorized long-period double-degenerate **or** white-dwarf + neutron-star binary (companion class unresolved). Gaia DR4 confirms the orbit + mass; HST/COS far-UV separates WD vs NS |
-| **Object B** · 3161546596480983040 | blue Galactic compact object at the **cataclysmic-variable / pre-CV** locus; M_G≈8.75, d≈944 pc, eROSITA Lx≈3.6×10³¹ erg/s | eROSITA eRASS1 X-ray × Gaia astrometry; the Gaia QSOC "AGN" flag overturned (parallax 5.3σ + proper motion 36σ ⇒ Galactic) | theorized accreting white-dwarf binary. **Subtype is spectrum-gated (telescope)** — #113 (2026-06-05): no ZTF source within 2″ (blended with the 4.76″ G=13.8 neighbour), so the ZTF discriminator is unmeasurable; X-ray ID carries ~20% residual ambiguity vs the neighbour. 2026-06-10 archival sweep: GALEX = coverage gap (UV unconstrained); XMM/Chandra never pointed here; DASCH 1889–1989 = no nova-scale outburst (blend floor hides dwarf-nova-scale); ATLAS 2015–2026 forced photometry = unmeasurable (same blend at 4″ PSF). The variability discriminator now rests on **ZTF ZFPS forced photometry** (1″ pixels resolve the pair; user registration pending). DR4 tests the astrometry only (prereg Addendum A.5) |
+| ~~**Object B**~~ · 3161546596480983040 — **In the literature (2026-09-22): Schwope+2026, arXiv:2607.28066, entry 45 — CV, "MCV or DN"; no period reported. eRASS:3 counterpart: this object.** | blue Galactic compact object at the **cataclysmic-variable / pre-CV** locus; M_G≈8.75, d≈944 pc, eROSITA Lx≈3.6×10³¹ erg/s | eROSITA eRASS1 X-ray × Gaia astrometry; the Gaia QSOC "AGN" flag overturned (parallax 5.3σ + proper motion 36σ ⇒ Galactic) | theorized accreting white-dwarf binary. **Subtype is spectrum-gated (telescope)** — #113 (2026-06-05): no ZTF source within 2″ (blended with the 4.76″ G=13.8 neighbour), so the ZTF discriminator is unmeasurable; X-ray ID carries ~20% residual ambiguity vs the neighbour. 2026-06-10 archival sweep: GALEX = coverage gap (UV unconstrained); XMM/Chandra never pointed here; DASCH 1889–1989 = no nova-scale outburst (blend floor hides dwarf-nova-scale); ATLAS 2015–2026 forced photometry = unmeasurable (same blend at 4″ PSF). The variability discriminator now rests on **ZTF ZFPS forced photometry** (1″ pixels resolve the pair; user registration pending). DR4 tests the astrometry only (prereg Addendum A.5) |
 
-### Weaker candidates — provisional, still worth pursuing — 2
+### Weaker candidates — provisional, still worth pursuing — 1 (UCAC4 313: in the literature, see its row)
 | object (Gaia DR3 source_id) | estimate | how found | confirm / refute |
 |---|---|---|---|
 | **WDJ020915** · 332248057157474176 | DA white dwarf (M₁≈0.72 M⊙) + **dark companion M₂≈1.32 [1.27–1.38] M⊙**, P=275 d, M_tot≈2.04 M⊙ | same method as WDJ060042 | provisional — the astrometric orbit is a **weak fit** (F2=+8.39, RUWE=8.79), so the mass is uncertain; Gaia DR4 is decisive. **2026-06-11: first-ever light curve (ATLAS, 10.4 yr) is QUIET** — no outbursts, nothing at P_orb or P/2 → the weak fit is *not* variability-induced (orbit-reality modestly strengthened) |
-| **UCAC4 313** · 5612039087715504640 | M-dwarf + **substellar / brown-dwarf candidate**, M₂≈13 M_J (edge-on minimum; M₂ ∝ 1/sin i, so possibly higher — into the stellar range), P=592 d | Gaia DR3 NSS Orbital, astrometry-only | inclination-degenerate; Gaia DR4 measures the inclination (and thus whether it remains substellar) |
+| ~~**UCAC4 313**~~ · 5612039087715504640 — **In the literature (2026-09-22): Bailer-Jones & Kreidberg 2026 (A&A 708, A249) table 1, M₂ = 0.0104 M⊙ = 10.9 M_J (≈0.3–24), P = 592.32 d; Shahaf+2023 table 1, AMRF class I; ESMORGA (Pérez-Couto+2024): M-dwarf pair model.** | M-dwarf + **substellar / brown-dwarf candidate**, M₂≈13 M_J (edge-on minimum; M₂ ∝ 1/sin i, so possibly higher — into the stellar range), P=592 d | Gaia DR3 NSS Orbital, astrometry-only | inclination-degenerate; Gaia DR4 measures the inclination (and thus whether it remains substellar) |
 
-### Watch-list — ambiguous, listed for completeness — 4
+### Watch-list — ambiguous, listed for completeness — 3 (3155543945892767232: in the literature, see its row)
 | object (Gaia DR3 source_id) | estimate | how found | note |
 |---|---|---|---|
-| 1593152388271709824 | G-subgiant + **dark M₂≈1.27 M⊙** (white-dwarf / neutron-star boundary); NSS significance 104.5 | NSS Orbital + a weak (~3σ) archival-RV corroboration | Tier-2; needs a clean RV epoch |
-| 3155543945892767232 | K-giant + **M₂≈1.26 M⊙** | Gaia AstroSpectroSB1; LAMOST two-phase | downgraded (NSS period-significance flag); needs corroboration |
+| 1593152388271709824 | G-subgiant + **dark M₂≈1.27 M⊙** (white-dwarf / neutron-star boundary); NSS significance 104.5 | NSS Orbital + a weak (~3σ) archival-RV corroboration | Tier-2; needs a clean RV epoch. **2026-09-22: TESS eclipsing signal at P = 0.6777712 d centred on the star (VSX submission 2026-09-22, pending); listed in Green+2023 table 2 and Kostov+2025 table 2.** |
+| 3155543945892767232 | K-giant + **M₂≈1.26 M⊙** | Gaia AstroSpectroSB1; LAMOST two-phase | downgraded (NSS period-significance flag); needs corroboration. **In the literature (2026-09-22): Müller-Horn+2026 (A&A 709, A62), companion 2.1 (+2.1/−1.1) M⊙, P ≈ 908 d; LAMOST RV variable (Qian+2019; Tian+2020).** |
 | 5858574810404752256 | **M₂≈1.48 M⊙** (neutron-star mass), triple-vs-compact on the boundary | NSS Orbital + Shahaf AMRF | ambiguous — more likely a hierarchical triple than a compact object |
 | **HD 157033** · 4111149395881722496 | companion **0.4–6 M⊙** (M-dwarf ↔ stellar-mass black hole) | Hipparcos–Gaia proper-motion anomaly + Kervella | ambiguous, **not** a confirmed black hole; needs a clean optical RV |
 
@@ -46,7 +48,7 @@ optical spectrum.
 - **WG 26** · 6092654861665006592 — a **confirmed** sub-Chandrasekhar double-white-dwarf (M₂≈0.6 M⊙; inclination i=77° measured). A real binary of a *known* class, not novel physics.
 - **HD 264291** · 3378588057203660160 — RV-confirmed heavy neutron star (M₂≈1.94 M⊙), but a previously-published object (Shahaf+2023) — not our identification.
 
-**Summary: 2 strong + 2 provisional + 4 watch-list theorized candidates — all unconfirmed, each gated on Gaia DR4 or a spectrum. 0 confirmed novel objects.** Detailed per-object evidence, the mass-derivation corrections, and the full QA / retraction history follow below.
+**Summary (updated 2026-09-22): 1 strong + 1 provisional + 3 watch-list candidates, all unconfirmed, each gated on Gaia DR4 or a spectrum; three former roster entries (Object B, UCAC4 313, 3155543945892767232) are in the literature.** Detailed per-object evidence, the mass-derivation corrections, and the full QA / retraction history follow below.
 
 ---
 
@@ -67,7 +69,7 @@ all four filter verdicts + reasons.
 
 | Bucket | Count (M_1-corrected) |
 |---|---:|
-| **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. Firmly-confirmed binaries = the SED-based WD systems only (next two rows). |
+| **Confirmed (independent 2-channel)** | **0** — 3155543 downgraded to candidate on re-verification (external RV is 2 phases / 2.66σ); CRTS J051419 retracted. **3155543: in Müller-Horn+2026 (2026-09-22).** Firmly-confirmed binaries = the SED-based WD systems only (next two rows). |
 | **Confirmed double-degenerate (WD+WD), sub-Chandrasekhar** | **2** — WG 26 (novel identification) + WDJ205650 (**already published**: Munday+2024, DBL Survey I) |
 | **WD + unresolved massive companion** (M_total > M_Ch; *long-period* DD or WD+NS — **not** a super-Chandra WD, **not** a Type-Ia progenitor; see 2026-05-31 framing note) | **2** — WDJ020915 (M_tot≈2.04, P=275 d), WDJ060042 (M_tot≈1.98, P=935 d); both novel, companion WD-vs-NS unresolved, both need RV |
 | Strong candidate | **1 — HD 264291** (Gaia DR3 3378588057203660160): RV-confirmed orbit + Shahaf P(compact)=0.75, M₂≈2.0 (heavy NS / lower mass-gap); caveats — known Shahaf object, Ap-star primary. The 3 former "strong" (5406907 / HD 157033 / 5858574) were all downgraded on re-verification. |
@@ -79,9 +81,9 @@ all four filter verdicts + reasons.
 
 > **⚠ UNCONFIRMED — follow-up embargo (2026-05-31).** The genuinely-novel candidates in this catalog are **astrometric/SED candidates only — not second-method-confirmed and not published** — pending a clean RV epoch (and HST/COS FUV for the WD-vs-NS question). Treat as preliminary; **do not cite as confirmed discoveries**:
 > - **WG 26** (6092654861665006592) — novel sub-Chandra double-WD (companion class SED-decided; orbit RV pending)
-> - **WDJ020915** (332248057157474176) — novel long-period M_total>M_Ch DD/WD+NS (mass provisional — weak DR3 orbit F2=+8.4 → awaits DR4)
-> - **WDJ060042** (2909342818326298112) — novel long-period M_total>M_Ch DD/WD+NS (companion WD-vs-NS unresolved)
-> - **UCAC4 313-025977** (5612039087715504640) — novel ~15 M_J brown dwarf (astrometry-only, inclination-degenerate)
+> - **WDJ020915** (332248057157474176) — long-period M_total>M_Ch DD/WD+NS (mass provisional — weak DR3 orbit F2=+8.4 → awaits DR4) — *literature re-checked 2026-09-22: no publication found*
+> - **WDJ060042** (2909342818326298112) — long-period M_total>M_Ch DD/WD+NS (companion WD-vs-NS unresolved) — *literature re-checked 2026-09-22: no publication found*
+> - ~~**UCAC4 313-025977** (5612039087715504640) — novel ~15 M_J brown dwarf (astrometry-only, inclination-degenerate)~~ — **in the literature (2026-09-22): Bailer-Jones & Kreidberg 2026 (M₂ = 10.9 M_J); Shahaf+2023 (class I)**
 > (The novel astrometric triples HD 75567 / TYC 4562-535-1 / 5858574810404752256 are likewise unpublished but triple-favored, not compact — already flagged as such below.)
 
 > **M_1 systematic correction (task LL, 2026-05-28)**: the bulk cascade originally derived M_2 at a fixed primary mass M_1 = 1.5 M_⊙. The photocentric mass function f(M) = M_2³/(M_1+M_2)² is invariant, so M_2 scales with the assumed M_1 — overestimated for WD/M-dwarf primaries, underestimated for A-star/giant primaries. Re-solving with the actual primary mass (Gaia FLAME for 74% of sources, StarHorse/TIC/GF21/Kervella for the rest) re-tiers **665 of 1251 candidates**. The Tier-1 NS pool collapses from 291 → 160. **All four headline dormant candidates survive** (3155543 NS holds at M_1=1.67; 5406907 BH holds at M_1=0.82, M_2=4.02; 5858574 strengthens at M_1=2.07, M_2=1.75; HD 157033 unaffected — no NSS row). Corrected catalogs: `data/derived/*_M1corrected.parquet`. Root-cause fix applied to `consumer_v2.py::select_m1()`.
@@ -161,6 +163,8 @@ All 161 M₁-corrected Tier-1 NS (= 148 main + 13 relaxed; **2026-06-10 note:** 
 
 ### Gaia DR3 3155543945892767232
 
+> **Literature (2026-09-22):** Müller-Horn et al. 2026 (A&A 709, A62) include this star in their Gaia DR3 dormant-compact-object RGB sample (companion 2.13 +2.10/−1.06 M⊙, P ≈ 908 d); known LAMOST RV variable (Qian+2019, Tian+2020).
+
 | Field | Value |
 |---|---|
 | Class | NS candidate (62% NS, 20% mass-gap BH, 38% WD on the posterior) |
@@ -237,8 +241,8 @@ Pipeline-derived (WG 26, WDJ205650 — from task GG GF21 cross-match of the v2 +
 
 | Source | M_1 (WD) | M_2 | M_total | P | G | Pool | Notes | Dossier |
 |---|---:|---:|---:|---:|---:|---|---|---|
-| **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 | 1.98 | 935 d | 18.4 | hand-curated | d = 98 pc. NOT in SIMBAD (novelty re-locked 2026-05-31). M_total≈1.98 > M_Ch, but P=935 d → **non-merging, not a Type-Ia progenitor**; companion WD-vs-NS unresolved (P(M₂>1.4)=41%; clean orbit F2=+0.8 — most likely a true NS). No optical RV (verified); long-baseline X-shooter, RV-min not until 2028. | `docs/dossiers/WDJ060042-293041_DOSSIER_2026_05_28.md` |
-| **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 | 2.04 | 274 d | 16.2 | hand-curated | d = 84 pc. NOT in SIMBAD (novelty re-locked 2026-05-31). M_total≈2.04 > M_Ch, but P=275 d → **non-merging, not a Type-Ia progenitor**; companion WD-vs-NS unresolved (P(M₂>1.4)=9%). Astrometric orbit a weak fit (F2=+8.4) → mass awaits DR4. Best RV target: ~5 HARPS-N epochs yield >50σ K_1 in one 2026–27 season. | `docs/dossiers/WDJ020915+380425_DOSSIER_2026_05_28.md` |
+| **WDJ060042.75-293041.36** (Gaia DR3 2909342818326298112) | 0.612 | 1.368 | 1.98 | 935 d | 18.4 | hand-curated | d = 98 pc. NOT in SIMBAD (novelty re-locked 2026-05-31; **2026-09-22: no publication found (all VizieR tables, ADS full text)**). M_total≈1.98 > M_Ch, but P=935 d → **non-merging, not a Type-Ia progenitor**; companion WD-vs-NS unresolved (P(M₂>1.4)=41%; clean orbit F2=+0.8 — most likely a true NS). No optical RV (verified); long-baseline X-shooter, RV-min not until 2028. | `docs/dossiers/WDJ060042-293041_DOSSIER_2026_05_28.md` |
+| **WDJ020915.51+380425.92** (Gaia DR3 332248057157474176)  | 0.718 | 1.323 | 2.04 | 274 d | 16.2 | hand-curated | d = 84 pc. NOT in SIMBAD (novelty re-locked 2026-05-31; **2026-09-22: no publication found (all VizieR tables, ADS full text)**). M_total≈2.04 > M_Ch, but P=275 d → **non-merging, not a Type-Ia progenitor**; companion WD-vs-NS unresolved (P(M₂>1.4)=9%). Astrometric orbit a weak fit (F2=+8.4) → mass awaits DR4. Best RV target: ~5 HARPS-N epochs yield >50σ K_1 in one 2026–27 season. | `docs/dossiers/WDJ020915+380425_DOSSIER_2026_05_28.md` |
 | **WG 26** = WDJ141039.06-474439.48 (Gaia DR3 6092654861665006592) | 0.62 | **0.65** | **1.27** | 176 d | 14.35 | v2_relaxed | **CONFIRMED_WD_BINARY_SUB_CHANDRASEKHAR** (JJ dossier). Hot DA WD primary (**Sahu 2023**, MNRAS 526, 5800, HST/COS: T_eff=21,705 K, log g=7.99, M_1=0.62, cooling age 42 Myr — *not* "Shahaf 2023") at d=56.4 pc. NSS Orbital P=175.9d, e=0.064, sig=68.8, measured i=77° → M_2=0.60–0.65 (dark; a deprojected measurement, not a sin-i=1 floor), M_total=1.13–1.27 across WD M_1 priors (**sub-Chandrasekhar — not Type Ia**). Likely cool double-degenerate; M-dwarf companion excluded >10σ by SED. Binarity essentially un-studied (Sahu 2023 + Vincent 2024 catalog ingest only). LISA-precursor DD at one of the smallest distances in Gaia DR3 NSS. | `docs/dossiers/WG26_DOSSIER_2026_05_28.md` |
 | **WDJ205650.56+062149.68** (Gaia DR3 1736555475066523008) | 0.39 (He WD) | **0.26** | **0.64** | 81 d | — | v2_alt | **CONFIRMED_WD_WD_LOW_MASS** (KK dossier). He+He double-degenerate at d=93 pc. SED consistent with single 9,300–10,500 K LM He WD primary; cascade M_2=0.56 was at default M_1=1.5 → self-consistent at M_1=0.39 gives M_2=0.26, M_total=0.64. BOTH components require binary mass-transfer history → post-CE He+He DD that survived the 2nd CE (wide enough at a=68 R_⊙ to NOT merge in a Hubble time, t_GW ≈ 5×10¹⁶ yr). **NOT NOVEL — Munday+2024 (DBL Survey I, 2024MNRAS.532.2534M / arXiv:2407.02594) already characterized this as a wide double-WD with the 81-d Gaia astrometric period; our only new element is the dynamical M₂/M_total inversion.** (The pipeline's earlier stored super-Chandra M_total=2.06 was an artifact — the GF21 WD mass was never joined into the M₁-correction step, leaving the default M₁=1.5.) NEEDS_RV. | `docs/dossiers/WDJ205650+062149_DOSSIER_2026_05_28.md` |
 
@@ -252,11 +256,11 @@ Plus 4 additional candidates from the v3 Acceleration channel (separate pipeline
 |---|---|---:|---:|---:|---:|---:|---|
 | **APMPM J0710-5704** (Gaia DR3 5486916932205092352) | M4V    | 17.07 | 9.5 ± 1.5 | 253.48 | 12.2 | 37 | `docs/dossiers/APMPM_J0710-5704_DOSSIER_2026_05_28.md` |
 | **SCR J1441-7338**   (Gaia DR3 5796338299045711232) | M5.5-M6V | 25.55 | 11-12 | 488.05 | 14.8 |  9 | `docs/dossiers/SCR_J1441-7338_DOSSIER_2026_05_28.md`. eROSITA-DE DR1 counterpart at 3.45″, L_X ≈ 1.4×10²⁸ erg/s — consistent with M-dwarf coronal emission, not a compact-companion signature; doesn't affect the SJ companion claim. |
-| **UCAC4 313-025977** (Gaia DR3 5612039087715504640) | M4-M5V | 32.39 | 13 | 592.32 | 13.91 |  4 | `docs/dossiers/UCAC4_313-025977_DOSSIER_2026_05_28.md` |
+| **UCAC4 313-025977** (Gaia DR3 5612039087715504640) | M4-M5V | 32.39 | 13 | 592.32 | 13.91 |  4 | `docs/dossiers/UCAC4_313-025977_DOSSIER_2026_05_28.md`. **In Bailer-Jones & Kreidberg 2026, M₂ = 10.9 M_J (2026-09-22).** |
 
 APMPM J0710: 37 TESS sectors stitched show **no phase modulation at P or P/2 below ~200 ppm**, but at a/R₁ ≈ 446 even an edge-on *stellar* companion would produce only ~0.02 ppm ellipsoidal modulation — so this non-detection is **uninformative** about the companion's mass or darkness (it does *not* establish a dark companion "across all inclinations"). The substellar case rests on the astrometric mass function alone; RV is required.
 
-**Novelty (2026-05-30 cross-check):** APMPM J0710 (5486916932205092352) and SCR J1441-7338 (5796338299045711232) are **already published** Gaia-NSS substellar candidates — both appear in Marcussen & Albrecht 2023 (AJ 165, 266) and Bailer-Jones & Kreidberg 2026 (A&A 708, A249) at consistent ~10–12 M_J. Our analysis is an independent reanalysis/cross-check, **not a discovery**; the dossiers' "TRULY NOVEL" claims (from a stale SIMBAD snapshot) are corrected. Only **UCAC4 313-025977** (5612039087715504640, ~15 M_J brown dwarf, P=592 d) is not previously cataloged. All three are astrometry-only and inclination-degenerate (M_2 ∝ 1/sin i): substellar-favored but unconfirmed pending RV.
+**Novelty (2026-05-30 cross-check):** APMPM J0710 (5486916932205092352) and SCR J1441-7338 (5796338299045711232) are **already published** Gaia-NSS substellar candidates — both appear in Marcussen & Albrecht 2023 (AJ 165, 266) and Bailer-Jones & Kreidberg 2026 (A&A 708, A249) at consistent ~10–12 M_J. Our analysis is an independent reanalysis/cross-check, **not a discovery**; the dossiers' "TRULY NOVEL" claims (from a stale SIMBAD snapshot) are corrected. ~~Only **UCAC4 313-025977** (5612039087715504640, ~15 M_J brown dwarf, P=592 d) is not previously cataloged.~~ **2026-09-22: UCAC4 313-025977 is in Bailer-Jones & Kreidberg 2026 (A&A 708, A249) table 1 (M₂ = 0.0104 M⊙ = 10.9 M_J, ≈0.3–24 M_J, P = 592.32 d) and in Shahaf+2023 table 1 (AMRF class I).** All three are astrometry-only and inclination-degenerate (M_2 ∝ 1/sin i): substellar-favored but unconfirmed pending RV.
 
 ## Marginal archival corroboration (1 candidate — tasks BB2 + II2)
 
