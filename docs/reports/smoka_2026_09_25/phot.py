@@ -1,4 +1,4 @@
-"""Differential aperture photometry of Gaia DR3 4307667617377160704 in MITSuME Akeno frames (SMOKA request P06legbatte0925100419FT).
+"""Differential aperture photometry of Gaia DR3 4307667617377160704 in MITSuME Akeno frames (SMOKA request P06USER0925100419FT).
 Header TAN WCS (checked against Gaia: offsets < 1 px); comparison stars = Gaia DR3 14 < G < 16.5 within 9 arcmin, no Gaia source
 brighter than G+3 within 10 arcsec; positions recentred per frame (flux-weighted centroid in 7x7), target forced at its WCS position
 plus the median comparison offset; aperture radius r (px, 1.63"/px), background median in an annulus 8-14 px; ensemble = sum of

@@ -60,7 +60,7 @@ def _scaffold(sid, name, klass, status, dossier, candidates, prereg, date) -> st
 | In DR4 pre-registration | {prereg or "—"} |
 
 ## Cross-check ledger
-*Append-only. The anti-confabulation table — read this before asserting any prior result.*
+*Append-only.*
 
 | date | catalog / method | query | result | provenance |
 |---|---|---|---|---|
