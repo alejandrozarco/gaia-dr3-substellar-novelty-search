@@ -1,0 +1,16 @@
+MWDD rows: 163279 | with any spectral type: 159690
+spectral type starting with DQ (incl. DQA/DQZ/DQH/DQpec/DQ:): 1583
+any type containing 'Q' (DQ, DAQ, DBQ, DZQ, ...): 1621
+  top subtypes: [('DQ', 1431), ('DQA', 90), ('DAQ', 25), ('DQH', 21), ('DQZ', 11), ('DQ+DA', 11), ('DQpec', 9), ('hotDQ', 6), ('DQP', 2), ('DQZA', 2), ('DQhot', 2), ('DBQ', 2), ('DA+DQ', 1), ('DQ-IR', 1), ('DC/DQ', 1)]
+DQ* by MWDD Teff: <10 kK 1310 | 10-16 kK 134 | 16-18 kK 16 | >=18 kK 39 | no Teff 84
+  >=18 kK subtypes: [('DQ', 25), ('DQH', 5), ('DQA', 5), ('DQhot2.4', 1), ('DQhot', 1), ('DQAPhot2.7', 1), ('DQB', 1)]
+explicit 'hot' in type string: ['DC_VERYHOT', 'hotDQ', 'hotDQ', 'hotDQ:', 'hotDQ:', 'hotDQ:', 'hotDQ', 'DQhot2.4', 'DC_HOT', 'DC_VERYHOT']
+DAQ-type strings: Counter({'DAQ': 25})
+Q-type white dwarfs with MWDD Teff >= 16 kK and parallax >= 9.5 mas (d <~ 105 pc): 7
+     51.5 pc  hotDQ      Teff   23800  M 1.243  Gaia 4153618204302689920  Gaia DR2 4153618204302689920
+     74.7 pc  DQA        Teff   16633  M 1.187  Gaia 1318204460477280512  SDSS J162236.21+300455.0
+     78.7 pc  DAQ        Teff   17020  M 1.189  Gaia 887758130788405504  Gaia DR2 887758130788405504
+     85.4 pc  DAQ        Teff   17385  M 1.21  Gaia 94276941624384000  EGGR 469
+     95.6 pc  DQH        Teff   18873  M 1.189  Gaia 1422782516088307840  Gaia DR2 1422782516088307840
+    100.2 pc  DQH?       Teff   30487  M 1.232  Gaia 2533306985471073920  Gaia DR2 2533306985471073920
+    104.8 pc  DQ:        Teff   18727  M 1.081  Gaia 3430880864584148224  WD 0554+277

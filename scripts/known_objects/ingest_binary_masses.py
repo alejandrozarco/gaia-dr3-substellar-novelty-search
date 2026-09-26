@@ -16,7 +16,7 @@ derived pool can't be coordinate-resolved offline (no full NSS table cached) —
 they are reported but not ingested (they are outside our hunt pool anyway).
 
 Offline; stdlib + pandas (ostinato venv). Re-runnable (store.append dedupes).
-Run:  /Users/legbatterij/claude_projects/ostinato/.venv/bin/python \
+Run:  ~/claude_projects/ostinato/.venv/bin/python \
         scripts/known_objects/ingest_binary_masses.py
 """
 import glob

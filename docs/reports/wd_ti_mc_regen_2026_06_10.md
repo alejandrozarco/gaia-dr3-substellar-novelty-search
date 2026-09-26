@@ -188,7 +188,7 @@ this (i smeared 58–85°), confirming the corr_vec is doing real work.
 - Inputs: `/tmp/wd_ti_mc/nss_rows.json` (raw archive rows incl. corr_vec);
   full numeric results `/tmp/wd_ti_mc/mc_results.json`.
 - Outputs: this file + `/tmp/wd_ti_mc_regen_2026_06_10.csv` (per-object × per-budget summary).
-- Python: `/Users/legbatterij/claude_projects/ostinato/.venv/bin/python`; nsstools 0.1.12 in
+- Python: `~/claude_projects/ostinato/.venv/bin/python`; nsstools 0.1.12 in
   `/tmp/nsstools_lib` (pip `--target`, `--no-deps`); seed 20260531; N = 200,000/budget.
 - Vetted repo code consumed read-only by import:
   `scripts/dr4_pipeline/refit/model.py` (`photocentric_a`, `inclination_from_ABFG`),

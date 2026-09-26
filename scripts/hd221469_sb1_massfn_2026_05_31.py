@@ -15,10 +15,11 @@ So the period is KNOWN. Invert the spectroscopic mass function to get M2.
 Standard SB1: f(M) = (M2 sin i)^3 / (M1+M2)^2 = P K1^3 (1-e^2)^(3/2) / (2 pi G).
 MC over M1, K1, P, e errors AND isotropic inclination (cos i uniform) -> M2 posterior.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python (no pip-install).
+Env: ~/claude_projects/ostinato/.venv/bin/python (no pip-install).
 Output: /tmp/hd221469_sb1.json
 """
 from __future__ import annotations
+import os
 import json, math
 import numpy as np
 from scipy.optimize import brentq

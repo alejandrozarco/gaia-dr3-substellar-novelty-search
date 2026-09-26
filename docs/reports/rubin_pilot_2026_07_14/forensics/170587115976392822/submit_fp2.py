@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 """Recover ATLAS task URL from queue list (task already created, 201), then submit ZFPS."""
+import os
 import time, requests
 
 RA, DEC = 326.82833, -13.4747
 OUT = '/tmp/rubin_pilot/forensics/170587115976392822'
-atlas_token = open('/Users/legbatterij/.config/atlas/token').read().strip()
-zfps_userpass = open('/Users/legbatterij/.config/ztf_zfps/userpass').read().strip()
-EMAIL = 'alexander.keur@gmail.com'
+atlas_token = open(os.path.expanduser('~/.config/atlas/token')).read().strip()
+zfps_userpass = open(os.path.expanduser('~/.config/ztf_zfps/userpass')).read().strip()
+EMAIL = os.environ["CONTACT_EMAIL"]
 H = {'Authorization': f'Token {atlas_token}', 'Accept': 'application/json'}
 
 # find the most recent task at our coordinates

@@ -15,8 +15,8 @@
 #   bash run_pipeline.sh both         # main + wider + 2 consumers
 
 set -e
-ROOT=/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27
-PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+ROOT=$HOME/claude_projects/gaia-recovered-2026-05-27
+PY=$HOME/claude_projects/ostinato/.venv/bin/python
 MODE="${1:-main}"
 shift || true
 EXTRA_FLAGS="$@"

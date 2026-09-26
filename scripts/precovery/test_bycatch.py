@@ -1,6 +1,6 @@
 """pytest suite for the bycatch harvester, driven by REAL campaign artifacts.
 
-    /Users/legbatterij/claude_projects/ostinato/.venv/bin/python -m pytest \
+    ~/claude_projects/ostinato/.venv/bin/python -m pytest \
         scripts/precovery/test_bycatch.py -v
 
 POSITIVE control: the 6 (330836) Orius detections from the 2009 HW77 verify set.

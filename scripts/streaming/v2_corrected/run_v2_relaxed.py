@@ -16,6 +16,7 @@ Usage:
     python run_v2_relaxed.py --M1-prior 1.0
 """
 from __future__ import annotations
+import os
 import argparse
 import datetime as dt
 import math
@@ -32,7 +33,7 @@ THIS = Path(__file__).resolve().parent
 sys.path.insert(0, str(THIS))
 from consumer_v2 import derive_row_v2, photocentric_a_mas  # noqa: E402
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 RAW = ROOT / 'data' / 'raw_chunks'
 DERIVED = ROOT / 'data' / 'derived'
 EXISTING_V2 = DERIVED / 'main_hunt_derived_v2.parquet'

@@ -1,0 +1,146 @@
+{
+ "3327361677328480256": {
+  "mwdd": {
+   "wdid": "Gaia DR3 3327361677328480256",
+   "spectype": "DA",
+   "teff": "20746.0",
+   "logg": "8.429",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "Gaia DR3 3327361677328480256;Gaia DR2 3327361677328480256"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": [],
+  "sdss_dr17_specobjall": []
+ },
+ "5060502958330979840": {
+  "mwdd": {
+   "wdid": "Gaia DR3 5060502958330979840",
+   "spectype": "DQ:",
+   "teff": "10367.0",
+   "logg": "7.509",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "Ton S 354;Gaia DR3 5060502958330979840;PHL 4443;Gaia DR2 5060502958330979840;USNO-B1.0 0622-00052589"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ },
+ "5866831043215711488": {
+  "mwdd": {
+   "wdid": "Gaia DR2 5866831043215711488",
+   "spectype": "DC",
+   "teff": "10315.0",
+   "logg": "7.969",
+   "BD": null,
+   "source": "Gaia EDR3",
+   "nbOpt": "1",
+   "allnames": "VVV J141421.23-602326.1;Gaia DR2 5866831043215711488;GSC2.3 S7MU056838;UPM J1414-6023B;Gaia DR3 5866831043215711488;Gaia EDR3 5866831043215711488;WDJ141421.49-602325.34;WDJ141421.49-602325.35;J1414-6023"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ },
+ "4792264314911712512": {
+  "mwdd": {
+   "wdid": "Gaia DR3 4792264314911712512",
+   "spectype": "DA:",
+   "teff": "38472.0",
+   "logg": "9.395",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "Gaia DR2 4792264314911712512;Gaia DR3 4792264314911712512"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ },
+ "4782336652626481280": {
+  "mwdd": null,
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ },
+ "6467932297772819712": {
+  "mwdd": {
+   "wdid": "Gaia DR3 6467932297772819712",
+   "spectype": "DA:",
+   "teff": "10727.0",
+   "logg": "8.389",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "Gaia DR3 6467932297772819712;Gaia DR2 6467932297772819712"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ },
+ "2192687388516522880": {
+  "mwdd": {
+   "wdid": "Gaia DR3 2192687388516522880",
+   "spectype": "DC:",
+   "teff": "17718.0",
+   "logg": "8.688",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "Gaia DR3 2192687388516522880;Gaia DR2 2192687388516522880"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": [],
+  "sdss_dr17_specobjall": []
+ },
+ "545633955251654016": {
+  "mwdd": {
+   "wdid": "Gaia DR2 545633955251654016",
+   "spectype": "DC",
+   "teff": "8716.0",
+   "logg": "8.243",
+   "BD": null,
+   "source": "Gaia EDR3",
+   "nbOpt": "1",
+   "allnames": "Gaia DR2 545633955251654016;Gaia DR3 545633955251654016;Gaia EDR3 545633955251654016;WDJ024544.82+721144.58;J0245+7211"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": [],
+  "sdss_dr17_specobjall": []
+ },
+ "4963309012356892800": {
+  "mwdd": {
+   "wdid": "Gaia DR3 4963309012356892800",
+   "spectype": "DC:",
+   "teff": "10615.0",
+   "logg": "8.343",
+   "BD": null,
+   "source": "Vincent et al. 2024",
+   "nbOpt": "1",
+   "allnames": "GALEX J021237.6-400841;Gaia DR3 4963309012356892800;Gaia DR2 4963309012356892800;J0212-4008"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC",
+  "sdss_dr17_specobjall": []
+ }
+}

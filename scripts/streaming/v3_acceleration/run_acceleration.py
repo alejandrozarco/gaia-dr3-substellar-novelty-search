@@ -25,6 +25,7 @@ Usage:
     python run_acceleration.py --use-cache                  # reuse cached supp
 """
 from __future__ import annotations
+import os
 import argparse
 import datetime as dt
 import math
@@ -41,7 +42,7 @@ THIS = Path(__file__).resolve().parent
 sys.path.insert(0, str(THIS))
 from acceleration_inversion import derive_row_v3  # noqa: E402
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 DERIVED = ROOT / 'data' / 'derived'
 OUTPUT_PARQUET = DERIVED / 'acceleration_v3.parquet'
 ACCEL_CACHE = DERIVED / 'acceleration_v3_raw.parquet'

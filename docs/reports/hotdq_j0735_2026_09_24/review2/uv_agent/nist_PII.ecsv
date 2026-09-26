@@ -1,0 +1,26 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: Observed, datatype: float64}
+# - {name: Ritz, datatype: float64}
+# - {name: Transition, datatype: int64}
+# - {name: Rel., datatype: int64}
+# - {name: Aki, datatype: float64}
+# - {name: fik, datatype: float64}
+# - {name: Acc., datatype: string}
+# - {name: Ei           Ek, datatype: string}
+# - {name: Lower level, datatype: string}
+# - {name: Upper level, datatype: string}
+# - {name: gi   gk, datatype: string}
+# - {name: Type, datatype: int64}
+# - {name: TP, datatype: string}
+# - {name: Line, datatype: string}
+# schema: astropy-2.0
+Observed Ritz Transition Rel. Aki fik Acc. "Ei           Ek" "Lower level" "Upper level" "gi   gk" Type TP Line
+1249.82 "" 80012 20 "" "" "" "" "|      |" "|      |" "" "" "" L3986
+1301.87 1301.8743 76813 20 50000000.0 0.038 C "0.000000  -   9.523515" "3s2.3p2 | 3P   | 0" "3s.3p3 | 3P*  | 1" "1 - 3" "" T8043 L3986
+1304.47 1304.4917 76659 20 150000000.0 0.013 C "0.020445  -   9.524852" "3s2.3p2 | 3P   | 1" "3s.3p3 | 3P*  | 0" "3 - 1" "" T8043 L3986
+1304.68 1304.6752 76647 15 37000000.0 0.0094 C "0.020445  -   9.523515" "3s2.3p2 | 3P   | 1" "3s.3p3 | 3P*  | 1" "3 - 3" "" T8043 L3986
+1305.48 1305.4973 76600 35 38000000.0 0.016 C "0.020445  -   9.517530" "3s2.3p2 | 3P   | 1" "3s.3p3 | 3P*  | 2" "3 - 5" "" T8043 L3986
+1309.87 1309.8742 76343 25 62000000.0 0.0096 C "0.058163  -   9.523515" "3s2.3p2 | 3P   | 2" "3s.3p3 | 3P*  | 1" "5 - 3" "" T8043 L3986
+1310.7 1310.7029 76295 60 110000000.0 0.028 C "0.058163  -   9.517530" "3s2.3p2 | 3P   | 2" "3s.3p3 | 3P*  | 2" "5 - 5" "" T8043 L3986

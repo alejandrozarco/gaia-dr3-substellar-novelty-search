@@ -1,6 +1,7 @@
+import os
 import pandas as pd, numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
-p="/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/rubin_pilot_2026_07_14/forensics/170587115976392822/photometry_master_mjd.csv"
+p=os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/rubin_pilot_2026_07_14/forensics/170587115976392822/photometry_master_mjd.csv")
 d=pd.read_csv(p)
 bad=d.note.astype(str).str.contains("ASTEROID",case=False,na=False)
 print(f"excluded as suspect single-epoch measurements: {bad.sum()} rows")
@@ -52,6 +53,6 @@ ax.set_title("ZTF19abxfaon = Rubin diaObject 170587115976392822 — 13 yr archiv
 ax.grid(alpha=.25); ax.legend(fontsize=7.6,ncol=2,loc="lower left",framealpha=.95)
 sec=ax.secondary_xaxis("top"); sec.set_xticks([56600,57300,58000,58700,59400,60100,60800,61300])
 sec.set_xticklabels(["2013","2015","2017","2019","2021","2023","2025","2026"],fontsize=9)
-out="/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/vsx_bycatch_2026_09_18/vsx_ZTF19abxfaon_lightcurve.png"
+out=os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/vsx_bycatch_2026_09_18/vsx_ZTF19abxfaon_lightcurve.png")
 plt.tight_layout(); plt.savefig(out,dpi=140)
 print("saved:",out)

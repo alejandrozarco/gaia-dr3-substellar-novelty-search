@@ -16,7 +16,7 @@ import argparse, json, os, sys, time
 from pathlib import Path
 from datetime import datetime
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 RAW = ROOT / 'data' / 'raw_chunks'
 DERIVED = ROOT / 'data' / 'derived'
 

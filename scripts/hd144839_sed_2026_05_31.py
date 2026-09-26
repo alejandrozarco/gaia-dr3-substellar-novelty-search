@@ -38,12 +38,13 @@ Skepticism notes:
  * Companion light fractions are computed in f_nu with full per-band errors + a 0.03 mag systematic
    floor; the reported sigma is the worst single REAL-DETECTION colour residual AND the Delta-chi2.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python  (NO pip-install).
+Env: ~/claude_projects/ostinato/.venv/bin/python  (NO pip-install).
 Outputs: /tmp/hd144839_sed.json + /tmp/hd144839_sed_report.md .  DO NOT edit dossiers / CANDIDATES.md.
 Reuses the _with_timeout / _flt / fnu_blackbody / companion_excess_sigma idiom from
 scripts/wdj205650_sed_2026_05_30.py and the WDS/neighbour/SIMBAD idiom from prime3/hd264291.
 """
 from __future__ import annotations
+import os
 import warnings, math, json, sys
 warnings.filterwarnings('ignore')
 import numpy as np

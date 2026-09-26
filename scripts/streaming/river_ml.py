@@ -16,6 +16,7 @@ Saves checkpoints to data/derived/{mode}_river_model.pkl every N learns
 and writes accuracy stats to data/derived/{mode}_ml_stats.json.
 """
 from __future__ import annotations
+import os
 import json, pickle, warnings
 warnings.filterwarnings('ignore')
 from pathlib import Path
@@ -24,7 +25,7 @@ from datetime import datetime, timezone
 import pandas as pd
 from river import forest, metrics, preprocessing, compose
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 DERIVED = ROOT / 'data' / 'derived'
 
 # Features for the held-out-M_2 multi-class problem

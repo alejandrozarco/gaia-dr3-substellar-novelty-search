@@ -1,0 +1,75 @@
+{
+ "4782336652626118912": {
+  "ids": [
+   "2MASS J04193258-5036533",
+   "CD-50  1344",
+   "CPC  0  2175",
+   "CPD-50   574",
+   "GSC 08075-00989",
+   "Gaia DR1 4782336648329756672",
+   "Gaia DR2 4782336652626118912",
+   "Gaia DR3 4782336652626118912",
+   "HD  27681",
+   "HIC  20180",
+   "HIP 20180",
+   "PPM 333393",
+   "SAO 233483",
+   "TIC 219242071",
+   "TYC 8075-989-1"
+  ],
+  "refs": [
+   [
+    "1978MSS...C02....0H",
+    "Catalogue of two dimentional spectral types for the HD stars, Vol. 2"
+   ],
+   [
+    "1993yCat.3135....0C",
+    "VizieR Online Data Catalog: Henry Draper Catalogue and Extension, published in Ann. Harvard Obs. 91-100 (1918-1925)"
+   ],
+   [
+    "1997A&A...323L..49P",
+    "The Hipparcos Catalogue."
+   ],
+   [
+    "2007A&A...474..653V",
+    "Validation of the new Hipparcos reduction."
+   ],
+   [
+    "2011MNRAS.411..435B",
+    "Bayesian inference of stellar parameters and interstellar extinction  using parallaxes and multiband photometry."
+   ],
+   [
+    "2012A&A...546A..61D",
+    "Radial velocities for the HIPPARCOS-Gaia Hundred-Thousand-Proper-Motion  project."
+   ],
+   [
+    "2012MNRAS.427..343M",
+    "Fundamental parameters and infrared excesses of Hipparcos stars."
+   ],
+   [
+    "2014ASPC..485..223B",
+    "The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements"
+   ],
+   [
+    "2018A&A...609A.116R",
+    "Empirical photometric calibration of the Gaia red clump: Colours, effective temperature, and absolute magnitude."
+   ],
+   [
+    "2019A&A...623A..72K",
+    "Stellar and substellar companions of nearby stars from Gaia DR2. Binarity from proper motion anomaly."
+   ],
+   [
+    "2019MNRAS.490.3158C",
+    "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   ],
+   [
+    "2020ApJS..247...11R",
+    "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   ],
+   [
+    "2021ApJS..254...42B",
+    "The Hipparcos-Gaia Catalog of Accelerations: Gaia EDR3 edition."
+   ]
+  ]
+ }
+}

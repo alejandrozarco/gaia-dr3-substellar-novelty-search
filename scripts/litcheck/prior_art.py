@@ -34,15 +34,21 @@ import os
 import sys
 import tempfile
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 import xml.etree.ElementTree as ET
+
+import requests
 
 ATOM = "{http://www.w3.org/2005/Atom}"
 OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 API = "https://export.arxiv.org/api/query"
-UA = "gaia-recovered-prior-art/1.0 (solo research; mailto:alexander.keur@gmail.com)"
+# Fetched with requests: plain urllib requests (no Accept header) were answered with
+# HTTP 406 by export.arxiv.org for non-curl User-Agents (2026-09-23/24), while the same
+# URLs returned 200 via requests with any User-Agent.
+HEADERS = {
+    "User-Agent": "gaia-recovered-prior-art/1.1 (arXiv API literature screen)",
+    "Accept": "application/atom+xml, application/xml;q=0.9, */*;q=0.8",
+}
 
 # --- Cross-process throttle + cache --------------------------------------------
 # arXiv asks for ~1 request / 3 s. When many scouts call this gate in parallel (a
@@ -159,16 +165,18 @@ def search(query, max_results=10, category=None, sort="submittedDate", retries=3
         try:
             if throttle:
                 _throttle()
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=45) as r:
-                raw = r.read()
+            r = requests.get(url, headers=HEADERS, timeout=45)
+            r.raise_for_status()
+            raw = r.content
+            ET.fromstring(raw)  # a non-XML 200 (error page) is a failure, not an empty result
             if cache:
                 _cache_put(url, raw.decode("utf-8", "replace"))
             return raw
-        except urllib.error.HTTPError as ex:
+        except requests.HTTPError as ex:
             last = ex
             # arXiv asks for ~1 req / 3 s; on 429 (rate limit) back off harder.
-            wait = 15 if ex.code == 429 else 3 * (attempt + 1)
+            code = ex.response.status_code if ex.response is not None else None
+            wait = 15 if code == 429 else 3 * (attempt + 1)
             if attempt < retries - 1:
                 time.sleep(wait)
         except Exception as ex:  # noqa: BLE001 -- arXiv API is flaky; retry then give up

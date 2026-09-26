@@ -78,7 +78,7 @@ Full provenance (source_id, PM, parallax, G, tier): `ao-dormant-co-2026_provenan
 ## 4. Watchlist (b): `ao-known-objects-2026.csv` — 19,168 rows
 
 Source: project known-objects store
-(`/Users/legbatterij/claude_projects/ostinato/data/external_catalogs/known_objects/known_objects.parquet`,
+(`~/claude_projects/ostinato/data/external_catalogs/known_objects/known_objects.parquet`,
 schema per `scripts/known_objects/store.py` / README; 11,345,365 rows total).
 
 **Scoping decision (honest bucket):** the store is 99.83% two *bulk all-sky reference

@@ -137,7 +137,7 @@ The "current params" are the authoritative full-Thiele-Innes-covariance re-analy
 
 ## DAY-ONE DR4 PIPELINE (run the day DR4 drops, 2 Dec 2026)
 
-> Env: `/Users/legbatterij/claude_projects/ostinato/.venv/bin/python` (no pip-install). Write to /tmp only; do not edit dossiers/CANDIDATES.md. source_ids as strings. The four targets:
+> Env: `~/claude_projects/ostinato/.venv/bin/python` (no pip-install). Write to /tmp only; do not edit dossiers/CANDIDATES.md. source_ids as strings. The four targets:
 > `6092654861665006592` (WG 26), `332248057157474176` (WDJ020915), `2909342818326298112` (WDJ060042), `5612039087715504640` (UCAC4 313).
 
 ### Step 0 — Confirm DR4 schema + access (first 30 min)

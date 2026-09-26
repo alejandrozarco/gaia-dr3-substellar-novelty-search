@@ -1,0 +1,303 @@
+{
+ "AREV_747_000417_zg_c05_q1": [
+  {
+   "catalog": "B/vsx/vsx",
+   "label": "VSX",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 9,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/ApJS/249/18",
+   "label": "ZTF periodic variables (Chen+2020)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 1,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/AJ/156/241",
+   "label": "ATLAS variables (Heinze+2018)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 10,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/vclassre",
+   "label": "Gaia DR3 variability classification",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 24,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/veb",
+   "label": "Gaia DR3 eclipsing binaries",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 2,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/674/A22",
+   "label": "Gaia known-variable cross-match (Gavras+2023)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 50,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "II/366",
+   "label": "ASAS-SN variables (bare II/366)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 2,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/648/A44",
+   "label": "Gaia DR2 large-amplitude variables (Mowlavi+2021)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 21,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/677/A137",
+   "label": "Gaia DR3 dispersions (Maiz Apellaniz+2023)",
+   "target_rows": 1,
+   "target_rmin": 0.14,
+   "target_first": {
+    "_r": "0.14",
+    "Source": "3828306424841718656",
+    "RA_ICRS": "152.58790682721",
+    "DE_ICRS": "-3.5308207381",
+    "Gmag": "16.71868",
+    "BP-RP": "2.733328",
+    "Cstar": "0.043288",
+    "plx": "3.75067",
+    "e_plx": "0.331856",
+    "GMAG": "9.589219",
+    "Gal": "M",
+    "SG0": "30.695591",
+    "SG": "27.671507",
+    "SSG": "0.544296",
+    "SIG": "13.22588",
+    "SBP0": "93.049652",
+    "SBP": "75.289558",
+    "SSBP": "8.093232",
+    "SIBP": "52.950577",
+    "SRP0": "16.338688",
+    "SRP": "9.662636",
+    "SSRP": "3.263501",
+    "SIRP": "12.625535",
+    "Var": "NOT_AVAILABLE",
+    "EpPhot": "0"
+   },
+   "coverage_rows_20arcmin": 50,
+   "verdict": "MATCH"
+  }
+ ],
+ "AREV_1918_000493_zg_c16_q4": [
+  {
+   "catalog": "B/vsx/vsx",
+   "label": "VSX",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 27,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/ApJS/249/18",
+   "label": "ZTF periodic variables (Chen+2020)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 4,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/AJ/156/241",
+   "label": "ATLAS variables (Heinze+2018)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 23,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/vclassre",
+   "label": "Gaia DR3 variability classification",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 39,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/veb",
+   "label": "Gaia DR3 eclipsing binaries",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 6,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/674/A22",
+   "label": "Gaia known-variable cross-match (Gavras+2023)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 50,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "II/366",
+   "label": "ASAS-SN variables (bare II/366)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 6,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/648/A44",
+   "label": "Gaia DR2 large-amplitude variables (Mowlavi+2021)",
+   "target_rows": 1,
+   "target_rmin": 0.043,
+   "target_first": {
+    "_r": "0.043",
+    "recno": "22339",
+    "GaiaDR2": "1738942132557316864",
+    "datasetB": "0",
+    "datasetC": "0",
+    "GLON": "58.9923649531",
+    "GLAT": "-28.9803240445",
+    "Plx": "1.5175",
+    "e_Plx": "0.1999",
+    "o_Gmag": "138",
+    "FG": "1325.3",
+    "e_FG": "7.2978",
+    "Gmag": "17.882586",
+    "o_BPmag": "13",
+    "FBP": "514.18",
+    "e_FBP": "22.32",
+    "BPmag": "18.573601",
+    "o_RPmag": "10",
+    "FRP": "1343.9",
+    "e_FRP": "13.082",
+    "RPmag": "16.941008",
+    "E(BR/RP)": "1.402",
+    "NE(BR/RP)": "1.073",
+    "f_NE(BR/RP)": "0",
+    "LPV": "0"
+   },
+   "coverage_rows_20arcmin": 38,
+   "verdict": "MATCH"
+  },
+  {
+   "catalog": "J/A+A/677/A137",
+   "label": "Gaia DR3 dispersions (Maiz Apellaniz+2023)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 50,
+   "verdict": "ABSENT, coverage proved"
+  }
+ ],
+ "AREV_990_000495_zg_c14_q3": [
+  {
+   "catalog": "B/vsx/vsx",
+   "label": "VSX",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 4,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/ApJS/249/18",
+   "label": "ZTF periodic variables (Chen+2020)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 1,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/AJ/156/241",
+   "label": "ATLAS variables (Heinze+2018)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 5,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/vclassre",
+   "label": "Gaia DR3 variability classification",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 13,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "I/358/veb",
+   "label": "Gaia DR3 eclipsing binaries",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 1,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/674/A22",
+   "label": "Gaia known-variable cross-match (Gavras+2023)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 33,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "II/366",
+   "label": "ASAS-SN variables (bare II/366)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 0,
+   "verdict": "NO COVERAGE (false null risk)"
+  },
+  {
+   "catalog": "J/A+A/648/A44",
+   "label": "Gaia DR2 large-amplitude variables (Mowlavi+2021)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 16,
+   "verdict": "ABSENT, coverage proved"
+  },
+  {
+   "catalog": "J/A+A/677/A137",
+   "label": "Gaia DR3 dispersions (Maiz Apellaniz+2023)",
+   "target_rows": 0,
+   "target_rmin": null,
+   "target_first": null,
+   "coverage_rows_20arcmin": 50,
+   "verdict": "ABSENT, coverage proved"
+  }
+ ]
+}

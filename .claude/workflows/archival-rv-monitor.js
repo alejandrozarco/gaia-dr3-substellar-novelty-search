@@ -13,8 +13,8 @@ const DEFAULT_WATCH = [
 ]
 const A = (typeof args === 'string') ? (() => { const s = args.trim(); try { return (s[0] === '{' || s[0] === '[') ? JSON.parse(s) : { source_ids: [s] } } catch (e) { return {} } })() : (args || {})
 const WATCH = ((Array.isArray(A) ? A : A.source_ids) || DEFAULT_WATCH).map(String).filter(s => /^\d{5,}$/.test(s))
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const C = { type: 'object', properties: { source_id: { type: 'string' }, n_epochs: { type: 'integer' }, new_since_dossier: { type: 'boolean' }, verdict_change: { type: 'string' }, note: { type: 'string' } }, required: ['source_id', 'new_since_dossier'], additionalProperties: true }
 
 log(`monitoring ${WATCH.length} candidates for new archival RV`)

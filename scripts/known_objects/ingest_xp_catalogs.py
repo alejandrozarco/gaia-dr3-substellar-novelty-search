@@ -40,9 +40,10 @@ catalog+source_id+rounded-position):
 Offline-friendly (VizieR only; no Gaia ESA TAP).  Re-runnable (store.append
 dedupes).  Mirrors scripts/known_objects/ingest_binary_masses.py.
 
-Run:  /Users/legbatterij/claude_projects/ostinato/.venv/bin/python \
+Run:  ~/claude_projects/ostinato/.venv/bin/python \
         scripts/known_objects/ingest_xp_catalogs.py
 """
+import os
 import re
 import sys
 import warnings

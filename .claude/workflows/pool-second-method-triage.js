@@ -14,8 +14,8 @@ const A = (typeof args === 'string')
   : (args || {})
 const SIDS = ((Array.isArray(A) ? A : A.source_ids) || []).map(String).filter(s => /^\d{5,}$/.test(s))
 if (!SIDS.length) throw new Error('pass args: {source_ids: ["<Gaia DR3 id>", ...]} as STRINGS')
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const TR = { type: 'object', properties: { source_id: { type: 'string' }, verdict: { type: 'string' }, n_distinct_phases: { type: 'integer' }, K1: { type: 'string' }, fM_rv_vs_phot: { type: 'string' }, M2: { type: 'string' }, note: { type: 'string' } }, required: ['source_id', 'verdict'] }
 const VF = { type: 'object', properties: { source_id: { type: 'string' }, holds: { type: 'boolean' }, revised_verdict: { type: 'string' }, why: { type: 'string' } }, required: ['source_id', 'holds', 'revised_verdict'] }
 

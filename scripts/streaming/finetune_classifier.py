@@ -22,13 +22,14 @@ generalization beyond the simple BP-RP / log g thresholds.
 Output: trained model + predictions for the 212+ unstudied candidates.
 """
 from __future__ import annotations
+import os
 import sys, warnings, pickle, json
 warnings.filterwarnings('ignore')
 from pathlib import Path
 import polars as pl
 import numpy as np
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 
 
 def load_labeled_data():

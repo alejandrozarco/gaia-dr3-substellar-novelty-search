@@ -1,0 +1,6701 @@
+{
+ "5950072354156640128": {
+  "simbad_ids": [
+   "Gaia DR2 5950072354156640128",
+   "Gaia DR3 5950072354156640128"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DB",
+    "Gaia DR3 5950072354156640128"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    4
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    4
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    2
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    4
+   ],
+   [
+    "I/320/spm4",
+    "SPM4 output (out of 103319647 stars)",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    5
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    4
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    6
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    6
+   ],
+   [
+    "I/349/starhorse",
+    "Starhorse catalog",
+    2
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    6
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    6
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    5
+   ],
+   [
+    "I/354/starhorse2021",
+    "First 1000 lines as an example, Starhorse 2021",
+    3
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    6
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    6
+   ],
+   [
+    "I/355/paramsup",
+    "Additional parameters from the Apsis processing chain, compared to the main table astrophysical parameters, from modules",
+    2
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    2
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    2
+   ],
+   [
+    "I/360/syntphot",
+    "Synthetic photometry generated from the Gaia BP/RP mean spectra (218936915 sources) (synthetic_photometry_gspc)",
+    1
+   ],
+   [
+    "II/246/out",
+    "2MASS Point Source Catalogue, output (on a total of 470,992,970 sources)",
+    2
+   ],
+   [
+    "II/311/wise",
+    "the WISE All-Sky release (among 563,921,584 sources)",
+    2
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    2
+   ],
+   [
+    "II/336/apass9",
+    "The APASS catalog, output (on a total of 62 million sources)",
+    1
+   ],
+   [
+    "II/358/smss",
+    "SkyMapper DR1.1",
+    2
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    6
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    2
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    6
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    2
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    3
+   ],
+   [
+    "IV/35/wn18_b10",
+    "IDs, positions, magnitudes and probabilities (118,964,029 sources)",
+    2
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    6
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    6
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    2
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "B/denis/denis",
+    "DENIS output",
+    4
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    4
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    2
+   ],
+   [
+    "J/ApJS/281/52/table1",
+    "Star parameters of TESS objects",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1r",
+    "Rejected objects",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A137/catalog",
+    "Gaia DR3 three-band photometric dispersions catalog",
+    1
+   ],
+   [
+    "J/A+A/677/A159/catalog",
+    "White dwarf 500 pc catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/684/A29/extend",
+    "Extended Catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    2
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/170/287/table13",
+    "Scores and dispositions of TESS+Kepler-Aggregation model for Unknown (UNK) TCEs",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000|00001",
+   "I/305/out:Class=3",
+   "I/320/spm4:SPMID=2462261068",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=0|1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/349/starhorse:FlagPhoto=GBPRPJHKs",
+   "I/349/starhorse:FlagPlx=part03_leq5|part08_gt5",
+   "I/349/starhorse:FlagGaia=000|010",
+   "I/349/starhorse:FlagOut=00000",
+   "I/352/gedr3dis:Flag=10021|10033|10099",
+   "I/353/gsc242:objID=2230002015418|2230002015483|22300020214916|22300020214930|22300020605237",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/354/starhorse2021:FlagPhoto=G|GBPRP/grizJHKs|GBPRPJHKs",
+   "I/354/starhorse2021:FlagOut=0",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0|1",
+   "I/355/gaiadr3:dAPASS9=0.805429|2.571935|2.96086|5.960692",
+   "I/355/paramp:Flags-HS=999",
+   "I/355/paramp:SpType-ELS=unknown",
+   "I/355/paramp:Flags-Flame=0|21",
+   "I/355/paramp:Flag-MSC=0|1",
+   "I/355/paramp:Flags-NOA=13",
+   "I/360/syntphot:UFlag=0",
+   "I/360/syntphot:BFlag=1",
+   "I/360/syntphot:VFlag=1",
+   "I/360/syntphot:RFlag=1",
+   "I/360/syntphot:IFlag=1",
+   "I/360/syntphot:uFlag=0",
+   "I/360/syntphot:gFlag=1",
+   "I/360/syntphot:rFlag=1",
+   "I/360/syntphot:iFlag=1",
+   "I/360/syntphot:zFlag=1",
+   "I/360/syntphot:yFlag=1",
+   "I/360/syntphot:F606WFlag=1",
+   "I/360/syntphot:F814WFlag=1",
+   "II/246/out:Date=1999-07-15",
+   "II/246/out:Jstdap=14.494|15.304",
+   "II/246/out:e_Jstdap=0.012|0.062",
+   "II/246/out:Hstdap=13.91|14.677",
+   "II/246/out:e_Hstdap=0.068|0.118",
+   "II/246/out:Kstdap=13.793|14.534",
+   "II/246/out:e_Kstdap=0.045|0.067",
+   "II/358/smss:ObjectId=215335146|215335149",
+   "II/358/smss:flags=0",
+   "II/358/smss:Niflags=0",
+   "II/358/smss:flagsu=-1",
+   "II/358/smss:flagsv=-1",
+   "II/358/smss:flagsg=0",
+   "II/358/smss:Niflagsg=0",
+   "II/358/smss:flagsr=-1",
+   "II/358/smss:flagsi=-1",
+   "II/358/smss:flagsz=-1",
+   "II/358/smss:Ngoodz=0",
+   "II/358/smss:ClassStar=0.533|0.589",
+   "II/359/vhs_dr4:J-Kspnt=0.1631|0.4351|0.4993|0.5314|0.7011|0.7832",
+   "II/359/vhs_dr4:e_J-Kspnt=0.0067|0.018|0.0397|0.171|0.1834|0.1952",
+   "II/359/vhs_dr4:Mclass=-1|-2|1",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=-1|1",
+   "II/359/vhs_dr4:JclasSt=-0.116|0.591|0.934|1.678|1.693|2.233",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Kspmag=13.8753|14.8194|15.8821|16.9293|16.9529|17.0268",
+   "II/359/vhs_dr4:e_Kspmag=0.0117|0.0269|0.0676|0.1955|0.2017|0.2206",
+   "II/359/vhs_dr4:KsPA=153.4|18.3|80.8|87.0|91.3|94.7",
+   "II/359/vhs_dr4:Ksclass=-1|1",
+   "II/359/vhs_dr4:KsclasSt=-1.419|0.584|2.03|2.052|2.248|2.328",
+   "II/359/vhs_dr4:Ksperrbits=0|16",
+   "II/363/unwise:objID=2632m485o0047259|2632m485o0115343",
+   "II/363/unwise:SpModW1=0.000430882|0.000865877",
+   "II/363/unwise:SpModW2=0.000553966|0.00125223",
+   "II/363/unwise:e_SpModW1=0.000171028|0.000280062",
+   "II/363/unwise:e_SpModW2=0.000401|0.000914",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=2632m485_b0-045337",
+   "II/365/catwise:ePosPM=-0.0248",
+   "II/367/vhs_dr5:J-Kspnt=0.1631|0.4351|0.4993|0.5314|0.7011|0.7832",
+   "II/367/vhs_dr5:e_J-Kspnt=0.0067|0.018|0.0397|0.171|0.1834|0.1952",
+   "II/367/vhs_dr5:Mclass=-1|-2|1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1|1",
+   "II/367/vhs_dr5:JclasStat=-0.116|0.591|0.934|1.678|1.693|2.233",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=13.8753|14.8194|15.8821|16.9293|16.9529|17.0268",
+   "II/367/vhs_dr5:e_Kspmag=0.0117|0.0269|0.0676|0.1955|0.2017|0.2206",
+   "II/367/vhs_dr5:KsPA=153.4|18.3|80.8|87.0|91.3|94.7",
+   "II/367/vhs_dr5:Ksclass=-1|1",
+   "II/367/vhs_dr5:KsclasSt=-1.419|0.584|2.03|2.052|2.248|2.328",
+   "II/367/vhs_dr5:Ksperrbits=0|16",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=361823224|361823229|361823231",
+   "II/379/smssdr4:Niflags=0|2|7",
+   "II/379/smssdr4:flags=0|3",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=3",
+   "II/379/smssdr4:Niflagsg=3",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=3",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=3",
+   "II/379/smssdr4:Niflagsi=2",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=3",
+   "II/379/smssdr4:Niflagsz=0|2",
+   "II/379/smssdr4:Ngoodz=0|11|9",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.765|0.954|0.983",
+   "II/379/smssdr4:flagsPSF=0|1",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF|GIANT",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF|GIANT",
+   "V/160/shboost:InputFlag=XP5pGBPRP|XP5pGBPRPJHKs",
+   "J/A+A/649/A6/table1r:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.3174244743825271",
+   "J/A+A/682/A5/catalog:SpType=DB",
+   "J/A+A/682/A5/catalog:PDA=0.01",
+   "J/A+A/682/A5/catalog:PDB=0.82",
+   "J/A+A/682/A5/catalog:PDC=0.07",
+   "J/A+A/682/A5/catalog:PDQ=0.0",
+   "J/A+A/682/A5/catalog:PDZ=0.01",
+   "J/A+A/699/A3/table3:SPPred=DB",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.218454201917122,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "5208047381438507520": {
+  "simbad_ids": [
+   "GALEX J073504.2-794409",
+   "Gaia DR2 5208047381438507520",
+   "Gaia DR3 5208047381438507520"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "GALEX J073504.2-794409"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019ApJ...886..100C",
+    "A cooling anomaly of high-mass white dwarfs."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2023MNRAS.518.5106J",
+    "Spectral classification of the 100 pc white dwarf population from Gaia-DR3 and the virtual observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ],
+   [
+    "2025AJ....169..100B",
+    "New Ultracool Companions to Nearby White Dwarfs."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "I/360/syntphot",
+    "Synthetic photometry generated from the Gaia BP/RP mean spectra (218936915 sources) (synthetic_photometry_gspc)",
+    1
+   ],
+   [
+    "II/311/wise",
+    "the WISE All-Sky release (among 563,921,584 sources)",
+    1
+   ],
+   [
+    "II/312/ais",
+    "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/358/smss",
+    "SkyMapper DR1.1",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    2
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    2
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    2
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/391/ks4dr1",
+    "*the band-merged single_master catalog (1000 among 279,909,360 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "B/denis/denis",
+    "DENIS output",
+    3
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/886/100/catalog",
+    "Nearby high-mass white dwarfs catalog",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/ApJS/281/52/table1",
+    "Star parameters of TESS objects",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/669/A15/table2",
+    "Stellar parameters of all targets observed by TESS in its 1-30 sectors",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A137/catalog",
+    "Gaia DR3 three-band photometric dispersions catalog",
+    1
+   ],
+   [
+    "J/A+A/679/A127/catalog",
+    "Catalog of predicted spectral type for all objects in the 100pc (table 3)",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/688/A168/table3",
+    "D, specifying those sources with infrared excesses (Sample F), as well as the contaminated sources (the ones excluded in",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_gaia",
+    "Pristine-Gaia synthetic metallicity catalogue (table 2) (52297046 sources)",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/MNRAS/479/111/snsurvey",
+    "AST3-1 DR1 SN sources",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=..Y",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10000",
+   "I/353/gsc242:objID=2110313316173|211031336097",
+   "I/353/gsc242:Class=0|4",
+   "I/353/gsc242:r_Class=10|15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "I/355/paramp:Flags-HS=92",
+   "I/355/paramp:SpType-ELS=O",
+   "I/360/syntphot:UFlag=1",
+   "I/360/syntphot:BFlag=0",
+   "I/360/syntphot:VFlag=1",
+   "I/360/syntphot:RFlag=1",
+   "I/360/syntphot:IFlag=1",
+   "I/360/syntphot:uFlag=1",
+   "I/360/syntphot:gFlag=1",
+   "I/360/syntphot:rFlag=1",
+   "I/360/syntphot:iFlag=1",
+   "I/360/syntphot:zFlag=1",
+   "I/360/syntphot:yFlag=0",
+   "I/360/syntphot:F606WFlag=0",
+   "I/360/syntphot:F814WFlag=0",
+   "II/312/ais:objid=6385904325913217654",
+   "II/335/galex_ais:objid=6385904325917411978",
+   "II/335/galex_ais:Sp?=0",
+   "II/358/smss:ObjectId=287153542",
+   "II/358/smss:flags=0",
+   "II/358/smss:Niflags=0",
+   "II/358/smss:flagsu=0",
+   "II/358/smss:Niflagsu=0",
+   "II/358/smss:flagsv=0",
+   "II/358/smss:Niflagsv=0",
+   "II/358/smss:flagsg=0",
+   "II/358/smss:Niflagsg=0",
+   "II/358/smss:flagsr=0",
+   "II/358/smss:Niflagsr=0",
+   "II/358/smss:flagsi=0",
+   "II/358/smss:Niflagsi=0",
+   "II/358/smss:flagsz=0",
+   "II/358/smss:Niflagsz=0",
+   "II/358/smss:Ngoodz=1",
+   "II/358/smss:ClassStar=0.98",
+   "II/363/unwise:objID=1171m803o0106507|1171m803o0136278",
+   "II/363/unwise:SpModW1=0.0|0.000522316",
+   "II/363/unwise:SpModW2=0.0|0.00800949",
+   "II/363/unwise:e_SpModW1=0.0|0.00168198",
+   "II/363/unwise:e_SpModW2=0.0|0.002223",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=1171m803_b0-049823|1171m803_b0-061690",
+   "II/365/catwise:ePosPM=-0.0435|0.0359",
+   "II/367/vhs_dr5:J-Kspnt=-0.28|1.1165",
+   "II/367/vhs_dr5:e_J-Kspnt=0.1737|0.1831",
+   "II/367/vhs_dr5:Mclass=-2",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=0.427|0.968",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=17.4202|17.4207",
+   "II/367/vhs_dr5:e_Kspmag=0.3257|0.3514",
+   "II/367/vhs_dr5:KsPA=165.8|175.1",
+   "II/367/vhs_dr5:Ksclass=1",
+   "II/367/vhs_dr5:KsclasSt=0.509|0.788",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=1",
+   "II/379/smssdr4:ObjectId=462388594",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=7",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.987",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/391/ks4dr1:Flags-B=0",
+   "II/391/ks4dr1:Flags-V=0",
+   "II/391/ks4dr1:Flags-R=0",
+   "II/391/ks4dr1:Flags-I=0",
+   "IV/38/tic:Flag=gaia2",
+   "IV/39/tic82:Flag=gaia2",
+   "V/160/shboost:InputFlag=XP5pGBPRP",
+   "J/ApJ/886/100/catalog:MWDDspT=CND",
+   "J/ApJS/281/52/table1:SpType=O",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.6233448981409303",
+   "J/A+A/679/A127/catalog:SPPred=DA",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.95",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.0",
+   "J/A+A/682/A5/catalog:PDQ=0.08",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/688/A168/table3:SpType=No",
+   "J/A+A/699/A3/table3:SPPred=DA",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/518/5106/catalog:SpT=DA",
+   "J/MNRAS/518/5106/catalog:Type-S=WD*_Candidate"
+  ],
+  "vizier_radius_arcsec": 5.077706668149269,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "4876216249643782656": {
+  "simbad_ids": [
+   "Gaia DR2 4876216249643782656",
+   "Gaia DR3 4876216249643782656"
+  ],
+  "simbad_basic": [
+   [
+    "WD?",
+    null,
+    "Gaia DR3 4876216249643782656"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/351/gps1_p",
+    "The extended Gaia-PS1-SDSS (GPS1+) proper motion catalog, output (on a total of 390,405,023 sources)",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    1
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    2
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    2
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=1",
+   "I/331/apop:Type=0",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/351/gps1_p:objID=-4558891868107924624",
+   "I/351/gps1_p:Flag=20",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=202230102481",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "I/355/paramp:Flags-NOA=113",
+   "II/349/ps1:objID=72840771016232093",
+   "II/349/ps1:f_objID=436527104",
+   "II/349/ps1:gFlags=115000",
+   "II/349/ps1:rFlags=115000",
+   "II/349/ps1:iFlags=115000",
+   "II/349/ps1:zFlags=115000",
+   "II/349/ps1:yFlags=114992",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=-0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/359/vhs_dr4:Mclass=-1",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=-1",
+   "II/359/vhs_dr4:JclasSt=0.288",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Ksclass=-1",
+   "II/359/vhs_dr4:Ksperrbits=0",
+   "II/367/vhs_dr5:Mclass=-1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=0.288",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Ksclass=-1",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=0",
+   "II/371/des_dr2:rFlag=0",
+   "II/371/des_dr2:iFlag=0",
+   "II/371/des_dr2:zFlag=0",
+   "II/371/des_dr2:yFlag=0",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=-0.001",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/379/smssdr4:ObjectId=20152502",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:Ngoodz=0",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.954",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/381/hlsp_ps1_tm:objid=72840771016232093",
+   "II/389/ps1_dr2:objID=72840771016232093",
+   "II/389/ps1_dr2:f_objID=436527104",
+   "II/389/ps1_dr2:gFlags=115000",
+   "II/389/ps1_dr2:rFlags=115000",
+   "II/389/ps1_dr2:iFlags=115000",
+   "II/389/ps1_dr2:zFlags=115000",
+   "II/389/ps1_dr2:yFlags=114992",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:LClass=DWARF",
+   "VII/292/south:objid=2471|2472",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=0|1",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/AJ/161/234/table3:2MASSProb=0.0",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.467723390521886,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "2564860667085575552": {
+  "simbad_ids": [
+   "Gaia DR2 2564860667085575552",
+   "Gaia DR3 2564860667085575552",
+   "LSPM J0130+0526",
+   "SDSS J013033.99+052656.1",
+   "SDSS J013034.00+052656.1",
+   "USNO-B1.0 0954-00015371"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "LSPM J0130+0526"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2005AJ....129.1483L",
+    "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2020ApJ...898...84K",
+    "The 100 pc white dwarf sample in the SDSS footprint."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2022A&A...658A..79L",
+    "J-PLUS: Spectral evolution of white dwarfs by PDF analysis."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ],
+   [
+    "2025ApJ...979..157K",
+    "The 100 pc White Dwarf Sample in the SDSS Footprint. II. A New Look at the Spectral Evolution of White Dwarfs."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/298/lspm_n",
+    "The LSPM catalog (north)",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/351/gps1_p",
+    "The extended Gaia-PS1-SDSS (GPS1+) proper motion catalog, output (on a total of 390,405,023 sources)",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/319/las9",
+    "the UKIDSS-DR9 Large Area Survey (on a total of 82,655,526 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    1
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/139/sdss9",
+    "* output of the SDSS photometric catalog",
+    1
+   ],
+   [
+    "V/147/sdss12",
+    "* output of the SDSS photometric catalog",
+    1
+   ],
+   [
+    "V/154/sdss16",
+    "* output of the SDSS photometric catalog",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    2
+   ],
+   [
+    "J/ApJ/862/12/scussphz",
+    "Photometric redshifts of galaxies",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/898/84/table1",
+    "The 100pc white dwarf in the SDSS footprint",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/658/A79/wdpda",
+    "Atmospheric parameters for J-PLUS DR2 white dwarfs",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/679/A127/catalog",
+    "Catalog of predicted spectral type for all objects in the 100pc (table 3)",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/691/A211/wdpca",
+    "Atmospheric parameters and calcium absorption for J-PLUS DR2 white dwarfs",
+    1
+   ],
+   [
+    "J/A+A/691/A221/catalog",
+    "Bayesian classification data (table F1)",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/A+A/701/A273/catalog",
+    "Atmospheric parameters, calcium absorption and outlier type for J-PLUS DR3 white dwarfs",
+    1
+   ],
+   [
+    "J/A+A/705/A247/catalog",
+    "Coordinates, some light curve features, classifications and their probabilities",
+    2
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/AJ/161/234/table7",
+    "All of the possible matches for the cross match between Gaia and SDSS DR12",
+    1
+   ],
+   [
+    "J/MNRAS/482/715/tablea1",
+    "Pan-STARRS 1 WD photometric catalogue",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/485/5573/g100pcwd",
+    "Gaia 100 pc White Dwarf sample",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/298/lspm_n:LSPM=J0130+0526",
+   "I/298/lspm_n:Aflag=S",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=2",
+   "I/331/apop:Type=0",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/351/gps1_p:objID=-3788969845873975432",
+   "I/351/gps1_p:Flag=20",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=132320103282|1323201035659",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/319/las9:cl=-1",
+   "II/319/las9:Ycl=-1",
+   "II/319/las9:Yflags=0",
+   "II/319/las9:Jcl1=-1",
+   "II/319/las9:Jflags1=0",
+   "II/319/las9:Jcl2=-1",
+   "II/319/las9:Jflags2=0",
+   "II/319/las9:Hcl=-1",
+   "II/319/las9:Hflags=0",
+   "II/319/las9:Kcl=1",
+   "II/319/las9:Kflags=0",
+   "II/349/ps1:objID=114530226417699045",
+   "II/349/ps1:f_objID=436527104",
+   "II/349/ps1:gFlags=115000",
+   "II/349/ps1:rFlags=115000",
+   "II/349/ps1:iFlags=115000",
+   "II/349/ps1:zFlags=115000",
+   "II/349/ps1:yFlags=115000",
+   "II/363/unwise:objID=0227p060o0027484",
+   "II/363/unwise:SpModW1=0.000679553",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.00303107",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0227p060_b0-036501",
+   "II/365/catwise:ePosPM=-0.164",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/381/hlsp_ps1_tm:objid=114530226417699045",
+   "II/389/ps1_dr2:objID=114530226417699045",
+   "II/389/ps1_dr2:f_objID=436527104",
+   "II/389/ps1_dr2:gFlags=115000",
+   "II/389/ps1_dr2:rFlags=115000",
+   "II/389/ps1_dr2:iFlags=115000",
+   "II/389/ps1_dr2:zFlags=115000",
+   "II/389/ps1_dr2:yFlags=115000",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "V/139/sdss9:objID=1237678623847809079",
+   "V/139/sdss9:cl=3",
+   "V/139/sdss9:SpObjID=0",
+   "V/139/sdss9:flags=35219034472468",
+   "V/139/sdss9:ObsDate=2008.7568",
+   "V/139/sdss9:uFlags=302546964",
+   "V/139/sdss9:uDate=2008.7568",
+   "V/139/sdss9:gFlags=275180421140",
+   "V/139/sdss9:gDate=2008.7568",
+   "V/139/sdss9:rFlags=4503599929884692",
+   "V/139/sdss9:rDate=2008.7568",
+   "V/139/sdss9:iFlags=302546964",
+   "V/139/sdss9:iDate=2008.7568",
+   "V/139/sdss9:zFlags=275179896848",
+   "V/139/sdss9:zDate=2008.7568",
+   "V/147/sdss12:class=3",
+   "V/147/sdss12:objID=1237678623847809079",
+   "V/147/sdss12:SpObjID=0",
+   "V/147/sdss12:flags=35219034472468",
+   "V/147/sdss12:ObsDate=2008.7568",
+   "V/147/sdss12:uFlags=302546964",
+   "V/147/sdss12:uDate=2008.7568",
+   "V/147/sdss12:gFlags=275180421140",
+   "V/147/sdss12:gDate=2008.7568",
+   "V/147/sdss12:rFlags=4503599929884692",
+   "V/147/sdss12:rDate=2008.7568",
+   "V/147/sdss12:iFlags=302546964",
+   "V/147/sdss12:iDate=2008.7568",
+   "V/147/sdss12:zFlags=275179896848",
+   "V/147/sdss12:zDate=2008.7568",
+   "V/154/sdss16:objID=1237678623847809079",
+   "V/154/sdss16:class=3",
+   "V/154/sdss16:clean=0",
+   "V/154/sdss16:flags=35219034472468",
+   "V/154/sdss16:uFlags=302546964",
+   "V/154/sdss16:gFlags=275180421140",
+   "V/154/sdss16:rFlags=4503599929884692",
+   "V/154/sdss16:iFlags=302546964",
+   "V/154/sdss16:zFlags=275179896848",
+   "V/154/sdss16:SpObjID=0",
+   "VII/292/south:objid=1711|1712",
+   "VII/292/south:type=PSF|REX",
+   "VII/292/south:fclean=1",
+   "J/ApJ/862/12/scussphz:objID=1237678623847809079",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/679/A127/catalog:SPPred=DC",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.72",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.01",
+   "J/A+A/682/A5/catalog:PDQ=0.05",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/691/A221/catalog:ClassGal=0.011066",
+   "J/A+A/691/A221/catalog:ClassQSO=0.004305",
+   "J/A+A/691/A221/catalog:ClassStar=0.98519",
+   "J/A+A/691/A221/catalog:e_ClassGal=0.040715",
+   "J/A+A/691/A221/catalog:e_ClassQSO=0.00816",
+   "J/A+A/691/A221/catalog:e_ClassStar=0.047937",
+   "J/A+A/691/A221/catalog:ClassGal-QSOcorr=0.948482",
+   "J/A+A/691/A221/catalog:ClassGAL-Starcorr=-0.998423",
+   "J/A+A/691/A221/catalog:ClassQSO-Starcorr=-0.963532",
+   "J/A+A/691/A221/catalog:ClassGal02=-0.073418",
+   "J/A+A/691/A221/catalog:ClassQSO02=-0.01219",
+   "J/A+A/691/A221/catalog:ClassStar02=0.896851",
+   "J/A+A/691/A221/catalog:ClassGal16=-0.028865",
+   "J/A+A/691/A221/catalog:ClassQSO16=-0.003888",
+   "J/A+A/691/A221/catalog:ClassStar16=0.933852",
+   "J/A+A/691/A221/catalog:ClassGal50=0.009317",
+   "J/A+A/691/A221/catalog:ClassQSO50=0.004258",
+   "J/A+A/691/A221/catalog:ClassStar50=0.986561",
+   "J/A+A/691/A221/catalog:ClassGal84=0.053228",
+   "J/A+A/691/A221/catalog:ClassQSO84=0.011745",
+   "J/A+A/691/A221/catalog:ClassStar84=1.03297",
+   "J/A+A/691/A221/catalog:ClassGal98=0.085538",
+   "J/A+A/691/A221/catalog:ClassQSO98=0.020102",
+   "J/A+A/691/A221/catalog:ClassStar98=1.082356",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/A+A/701/A273/catalog:Typeout=1",
+   "J/A+A/705/A247/catalog:predInitClass=nonvar-star",
+   "J/A+A/705/A247/catalog:predInitClassProb=0.86|0.873",
+   "J/A+A/705/A247/catalog:predVarClass=None",
+   "J/A+A/705/A247/catalog:predClass=nonvar-star",
+   "J/A+A/705/A247/catalog:predClassProb=0.86|0.873",
+   "J/A+A/705/A247/catalog:CleanAgnCand=0",
+   "J/AJ/161/234/table7:SDSSProb=0.8818452",
+   "J/MNRAS/482/715/tablea1:Objid=17865",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/508/3877/maincat:sdssclean=0",
+   "J/MNRAS/518/5106/catalog:Type-S=PM*"
+  ],
+  "vizier_radius_arcsec": 6.792449432606625,
+  "desi_dr1": [],
+  "lamost_dr10": []
+ },
+ "3143790338389766400": {
+  "simbad_ids": [
+   "Gaia DR2 3143790338389766400",
+   "Gaia DR3 3143790338389766400"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "Gaia DR3 3143790338389766400"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/351/gps1_p",
+    "The extended Gaia-PS1-SDSS (GPS1+) proper motion catalog, output (on a total of 390,405,023 sources)",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    3
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    1
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/139/sdss9",
+    "* output of the SDSS photometric catalog",
+    3
+   ],
+   [
+    "V/147/sdss12",
+    "* output of the SDSS photometric catalog",
+    3
+   ],
+   [
+    "V/154/sdss16",
+    "* output of the SDSS photometric catalog",
+    3
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/ApJS/219/39/master",
+    "*Master quasar catalog (table 1)",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1r",
+    "Rejected objects",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table7",
+    "All of the possible matches for the cross match between Gaia and SDSS DR12",
+    3
+   ],
+   [
+    "J/MNRAS/450/3893/dame_qso",
+    "Candidate QSO/AGN Objects from SDSS-DR10",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=2",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/351/gps1_p:objID=5832583729909997072",
+   "I/351/gps1_p:Flag=30",
+   "I/352/gedr3dis:Flag=10133",
+   "I/353/gsc242:objID=1221222017965|1221222058439|122122206760",
+   "I/353/gsc242:Class=0|4",
+   "I/353/gsc242:r_Class=11|15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/335/galex_ais:objid=6378093437187526679",
+   "II/335/galex_ais:Sp?=0",
+   "II/349/ps1:objID=115701188186248996",
+   "II/349/ps1:f_objID=436527104",
+   "II/349/ps1:gFlags=115000",
+   "II/349/ps1:rFlags=115000",
+   "II/349/ps1:iFlags=115000",
+   "II/349/ps1:zFlags=115000",
+   "II/349/ps1:yFlags=115000",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/381/hlsp_ps1_tm:objid=115701188186248996",
+   "II/389/ps1_dr2:objID=115701188186248996",
+   "II/389/ps1_dr2:f_objID=436527104",
+   "II/389/ps1_dr2:gFlags=115000",
+   "II/389/ps1_dr2:rFlags=115000",
+   "II/389/ps1_dr2:iFlags=115000",
+   "II/389/ps1_dr2:zFlags=115000",
+   "II/389/ps1_dr2:yFlags=115000",
+   "IV/38/tic:objID=1237661091246179523",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:objID=1237661091246179523",
+   "IV/39/tic82:LClass=DWARF",
+   "V/139/sdss9:objID=1237661091246179523|1237661924469703653|1237670487560881127",
+   "V/139/sdss9:cl=6",
+   "V/139/sdss9:SpObjID=0",
+   "V/139/sdss9:flags=268435456|68987912448|68987912704",
+   "V/139/sdss9:ObsDate=2003.078|2003.242|2005.8491",
+   "V/139/sdss9:uFlags=275146342400|275146375168|275280593408",
+   "V/139/sdss9:uDate=2003.078|2003.242|2005.8491",
+   "V/139/sdss9:gFlags=275146342400|275146375168",
+   "V/139/sdss9:gDate=2003.078|2003.242|2005.8491",
+   "V/139/sdss9:rFlags=4503874773712896|4503874773745664",
+   "V/139/sdss9:rDate=2003.078|2003.242|2005.8491",
+   "V/139/sdss9:iFlags=275146375168",
+   "V/139/sdss9:iDate=2003.078|2003.242|2005.8491",
+   "V/139/sdss9:zFlags=275146376448|275280592896",
+   "V/139/sdss9:zDate=2003.078|2003.242|2005.8491",
+   "V/147/sdss12:class=6",
+   "V/147/sdss12:objID=1237661091246179523|1237661924469703653|1237670487560881127",
+   "V/147/sdss12:SpObjID=0",
+   "V/147/sdss12:flags=268435456|68987912448|68987912704",
+   "V/147/sdss12:ObsDate=2003.078|2003.2421|2005.8492",
+   "V/147/sdss12:uFlags=275146342400|275146375168|275280593408",
+   "V/147/sdss12:uDate=2003.078|2003.2421|2005.8492",
+   "V/147/sdss12:gFlags=275146342400|275146375168",
+   "V/147/sdss12:gDate=2003.078|2003.2421|2005.8492",
+   "V/147/sdss12:rFlags=4503874773712896|4503874773745664",
+   "V/147/sdss12:rDate=2003.078|2003.242|2005.8492",
+   "V/147/sdss12:iFlags=275146375168",
+   "V/147/sdss12:iDate=2003.078|2003.242|2005.8492",
+   "V/147/sdss12:zFlags=275146376448|275280592896",
+   "V/147/sdss12:zDate=2003.078|2003.2421|2005.8492",
+   "V/154/sdss16:objID=1237661091246179523|1237661924469703653|1237670487560881127",
+   "V/154/sdss16:class=6",
+   "V/154/sdss16:clean=0|1",
+   "V/154/sdss16:flags=268435456|68987912448|68987912704",
+   "V/154/sdss16:uFlags=275146342400|275146375168|275280593408",
+   "V/154/sdss16:gFlags=275146342400|275146375168",
+   "V/154/sdss16:rFlags=4503874773712896|4503874773745664",
+   "V/154/sdss16:iFlags=275146375168",
+   "V/154/sdss16:zFlags=275146376448|275280592896",
+   "V/154/sdss16:SpObjID=0",
+   "VII/292/south:objid=1287",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/ApJS/219/39/master:Flags=268435968",
+   "J/ApJS/219/39/master:Flags2=16",
+   "J/A+A/649/A6/table1r:GCNSprob=0.998",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.95",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.0",
+   "J/A+A/682/A5/catalog:PDQ=0.05",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/AJ/161/234/table2:SDSSProb=0.9924039",
+   "J/AJ/161/234/table7:SDSSProb=0.0|0.9924039",
+   "J/MNRAS/450/3893/dame_qso:objID=1237661091246179523",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/508/3877/maincat:sdssclean=1"
+  ],
+  "vizier_radius_arcsec": 5.7615865320688515,
+  "desi_dr1": [],
+  "lamost_dr10": []
+ },
+ "5243591401210032000": {
+  "simbad_ids": [
+   "Gaia DR2 5243591401210032000",
+   "Gaia DR3 5243591401210032000"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DQ",
+    "Gaia DR3 5243591401210032000"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019ApJ...886..100C",
+    "A cooling anomaly of high-mass white dwarfs."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2023MNRAS.518.5106J",
+    "Spectral classification of the 100 pc white dwarf population from Gaia-DR3 and the virtual observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ],
+   [
+    "2026ApJ...999..146O",
+    "White Dwarf Merger Remnants with Cooling Delays on the Q Branch Lack Strong Magnetism."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/358/smss",
+    "SkyMapper DR1.1",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    2
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/391/ks4dr1",
+    "*the band-merged single_master catalog (1000 among 279,909,360 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "B/denis/denis",
+    "DENIS output",
+    2
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/886/100/catalog",
+    "Nearby high-mass white dwarfs catalog",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/ApJS/281/52/table1",
+    "Star parameters of TESS objects",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/665/A78/agnev",
+    "Events generated by simulated AGN (eRASS1_mock_events_AGN.fits)",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/679/A127/catalog",
+    "Catalog of predicted spectral type for all objects in the 100pc (table 3)",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_gaia",
+    "Pristine-Gaia synthetic metallicity catalogue (table 2) (52297046 sources)",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/485/5573/g100pcwd",
+    "Gaia 100 pc White Dwarf sample",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=..Y",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=2113222046427",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/358/smss:ObjectId=280602442",
+   "II/358/smss:flags=0",
+   "II/358/smss:Niflags=0",
+   "II/358/smss:flagsu=0",
+   "II/358/smss:Niflagsu=0",
+   "II/358/smss:flagsv=0",
+   "II/358/smss:Niflagsv=0",
+   "II/358/smss:flagsg=0",
+   "II/358/smss:Niflagsg=0",
+   "II/358/smss:flagsr=0",
+   "II/358/smss:Niflagsr=0",
+   "II/358/smss:flagsi=0",
+   "II/358/smss:Niflagsi=0",
+   "II/358/smss:flagsz=0",
+   "II/358/smss:Niflagsz=0",
+   "II/358/smss:Ngoodz=1",
+   "II/358/smss:ClassStar=0.846",
+   "II/363/unwise:objID=1463m682o0120073|1465m697o0137975",
+   "II/363/unwise:SpModW1=0.00724494|0.00786692",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.00193746|0.00199814",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=1463m682_b0-143661",
+   "II/365/catwise:ePosPM=0.0777",
+   "II/367/vhs_dr5:J-Kspnt=0.0454",
+   "II/367/vhs_dr5:e_J-Kspnt=0.2411",
+   "II/367/vhs_dr5:Mclass=-2",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=0.611",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=17.6729",
+   "II/367/vhs_dr5:e_Kspmag=0.329",
+   "II/367/vhs_dr5:KsPA=175.4",
+   "II/367/vhs_dr5:Ksclass=1",
+   "II/367/vhs_dr5:KsclasSt=0.488",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=453057373",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=6",
+   "II/379/smssdr4:Nnclipz=1",
+   "II/379/smssdr4:ClassStar=0.983",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/391/ks4dr1:Flags-B=0",
+   "II/391/ks4dr1:Flags-V=2",
+   "II/391/ks4dr1:Flags-R=2",
+   "II/391/ks4dr1:Flags-I=0",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "V/160/shboost:InputFlag=XP5pGBPRP",
+   "J/ApJ/886/100/catalog:MWDDspT=CND",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.38659169733113397",
+   "J/A+A/679/A127/catalog:SPPred=DC",
+   "J/A+A/682/A5/catalog:SpType=DB",
+   "J/A+A/682/A5/catalog:PDA=0.0",
+   "J/A+A/682/A5/catalog:PDB=0.98",
+   "J/A+A/682/A5/catalog:PDC=0.01",
+   "J/A+A/682/A5/catalog:PDQ=0.1",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DB",
+   "J/AJ/161/234/table3:2MASSProb=0.0001996",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/518/5106/catalog:SpT=non-DA",
+   "J/MNRAS/518/5106/catalog:Type-S=WD*_Candidate"
+  ],
+  "vizier_radius_arcsec": 5.329219489034551,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "6466745168812781568": {
+  "simbad_ids": [
+   "GALEX J212643.1-494857",
+   "Gaia DR2 6466745168812781568",
+   "Gaia DR3 6466745168812781568"
+  ],
+  "simbad_basic": [
+   [
+    "WD?",
+    null,
+    "GALEX J212643.1-494857"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "II/312/ais",
+    "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=233020236018",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/312/ais:objid=6383722968931895380",
+   "II/335/galex_ais:objid=6383722968936090344",
+   "II/335/galex_ais:Sp?=0",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=-0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/359/vhs_dr4:Mclass=1",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=1",
+   "II/359/vhs_dr4:JclasSt=0.45",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Ksclass=-1",
+   "II/359/vhs_dr4:Ksperrbits=0",
+   "II/367/vhs_dr5:Mclass=1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=1",
+   "II/367/vhs_dr5:JclasStat=0.45",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Ksclass=-1",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=0",
+   "II/371/des_dr2:rFlag=0",
+   "II/371/des_dr2:iFlag=0",
+   "II/371/des_dr2:zFlag=0",
+   "II/371/des_dr2:yFlag=0",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=-0.001",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/379/smssdr4:ObjectId=1595890458",
+   "II/379/smssdr4:Niflags=7",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=7",
+   "II/379/smssdr4:Nnclipg=1",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=2",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:Ngoodz=0",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.97",
+   "II/379/smssdr4:flagsPSF=0",
+   "IV/38/tic:Flag=gaia2",
+   "IV/39/tic82:Flag=gaia2",
+   "VII/292/south:objid=1619",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.2623884294375065,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "5014781450914913664": {
+  "simbad_ids": [
+   "Gaia DR2 5014781450914913664",
+   "Gaia DR3 5014781450914913664"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "Gaia DR3 5014781450914913664"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    3
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    3
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    2
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    2
+   ],
+   [
+    "I/319/xpm",
+    "formatted catalog (on a total of 313,610,083 sources)",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    2
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    2
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    2
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    2
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    2
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    2
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    2
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    3
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    2
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    2
+   ],
+   [
+    "I/355/paramsup",
+    "Additional parameters from the Apsis processing chain, compared to the main table astrophysical parameters, from modules",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/246/out",
+    "2MASS Point Source Catalogue, output (on a total of 470,992,970 sources)",
+    1
+   ],
+   [
+    "II/311/wise",
+    "the WISE All-Sky release (among 563,921,584 sources)",
+    1
+   ],
+   [
+    "II/312/ais",
+    "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)",
+    1
+   ],
+   [
+    "II/312/mis",
+    "the MIS (Medium-depth Imaging Survey) (out of 12,597,912 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/350/vstatlas",
+    "VST ATLAS DR3 catalog, output (106,775,847 sources)",
+    2
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    2
+   ],
+   [
+    "II/358/smss",
+    "SkyMapper DR1.1",
+    2
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    2
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    2
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    2
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    2
+   ],
+   [
+    "II/380/splusdr4",
+    "PSF-mode photometry catalogue of S-PLUS DR4",
+    2
+   ],
+   [
+    "II/382/viking4",
+    "VIKING catalogue DR4 (2025-03-25)",
+    2
+   ],
+   [
+    "II/383/kids_dr5",
+    "*KiDS-ESO-DR5 multi-band source catalog",
+    3
+   ],
+   [
+    "II/385/vst_atlas4",
+    "VST-ATLAS DR4 catalog",
+    2
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    2
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    2
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    2
+   ],
+   [
+    "B/denis/denis",
+    "DENIS output",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    2
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/ApJS/279/26/table3",
+    "KiDS DR5 Galaxy-QSO-Star catalog (updated version from cosviewer.com)",
+    2
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A159/catalog",
+    "White dwarf 500 pc catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    2
+   ],
+   [
+    "J/AJ/161/234/table5",
+    "All of the possible matches for the cross match between Gaia and GALEX DR5",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/other/JDSO/15.21/hpms3",
+    "The HPMS3 catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000|00001",
+   "I/305/out:Class=0|3",
+   "I/324/igsl3:classification=0|1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/331/apop:Type=0",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=203221111218|203221111219|2032211112426",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0|1",
+   "I/355/gaiadr3:dAllWISE=0.504797",
+   "II/246/out:Date=1999-07-25",
+   "II/246/out:Jstdap=17.267",
+   "II/246/out:e_Jstdap=0.285",
+   "II/246/out:Hstdap=15.79",
+   "II/246/out:e_Hstdap=0.404",
+   "II/246/out:Kstdap=18.874",
+   "II/246/out:e_Kstdap=8.285",
+   "II/312/ais:objid=6385235861496137797",
+   "II/312/mis:objid=2466110160600307532",
+   "II/312/mis:sp=0",
+   "II/335/galex_ais:objid=6385235861502429310",
+   "II/335/galex_ais:Sp?=0",
+   "II/350/vstatlas:Mclass=-1",
+   "II/350/vstatlas:Rclass=-1",
+   "II/350/vstatlas:RclassSt=0.499|0.865",
+   "II/350/vstatlas:Iclass=-1",
+   "II/350/vstatlas:IclassSt=-0.56|-1.329",
+   "II/350/vstatlas:Zclass=-1",
+   "II/350/vstatlas:ZclassSt=-0.694|0.438",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=-0.0|0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=3",
+   "II/357/des_dr1:rFlag=3",
+   "II/357/des_dr1:iFlag=3",
+   "II/357/des_dr1:zFlag=3",
+   "II/357/des_dr1:YFlag=3",
+   "II/358/smss:ObjectId=6368492|6368493",
+   "II/358/smss:flags=0",
+   "II/358/smss:Niflags=0",
+   "II/358/smss:flagsu=-1",
+   "II/358/smss:flagsv=-1",
+   "II/358/smss:flagsg=-1|0",
+   "II/358/smss:Niflagsg=0",
+   "II/358/smss:flagsr=-1|0",
+   "II/358/smss:Niflagsr=0",
+   "II/358/smss:flagsi=-1|0",
+   "II/358/smss:Niflagsi=0",
+   "II/358/smss:flagsz=-1|0",
+   "II/358/smss:Niflagsz=0",
+   "II/358/smss:Ngoodz=0|2",
+   "II/358/smss:ClassStar=0.358|0.528",
+   "II/363/unwise:objID=0219m349o0005051|0219m349o0059815",
+   "II/363/unwise:SpModW1=0.000539362|0.00844789",
+   "II/363/unwise:SpModW2=0.0|0.00476211",
+   "II/363/unwise:e_SpModW1=0.000563403|0.00212512",
+   "II/363/unwise:e_SpModW2=0.0|0.001862",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0219m349_b0-004789|0219m349_b0-031969",
+   "II/365/catwise:ePosPM=-0.0179|-0.0784",
+   "II/371/des_dr2:ClCoad=0|3",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=3",
+   "II/371/des_dr2:rFlag=3",
+   "II/371/des_dr2:iFlag=3",
+   "II/371/des_dr2:zFlag=3",
+   "II/371/des_dr2:yFlag=3",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=-0.0",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=1013083216|9346638",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=3",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=3",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=3",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=3",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=0|7",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.968|0.97",
+   "II/379/smssdr4:SPLUS3Dist=13.53|14.18",
+   "II/379/smssdr4:flagsPSF=12|6",
+   "II/379/smssdr4:SPLUS3Id=DR3.SPLUS-s27s14.008921",
+   "II/382/viking4:H-Kspnt=0.0862|0.1491",
+   "II/382/viking4:e_H-Kspnt=0.0142|0.0721",
+   "II/382/viking4:Mclass=-1",
+   "II/382/viking4:ZClassSt=-0.573|-0.973",
+   "II/382/viking4:JclassSt=-0.398|-2.379",
+   "II/382/viking4:J1classSt=-0.207|-0.454",
+   "II/382/viking4:J2classSt=-0.579|-0.917",
+   "II/382/viking4:HclassSt=-0.161|0.087",
+   "II/382/viking4:Kspmag=15.8747|17.6501",
+   "II/382/viking4:e_Kspmag=0.0245|0.1196",
+   "II/382/viking4:KsclassSt=-0.488|0.394",
+   "II/383/kids_dr5:Flag=1|3",
+   "II/383/kids_dr5:mClass=0|4",
+   "II/385/vst_atlas4:Mclass=-1",
+   "II/385/vst_atlas4:UclassSt=0.764",
+   "II/385/vst_atlas4:GclassSt=-1.024|-1.658",
+   "II/385/vst_atlas4:RclassSt=0.379|0.699",
+   "II/385/vst_atlas4:IclassSt=-0.56|-1.329",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "VII/292/south:objid=1165|1166",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/ApJS/279/26/table3:Class=QSO|STAR",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.4166666666666666",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.86",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.11",
+   "J/A+A/682/A5/catalog:PDQ=0.06",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DA",
+   "J/AJ/161/234/table3:2MASSProb=0.3359888",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 6.704048756557017,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "4839652643297670528": {
+  "simbad_ids": [
+   "Gaia DR2 4839652643297670528",
+   "Gaia DR3 4839652643297670528"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "Gaia DR3 4839652643297670528"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    2
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    2
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    2
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    2
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/679/A127/catalog",
+    "Catalog of predicted spectral type for all objects in the 100pc (table 3)",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/485/5573/g100pcwd",
+    "Gaia 100 pc White Dwarf sample",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000|00401",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=1",
+   "I/331/apop:Type=0",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=203033304864",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=-0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/359/vhs_dr4:J-Kspnt=0.3667|0.4047",
+   "II/359/vhs_dr4:e_J-Kspnt=0.2368|0.2635",
+   "II/359/vhs_dr4:Mclass=-2",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=-1",
+   "II/359/vhs_dr4:JclasSt=-0.098|0.012",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Kspmag=17.8298|17.9644",
+   "II/359/vhs_dr4:e_Kspmag=0.2899|0.305",
+   "II/359/vhs_dr4:KsPA=1.4|162.6",
+   "II/359/vhs_dr4:Ksclass=1",
+   "II/359/vhs_dr4:KsclasSt=1.003|1.945",
+   "II/359/vhs_dr4:Ksperrbits=0",
+   "II/363/unwise:objID=0647m425o0072934",
+   "II/363/unwise:SpModW1=0.0021078",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.00386816",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0647m425_b0-066040",
+   "II/365/catwise:ePosPM=-0.1472",
+   "II/367/vhs_dr5:J-Kspnt=0.3667|0.4047",
+   "II/367/vhs_dr5:e_J-Kspnt=0.2368|0.2635",
+   "II/367/vhs_dr5:Mclass=-2",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=-0.098|0.012",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=17.8298|17.9644",
+   "II/367/vhs_dr5:e_Kspmag=0.2899|0.305",
+   "II/367/vhs_dr5:KsPA=1.4|162.6",
+   "II/367/vhs_dr5:Ksclass=1",
+   "II/367/vhs_dr5:KsclasSt=1.003|1.945",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=0",
+   "II/371/des_dr2:rFlag=0",
+   "II/371/des_dr2:iFlag=0",
+   "II/371/des_dr2:zFlag=0",
+   "II/371/des_dr2:yFlag=0",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=-0.0",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=502927566",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=2",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.884",
+   "II/379/smssdr4:flagsPSF=0",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "VII/292/south:objid=675",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/679/A127/catalog:SPPred=DC",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.82",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.0",
+   "J/A+A/682/A5/catalog:PDQ=0.61",
+   "J/A+A/682/A5/catalog:PDZ=0.06",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/518/5106/catalog:Type-S=PM*"
+  ],
+  "vizier_radius_arcsec": 5.696595851206807,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "5836110898905253760": {
+  "simbad_ids": [
+   "Gaia DR3 5836110898905253760"
+  ],
+  "simbad_basic": [
+   [
+    "PM*",
+    null,
+    "Gaia DR3 5836110898905253760"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    2
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    2
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    5
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    5
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    3
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    4
+   ],
+   [
+    "I/319/xpm",
+    "formatted catalog (on a total of 313,610,083 sources)",
+    1
+   ],
+   [
+    "I/320/spm4",
+    "SPM4 output (out of 103319647 stars)",
+    2
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    4
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    6
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    2
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    8
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    6
+   ],
+   [
+    "I/349/starhorse",
+    "Starhorse catalog",
+    2
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    8
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    7
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    5
+   ],
+   [
+    "I/354/starhorse2021",
+    "First 1000 lines as an example, Starhorse 2021",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    8
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    8
+   ],
+   [
+    "I/355/paramsup",
+    "Additional parameters from the Apsis processing chain, compared to the main table astrophysical parameters, from modules",
+    2
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    2
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    2
+   ],
+   [
+    "I/360/syntphot",
+    "Synthetic photometry generated from the Gaia BP/RP mean spectra (218936915 sources) (synthetic_photometry_gspc)",
+    2
+   ],
+   [
+    "II/246/out",
+    "2MASS Point Source Catalogue, output (on a total of 470,992,970 sources)",
+    2
+   ],
+   [
+    "II/311/wise",
+    "the WISE All-Sky release (among 563,921,584 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/341/vphasp",
+    "VPHAS+ catalog, output (on a total of 319,126,837 sources)",
+    17
+   ],
+   [
+    "II/360/catalog",
+    "Gaia DR2 X AllWise catalog",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    2
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    2
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    2
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    4
+   ],
+   [
+    "II/386/vphasplus32",
+    "VPHAS+ DR3.2 catalog",
+    24
+   ],
+   [
+    "IV/35/wn18_b10",
+    "IDs, positions, magnitudes and probabilities (118,964,029 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    8
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    8
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    2
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "B/denis/denis",
+    "DENIS output",
+    2
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    6
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    2
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/665/A78/bkgev",
+    "Events generated by the simulated background (eRASS1_mock_events_BKG.fits)",
+    3
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    2
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    8
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/other/JDSO/15.21/hpms3",
+    "The HPMS3 catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000|00001|00002|00400",
+   "I/305/out:Class=3",
+   "I/320/spm4:SPMID=1452513890|1452513899",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=0|1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/349/starhorse:FlagPhoto=G|GBPRPJHKsW1W2",
+   "I/349/starhorse:FlagPlx=part12_leq5|part19_gt5",
+   "I/349/starhorse:FlagGaia=000|020",
+   "I/349/starhorse:FlagOut=00000|00010",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=22111332145965|22111332145967|22111332153927|2211133238809|2211133238810",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/354/starhorse2021:FlagPhoto=GBPRP/grizJHKsW1W2|GBPRP/rizJ",
+   "I/354/starhorse2021:FlagOut=0",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0|1",
+   "I/355/gaiadr3:dAllWISE=0.308917",
+   "I/355/paramp:Flags-HS=92|95",
+   "I/355/paramp:SpType-ELS=K|O",
+   "I/355/paramp:Flags-Flame=12",
+   "I/355/paramp:Flag-MSC=0",
+   "I/360/syntphot:UFlag=0",
+   "I/360/syntphot:BFlag=0",
+   "I/360/syntphot:VFlag=1",
+   "I/360/syntphot:RFlag=1",
+   "I/360/syntphot:IFlag=1",
+   "I/360/syntphot:uFlag=0",
+   "I/360/syntphot:gFlag=1",
+   "I/360/syntphot:rFlag=1",
+   "I/360/syntphot:iFlag=1",
+   "I/360/syntphot:zFlag=1",
+   "I/360/syntphot:yFlag=1",
+   "I/360/syntphot:F606WFlag=0|1",
+   "I/360/syntphot:F814WFlag=0|1",
+   "II/246/out:Date=2000-02-23",
+   "II/246/out:Jstdap=14.421|15.56",
+   "II/246/out:e_Jstdap=0.074|0.197",
+   "II/246/out:Hstdap=13.613|15.277",
+   "II/246/out:e_Hstdap=0.046|0.233",
+   "II/246/out:Kstdap=13.488|14.82",
+   "II/246/out:e_Kstdap=0.062|0.247",
+   "II/341/vphasp:clean=0|1",
+   "II/341/vphasp:cleanu=0|1",
+   "II/341/vphasp:cleang=0|1",
+   "II/341/vphasp:cleanr2=0|1",
+   "II/341/vphasp:cleanHa=0|1",
+   "II/341/vphasp:cleanr=0|1",
+   "II/341/vphasp:cleani=0|1",
+   "II/363/unwise:objID=2409m576o0044174|2409m576o0187131",
+   "II/363/unwise:SpModW1=0.000305295|0.00111312",
+   "II/363/unwise:SpModW2=0.0|0.00224286",
+   "II/363/unwise:e_SpModW1=0.000145648|0.000370111",
+   "II/363/unwise:e_SpModW2=0.0|0.000333",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=2409m576_b0-046506|2409m576_b0-125735",
+   "II/365/catwise:ePosPM=-0.0105|0.027",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0|1",
+   "II/379/smssdr4:ObjectId=2520797949|353587134|353587153|353587154",
+   "II/379/smssdr4:Niflags=0|6",
+   "II/379/smssdr4:flags=0|3|515",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0|512",
+   "II/379/smssdr4:Niflagsg=0|3",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=3",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0|3",
+   "II/379/smssdr4:Niflagsi=0|3",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0|3",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=1|11|4|8",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.882|0.916|0.981|0.982",
+   "II/379/smssdr4:flagsPSF=11|15",
+   "II/386/vphasplus32:Mclass=-1|-2|1",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=GIANT",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=GIANT",
+   "V/160/shboost:InputFlag=XP5pGBPRPJHKs|XP5pGBPRPJHKsW1W2W3W4",
+   "J/A+A/649/A6/table1c:GCNSprob=0.92",
+   "J/AJ/161/234/table3:2MASSProb=0.0|0.1838337|0.1877843|1.25e-05"
+  ],
+  "vizier_radius_arcsec": 6.265439211712336,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "4864552767735594240": {
+  "simbad_ids": [
+   "GALEX J043402.6-391354",
+   "Gaia DR2 4864552767735594240",
+   "Gaia DR3 4864552767735594240"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DB",
+    "GALEX J043402.6-391354"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/312/ais",
+    "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/380/splusdr4",
+    "PSF-mode photometry catalogue of S-PLUS DR4",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/954/134/table1",
+    "Candidate members of young associations",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1r",
+    "Rejected objects",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A159/catalog",
+    "White dwarf 500 pc catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/693/A306/dwarfdr4",
+    "SPLUS DR4 VAC - Predicted Parameters for Dwarfs",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/AJ/161/234/table5",
+    "All of the possible matches for the cross match between Gaia and GALEX DR5",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/331/apop:Type=4",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=203032116998",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/312/ais:objid=6385622911066049006",
+   "II/335/galex_ais:objid=6385622911070243270",
+   "II/335/galex_ais:Sp?=0",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/359/vhs_dr4:J-Kspnt=-0.0122",
+   "II/359/vhs_dr4:e_J-Kspnt=0.2809",
+   "II/359/vhs_dr4:Mclass=-1",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=-1",
+   "II/359/vhs_dr4:JclasSt=0.135",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Kspmag=18.6244",
+   "II/359/vhs_dr4:e_Kspmag=0.4429",
+   "II/359/vhs_dr4:KsPA=46.8",
+   "II/359/vhs_dr4:Ksclass=-1",
+   "II/359/vhs_dr4:KsclasSt=-0.045",
+   "II/359/vhs_dr4:Ksperrbits=0",
+   "II/363/unwise:objID=0677m394o0072630",
+   "II/363/unwise:SpModW1=0.00450313",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.00528296",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0677m394_b0-079458",
+   "II/365/catwise:ePosPM=-0.1796",
+   "II/367/vhs_dr5:J-Kspnt=-0.0122",
+   "II/367/vhs_dr5:e_J-Kspnt=0.2809",
+   "II/367/vhs_dr5:Mclass=-1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=0.135",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=18.6244",
+   "II/367/vhs_dr5:e_Kspmag=0.4429",
+   "II/367/vhs_dr5:KsPA=46.8",
+   "II/367/vhs_dr5:Ksclass=-1",
+   "II/367/vhs_dr5:KsclasSt=-0.045",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=0",
+   "II/371/des_dr2:rFlag=0",
+   "II/371/des_dr2:iFlag=0",
+   "II/371/des_dr2:zFlag=0",
+   "II/371/des_dr2:yFlag=0",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=0.0",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=2036162602",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:Ngoodz=0",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.977",
+   "II/379/smssdr4:SPLUS3Dist=0.24",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/379/smssdr4:SPLUS3Id=DR3.SPLUS-s30s41.012183",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "V/160/shboost:InputFlag=XP5pGBPRP",
+   "VII/292/south:objid=3621",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/A+A/649/A6/table1r:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.0880281690140845",
+   "J/A+A/682/A5/catalog:SpType=DB",
+   "J/A+A/682/A5/catalog:PDA=0.0",
+   "J/A+A/682/A5/catalog:PDB=0.99",
+   "J/A+A/682/A5/catalog:PDC=0.65",
+   "J/A+A/682/A5/catalog:PDQ=0.0",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DB",
+   "J/AJ/161/234/table3:2MASSProb=0.0036869",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.344250070664,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "4963240881290549888": {
+  "simbad_ids": [
+   "Gaia DR2 4963240881290549888",
+   "Gaia DR3 4963240881290549888"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DC:",
+    "Gaia DR3 4963240881290549888"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    2
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    2
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/350/vstatlas",
+    "VST ATLAS DR3 catalog, output (106,775,847 sources)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/359/vhs_dr4",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR4.1; output (on a total of 1,155,634,198 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/385/vst_atlas4",
+    "VST-ATLAS DR4 catalog",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/AJ/161/234/table5",
+    "All of the possible matches for the cross match between Gaia and GALEX DR5",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000|00400",
+   "I/305/out:Class=0",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=2033320013484|2033320017021",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/350/vstatlas:Mclass=-1",
+   "II/350/vstatlas:Rclass=-1",
+   "II/350/vstatlas:RclassSt=1.364",
+   "II/350/vstatlas:Iclass=1",
+   "II/350/vstatlas:IclassSt=3.452",
+   "II/350/vstatlas:Zclass=-1",
+   "II/350/vstatlas:ZclassSt=1.276",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:gFlag=3",
+   "II/357/des_dr1:rFlag=3",
+   "II/357/des_dr1:iFlag=3",
+   "II/357/des_dr1:zFlag=3",
+   "II/357/des_dr1:YFlag=3",
+   "II/359/vhs_dr4:J-Kspnt=0.1604",
+   "II/359/vhs_dr4:e_J-Kspnt=0.1262",
+   "II/359/vhs_dr4:Mclass=1",
+   "II/359/vhs_dr4:Yclass=-1",
+   "II/359/vhs_dr4:Jclass=1",
+   "II/359/vhs_dr4:JclasSt=2.442",
+   "II/359/vhs_dr4:Hclass=-1",
+   "II/359/vhs_dr4:Kspmag=17.3008",
+   "II/359/vhs_dr4:e_Kspmag=0.1731",
+   "II/359/vhs_dr4:KsPA=156.7",
+   "II/359/vhs_dr4:Ksclass=1",
+   "II/359/vhs_dr4:KsclasSt=1.199",
+   "II/359/vhs_dr4:Ksperrbits=0",
+   "II/367/vhs_dr5:J-Kspnt=0.1604",
+   "II/367/vhs_dr5:e_J-Kspnt=0.1262",
+   "II/367/vhs_dr5:Mclass=1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=1",
+   "II/367/vhs_dr5:JclasStat=2.442",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Kspmag=17.3008",
+   "II/367/vhs_dr5:e_Kspmag=0.1731",
+   "II/367/vhs_dr5:KsPA=156.7",
+   "II/367/vhs_dr5:Ksclass=1",
+   "II/367/vhs_dr5:KsclasSt=1.199",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=2",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=3",
+   "II/371/des_dr2:rFlag=3",
+   "II/371/des_dr2:iFlag=3",
+   "II/371/des_dr2:zFlag=3",
+   "II/371/des_dr2:yFlag=3",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/385/vst_atlas4:Mclass=-1",
+   "II/385/vst_atlas4:UclassSt=-1.314",
+   "II/385/vst_atlas4:GclassSt=3.45",
+   "II/385/vst_atlas4:RclassSt=1.364",
+   "II/385/vst_atlas4:IclassSt=3.452",
+   "IV/38/tic:Flag=gaia2",
+   "IV/39/tic82:Flag=gaia2",
+   "VII/292/south:objid=2937",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/682/A5/catalog:SpType=DC:",
+   "J/A+A/682/A5/catalog:PDA=0.06",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.15",
+   "J/A+A/682/A5/catalog:PDQ=0.03",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DA",
+   "J/AJ/161/234/table3:2MASSProb=0.4083981",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.846547423251982,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "1758536430493058944": {
+  "simbad_ids": [
+   "Gaia DR2 1758536430493058944",
+   "Gaia DR3 1758536430493058944",
+   "LSPM J2059+1334",
+   "USNO-B1.0 1035-00584233"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DB:",
+    "LSPM J2059+1334"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2005AJ....129.1483L",
+    "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/298/lspm_n",
+    "The LSPM catalog (north)",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    1
+   ],
+   [
+    "I/329/urat1",
+    "URAT1 catalog",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    2
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    3
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    2
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    2
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    1
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    2
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_gaia",
+    "Pristine-Gaia synthetic metallicity catalogue (table 2) (52297046 sources)",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/298/lspm_n:LSPM=J2059+1334",
+   "I/298/lspm_n:Aflag=S",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=1031330018982|1031330090473|1031330097511",
+   "I/353/gsc242:Class=0|3",
+   "I/353/gsc242:r_Class=15|16|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/335/galex_ais:objid=6376545274351849573",
+   "II/335/galex_ais:Sp?=0",
+   "II/349/ps1:objID=124283148961127822|124283148965827464",
+   "II/349/ps1:f_objID=268959744|436527104",
+   "II/349/ps1:gFlags=115000|4120",
+   "II/349/ps1:rFlags=0|115000",
+   "II/349/ps1:iFlags=115000|4120",
+   "II/349/ps1:zFlags=0|115000",
+   "II/349/ps1:yFlags=0|16892216",
+   "II/363/unwise:objID=3150p136o0087886",
+   "II/363/unwise:SpModW1=-0.00295037",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.0019292",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=3150p136_b0-059559",
+   "II/365/catwise:ePosPM=-0.0792",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=1",
+   "II/379/smssdr4:ObjectId=2453821331",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:Ngoodz=0",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.868",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/381/hlsp_ps1_tm:objid=124283148965827464",
+   "II/389/ps1_dr2:objID=124283148961127822|124283148965827464",
+   "II/389/ps1_dr2:f_objID=268959744|436527104",
+   "II/389/ps1_dr2:gFlags=115000|4120",
+   "II/389/ps1_dr2:rFlags=0|115000",
+   "II/389/ps1_dr2:iFlags=115000|4120",
+   "II/389/ps1_dr2:zFlags=0|115000",
+   "II/389/ps1_dr2:yFlags=0|16892216",
+   "IV/38/tic:Flag=gaia2",
+   "IV/39/tic82:Flag=gaia2",
+   "V/160/shboost:InputFlag=XP5pGBPRP",
+   "VII/292/south:objid=6257",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=0",
+   "J/A+A/649/A6/table1c:GCNSprob=0.946",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.19985791944650358",
+   "J/A+A/682/A5/catalog:SpType=DB:",
+   "J/A+A/682/A5/catalog:PDA=0.01",
+   "J/A+A/682/A5/catalog:PDB=0.63",
+   "J/A+A/682/A5/catalog:PDC=0.35",
+   "J/A+A/682/A5/catalog:PDQ=0.01",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/AJ/161/234/table3:2MASSProb=0.0459553",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 6.109991522415669,
+  "desi_dr1": [],
+  "lamost_dr10": []
+ },
+ "4697078562502515840": {
+  "simbad_ids": [
+   "GALEX J023331.5-645532",
+   "Gaia DR2 4697078562502515840",
+   "Gaia DR3 4697078562502515840"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DB:",
+    "GALEX J023331.5-645532"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    2
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    2
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    2
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    2
+   ],
+   [
+    "I/331/apop",
+    "Absolute Proper motions Outside the Plane",
+    1
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    2
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/312/ais",
+    "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/335/galex_ais",
+    "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/367/vhs_dr5",
+    "VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    2
+   ],
+   [
+    "II/391/ks4dr1",
+    "*the band-merged single_master catalog (1000 among 279,909,360 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A159/catalog",
+    "White dwarf 500 pc catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    2
+   ],
+   [
+    "J/AJ/161/234/table5",
+    "All of the possible matches for the cross match between Gaia and GALEX DR5",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=0|1",
+   "I/331/apop:Type=0",
+   "I/339/hsoy:Clone=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10022",
+   "I/353/gsc242:objID=2013322315216|201332233080",
+   "I/353/gsc242:Class=0|4",
+   "I/353/gsc242:r_Class=10|15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "I/355/paramp:Flags-NOA=113",
+   "II/312/ais:objid=6384743222306935359",
+   "II/335/galex_ais:objid=6384743222309032366",
+   "II/335/galex_ais:Sp?=0",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/363/unwise:objID=0384m652o0079720",
+   "II/363/unwise:SpModW1=0.00643355",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.0018472",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0384m652_b0-038926",
+   "II/365/catwise:ePosPM=0.0251",
+   "II/367/vhs_dr5:Mclass=-1",
+   "II/367/vhs_dr5:Yclass=-1",
+   "II/367/vhs_dr5:Jclass=-1",
+   "II/367/vhs_dr5:JclasStat=-0.184",
+   "II/367/vhs_dr5:Hclass=-1",
+   "II/367/vhs_dr5:Ksclass=-1",
+   "II/367/vhs_dr5:Ksperrbits=0",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=2",
+   "II/371/des_dr2:rFlag=2",
+   "II/371/des_dr2:iFlag=2",
+   "II/371/des_dr2:zFlag=2",
+   "II/371/des_dr2:yFlag=2",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=0.0",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=1",
+   "II/379/smssdr4:ObjectId=2716025813|499451558",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=0",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:Ngoodz=0",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.493|0.593",
+   "II/379/smssdr4:flagsPSF=4",
+   "II/391/ks4dr1:Flags-B=3",
+   "II/391/ks4dr1:Flags-V=3",
+   "II/391/ks4dr1:Flags-R=3",
+   "II/391/ks4dr1:Flags-I=3",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "VII/292/south:objid=4747",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.22946009389671357",
+   "J/A+A/682/A5/catalog:SpType=DB:",
+   "J/A+A/682/A5/catalog:PDA=0.06",
+   "J/A+A/682/A5/catalog:PDB=0.32",
+   "J/A+A/682/A5/catalog:PDC=0.03",
+   "J/A+A/682/A5/catalog:PDQ=0.0",
+   "J/A+A/682/A5/catalog:PDZ=0.02",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.4394317547169235,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ },
+ "397957277212371072": {
+  "simbad_ids": [
+   "Gaia DR2 397957277212371072",
+   "Gaia DR3 397957277212371072",
+   "LSPM J0113+4542",
+   "SDSS J011348.17+454255.8",
+   "SDSS J011348.18+454255.8",
+   "USNO-B1.0 1357-00031989"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA",
+    "LSPM J0113+4542"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2005AJ....129.1483L",
+    "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2020ApJ...898...84K",
+    "The 100 pc white dwarf sample in the SDSS footprint."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/267/out",
+    "Output",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    2
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    2
+   ],
+   [
+    "I/298/lspm_n",
+    "The LSPM catalog (north)",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    2
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    2
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    2
+   ],
+   [
+    "I/329/urat1",
+    "URAT1 catalog",
+    2
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    2
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    2
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    2
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    2
+   ],
+   [
+    "I/351/gps1_p",
+    "The extended Gaia-PS1-SDSS (GPS1+) proper motion catalog, output (on a total of 390,405,023 sources)",
+    2
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    2
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    3
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    2
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    2
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/311/wise",
+    "the WISE All-Sky release (among 563,921,584 sources)",
+    1
+   ],
+   [
+    "II/328/allwise",
+    "*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    2
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    2
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    2
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    2
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    2
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    2
+   ],
+   [
+    "V/139/sdss9",
+    "* output of the SDSS photometric catalog",
+    2
+   ],
+   [
+    "V/147/sdss12",
+    "* output of the SDSS photometric catalog",
+    2
+   ],
+   [
+    "V/154/sdss16",
+    "* output of the SDSS photometric catalog",
+    3
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    2
+   ],
+   [
+    "J/ApJ/898/84/table1",
+    "The 100pc white dwarf in the SDSS footprint",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/679/A127/catalog",
+    "Catalog of predicted spectral type for all objects in the 100pc (table 3)",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/AJ/161/234/table7",
+    "All of the possible matches for the cross match between Gaia and SDSS DR12",
+    2
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/485/5573/g100pcwd",
+    "Gaia 100 pc White Dwarf sample",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/510/4308/table6",
+    "Catalogue of candidates in the Galactic thick disk and halo in Gaia EDR3",
+    1
+   ],
+   [
+    "J/MNRAS/515/4711/wiseps1",
+    "Neural network source class and photometric z catalog from WISE All-Sky and PS1 3{pi} DR2",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/267/out:rClass=-1",
+   "I/267/out:bClass=-1",
+   "I/284/out:Flags=...",
+   "I/297/out:Xflags=00000",
+   "I/298/lspm_n:LSPM=J0113+4542",
+   "I/298/lspm_n:Aflag=S",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=2",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/351/gps1_p:objID=-5844827891396639206|-5844827891396639370",
+   "I/351/gps1_p:Flag=30",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=1330311342420|133031136470|133031136486",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/349/ps1:objID=162850184505199252|162860184499070310",
+   "II/349/ps1:f_objID=436527104",
+   "II/349/ps1:gFlags=115000",
+   "II/349/ps1:rFlags=115000",
+   "II/349/ps1:iFlags=115000",
+   "II/349/ps1:zFlags=115000",
+   "II/349/ps1:yFlags=115000",
+   "II/363/unwise:objID=0191p454o0024298",
+   "II/363/unwise:SpModW1=0.0031665",
+   "II/363/unwise:SpModW2=0.00376743",
+   "II/363/unwise:e_SpModW1=0.000893546",
+   "II/363/unwise:e_SpModW2=0.003006",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0191p454_b0-028289|0191p454_b0-050947",
+   "II/365/catwise:ePosPM=-0.0318|-0.1268",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/381/hlsp_ps1_tm:objid=162850184505199252|162860184499070310",
+   "II/389/ps1_dr2:objID=162850184505199252|162860184499070310",
+   "II/389/ps1_dr2:f_objID=436527104",
+   "II/389/ps1_dr2:gFlags=115000",
+   "II/389/ps1_dr2:rFlags=115000",
+   "II/389/ps1_dr2:iFlags=115000",
+   "II/389/ps1_dr2:zFlags=115000",
+   "II/389/ps1_dr2:yFlags=115000",
+   "IV/38/tic:objID=1237676442541163197|1237676442541163198",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:objID=1237676442541163197|1237676442541163198",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "V/139/sdss9:objID=1237676442541163197|1237676442541163198",
+   "V/139/sdss9:cl=6",
+   "V/139/sdss9:SpObjID=0",
+   "V/139/sdss9:flags=35253360001040|35255507485016",
+   "V/139/sdss9:ObsDate=2007.9236",
+   "V/139/sdss9:uFlags=47287796490077464|9007199388991505",
+   "V/139/sdss9:uDate=2007.9236",
+   "V/139/sdss9:gFlags=268468240|268468248",
+   "V/139/sdss9:gDate=2007.9236",
+   "V/139/sdss9:rFlags=4503599895838736|4503599895838744",
+   "V/139/sdss9:rDate=2007.9236",
+   "V/139/sdss9:iFlags=268468240|268468248",
+   "V/139/sdss9:iDate=2007.9236",
+   "V/139/sdss9:zFlags=268468248|275146375184",
+   "V/139/sdss9:zDate=2007.9236",
+   "V/147/sdss12:class=6",
+   "V/147/sdss12:objID=1237676442541163197|1237676442541163198",
+   "V/147/sdss12:SpObjID=0",
+   "V/147/sdss12:flags=35253360001040|35255507485016",
+   "V/147/sdss12:ObsDate=2007.9237",
+   "V/147/sdss12:uFlags=47287796490077464|9007199388991505",
+   "V/147/sdss12:uDate=2007.9237",
+   "V/147/sdss12:gFlags=268468240|268468248",
+   "V/147/sdss12:gDate=2007.9237",
+   "V/147/sdss12:rFlags=4503599895838736|4503599895838744",
+   "V/147/sdss12:rDate=2007.9237",
+   "V/147/sdss12:iFlags=268468240|268468248",
+   "V/147/sdss12:iDate=2007.9237",
+   "V/147/sdss12:zFlags=268468248|275146375184",
+   "V/147/sdss12:zDate=2007.9237",
+   "V/154/sdss16:objID=1237676442541163196|1237676442541163197|1237676442541163198",
+   "V/154/sdss16:class=3|6",
+   "V/154/sdss16:clean=0|1",
+   "V/154/sdss16:flags=2244455957256|35253360001040|35255507485016",
+   "V/154/sdss16:uFlags=469795336|47287796490077464|9007199388991505",
+   "V/154/sdss16:gFlags=268468240|268468248|275213484040",
+   "V/154/sdss16:rFlags=4503599895838736|4503599895838744|4503874840854536",
+   "V/154/sdss16:iFlags=268468240|268468248|275213484552",
+   "V/154/sdss16:zFlags=268468248|275146375184|275213485320",
+   "V/154/sdss16:SpObjID=0",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/679/A127/catalog:SPPred=DC",
+   "J/A+A/682/A5/catalog:SpType=DA",
+   "J/A+A/682/A5/catalog:PDA=0.85",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.05",
+   "J/A+A/682/A5/catalog:PDQ=0.0",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DC",
+   "J/AJ/161/234/table7:SDSSProb=0.0051243|0.8586295",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/508/3877/maincat:sdssclean=0",
+   "J/MNRAS/515/4711/wiseps1:Class=STAR",
+   "J/MNRAS/515/4711/wiseps1:f_Class=0",
+   "J/MNRAS/518/5106/catalog:Type-S=PM*"
+  ],
+  "vizier_radius_arcsec": 6.451509504645843,
+  "desi_dr1": [],
+  "lamost_dr10": []
+ },
+ "883761715259055872": {
+  "simbad_ids": [
+   "Gaia DR2 883761715259055872",
+   "Gaia DR3 883761715259055872"
+  ],
+  "simbad_basic": [
+   [
+    "WD?",
+    null,
+    "Gaia DR3 883761715259055872"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    2
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    2
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    2
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    2
+   ],
+   [
+    "I/337/gaia",
+    "GaiaSource data",
+    1
+   ],
+   [
+    "I/339/hsoy",
+    "The HSOY catalogue (583001653 sources)",
+    1
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/351/gps1_p",
+    "The extended Gaia-PS1-SDSS (GPS1+) proper motion catalog, output (on a total of 390,405,023 sources)",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    2
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "II/349/ps1",
+    "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)",
+    1
+   ],
+   [
+    "II/381/hlsp_ps1_tm",
+    "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS1 from Tachibana & Miller, 2018PASP..130l8001T (14",
+    1
+   ],
+   [
+    "II/389/ps1_dr2",
+    "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "J/A+A/649/A6/table1c",
+    "Selected objects",
+    1
+   ],
+   [
+    "J/A+A/657/A7/tablea3",
+    "CPM candidate companions for Gaia stars within 100 pc",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/AJ/158/93/table2",
+    "Results of our regression in Gaia DR2 (Cat. I/345)",
+    1
+   ],
+   [
+    "J/AJ/159/84/table2",
+    "Results of our regression for Gaia DR2 (Cat. I/345) (1000 sources among 132,739,322)",
+    1
+   ],
+   [
+    "J/AJ/161/234/table2",
+    "Best matches found in this study with a Bayesian probability greater than 95% for all cross matches in this study",
+    1
+   ],
+   [
+    "J/AJ/161/234/table3",
+    "All of the possible matches for the cross match between Gaia and 2MASS",
+    1
+   ],
+   [
+    "J/AJ/161/234/table4",
+    "All of the possible matches for the cross match between Gaia and AllWISE",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/485/5573/g100pcwd",
+    "Gaia 100 pc White Dwarf sample",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ],
+   [
+    "J/MNRAS/518/5106/catalog",
+    "White dwarf catalog from Gaia-DR3 and the VO",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=...|..Y",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=3",
+   "I/324/igsl3:classification=1",
+   "I/324/igsl3:sourceClassification=1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/351/gps1_p:objID=7615358271465284621",
+   "I/351/gps1_p:Flag=20",
+   "I/352/gedr3dis:Flag=10033",
+   "I/353/gsc242:objID=1222233316870|122223334250",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15|18",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/349/ps1:objID=141231079765274233",
+   "II/349/ps1:f_objID=436527104",
+   "II/349/ps1:gFlags=115000",
+   "II/349/ps1:rFlags=115000",
+   "II/349/ps1:iFlags=115000",
+   "II/349/ps1:zFlags=115000",
+   "II/349/ps1:yFlags=115000",
+   "II/381/hlsp_ps1_tm:objid=141231079765274233",
+   "II/389/ps1_dr2:objID=141231079765274233",
+   "II/389/ps1_dr2:f_objID=436527104",
+   "II/389/ps1_dr2:gFlags=115000",
+   "II/389/ps1_dr2:rFlags=115000",
+   "II/389/ps1_dr2:iFlags=115000",
+   "II/389/ps1_dr2:zFlags=115000",
+   "II/389/ps1_dr2:yFlags=115000",
+   "IV/38/tic:Flag=gaia2",
+   "IV/38/tic:LClass=DWARF",
+   "IV/39/tic82:Flag=gaia2",
+   "IV/39/tic82:LClass=DWARF",
+   "J/A+A/649/A6/table1c:GCNSprob=1.0",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/AJ/161/234/table3:2MASSProb=0.0",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0",
+   "J/MNRAS/518/5106/catalog:Type-S=WD*_Candidate"
+  ],
+  "vizier_radius_arcsec": 5.375533126341544,
+  "desi_dr1": [],
+  "lamost_dr10": [
+   {
+    "obsid": "7503196",
+    "class": "STAR",
+    "subclass": "K3",
+    "snrg": "6.54"
+   },
+   {
+    "obsid": "19203196",
+    "class": "STAR",
+    "subclass": "K0",
+    "snrg": "11.92"
+   }
+  ]
+ },
+ "4792264314911712512": {
+  "simbad_ids": [
+   "Gaia DR2 4792264314911712512",
+   "Gaia DR3 4792264314911712512"
+  ],
+  "simbad_basic": [
+   [
+    "WD*",
+    "DA:",
+    "Gaia DR3 4792264314911712512"
+   ]
+  ],
+  "simbad_refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ],
+  "vizier": [
+   [
+    "I/243/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/252/out",
+    "* output (out of 526,280,881 stars)",
+    1
+   ],
+   [
+    "I/284/out",
+    "data (around 0+0)",
+    1
+   ],
+   [
+    "I/297/out",
+    "Example of the an output of NOMAD-1",
+    1
+   ],
+   [
+    "I/305/out",
+    "records of GSC2.3.2 (near 0+0)",
+    1
+   ],
+   [
+    "I/317/sample",
+    "Example of formatted output",
+    1
+   ],
+   [
+    "I/324/igsl3",
+    "the IGSL3 data release",
+    2
+   ],
+   [
+    "I/345/gaia2",
+    "GaiaSource DR2 data",
+    1
+   ],
+   [
+    "I/347/gaia2dis",
+    "Estimating distances from parallaxes (1331909727 sources)",
+    1
+   ],
+   [
+    "I/350/gaiaedr3",
+    "GaiaSource EDR3 data",
+    1
+   ],
+   [
+    "I/352/gedr3dis",
+    "Estimating distances from parallaxes (1467744818 sources)",
+    1
+   ],
+   [
+    "I/353/gsc242",
+    "records of GSC 2.4.2",
+    1
+   ],
+   [
+    "I/355/gaiadr3",
+    "Gaia DR3 source catalog (1811709771 sources)",
+    1
+   ],
+   [
+    "I/355/paramp",
+    "1D astrophysical parameters produced by the Apsis processing chain developed in Gaia DPAC CU8 (1590932717 sources) (astr",
+    1
+   ],
+   [
+    "I/355/xpsummary",
+    "Auxiliary information about the mean BP/RP spectrum (219197643 sources) (xp_summary)",
+    1
+   ],
+   [
+    "I/355/xpcont",
+    "Mean BP and RP spectra based on the continuous representation in basis functions (219197643 rows) (gaia_dr3_xpcont)",
+    1
+   ],
+   [
+    "II/357/des_dr1",
+    "*the Dark Energy Survey (DES) DR1 main catalog (1000 among 399,263,026 sources)",
+    1
+   ],
+   [
+    "II/358/smss",
+    "SkyMapper DR1.1",
+    1
+   ],
+   [
+    "II/363/unwise",
+    "the band-merged unWISE catalog (among 2,214,734,224 sources)",
+    1
+   ],
+   [
+    "II/365/catwise",
+    "the CatWISE2020 catalog (among 1,890,715,640 sources)",
+    1
+   ],
+   [
+    "II/371/des_dr2",
+    "*the Dark Energy Survey (DES) DR2 main catalog (1000 among 691,483,608 sources)",
+    1
+   ],
+   [
+    "II/374/table2",
+    "Catalogue with RGB magnitudes for Gaia DR3 objects",
+    1
+   ],
+   [
+    "II/379/smssdr4",
+    "SkyMapper DR4",
+    1
+   ],
+   [
+    "II/391/ks4dr1",
+    "*the band-merged single_master catalog (1000 among 279,909,360 sources)",
+    1
+   ],
+   [
+    "IV/38/tic",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC-8), outpout (on a total of 1,727,987,580 sources)",
+    1
+   ],
+   [
+    "IV/39/tic82",
+    "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 source",
+    1
+   ],
+   [
+    "V/160/shboost",
+    "Data model of the Gaia DR3 SHBoost catalogue",
+    1
+   ],
+   [
+    "VI/42/out",
+    "Compute constellation name from position",
+    1
+   ],
+   [
+    "VII/292/south",
+    "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 sources)",
+    1
+   ],
+   [
+    "J/ApJ/757/83/bcs05hr",
+    "*BCS 5hr catalog (combined catalog of 5hr field after EXCLUDING bad tiles)",
+    1
+   ],
+   [
+    "J/ApJ/867/105/refcat2",
+    "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2",
+    1
+   ],
+   [
+    "J/ApJ/970/181/catalog",
+    "UMAP WD catalog",
+    1
+   ],
+   [
+    "J/ApJ/984/58/table1",
+    "Stellar Parameters Derived from XP Spectra",
+    1
+   ],
+   [
+    "J/A+A/674/A22/catalog",
+    "Cross-match catalog of 17841723 of Gaia sources",
+    1
+   ],
+   [
+    "J/A+A/674/A33/gspc-wd",
+    "Gaia WD DR3 catalogue",
+    1
+   ],
+   [
+    "J/A+A/677/A159/catalog",
+    "White dwarf 500 pc catalogue",
+    1
+   ],
+   [
+    "J/A+A/682/A5/catalog",
+    "Gaia WD DR3 XP-classification catalogue",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_ca",
+    "Photometry catalogue that includes both the synthetic CaHKsyn and the Pristine CaHK photometric information (table 1) (2",
+    1
+   ],
+   [
+    "J/A+A/692/A115/pristine_gaia",
+    "Pristine-Gaia synthetic metallicity catalogue (table 2) (52297046 sources)",
+    1
+   ],
+   [
+    "J/A+A/699/A3/table3",
+    "Catalog of predicted spectral type (DA,DB, DC, DO, DQ or DZ) for all objects in the 500pc sample",
+    1
+   ],
+   [
+    "J/MNRAS/480/4505/tablea",
+    "White dwarfs from Gaia-DR2 and the VO",
+    1
+   ],
+   [
+    "J/MNRAS/482/4570/gaia2wd",
+    "DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)",
+    1
+   ],
+   [
+    "J/MNRAS/508/3877/maincat",
+    "White dwarf main catalog",
+    1
+   ]
+  ],
+  "vizier_typecols": [
+   "I/284/out:Flags=..Y",
+   "I/297/out:Xflags=00000",
+   "I/305/out:Class=0",
+   "I/324/igsl3:classification=0",
+   "I/324/igsl3:sourceClassification=0|1",
+   "I/345/gaia2:type=0",
+   "I/347/gaia2dis:ResFlag=1",
+   "I/347/gaia2dis:ModFlag=1",
+   "I/352/gedr3dis:Flag=10012",
+   "I/353/gsc242:objID=201102133066",
+   "I/353/gsc242:Class=0",
+   "I/353/gsc242:r_Class=15",
+   "I/355/gaiadr3:VarFlag=NOT_AVAILABLE",
+   "I/355/gaiadr3:MCMCGSP=0",
+   "II/357/des_dr1:KRadz=3.5",
+   "II/357/des_dr1:SModz=-0.0",
+   "II/357/des_dr1:e_SModz=0.001",
+   "II/357/des_dr1:gFlag=0",
+   "II/357/des_dr1:rFlag=0",
+   "II/357/des_dr1:iFlag=0",
+   "II/357/des_dr1:zFlag=0",
+   "II/357/des_dr1:YFlag=0",
+   "II/358/smss:ObjectId=316243343",
+   "II/358/smss:flags=0",
+   "II/358/smss:Niflags=0",
+   "II/358/smss:flagsu=0",
+   "II/358/smss:Niflagsu=0",
+   "II/358/smss:flagsv=0",
+   "II/358/smss:Niflagsv=0",
+   "II/358/smss:flagsg=0",
+   "II/358/smss:Niflagsg=0",
+   "II/358/smss:flagsr=0",
+   "II/358/smss:Niflagsr=0",
+   "II/358/smss:flagsi=-1",
+   "II/358/smss:flagsz=-1",
+   "II/358/smss:Ngoodz=0",
+   "II/358/smss:ClassStar=0.899",
+   "II/363/unwise:objID=0887m531o0107808",
+   "II/363/unwise:SpModW1=0.00159162",
+   "II/363/unwise:SpModW2=0.0",
+   "II/363/unwise:e_SpModW1=0.00673893",
+   "II/363/unwise:e_SpModW2=0.0",
+   "II/363/unwise:FlagsW1=0",
+   "II/363/unwise:FlagsW2=0",
+   "II/363/unwise:f_FlagsW1=0",
+   "II/363/unwise:f_FlagsW2=0",
+   "II/365/catwise:objID=0887m531_b0-104502",
+   "II/365/catwise:ePosPM=-0.184",
+   "II/371/des_dr2:ClCoad=0",
+   "II/371/des_dr2:ClWavg=0",
+   "II/371/des_dr2:gFlag=0",
+   "II/371/des_dr2:rFlag=0",
+   "II/371/des_dr2:iFlag=0",
+   "II/371/des_dr2:zFlag=0",
+   "II/371/des_dr2:yFlag=0",
+   "II/371/des_dr2:KRadz=3.5",
+   "II/371/des_dr2:SModz=-0.001",
+   "II/371/des_dr2:e_SModz=0.001",
+   "II/374/table2:objtype=0",
+   "II/374/table2:qlflag=0",
+   "II/379/smssdr4:ObjectId=501229155",
+   "II/379/smssdr4:Niflags=0",
+   "II/379/smssdr4:flags=512",
+   "II/379/smssdr4:flagsu=0",
+   "II/379/smssdr4:Niflagsu=0",
+   "II/379/smssdr4:Nnclipu=0",
+   "II/379/smssdr4:flagsv=0",
+   "II/379/smssdr4:Niflagsv=0",
+   "II/379/smssdr4:Nnclipv=0",
+   "II/379/smssdr4:flagsg=0",
+   "II/379/smssdr4:Niflagsg=0",
+   "II/379/smssdr4:Nnclipg=0",
+   "II/379/smssdr4:flagsr=512",
+   "II/379/smssdr4:Niflagsr=0",
+   "II/379/smssdr4:Nnclipr=0",
+   "II/379/smssdr4:flagsi=0",
+   "II/379/smssdr4:Niflagsi=0",
+   "II/379/smssdr4:Nnclipi=0",
+   "II/379/smssdr4:flagsz=0",
+   "II/379/smssdr4:Niflagsz=0",
+   "II/379/smssdr4:Ngoodz=3",
+   "II/379/smssdr4:Nnclipz=0",
+   "II/379/smssdr4:ClassStar=0.914",
+   "II/379/smssdr4:flagsPSF=0",
+   "II/391/ks4dr1:Flags-B=0",
+   "II/391/ks4dr1:Flags-V=0",
+   "II/391/ks4dr1:Flags-R=0",
+   "II/391/ks4dr1:Flags-I=0",
+   "IV/38/tic:Flag=gaia2",
+   "IV/39/tic82:Flag=gaia2",
+   "V/160/shboost:InputFlag=XP5pGBPRP",
+   "VII/292/south:objid=3392",
+   "VII/292/south:type=PSF",
+   "VII/292/south:fclean=1",
+   "J/A+A/674/A22/catalog:psuperclass=CST",
+   "J/A+A/674/A22/catalog:pvarTypes=WD",
+   "J/A+A/674/A22/catalog:VarTypes=WD",
+   "J/A+A/674/A33/gspc-wd:pDA=0.5636737089201878",
+   "J/A+A/682/A5/catalog:SpType=DA:",
+   "J/A+A/682/A5/catalog:PDA=0.63",
+   "J/A+A/682/A5/catalog:PDB=0.0",
+   "J/A+A/682/A5/catalog:PDC=0.0",
+   "J/A+A/682/A5/catalog:PDQ=0.03",
+   "J/A+A/682/A5/catalog:PDZ=0.0",
+   "J/A+A/699/A3/table3:SPPred=DA",
+   "J/MNRAS/508/3877/maincat:brNflag=0",
+   "J/MNRAS/508/3877/maincat:FlagExt=0"
+  ],
+  "vizier_radius_arcsec": 5.246708809626972,
+  "desi_dr1": [],
+  "lamost_dr10": "OUT_OF_LAMOST_DEC"
+ }
+}

@@ -36,13 +36,14 @@ It cannot hide. Even a ~1.4-2 Msun A-F companion is conspicuous on a G dwarf. So
 
 Classify companion_class = luminous_stellar / dark_candidate / ambiguous.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python (no pip-install)
+Env: ~/claude_projects/ostinato/.venv/bin/python (no pip-install)
 Outputs: /tmp/hd91155_pma.json , /tmp/hd91155_pma_report.md
 Reuses SED BB machinery + Gaia/SIMBAD/Vizier idiom from
 scripts/hd182379_pma_darkluminous_2026_05_31.py and the v3 acceleration inversion
 from scripts/streaming/v3_acceleration/acceleration_inversion.py.
 """
 from __future__ import annotations
+import os
 import warnings, math, json, sys
 warnings.filterwarnings('ignore')
 import numpy as np
@@ -55,7 +56,7 @@ from astropy.coordinates import SkyCoord
 import astropy.units as u
 import threading as _th
 
-sys.path.insert(0, '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts/streaming/v3_acceleration')
+sys.path.insert(0, os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27/scripts/streaming/v3_acceleration'))
 from acceleration_inversion import (M2_from_acceleration, M2_range,
                                     acceleration_magnitude, acceleration_magnitude_error)
 

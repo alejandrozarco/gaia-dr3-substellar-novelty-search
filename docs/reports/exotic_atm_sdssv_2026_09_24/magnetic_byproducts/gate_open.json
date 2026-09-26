@@ -1,0 +1,329 @@
+{
+ "5920596066603197056": {
+  "simbad": {
+   "main_id": "BPM 25260",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "GALEX J175845.9-550117",
+    "Gaia DR3 5920596066603197056",
+    "Gaia DR2 5920596066603197056",
+    "BPM 25260",
+    "GEN# +6.00225260",
+    "UCAC4 175-200416",
+    "2MASS J17584607-5501166",
+    "TIC 76392634"
+   ]
+  },
+  "simbad_refs": [
+   "1969ApJ...157..287E",
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.485.5573T",
+   "2020ApJ...902..127X",
+   "2021A&A...649A...6G",
+   "2021MNRAS.508.3877G",
+   "2023MNRAS.518.5106J",
+   "2023A&A...679A.127G",
+   "2024A&A...682A...5V",
+   "2024AJ....168...41T",
+   "2024A&A...692A.174B"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 66,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "2MASS J17584607-5501166": [],
+   "5920596066603197056": [],
+   "BPM 25260": [],
+   "GALEX J175845.9-550117": [
+    "2024A&A...692A.174B"
+   ],
+   "GEN# +6.00225260": [],
+   "Gaia DR2 5920596066603197056": [],
+   "Gaia DR3 5920596066603197056": [],
+   "J1758-5501": [],
+   "J1758\u22125501": [],
+   "TIC 76392634": [],
+   "UCAC4 175-200416": []
+  }
+ },
+ "4883191104733786496": {
+  "simbad": {
+   "main_id": "GALEX J040336.1-331033",
+   "otype": "WD*",
+   "sp_type": "DB",
+   "ids": [
+    "GALEX J040336.1-331033",
+    "Gaia DR3 4883191104733786496",
+    "USNO-A2.0 0525-01439730",
+    "Gaia DR2 4883191104733786496"
+   ]
+  },
+  "simbad_refs": [
+   "2007ApJ...664...53A",
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019ApJ...886..100C",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DB",
+  "vizier": {
+   "n_tables": 62,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "4883191104733786496": [],
+   "GALEX J040336.1-331033": [],
+   "Gaia DR2 4883191104733786496": [],
+   "Gaia DR3 4883191104733786496": [],
+   "J0403-3310": [],
+   "J0403\u22123310": [],
+   "USNO-A2.0 0525-01439730": []
+  }
+ },
+ "2299190006090503808": {
+  "simbad": {
+   "main_id": "HS 2157+8152",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "TIC 470119026",
+    "Gaia DR3 2299190006090503808",
+    "2MASS J21554852+8207210",
+    "HS 2157+8152",
+    "WD 2157+818",
+    "Gaia DR2 2299190006090503808"
+   ]
+  },
+  "simbad_refs": [
+   "1998A&A...338..563H",
+   "1999ApJS..121....1M",
+   "2004ApJ...607..982M",
+   "2016yCat....1.2035M",
+   "2018MNRAS.480.4505J",
+   "2018MNRAS.480.4884E",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.485.5573T",
+   "2020ApJ...902..127X",
+   "2021MNRAS.508.3877G",
+   "2023MNRAS.518.5106J",
+   "2023A&A...679A.127G",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 68,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "2299190006090503808": [],
+   "2MASS J21554852+8207210": [],
+   "Gaia DR2 2299190006090503808": [],
+   "Gaia DR3 2299190006090503808": [],
+   "HS 2157+8152": [
+    "1998A&A...338..563H"
+   ],
+   "J2155+8207": [],
+   "TIC 470119026": [],
+   "WD 2157+818": []
+  }
+ },
+ "6021870154194477312": {
+  "simbad": {
+   "main_id": "GALEX J161854.1-355427",
+   "otype": "WD*",
+   "sp_type": "DA:",
+   "ids": [
+    "GALEX J161854.1-355427",
+    "Gaia DR3 6021870154194477312",
+    "Gaia DR2 6021870154194477312"
+   ]
+  },
+  "simbad_refs": [
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019ApJ...886..100C",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA:",
+  "vizier": {
+   "n_tables": 53,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "6021870154194477312": [],
+   "GALEX J161854.1-355427": [],
+   "Gaia DR2 6021870154194477312": [],
+   "Gaia DR3 6021870154194477312": [],
+   "J1618-3554": [],
+   "J1618\u22123554": []
+  }
+ },
+ "2246631460497465472": {
+  "simbad": {
+   "main_id": "LSPM J2028+6701",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "Gaia DR3 2246631460497465472",
+    "USNO-B1.0 1570-00224327",
+    "LSPM J2028+6701",
+    "Gaia DR2 2246631460497465472"
+   ]
+  },
+  "simbad_refs": [
+   "2005AJ....129.1483L",
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.485.5573T",
+   "2021A&A...649A...6G",
+   "2021MNRAS.508.3877G",
+   "2023MNRAS.518.5106J",
+   "2023A&A...679A.127G",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA:",
+  "vizier": {
+   "n_tables": 55,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "2246631460497465472": [],
+   "Gaia DR2 2246631460497465472": [],
+   "Gaia DR3 2246631460497465472": [],
+   "J2028+6701": [],
+   "LSPM J2028+6701": [],
+   "USNO-B1.0 1570-00224327": []
+  }
+ },
+ "3987356721738829184": {
+  "simbad": {
+   "main_id": "GALEX J103612.8+203228",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "GALEX J103612.8+203228",
+    "Gaia DR3 3987356721738829184",
+    "SDSS J103612.78+203227.5",
+    "Gaia DR2 3987356721738829184",
+    "SDSS J103612.77+203227.5"
+   ]
+  },
+  "simbad_refs": [
+   "2011MNRAS.417.1210G",
+   "2015MNRAS.446.4078K",
+   "2015MNRAS.448.2260G",
+   "2017MNRAS.469.2102A",
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.482.5222T",
+   "2019MNRAS.486.2169K",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 60,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "3987356721738829184": [],
+   "GALEX J103612.8+203228": [],
+   "Gaia DR2 3987356721738829184": [],
+   "Gaia DR3 3987356721738829184": [],
+   "J1036+2032": [],
+   "SDSS J103612.77+203227.5": [],
+   "SDSS J103612.78+203227.5": []
+  }
+ },
+ "6915353300288749440": {
+  "simbad": {
+   "main_id": "GALEX J205808.2-042002",
+   "otype": "WD?",
+   "sp_type": NaN,
+   "ids": [
+    "Gaia DR2 6915353300288749440",
+    "GALEX J205808.2-042002",
+    "Gaia DR3 6915353300288749440"
+   ]
+  },
+  "simbad_refs": [
+   "2019MNRAS.482.4570G",
+   "2021MNRAS.508.3877G"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 32,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [
+   "2602.07246:6915353300288749440"
+  ],
+  "ads": {
+   "6915353300288749440": [],
+   "GALEX J205808.2-042002": [],
+   "Gaia DR2 6915353300288749440": [],
+   "Gaia DR3 6915353300288749440": [],
+   "J2058-0420": [],
+   "J2058\u22120420": []
+  }
+ },
+ "4867935694432066304": {
+  "simbad": {
+   "main_id": "Gaia DR3 4867935694432066304",
+   "otype": "WD?",
+   "sp_type": NaN,
+   "ids": [
+    "Gaia DR2 4867935694432066304",
+    "Gaia DR3 4867935694432066304"
+   ]
+  },
+  "simbad_refs": [
+   "2019MNRAS.482.4570G",
+   "2021MNRAS.508.3877G"
+  ],
+  "mwdd": "not listed",
+  "vizier": {
+   "n_tables": 14,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "4867935694432066304": [],
+   "Gaia DR2 4867935694432066304": [],
+   "Gaia DR3 4867935694432066304": [],
+   "J0441-3448": [],
+   "J0441\u22123448": []
+  }
+ }
+}

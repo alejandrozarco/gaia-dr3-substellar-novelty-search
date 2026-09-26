@@ -17,6 +17,7 @@ Usage:
     python consumer.py --mode wider
 """
 from __future__ import annotations
+import os
 import argparse, json, math, sys, time, warnings
 warnings.filterwarnings('ignore')
 from pathlib import Path
@@ -27,7 +28,7 @@ import pandas as pd
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 RAW = ROOT / 'data' / 'raw_chunks'
 DERIVED = ROOT / 'data' / 'derived'
 

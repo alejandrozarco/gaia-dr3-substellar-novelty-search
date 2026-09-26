@@ -12,12 +12,13 @@ Usage:
     python duckdb_views.py --query "SELECT class, COUNT(*) FROM hunt_derived GROUP BY 1"
 """
 from __future__ import annotations
+import os
 import argparse
 from pathlib import Path
 
 import duckdb
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 RAW = ROOT / 'data' / 'raw_chunks'
 DERIVED = ROOT / 'data' / 'derived'
 

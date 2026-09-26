@@ -1,0 +1,19 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: Observed, datatype: float64}
+# - {name: Ritz, datatype: int64}
+# - {name: Transition, datatype: int64}
+# - {name: Rel., datatype: int64}
+# - {name: Aki, datatype: int64}
+# - {name: fik, datatype: int64}
+# - {name: Acc., datatype: int64}
+# - {name: Ei           Ek, datatype: int64}
+# - {name: Type, datatype: int64}
+# - {name: TP, datatype: int64}
+# - {name: Line, datatype: string}
+# schema: astropy-2.0
+Observed Ritz Transition Rel. Aki fik Acc. "Ei           Ek" Type TP Line
+1317.22 "" 75917 500 "" "" "" "" "" "" L897
+1335.2 "" 74895 400 "" "" "" "" "" "" L897
+1370.14 "" 72985 500 "" "" "" "" "" "" L897

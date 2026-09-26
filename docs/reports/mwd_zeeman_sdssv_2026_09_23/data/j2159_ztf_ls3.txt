@@ -1,0 +1,29 @@
+(1) per season, 50-85 c/d
+   zg 2018: n  145 max power 0.178 at 1101.0 s, FAP 0.06
+   zg 2019: n  170 max power 0.122 at 1727.7 s, FAP 0.73
+   zg 2020: n  103 max power 0.232 at 1278.3 s, FAP 0.16
+   zg 2021: n   77 max power 0.254 at 1304.3 s, FAP 0.81
+   zg 2022: n   83 max power 0.218 at 1079.5 s, FAP 0.97
+   zg 2023: n   72 max power 0.249 at 1060.9 s, FAP 0.96
+   zg 2024: n   66 max power 0.309 at 1096.0 s, FAP 0.52
+   zg 2025: n   57 max power 0.355 at 1238.2 s, FAP 0.45
+   zr 2018: n  376 max power 0.054 at 1086.8 s, FAP 0.87
+   zr 2019: n  181 max power 0.113 at 1029.1 s, FAP 0.7
+   zr 2020: n  123 max power 0.172 at 1383.7 s, FAP 0.63
+   zr 2021: n   70 max power 0.245 at 1249.7 s, FAP 1
+   zr 2022: n   86 max power 0.196 at 1214.8 s, FAP 1
+   zr 2023: n   74 max power 0.277 at 1606.5 s, FAP 0.5
+   zr 2024: n   73 max power 0.241 at 1147.9 s, FAP 0.99
+   zr 2025: n   63 max power 0.282 at 1444.8 s, FAP 0.97
+(2) injection-recovery (coherent sinusoid), fraction recovered over 8 phases x 5 frequencies
+   zg A = 0.3%: recovered 0/40
+   zg A = 0.5%: recovered 8/40
+   zg A = 0.8%: recovered 37/40
+   zg A = 1.2%: recovered 40/40
+   zr A = 0.3%: recovered 0/40
+   zr A = 0.5%: recovered 0/40
+   zr A = 0.8%: recovered 15/40
+   zr A = 1.2%: recovered 37/40
+(3) spectral window: top peaks of the sampling periodogram (constant signal) 5-300 c/d
+   zg: window peaks (c/d): [np.float64(5.008), np.float64(46.997), np.float64(48.0), np.float64(49.0), np.float64(45.997), np.float64(6.003)]; window power at 48.00 c/d = 0.005
+   zr: window peaks (c/d): [np.float64(46.997), np.float64(48.0), np.float64(49.0), np.float64(5.008), np.float64(45.994), np.float64(44.994)]; window power at 48.00 c/d = 0.002

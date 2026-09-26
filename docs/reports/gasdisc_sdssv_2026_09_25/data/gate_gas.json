@@ -1,0 +1,262 @@
+{
+ "2833849800205759360": {
+  "simbad": {
+   "main_id": "GALEX J224539.3+201633",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "GALEX J224539.3+201633",
+    "ZTF J224539.37+201633.5",
+    "Gaia DR3 2833849800205759360",
+    "Gaia DR2 2833849800205759360"
+   ]
+  },
+  "simbad_refs": [
+   "2019MNRAS.482.4570G",
+   "2020ApJS..249...18C",
+   "2020ApJ...902..127X",
+   "2021MNRAS.508.3877G",
+   "2021ApJ...920..156L",
+   "2022ApJ...932..118C",
+   "2024A&A...682A...5V",
+   "2024ApJ...967..166S",
+   "2026A&A...712A.243J"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 86,
+   "em_type_hits": [
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/gemini/obscore",
+     "dataproduct_type",
+     "image"
+    ]
+   ]
+  },
+  "desi_amorim": {
+   "by_id": [],
+   "nearest_arcsec": 1735.9,
+   "nearest_class": "DQA"
+  },
+  "desi_swan": {
+   "n": 0,
+   "specType": [],
+   "teff": []
+  },
+  "arxiv_src_hits": [
+   "2404.02201:2833849800205759360",
+   "2509.15133:2833849800205759360"
+  ],
+  "ads": {
+   "2833849800205759360": [
+    "2026A&A...712A.243J"
+   ],
+   "GALEX J224539.3+201633": [],
+   "Gaia DR2 2833849800205759360": [],
+   "Gaia DR3 2833849800205759360": [
+    "2026A&A...712A.243J"
+   ],
+   "J2245+2016": [],
+   "ZTF J224539.37+201633.5": []
+  }
+ },
+ "578709631539357440": {
+  "simbad": {
+   "main_id": "GALEX J085921.9+043812",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "SDSS J085921.90+043812.4",
+    "GALEX J085921.9+043812",
+    "Gaia DR3 578709631539357440",
+    "SDSS J085921.91+043812.3",
+    "WD 0856+048",
+    "SDSS J085921.90+043812.3",
+    "Gaia DR2 578709631539357440"
+   ]
+  },
+  "simbad_refs": [
+   "2006ApJS..167...40E",
+   "2011ApJ...730..128T",
+   "2011MNRAS.417.1210G",
+   "2013ApJS..204....5K",
+   "2015MNRAS.448.2260G",
+   "2016yCat....1.2035M",
+   "2017MNRAS.469.2102A",
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.482.5222T",
+   "2019MNRAS.486.2169K",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 79,
+   "em_type_hits": [
+    [
+     "J/A+A/698/A132/spectra",
+     "OClassCol",
+     "pretype"
+    ]
+   ]
+  },
+  "desi_amorim": {
+   "by_id": [
+    "DA"
+   ],
+   "nearest_arcsec": 0.0,
+   "nearest_class": "DA"
+  },
+  "desi_swan": {
+   "n": 1,
+   "specType": [
+    "DA"
+   ],
+   "teff": [
+    18181.069376648466
+   ]
+  },
+  "arxiv_src_hits": [
+   "2602.07246:578709631539357440"
+  ],
+  "ads": {
+   "578709631539357440": [],
+   "GALEX J085921.9+043812": [],
+   "Gaia DR2 578709631539357440": [],
+   "Gaia DR3 578709631539357440": [],
+   "J0859+0438": [],
+   "SDSS J085921.90+043812.3": [],
+   "SDSS J085921.90+043812.4": [],
+   "SDSS J085921.91+043812.3": [],
+   "WD 0856+048": []
+  }
+ },
+ "422688489185463680": {
+  "simbad": {
+   "main_id": "Gaia DR3 422688489185463680",
+   "otype": "WD*",
+   "sp_type": "DB",
+   "ids": [
+    "Gaia DR3 422688489185463680",
+    "Gaia DR2 422688489185463680"
+   ]
+  },
+  "simbad_refs": [
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DB",
+  "vizier": {
+   "n_tables": 52,
+   "em_type_hits": [
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ],
+    [
+     "B/hst/obscore",
+     "dataproduct_type",
+     "image"
+    ]
+   ]
+  },
+  "desi_amorim": {
+   "by_id": [],
+   "nearest_arcsec": 59271.7,
+   "nearest_class": "DB"
+  },
+  "desi_swan": {
+   "n": 0,
+   "specType": [],
+   "teff": []
+  },
+  "arxiv_src_hits": [],
+  "ads": {
+   "422688489185463680": [],
+   "Gaia DR2 422688489185463680": [],
+   "Gaia DR3 422688489185463680": [],
+   "J0005+5805": []
+  }
+ }
+}

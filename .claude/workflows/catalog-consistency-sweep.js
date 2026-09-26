@@ -8,7 +8,7 @@ export const meta = {
   ],
 }
 
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 // Normalize args: the runtime may deliver it as an object, a JSON string, or a bare value.
 const A = (typeof args === 'string')
   ? (() => { const s = args.trim(); try { return (s[0] === '{' || s[0] === '[') ? JSON.parse(s) : { query: s } } catch (e) { return { query: s } } })()

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """Poll ATLAS FP task until done (max ~25 min), then download result to atlas_fp.txt."""
+import os
 import time, requests, sys
 
 OUT = '/tmp/rubin_pilot/forensics/170587115976392822'
-tok = open('/Users/legbatterij/.config/atlas/token').read().strip()
+tok = open(os.path.expanduser('~/.config/atlas/token')).read().strip()
 H = {'Authorization': f'Token {tok}', 'Accept': 'application/json'}
 task_url = open(f'{OUT}/atlas_task_url.txt').read().strip()
 

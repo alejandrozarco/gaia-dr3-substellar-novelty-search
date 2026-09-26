@@ -1,0 +1,7 @@
+best f 13.9297708 c/d, 1-sigma range (delta chi2 = reduced chi2 1.38) 13.9297640-13.9297774; P = 103.3757 min
+c: n 841, amp 1f 5.39 +- 0.28 %, 2f 0.77 +- 0.28 %, phase1 278 deg
+o: n 2751, amp 1f 5.74 +- 0.34 %, 2f 0.41 +- 0.34 %, phase1 278 deg
+MJD 57000-58100: n 205, amp 5.02 +- 1.05 %, phase 288 deg
+MJD 58100-59200: n 720, amp 6.78 +- 0.47 %, phase 282 deg
+MJD 59200-60300: n 1160, amp 5.69 +- 0.35 %, phase 271 deg
+MJD 60300-61400: n 1507, amp 4.97 +- 0.35 %, phase 281 deg

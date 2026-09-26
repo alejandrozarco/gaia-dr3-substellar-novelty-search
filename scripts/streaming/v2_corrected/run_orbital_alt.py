@@ -2,9 +2,10 @@
 
 Produces:
     /tmp/orbital_alternative_2026_05_28.md
-    /Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/data/derived/main_hunt_derived_v2_alt.parquet
+    ~/claude_projects/gaia-recovered-2026-05-27/data/derived/main_hunt_derived_v2_alt.parquet
 """
 from __future__ import annotations
+import os
 import math
 import sys
 import time
@@ -15,7 +16,7 @@ from pathlib import Path
 import pandas as pd
 import polars as pl
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 DERIVED = ROOT / 'data' / 'derived'
 OUTPUT_PARQUET = DERIVED / 'main_hunt_derived_v2_alt.parquet'
 REPORT_PATH = Path('/tmp/orbital_alternative_2026_05_28.md')

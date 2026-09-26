@@ -1,3 +1,4 @@
+import os
 import sys, json; sys.path.insert(0, "/tmp/kk76_fix")
 from fitlib import *
 from common import horizons_hstcentric_radec
@@ -6,7 +7,7 @@ ref = pickle.load(open("/tmp/kk76_referee/work/fits2.pkl", "rb"))
 def el_from_ref(v):
     e, q, tp, om, w, inc = v["el"]
     return {"elements": {"epoch": 2453857.5, "e": float(e), "q": float(q), "Tp": float(tp), "asc_node": float(om), "arg_per": float(w), "i": float(inc)}}
-july = list(json.load(open("/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/fit_joint/elements.json"))["objects"].values())[0]
+july = list(json.load(open(os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/fit_joint/elements.json")))["objects"].values())[0]
 ORB = {"MY fit C (all 53)": FC["C"], "REFEREE fit C": el_from_ref(ref["C ground+REF2006+REF2010"]),
        "MY fit D (ground)": FB["D"], "REFEREE fit D (ground)": el_from_ref(ref["D ground-only"]),
        "JULY joint (wrong 2006 pts)": july}

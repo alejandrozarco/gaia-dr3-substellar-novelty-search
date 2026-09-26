@@ -1,0 +1,84 @@
+{
+ "3347953532952671360": {
+  "mwdd": {
+   "wdid": "Gaia DR2 3347953532952671360",
+   "spectype": "DAH",
+   "teff": "15460.0",
+   "logg": "8.52",
+   "BD": null,
+   "source": "Gaia EDR3",
+   "nbOpt": "2",
+   "allnames": "Gaia DR2 3347953532952671360;Gaia DR3 3347953532952671360;Gaia EDR3 3347953532952671360;J0547+1501;WDJ05470.02+150149.81;WDJ054700.02+150149.82;J0547+1501"
+  },
+  "desi_amorim": [],
+  "desi_swan": [],
+  "desi_dr1_spectra": [],
+  "lamost_dr10": [
+   {
+    "obsid": "506009032",
+    "designation": "J054700.00+150149.6",
+    "obsdate": "2016-09-28",
+    "class": "STAR",
+    "subclass": "WD",
+    "snrg": "47.32"
+   }
+  ],
+  "sdss_dr17_specobjall": []
+ },
+ "1481364628764195072": {
+  "mwdd": {
+   "wdid": "SDSS J142703.40+372110.5",
+   "spectype": "DAH",
+   "teff": "19588.0",
+   "logg": "8.922",
+   "BD": "28.48221193715372",
+   "source": "Gaia EDR3",
+   "nbOpt": "3",
+   "allnames": "SDSS J142703.31+372110.3;CSO 453;SDSS J142703.40+372110.5;WD 1425+375;Gaia DR3 1481364628764195072;Gaia DR2 1481364628764195072;SDSS J142703.35+372110.5;Gaia EDR3 1481364628764195072;WDJ142703.37+372110.58;J1427+3721"
+  },
+  "desi_amorim": [],
+  "desi_swan": [
+   [
+    "WDJ142703.37+372110.58",
+    "DAH",
+    1.0
+   ]
+  ],
+  "desi_dr1_spectra": [
+   [
+    "GALAXY, z = 1.504",
+    "39633025343948335",
+    "main"
+   ]
+  ],
+  "lamost_dr10": [],
+  "sdss_dr17_specobjall": [
+   {
+    "specObjID": "5306429584270710784",
+    "plate": "4713",
+    "mjd": "56044",
+    "fiberID": "230",
+    "run2d": "v5_13_2",
+    "class": "STAR",
+    "subClass": "WDmagnetic",
+    "z": "-0.004136078",
+    "snMedian": "27.41067",
+    "survey": "boss",
+    "sep": "0.766172401452272"
+   },
+   {
+    "specObjID": "1554917850953574400",
+    "plate": "1381",
+    "mjd": "53089",
+    "fiberID": "182",
+    "run2d": "26",
+    "class": "STAR",
+    "subClass": "WDmagnetic",
+    "z": "-0.004136076",
+    "snMedian": "21.7709",
+    "survey": "sdss",
+    "sep": "0.226277426235431"
+   }
+  ]
+ }
+}

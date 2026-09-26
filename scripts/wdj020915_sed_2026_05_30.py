@@ -33,7 +33,7 @@ Bands actually available for THIS target (verified live, 2026-05-30):
    NOT IN FOOTPRINT: SDSS ugriz (no spectro/photo here); SkyMapper (southern, dec<0).
 
 Outputs: /tmp/wdj020915_sed.json  +  /tmp/wdj020915_sed_report.md  (+ a PNG SED).
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python  (NO pip-install).
+Env: ~/claude_projects/ostinato/.venv/bin/python  (NO pip-install).
 DO NOT edit dossiers / CANDIDATES.md.
 """
 from __future__ import annotations

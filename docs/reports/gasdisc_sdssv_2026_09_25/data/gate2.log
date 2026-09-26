@@ -1,0 +1,7 @@
+arXiv source files: 285 papers: 108
+1827014701883095680 {"simbad": {"main_id": "Gaia DR3 1827014701883095680", "otype": "WD*", "sp_type": "DB", "ids": ["Gaia DR3 1827014701883095680"]}, "simbad_refs": ["2021MNRAS.508.3877G", "2024A&A...682A...5V"], "mwdd": "DB", "vizier": {"n_tables": 51, "em_type_hits": []}, "desi_amorim": {"by_id": [], "nearest_arcsec": 61144.7, "nearest_class": "DA"}, "desi_swan": {"n": 0, "specType": [], "teff": []}, "arxiv_src_hits": []}
+   ADS: {}
+2527617665632689024 {"simbad": {"main_id": "GALEX J003934.1-035646", "otype": "WD*", "sp_type": "DA", "ids": ["Gaia DR2 2527617665632689024", "GALEX J003934.1-035646", "Gaia DR3 2527617665632689024"]}, "simbad_refs": ["2019MNRAS.482.4570G", "2021MNRAS.508.3877G", "2024A&A...682A...5V"], "mwdd": "DA", "vizier": {"n_tables": 62, "em_type_hits": [["J/A+A/705/A247/catalog", "predVarClass", "None"]]}, "desi_amorim": {"by_id": [], "nearest_arcsec": 4512.2, "nearest_class": "DZ"}, "desi_swan": {"n": 0, "specType": [], "teff": []}, "arxiv_src_hits": []}
+   ADS: {}
+191101206879480704 {"simbad": {"main_id": "Gaia DR3 191101206879480704", "otype": "WD*", "sp_type": "DA", "ids": ["Gaia DR3 191101206879480704", "Gaia DR2 191101206879480704"]}, "simbad_refs": ["2018MNRAS.480.4505J", "2019MNRAS.482.4570G", "2021MNRAS.508.3877G", "2023A&A...677A.159T", "2024A&A...682A...5V"], "mwdd": "DA", "vizier": {"n_tables": 52, "em_type_hits": []}, "desi_amorim": {"by_id": [], "nearest_arcsec": 36217.9, "nearest_class": "DA"}, "desi_swan": {"n": 0, "specType": [], "teff": []}, "arxiv_src_hits": []}
+   ADS: {}

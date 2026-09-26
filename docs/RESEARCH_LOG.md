@@ -475,7 +475,7 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - **task #132 COMPLETE.** ATLAS drain relaunched for the final ~32 coronal objects (pure housekeeping; no discovery relevance). Provenance: docs/reports/erass1_atlas_bridge_2026_07_04/ + register rows.
 
 ### 2026-07-05 — Discovery-menu gates fired: DESI DR1 = GO (core-quarry lane), DASCH one-dip = MARGINAL
-- **DESI DR1 repeat-RV dark-companion hunt (menu rank 3): GATE PASSED (GO).** Real per-epoch FITS pulled (90 healpix, 32,641 epoch rows): DESI DR1 public since Mar 2025, MWS catalog (Koposov+2026 arXiv:2505.14787) exposes >1M stars with >=2 epoch RVs. Same-night epoch-pair fraction 18.9% (kill >90% MISSED); usable multi-day-baseline + ZTF-footprint + G16-18.5 pool ~480k (kill <100-200k MISSED). Scoop = one single-object RNAAS flag-plant (Smith 2026, Gaia DR3 3802130935635096832 — front-filter it), NOT a systematic survey. **This is the ONLY remaining lane at the project's core quarry (dark companions at G=16-20, a regime Gaia RVS + DR4 never reach). Ready to build (~3-4 wk).**
+- **DESI DR1 repeat-RV dark-companion hunt (menu rank 3): GATE PASSED (GO).** Real per-epoch FITS pulled (90 healpix, 32,641 epoch rows): DESI DR1 public since Mar 2025, MWS catalog (Koposov+2026 arXiv:2505.14787) exposes >1M stars with >=2 epoch RVs. Same-night epoch-pair fraction 18.9% (kill >90% MISSED); usable multi-day-baseline + ZTF-footprint + G16-18.5 pool ~480k (kill <100-200k MISSED). Prior art = one single-object RNAAS note (Smith 2026, Gaia DR3 3802130935635096832 — front-filter it), NOT a systematic survey. **This is the ONLY remaining lane at the project's core quarry (dark companions at G=16-20, a regime Gaia RVS + DR4 never reach). Ready to build (~3-4 wk).**
 - **DASCH one-dip-wonder period recovery (menu rank 2): MARGINAL** (13 clean / 18 incl-marginal survivors vs GO>=25 / NO-GO<10). DASCH DR7 access CONFIRMED (daschlab, RY Cnc control LC 3,653 pts in 35s; ~30-40s/object). Funnel capped because the ZTF 81-dipper table is withheld for the ApJ supplement (only 29/81 in the preprint) + scoop risk (Tzanidakis & Davenport own the ZTF list AND publish DASCH+dipper work this season; ASAS-SN team's own DASCH attempt on one dipper was a null "too much scatter"). Options: cheap 1-3d mini-campaign on the 13 clean ASAS-SN survivors, OR wait for the ZTF table, OR defer.
 - **TOOL FIX (novelty-gate integrity): scripts/litcheck/prior_art.py** was over-strict — it AND-quoted EVERY query token, so a long method query returned a false "NO MATCHES" (= false "novel", the dangerous failure; it missed the DESI scoop note a plain WebSearch caught). Fixed: strict-AND now falls back to a broad any-term OR when it returns zero, prints a "related work EXISTS — read before claiming novel" warning, and recommends a WebSearch cross-check. Verified on the DESI query.
 - Provenance: docs/reports/gates_2026_07_05/ (both gate writeups + data).
@@ -487,7 +487,7 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 
 ### 2026-07-05 — DESI DR1 dark-companion hunt PHASE 1 (RV-variability screen): 26,427-object tail, honest caveats, Phase-2 cleanup required
 - **Route:** bulk per-healpix rvtab_spectra FITS (the ONLY route with per-epoch VRAD/VRAD_ERR/MJD — Astro Data Lab TAP tested + rejected: desi_dr1.mws is coadd-only). Streamed all 31,925 healpix (3 programs), 14.8 GB, 72 workers, ~23 min, 0.075% pixel loss. 5,840,078 good epoch rows.
-- **Funnel:** 1,211,271 unique stars (>=2 epochs) -> 931,803 (baseline>=1d) -> 458,898 (G16-18.5, dec>-30) -> 57,140 (p_const<1e-3) -> 27,043 (dRV>=5sigma) -> 26,429 (STAR) -> **26,427 "novel"** (front-filtered; Smith2026 flag-plant 3802130935635096832 removed).
+- **Funnel:** 1,211,271 unique stars (>=2 epochs) -> 931,803 (baseline>=1d) -> 458,898 (G16-18.5, dec>-30) -> 57,140 (p_const<1e-3) -> 27,043 (dRV>=5sigma) -> 26,429 (STAR) -> **26,427 "novel"** (front-filtered; Smith 2026 object 3802130935635096832 removed).
 - **HONEST CAVEATS (not a candidate list yet):** (1) the top-ranked (dRV 173-751 km/s, chi2_red 1e4-1e5) are SUSPECTED PIPELINE ARTIFACTS (catastrophic RV failures / blended fibers / template mismatch) — FoM ranked on dRV amplitude surfaces the worst, not the best; artifact rejection is Phase 2. (2) **VSX GAP (real, demonstrated):** the known_objects store has ZERO VSX rows (built --no-vsx); a live VizieR VSX backstop was unreliable (empty on Algol, timeouts). SIMBAD backstop on the top 30 caught **3 of the top 17 as already-known** CRTS/ZTF variables the store missed. "Novel" here = "not in our store + not in SIMBAD", NOT "not in VSX" → real contamination by known stellar binaries.
 - **Phase 2 required before any discovery read:** (2A) artifact rejection (kill implausible dRV/chi2, RVS quality, SB2/double-lined = stellar not dark) + full novelty (VSX + SIMBAD + published DESI-RV-variable/binary lists) -> clean single-lined novel subset; (2B) ZTF period search -> mass function f(M) -> deep-dive high-f(M) survivors. Honest prior: 0-2 real dark companions in the whole sample.
 - Provenance: docs/reports/desi_hunt_phase1_2026_07_05/ (REPORT + candidates.csv.gz) + /tmp/desi_hunt/. INFRA TODO: rebuild known_objects store WITH VSX (novelty-gate integrity, affects all lanes).
@@ -507,7 +507,7 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 
 ### 2026-07-05 — DESI hunt PHASE 2B (ZTF period + RV mass-function, top-31 candidates): 0 dark companions — clean null, but data-sufficiency-walled (not exhausted)
 - 30/31 processed (1 agent died on a transport error; batch had 30 distinct source_ids). Verdicts: **0 DARK_COMPANION_CANDIDATE**, 4 STELLAR_SB1, 3 ARTIFACT, 23 NO_PERIOD_PENDING.
-- **4 STELLAR_SB1** (credible ZTF period + clean RV fold): M2_min 0.47-0.62 Msun = ordinary M/K-dwarf companions, all FAR below any WD/NS/BH threshold. Registered (1487470319907416832 P=1.32d, 3831414946076844032 P=1.53d, 1126496666779064064 P=3.45d). These are genuinely novel characterized eclipsing/ellipsoidal SB1s — a real (if unremarkable) product.
+- **4 STELLAR_SB1** (credible ZTF period + clean RV fold): M2_min 0.47-0.62 Msun = ordinary M/K-dwarf companions, all FAR below any WD/NS/BH threshold. Registered (1487470319907416832 P=1.32d, 3831414946076844032 P=1.53d, 1126496666779064064 P=3.45d). These are new characterized eclipsing/ellipsoidal SB1s.
 - **3 ARTIFACT:** 1 SX Phe/delta-Scuti PULSATOR (2688492537652631424 — RV is pulsation not orbital; the pulsation-mimic the Phase-3 protocol targets, caught immediately) + 2 RV-incoherent-with-period (single-bad-epoch / smooth-drift-vs-short-period). Registered the pulsator.
 - **23 NO_PERIOD_PENDING (77%):** REAL, highly-significant single-lined RV variability (chi2/dof 100-800), uncatalogued, with a DECISIVE clean ZTF photometric null (LS+BLS+bootstrap-FAP+alias checks all run). NOT killed — data-sufficiency-walled: ZTF cannot recover ellipsoidal/eclipse periods for G~17-18.5 at plausible amplitudes, and 5-9 sparse non-phase-sampled DESI epochs cannot solve a period alone. These are genuine binaries whose dark-vs-stellar nature is UNKNOWN without a period/orbit → gated on more RVs or **Gaia DR4 (Dec 2026) astrometric/spectroscopic orbits.**
 - **LANE STATUS:** the DESI archival hunt on the top-30 FoM candidates = 0 dark companions (extends the campaign's 0-2 prior, does not break it). The lane's PRODUCT is a catalog of ~18,946 novel significant RV-variable SB1s (top 30 period-searched); the dark-companion identification for the periodless majority is DR4-gated, NOT solvable with more archival ZTF/DESI mining. Recommendation: bank the catalog + add the 23 pending (and the high-significance tail) to the DR4 target list; do NOT grind deeper into lower-FoM candidates (same period-wall).
@@ -530,7 +530,7 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - Cross-matched the 18,946 RV-variable catalog (XMatch, <2.5" reliable): **GALEX UV 6,681 (35%) → ~6 at >3σ UV-excess (106 at >2σ)** = the only live channel; **eRASS1 6 total (western-sky coverage collision, dead not-physical)**; **AllWISE 18,200 (96%) but the W2-W3 "dust" channel is FALSE (92% of W3 are upper-limits at G16-18.5)**, W1-W2 noisy (11-261).
 - **False-match caveat:** GALEX separations wide (median 0.92″, 90th 2.2″ vs WISE 0.14″/0.47″) → real blend risk at G16-18.5; needs a shifted-position offset-control before trusting any flag (NOT run in the gate).
 - **Prior art:** the GALEX UV-excess PCEB METHOD is published (Makarov 2017, Shahaf+2023 Triage II, Garbutt/Parsons+2024) AND **this project already ran it once (task #121, 2026-06-05, NO-GO-standalone on the Gaia-NSS pool)** — so this is a 2nd application to a new parent sample, NOT a new method. Dataset itself (the 18,946 selection) is genuinely unworked; Smith2026 RNAAS object confirmed 0-overlap.
-- **VERDICT: MARGINAL → do NOT build a full lane.** Only 1/3 channels live, method not novel, pool small (~6 defensible), each needs a proper 2-component SED fit (not the crude ridge cut) to even be a PCEB candidate. Ceiling = a novel PCEB identification (common known class), RNAAS-tier. Bounded side-task IF pursued: SED-fit the ~6-15 flagged (existing `companion_excess_sigma` code) + an offset-control false-match check first; frame as method-validation. Standout: 5097036946581138688 (G=17.11, BP-RP=1.03, NUV=16.05 = 9.4σ excess, clean flags, no SIMBAD).
+- **VERDICT: MARGINAL → do NOT build a full lane.** Only 1/3 channels live, method not novel, pool small (~6 defensible), each needs a proper 2-component SED fit (not the crude ridge cut) to even be a PCEB candidate. Bounded side-task IF pursued: SED-fit the ~6-15 flagged (existing `companion_excess_sigma` code) + an offset-control false-match check first; frame as method-validation. Standout: 5097036946581138688 (G=17.11, BP-RP=1.03, NUV=16.05 = 9.4σ excess, clean flags, no SIMBAD).
 - Provenance: docs/reports/gate_mwl_2026_07_05/ (report + top-10). LOCAL only (per push policy: null/methods).
 
 ### 2026-07-05 — Bounded PCEB check (SED-fit + offset-control on the 10 GALEX UV-excess candidates): CLEAN NULL, 0 confirmable novel PCEB
@@ -545,12 +545,12 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - One of the two optional zero-cost pre-DR4 tasks the ideation scan salvaged (user chose "both"). Turns the campaign's own documented retractions into a **day-one regression gate**: before the DR4 re-fit engine's *new* verdicts are trusted, it must first reproduce the correct *skeptical* verdict on every false positive we already know about.
 - **Corpus harvested from the DATED LEDGERS (not memory)** by a read-only agent over RESEARCH_LOG + CANDIDATES.md + object journals + CITATION.cff: **23 documented FPs** (11 astrometric = this engine's slice; 7 spectroscopic-SB2; 3 photometric; 2 crossmatch). The harvest corrected two things I had wrong: **HD 76078 is NOT a campaign retraction** (it is a v1 removed-from-headline *benchmark fixture*, correctly excluded); and **5858574's demotion was the rv/2→sin-i inflation, NOT the cos-i sqrt bug** (its NSS is Orbital, so the sqrt bug never applied). It also surfaced ~10 FPs beyond the obvious ones (5406907, 6802634, TYC 7350-249-1, the two superposed-SB1 NS, three triple-favored NS, HD 207141, WDJ205650, RAVE-noise 5476986, Pile-A HGCA).
 - **Built** `scripts/dr4_pipeline/refit/fp_registry.py` (source_id-keyed corpus + `fp_class`/`owning_subsystem` + `validate_registry()`), `test_fp_selfvalidation.py` (registry integrity + completeness + one synthetic-DR4 assertion per astrometric FP), and a `run.py --self-validate` gate that **runs automatically before any real day-one analysis and aborts on failure**. Each astrometric FP is reproduced with its skeptical verdict, numbers landing on the documented values: cos-i bug M2 1.20→1.42 (crosses Chandra) but corrected recovers i to 0.05°; rv/2 sin-i=0.53 deprojection turns direct M2=1.55 into the retracted 2.82 mass-gap BH; hierarchical triples (5858574/HD 75567/2127900) → `multi`; weak-fit WDJ020915 (F2=+18.8) → PARK not CONFIRM; low-a_phot WDJ020915 → DOWNGRADE (M2=1.15<1.2); WDJ060042 at anchor M2=1.36 → CONFIRM but NO super-Chandra claim; near-face-on → REFUTE-stellar (TYC 4562/UCAC4 class); WDJ205650 default-M1=1.5 → the retracted M_tot=2.07 artifact vs real-M1=0.38 → 0.64 sub-Ch.
-- **Result: full refit suite 19/19 green** (8 pre-existing + 11 new). This is tooling insurance (no publishable novelty) — it makes the DR4 day-one pipeline provably unable to re-make a documented compaction-style error before trusting a new claim. LOCAL only (methods/tooling). Provenance: the 4 new/edited files under scripts/dr4_pipeline/refit/ + the harvest corpus.
+- **Result: full refit suite 19/19 green** (8 pre-existing + 11 new). This is tooling (no new objects) — it makes the DR4 day-one pipeline provably unable to re-make a documented compaction-style error before trusting a new claim. LOCAL only (methods/tooling). Provenance: the 4 new/edited files under scripts/dr4_pipeline/refit/ + the harvest corpus.
 
 ### 2026-07-05 — Pre-DR4 bench GATE B: DESI-DR1 dark-companion occurrence selection-function go/no-go → MARGINAL (park headline for DR4)
 - The second optional pre-DR4 task: a compute-only go/no-go on whether a period-marginalized dark-companion **occurrence upper limit** from the frozen DESI RV-variable data could beat the existing Gaia-RVS/TESS constraint — settling the DESI lane honestly rather than leaving it vaguely "parked". Injection-recovery on the REAL per-star epoch sampling (30,000 sampled of the 458,898-star G16-18.5 screened pool; real MJD multiset + real heteroscedastic vrad_err), reproducing the exact Phase-1 two-part detection statistic, then Poisson-0 95% UL. Adversarially verified (physics + arithmetic + comparison all confirmed sound; K1 sanity 79.4 km/s).
 - **Surprise: MARGINAL, not the expected clean NO-GO.** DESI's per-epoch RV precision is excellent (median σ=1.44 km/s), so even 2-epoch pairs (60% of the pool) recover 60–96% of high-amplitude compact-companion signals across P≤100 d → the occurrence limit floors at η_UL ~ 7×10⁻⁶ (short P), period-marginalized ~0.9–1.1×10⁻⁵ per star.
-- **But it is NOT a beat, for two honest reasons** (both flagged by the compute agent and confirmed by the verifier): (1) at short period (P≤3 d, where it overlaps Green/El-Badry+2024 arXiv:2412.02082's <10⁻⁵ at 2σ) DESI merely **matches**, doesn't beat — and only under f_primary=1 (all stars treated as 0.9 M⊙ single primaries) and a "**0-detection**" premise that is a Phase-2B top-of-list null over 26,427 *unvetted* RV-variable survivors (any k>0 loosens every limit). (2) The one genuine edge is the **long-period corner P~30–1000 d** (η_UL ~1.1–1.5×10⁻⁵), where the TESS-ellipsoidal method (a≤20 R⊙, P≤3 d) has *zero* sensitivity — but that is RNAAS-grade at most and gated on validating the 0-detection premise. A minor verifier-found defect (the recovery statistic is a hair looser than Phase-1 for ≥3-epoch stars) biases the limit *optimistic*, so it can only weaken the case.
+- **But it is NOT a beat, for two honest reasons** (both flagged by the compute agent and confirmed by the verifier): (1) at short period (P≤3 d, where it overlaps Green/El-Badry+2024 arXiv:2412.02082's <10⁻⁵ at 2σ) DESI merely **matches**, doesn't beat — and only under f_primary=1 (all stars treated as 0.9 M⊙ single primaries) and a "**0-detection**" premise that is a Phase-2B top-of-list null over 26,427 *unvetted* RV-variable survivors (any k>0 loosens every limit). (2) The one genuine edge is the **long-period corner P~30–1000 d** (η_UL ~1.1–1.5×10⁻⁵), where the TESS-ellipsoidal method (a≤20 R⊙, P≤3 d) has *zero* sensitivity — but it is gated on validating the 0-detection premise. A minor verifier-found defect (the recovery statistic is a hair looser than Phase-1 for ≥3-epoch stars) biases the limit *optimistic*, so it can only weaken the case.
 - **VERDICT: park the headline short-period occurrence claim for DR4** (it only matches the existing limit); the long-period complementary limit is the sole live angle and could turn MARGINAL→GO with DR4's deeper multi-epoch baseline. No new object; LOCAL only. Provenance: /tmp/desi_selfunc/selfunc.py + scan output tasks/whh8vggs1.output; scratchpad/desi_selfunc.mjs.
 
 ### 2026-07-07 — FRAME-WIDENING pivot scan (beyond compact objects; relaxed community-confirm mode evaluated): 5 survivors, 1 standout — first live discovery menu since exhaustion
@@ -560,7 +560,7 @@ what was tried, outcome, lesson, links. Keep the index table above in sync.)*
 - RANK 3 (~15–25%, modest VSX credit): WZ Sge / one-outburst-wonder CVs in the 2018–24 ZTF/ATLAS archival backlog (live-outburst mode ceded to Rubin). RANK 4 (~5%): big-dipper residual-gap hunt in the 11<g<13 + 14<g<16 ASAS-SN bins (feeder for Rank 2; credit mechanism unproven). RANK 5 (~5%): TESS-FFI deep-dip screen below the ground-survey magnitude floor (reuses cached CVZ sectors).
 - **INSTRUCTIVE KILLS:** comoving-UCD mining scooped 3 months ago (arXiv:2604.01323, Apr 2026, 3,006 candidates from exactly WISE+Gaia+NSC); TESS-EB quad/triple vetting = ~80% a rename of our completed multiples-hunt (0 novel over 4,571 TICs) + wrong sample (our cache IS the already-screened Prša catalog) + VSG invitation-only; red-nova progenitor screen's founding premise FALSE (live 2024–26 pro cottage industry, e.g. TYC 3801-1529-1 q=0.024 ApJ Jan 2026); Kilonova Seekers = credit not controllable (co-authorship is curated, not per-candidate). Through-line: kill when the bottleneck is telescope access or being-first-to-freshly-consumed-space; keep when it's vetting labor.
 - **POLICY DECISION REQUIRED (user):** ALL 5 survivors need COMMUNITY-CONFIRM mode — there is NO strict-mode survivor left (itself confirmation that the strict archival surface is exhausted). Adopting this menu = consciously relaxing the confirm half of the no-telescope filter (find archivally; MPC/VSX/pro-pickup confirms; credit still accrues to us by name).
-- **Honest quarter calibration:** near-certain small named MPC credits IF Rank 1 gate passes; ~25–40% one publishable stellar characterization (RNAAS+); single-digit % headline-grade. Provenance: tasks/w0j45ku6b.output + scratchpad/frame_widening_scan.mjs. LOCAL only pending user policy decision.
+- **Provenance:** tasks/w0j45ku6b.output + scratchpad/frame_widening_scan.mjs. LOCAL only pending user policy decision.
 
 ### 2026-07-07 — POLICY ADOPTED: community-confirm mode accepted; pivot gates R1+R2 FIRED
 - **User decision: accept community-confirm mode** (we find archivally; MPC/VSX/AAVSO/pro-pickup confirms and credits by name; still no telescope owned/used) **and fire BOTH top gates.** CLAUDE.md no-telescope guardrail amended accordingly (strict archive-only stays the gold standard where available).
@@ -1095,3 +1095,824 @@ Pilot started: Arévalo+2026 reservoir (1,281 stars: predClass nonvar-star, Pvar
 - No DECam frames >= 60 s cover the path between 2015-06 and 2019-05; 2021-2023 frames are being measured.
 - Task #141: Orius filing on hold; 2021-2023 epochs pending. KK76 unaffected.
 - Work continues in a separate project: `~/claude_projects/sso-recovery-2026-09-22/`.
+
+## 2026-09-22 — Arévalo+2026 `nonvar-star` reservoir: EB pilot result
+
+Samples: 1,281 stars drawn from the 274,249 with `predClass = nonvar-star`, `Pvar >= 0.99`, `Std >= 0.04`
+(14.5-19.5 mag, >= 80 epochs), and a control of 1,127 drawn from the 8,576,864 with `Pvar < 0.5`. Same EB
+pipeline as the 20,007-star hunt; both templates recovered before the run.
+
+- Reservoir: 8 CANDIDATE (0.62%), 54 WEAK. Control: 0 CANDIDATE, 21 WEAK.
+- Of the 8: 6 eclipsing binaries, 1 broad continuous modulation (not pursued), 1 rejected (signal from
+  dense single-night sequences).
+- 3 of the 6 are in VSX and the Gaia DR3 EB table. For all three the catalogued period (Gaia DR3) does not
+  phase the ZTF light curve; the ZTF period does.
+- 3 have no type or period in the checked catalogues (absence with coverage proved in VSX, Chen+2020,
+  ATLAS, Gaia DR3 vclassre/veb and Gavras+2023; SIMBAD none; ADS 0 hits): Gaia DR3 3828306424841718656
+  (P = 3.482506 d or 6.965012 d; M-dwarf primary, 269 pc), 1738942132557316864 (P = 1.076989 d),
+  2709405317531811840 (P = 6.381715 d; DESI K star, RV −178 km/s, one epoch). Journals created.
+- Scaled to the full reservoir: ~1,300 EBs (95% range 470-2,800), of which ~640 (130-1,900) without a
+  catalogued type or period. At the pilot's throughput against the IRSA API: ~23 days.
+
+Report: `docs/reports/arevalo_reservoir_pilot_2026_09_22/REPORT.md`.
+
+
+## 2026-09-22 — Orius 2019 result withdrawn; Orius, KK76 and KN76 moved to sso-recovery
+
+The entry "(330836) Orius: measured in 2019 DECam frames, not detected; filing on hold" (commit 4fc631a) is withdrawn:
+its limit i > 24.70 came from an analytic noise estimate that is 1.4-3x optimistic on resampled stamps. Re-derived in
+`~/claude_projects/sso-recovery-2026-09-22/`, the 2019 frames contain candidate signals at the predicted position
+(i ~ 22.7, g ~ 23.35), and 3 of 4 of this campaign's 2013-2015 nights re-measure within 0.37" of JPL. All of it is
+unconfirmed (internal tests only). At the user's request Orius, (88268) 2001 KK76 and 2001 KN76 are owned by that
+project from today; the KK76 filing package stays in `kk76_gaia_fix_2026_09_22/`. Journals here carry pointer entries.
+
+## 2026-09-22 — Compact-object candidates and the unreviewed pools
+
+**Candidates.**
+- TYC 3477-27-1 (1593152388271709824): the 0.678-d eclipsing pair (two K dwarfs; R₁+R₂ ≥ 1.3 R⊙, ~2-3% of the
+  light each) accounts for the 1.27 M⊙ dark companion. The light-travel-time amplitude this predicts from the Gaia
+  orbit (390-560 s) is consistent with the TESS timings once spot-driven timing noise (~100 s) is allowed for; the
+  timings do not discriminate. Now triple-favoured.
+- WDJ060042 and WDJ020915: no radio, pulsar, gamma-ray or X-ray counterpart in any catalogue with coverage (NVSS,
+  VLASS, RACS-low, TGSS, GLEAM, LoTSS-DR2, ATNF, 4FGL-DR4, 2RXS, eRASS1, 2SXPS). At 84-98 pc this excludes a pulsar
+  companion beamed toward us. VizieR `J/ApJS/260/53` returned 0 rows within 5 deg of both (false null); `IX/72`
+  (4FGL-DR4) was used instead.
+- Tier-1 NS pool: the 2026-05-28 archival-RV triage, re-run unchanged, reproduces 117/40/2/2 and recovers the eight
+  per-source verdicts lost with /tmp (all NO_ARCHIVAL_RV). Shahaf+2024 (arXiv:2309.15143) table I contains 9 of the
+  pool; 8 have a red-colour-excess probability ≥ 70%. The Tier-1 BH 6281177228434199296 is at 99.99%.
+
+**Previously closed objects re-opened.**
+- 1eRASS J152614.8-111331 (6315134987927550592), closed on 2026-07-02 as an active M dwarf without a period:
+  coherent P = 2.2511 h in ZTF g and r (the 2.4848 h alias is the only competitor); M_G 12.12 at BP-RP 2.30;
+  g-r 0.25-0.46 with r-i 1.3-1.5 in SkyMapper and PS1; eRASS:3 L_X ≈ 1e29 erg/s. Not in Schwope+2026 or
+  Rodriguez+2025. Candidate white dwarf + M dwarf binary; needs a spectrum.
+- DESI Phase 2B: 3831414946076844032 is a detached EB (P = 1.52799 d, 0.2 mag), metal-poor ([Fe/H] -1.0 to -1.8),
+  not in VSX. 4416914787767626240 was in the verdict file but never registered; 1126496666779064064 was registered
+  under its Gaia DR2 id (DR3: 1126496671074947200).
+
+**Pools.**
+- eRASS1-Gaia v2 uncatalogued X-ray counterparts: 42 of 137 have ZTF data. A fine-grid period screen (after a
+  first pass with too coarse a grid and too strict an alias criterion, both caught by the known positive) finds two
+  coherent short periods: 6315134987927550592 (above) and 3021820276571880064, which is already in VSX as
+  BLVS J061325.64-030239.2 (AM:, P = 0.160912 d; recovered at 0.1609121 d). The lane's 'uncatalogued' label for it
+  was wrong. 95 of the 137 have no ZTF coverage.
+- XP-outlier pilot, 578 never novelty-checked: 526 in SIMBAD (451 hot subdwarfs, 51 white dwarfs, 11 PNe); of the
+  remaining 52, 51 are in Culpan+2022, Gentile Fusillo+2021, VSX or Gaia DR3 variability tables. One left
+  (4662317674220795776, towards the LMC).
+- EB-hunt and pilot WEAK class (495): other-band re-vet running; all 8 templates pass.
+- DESI Phase 2B no-period binaries (23): period re-search on current ZTF data running.
+
+Reports: `docs/reports/ns_pool_triage_rerun_2026_09_22/`, `docs/reports/erass1_j1526_2026_09_22/`.
+
+## 2026-09-23 — Track 1 opened: X-ray-selected white dwarf + M dwarf binaries (eRASS:3 × Gaia)
+
+**Prior-art gate** (ADS; `scripts/litcheck/prior_art.py` could not run: arXiv returned HTTP 406 to its queries,
+apparently throttling): eRASS1 × Gaia accretor / CV searches are published — Rodriguez+2025 (ApJ 991, 125),
+Wang+2025 (A&A 698, A321), Schwope+2024 (A&A 690, A243; 686, A110), Schwope+2026 (arXiv:2607.28066),
+Muñoz-Giraldo+2024, SDSS-V DR20 eROSITA CVs (arXiv:2607.27960); pre-polar polarimetry (arXiv:2608.25439) and a
+period-bouncer study (arXiv:2607.27855). The method is published for eRASS1; this lane is framed as completeness
+work on eRASS:3 (deeper), with systematic periodicity and southern coverage from ATLAS.
+
+**Selection and screen** (`docs/reports/track1_wd_binaries_2026_09_23/`): 108,404 nearby eRASS:3 Gaia
+counterparts -> 335 below the main sequence -> 175 without a VSX / CV / WD / emission-line identification
+(74 in ZTF's sky, 101 southern). ZTF screen: J1526 recovered as the one two-band detection; new periodic signals
+in 6285270400986331136 (2.334 h, 83 pc; published by Koen 2022 as an M+M ultrashort binary, with a Teff/Mbol
+mismatch he attributed to two similar stars) and 3016053028844771456 (1.133 h, 236 pc, not catalogued); three
+weaker eRASS:3-only signals to vet. ATLAS for the southern 101 is running (slow queue).
+
+**Prior-art note on J1435:** its period is published (Koen 2022; ATLAS half-period); the white dwarf + M dwarf
+reading rests on the under-luminosity (1.7 mag below the ridge), the g-band excess, the X-ray detections
+(eRASS1, eRASS:3, Swift LSXPS 2024-25) and the band-dependent light curve.
+
+
+## 2026-09-23 (night) — Prior publication of J1526/J1435; lane M (WISE infrared-excess variability) opened
+
+**Corrections.**
+- 6315134987927550592 (J1526) is published: Koen & Kniazev 2024, PASA 41, e108 ('WISE J152614.95-111326.4, an
+  unusual variable star'): SAAO B-z photometry, SALT spectra, cool WD (7250-7900 K) + M6, P = 2.25 h, low-accretion
+  pre-CV, WISE amplitudes attributed to cyclotron emission. The paper is found in ADS only by its AllWISE name.
+- 6285270400986331136 (J1435) is discussed in the same paper (section 9, as ATO J218.9548-17.7890) as a probable
+  WD + red dwarf pre-CV; ADS does not index the paper body. The J1435 VSX package now cites it.
+- ApJ 991, 125 (arXiv:2505.10478) is Liu, Gu, Lu, Liu & Liu 2025, not Rodriguez et al. (entry above and J1526 rows).
+
+**Lane M.** Selection: Petrosky+2021 WISE periodic variables with P < 0.35 d (37,617) x Gaia DR3, below the
+main-sequence ridge (58), colour-consistent G-W1 (6). Test: NEOWISE-R single-exposure period search, W1/W2
+amplitudes at the period against ZTF amplitudes at the same period; blend tests (photocentre versus brightness, WISE
+proper motion) and field controls. Recovered: J1526 (W1 0.73 mag vs r 0.20 at the orbital period; joint ZTF+WISE
+P = 0.093796948 +/- 1.2e-8 d), QS Vir, DDE 157, 1635581274974672768 (published: Li+2024 XP WD+MS catalogue; Shani+2025,
+arXiv:2510.17957, P = 0.116195 d; its VSX/ZTF type DSCT is a misclassification).
+- 513958743252720768 = ZTF J0220+6303 (90 pc): known deeply eclipsing binary (Brown+2023) and pre-polar suspect
+  without circular polarisation (Hakala+2026, arXiv:2608.25439). Eclipse ephemeris BJD_TDB 2459501.883344 +
+  0.099084412(30) E. NEOWISE shows an IR hump at orbital phase ~0.78 (0.2-0.5 mag in 2014-2019, ~0.05 mag in
+  2021-2023) that ends at eclipse ingress.
+- 3513017956589117056 = J1226-2304 (253 pc): see its journal. Listed by Pelisoli+2025 (arXiv:2505.04693) as a WD-pulsar
+  candidate of unclear nature (no optical variability). NEOWISE: P = 0.07968185 d, W1 0.46 / W2 0.29 mag, ZTF r
+  0.10 +/- 0.045 mag at that period; WISE photocentre and proper motion follow the Gaia star; eRASS1 + eRASS:3
+  (Lx ~2e29 erg/s); PS1 g ~0.8 mag bluer than an M4-M5 dwarf. Candidate magnetic WD binary; external review running.
+- 3016053028844771456 (J0541): the 1.133 h period is also recovered in NEOWISE (FAP 1e-13) and ATLAS o and c
+  (FAP 8e-111, 9e-6). No literature under any designation.
+
+**Track-1 selection gap.** J1226 has eRASS:3 counterpart probability pany = 0.38 (pi = 1.0, separation 1.1 arcsec),
+below the Track-1 cut pany > 0.5. Among eRASS:3 Gaia counterparts with 0.05 <= pany < 0.5, parallax > 2 mas at >5 sigma,
+below the main sequence or on the WD side (1,479), the 243 within 3 arcsec include 18 catalogued CVs (dwarf novae,
+WZ Sge stars, polars V1033 Cen and CRTS J1944-4202); 175 have no identification. WISE + ZTF screen of the 243 running.
+
+**VarWISE (Paz+2026, IRSA varwisepure/varwiseext):** 80,186 entries with parallax > 5 sigma and M_G > 7; 226 below the
+main sequence at |b| > 10 deg with consistent G-W1; WISE + ZTF screen running. VarWISE labels J1526 and J1226 'ew'.
+
+**J1226-2304 (3513017956589117056), independent re-analysis (same night).** Re-extraction including the 2010
+cryogenic WISE frames (227 W1 / 223 W2 over 14.4 yr) reproduces the period: P = 0.07968186 +/- 0.00000004 d, W1
+maximum BJD_TDB 2459999.9470 +/- 0.0012; the only viable alias is the 182-d alias (4% of bootstraps). W1 full
+amplitude 0.96 mag (2010), 0.82, 0.66, 0.36, 0.25, 0.34 mag (2022-24) at constant phase. No instrumental correlation;
+98 field stars max power 0.089. WISE proper motion (-52.8 +/- 4.8, +1.8 +/- 6.0) mas/yr. ZTF forced r amplitude 0.06
+(95% upper limit 0.14 mag). VHS M_J 9.51 (M5-M5.5 donor, consistent with a Roche-filling donor at 1.91 h). Residual
+blue component on the white-dwarf track (~6500-8000 K). eRASS counts are few (6 and 9.6). Status: candidate
+low-field magnetic WD + M5 binary (low-state polar or pre-polar); a phase-resolved optical/near-IR spectrum would
+test it.
+
+**Further results the same night.**
+- 548694338491992960 (WISE J022948.85+753126.0, 225 pc): eclipsing hot WD + M4-5 binary, mid-eclipse BJD_TDB
+  2459476.991530 + 0.150207823(67) E; the 0.0751 d Gaia/ZTF/WISE period is the ellipsoidal half-period; GALEX FUV 19.46;
+  only automated variability entries (Gaia DR3 short-timescale, VarWISE 'ew', Petrosky+2021). Journal created.
+- 3965186104852552448 (3eRASS J111431.9+131627, 333 pc): P = 0.06914240 d, SDSS u-g 0.51, GALEX NUV, eRASS:3
+  (DetLike 31) and eRASS1 supplementary catalogue (DetLike 5.4); Lx ~1e30 erg/s. Journal created.
+- Pelisoli+2025 'unclear' sample (7): only J1226-2304 has a coherent WISE period; the other six show no significant
+  period or have blended/crowded WISE photometry.
+- eRASS:3 low-pany pool, ZTF screen (62 reachable, 53 with ZTF): no coherent period (two one-band ~1.03 d daily
+  aliases rejected).
+- SDSS DR20 spAll (APO + LCO) has no spectrum of J1226, J1114, J0541, J1526 or J1435; J0220+6303 has one
+  (spec-103700-60626: M dwarf + blue continuum + H-alpha emission, taken at orbital phase 0.67-0.75).
+- mwcheck: the eRASS1 entry queries J/A+A/682/A34 (main, hard and supplementary tables) and is now labelled so.
+- Screens complete: VarWISE 226/226 (strict flags: J1526, J1226, J1059 with caveats, two artefacts, and known or
+  ordinary binaries); eRASS:3 low-pany 243/243 (155 with >= 150 WISE epochs; 0 holes): J1226 is the only strict flag.
+
+## 2026-09-23 (day) — External reviews of J1114+1316 and J0229+7531
+
+- 548694338491992960 (ZTF J0229+7531) is already catalogued: van Roestel's ZTF eclipsing white dwarf catalogue (Zenodo 15007293,
+  April 2026; public explorer table, not indexed in ADS or VizieR) lists it with P = 0.150207791 d (tags eclipsing, ellipsoidal,
+  spot). The 'new eclipsing WD binary' entry of the previous night is withdrawn. The catalogue is now part of quick_known.py.
+- 3965186104852552448 (J1114+1316): colour test against 40,000 M dwarfs of the same PS1 i-z/z-y gives g-r 0.48 vs 1.27
+  (bluer than 99.6%). External review: WD strongly suggested; Lx/Lbol ~0.026; orbital period 1.6594 h or 3.3188 h (ellipsoidal)
+  unresolved, Roche-density argument favours 3.32 h for an ordinary M4. Label: candidate short-period WD + M-dwarf binary,
+  possible low-rate accretion; VSX type SIN if filed. Not in van Roestel's (eclipsing) or Rebassa-Mansergas+2025 catalogues.
+- Sweep restarted 2026-09-23 09:29 UTC with 4 workers at nice +10 so the Ramsey project gets CPU priority.
+
+## 2026-09-23 (afternoon) — Crosscheck of EC 10246-2707 (Planet Hunters TESS Talk)
+
+- Gaia DR3 5468670738602933504 = TIC 193092806, HW Vir-type sdB + dM binary (Barlow+2013). quick_known returns it as
+  known (VSX, SIMBAD, 9 ADS papers). Not selectable by our hunts (parallax 1.02 mas, M_G 4.48). NEOWISE amplitude equals
+  the optical amplitude at the orbital period (W1 0.27, ZTF r 0.24 mag): no infrared excess. mwcheck: GALEX, variability
+  catalogues, Ritter-Kolb pre-CV table, Gentile Fusillo+2021; no radio, X-ray or gamma-ray match.
+- TESS sector 100: primary eclipse FWHM 9.7 min (depth 0.40), secondary at phase 0.5 FWHM 10.2 min (depth 0.12). In
+  20-min bins the primary eclipses alternate between one-bin and two-bin appearances (P = 8.53 bins).
+  Report: `docs/reports/ec10246_crosscheck_2026_09_23/`; journal created.
+- mwcheck: the B/cb entry is relabelled "Ritter-Kolb (CV/LMXB/pre-CV)" and MATCH lines print the matched VizieR table;
+  self-test passes.
+
+## 2026-09-23 (evening) — J1226-2304 deep dive; lane M Galactic-plane screen; ATLAS screen v3
+
+- J1226-2304 (3513017956589117056): PS1 grizy (2010-14), SkyMapper i/z (2016-20) and DECam epochs folded on the WISE
+  ephemeris show no coherent modulation. Per WISE visit the mean W1 flux is flat (0.39-0.44 mJy) while the W1 semi-amplitude
+  fell from 0.15-0.19 mJy (2011-16) to 0.04-0.07 mJy (2018-24), 0.12 mJy in mid-2024; the phase of maximum is stable. A coherent
+  odd/even (2P) term gives delta chi2 5.5 (p = 0.06). Mean flux is 2.0x (W1) and 3.6x (W2) the photosphere predicted from VHS
+  J/Ks; unWISE W1 and W2 centroids coincide within 0.1". Third external review: cyclotron emission favoured; label "coherent
+  infrared periodic variable with a mid-IR excess and candidate magnetic WD + M-dwarf binary; cyclotron emission favoured, orbital
+  period unconfirmed". Scripts, data and figure in `docs/reports/lane_m_wise_ir_2026_09_23/`.
+- Lane M extension started: VarWISE below-MS variables at |b| <= 10 deg (522) plus 24 high-latitude rows that met the documented
+  cuts but were not in the first run (546 total). The run records per-target failures as holes.
+- Southern Track-1 ATLAS screen, v3: bands whose median difference-flux error exceeds max(200 uJy, half the star's flux) are
+  marked UNMEASURABLE and frames with errors above 3x the band median are dropped. Of the three v1 flags, 4732816401257508480
+  shows no coherent signal and 4756815201043718784 is unmeasurable (G = 9.5 star at 3.5"); 4864794492789757568 is pending.
+
+## 2026-09-23 (night) — Lane M: J0753 and J1059 audits
+
+- The lane M screens computed WISE periods from UTC MJD. For J1059-2740 (5456743064671253632) the barycentric audit prefers
+  P = 0.1209716 d, the +2/yr alias of the screened 0.1210522 d; the ZTF amplitude at the corrected period is 0.20 mag (0.09 at the
+  alias). J0753-0042 (3082614748370926848): the screened period survives the barycentric audit. Screened WISE periods of other
+  objects are unaudited.
+- Bright-minus-faint NEOWISE W1 difference imaging (`scripts/wise_localise.py`): J0753 variable flux within 0.1-0.2" of Gaia;
+  J1059 within ~0.1-0.2" (one registration star). Scan-direction centroid offsets of ~0.3-0.5" are common to field stars.
+
+## 2026-09-23 (late) — Zeeman-split Balmer lines in SDSS-V DR20 white dwarfs
+
+- Sample: 78 SnowWhite stars with p_dah + p_dahe + p_dbh + p_mwd > 0.3 (19 already DAH/DAP in SIMBAD). A triplet-vs-one-Gaussian
+  test flags every star; the adopted null is a core + wing profile, followed by visual inspection and free-centre triplet fits
+  per line (B_split on the linear-splitting scale; published dipole fields of four stars in the sample are 1.4-2.0x higher).
+- 32 stars selected by eye: 10 already classified magnetic (DESI DR1 x8, LAMOST/Jewett+2024 x1, Garcia-Zamora+2026 x1), 22 with
+  no magnetic classification found outside SnowWhite (SIMBAD, MWDD, VizieR all-table, ADS short names, DESI DR1 Amorim+2026 and
+  Swan+2026, LAMOST DR10, arXiv source text of 18 catalogue papers). A full-spectrum second look at the other 27 adds 5 more
+  (B_split 9-11 MG, above the range the continuum windows allowed). 27 journals created; 78 register rows.
+- Astra 0.8.1 visit spectra are shifted to a rest frame with XCSAO velocities of -725 to +8176 km/s for these stars; three
+  apparently exotic spectra are this artefact (older SDSS spectra of two show normal DA lines). The triplet stars keep consistent
+  fields per visit and between H-alpha and H-beta.
+- J2159+5102 (1980205739970324224), 79 pc: B_split 5.6 MG; listed as a new ZZ Ceti by Vincent+2020 (1286 s, 1.2%, one 1.7-h run).
+  ZTF 2018-2025: no coherent signal (injected 1.2% recovered 40/40 in g). Neighbours at 1.6" and 2.3". J2316-5529
+  (6499095244738784128), 62 pc: B_split 8.0 MG; common-proper-motion pair with HD 219458; ESO X-shooter (2020, public) and UVES
+  (2025, proprietary to 2026-10-27) spectra exist. External review: J2159 convincingly magnetic; 8 of the 22 secure, 9 probable,
+  5 possible. Report: `docs/reports/mwd_zeeman_sdssv_2026_09_23/`.
+
+## 2026-09-24 (night) — Track 1: eclipsing white dwarf + M dwarf 2MASS J03531244-5502363
+
+- Southern ATLAS screen flag 4731701084150029824 (3eRASS J035311.8-550237, 4XMM J035312.2-550238; 110 pc, 2.1 mag below
+  the main sequence): flat-bottomed eclipse of 10.6 min every 0.14786971 +- 0.00000004 d in ATLAS o and c (depths ~30% and
+  ~57%), no secondary eclipse; the screen's half period is excluded by unequal alternate dips (48 vs 6 uJy). Not in VSX,
+  SIMBAD, ADS, Gaia DR3 variability tables, SSS, ASAS-SN or TESS EB catalogues. VSX package prepared (not submitted):
+  `docs/reports/vsx_j0353_2026_09_24/`. Two other screen flags dropped (unmeasurable; not reproduced + equal-parallax
+  neighbour at 1.73").
+- The sinusoid screen detects narrow eclipses only at a harmonic and in one band; a fine-grid box search recovers the binary
+  in both bands and is being run on all finished southern light curves.
+
+## 2026-09-24 (night) — Pulsating versus magnetic white dwarfs (fan-out lane)
+
+- 882 published pulsators (30 sources) x 8,512 magnetic-classification rows (23 sources): 37 overlaps, each judged; SDSS-V
+  spectra of 238 pulsators screened. J2159+5102 remains the only published pulsator with a confirmed Zeeman triplet.
+  Label conflicts recorded (a ZZ Ceti catalogued as DAH without visible splitting; DBVs labelled DBH:; SIMBAD Pu* from a
+  candidate list; MWDD magnetic flags on G 29-38 and GW Vir stars). The Amorim+2026 DESI file stores Gaia ids as rounded
+  floats; the 27-star novelty check was redone by position (no entry within 917"). Report:
+  `docs/reports/magnetic_pulsators_2026_09_24/`; 34 register rows.
+
+## 2026-09-24 — Lane M Galactic-plane screen finished
+
+- 546 targets (522 |b| <= 10 deg + 24 high-latitude): 542 with enough NEOWISE epochs. Strict cuts (W1 power >= 0.3, n >= 150,
+  A_W1 >= 0.15, not a WISE-orbit alias within 2%) leave 5: J0753-0042 (lead, journal), J0724-2531 and J1236-5430 (dropped
+  earlier: neighbour blend; unreliable parallax), and two new ones at 1.540 h and 1.550 h (3422836150319231744,
+  3369213208749088256) within 3% of the WISE orbital sampling with no ZTF signal at the period: registered as unvetted, probable
+  sampling aliases.
+
+## 2026-09-24 — TIC 685214650 (Gaia DR3 4771958598593101184): TESS pixel test
+
+- The Huang+2026 109.7-s signal of this 75-pc cool DC white dwarf is reproduced in Sector 87 (6.3 sigma, same phase in both
+  orbits, not in the background, absent from 12 same-CCD controls) and localised to the white-dwarf position rather than the
+  G = 16 star 28" away (single-source PSF fits, delta chi2 11). It is absent in Sector 94 six months later (0.05 +- 0.04 vs
+  ~0.24 e/s expected). Not a stable rotation signal as seen; origin open. Report: `docs/reports/tic685214650_tess_2026_09_24/`.
+
+## 2026-09-24 (night) — Fan-out lanes: high-field magnetic white dwarfs and CVs in SDSS-V DR20
+
+- High-field lane (agent; `docs/reports/highfield_mwd_sdssv_2026_09_24/`): SnowWhite p_mwd is not informative (max 0.057);
+  high-field magnetic white dwarfs sit in DC/DC:/CV classes. Of ~200 screened spectra, four magnetic DAs at ~17-60 MG with no
+  prior magnetic classification: PHL 4443 (secure, 4 visits), WDJ024544.82+721144.58, WDJ204048.29-572123.13 and the wide
+  companion of HIP 20180 (probable); three possibles; by-products a warm DQ catalogued as DC: and a possible DAQ. Fields have
+  a factor-2 systematic (0.5-1.05 on 7 controls). Screen coverage ~10% of the DC selection.
+- CV lane (agent; `docs/reports/cv_sdssv_2026_09_24/`): 605 SnowWhite CV rows dispositioned. New: A1 J225737.41+541619.9
+  (WD-dominated dwarf nova, 196 pc) and A12 J213306.16+463819.3 (dwarf nova, probable). Three eROSITA-field CVs cannot be
+  checked until Brink+2026 is public; A8 (MGAB-V3675) looks like a polar; A10's SIMBAD type (QSO) is wrong.
+- Lanes cut off by the session limit (exotic atmospheres, rotation periods) left partial files in /tmp/fanout; not integrated.
+
+## 2026-09-24 — Lane 1 (+3): ZZ Ceti and DBV search, SDSS-V DR20 spectroscopy x TESS Cycles 6-8
+
+- Prior art (arXiv via requests; the repo prior_art.py returns HTTP 406, task chip raised): Romero+2022 (74 new, Cycles 1-3),
+  Romero+2025 (32 new, Cycles 4-5), Bognar+2023, Huang+2026 (Cycle 7 20-s, >= 50 c/d). No SDSS-spectroscopy-selected search;
+  framed as a new selection on newer sectors, with those papers as the known filter.
+- 912 SDSS-V strip stars (G < 18; SnowWhite DA 10-13.5 kK, DB with GF21 Teff_He 19-36 kK), 1,506 TESS 120-s light curves
+  (Sectors >= 70). 29 known pulsators recovered (PG 1310+583 only via ADS: the 882-star list lacks Bognar+2026). New ZZ Ceti:
+  [OHD2001] WD J2324-595 (1049 and 882 s, 3 sectors) and GALEX J214927.5-515827 (472.6 s in 4 sectors, 947.5 s), both localised
+  on target in the pixels; probable: GALEX J054243.4-261011 (692 s) and GALEX J033619.1-564435 (971 s). No DBV in 36 DB stars.
+  Two long-period detections were contamination or not in the pixels. Report: `docs/reports/zzceti_sdssv_tess_2026_09_24/`.
+- Lane 5 (Gaia DR4 readiness): plan in local notes; 180 known DAV/DBV stars have DR3 epoch photometry for a template test, but the
+  Gaia DataLink service returned HTTP 503 (hole; retry).
+
+## 2026-09-24 — Rotation search for the 27 new SDSS-V magnetic white dwarfs (partial agent run, integrated)
+
+- ZTF DR24 + TESS SPOC, Lomb-Scargle with permutation null and injection A90, band/time/depth splits, TESS pixel localisation.
+  Controls: 4 published rotators recovered (EGGR 156, SDSS J2223+2319, J1630+2724, J1543+3021); 3 non-magnetic DAs clean.
+- Targets: 16 null (A90 0.5-5% ZTF, 2-20% TESS), 5 without usable data. The TESS 14.6 h signal near GALEX J231613.4-552927
+  is on the G 14.27 star 22" away (VSX ROT, P 0.60621 d; register row). GALEX J095130.1-245723 10.17 h is in one TESS sector
+  only (unconfirmed). Two ZTF short-period peaks fail the permutation null (FAP 0.098). No rotation period established.
+  Report: `docs/reports/mwd_rotation_2026_09_24/`; ledger rows on all 27 journals.
+
+## 2026-09-24 — Exotic white dwarf atmospheres in SDSS-V DR20 (partial agent run, integrated) and ZZ Ceti lane 1b
+
+- Exotic atmospheres (`docs/reports/exotic_atm_sdssv_2026_09_24/`): DAHe emission screen of 3,214 spectra with injection
+  completeness -> no new DAHe (known J1437+0309 recovered). Absorption-class inspection (186) and hot-DQ locus (95): a hot DQ
+  with strong C II lines, Gaia DR3 5208047381438507520 (GALEX J073504.2-794409, G 16.56, 96 pc; catalogued DA from photometry/XP,
+  XP mass 1.24 Msun), a probable broadened hot DQ 4792264314911712512 and a possible one 6466745168812781568; a carbon + hydrogen
+  white dwarf 5836110898905253760 (C I + H-alpha, 76 pc, not in MWDD); 11 DQ reclassification candidates. Gate: SIMBAD, VizieR,
+  MWDD, DESI/LAMOST, ADS aliases, 55-paper source grep. TESS for the hot DQ: no periodic signal above ~5 ppt.
+- Lane 1b (Cycles 1-5, 2,294 light curves): 31 known pulsators + PG 1310+583 recovered; L 210-25 (817 s, S13, on target) is a
+  probable ZZ Ceti (VSX type WD from Gaia DR3); two contamination cases. 20-s lane (1,518 light curves) running.
+- Gaia DataLink epoch photometry still HTTP 503 (lane 5 template test remains a hole); GAVO and ARI TAP mirrors do not carry DR3
+  epoch photometry.
+
+## 2026-09-24 — Deep dive: Gaia DR3 5208047381438507520 (GALEX J073504.2-794409), with an independent review
+
+- Carbon in two independent spectra: SDSS-V optical C II (many lines, common velocity ~+93 km/s) and a public HST/COS G130M spectrum
+  from SNAP 17420 (PI Gaensicke, 2024-07-13; C III 1175/1247, C II 1324, excited C II 1335.71 at +96 km/s). Probable hydrogen
+  (H-alpha). Provisional class hot DQ with probable hydrogen (DQA); composition and temperature need an atmosphere fit.
+- GALEX FUV-NUV +0.32 is redder than every DA of the same colour, including 16 gravity-matched DAs (max -0.13). No variability
+  (TESS, SkyMapper, Gaia). No prior carbon-rich classification found; the HST proposers list it as DA with a noted FUV deficit.
+- Independent review (Codex gpt-6-astra) reproduced the numbers and made seven corrections, all adopted (WISE AB/Vega mix-up, CCF
+  significance wording, velocity error, COS continuum systematics, extinction statement, variability limits, a failed ESO query).
+  Report: `docs/reports/hotdq_j0735_2026_09_24/`.
+- 20-s ZZ Ceti lane finished: no new pulsator; L 210-25 now has a second on-target detection (941 s, S105).
+
+## 2026-09-24 — Public data release of the SDSS-V white-dwarf results
+
+- Separate public repository https://github.com/alejandrozarco/sdssv-white-dwarfs-2026 (commit 87fed5e, 2026-09-24T16:09Z), made at
+  the user's request as a timestamped record: 28 Zeeman-split white dwarfs, 3 carbon white dwarfs (optical line tests, HST/COS
+  lfac0z010, GALEX), 5 ZZ Ceti TESS results with pixel tests, the ATLAS eclipse of 4731701084150029824, 2 Balmer-emission objects,
+  and the TIC 685214650 pixel test. Every table value was recomputed from public data by the included scripts. Not included: the
+  high-field magnetic white dwarfs (their measurements were not reproduced by a simple script), DQ reclassifications, CVs other than
+  A1/A12, and objects from earlier lanes. Neutral wording, no claims, no personal or process references.
+- Update (public repo commit 6d11dbb): the Zeeman fit's central-component shift range was widened from +-15 to +-40 A (five
+  stars at 8.8-10.7 MG had their H-beta shift at the old limit; the fitted H-beta shifts are -18 to -26 A and grow with B^2, as
+  expected from the quadratic Zeeman effect). H-beta B_split changed by -0.10 to -0.17 MG for 4198738558061020928,
+  4241409569220727424, 50526755482496000 and 2833867392391927936 (-0.01 for 5807585134758743040); H-alpha values unchanged. The
+  table now lists fitted component centres, shifts and asymmetries, and the figure marks the fitted centres. The earlier figure drew
+  symmetric lines at the laboratory wavelength, which missed the shifted or lopsided troughs.
+- Magnetic by-products of the exotic lane (12 SnowWhite stars not in the earlier 78-star Zeeman list): two new Zeeman-split DAs,
+  4679463733391272448 (GALEX J040038.6-615458, 4.28/4.22 MG) and 3290180587821828480 (GALEX J050006.8+080244, 5.44/5.11 MG), each with
+  two visits and components at 7-23 sigma. They pass SIMBAD/MWDD/VizieR/DESI/LAMOST/88-paper/ADS/eRASS1 checks. GALEX J033833.9-332802
+  (9.2 MG) is already reported by Hernandez-Diaz+2026 (arXiv:2607.27855), found through ADS full text. The bright stars 5920596066603197056
+  (G 15.6) and 4883191104733786496 are hot, nearly featureless white dwarfs rather than triplets (open). The 28 released Zeeman stars
+  are not in Hernandez-Diaz+2026 and none is an eRASS1 source.
+- Public repo: the TIC 685214650 section was removed at the user's request and purged from the history by a rewrite and force-push
+  (commits 87edc83, 91a4432 keep their original dates); the old commit hashes stay reachable on GitHub until its garbage collection.
+
+## 2026-09-24 (evening) — Follow-up of the open magnetic leads (SDSS-V DR20 exotic-atmosphere by-products)
+
+- Gaia DR3 6021870154194477312 (GALEX J161854.1-355427; GF21 38,970 K, log g 9.22, 1.31 Msun; featureless SDSS-V spectrum) is
+  periodic at P = 103.3757 min (f = 13.929771 +- 0.000007 c/d). The same frequency appears in three independent data sets:
+  - TESS S65 (FAP 3e-7; blended aperture, CROWDSAP 0.01);
+  - ATLAS forced photometry 2015-2026 (c 5.4 +- 0.3 %, o 5.7 +- 0.3 %; nearly sinusoidal; phase-stable over 10.5 yr);
+  - Gaia DR3 epoch photometry 2014-2017 (G 6.9 +- 0.2 %, same phase as ATLAS).
+  Gaia photometry resolves the three neighbours at 9-13 arcsec, and ATLAS forced photometry at the neighbours' positions shows no
+  independent signal (only 0.3-3 uJy residuals, roughly in anti-phase with the white dwarf, as expected from its variability in their background). So the signal comes from the white dwarf. The period is listed only as a GLS frequency in the Gaia DR3
+  vari_spurious_signals table (computed for every variable source). VSX has the star as type WD with no period. It is not in
+  Steen+2024 (105 Gaia-period white dwarfs, although it meets their parent selection), Jestin+2026 (ZTF-only; Dec -35.9), or ADS
+  full text under any alias. Interpretation: most likely rotation of a strongly magnetic, ultramassive white dwarf, since a
+  39,000 K white dwarf with no lines points to a very strong field. A companion is disfavoured:
+  - the amplitude is nearly flat with wavelength (irradiation would rise steeply to the red);
+  - there are no emission lines;
+  - VHS and CatWISE exclude M and early/mid-L companions.
+  Confirmation needs spectropolarimetry. Journal: docs/object_journals/6021870154194477312.md.
+- Gaia DR3 4909119551717563520 (WT 37; SIMBAD WD* D, MWDD DC:): high-field magnetic DA. Hydrogen-in-B template best Bp 26 MG
+  (26-42); the no-field model is worse by 3018 (featureless negative controls: 25-470). TESS 9 sectors show no periodic signal
+  above ~0.5 %. No magnetic classification was found in SIMBAD, MWDD, VizieR, ADS or the 89-paper source grep.
+- BPM 25260 (5920596066603197056) is known magnetic (Bagnulo+2024): a recovery. Gaia DR3 4883191104733786496 is still open.
+  HS 2157+8152 is a data-quality case.
+- The four remaining by-products with inconsistent H-alpha/H-beta fits (2246631460497465472, 3987356721738829184,
+  6915353300288749440 = a Kilic+2026 DESI DA, 4867935694432066304) are registered with no claim.
+- Zeeman DAs 4679463733391272448 and 3290180587821828480:
+  - 4679 has a wide common-proper-motion F5V companion (HD 25636, 86 arcsec, Gaia FLAME age 2.0-3.3 Gyr), which makes it an age
+    benchmark. Its field is stable between visits.
+  - 3290 has no rotation signal in ZTF (daily aliases only); its per-visit H-alpha splitting differs by ~4 sigma at S/N 7.
+- Found while checking these: the Astra mwmStar coadd is in the XCSAO frame, and XCSAO velocities of magnetic white dwarfs are
+  hundreds of km/s. The public Zeeman table's shift and centre columns for the 'coadd' rows are therefore offset by up to ~13 A.
+  Its B_split values are nearly unaffected. Re-measured on XCSAO-corrected visit coadds: B_split changes are <= 0.21 MG except 2069622487994113408 (H-alpha -0.91 MG; its two visits differ by 470 km/s in XCSAO velocity) and 5848754492268362624 (H-alpha +0.43 MG). The corrected H-beta shifts are -2 to -18 A and correlate with B^2 (Spearman -0.60 at H-beta, -0.67 at H-alpha), as expected from the quadratic Zeeman effect. The public-repo correction is prepared locally and not pushed; it waits for the user. Earlier internal Zeeman fits on mwmStar coadds carry the same frame offset in their shift and centre values.
+
+## 2026-09-24 (evening) — Public repo updated; VSX and contact drafts for GALEX J161854.1-355427
+
+- Public repository (github.com/alejandrozarco/sdssv-white-dwarfs-2026), pushed at the user's request:
+  - 3e4c55e: Zeeman coadds re-measured on in-stack visits with the XCSAO shift removed (see the previous entry).
+  - cc13faa: photometric period of Gaia DR3 6021870154194477312 (table, script, figure, ATLAS inputs for the star and its 3
+    neighbours, Gaia epoch photometry). Recomputed: f = 13.9297708 +- 0.0000067 c/d. Times of maximum agree across ATLAS c/o, Gaia G
+    and TESS within 1-2 min; the neighbours peak half a cycle later.
+- Drafts in ~/claude_projects/gaia_local_notes/2026-09-24/ (user's action):
+  - VSX revision adding P = 0.07178869 d, keeping type WD;
+  - letter to Bagnulo & Landstreet (Armagh), who found the field of the analogue WD 1754-550 = BPM 25260 (A&A 692, A174: hot DC,
+    ~35 kK, 1.33 Msun, >~100 MG, circular polarisation varying on ~15 min).
+- BPM 25260 TESS (TIC 76392634, 5 sectors, CROWDSAP 0.08-0.22): after high-pass filtering, 51.75 c/d (27.8 min) is the top peak
+  above 5 c/d in S13 and S104 and in the combination (FAP 0.007, ~0.5 %). Weak; ATLAS check below.
+
+## 2026-09-24 — Rubin public alert stream re-checked: still dark
+
+- Fink LSST (`/api/v1/tags`: in_tns, most_likely_sn, extragalactic_new_candidate, hostless_candidate) and ALeRCE LSST
+  (`object_api/list_objects?order_by=lastmjd`): newest data at MJD 61235.419 (2026-07-14 10:04 UTC), as on 2026-09-18.
+- Rubin's own public alert-stream dashboard (grafana.slac.stanford.edu, public dashboard 26d8f1d4…, reached via ls.st/alert-stream-status):
+  "Alerts in plotting interval" = 0 over 24 h, 7 d and 30 d; broker status panels = 1 (up); prompt-processing and raw-ingestion panels
+  return no data. No pause or resumption notice on the Rubin community forum (the 2026-07-10 update says LSST began on 29 June).
+  The Rubin lane still has no input (72 days).
+
+## 2026-09-24 (night) — New lane: Gaia DR3 GLS periods of white dwarfs, confirmed with ATLAS / ZTF / TESS
+
+- **Why:** GALEX J161854.1-355427's 103-min period was sitting in the Gaia DR3 vari_spurious_signals table (the GLS frequency is
+  computed for every variable source) without an interpretation. Steen+2024 (ApJ 967, 166; 105 WDs) required the period to be
+  recovered in ZTF, TESS or a second Gaia band. Jestin+2026 (A&A 712, A243; 864 WDs) is ZTF-only. So southern (Dec < -30) and
+  post-2024-TESS cases are unvetted.
+- **Prior art (gate):**
+  - repo arXiv screen: no strict match; broad hits Steen+2024, Jestin+2026;
+  - ADS: no paper using vari_spurious_signals for WDs;
+  - Ranaivomanana+2025 (A&A 693 A268; 704 A70) cover the MS-WD valley and hot subdwarfs, not the WD sequence.
+  - Framed as a completion of Steen/Jestin with ATLAS as the independent confirmer.
+- **Selection:** Gaia DR3 vari_spurious_signals × gaia_source.
+  - Cuts: parallax/error > 5; M_G > 4.5(BP-RP) + 9 (Steen's cut); BP-RP < 1.5. This gives 2,084 sources.
+  - GLS FAP < 1e-5 and N >= 20 gives 159, of which 72 are in Steen's 105.
+  - Not in Steen, Jestin or VSX-with-period: 25 (tier 1). Tier 2 (FAP 1e-5 to 1e-3, M_G > 9.5, IPD correlation < 0.5, away from
+    the 4 c/d spin harmonics): 16, of which 6 are unvetted.
+  - Gaia BP/RP phase consistency checked for all.
+- **Confirmed so far (period found independently, same phase where testable):**
+  - Gaia DR3 2883364038621038208 = GALEX J060343.7-380911: 101 pc, 8,400 K, 0.76 Msun. **P = 10.802 h** in ATLAS (FAP 7e-123,
+    4.7 %) and TESS S87+S98 (top peak in both); Gaia phase agrees.
+  - Gaia DR3 6456720612064924928 = GALEX J211204.8-571801: 88 pc, 8,500 K, 0.79 Msun. **P = 61.33 min** in ATLAS (FAP 1e-26, 3.2 %).
+  - Gaia DR3 178685757799822080 = GALEX J043613.3+383720: 104 pc, 8,900 K, 0.77 Msun. **P = 7.30 d** in ZTF (FAP 2e-14, 4.9 %).
+  - Gaia DR3 437628614520520320: 96 pc, 8,300 K, 0.69 Msun. **P = 5.04 d** in ZTF (FAP 7e-46, 4.6 %).
+  - All four: XP class DA; no published period or magnetic classification (SIMBAD, MWDD, VizieR, DESI, ADS, arXiv sources). The
+    most likely reading is spotted/magnetic rotation (a ~8,500 K DA varying by 5 % at a single period); fields not measured.
+  - Recoveries: EC 21277-2231 (1.52 h; Ranaivomanana+2025) and Feige 7.
+  - Not confirmed: 5055036663256963072 (Gaia 11.986 c/d = 12 - 1/63, a spin-harmonic sideband).
+  - Gaia frequencies near 12 c/d (12 - 1/63) and 4k c/d should be treated as suspect.
+- ATLAS queue slow tonight (server outage ~21:25-22:05). 10 more ATLAS light curves and 3 ZTF checks are pending.
+- Related: the BPM 25260 TESS 27.8-min hint is not confirmed by ATLAS (95th percentile of control windows); dropped from the Armagh
+  letter.
+- ZTF: 367659027423727232 not confirmed (Gaia 1.111 c/d; ZTF rank 2850). 382731618150879616 and 388756456537099392 (both in the M31 field): IRSA ZTF queries timed out twice (HOLE, retry later).
+- 23:2x-23:47 update: two more confirmations from ATLAS:
+  - 2888030331609338240 = GALEX J054140.8-362248: 125 pc, 9,700 K, 0.57 Msun. **P = 16.353 h** (FAP 3e-50, 2.4 %), also TESS S98 (top
+    peak, FAP 2e-10). Its W1 "excess" is a WISE blend with a star 3.2 arcsec away.
+  - 3496637913394359680 = GALEX J124819.8-261413: 95 pc, 7,900 K, 0.65 Msun. **P = 5.886 d** (FAP 2e-100, 4.5 %), TESS S101 consistent.
+  - Six confirmed in total. Five were pushed to the public repo (2be3383, tables/periodic_white_dwarfs.csv). Gaia and TESS times of
+    maximum agree with the ground-based fit to 0.00-0.09 cycles. 437628614520520320 is waiting on an IRSA download.
+  - VSX revision drafts for the five: ~/claude_projects/gaia_local_notes/2026-09-24/vsx_revisions_periodic_white_dwarfs.md (user files).
+- Hot massive sub-lane (GF21 Teff > 15 kK, M > 1.05 Msun, Gaia VARIABLE, G < 18.5; 15 stars): most are known (PHL 657 hot DQ with VSX
+  2.11 d; CL Oct ZZ Ceti; two VSX periods). TESS 120 s and 20 s for PG 0136+251, PG 1058-129, GALEX J002958.9+364834: no coherent
+  signal (only low-frequency sector trends).
+  - PG 1658+441: coherent 42.235 min (34.0949279 c/d), 0.150+-0.019 %, present in all 7 sectors (2020-2025) at consistent phase;
+    pixel test on the WD in 3 sectors. It is already published as 42.24 min by Jewett+2024 (ApJ 974, 12; Hernandez+2024 had
+    reported none), so this is a recovery (method check).
+  - Jewett+2024 and Hernandez+2024 are added to the gate source set; none of our six new periods is in Jewett's rotation table.
+- Process note: several user-facing timestamps tonight were estimated rather than read from `date`, and were corrected in-thread.
+
+## 2026-09-25 — Hot DQ 5208047381438507520: adversarial review 2 before contacting Warwick
+
+- Reviewers ran in parallel: Astra (Codex gpt-6-astra, live web) and three independent subagents (optical, UV/temperature, prior work).
+- Classification: hot DQ confirmed.
+  - The optical C II equivalent widths match the classical hot DQs of Dufour+2008.
+  - The Balmer lines are weaker than in all 16 comparable DAs.
+  - COS shows no broad Lyα wings, and C I troughs are present.
+  - Teff is about 22 kK (empirical).
+- Corrections adopted: see review2/SUMMARY.md.
+  - Hydrogen is only possible; Si II 1260 is interstellar.
+  - The velocity error is ±20–40 km/s, and the red optical lines carry quality flags.
+  - The 17420 "DA" label is generic, and hot DQs with hydrogen are not new.
+- Framing: the 17420 team fits C and Si in every SNAP spectrum, and Sahu presented a COS C/Si survey of 427 DAs at EuroWD in August 2026.
+  They very likely already see the UV carbon, so the email is rewritten to offer the optical SDSS-V spectrum and to disclose the
+  public repository. Draft v2 is in local notes.
+- Side lead (unchecked): other 17420 targets with FUV deficits of 1.7–3.0 mag, for example WDJ030350.56+060748.75.
+- FUV-deficit check of the 17420 targets: the four with larger deficits than J0735 are a known magnetic DXP (WDJ0303+0607), two known DBs, and WDJ0800+0040 (He I in SDSS-V; SnowWhite DB:; no carbon). J0735 is the only carbon-rich one. This sentence is added to email v2.
+- Public repo README condensed and figure-first (917b200); methods moved to METHODS.md; hot DQ comparison figure added and attached to email v3 (plain language, user's request).
+- EC 21277-2231 ATLAS: 15.77662 c/d, FAP 4e-188 (recovery of Ranaivomanana+2025's period confirmed). 6644157726508197504: Gaia 12.04 c/d not confirmed. J1819-1208 (nearest hot DQ, Kilic+2023) added as the reference for J0735.
+
+## 2026-09-25 — New lane: hidden hot DQs among SDSS-V "DA" white dwarfs, selected by GALEX FUV deficit
+
+- **Method.**
+  - Take SDSS-V SnowWhite spectra with plx > 3, G < 18.8, BP-RP from -0.6 to -0.1 and S/N > 8: 3,672 stars.
+  - Cross-match with GALEX AIS within 4 arcsec: 2,240.
+  - Compare FUV-NUV with the SnowWhite-DA locus at the same BP-RP. 230 outliers are redder by more than 0.35 mag; most are DBs, as expected.
+  - Run the carbon line test on the 47 that are not DBs.
+- **Validation:** J0735 comes out as a 9.0-sigma outlier with C II contrast 16.7.
+- **New:** GALEX J205119.1-161749 = Gaia DR3 6886051830805052288 (187 pc, G 17.55, BP-RP -0.40).
+  - Catalogued DA everywhere: SIMBAD, MWDD, GF21, Gaia XP; SnowWhite gives 'DC/DA'.
+  - SDSS-V shows 9 C II lines (10-43 sigma) and C I, with contrast about 16 in each visit separately.
+  - No He and no H.
+  - FUV-NUV is 0.86 mag redder than DAs at the same colour; FUV-NUV temperature about 20 kK.
+  - v_tan is about 82 km/s.
+  - No prior carbon classification found (SIMBAD, MWDD, VizieR, DESI, 91 paper sources, ADS, MAST, ESO). It lies outside the 100 pc samples, and fails the Kilic+2025 FUV cut.
+- **Prior art:** Kilic+2025 (arXiv:2507.12655) select merger remnants by FUV-G_RP within 100 pc. Our FUV-NUV-plus-optical-spectrum route is complementary: both J0735 and J2051 fail their cut. Record it as method extension, not a new idea.
+- **Public repository:** the row and figure are committed locally but not pushed, pending the user's decision.
+- 6639666736903611136 = GALEX J191430.4-572023 (51 pc, 8.2 kK, 0.60 Msun): P = 3.711 d in ATLAS (FAP 1e-32), Gaia and 5 TESS sectors; no IR excess -> probable slow rotator; public repo aa6b315; VSX draft. 4764068163850888064 (CV) not confirmed. Hidden-DQ lane pushed (4ca451f).
+- Tier 3 (Gaia GLS FAP 1e-3..1e-2, WD locus, G<18.5): only GD 279 survives the cuts; TESS rules out its Gaia 24.27 c/d. The Gaia-period lane is essentially exhausted at these cuts: 9 confirmed new periods (J1618 + 7 WDs + hot DO + HV low-mass DA), 2 recoveries, rest unconfirmed/known.
+- J2159 pulsation claim, new sources (2026-09-25): ZTF high-cadence night 2018-12-01 (132 x 30 s, 4 h) excludes 1.2 % at 1286 s (limit ~0.7 % over 1080-1570 s); Gaia G scatter at the 39th percentile (no excess); TMTS not listed (coverage unknown). The 2020 single PESTO run remains the only detection.
+
+## 2026-09-25 00:40 UTC: user's astrometry-catalogue list, hot-DQ time series, SDSS-V carbon screen, TESS strip scan, SMOKA test
+- **Astrometric catalogue sweep (user-supplied list), J0735 and J2051** (`docs/reports/hidden_hotdq_fuv_2026_09_25/allsources/`): Gaia DR2 vs DR3 proper motions agree (<1.7 sigma), 33 VizieR astrometric catalogues agree or are too shallow, no comoving Gaia DR3 source within 1 pc projected, and neither star is in El-Badry+2021. No acceleration and no wide companion. Most listed catalogues are Gaia-anchored or re-packaged; the useful parts were the epoch photometry and the companion test.
+- **Hot DQ rotation limits:** J2051 ZTF (1,016 epochs), no period at 0.02-300 c/d, >~1 % excluded at 5 min-4 h; PS1, SkyMapper DR4 and NSC DR2 epochs show no significant variability. J0735 ATLAS (3,351 points): the ~1 % peaks are incoherent (first vs second half, filters, nightly bins), so >~1 % is excluded at 0.1-72 h. Lead 4883191104733786496: ATLAS null, >2 % excluded.
+- **Gate bug (silent failure):** `gate_mag.py` DESI step failed to parse (Amorim separator; Swan id column) and returned strings, not HOLE. Re-checked all 15 affected objects (`gate_desi_fix/desi_recheck.csv`): 14 are outside DESI; 6915353300288749440 is in DESI (Amorim DA, Swan DBA 33 kK) and was already known via Kilic+2026. Ledger correction rows were added. Working copies are patched.
+- **New lane: carbon screen of SDSS-V DR20 massive DA-type WDs** (`/tmp/hotdq/lane_daq`, `carbon_screen2.py`): 3,480 spectra (DA-type, parallax >5 sigma, S/N >5, log g >= 8.5 or CMD-massive). Method: weighted matched filter of C I+C II templates, velocity prior -200..+400 km/s. Tuned on 7 known carbon WDs, all of which fall above the sample 99th percentile. Prior art: Kilic+2024 (DAQ class), Kilic+2025 (FUV), arXiv:2602.02670 (Q-branch DAQs), Garcia-Zamora+2026; frame the lane as validation plus beyond-100 pc.
+  - Partial run (1,458 of 3,480 spectra) recovered 3 already-published carbon WDs that SnowWhite labels DA: SDSS J0008+2507 (DQA), LP 648-58 (DQA) and LAWD 65 (published as DAQ in arXiv:2602.02670, while SIMBAD and MWDD still say DA).
+  - Open: 2076678981825545088 (MWDD DA, 145 pc; C I 4775/5055/5385/7120 in 2 visits plus strong H-alpha, so DAQ/DQA-like, with no carbon classification found) and 4377432592229753472 (MWDD DC:, S/N 5, possible).
+  - Dropped as artefacts: 5011403746899517568, 5659624950224046464 and 2170138123020775040.
+  - Downloads are still running; the rest of the sample is pending.
+- **TESS strip scan** (lane_puls2, `/tmp/hotdq/lane_puls2`): 2,586 SPOC 120-s light curves (S70-107) of GF21 ZZ/DBV-strip WDs, 2,455 analysed, 131 download holes. 60 stars have a detection; 49 are in the known-pulsator list. 11 are not; most have periods >2,300 s at CROWDSAP <0.1 (probably contamination). Candidates to vet: 1810475401285228928 (DBV strip, 334.8 s), 6370863945235959680 (956-960 s in 2 sectors), 6123269216744427008 (256.7 s) and 4693541467955966848. The novelty gate and pixel tests are pending.
+- **SMOKA (user registered, account name only, no password):** public search works only with a session cookie (GET fssearch.jsp, then POST). There are no SMOKA frames covering J2159, J2051, J0735, LAWD 65 or 2076678981825545088. The data-request form asks only for the account name. Test candidate: Suprime-Cam 2007-06-20 Rho Oph exposures covering the predicted position of (119066) 2001 KJ76 (11 x 160 s i band, ~12' from the pointing centre). Not submitted; awaiting the user's go-ahead.
+
+## 2026-09-25 01:10 UTC: SMOKA test request, carbon screen complete, TESS strip scan vetted, Gaia EB white dwarfs
+- **SMOKA:** the user's account works; SMOKA has no password, and the account name is entered only in the final data-request form. Positive-control object searches work (GD 358, G 29-38, PG 1159-035). Our 66 lane targets: 11 have frames, all imaging (Kiso KWFC, HSC, MITSuME); none has HDS spectroscopy. Tomo-e Gozen (SMOKA sub-archive) has 274 sparse 6-9 s frames of J2159+5102 (2019-2023), not useful for its 1286 s pulsation.
+  - Test request submitted: **P06legbatte0925100419FT**. It covers 488 MITSuME Akeno frames (2013-10-30 and 2013-11-07, g/R/I, 60 s) of the XTE J1908+094 field, which contains our 8.4 MG Zeeman WD Gaia DR3 4307667617377160704. Purpose: a fast-rotation search (minutes to ~2 h).
+  - ZTF for that WD shows only the synodic-month systematics (0.0338 c/d and its daily aliases); nothing at >2 c/d.
+  - Data arrive by email to the user (`docs/reports/smoka_2026_09_25/`).
+- **Carbon screen (3,480 massive DA-type SDSS-V spectra):** complete. All 17 known carbon controls are recovered (DAQ 5666458346271348992 at contrast 39.7). Published carbon WDs found hiding as SnowWhite DA: LAWD 65 (DAQ, arXiv:2602.02670), SDSS J0008+2507, LP 648-58, 5243591401210032000 and 4528933302988697344.
+  - False positives: known DAH (Zeeman components, e.g. 5764355941030501632, J0902+5111), artefact spikes, edge velocities.
+  - **New candidates (journals):**
+    - 883885440381808000: C II+C I+H-alpha. The LAMOST 2011 spectrum independently peaks at the same +110 km/s; the LAMOST pipeline called it WDMagnetic; 222 pc.
+    - 4847399905305694080: C I+H-alpha. GALEX GII FUV-NUV +3.13, against 0/2,040 DAs as red; 257 pc.
+    - 2076678981825545088: C I+H, M_G 12.9 (massive), 144 pc, KIC 5801947 (Kepler FFI only).
+  - Possible (register rows): 6482049958353650048 and 4377432592229753472.
+- **TESS strip scan (lane_puls2) vetted:** 60 detections; the 11 outside the 882-star list are known or contamination:
+  - EC 02251-6933 = the 47-min eclipsing double WD of Munday+2023; our 1415.8 s is P/2;
+  - DBV SDSS J2037+1453; ZZA GALEX J2127-7258 and J1422-3323;
+  - WD 0032-317 (WD + brown dwarf);
+  - EB 2MASS J1358-3556;
+  - the rest have CROWDSAP <0.1.
+  - **No new pulsator; lane closed as validation** (131 download holes remain).
+- **Gaia DR3 EB white-dwarf candidates, ATLAS checked** (`gaia_wd_periods_2026_09_24/eb_folds.png`):
+  - 5310197547872256512: a ~9.5 kK WD at 165 pc with ~9% sinusoidal modulation at P = 11.09 h, not the Gaia 22.2 h. Journal opened. The 1.9" neighbour is not Gaia-variable. Candidate magnetic/spotted WD.
+  - 6645284902019884928: GALEX eclipse from Rowan+2019, no period. ATLAS gives P = 4.069 h (the Gaia 11.42 h is an alias). The SDSS-V spectrum is a hot DA with narrow H-alpha emission, so a new PCEB period. Journal opened.
+  - 6216651490910555008: ELM candidate (Pelisoli+2019), ~12% modulation, P_phot 4.45 h. Journal opened.
+  - 4263036176971760768: too faint for ATLAS; ZTF check running.
+- **Hidden hot-DQ DB-outlier and faint scans:** finished (183 + 98 spectra). No carbon beyond the known 6466745168812781568.
+
+## 2026-09-25 09:50 UTC: SMOKA data processed, carbon screen extended to non-DA classes, J2159 odds revisited
+- **SMOKA MITSuME test (request P06legbatte0925100419FT, downloaded by the user):** 488 frames, checksum OK. The header TAN WCS agrees with Gaia to < 1 px. Differential aperture photometry of the 8.4 MG Zeeman white dwarf 4307667617377160704 against 143 Gaia comparison stars (`docs/reports/smoka_2026_09_25/`).
+  - Target S/N per 60 s frame is 2.3 (g), 2.7 (R) and 0.7 (I); field stars of the same G have S/N 1-3. The data are too shallow.
+  - Result: no period at 12-700 c/d. Only modulations above about 20% are excluded, at 3 min-2 h.
+  - The end-to-end SMOKA route is proven (search needs a session, the request needs only the account name, the user downloads by FTP). This dataset is scientifically uninformative. Raw frames deleted; photometry kept.
+- **Carbon screen v2 on the SnowWhite non-DA classes** (DB/DC/DZ/DQ etc.; 3,286 spectra, parallax/error > 3, S/N > 5; sample p99 6.65).
+  - Known warm DQs recovered: WD 0916+028, the DQ 1558730836735094528 (6 visits), 1287258636998635008 (DQA), 6589369272547881856 and 2087569060381096960.
+  - Only 11/261 DQ-labelled spectra pass. They are mostly cool Swan-band DQs, which the atomic-line templates are not built for.
+  - New warm-DQ classifications (journals): GALEX J213644.9-515758 (6465542891501713408, catalogued DC:) and GALEX J014648.4+400114 (343958710690034944, catalogued DB, in the Cheng+2019 massive-WD catalogue). Both have C I in two visits, M_G 13.15-13.17, and no carbon classification found.
+  - LSPM J2059+1334 (1758536430493058944, catalogued DB:) is confirmed as a warm DQ.
+  - DB hits at the -200 km/s window edge are He I leakage; 2821261624722089216 (DESI DB) and 6651133479247436032 (noise) are false positives.
+- **J2159+5102 odds (no new data; reassessment):** after the ZTF 2018-12-01 high-cadence null and the normal Gaia scatter, our estimate is about 5% (range 3-10%) for intrinsic pulsation. The external review had 10-20% after TESS.
+
+## 2026-09-25 11:25 UTC: DESI DR1 carbon screen (SPARCL); TESS "holes" explained; J2051 ATLAS
+- **DESI DR1 carbon screen** (new data source). SPARCL client in a separate /tmp venv; spectra retrieved by TARGETID; carbon_screen2 matched filter; scripts in `carbon_screen_sdssv_2026_09_25/data/`.
+  - Sample: 10,191 Amorim+2026 massive DAs and DB/DC/DZ, plus 119 DESI DQ-class controls. DQA controls are recovered 7/8; cool DQ 5/80, as expected (atomic templates).
+  - 60 hits. After resolving true Gaia ids by position, **every genuine carbon hit already has a Swan+2026 DAQ/DQA/DQ class**, and several are in Kilic+2026. The 36 wrong ids came from the Amorim file's rounded values (memory caveat hit again at the sample-building step).
+  - The Swan-DA/DB/DC hits are He-line leakage, noise or window-edge artefacts. **Result: DESI DR1 carbon WDs are fully catalogued; zero novel.** Side note: many carbon WDs carry an Amorim "DAH"/"DB(A)" label, and Swan fixes them.
+  - 27 register rows (recoveries).
+- **TESS strip scan "holes":** the 131 were multi-sector data-validation obs_ids (e.g. s0002-s0072) misparsed as sector products. No per-sector 120-s light curve exists for them, so they are not coverage gaps.
+- **J2051 (6886051830805052288) ATLAS** (4,828 points): marginal 12.42 c/d (1.93 h, 0.8%, FAP 2e-5), not confirmed by ZTF (0.40%). Rotation above ~1% is excluded at 0.1-72 h.
+- **Rubin alert stream** re-checked 10:40 UTC: ALeRCE LSST newest lastmjd is still 61235.419 (73 days dark).
+
+## 2026-09-25 13:40 UTC: Gaia DR3 EB white-dwarf candidates, second ATLAS batch: lane closed
+- Checked 8 more of the 76 WD-locus Gaia DR3 EB candidates, all with G < 18.9 and away from the Magellanic Clouds.
+  - 7 of 8 have a much brighter Gaia source (G 11.1-14.0) within 2.0-4.4 arcsec. ATLAS forced photometry there is dominated by the neighbour (chi/N 130-640), and the Gaia EB solutions are probably contamination.
+  - The 8th (3999033225988190720; cool, M_G 14.3) shows only the 2 c/d ATLAS alias.
+- **Pattern:** faint "WD-locus EBs" in Gaia DR3 next to bright stars are mostly spurious. Check for a G < 15 neighbour within 5 arcsec before spending ATLAS time.
+- The three real ones from the first batch have no bright neighbour:
+  - 6645284902019884928: PCEB, 4.069 h;
+  - 6216651490910555008: 4.45 h;
+  - 5310197547872256512: 11.09 h; its 1.9 arcsec neighbour is the same brightness and not variable in Gaia.
+- The lane is closed. Register rows for all 8.
+
+## 2026-09-25 14:05 UTC: carbon screen of the remaining SDSS-V DA-type spectra: null
+- Streaming screen (`/tmp/hotdq/lane_daq/stream_screen.py`; download, screen, delete) of 25,268 SnowWhite DA-type spectra: parallax/error > 5, S/N > 8, not in the massive or non-DA samples.
+  - 18,303 are on the WD locus (M_G > 9); p99.9 of the carbon contrast is 9.35.
+  - 91 hits above 8 in the velocity window were ranked; the strongest ~12 were inspected. All are ordinary DAs: Balmer-wing residuals, noise, red-end artefacts, or visits that disagree. No carbon.
+- Consistent with carbon in H atmospheres appearing mainly in massive merger remnants, which the massive-DA screen covered. The SDSS-V DR20 DA sample is now screened in full. 4 download holes.
+
+## 2026-09-25 17:51 UTC: new lane: gaseous debris discs (Ca II triplet emission) in SDSS-V DR20 white dwarfs
+- **Prior-art gate** (web search plus ADS 2024-2026 abstracts):
+  - DESI EDR has been searched: Ma+2025 (AJ 170, 345; arXiv 2510.25097), 22 weak candidates from 2,706 WDs.
+  - DESI DR1 (Swan+2026, arXiv 2609.04314) did no targeted search; 3 systems were noticed during classification.
+  - Saker+2025 (RMxAA 61, 154) compiles the known sample. Bhattacharjee+2025 (PASP 137, 074202) has one ZTF transit candidate with gas emission.
+  - No SDSS-V DR19/DR20 gas-disc or DAHe search was found. Adamane Pallathadka+2026 and Crumpler+2025 cover other topics. **Lane open.**
+- **Sample:** all 50,960 classified SnowWhite (snow_white_boss_star) objects. MS and CV classes are included and flagged; the known gas-disc WD J2133+2428 is classed DA_MS.
+- **Controls:** 8 known gas-disc WDs are in DR20:
+  - WD 0842+572, SDSS J0738+1835, WD J1930-5028, WD J2133+2428, WD J0529-3401, SDSS J0234-0406 and WD 1622+587;
+  - also WD J0914+1914 (the evaporating planet: H, O and S emission, no Ca);
+  - plus 7 of the DESI EDR candidates.
+- **First-pass matched filter** (cubic continuum, double-peaked templates): recovers 0842+572 (z 86), J0738 (33), J1930 (15), J2133 (14; visits 3.6 and 16.6, so variable) and J0529 (13). J0234 and 1622+587 are not recovered. J0914 shows O I 8446 (z 16) and H-alpha (11).
+- The random-sample null is biased (median 2.5, tail to 10), because DA Paschen lines sit within 20-75 km/s of the Ca II lines. A second pass with empirical photospheric templates (Teff/logg neighbours) is planned.
+- The stream stores compact coadd regions plus per-visit H-alpha and CaT regions under /tmp/hotdq/lane_gasdisc/store.
+
+## 2026-09-25 20:08 UTC: SDSS-V gas-disc screen complete; two new gaseous-disc white dwarfs public
+- **Stream finished:** 50,961 objects, 49,983 OK, 978 BADCAT (poor CaT coverage).
+- **Pass 2** (neighbour-template subtraction), WD locus (parallax/error > 3, M_G > 8.5):
+  - p99 / p99.9 of z_cat: 8.8 / 19.1 for DA-type (30,090), 14.7 / 27.6 for other WD classes, 38 (MS) and 78 (CV) at p99.9.
+  - Poor-parallax DA-labelled A/F stars give unstable z (neighbour templates are junk there); restrict vetting to the WD locus.
+- **Control correction.** "WD J2133+2428" in the lane-start entry was box-matched to Gaia DR3 1797494017250709632 (WDJ213352.72+242747.79, DA_MS, G 15.94). That is the wrong star.
+  - The Saker+2025 object is WDJ213350.72+242805.93 = Gaia DR3 1797494081674032512 (G 17.33, TeffH 26 kK), 28 arcsec away. It has no SDSS-V spectrum.
+  - The DA_MS star's narrow CaT emission (visits 3.2 / 16.6) is from its M-dwarf companion.
+  - **Corrected validation:** 6 of 8 known Ca-emission gas discs in SDSS-V recovered (WD 0842+572, SDSS J0738+1835, WD J1930-5028, WD J0529-3401, WD J1829+4537, WD J2307-0002). Not recovered: SDSS J0234-0406 and WD 1622+587 (S/N 4.7). DESI EDR candidates: 0 of 7.
+  - **Lesson:** a Jhhmm+ddmm box match is not an identification; verify every control's WDJ name.
+- **New gas discs**, journals for both:
+  - WD 0856+048 (578709631539357440);
+  - WD J1959+2208 (1827014701883095680): DB, double-peaked CaT, EW 17.8 and 26.6 A in consecutive visits.
+- **ZTF:**
+  - 0856: 69 r points, flat within 5%, no period.
+  - J1959: about 4,000 points, no dips in 3 high-cadence nights. The formal 7.0245 c/d peak is incoherent across data sets and shows in comparison stars, so it is not adopted.
+- **Public release** (user-approved, pushed 5b5f0e2):
+  - gas_disc_screen.py, gas_disc_epochs.py and ztf_lightcurve.py;
+  - tables gas_disc_white_dwarfs, gas_disc_epochs and gas_disc_screen;
+  - repo reorganised into docs/ topic pages, with figures split per object in figures/<topic>/.
+- **Pending:** vetting of the remaining WD-locus hits (narrow single-peaked emitters 2527617665632689024, 422688489185463680, 191101206879480704; companions in MS/CV), and the literature status of WD J2245+2016's narrow emission.
+
+## 2026-09-25 20:41 UTC: SDSS-V DR20 visit-RV cross-check of the dark-companion candidate pools: no change to any BH/NS verdict
+- **Targets:** 27,555 Gaia DR3 ids:
+  - roster 9; unified candidate list 17,760; DESI 23 + 15; Shahaf+2024 non-class-I 9,786; AMRF-III 306;
+  - Gaia BH1/2/3 and NS1 as controls, but none has an SDSS-V visit, so there is no BH/NS positive control.
+- **Data:** CAS mwm_apogee_allvisit + mwm_boss_allvisit.
+  - 2,158 targets with clean visits (1,334 with 2 or more nights).
+  - Most APOGEE visits are SDSS-III/IV (3,054; already in DR17). SDSS-V adds 127 APOGEE and 2,296 BOSS visits (BOSS XCSAO about 3-10 km/s).
+- **Orbit test:** 648 NSS orbits fetched. The TI to omega conversion is validated against 48 AstroSpectroSB1 C/H omegas (agree mod 180 deg). The SB1 catalogue K is reproduced (e.g. 15.06 vs 15.12, 24.66 vs 25.82 km/s).
+  - 52 well-constrained astrometric orbits: median R = |A|/K_pred(photocentre) = 1.04, mostly Shahaf+2024 systems. This is the dark-companion expectation, a validation of Gaia orbits rather than a finding.
+- **Own candidates:**
+  - Tier-1 NS 2127900555635640832 and 2129927539681151872: the 2026-05-28 triage verdicts are reproduced (APOGEE-2 visits).
+  - Tier-2 3858881884705215232: R = 0.87 +- 0.06 from 5 visits over 37 d. Consistent, but M2 ~1.24 is at the WD/NS edge.
+  - Tier-2 3369528356272086528: an A star, so its APOGEE RVs are unreliable; no constraint.
+  - Roster: no new epochs for HD 157033; 1593152388271709824 has 2 epochs 7.7 yr apart (no constraint).
+- **By-products, not pursued:** Shahaf systems whose RVs disagree with the Gaia orbit:
+  - 5585964306891994240 (R 0.13, chi2 428/4);
+  - 1301730202881275008 (R 0.03 over 8 d near periastron);
+  - AMRF-III 3868385307301381760 (R 2.07, luminous companion or triple).
+- **Conclusion:** DR20 adds almost nothing for BH/NS. The strongest candidates lack SDSS-V visits, and BOSS precision is too coarse for K = 5-20 km/s. This confirms the posture: wait for Gaia DR4 (2 Dec 2026). Scripts and tables in docs/reports/rv_dr20_crosscheck_2026_09_25.
+
+## 2026-09-25 21:33 UTC: LAMOST DR11 carbon screen (pass 1): null
+- **Sample:** 7,096 LAMOST DR11 v1.1 WD-class spectra. 6,667 screened; 429 download holes are being retried.
+- **Contrast percentiles** (p99 / p99.9): C 5.7 / 10.0, C I 6.5 / 11.6, C II 6.0 / 11.4. 67 hits of 8 or more; 36 remain after removing He I leakage (He I < 5) and window-edge velocities.
+- **Identifier problem:** the catalogue's GaiaDR3 column is rounded (80% multiples of 256). The ids were re-resolved by position; the gpID column matches for 34 of 36.
+  - With true ids, 14 of the 36 hits have M_G 0.8-7, i.e. distant stars and sdBs mislabelled WD by LAMOST (e.g. 3330288469904253824, M_G 1.7).
+- **Vetting by eye:** all 24 hits with M_G > 8 or the highest contrast were inspected.
+  - Only the known DQA 1475194238223608064 shows carbon (recovery, positive control).
+  - Everything else is an ordinary DA (Balmer-wing or window-edge artefact) or noise.
+- **Result:** no new carbon white dwarf in LAMOST DR11 (pending the hole retry). Files in docs/reports/carbon_screen_sdssv_2026_09_25/lamost_dr11/.
+
+## 2026-09-25 21:50 UTC: gas-disc screen, final vetting of the remaining hits
+- **Selection:** WD locus (parallax/error > 3, M_G > 8.5), H/nonH groups, z_cat > 10, z_cat > 2.5 x max(z_fake, z_abs), at least 2 lines above 3 and none below -1. That gives 122, of which the red ones (BP-RP > 0.7, M_G 8.5-15) are dominated by M-dwarf companions or M dwarfs.
+  - The M_G > 8.5 cut lets M dwarfs through; next time also require M_G > 4.5 (BP-RP) + 7.5.
+  - 16 blue candidates plus 4 narrow emitters were inspected.
+- **New strong gas-disc candidates** (journals):
+  - **2527617665632689024 (GALEX J0039-0356, DA 22.8 kK):**
+    - narrow Ca II triplet emission in all 4 visits (EW 23-49 A, variable; centroid -17 to -71 km/s);
+    - no H emission;
+    - **WISE excess about 10x in W1 and 20x in W2** (LS DR10 deblended; neighbouring galaxies at 5-7.5 arcsec);
+    - no other spectra, no literature.
+  - **1764314497240770176 (SDSS J2054+1610, hot DA 27.5 kK):**
+    - narrow Ca II triplet plus strong O I 7774/8446 emission, no H emission;
+    - first spectrum (SIMBAD WD? only);
+    - outside WISE/LS reach.
+  - Both lack H emission, which argues against irradiated companions and points to metal-rich (planetary) gas. Their narrow lines (FWHM 260-340 km/s) resemble WD J1829+4537 (Ma+2025).
+- **Other candidates** (register):
+  - 422688489185463680 (DB, Ca II + O I, fading 2020-2023, WISE excess flagged contaminated);
+  - 191101206879480704 (massive DA, 1 visit);
+  - five low-S/N possibles.
+- **Companions, not gas discs:**
+  - LB 567 = 3834895969825628800 (H-alpha emission);
+  - WD J2245+2016 = 2833849800205759360: 0.28 Msun DA with WISE excess (Xu+2020), ZTF 3.9 h (Jestin+2026), Ca II + H-alpha emission, so a probable irradiated companion;
+  - 3126919298834022528 (in the SDSS-V DR19 DA binary catalogue).
+- **ZTF:** no dips or periods for 2527617665632689024 or 1764314497240770176. The faint outliers of the latter are at airmass 1.9-2.4 or have shallow limits.
+- Not yet public; waiting on the user's decision.
+
+## 2026-09-25 22:37 UTC: LAMOST DR11 carbon screen complete: null
+- **Recovering the holes:** the 429 were retried. 27 came back from v1.1. The other 402 were "Not Found" JSON bodies (HTTP 200, 159 bytes) at dr11/v1.1 but exist at dr11/v2.0; the fetch now falls back to v2.0. **All 7,096 spectra are screened.**
+- **New hits from those 429:** 9 at 8 or more. Two are He I leakage and five are distant stars (M_G 3.0-3.6). The two catalogued DAs (203828633790026496, 1752156823511885184) are noisy ordinary DAs.
+- **Final result:** no new carbon white dwarf in LAMOST DR11; one DQA recovered. The carbon search is complete across SDSS-V DR20, DESI DR1 and LAMOST DR11.
+
+## 2026-09-25 23:00 UTC: H-alpha emission and variability screens of the SDSS-V store (DAHe idea): no new objects
+- **H-alpha variability** (halpha_screen.py, 11,768 WD-locus objects with 2 or more good visits): per-visit EW(+-40 A) chi2 and pair-profile chi2.
+  - The top of the list is single-visit artefacts (cosmic rays or spikes) and continuum-normalisation effects in magnetic WDs.
+  - The two known DESI DAHe in SDSS-V (3656469211440196736, 1428562506980546688; both SnowWhite "DC") are not outliers (chi2_ew 10-13). The method does not isolate DAHe.
+- **Emission above the continuum** (runs of 3 or more pixels): weak for DAHe (3.3-3.8 sigma).
+- **Balmer structure in 'featureless' classes:** chi2 about a quadratic over 6400-6750 A for 962 nonH-group objects on the DAHe locus. DAHe controls rank 14 and 83.
+  - Top 12 inspected: a known magnetic DAP recovered (WD 1135+579, SnowWhite DC); two spectra with nebular H-alpha, [N II] and [S II] contamination; the rest single-visit artefacts or noise.
+- **Result:** no new DAHe or DAe. A proper DAHe search needs Zeeman-emission templates. Parked.
+
+## 2026-09-26 00:09 UTC: DESI DR1 gas-disc screen (44,302 spectra)
+- **Method:** all Amorim+2026 DESI DR1 WD TARGETIDs streamed via SPARCL; 116 bad spectra; positive control WD 0856+048 stored first and last. The SDSS-V pass-2 method is applied with Amorim colours/M_G and classes.
+  - z_cat p99.9: H 14.3, nonH 12.5, MS 38, CV 104. DESI is cleaner than SDSS-V at CaT.
+- **Recoveries:** WD J1829+4537 (39.7), WD J2307-0002 (14.7), WD 0856+048 (12.3), WD J0857-2245 (9.2). EDR candidates WD J0842+2300 (9.1) and J0719+4021 (8.1) are weakly above 8; the other EDR candidates are 3.6-4.8.
+- **46 candidates** (z_cat > 8, ratio > 2.5, 2 or more lines above 3). Swan DR1 classes remove 20 WD+MS, 1 CV and 2 STAR. Among Swan DA/DB, 4 show H-alpha emission and are overluminous: irradiated companions, registered.
+- **New:**
+  - **WDJ1448+3225 (1283510882895711872, DBA):** double-peaked Ca II emission in BOSS 2010, DESI 2021 and DESI 2022 (EW 19-37 A), persistent over 12 years. Journal.
+  - **WDJ1611+4017 (DA):** weak emission in DESI 2021 (5.9 +- 0.4 A) and BOSS 2012 (3.5 +- 1.1 A).
+  - WDJ0957+4241 and WDJ1745+5838: possible.
+- **Not public yet;** waiting on the user.
+
+## 2026-09-26 00:50 UTC: new campaign: gas discs over time (population Ca II emission timelines)
+- **Prior-art gate (ADS 2012-2026):** single-object variability studies exist (SDSS J1228 precession, SDSS J1617 fading, HE 1349-2305 rapid evolution). The closest population work is dust, not gas: Noor+2025 (MNRAS 543, 1602, "Activity in white dwarf debris discs I", Spitzer) and Guidry+2024 (WISE 3.4 um). No population-level Ca II gas-emission timeline was found. **Lane open**; "paper I" implies a possible sequel, so there is scoop risk.
+- **Targets (32):**
+  - 19 established gas discs, resolved via Sesame WD/HE names, Melis+2020 coordinates plus GF21, or verified Gaia ids;
+  - 7 more from DESI and recent papers: WD J1829+4537, WD J2307-0002, WD J0857-2245, WD J1930-5028, WD J0529-3401, WD J2212-1352, WD J2133+2428 (true id 1797494081674032512);
+  - our 6.
+- **Sources:** SPARCL (SDSS/BOSS/DESI), SDSS-V visits, LAMOST DR11 (local WD catalogue, 3 arcsec), ESO X-shooter VIS and UVES red arm (phase 3). Per spectrum: EW of the three lines with the gas_disc_epochs normalisation, S/N, Gaussian centroid and FWHM.
+- **Test** on 3 stars: SDSS J1228+1040 has 43 spectra over 2003-2025 (EW 55-79 A). Two 2026 X-shooter products fail to read (probably still proprietary) and are logged as holes. The full run is in progress (/tmp/hotdq/lane_gastime).
+
+## 2026-09-26 01:18 UTC: gas-disc timelines: first population result
+- **Data:** 32 stars and 414 spectra retrieved, 2000-2025.
+  - Holes: 29 X-shooter products from 2025-26 are empty (proprietary, so teams are still monitoring these stars), plus 9 BITPIX-16 products.
+  - QC (continuum median within 5%, continuum robust rms 0.25 or less, S/N 3 or more, error outliers) leaves about 350 spectra.
+  - Errors include a 10% + 1 A floor for cross-instrument systematics.
+- **Result:** of 25 stars with 3 or more spectra spanning a year or more, **9 vary significantly** (chi2r > 3 and max-min > 3 sigma):
+  - WD J2133+2428: 12.2 -> 1.0 -> 5.4 A over 2022-2025, X-shooter;
+  - WD 0856+048: onset after 2010;
+  - SDSS J0845+2257: about 21 -> 6 A over 2005-2024;
+  - GALEX J0039-0356;
+  - SDSS J0738+1835;
+  - SDSS J1617+1620: the known fading is recovered;
+  - WD J2212-1352;
+  - Gaia J0611-6931: 2021 spike, consistent with Rogers+2025 weeks-scale variability;
+  - SDSS J0959-0200 (weak; one negative outlier).
+- **Steady, 16:** among them SDSS J1228+1040 (about 65 A over 22 yr), J0006, J1930, J1829, J2307. SDSS J0347+1624 rises about 21 -> 35 A over 2020-2024 but is borderline under the floor.
+- **Next:** a per-object literature check of which changes are already reported; a structure function; and an onset search in polluted WDs with 2 or more epochs.
+
+## 2026-09-26 02:26 UTC: gas-disc timelines, steps 1-3 (literature, structure function, onset search) + one by-product binary
+- **Literature check** (ADS aliases + arXiv sources of Dennihy+2020, Melis+2020, GF21, Rogers+2024 I/II):
+  - **Already published:** J1617, J0845 (low state continues to 2024), J0959, J2212, J0347 (rise).
+  - **Retracted from the "variable" list:**
+    - SDSS J0738+1835: its photospheric Ca II triplet absorption confounds the EW window; the profiles look the same at every epoch.
+    - Gaia J0611-6931: the 87 A value is a poor spectrum (S/N 18, continuum rms 0.15). Otherwise it rises slowly from 48 to 57 A between 2019 and 2023.
+  - **WD J2133+2428 switch-off:** 10.5 -> 1.3 -> 0.8 A (2022-05, 2023-05, 2025-05) after removing cosmic-ray spikes. The raw 2025 value of 5.4 A was spikes. The data come from two monitoring programmes (Manser 109.2383; Ramirez Ramirez 115.27XT), so this is the owners' result: registered, not claimed.
+  - **Correction:** the earlier note "J0611 consistent with Rogers+2025 weeks-scale variability" is not supported. ADS has no such Rogers+2025 paper for J0611.
+- **Structure function** (14 stars, 1,424 pairs): the median fractional EW change per star is about 4% within days and about 19% over 1-10 years. Factor-of-several changes are confined to J1617, J0845, WD 0856+048 and J2133.
+- **Onset search: null.**
+  - **SDSS-V per-visit on/off:** 80 candidates, 16 inspected, 0 onsets.
+  - **SDSS-V x DESI:** 10,379 pairs, 74 formal switches, 13 re-measured template-free in every epoch: 0 new.
+  - **Recoveries:** WD J0234-0406, WD J0857-2245 (still faded) and WD J0842+2300 (weak, 0.7 A).
+  - **Lesson:** per-visit matched-filter z at SDSS-V S/N is dominated by single-visit spikes. A switch needs a template-free EW in every epoch plus a profile plot.
+- **By-product: Gaia DR3 3107374277060584064** (WDJ064438.09-004550.51, G 17.27, 550 pc).
+  - It is a hot white dwarf (He II 4686) with an irradiated companion, **P = 0.592887 d**, maximum light at BMJD 59300.28308.
+  - The period is in the CoRoT IRa01/LRa01/LRa06 light curves (2007-2012), Gaia DR3 (spurious-signal diagnostics, GLS 1.68667 c/d) and ZTF (2018-2024). The cycle count is secure.
+  - The r amplitude (11%) is larger than g (4%): reflection.
+  - SDSS-V H-alpha, H-beta and Ca II emission velocities follow the companion's orbital phase, and there is no emission near minimum light.
+  - Ferreira Lopes+2025 assigned the CoRoT period to the 4.1" F8 IV neighbour, which is constant in ZTF.
+  - Novelty gate is clean (SIMBAD, MWDD, VSX, VizieR, ADS, DESI, LAMOST, ESO, mwcheck).
+  - Journal created. VSX revision drafted (user files). Report: docs/reports/pceb_3107374277060584064_2026_09_26/.
+
+## 2026-09-26 03:14 UTC: gap-fill of the 2026-09-24 Gaia-period lane: 2 new periods, 3 recoveries
+- **Trigger:** the new reflection binary 3107374277060584064 was in our own 2026-09-24 input (FAP 1.4e-5) but was never tested. Two reasons: the tier-2 M_G > 9.5 cut dropped hot, bright white dwarfs, and every star listed in Jestin+2026 was treated as known, even though Jestin marks it "Variable False".
+- **Selection** (select_gap.py): 55 untested stars at FAP < 1e-3 (north, not in Steen). After removing Jestin-confirmed stars and VSX periods, 13 were tested with ZTF at the Gaia frequency.
+- **Results:**
+  - **New periods:**
+    - **SDSS J1022+1611** (3890059941364406144): **87.33 min**. It is a 0.32 Msun low-gravity DA, and the r amplitude (4.6%) is 2.6 times the g amplitude. Candidate: reflection off a substellar or late-M companion. Journal created.
+    - **GALEX J0037+1901** (2795150147707769728): **18.241 h**, achromatic 3%, in a 1.08 Msun hot DA (likely rotation). Journal created.
+  - **Recoveries:**
+    - 3138305596433476480 and 2208250945549692672 (Ranaivomanana+2025 A&A 704 A70);
+    - GALEX J0751+1059 (Reindl+2023, reflection 6.64 h).
+  - **Not confirmed:** 2 faint stars; 1 hole.
+- **Lessons:**
+  - A "Variable False" in Jestin+2026 is not a null: 4 of 4 such stars have their Gaia frequency as the top ZTF peak. Excluding a catalogue's members must use the catalogue's verdict, not bare membership.
+  - Reindl+2023 (bright hot pre-WDs, photometric-variable table) and Ranaivomanana+2025 (693 A268 and 704 A70) belong in every prior-art gate for hot white-dwarf periods.
+  - An invalid VizieR catalogue id (J/A+A/677/A29) silently returns an all-table cone.
+  - VizieR J/ApJ/967/166 returns nothing even for a Steen member, so check Steen+2024 via the arXiv source.
+- **Filing:** VSX revision drafts for all three new periods (including the PCEB) are in gaia_local_notes/2026-09-26/vsx_revisions_2026_09_26.md (user files).
+
+## 2026-09-26 04:42 UTC: gap-fill, part 2: weak Gaia periods (ZTF) and southern hot white dwarfs (ATLAS)
+- **ZTF, 77 stars** at Gaia FAP 1e-3 to 5e-2 (north, not Jestin-confirmed, not tested before). IRSA timed out often tonight; the timeouts were re-run and 1 hole remains (974895286283420160).
+  - **7 confirmed** (the Gaia frequency is the top ZTF peak).
+  - **5 recoveries:** PHL 1016 (Steen+2024), WD 0831+537 (Steen+2024), PB 6015 = SDSS J0032+0739 (Liu+2024), J0606+2507 (Chen+2020), J2215+2530 (Ranaivomanana+2025).
+  - **2 new periods, journals created:**
+    - **3123625093275668736** (WD 0.35 Msun + 2800 K M dwarf, Rebassa-Mansergas+2025): **10.393 h**, red-enhanced, probably the orbital period of a post-common-envelope binary.
+    - **3354819845628139904** (hot subdwarf candidate, J0659+1547): **12.589 h**.
+- **ATLAS, southern hot white dwarfs without any period:**
+  - **New periods, journals created:**
+    - **GALEX J1322-4224** (6136817910121524096): 18.456 h, larger in c than o.
+    - **Gaia DR3 6170660401283991680**, a 138 kK DO: **27.0 h**, larger in c than o. Not in the Reindl+2021 UHE paper, Reindl+2023, Steen or Ranaivomanana.
+  - 2 stars are still pending: the ATLAS server was unreachable.
+- **GALEX J1739-6439** (Gaia period known): its SDSS-V spectrum shows H-alpha, H-beta and Ca II emission from an irradiated companion. Registered.
+- **Tally for the gap-fill:** 7 new periods (J1022+1611, J0037+1901, J1322-4224, J1400-3302 (DO), J0618+0115, J0659+1547, plus the PCEB found via SDSS-V) and 8 recoveries. The literature gate caught 8 known periods that a SIMBAD/VSX check would have missed. The Steen, Liu, Chen and Ranaivomanana checks all mattered.
+- (addendum) Last two southern ATLAS stars: GALEX J105228.9-295308 and 4658259853535794432 (LMC field, blended) are both recoveries. Their VSX periods existed live, but the cached cand_annot VSX flags lacked them. **Always use a live VSX query for the final novelty call.** Final gap-fill tally: 8 new periods (including the PCEB), 12 recoveries.
+
+## 2026-09-26 10:55 UTC: correction: reflection-binary ephemeris (CoRoT time zero point)
+- **The error:** the overnight joint CoRoT + ZTF ephemeris for 3107374277060584064 converted CoRoT DATEBARTT as MJD = DATEBARTT + 51544.5. DATEBARTT is BJD - 2400000, so the CoRoT times were 51545 d off.
+- **Corrected** (public script scripts/reflection_3107374277060584064.py): P = 0.59288582 d (was 0.59288695 d). The nearest cycle-count alias is at delta chi2 81066 (chi2 per point 62), and all data sets from 2007 to 2024 are in phase within 0.02 cycles.
+- **Unaffected:** the per-run CoRoT detections, ZTF, Gaia, the emission-velocity phases (ZTF-based) and the eclipse null.
+- **Updated:** journal, report README and VSX drafts.
+- **Lesson:** check a mission's time-column definition against its DATE string before combining missions. The 2007-02-03T13:05 UTC start gives DATEBARTT = 54135.05, which is JD - 2400000.
+
+## 2026-09-26 10:57 UTC: public release of the new periods and the reflection binary (user-approved)
+- **Public repository commit 0279cb1:** the reflection binary 3107374277060584064 (script, tables, two figures) and seven new white-dwarf periods added to the periodic table. The table gains per-filter ZTF rows (the old stars' values are unchanged), and J1022+1611 gets a TESS FFI table.
+- **Kept local:** the gas-disc timeline results, per the push policy (population measurements, not new objects). The WD J2133+2428 switch-off is also another team's monitoring data.
+
+## 2026-09-26 12:22 UTC: four "fun outlier" lanes on the stored SDSS-V spectra (double WDs, two-faced, lithium, weirdest)
+- **Prior art (ADS):**
+  - SDSS-V DR19 double white dwarfs, arXiv:2509.02906: sub-exposure RVs, 63 candidates. Its 66 Gaia ids are used as controls and as the front-filter.
+  - Two-faced white dwarfs: Janus (2023) and a magnetic double-faced DBA (Moss+2024).
+  - Lithium in white dwarfs: Kaiser+2025 (ApJ 979, 111) and earlier.
+  - J-PLUS outlier analysis (Lopez-Sanjuan+2025).
+- **Double WDs:**
+  - H-alpha RVs per visit against each star's own coadd: 9,599 DA WD-locus stars with at least 2 visits; 257 formal candidates.
+  - The H-alpha-only shifts are mostly artefacts. Night-sky residuals land near H-alpha at different wavelengths per visit, because the XCSAO undo shifts them.
+  - Three-line consensus (H-alpha, H-beta, H-gamma; at least 2 agreeing) over 298 stars. Large visit offsets are 67% in_stack=False visits (base rate 11%), and several equal that visit's XCSAO velocity. **in_stack=False visits are shifted too and must be excluded from RV work.**
+  - In-stack only: 11 candidates pass. 6 of them show several varied velocities with about 10 km/s errors and are registered: SDSS J2057+1650, 2190010593106909568, 2153427951457223040, 3185643733834595456, SDSS J0736+1618, 2QZ J1410-0234. The rest are single-visit outliers and stay suspect.
+  - Sensitivity is low: 9 of 52 DR19 candidates recovered across visits.
+- **Two-faced:** null. The per-visit H-alpha / He I EW variability is dominated by the same sky residuals and by H-alpha-wing normalisation; the top 12 are artefacts.
+- **Lithium:** parked, not null. The Li 6708 depth screen does not recover LHS 2534, the only known Li-polluted WD in SDSS-V (magnetic, 2.1 MG, noisy); the top hits are noise or a corrupted plate (8831xxxx).
+- **Weirdest spectra** (PCA + 10-nearest-neighbour chi2; 5-pixel median filter; winsorised residuals):
+  - The top ranks are sky-subtraction residuals (8250-8950 A) and single-visit problems:
+    - a fibre mix-up with an emission-line galaxy (109698692);
+    - a broken blue/red join (GALEX J1714+6849);
+    - contamination by a G 9.2 companion 4" away (4584823991592186880).
+  - One real oddity: WDJ0605-5050, a heavily polluted DZ with K I, previously DC:. It is already a Gaensicke X-shooter target (114.27DZ.001), so registered only.
+- Report: docs/reports/sdssv_fun_outliers_2026_09_26/.
+
+## 2026-09-26 13:24 UTC: outlier follow-ups: per-exposure RVs, extra epochs, hot-star model fits
+- **(a) BOSS per-exposure RVs** (spec-full files, independent of Astra XCSAO; committed 3df69ca):
+  - **SDSS J2057+1650** (1764456441613885952): RV-variable, +38 to -29 km/s over a week (chi2r 8.2), three lines agree. Journal created.
+  - **WDJ0437-0857:** variable, but a known CV in MWDD.
+  - **2190010593106909568:** unreliable (G 9.85 star 5" away).
+  - **2153427951457223040:** constant.
+  - **2QZ J1410-0234:** not variable in reliable exposures.
+  - **SDSS J0736+1618:** inconclusive.
+- **(b) SPARCL extra epochs** (sparcl_epochs.csv): one usable epoch, DESI 2022 for WDJ0437-0857 (-116 km/s). The other SDSS/BOSS/DESI spectra give inconsistent line velocities.
+- **(c) Hot-star fits** (hot_fits/): TheoSSA TMAP H+He grid, 280 models, 60-200 kK.
+  - **Balmer lines:** reproduce the Balmer-line problem (median fit/literature 0.75).
+  - **He I + He II only:** median 1.04, 16-84% 0.87-1.39 on 10 controls with S/N >= 19. Controls at S/N <= 15 fail.
+  - **Six stars with no published spectroscopy** (MWDD, VizieR all-table, SIMBAD refs, ADS full text, SPARCL, SDSS specObj all checked) are DAOs with SDSS-V first spectra: J0550-1554 ~110 kK, J0629-4158 ~100, J0814+0225 ~90, 4036084504408126976 ~90, J1906-7558 unconstrained, and WDJ0958-1758 (weak He II; a known 3.27 d variable) unreliable.
+  - **Three stars thought unclassified are published:** SALT J1740-7214 and SALT J1723-6725 are O(He) stars at 140 and 130 kK (Jeffery+2023, arXiv:2301.03550), and GALEX J2044-0256 is a DAO at 92.5 kK (MWDD).
+  - **Correction:** the hottest star in the sample with a published value is SALT J1740-7214 (140 +- 15 kK), not PN Lo 1 (118 kK). The earlier literature compilation used SIMBAD measurement tables, which lack the Jeffery+2023 values.
+  - Nothing new is credibly hotter.
+- All nine hot stars registered (lane sdssv_hot_fits_2026_09_26).
+
+## 2026-09-26 14:11 UTC: public release of the six hot DAO white dwarfs (user-approved)
+- **Public repository commit e76c647:** the six DAOs whose SDSS-V DR20 spectra are the first found (J0550-1554, J0629-4158, J0814+0225, 4036084504408126976, J1906-7558, WDJ0958-1758). The commit contains:
+  - page docs/hot_white_dwarfs.md;
+  - script scripts/hot_white_dwarfs.py, which downloads the TheoSSA grid and reproduces all 36 local fits exactly;
+  - table tables/hot_white_dwarfs.csv;
+  - star list and grid list in data/;
+  - two figures.
+- **Correction:** the "Fleury+2024" reference in hot_fit_summary.csv is Filiz et al. 2024 (A&A 691, A290), verified in ADS.
+- **Downloads:** the eight 200 kK grid files first came back as VOTable; re-downloaded as text, the spectra are identical (maximum difference 0).
+
+## 2026-09-26 15:10 UTC: publication-worth ratings removed from the docs (user request)
+- Removed ratings of how publishable results are ("RNAAS-tier/level/grade", "publishable (now/value)", "headline-grade", "flag-plant", "ceiling = ...") from CANDIDATES.md, this log, three dossiers, three object journals, and eight reports and notes. Facts, verdicts, references and prior-art citations are unchanged.
+- Three archived workflow prompts (precovery_campaign_2026_07_07/workflow_scripts/*.mjs) keep their original wording, because they are the inputs that produced recorded outputs.

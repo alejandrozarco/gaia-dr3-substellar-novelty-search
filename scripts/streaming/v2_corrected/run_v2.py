@@ -23,6 +23,7 @@ Outputs:
     data/derived/main_hunt_derived_v2_supplementary.parquet (Gaia lookup cache)
 """
 from __future__ import annotations
+import os
 import argparse
 import datetime as dt
 import math
@@ -39,7 +40,7 @@ THIS = Path(__file__).resolve().parent
 sys.path.insert(0, str(THIS))
 from consumer_v2 import derive_row_v2  # noqa: E402
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 DERIVED = ROOT / 'data' / 'derived'
 INPUT_PARQUET = DERIVED / 'main_hunt_derived.parquet'
 OUTPUT_PARQUET = DERIVED / 'main_hunt_derived_v2.parquet'

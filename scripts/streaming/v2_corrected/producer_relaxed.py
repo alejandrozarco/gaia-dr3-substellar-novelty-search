@@ -13,6 +13,7 @@ Usage:
     python producer_relaxed.py --restart       # ignore STATE, redownload all
 """
 from __future__ import annotations
+import os
 import argparse, json, sys, time, warnings
 warnings.filterwarnings('ignore')
 from pathlib import Path
@@ -20,7 +21,7 @@ from pathlib import Path
 import pandas as pd
 from astroquery.gaia import Gaia
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 RAW = ROOT / 'data' / 'raw_chunks'
 RAW.mkdir(parents=True, exist_ok=True)
 

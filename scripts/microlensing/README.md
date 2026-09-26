@@ -75,7 +75,7 @@ tool + a candidate cross-check, not a novel discovery channel.**
 ## Run
 
 ```bash
-PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+PY=~/claude_projects/ostinato/.venv/bin/python
 
 # validate against the published LAWD 37 event
 $PY scripts/microlensing/validate.py

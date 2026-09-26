@@ -1,0 +1,170 @@
+=== WD J2133+2428: 4 papers
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+  VAR 2024ApJ...972..126G Using 3.4 μm Variability toward White Dwarfs as a Signpost of Remnant Planetary Systems
+  VAR 2021MNRAS.508.5657M Velocity-imaging the rapidly precessing planetary disc around the white dwarf HE 1349-2305 using Doppler tomography
+      2021MNRAS.504.2707G White dwarfs with planetary remnants in the era of Gaia - I. Six emission line systems
+=== SDSS J0845+2257: 60 papers
+      2026MNRAS.551g1349C I can do it with a broken planetesimal: characterizing the planetary debris in heavily polluted cool white dwarfs
+  VAR 2026AsJAE..20...12K Analysis of the National Air Pollutant Emissions Inventory (2022) in the Republic of Korea
+      2026JEnSt.16021848A Underground hydrogen storage in porous media: Opportunities, challenges, and economic perspectives
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+  VAR 2025JEnvM.39427649S The environmental and economic effects of differentiated carbon tax across industries under the constraint of the ``dual carbon'' goal: A study based 
+      2025MNRAS.541.1377W Measurements of three exo-planetesimal compositions: a planetary core, a chondritic body, and an icy Kuiper belt analogue
+  VAR 2025PPhyR..30...67S Improvised canopy architecture enhanced high yield through better light interception in guava under sub-tropics
+      2025TrGeo...701194H Abundances of Elements in Solar Systems
+      2024A&A...691A.352W PEWDD: A database of white dwarfs enriched by exo-planetary material
+      2024ChEnJ.49754455W A sustainable approach: Repurposing harmful algal biomass as carbon-based catalysts for nitrogen fertilizer electrosynthesis from nitrate and CO<SUB>2
+      2024MNRAS.532.3866R Seven white dwarfs with circumstellar gas discs II: tracing the composition of exoplanetary building blocks
+  VAR 2024Heliy..1035103S Rapid prototyping of perfusion cell culture devices for three-dimensional imaging of mesenchymal stem cell deposition and proliferation
+      2024RvMG...90..199P Exoplanet Mineralogy
+  VAR 2024RvMG...90..141V The Evolution and Delivery of Rocky Extra-Solar Materials to White Dwarfs
+      2024MNRAS.529.1688B cecilia: a machine learning-based pipeline for measuring metal abundances of helium-rich polluted white dwarfs
+  VAR 2024ScTEn.90667508W Estimation of mercury uptake and distinction of corn cultivation in China
+      2023arXiv231209450F Performance-Based Optimization of 2D Reinforced Concrete Moment Frames through Pushover Analysis and ABC Optimization Algorithm
+      2023Ene...27227131S Co-valorisation of sewage sludge and poultry litter waste for hydrogen production: Gasification process design, sustainability-oriented optimization, 
+      2023ApJ...944...23W White Dwarfs with Infrared Excess from LAMOST Data Release 5
+      2022Sust...1412823Z A System Dynamics Model of Multi-Airport Logistics System under the Impact of COVID-19: A Case of Jing-Jin-Ji Multi-Airport System in China
+      2022Sust...1411315K How Non-Governmental-Organization-Built Small-Scale Irrigation Systems Are a Failure in Africa
+  VAR 2022A&A...662A..79C X-ray pulsar HD 49798: a contracting white dwarf with a debris disk?
+      2021orel.bookE...1V Planetary Systems Around White Dwarfs
+      2021Atmos..12.1372C Comparison of Top-Down and Bottom-Up Road Transport Emissions through High-Resolution Air Quality Modeling in a City of Complex Orography
+      2021ApJ...914...61K Discovery of Beryllium in White Dwarfs Polluted by Planetesimal Accretion
+  VAR 2021InnIS...6...70T Efficacy of palm oil fuel ash as filler on mechanical properties of aerated concrete
+      2021MNRAS.504.2707G White dwarfs with planetary remnants in the era of Gaia - I. Six emission line systems
+  VAR 2021FrER....977873L The Spillover Effect Evaluation of Chinese Emissions Trading Scheme
+      2021Water..13.1000P Nexus Thinking at River Basin Scale: Food, Water and Welfare
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+  VAR 2020ApJ...905....5D Five New Post-main-sequence Debris Disks with Gaseous Emission
+  VAR 2020ApJ...900....2K Atmospheric Temperature Inversions and He I 5876 Core Profile Structure in White Dwarfs
+      2020ApJ...901...10D Where Are the Extrasolar Mercuries?
+      2020arXiv200607639N Emission from elliptical streams of dusty debris around white dwarfs
+      2020Mine...10..566L U-Pb, Ar-Ar, and Re-Os Geochronological Constraints on Multiple Magmatic-Hydrothermal Episodes at the Lake George Mine, Central New Brunswick
+      2020JCPro.25319945T Optimal carbon allowance price in China's carbon emission trading system: Perspective from the multi-sectoral marginal abatement cost
+  VAR 2020MNRAS.493.2127M The frequency of gaseous debris discs around white dwarfs
+      2020MNRAS.492.2683B Are exoplanetesimals differentiated?
+  VAR 2019AJ....158..242X Compositions of Planetary Debris around Dusty White Dwarfs
+  VAR 2019JInEc..23..893K Use of Physical Supply and Use Tables for Calculation of Economy-Wide Material Flow Indicators
+      2019E&ES..302a2024S Anthropogenic pollution of the southern part of the Khibiny mountain massif and foothills
+      2019Sci...364...66M A planetesimal orbiting within the debris disc around a white dwarf star
+      2018EESD...47.2802X Effectiveness evaluation and optimal design of nonlinear viscous dampers for inelastic structures under pulse-type ground motions
+  VAR 2018ApJ...866..108X Infrared Variability of Two Dusty White Dwarfs
+      2018MNRAS.479.3814H Polluted white dwarfs: constraints on the origin and geology of exoplanetary material
+      2018ApJ...863..184B A New Generation of Cool White Dwarf Atmosphere Models. I. Theoretical Framework and Applications to DZ Stars
+      2018MNRAS.477...93H Cool DZ white dwarfs II: compositions and evolution of old remnant planetary systems
+  VAR 2018NatSR...8.7580G Anatomy of a fumarolic system inferred from a multiphysics approach
+  VAR 2018ApJ...857..135M Fast and Slow Precession of Gaseous Debris Disks around Planet-accreting White Dwarfs
+      2018E&ES..135a2022M Mooring Design Selection of Aquaculture Cage for Indonesian Ocean
+  VAR 2018ApJ...852L..22C Evidence for Eccentric, Precessing Gaseous Debris in the Circumstellar Absorption toward WD 1145 + 017
+      2018haex.bookE..14Z Characterizing the Chemistry of Planetary Materials Around White Dwarf Stars
+  VAR 2017EnPro.142.1693Y Numerical Investigation of Aluminum Fumarate MOF adsorbent material for adsorption desalination/cooling application
+      2017A&A...603A.123H Dust in brown dwarfs and extrasolar planets. V. Cloud formation in carbon- and oxygen-rich environments
+  VAR 2017ApJ...839...42R Spectroscopic Evolution of Disintegrating Planetesimals: Minute to Month Variability in the Circumstellar Gas Associated with WD 1145+017
+  VAR 2017PASA...34....1D Dawes Review 6: The Impact of Companions on Stellar Evolution
+  VAR 2016MNRAS.462.1461M Another one grinds the dust: variability of the planetary debris disc at the white dwarf SDSS J104341.53+085558.2
+  VAR 2016MNRAS.455.4467M Doppler imaging of the planetary debris disc at the white dwarf SDSS J122859.93+104032.9
+  VAR 2015MNRAS.451.3237W The composition of a disrupted extrasolar planetesimal at SDSS J0845+2257 (Ton 345)
+  VAR 2015MNRAS.450.2083R Likely detection of water-rich asteroid debris in a metal-polluted white dwarf
+=== SDSS J0738+1835: 35 papers
+  VAR 2026ApJ..1006..248K A Detailed Model Atmosphere Analysis of Cool White Dwarfs in DESI DR1
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+      2025ApJ...993...53T Do White Dwarfs Sample Water-rich Planetary Material?
+  VAR 2025MNRAS.543.1602N Activity in white dwarf debris discs I: Spitzer legacy reveals variability incompatible with the canonical model
+      2025ApJ...990...62K An All-sky Survey of White Dwarf Merger Remnants: Far-Ultraviolet Is the Key
+      2023PSJ.....4..136T A Chondritic Solar Neighborhood
+      2021E&PSL.55416694H Evidence for post-nebula volatilisation in an exo-planetary body
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+  VAR 2020MNRAS.493.2127M The frequency of gaseous debris discs around white dwarfs
+  VAR 2019AJ....158..242X Compositions of Planetary Debris around Dusty White Dwarfs
+      2019Sci...366..356D Oxygen fugacities of extrasolar rocks: Evidence for an Earth-like geochemistry of exoplanets
+  VAR 2018ApJ...866..108X Infrared Variability of Two Dusty White Dwarfs
+      2018MNRAS.479.3814H Polluted white dwarfs: constraints on the origin and geology of exoplanetary material
+      2018MNRAS.477...93H Cool DZ white dwarfs II: compositions and evolution of old remnant planetary systems
+  VAR 2017BAAA...59..176G Planetas extrasolares: la búsqueda fuera de la secuencia principal
+  VAR 2017PASA...34....1D Dawes Review 6: The Impact of Companions on Stellar Evolution
+  VAR 2016MNRAS.462.1461M Another one grinds the dust: variability of the planetary debris disc at the white dwarf SDSS J104341.53+085558.2
+  VAR 2016MNRAS.455.4467M Doppler imaging of the planetary debris disc at the white dwarf SDSS J122859.93+104032.9
+  VAR 2016RSOS....350571V Post-main-sequence planetary system evolution
+      2015ApJ...810L..17G Serendipitous Discovery of a Candidate Debris Disk around the DA White Dwarf SDSS J114404.74+052951.6
+  VAR 2015MNRAS.451.3237W The composition of a disrupted extrasolar planetesimal at SDSS J0845+2257 (Ton 345)
+  VAR 2015ASPC..493..117F Metal Accretion onto White Dwarfs. II. A Better Approach Based on Time-Dependent Calculations in Static Models
+  VAR 2015ApJ...799..109J Evidence for an Anhydrous Carbonaceous Extrasolar Minor Planet
+      2014ApJ...794...35G Precise Atmospheric Parameters for the Shortest-period Binary White Dwarfs: Gravitational Waves, Metals, and Pulsations
+      2014AREPS..42...45J Extrasolar Cosmochemistry
+      2014ApJ...783...79X Elemental Compositions of Two Extrasolar Rocky Planetesimals
+      2014ApJ...781..104G SDSS J074511.56+194926.5: Discovery of a Metal-rich and Tidally Distorted Extremely Low Mass White Dwarf
+      2013ApJ...779...70V The Polluted Atmosphere of the White Dwarf NLTT 25792 and the Diversity of Circumstellar Environments
+      2013ApJ...775L..41J <SUP>26</SUP>Al in the Early Solar System: Not So Unusual after All
+  VAR 2013ApJ...766..132X Two Beyond-primitive Extrasolar Planetesimals
+      2013AJ....145...30J Extrasolar Refractory-dominated Planetesimals: An Assessment
+      2012ApJ...750...86B A Spitzer Space Telescope Study of the Debris Disks around Four SDSS White Dwarfs
+      2012ApJ...749....6D Detailed Compositional Analysis of the Heavily Polluted DBZ White Dwarf SDSS J073842.56+183509.06: A Window on Planet Formation?
+      2011ApJ...739..101Z An Aluminum/Calcium-rich, Iron-poor, White Dwarf Star: Evidence for an Extrasolar Planetary Lithosphere?
+      2010ApJ...719..803D The Discovery of the Most Metal-rich White Dwarf: Composition of a Tidally Disrupted Extrasolar Dwarf Planet
+=== SDSS J1617+1620: 22 papers
+      2026enap....1..553M White dwarf systems: Exoplanets and debris disks
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+      2024A&A...692A..25F Origin of Ca II emission around polluted white dwarfs
+  VAR 2024ApJ...972..126G Using 3.4 μm Variability toward White Dwarfs as a Signpost of Remnant Planetary Systems
+  VAR 2024RvMG...90..141V The Evolution and Delivery of Rocky Extra-Solar Materials to White Dwarfs
+      2021MNRAS.504.2707G White dwarfs with planetary remnants in the era of Gaia - I. Six emission line systems
+  VAR 2021MNRAS.501.3806M Circularization of tidal debris around white dwarfs: implications for gas production and dust variability
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+  VAR 2020ApJ...905....5D Five New Post-main-sequence Debris Disks with Gaseous Emission
+  VAR 2020MNRAS.493.2127M The frequency of gaseous debris discs around white dwarfs
+  VAR 2019MNRAS.483.2941W Multiwavelength observations of the EUV variable metal-rich white dwarf GD 394
+  VAR 2018ApJ...866..108X Infrared Variability of Two Dusty White Dwarfs
+  VAR 2018ApJ...857..135M Fast and Slow Precession of Gaseous Debris Disks around Planet-accreting White Dwarfs
+  VAR 2017ApJ...836...71L A Hot White Dwarf SDSS J134430.11+032423.1 with a Planetary Debris Disk
+  VAR 2016MNRAS.462.1461M Another one grinds the dust: variability of the planetary debris disc at the white dwarf SDSS J104341.53+085558.2
+  VAR 2016MNRAS.455.4467M Doppler imaging of the planetary debris disc at the white dwarf SDSS J122859.93+104032.9
+  VAR 2016RSOS....350571V Post-main-sequence planetary system evolution
+      2016ApJ...816L..22X Evidence for Gas from a Disintegrating Extrasolar Asteroid
+  VAR 2015MNRAS.451.3237W The composition of a disrupted extrasolar planetesimal at SDSS J0845+2257 (Ton 345)
+  VAR 2015ASPC..493..279W Variable Emission from a Gaseous Disc around a Metal-Polluted White Dwarf
+  VAR 2014MNRAS.445.1878W Variable emission from a gaseous disc around a metal-polluted white dwarf
+      2012ApJ...750...86B A Spitzer Space Telescope Study of the Debris Disks around Four SDSS White Dwarfs
+=== WD J2212-1352: 2 papers
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+      2021MNRAS.504.2707G White dwarfs with planetary remnants in the era of Gaia - I. Six emission line systems
+=== Gaia J0611-6931: 11 papers
+      2026AAS...24742805X Modeling Circumstellar Gas Emission around White Dwarfs Using CLOUDY
+      2025MNRAS.544.2098B Exogeological inferences from white dwarf pollutants: the impact of stellar physics
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+  VAR 2024ApJ...972..126G Using 3.4 μm Variability toward White Dwarfs as a Signpost of Remnant Planetary Systems
+      2024MNRAS.532.3866R Seven white dwarfs with circumstellar gas discs II: tracing the composition of exoplanetary building blocks
+  VAR 2024RvMG...90..171X The Chemistry of Extra-solar Materials from White Dwarf Planetary Systems
+      2024AJ....167..248X Modeling Circumstellar Gas Emission around a White Dwarf Using CLOUDY
+      2024MNRAS.527.6038R Seven white dwarfs with circumstellar gas discs I: white dwarf parameters and accreted planetary abundances
+  VAR 2023AJ....166....5O Disk or Companion: Characterizing Excess Infrared Flux in Seven White Dwarf Systems with Near-infrared Spectroscopy
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+  VAR 2020ApJ...905....5D Five New Post-main-sequence Debris Disks with Gaseous Emission
+=== SDSS J0959-0200: 21 papers
+  VAR 2026ApJ..1007..199R Spectroscopic Monitoring of Metal Lines in Polluted White Dwarfs
+      2026enap....1..553M White dwarf systems: Exoplanets and debris disks
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+  VAR 2024ApJ...972..126G Using 3.4 μm Variability toward White Dwarfs as a Signpost of Remnant Planetary Systems
+  VAR 2021MNRAS.506..432S Collisions in a gas-rich white dwarf planetary debris disc
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+      2020arXiv200607639N Emission from elliptical streams of dusty debris around white dwarfs
+  VAR 2020MNRAS.494.2861R Near-infrared variability in dusty white dwarfs: tracing the accretion of planetary material
+      2020NatAs...4..328C Spitzer's debris disk legacy from main-sequence stars to white dwarfs
+  VAR 2020MNRAS.493.2127M The frequency of gaseous debris discs around white dwarfs
+      2018ApJS..239...26L Distant White Dwarfs in the US Naval Observatory Flagstaff Station Parallax Sample
+  VAR 2018ApJ...866..108X Infrared Variability of Two Dusty White Dwarfs
+  VAR 2016MNRAS.462.1461M Another one grinds the dust: variability of the planetary debris disc at the white dwarf SDSS J104341.53+085558.2
+  VAR 2016MNRAS.455.4467M Doppler imaging of the planetary debris disc at the white dwarf SDSS J122859.93+104032.9
+  VAR 2016RSOS....350571V Post-main-sequence planetary system evolution
+      2016ApJ...816L..22X Evidence for Gas from a Disintegrating Extrasolar Asteroid
+  VAR 2015MNRAS.451.3237W The composition of a disrupted extrasolar planetesimal at SDSS J0845+2257 (Ton 345)
+  VAR 2015ASPC..493..279W Variable Emission from a Gaseous Disc around a Metal-Polluted White Dwarf
+  VAR 2014MNRAS.445.1878W Variable emission from a gaseous disc around a metal-polluted white dwarf
+  VAR 2014ApJ...792L..39X The Drop during Less than 300 Days of a Dusty White Dwarf's Infrared Luminosity
+  VAR 2011MNRAS.417.1210G DA white dwarfs in Sloan Digital Sky Survey Data Release 7 and a search for infrared excess emission
+=== SDSS J0347+1624: 6 papers
+      2025RMxAA..61c.154S Gaseous Disks in White Dwarfs: Properties of theCurrent Sample
+  VAR 2024ApJ...972..126G Using 3.4 μm Variability toward White Dwarfs as a Signpost of Remnant Planetary Systems
+      2024MNRAS.532.3866R Seven white dwarfs with circumstellar gas discs II: tracing the composition of exoplanetary building blocks
+  VAR 2021MNRAS.508.5657M Velocity-imaging the rapidly precessing planetary disc around the white dwarf HE 1349-2305 using Doppler tomography
+  VAR 2020ApJ...905...56M Serendipitous Discovery of Nine White Dwarfs with Gaseous Debris Disks
+  VAR 2020ApJ...905....5D Five New Post-main-sequence Debris Disks with Gaseous Emission
+=== GALEX J0039-0356: 0 papers

@@ -24,6 +24,7 @@ the raw chunks with --supp the supplementary cache (see test_rehunt.py).
 stdlib + pandas/numpy; polars only to write parquet (optional).
 """
 from __future__ import annotations
+import os
 
 import argparse
 import sys
@@ -45,7 +46,7 @@ from consumer_v2 import derive_row_v2  # noqa: E402
 
 import adapter as adapter_mod  # noqa: E402
 
-ROOT = Path("/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27")
+ROOT = Path(os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27"))
 
 # The v2-derived output columns we surface for each source (mirrors the keys
 # derive_row_v2 returns, plus source_id). Kept explicit so an ERROR row still

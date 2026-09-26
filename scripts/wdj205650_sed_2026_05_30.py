@@ -13,11 +13,12 @@ script therefore (i) fits the primary T_eff to the optical+IR only, then treats
 the GALEX points as an independent test, and (ii) reports companion-exclusion
 sigmas computed band-by-band with full observational errors, NOT a hand-wave.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python  (no pip-install)
+Env: ~/claude_projects/ostinato/.venv/bin/python  (no pip-install)
 Outputs: /tmp/wdj205650_sed.json , /tmp/wdj205650_sed_report.md
 Reuses the canonical _with_timeout / _flt / Gaia-fetch idiom from the dated
 deep-dive scripts (scripts/prime3_deepdive_2026_05_29.py, ns2127900_*.py).
 """
+import os
 import warnings, math, json, sys, time
 warnings.filterwarnings('ignore')
 import numpy as np

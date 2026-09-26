@@ -1,0 +1,4 @@
+6021870154194477312 G 17.92 sep 0.0": o: n 2751, amp 9.9 +- 0.5 uJy, phase 101 deg | c: n 841, amp 13.5 +- 0.6 uJy, phase 101 deg
+6021870158500230656 G 16.53 sep 10.3": o: n 2749, amp 0.3 +- 0.5 uJy, phase 13 deg | c: n 845, amp 1.8 +- 0.6 uJy, phase 257 deg
+6021870154194477696 G 18.67 sep 9.2": o: n 2773, amp 1.0 +- 0.5 uJy, phase 282 deg | c: n 851, amp 2.3 +- 0.6 uJy, phase 241 deg
+6021870158500371840 G 16.70 sep 12.5": o: n 2774, amp 3.0 +- 0.5 uJy, phase 307 deg | c: n 847, amp 2.9 +- 0.6 uJy, phase 267 deg

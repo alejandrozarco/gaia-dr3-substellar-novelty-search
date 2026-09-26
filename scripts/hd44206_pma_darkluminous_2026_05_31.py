@@ -27,13 +27,14 @@ Decisive questions:
 
 Classify companion_class = luminous_stellar / dark_candidate / ambiguous.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python (no pip-install)
+Env: ~/claude_projects/ostinato/.venv/bin/python (no pip-install)
 Outputs: /tmp/hd44206_pma.json , /tmp/hd44206_pma_report.md
 Reuses canonical SED BB machinery + Gaia/SIMBAD/Vizier fetch from
 scripts/hd182379_pma_darkluminous_2026_05_31.py and MC-posterior from
 scripts/sb1_5355234746758153728_deepdive_2026_05_31.py.
 """
 from __future__ import annotations
+import os
 import warnings, math, json, sys
 warnings.filterwarnings('ignore')
 import numpy as np

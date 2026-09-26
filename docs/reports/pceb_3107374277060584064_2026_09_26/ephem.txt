@@ -1,0 +1,11 @@
+best f = 1.6866622 c/d, P = 0.59288695 d = 14.22929 h; chi2 = 482149.2
+  alias f = 1.6866622: delta chi2 = 0.0
+  alias f = 1.6866692: delta chi2 = 577.9
+  alias f = 1.6863692: delta chi2 = 80877.3
+  alias f = 1.6869626: delta chi2 = 118620.2
+  CoRoT 2007a: semi-amplitude 1.96%, phase offset from common -0.8 deg
+  CoRoT 2007b: semi-amplitude 1.72%, phase offset from common +1.5 deg
+  CoRoT 2012: semi-amplitude 1.70%, phase offset from common -1.8 deg
+  ZTF g: semi-amplitude 3.97%, phase offset from common -10.7 deg
+  ZTF r: semi-amplitude 11.09%, phase offset from common -11.9 deg
+max light: BMJD 59300.28308 + 0.59288695 E

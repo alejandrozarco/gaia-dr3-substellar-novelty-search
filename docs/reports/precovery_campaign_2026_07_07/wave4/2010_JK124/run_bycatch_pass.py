@@ -2,8 +2,9 @@
 """Mandatory bycatch pass (rule 5). For each chain night, pull ALL single-exposure
 detections in a 5' field across that night's exposures + the NSC mean-object catalog
 as static_sources; run bycatch.run_bycatch(identify=True). Log n_unknown_candidate."""
+import os
 import sys, urllib.request, urllib.parse, csv, math, json, time
-sys.path.insert(0,"/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts/precovery")
+sys.path.insert(0,os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/scripts/precovery"))
 import bycatch
 TAP="https://datalab.noirlab.edu/tap/sync"
 def tap(q,retries=4):

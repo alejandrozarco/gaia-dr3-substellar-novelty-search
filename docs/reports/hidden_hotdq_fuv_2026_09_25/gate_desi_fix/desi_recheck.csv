@@ -1,0 +1,16 @@
+gaia,amorim_by_id,amorim_nearest_arcsec,amorim_nearest_class,swan_n,swan_type,swan_teff,gates
+6639666736903611136,,166035.2,DA,0,,,/tmp/hotdq/lane_gwdvar/gate_mag.json
+5920596066603197056,,140482.5,DA,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+4883191104733786496,,10261.9,DB,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+2299190006090503808,,26126.7,DA,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+6021870154194477312,,70849.2,DA,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+2246631460497465472,,15097.8,DA,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+3987356721738829184,,4301.3,DZ,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+6915353300288749440,,0.0,DA,1,DBA,33314.83870993708,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+4867935694432066304,,30674.0,DB,0,,,/tmp/hotdq/magbp/gate_open.json;exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_open.json
+178685757799822080,,80020.3,DA,0,,,gaia_wd_periods_2026_09_24/data/gate_mag.json
+437628614520520320,,61773.2,DA,0,,,gaia_wd_periods_2026_09_24/data/gate_mag.json
+4679463733391272448,,112910.6,DA,0,,,exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_mag.json
+3290180587821828480,,27273.3,DZ,0,,,exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_mag.json
+4862847803157741184,,16109.0,DA,0,,,exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_mag.json
+4909119551717563520,,124173.7,DA,0,,,exotic_atm_sdssv_2026_09_24/magnetic_byproducts/gate_mag.json

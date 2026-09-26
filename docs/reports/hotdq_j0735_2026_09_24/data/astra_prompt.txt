@@ -1,0 +1,18 @@
+You are an independent, skeptical referee (white-dwarf spectroscopy). The working directory contains DOSSIER.md (read it first) plus the
+scripts, data and figures it cites; the attached images are the key figures. The claim: Gaia DR3 5208047381438507520 (GALEX
+J073504.2-794409) is a hot DQ white dwarf that is catalogued as DA, and no publication classifies it as a DQ.
+
+Your job is to try to REFUTE the claim and to check our work:
+1. Re-examine the evidence (optical SDSS-V line identifications and velocities, the HST/COS far-UV spectrum, the GALEX test,
+   variability, the companion re-assessment). Read the scripts and data files and check for errors (wrong wavelengths, air/vacuum
+   mix-ups, sign errors, bad continuum placement, circular controls, over-interpretation). Say exactly what is wrong if anything is.
+2. Classification: hot DQ vs hot DAQ vs DQA vs DBQ vs DA+DQ composite vs other. What does the broad depression at H-alpha imply? What
+   do the COS features imply (carbon-dominated vs hydrogen-dominated)?
+3. Novelty: search the literature and the web if you can (ADS, arXiv, conference abstracts, AAS abstracts, HST program pages, MWDD,
+   Montreal hot-DQ lists, Warwick COS survey papers, SDSS-V/DESI/4MOST papers) for ANY prior classification of this object as DQ /
+   carbon-rich / merger remnant, under any name (Gaia DR3 5208047381438507520, GALEX J073504.2-794409, WD J0735-7944,
+   WDJ073504.07-794410.69, TIC 764468822). Report what you searched and what you found, with links.
+4. Recommend next steps (who to contact and what to say), given that the HST/COS data (SNAP 17420, PI Gaensicke) have been public
+   since July 2024.
+Output: a concise report with sections (Verdict with confidence; Errors found; Classification; Novelty search log; Missing checks;
+Recommendation). Do not modify any files.

@@ -2,8 +2,8 @@ import sys, json, pickle, subprocess, os, urllib.parse, math
 sys.path.insert(0, "/tmp/kk76_fix")
 import numpy as np
 from astropy.time import Time
-FO = "/private/tmp/claude-501/-Users-legbatterij-claude-projects/5bae4473-7497-4a6b-8bf6-3ecc9abd4295/scratchpad/fo_build/find_orb/fo"
-GROUND = "/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/arc_kk76.obs"
+FO = "/private/tmp/claude-501/-Users-USER-claude-projects/5bae4473-7497-4a6b-8bf6-3ecc9abd4295/scratchpad/fo_build/find_orb/fo"
+GROUND = os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/arc_kk76.obs")
 PACK = "88268K01K76K"
 HV = pickle.load(open("/tmp/kk76_fix/hst_vectors.pkl", "rb"))
 

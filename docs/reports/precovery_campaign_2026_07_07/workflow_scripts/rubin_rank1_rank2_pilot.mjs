@@ -12,7 +12,7 @@ export const meta = {
 const ENV = [
   'ENVIRONMENT / RULES (binding):',
   '- Today is 2026-07-14. Network available; REAL work. Fresh /tmp venv for pip installs; NEVER',
-  '  pip-install into /Users/legbatterij/claude_projects/ostinato/.venv (its python may be used',
+  '  pip-install into ~/claude_projects/ostinato/.venv (its python may be used',
   '  as-is: astropy/astroquery/numpy/pandas/matplotlib available).',
   '- Work dirs under /tmp/rubin_pilot/. Do NOT edit the gaia repo docs/ (read-only context OK).',
   '- CREDENTIALS the user already holds (existing files, mode 600): Lasair token at',
@@ -116,13 +116,13 @@ const watchlists = await agent(
   + '2. BUILD the watchlist CSVs (Lasair upload format: RA, Dec, name, one row per object;\n'
   + '   radius ~1.5 arcsec unless docs say otherwise) under /tmp/rubin_pilot/watchlists/:\n'
   + '   (a) "gaia-dormant-co-candidates": the current candidate roster — read\n'
-  + '   /Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/CANDIDATES.md and\n'
+  + '   ~/claude_projects/gaia-recovered-2026-05-27/docs/CANDIDATES.md and\n'
   + '   docs/dr4_preregistration_2026_06_01.md (the 9 pre-registered objects are the core);\n'
   + '   resolve source_id -> ICRS coordinates via the repo data files if present, else one\n'
   + '   anonymous Gaia DR3 TAP lookup by source_id (source_ids are 19-digit STRINGS).\n'
   + '   (b) "known-objects-file": the project known-objects store —\n'
-  + '   /Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts/known_objects/ (code)\n'
-  + '   with data under /Users/legbatterij/claude_projects/ostinato/data/external_catalogs/\n'
+  + '   ~/claude_projects/gaia-recovered-2026-05-27/scripts/known_objects/ (code)\n'
+  + '   with data under ~/claude_projects/ostinato/data/external_catalogs/\n'
   + '   known_objects/ — introspect the store, extract id+RA/Dec for all fixed-position entries.\n'
   + '   EXCLUDE solar-system movers from both lists (fixed-position watchlists cannot track SSOs;\n'
   + '   say so explicitly).\n'

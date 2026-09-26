@@ -1,0 +1,26 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: Observed, datatype: int64}
+# - {name: Ritz, datatype: float64}
+# - {name: Transition, datatype: float64}
+# - {name: Rel., datatype: int64}
+# - {name: Aki, datatype: float64}
+# - {name: fik, datatype: float64}
+# - {name: Acc., datatype: string}
+# - {name: Ei           Ek, datatype: string}
+# - {name: Lower level, datatype: string}
+# - {name: Upper level, datatype: string}
+# - {name: gi   gk, datatype: string}
+# - {name: Type, datatype: int64}
+# - {name: TP, datatype: string}
+# - {name: Line, datatype: int64}
+# schema: astropy-2.0
+Observed Ritz Transition Rel. Aki fik Acc. "Ei           Ek" "Lower level" "Upper level" "gi   gk" Type TP Line
+"" 1215.08809287 82298.559739 "" 275230000.0 0.12184 AA "(40.8130309000)   -   (51.0167518615)" "2p     | 2P*  | 1/2" "4d     | 2D   | 3/2" "2 - 4" "" T7771 ""
+"" 1215.09499015 82298.092586 "" 154790000.0 0.068525 AA "(40.8130889708)   -   (51.01675201265)" "2s     | 2S   | 1/2" "4p     | 2P*  | 3/2" "2 - 4" "" T7771 ""
+"" 1215.09801355 82297.887812 "" 13762000.0 0.0030462 AA "(40.8130309000)   -   (51.01666855319)" "2p     | 2P*  | 1/2" "4s     | 2S   | 1/2" "2 - 2" "" T7771 ""
+"" 1215.10580003 82297.360442 "" 154810000.0 0.034268 AA "(40.8130889708)   -   (51.01666123838)" "2s     | 2S   | 1/2" "4p     | 2P*  | 1/2" "2 - 2" "" T7771 ""
+"" 1215.17097314 82292.946598 "" 330230000.0 0.10966 AA "(40.81375709639)  -   (51.0167821170)" "2p     | 2P*  | 3/2" "4d     | 2D   | 5/2" "4 - 6" "" T7771 ""
+"" 1215.17457655 82292.702571 "" 55036000.0 0.012184 AA "(40.81375709639)  -   (51.0167518615)" "2p     | 2P*  | 3/2" "4d     | 2D   | 3/2" "4 - 4" "" T7771 ""
+"" 1215.18449864 82292.030644 "" 27534000.0 0.0030477 AA "(40.81375709639)  -   (51.01666855319)" "2p     | 2P*  | 3/2" "4s     | 2S   | 1/2" "4 - 2" "" T7771 ""

@@ -22,7 +22,7 @@ existing store front-filter).
 - **DESI-specific**: searched for a DESI-DR1-selected multiwavelength binary paper —
   found none. The one existing DESI-DR1 RV-variable publication is Smith 2026 (RNAAS,
   "A High-amplitude Radial Velocity Variable in DESI DR1", Gaia DR3
-  3802130935635096832) — a SINGLE-OBJECT flag-plant, not a systematic survey; per the
+  3802130935635096832) — a single-object note, not a systematic survey; per the
   paper itself (via WebSearch) that object has a close 0.688" Gaia neighbor (blend
   suspect) and the author ALREADY checked archival GALEX/WISE and found NO UV or IR
   excess. This object is correctly absent from our clean_candidates.csv.gz
@@ -202,7 +202,7 @@ Reasons this is not a clean GO:
 
 Reasons it is not a clean NO-GO:
 1. The DATASET (DESI-RV-selected sample) is confirmed unworked by anyone else -- no
-   scoop risk beyond the single already-handled Smith 2026 flag-plant object.
+   scoop risk beyond the single already-handled Smith 2026 object.
 2. RV-variability is a genuine second piece of corroborating evidence (a real
    advantage over UV-excess-alone searches like Makarov 2017) -- a positive UV-excess
    hit on an already-RV-confirmed binary is a somewhat stronger claim than either

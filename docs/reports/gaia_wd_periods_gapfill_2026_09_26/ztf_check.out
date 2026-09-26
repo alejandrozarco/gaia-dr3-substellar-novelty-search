@@ -1,0 +1,20 @@
+/private/tmp/sparclenv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+3138305596433476480: n 972; top 4.12994 c/d (FAP 1.6e-119); near Gaia 4.12996: 4.12994 amp 3.43 +- 0.12 %, power rank 0
+2795150147707769728: n 415; top 1.31577 c/d (FAP 9.9e-31); near Gaia 1.31570: 1.31577 amp 2.99 +- 0.21 %, power rank 0
+3150708057532318208: n 1448; top 3.61368 c/d (FAP 0); near Gaia 3.61362: 3.61368 amp 4.54 +- 0.08 %, power rank 0
+3890059941364406144: n 1840; top 16.48871 c/d (FAP 4.2e-110); near Gaia 16.48874: 16.48871 amp 2.92 +- 0.12 %, power rank 0
+2208250945549692672: n 1843; top 0.76494 c/d (FAP 1.4e-95); near Gaia 0.76504: 0.76494 amp 1.30 +- 0.06 %, power rank 0
+385698341037793152 ZTF points 0
+Traceback (most recent call last):
+  File "/private/tmp/hotdq/lane_gwdvar2/ztf_check.py", line 17, in <module>
+    w = np.abs(fr - fg) < 0.01; j = np.argmax(P[w]); fw = fr[w][j]
+  File "/private/tmp/sparclenv/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 1229, in argmax
+    return _wrapfunc(a, 'argmax', axis=axis, out=out, **kwds)
+  File "/private/tmp/sparclenv/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 59, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: attempt to get argmax of an empty sequence
+/private/tmp/sparclenv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+369254560530545024: n 1805; top 1.00274 c/d (FAP 9.2e-32); near Gaia 17.04158: 17.04404 amp 2.89 +- 0.55 %, power rank 812
+380085093662546560: n 697; top 1.00274 c/d (FAP 3e-22); near Gaia 0.14638: 0.14114 amp 4.80 +- 1.32 %, power rank 8859

@@ -1,0 +1,2 @@
+CaT: gamma 60 km/s, K 140 km/s from 3 visits; residuals [35, 0, -14] km/s (errors [11, 5, 7])
+Ha: gamma 41 km/s, K 218 km/s from 3 visits; residuals [33, 0, -48] km/s (errors [11, 6, 13])

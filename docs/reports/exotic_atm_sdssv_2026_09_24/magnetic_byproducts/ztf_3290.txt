@@ -1,0 +1,4 @@
+ZTF rows 2536 {'zg': 1220, 'zr': 1316}
+  zg: n 1064, median 18.98, rms 0.075, median err 0.055
+  zr: n 1175, median 18.98, rms 0.086, median err 0.057
+combined n 2239, span 2764 d, 8291435 freqs: top 1.00269 c/d (P = 23.9356 h) power 0.0290; permutation p = 0.00 (null max 0.0195); next [np.float64(0.9662), np.float64(1.0366), np.float64(1.9689), np.float64(2.0054)]

@@ -1,0 +1,11 @@
+== 4679463733391272448
+   visit MJD 60314 S/N 8.1 in_stack True xcsao 48: Ha B 4.28+-0.05 MG; Hb B 4.21+-0.04 MG
+   visit MJD 60316 S/N 10.4 in_stack True xcsao 17: Ha B 4.29+-0.04 MG; Hb B 4.23+-0.03 MG
+   GF21: {'Pwd': '0.995174', 'TeffH': '9995.56', 'e_TeffH': '477.6', 'loggH': '8.323264', 'e_loggH': '0.122105', 'MassH': '0.803821', 'e_MassH': '0.07964', 'TeffHe': '9673.52', 'MassHe': '0.714977'}
+== 3290180587821828480
+   visit MJD 60236 S/N 6.8 in_stack True xcsao 99: Ha B 5.08+-0.12 MG; Hb B 5.24+-0.08 MG
+   visit MJD 60237 S/N 7.7 in_stack True xcsao -14: Ha B 5.71+-0.09 MG; Hb B 5.04+-0.06 MG
+   GF21: {'Pwd': '0.9926', 'TeffH': '9353.01', 'e_TeffH': '802.48', 'loggH': '8.442591', 'e_loggH': '0.212487', 'MassH': '0.880899', 'e_MassH': '0.136743', 'TeffHe': '9010.35', 'MassHe': '0.800884'}
+companion Gaia AP: source_id,teff_gspphot,logg_gspphot,mh_gspphot,age_flame,age_flame_lower,age_flame_upper,mass_flame,mass_flame_lower,mass_flame_upper,lum_flame,evolstage_flame,spectraltype_esphs
+4679466653969618816,6187.3525,4.2719,-0.2975,2.6511042,1.9909447,3.3091626,1.1508244,1.1108184,1.1908447,1.9097482,230,F
+companion SIMBAD: id,main_id,otype,sp_type | "TIC 38396834","HD  25636","*","F5V" | "Gaia DR3 4679466653969618816","HD  25636","*","F5V" | "2MASS J04002746-6154271","HD  25636","*","F5V" | "CD-62   148","HD  25636","*","F5V" | "CPC 20.1   850","HD  25636","*","F5V" | "CPD-62   311","HD  25636","*","F5V" | "GSC 08868-00656","HD  25636","*","F5V" | "HD  25636","HD  25636","*","F5V" | "PPM 353852","HD  25636","*","F5V" | "TYC 8868-656-1","HD  25636","*","F5V" | "RAVE J040027.5-615427","HD  25636","*","F5V" | "Gaia DR1 4679466649672590336","HD  25636","*","F5V" | "Gaia DR2 4679466653969032704","HD  25636","*","F5V"

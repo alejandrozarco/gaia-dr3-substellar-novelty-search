@@ -6,8 +6,8 @@ export const meta = {
 }
 const A = (typeof args === 'string') ? (() => { const s = args.trim(); try { return (s[0] === '{') ? JSON.parse(s) : { release: s } } catch (e) { return { release: s } } })() : (args || {})
 const REL = String(A.release || 'NEW-RELEASE')
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const S = { type: 'object', properties: { finding: { type: 'string' }, values: { type: 'object' } }, required: ['finding'], additionalProperties: true }
 
 phase('Ingest')

@@ -26,7 +26,7 @@ stale; the AAS-side pages (1,500 incl. everything) are authoritative.
 ## Step-by-step
 
 1. **ORCID (~2 min, free):** register at https://orcid.org/register with
-   alexander.keur@gmail.com. Then replace the placeholder
+   <email>. Then replace the placeholder
    `0000-0000-0000-0000` in `rnaas_note.tex` (line with `\author[...]`).
 2. **Re-run the novelty check** if more than a few days have passed
    (queries listed in `NOVELTY_CHECK.md`); also reconfirm the three TNS names

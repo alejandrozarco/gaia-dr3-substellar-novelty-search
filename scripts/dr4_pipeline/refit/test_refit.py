@@ -11,9 +11,9 @@ Proves the pipeline runs on synthetic DR4-like epoch astrometry:
   6. PREREG constants match the pre-registration document (no drift).
 
 Run:
-  /Users/legbatterij/claude_projects/ostinato/.venv/bin/python -m pytest test_refit.py -q
+  ~/claude_projects/ostinato/.venv/bin/python -m pytest test_refit.py -q
 or simply:
-  /Users/legbatterij/claude_projects/ostinato/.venv/bin/python test_refit.py   (runs all + prints)
+  ~/claude_projects/ostinato/.venv/bin/python test_refit.py   (runs all + prints)
 
 These are tolerance-based scientific tests, not bit-exact; tolerances are loose
 enough to be robust to the synthetic noise seed but tight enough to catch a real

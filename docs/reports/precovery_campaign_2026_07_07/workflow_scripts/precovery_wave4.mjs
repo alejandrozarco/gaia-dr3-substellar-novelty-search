@@ -12,7 +12,7 @@ export const meta = {
 const ENV = [
   'ENVIRONMENT / RULES (binding):',
   '- Network available; REAL archival work. Fresh /tmp venv for pip installs; NEVER pip-install into',
-  '  the ostinato venv (/Users/legbatterij/claude_projects/ostinato/.venv — its python may be used).',
+  '  the ostinato venv (~/claude_projects/ostinato/.venv — its python may be used).',
   '- Work dirs: /tmp/precovery_wave4/<designation>/. Do NOT edit the gaia repo docs/ (read-only',
   '  context: docs/reports/precovery_campaign_2026_07_07/ — wave3/recut/ holds the gate rows +',
   '  wave3_targets.csv; verify/2009_HW77/ is the worked confirmed-chain example; gate_r1_REPORT.md',

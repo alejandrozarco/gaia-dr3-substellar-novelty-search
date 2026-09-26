@@ -16,6 +16,7 @@ Differences from the pool driver (per the task spec):
   - Result printed as JSON to stdout for the workflow to parse.
 """
 from __future__ import annotations
+import os
 
 import json
 import math
@@ -25,11 +26,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, str(Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts')))
+sys.path.insert(0, str(Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27/scripts'))))
 import ns_pool_triage_2026_05_28 as P  # noqa: E402
 
 SID = 3378588057203660160
-PROJECT_ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+PROJECT_ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 PARQUET = PROJECT_ROOT / 'data/derived/main_hunt_derived_v2_M1corrected.parquet'
 RV_ERR_FLOOR_KMS = 1.0
 

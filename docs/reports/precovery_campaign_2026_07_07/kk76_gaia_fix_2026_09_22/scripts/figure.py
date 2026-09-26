@@ -1,3 +1,4 @@
+import os
 import sys, csv; sys.path.insert(0, "/tmp/kk76_fix")
 from fitlib import *
 from common import load, background, tangent, untangent
@@ -7,7 +8,7 @@ R06 = ["j9fw91hpq", "j9fw91hqq", "j9fw91hrq", "j9fw91hsq"]; R10 = ["ib2k52cvq", 
 PRED10 = dict(zip(["ib2k52cvq", "ib2k52cwq", "ib2k52cxq", "ib2k52cyq", "ib2k52czq", "ib2k52d0q", "ib2k52d2q", "ib2k52d3q"], FB["pB10"]))
 # the July (withdrawn) package positions, from its ADES draft
 JULY = {}
-for l in open("/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/ades_draft_88268_2001kk76.psv"):
+for l in open(os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/kk76_refit/ades_draft_88268_2001kk76.psv")):
     if l.startswith("88268"):
         f = [x.strip() for x in l.split("|")]; root = [w for w in f[-1].split() if w.startswith("J9FW")][0].strip(";,").lower()
         JULY[root] = (float(f[9]), float(f[10]))

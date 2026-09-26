@@ -31,26 +31,24 @@ for ranks 1–3, commit only where gates pass; ranks 4–8 are fallback ballast.
 2. **One-dip wonders (DASCH period recovery for single-eclipse mysteries).** Union the 2025 dip inventories
    (ASAS-SN 13 = arXiv:2507.19594; ZTF 81 bright subset = arXiv:2508.03964) + VSX slow-fades + Gaia-alert
    fades; for quiescent B≲14 targets search DASCH DR7 century plates for prior eclipses → period → falsifiable
-   next-eclipse prediction (ASASSN-24fw template, headline-grade archive-only paper). 1–2 wk. SCOOP RISK:
+   next-eclipse prediction (ASASSN-24fw template, archive-only). 1–2 wk. SCOOP RISK:
    Tzanidakis/Davenport are DASCH-native — move-this-month lane. GATE (1 day): funnel census; GO if ≥~25
    plate-analyzable targets, NO-GO below ~10. Two-event chance-alignment FAP must be a first-class deliverable.
 
 3. **DESI DR1 repeat-RV dark-companion hunt (G=16–20).** The only lane at the core quarry, in the regime
    Gaia RVS (and DR4, limit ~16.2) never reaches. MWS epoch-RV tables × ZTF periods → f(M). Honest yield:
-   ~10–30 clean high-ΔRV survivors, 0–2 reaching f(M)>1; mode for genuine NS/BH = zero; ceiling = the one
-   outcome that changes the project. 3–4 wk. Jan-2026 RNAAS flag-plant exists (assume competitors mid-build).
+   ~10–30 clean high-ΔRV survivors, 0–2 reaching f(M)>1; mode for genuine NS/BH = zero. 3–4 wk. A Jan-2026 single-object RNAAS note exists.
    GATE (1 day): pull MWS epoch-RV for a few healpix; kill if >~90% of epoch pairs are same-night splits
    or <~100–200k sources have multi-day baselines within ZTF r<18.5 footprint.
 
-4. **DASCH Mira period-drift census** (southern/neglected Miras; He-shell flashes; null publishable —
-   JAAVSO certain, A&A plausible). 2–4 wk. GATE: 20–30 known-period pilot; need ≥5–8 maxima per 15–20 yr
+4. **DASCH Mira period-drift census** (southern/neglected Miras; He-shell flashes). 2–4 wk. GATE: 20–30 known-period pilot; need ≥5–8 maxima per 15–20 yr
    window and <~1% period recovery vs ASAS-SN.
 5. **TESS EB dP/dt census** (our cache + refit pipeline; 50–200 robust dP/dt; catalogue paper, not discovery;
    red-nova-precursor EV ≈ 0). 3–5 wk. GATE: top-20 drift systems — do ASAS-SN/ZTF minima give ~1–2 min timing?
 6. **Tidally-tilted-pulsator sweep** (zero-download, hours of compute, 0–3 new TTPs; field owners announced
    same survey 2022). GATE: ADS check for a 2025–26 systematic survey + blind-recover a known TTP + census ≥80 targets.
 7. **Plate-era eruption archaeology** (DASCH DR7 × our 6,104-object accretor store + register; 0–2 new
-   historical symbiotic novae, each publishable; ~15–20 known ever). GATE (half-day): DR7 pipeline LCs must
+   historical symbiotic novae; ~15–20 known ever). GATE (half-day): DR7 pipeline LCs must
    cleanly show ~20 known plate-era eruptions (PU Vul, RT Ser, RR Tel, HM Sge, T CrB 1946, V2487 Oph).
 8. **Prša+2022 ephemeris erratum/failure-tail note** (RNAAS/Zenodo data note; Kostov 2025 refreshed 2,065
    already; partially duplicates task #128 machinery). GATE: refit cache, count true failure tail, check

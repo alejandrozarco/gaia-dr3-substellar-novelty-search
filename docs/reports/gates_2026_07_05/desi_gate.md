@@ -88,7 +88,7 @@ Caveats on the estimate (stated for honesty, not hidden):
   - Abstract explicitly states the author ran "a systematic search for dark
     companions among multi-epoch targets" in DESI DR1 MWS but **published only
     the single most compelling hit**, not the full candidate list or methodology
-    paper. This is a flag-plant, consistent with the referee's read: a full
+    paper. This is consistent with the referee's read: a full
     systematic search + f(M) analysis + a proper candidate catalogue is NOT yet
     published. The niche (systematic f(M)-based compact-companion catalogue) is
     open, but a competitor is demonstrably already mid-build (submitted Jan 2026,
@@ -99,8 +99,8 @@ Caveats on the estimate (stated for honesty, not hidden):
     note's existence as elevated urgency/move-soon risk, not a blocker.
 
 ## 6. Verdict: GO
-None of the two stated kill conditions fire, and the scoop is a single-object
-flag-plant (narrows novelty room by one object, does not claim the lane).
+None of the two stated kill conditions fire, and the prior art is a single-object
+note (one object, not the lane).
 
 Decisive numbers:
 - Same-night epoch-pair fraction: **18.9%** (kill floor: >90%) — passes by a wide margin.
@@ -114,7 +114,7 @@ Decisive numbers:
 
 Recommend proceeding to the full 3-4 week build (per the referee's honest-yield
 framing: ~10-30 clean high-DeltaRV survivors expected, 0-2 reaching f(M)>1, mode
-for genuine NS/BH = zero, ceiling = the one outcome that changes the project).
+for genuine NS/BH = zero).
 
 ## Known tool issue (flagged, not fixed)
 `scripts/litcheck/prior_art.py`'s `build_query()` quotes every whitespace-split

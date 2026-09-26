@@ -1,3 +1,4 @@
+import os
 import subprocess,urllib.parse,re,sys
 EL=dict(EPOCH="2453857.5",ECLIP="J2000",EC="0.0187655",QR="41.9051643",TP="2467230.042755",
         OM="86.99310",W="216.16093",IN="1.88308",H="6.3",G="0.15")
@@ -15,7 +16,7 @@ def hz(times,center="500@-48"):
     return rows
 if __name__=="__main__":
     import csv,math
-    obs=list(csv.DictReader(open("/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/wave3/hst_kk76/candidate_astrometry.csv")))
+    obs=list(csv.DictReader(open(os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/docs/reports/precovery_campaign_2026_07_07/wave3/hst_kk76/candidate_astrometry.csv"))))
     from astropy.time import Time
     jds=[Time(o["obsTime_UTC"],scale="utc").jd for o in obs]
     pred=hz([f"{j:.6f}" for j in jds])

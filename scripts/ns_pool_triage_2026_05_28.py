@@ -54,7 +54,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-PROJECT_ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+PROJECT_ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 PARQUET = PROJECT_ROOT / 'data/derived/main_hunt_derived_v2_M1corrected.parquet'
 RELAXED = PROJECT_ROOT / 'data/derived/main_hunt_derived_v2_relaxed_M1corrected.parquet'
 ALT = PROJECT_ROOT / 'data/derived/main_hunt_derived_v2_alt_M1corrected.parquet'

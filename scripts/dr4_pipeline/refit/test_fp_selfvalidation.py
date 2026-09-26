@@ -17,7 +17,7 @@ in the registry but owned by other subsystems; `test_nonastrometric_recorded`
 asserts they are documented, not that this engine catches them.
 
 Run:
-  PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+  PY=~/claude_projects/ostinato/.venv/bin/python
   $PY -m pytest test_fp_selfvalidation.py -q
   $PY test_fp_selfvalidation.py           # runs run_self_validation() + prints
 """

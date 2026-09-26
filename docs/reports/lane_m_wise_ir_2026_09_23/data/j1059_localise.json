@@ -1,0 +1,54 @@
+{
+ "object": "Gaia DR3 5456743064671253632",
+ "period_d": 0.12097159,
+ "n_detections": 226,
+ "epoch": 2019.5,
+ "n_frames": 235,
+ "n_bright": 91,
+ "n_faint": 44,
+ "diff_centroid_arcsec": [
+  0.047971944308566355,
+  -0.04288198230790845
+ ],
+ "diff_sigma_arcsec": 3.0048990056344747,
+ "diff_amp": 93.20791152215959,
+ "diff_centroid_registered": [
+  -0.15491613712375152,
+  0.1105491043884216
+ ],
+ "boot_sd": [
+  0.1110655867330425,
+  0.13243317042040234
+ ],
+ "mean_image_centroid": [
+  0.14830543748246947,
+  -0.23236891049669953
+ ],
+ "registration_offset_median": [
+  0.20288808143231787,
+  -0.15343108669633004
+ ],
+ "n_reg_stars": 1,
+ "reg_star_offsets": [
+  [
+   15.379016,
+   0.20288808143231787,
+   -0.15343108669633004
+  ]
+ ],
+ "scan_split": {
+  "crota cos>0": [
+   0.2575682515741461,
+   0.332845119501968,
+   47,
+   22
+  ],
+  "crota cos<0": [
+   -0.18948589539205074,
+   -0.45737787886141973,
+   44,
+   22
+  ]
+ },
+ "note": "x positive = west, y positive = north; offsets relative to Gaia DR3 propagated to 2019.5"
+}

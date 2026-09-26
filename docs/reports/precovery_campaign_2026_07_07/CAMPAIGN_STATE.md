@@ -11,9 +11,9 @@ resuming campaign work in any session.** All results below are LOCAL (unpushed) 
 
 | object | state | astrometry | user action |
 |---|---|---|---|
-| ★ (330836) Orius = 2009 HW77 | **2026-09-22: FILING ON HOLD — not detected in 2019 DECam frames (i > 24.70 at 5 sigma) while the catalogued H predicts V = 22.45; controls detected in the same frames; 2021-2023 epochs pending (`~/claude_projects/sso-recovery-2026-09-22/`).** ~~pixel-CONFIRMED, submission-ready~~ (6 DECam det., 4 epochs 2013–15, +2.9 yr arc) | `verify/2009_HW77/updated_astrometry.csv` (authoritative); **ADES draft: `verify/2009_HW77/ades_draft_330836_orius.psv`** | **task #141: contact SARC → review → file to obs@cfa → WAMO.** Deep-dive: our points cut its recovery box ~10× in area + recenter a ~1.9σ-biased track — re-enables Lucky Star/RECON occultation prediction. Journal: `docs/object_journals/mp_330836_orius.md` |
-| ★ (88268) = 2001 KK76 | **2026-09-22: revised 12-point package (2006 ACS/HRC ×4, 2010 WFC3 ×8), positions tied to Gaia DR3 per frame; not filed. July package (2026-07-08) superseded.** | `kk76_gaia_fix_2026_09_22/kk76_positions_gaia_anchored.csv`; **ADES draft: `kk76_gaia_fix_2026_09_22/ades_draft_v2_88268_2001kk76.psv`** | **task #141: SARC → obs@cfa → WAMO path (user)** |
-| 2001 KN76 | PARKED — real mover (pixels passed) but joint refit inconclusive | `verify/2001_KN76/updated_astrometry.csv` | do NOT submit; needs 3rd epoch + DE-ephemeris refit |
+| ★ (330836) Orius = 2009 HW77 | **2026-09-22 (later): the 2019 "not detected, i > 24.70" is WITHDRAWN (analytic-noise artefact). Candidate signals at the predicted position in 2019 (i ~ 22.7, g ~ 23.35) and 3 of 4 2013-15 nights re-measured within 0.37" of JPL -- all UNCONFIRMED, internal tests only. Canonical records now in `~/claude_projects/sso-recovery-2026-09-22/`. Before filing: Gaia-tie check of the 2013-15 positions; independent review.** ~~2026-09-22: filing on hold, not detected in 2019~~ ~~pixel-CONFIRMED, submission-ready~~ (6 DECam det., 4 epochs 2013–15, +2.9 yr arc) | `verify/2009_HW77/updated_astrometry.csv` (authoritative); **ADES draft: `verify/2009_HW77/ades_draft_330836_orius.psv`** | **task #141: contact SARC → review → file to obs@cfa → WAMO.** Deep-dive: our points cut its recovery box ~10× in area + recenter a ~1.9σ-biased track — re-enables Lucky Star/RECON occultation prediction. Journal: `docs/object_journals/mp_330836_orius.md` |
+| ★ (88268) = 2001 KK76 | **2026-09-22: revised 12-point package (2006 ACS/HRC ×4, 2010 WFC3 ×8), positions tied to Gaia DR3 per frame; not filed. July package (2026-07-08) superseded.** | `kk76_gaia_fix_2026_09_22/kk76_positions_gaia_anchored.csv`; **ADES draft: `kk76_gaia_fix_2026_09_22/ades_draft_v2_88268_2001kk76.psv`** | **task #141: SARC → obs@cfa → WAMO path (user)**; owned by sso-recovery from 2026-09-22 (pre-filing check there) |
+| 2001 KN76 | PARKED — real mover (pixels passed) but joint refit inconclusive. **2026-09-22: owned by sso-recovery; candidate signal 2013-03-10 (DECam r, 9.0 sigma, 0.53" from JPL, control detected), one night, unconfirmed** | `verify/2001_KN76/updated_astrometry.csv` | do NOT submit; needs 3rd epoch + DE-ephemeris refit |
 | 2001 QT322 | valid catalog-level null (after epoch-shuffle bug fix) | — | none (optional pixel-level pass unspent) |
 | 2001 KJ76 | strongest null (pixel-level CFHT ±40″ tracking scan) | — | none |
 | 2001 KP76 | two-channel catalog null | — | none |
@@ -27,7 +27,7 @@ resuming campaign work in any session.** All results below are LOCAL (unpushed) 
 
 Resume pattern: `Workflow({scriptPath: <scratchpad or repo copy>, resumeFromRunId: "<runId>"})` —
 completed agents replay from cache. Scratchpad originals:
-`/private/tmp/claude-501/-Users-legbatterij-claude-projects/5bae4473-7497-4a6b-8bf6-3ecc9abd4295/scratchpad/`.
+`/private/tmp/claude-501/-Users-USER-claude-projects/5bae4473-7497-4a6b-8bf6-3ecc9abd4295/scratchpad/`.
 Outputs land in `/tmp/kk76_refit/` and `/tmp/precovery_wave4/` → preserve into this dir on completion
 (pattern: copy `*.md,*.csv,*.json,*.tsv,*.txt` <3M, exclude venv/FITS).
 

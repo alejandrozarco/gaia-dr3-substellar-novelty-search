@@ -30,13 +30,14 @@ EARLY-A / LATE-B star (Teff ~ 8500-13000 K, L ~ 20-150 Lsun) and would be
 
 Classify companion_class = luminous_stellar / dark_candidate / ambiguous.
 
-Env: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python (no pip-install)
+Env: ~/claude_projects/ostinato/.venv/bin/python (no pip-install)
 Outputs: /tmp/hd48797_pma.json , /tmp/hd48797_pma_report.md
 Reuses canonical SED BB machinery from scripts/wdj205650_sed_2026_05_30.py and the
 Gaia/SIMBAD/Vizier fetch idiom from prime3_deepdive / sb1_*_deepdive /
 hd182379_pma_darkluminous + hd221469_pma_darkluminous (the direct templates).
 """
 from __future__ import annotations
+import os
 import warnings, math, json, sys
 warnings.filterwarnings('ignore')
 import numpy as np

@@ -14,9 +14,10 @@ authors) + ZTF from IRSA. Phase-folds at P and P/2; reports the amplitude limit
 (folded peak-to-peak + bin-scatter sigma) and an injection-recovery
 detectability estimate. Output -> /tmp (per workflow).
 
-Run: /Users/legbatterij/claude_projects/ostinato/.venv/bin/python \
+Run: ~/claude_projects/ostinato/.venv/bin/python \
      scripts/ucac4_313025977_ellip_limit_2026_05_30.py
 """
+import os
 import warnings, json, io, csv as _csv
 import numpy as np
 warnings.filterwarnings('ignore')

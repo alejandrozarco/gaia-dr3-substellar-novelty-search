@@ -40,11 +40,11 @@ const USER_PROFILE = [
 phase('Ledger')
 const ledger = await agent(
   'Produce a compact briefing for an ideation panel. Read these files (Read tool):\n'
-  + '  1. /Users/legbatterij/.claude/projects/-Users-legbatterij-claude-projects/memory/future_data_mining_ideas.md\n'
+  + '  1. ~/.claude/projects/-Users-USER-claude-projects/memory/future_data_mining_ideas.md\n'
   + '     (the discovery-avenue memory: outcomes of every explored lane + the 2026-07-05 exhaustion scan)\n'
-  + '  2. /Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/reports/discovery_menu_2026_07_03.md\n'
+  + '  2. ~/claude_projects/gaia-recovered-2026-05-27/docs/reports/discovery_menu_2026_07_03.md\n'
   + '     (the refereed 8-item GO-IF discovery menu + NO-GO kill list)\n'
-  + '  3. /Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/docs/RESEARCH_LOG.md — read the entries from\n'
+  + '  3. ~/claude_projects/gaia-recovered-2026-05-27/docs/RESEARCH_LOG.md — read the entries from\n'
   + '     2026-06-01 onward (skim earlier); extract lane outcomes + reusable-tooling notes.\n\n'
   + 'Return FOUR sections, tight and complete:\n'
   + 'A. CLOSED LANES — every lane/idea already tried or killed, one line each: "<lane> — <why dead>".\n'

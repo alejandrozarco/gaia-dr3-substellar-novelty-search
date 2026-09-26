@@ -9,7 +9,7 @@ the science here, this test breaks.
 
 Run::
 
-    /Users/legbatterij/claude_projects/ostinato/.venv/bin/python -m pytest \
+    ~/claude_projects/ostinato/.venv/bin/python -m pytest \
         scripts/dr4_pipeline/rehunt/test_rehunt.py -q
 
 or as a plain script (``python test_rehunt.py``) for a one-shot dry-run summary.
@@ -30,6 +30,7 @@ the RESEARCH_LOG block returned by the build task):
     v2 parquet itself.
 """
 from __future__ import annotations
+import os
 
 import sys
 from pathlib import Path
@@ -39,7 +40,7 @@ import pandas as pd
 import pytest
 
 HERE = Path(__file__).resolve().parent
-ROOT = Path("/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27")
+ROOT = Path(os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27"))
 COMMITTED_V2 = ROOT / "data" / "derived" / "main_hunt_derived_v2.parquet"
 
 for p in (str(HERE), str(HERE.parents[1] / "streaming" / "v2_corrected")):

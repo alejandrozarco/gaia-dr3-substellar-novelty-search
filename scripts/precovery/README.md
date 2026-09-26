@@ -50,7 +50,7 @@ repeat-source ids with `bycatch.mean_object_catalog(detections, group_key="objec
   incl. the spurious short-baseline pair): with the mean-object catalog, **zero** tracklets
   survive; the net stays silent on a valid null.
 
-Run: `PYTHONPATH=scripts/precovery /Users/legbatterij/claude_projects/ostinato/.venv/bin/python -m pytest scripts/precovery/test_bycatch.py -v`
+Run: `PYTHONPATH=scripts/precovery ~/claude_projects/ostinato/.venv/bin/python -m pytest scripts/precovery/test_bycatch.py -v`
 (the two MPC asserts skip-if-offline; set `BYCATCH_OFFLINE=1` to force offline.)
 
 ## Input format

@@ -11,7 +11,7 @@ if ":" in raw:
 elif " " in raw:
     user, pw = raw.split(None, 1)
 else:
-    user, pw = "alexander.keur@gmail.com", raw
+    user, pw = os.environ["CONTACT_EMAIL"], raw
 
 # JD range: full ZTF history (survey start 2018-03 ~ JD 2458194) to now
 params = {

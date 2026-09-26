@@ -1,5 +1,6 @@
+import os
 import json, sys
-sys.path.insert(0, "/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts/precovery")
+sys.path.insert(0, os.path.expanduser("~/claude_projects/gaia-recovered-2026-05-27/scripts/precovery"))
 import bycatch
 dets=json.load(open("bycatch_dets.json"))
 static=json.load(open("bycatch_static.json"))

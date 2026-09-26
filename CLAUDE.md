@@ -72,7 +72,7 @@ method-level twin of the "known ⇒ not novel" object gate.
 
 ## Environment & conventions
 
-- **Python:** ostinato venv `/Users/legbatterij/claude_projects/ostinato/.venv/bin/python`.
+- **Python:** ostinato venv `~/claude_projects/ostinato/.venv/bin/python`.
   **Do NOT pip-install into ostinato** (a separate `/tmp` venv is fine, e.g. for GaiaXPy).
 - **Write outputs to `/tmp`** (and `/tmp/hunt_runs`), not the repo, unless integrating a deliverable.
 - **Gaia source_ids are 19-digit — always strings** (a float truncates them).

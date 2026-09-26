@@ -1,0 +1,106 @@
+{
+ "AREV_747_000417_zg_c05_q1": {
+  "dr3": "3828306424841718656",
+  "simbad": [],
+  "alerce": [
+   {
+    "oid": "ZTF20acifrhn",
+    "ndet": 4,
+    "labels": [
+     "stamp_classifier:AGN(0.41)",
+     "stamp_classifier:AGN(0.52)",
+     "stamp_classifier_2025_beta:VS(0.96)"
+    ]
+   }
+  ],
+  "ads": {
+   "2MASS J10102109-0331507": 0,
+   "Gaia DR2 3828306424841718656": 0,
+   "Gaia DR3 3828306424841718656": 0,
+   "WISEA J101021.09-033150.8": 0,
+   "ZTF20acifrhn": 0
+  }
+ },
+ "AREV_1918_000493_zg_c16_q4": {
+  "dr3": "1738942132557316864",
+  "simbad": [],
+  "alerce": [
+   {
+    "oid": "ZTF19abbxuzo",
+    "ndet": 12,
+    "labels": [
+     "stamp_classifier:AGN(0.46)",
+     "stamp_classifier:AGN(0.72)",
+     "stamp_classifier_2025_beta:AGN(0.74)",
+     "lc_classifier_BHRF_forced_phot_top:Periodic(0.56)",
+     "lc_classifier_top:Periodic(0.62)",
+     "lc_classifier_transient:SNII(0.32)",
+     "lc_classifier_BHRF_forced_phot_periodic:Periodic-Other(0.35)",
+     "lc_classifier_BHRF_forced_phot_stochastic:YSO(0.42)",
+     "lc_classifier_stochastic:YSO(0.63)",
+     "lc_classifier_BHRF_forced_phot_transient:TDE(0.27)",
+     "lc_classifier_periodic:Periodic-Other(0.51)",
+     "lc_classifier:Periodic-Other(0.32)",
+     "lc_classifier:Periodic-Other(0.24)",
+     "LC_classifier_ATAT_forced_phot(beta):EA(0.33)",
+     "lc_classifier_BHRF_forced_phot:Periodic-Other(0.19)"
+    ]
+   }
+  ],
+  "ads": {
+   "2MASS J21220414+0657209": 0,
+   "Gaia DR2 1738942132557316864": 0,
+   "Gaia DR3 1738942132557316864": 0,
+   "WISEA J212204.14+065720.8": 0,
+   "ZTF19abbxuzo": 0
+  }
+ },
+ "AREV_990_000495_zg_c14_q3": {
+  "dr3": "2709405317531811840",
+  "simbad": [],
+  "alerce": [
+   {
+    "oid": "ZTF19abzvwvd",
+    "ndet": 10,
+    "labels": [
+     "stamp_classifier:AGN(0.67)",
+     "stamp_classifier:AGN(0.70)",
+     "lc_classifier_BHRF_forced_phot_top:Periodic(0.52)",
+     "stamp_classifier_2025_beta:VS(0.65)",
+     "lc_classifier_BHRF_forced_phot_periodic:Periodic-Other(0.27)",
+     "lc_classifier_BHRF_forced_phot_stochastic:CV/Nova(0.28)",
+     "lc_classifier_BHRF_forced_phot_transient:TDE(0.29)",
+     "lc_classifier:Periodic-Other(0.24)",
+     "LC_classifier_ATAT_forced_phot(beta):EA(0.52)",
+     "lc_classifier_BHRF_forced_phot:Periodic-Other(0.14)"
+    ]
+   }
+  ],
+  "ads": {
+   "2MASS J22310091+0645497": 0,
+   "Gaia DR2 2709405317531811840": 0,
+   "Gaia DR3 2709405317531811840": 0,
+   "WISEA J223100.93+064549.4": 0,
+   "ZTF19abzvwvd": 0
+  }
+ },
+ "AREV_2445_000482_zg_c04_q4": {
+  "dr3": "4408578251951356160",
+  "simbad": [],
+  "alerce": [],
+  "ads": {
+   "Gaia DR2 4408578251951356160": 0,
+   "Gaia DR3 4408578251951356160": 0
+  }
+ },
+ "AREV_3471_000536_zg_c13_q2": {
+  "dr3": "4500887823677796736",
+  "simbad": [],
+  "alerce": [],
+  "ads": {
+   "Gaia DR2 4500887853742306176": 0,
+   "Gaia DR3 4500887823677796736": 0,
+   "WISEA J174705.63+151707.0": 0
+  }
+ }
+}

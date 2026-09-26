@@ -1,0 +1,85 @@
+== ESO archive (dbo.raw, 60 arcsec)
+400 <?xml version="1.0"?>
+<VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" >
+<RESOURCE type='results'>
+<INFO name="QUERY_STATUS" value="ERROR">A .NET Framework error occurred during execution of user-defined routine or aggregate &quot;geography&quot;: 
+System.FormatException: 24201: Latitude values must be between -90 and 90 degrees.
+System.FormatException: 
+   at Microsoft.SqlServer.Types.GeographyValidator.ValidatePoint(Double x, Double y, Nullable`1 z, Nullable`1 m)
+   at Microsoft.SqlServer.Types.Validator.BeginFigure(Double x, Double y, Nullable`1 z, Nullable`1 m)
+   at Microsoft.SqlServer.Types.ForwardingGeoDataSink.BeginFigure(Double x, Double y, Nullable`1 z, Nullable`1 m)
+   at Microsoft.SqlServer.Types.CoordinateReversingGeoDataSink.BeginFigure(Double x, Double y, Nullable`1 z, Nullable`1 m)
+   at Microsoft.SqlServer.Types.WellKnownTextReader.ParsePointText(Boolean parseParentheses)
+   at Microsoft.SqlServer.Types.WellKnownTextReader.ParseTaggedText(OpenGisType type)
+   at Microsoft.SqlServer.Types.WellKnownTextReader.Read(OpenGisType type, Int32 srid)
+   at Microsoft.SqlServer.Types.SqlGeography.ParseText(OpenGisType type, SqlChars taggedText, Int32 srid)
+   at Microsoft.SqlServer.Types.SqlGeography.GeographyFromText(OpenGisType type, SqlChars taggedText, Int32 srid)
+.</INFO></RESOURCE>
+</VOTABLE>
+
+== ESO archive phase 3 (ivoa.ObsCore, 60 arcsec)
+200 obs_collection,instrument_name,dataproduct_type,target_name,t_min,proposal_id
+
+== Gemini archive (jsonsummary, 30 arcsec)
+403 
+Login Required. Please visit https://archive.gemini.edu/login
+
+Unfortunately, and like many on line data repositories, the Gemini Observatory
+Archive has been subject to a massive increase in excessive and/or malicious
+requests, often associated with AI training robots and associated malware. 
+Your
+== NOIRLab Astro Data Archive (SIA, 60 arcsec; SOAR/Blanco/CTIO)
+200
+   n records: 49
+   by instrument/proc: [(('hlsp_decam', None, None), 36), (('hlsp_wise', None, None), 12), (('hlsp_ls', None, None), 1)]
+   date range:  
+== MAST (all missions, 30 arcsec)
+   n: 85 [(('HLSP', 'image'), 27), (('TESS', 'image'), 20), (('HLSP', 'timeseries'), 16), (('TESS', 'timeseries'), 15), (('HST', 'spectrum'), 5), (('GALEX', 'image'), 2)]
+    HST COS spectrum WDJ073504.07-794410.69 17420 60504.00020833333
+    HST COS spectrum GALEX J073504.2-794409 17420 60504.00021006
+    HST COS/FUV spectrum WDJ073504.07-794410.69 17420 60504.00021006945
+    HST COS/FUV spectrum WDJ073504.07-794410.69 17420 60503.99671079861
+    HST COS/FUV spectrum WDJ073504.07-794410.69 17420 60503.99878116898
+    HLSP Photometer image postcard-s0007-4-4-cal-1784-0322 -- 58491.12478339
+    HLSP Photometer image postcard-s0007-4-4-cal-1784-0376 -- 58491.12478339
+    HLSP Photometer image postcard-s0007-4-4-cal-1882-0322 -- 58491.12478339
+    HLSP Photometer image postcard-s0007-4-4-cal-1882-0376 -- 58491.12478339
+    HLSP Photometer image postcard-s0011-3-4-cal-1098-0160 -- 58596.27287064
+    HLSP Photometer image postcard-s0011-3-4-cal-1098-0214 -- 58596.27287064
+    HLSP Photometer image postcard-s0011-3-4-cal-1196-0160 -- 58596.27287064
+    HLSP Photometer image postcard-s0011-3-4-cal-1196-0214 -- 58596.27287064
+    HLSP Photometer image postcard-s0013-3-3-cal-0902-0160 -- 58653.41898715
+    HLSP Photometer image postcard-s0013-3-3-cal-0902-0214 -- 58653.41898715
+    HLSP Photometer image postcard-s0013-3-3-cal-1000-0160 -- 58653.41898715
+    HLSP Photometer image postcard-s0013-3-3-cal-1000-0214 -- 58653.41898715
+    HLSP Photometer timeseries 764468822 N/A 59035.77853343
+    HLSP Photometer timeseries 764468822 N/A 59228.248307395836
+    HLSP Photometer timeseries 764468822 N/A 59306.757022858794
+    HLSP Photometer timeseries 764468822 N/A 59333.35472083333
+    HLSP Photometer timeseries 764468822 N/A 59361.271629166666
+    HLSP Photometer timeseries 764468822 N/A 59962.29665473379
+    HLSP Photometer timeseries 764468822 N/A 60040.615560266204
+    HLSP Photometer timeseries 764468822 N/A 60068.24102706018
+    HLSP Photometer timeseries 764468822 N/A 60097.17409247685
+    HLSP Photometer timeseries 764468822 N/A 60126.14384982639
+    HLSP Photometer image TICA FFI N/A 59035.7780879396
+    HLSP Photometer image TICA FFI N/A 59228.25022495072
+    HLSP Photometer image TICA FFI N/A 59306.736301478
+    HLSP Photometer image TICA FFI N/A 59333.35433928063
+    HLSP Photometer image TICA FFI N/A 59361.27099339198
+    HLSP Photometer image TICA FFI N/A 59962.29387475597
+    HLSP Photometer image TICA FFI N/A 60040.60864764359
+    HLSP Photometer image TICA FFI N/A 60068.23363507073
+    HLSP Photometer image TICA FFI N/A 60097.1688070111
+    HLSP Photometer image TICA FFI N/A 60126.13638625294
+    HLSP Photometer image TICA FFI N/A 60662.53522484237
+    HLSP Photometer image TICA FFI N/A 60689.6463232087
+    HLSP Photometer image TICA FFI N/A 60829.35227116663
+    HLSP Photometer image TICA FFI N/A 60855.75735135702
+    HLSP Photometer image TICA FFI N/A 60933.15315415012
+    HLSP Photometer timeseries 278326598 N/A 58491.13518945935
+    HLSP Photometer timeseries 278326598 N/A 58596.28327088188
+    HLSP Photometer timeseries 278326598 N/A 58491.1559940543
+    HLSP Photometer timeseries 278326598 N/A 58491.12397217593
+    HLSP Photometer timeseries 278326598 N/A 58596.27205359954
+    HLSP Photometer timeseries 278326598 N/A 58653.41816987268

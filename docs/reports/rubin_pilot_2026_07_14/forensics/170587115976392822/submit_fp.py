@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 """Submit ATLAS forced photometry + ZTF ZFPS requests for the Rubin target.
 Credentials are read from files and NEVER printed."""
+import os
 import json, sys, time
 import requests
 
 RA, DEC = 326.82833, -13.4747
 OUT = '/tmp/rubin_pilot/forensics/170587115976392822'
 
-atlas_token = open('/Users/legbatterij/.config/atlas/token').read().strip()
-zfps_userpass = open('/Users/legbatterij/.config/ztf_zfps/userpass').read().strip()
-EMAIL = 'alexander.keur@gmail.com'
+atlas_token = open(os.path.expanduser('~/.config/atlas/token')).read().strip()
+zfps_userpass = open(os.path.expanduser('~/.config/ztf_zfps/userpass')).read().strip()
+EMAIL = os.environ["CONTACT_EMAIL"]
 
 # ---- ATLAS ----
 r = requests.post('https://fallingstar-data.com/forcedphot/queue/',

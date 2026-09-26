@@ -1,0 +1,17 @@
+dbo.raw box +-1': 200
+dp_id,instrument,dp_cat,dp_tech,object,prog_id,exposure,date_obs,ra,dec
+GRIPS.2026-02-17T06:10:42.618,GRIPS19,SCIENCE,SPECTRUM,SKY MAP,60.A-9920(D),15.0,2026-02-17T06:10:42.618,113.77178222,-79.72435388
+
+control (J2316-5529): 200 instrument,object,prog_id,date_obs
+UVES,GAIA_DR3_6499095244738784128,116.2964.001,2025-10-27T00:57:09.386
+UVES,GAIA_DR3_6499095244738784128,116.2964.001,2025-10-27T00:57:13.417
+XSHOOTER,J2316-5529,106.213V.001,2020-11-22T01:49:15.7703
+XSHOOTER,J2316-5529,106.213V.001,2020-11-22T01:49:07.273
+XSHOOTER,J2316-5529,106.213V.001,2020-11-22T01:49:12.423
+XSHOOTER,J2316-5529,106.213V.001,2020-11-22T01:52:43.2964
+XSHOOTER,J2316-5529,106.213V.001,2020-11-22T01:56:10.1565
+
+VizieR B/eso/eso_arc within 60": TelID    ProgID      tExp      RAJ2000          DEJ2000      Ask  Target
+                      s          deg              deg                   
+----- ------------ ------- ---------------- ---------------- --- -------
+   -- 60.A-9920(D)    15.0 113.771781921387 -79.724357604980 Ask Sky map

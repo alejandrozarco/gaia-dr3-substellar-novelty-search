@@ -1,0 +1,1 @@
+target G 16.56: proxy 0.0157; 308 DA controls G 15.9-17.3: median 0.0155, 16-84% 0.0138-0.0178, 95% 0.0192; fraction >= target 0.468

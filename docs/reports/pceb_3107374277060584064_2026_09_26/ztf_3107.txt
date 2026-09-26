@@ -1,0 +1,11 @@
+/private/tmp/sparclenv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+zg 1455107400028134: n 50, median mag 17.127, rms 3.40%, median error 1.92%, points < -3 sigma 4
+   seasonal median (%, error, n): {2019: (-2.1, 0.97, 6), 2020: (0.41, 0.99, 6), 2021: (-0.48, 0.45, 29), 2023: (3.64, 1.23, 4), 2024: (-0.53, 1.07, 5)}
+zr 1455207400044190: n 58, median mag 17.567, rms 7.84%, median error 2.00%, points < -3 sigma 13
+   seasonal median (%, error, n): {2019: (7.17, 0.78, 11), 2020: (-2.2, 0.55, 20), 2021: (1.86, 0.73, 12), 2023: (-8.89, 2.41, 1), 2024: (-1.96, 0.66, 14)}
+all data: peak 1.68666 c/d (P 14.2293 h), amplitude ~10.10%, Baluev FAP 8.2e-19
+all data: peak 2.68938 c/d (P 8.9240 h), amplitude ~9.79%, Baluev FAP 2.8e-16
+all data: peak 0.68393 c/d (P 35.0913 h), amplitude ~9.51%, Baluev FAP 2.7e-14
+all data: peak 3.68939 c/d (P 6.5051 h), amplitude ~8.76%, Baluev FAP 7.3e-10
+all data: peak 0.31609 c/d (P 75.9272 h), amplitude ~8.48%, Baluev FAP 1.6e-08

@@ -40,7 +40,7 @@ Status: COMPLETE.
 | + dRV_max >= 5-sigma above combined per-epoch error | 27,043 |
 | + RR_SPECTYPE == STAR (drop QSO/GALAXY/blank Redrock coadd class) | 26,429 |
 | Known (multi-catalogue front-filter: known_objects store) | 2 (both the same object, see below) |
-| Smith(2026) flag-plant object present in tail? | Yes, 1 (front-filtered out) |
+| Smith (2026) object present in tail? | Yes, 1 (front-filtered out) |
 | **NOVEL survivors (final candidates.csv)** | **26,427** |
 
 The **~26,400-strong "novel" tail is NOT 26,400 dark-companion candidates** --
@@ -76,7 +76,7 @@ everything above is real.
   "novel" tag from this pipeline should be read as **"not in our curated store
   + not in SIMBAD" -- NOT "not in VSX."** This is real, demonstrated
   contamination risk on ordinary stellar binaries, not a theoretical caveat.
-- **Smith (2026) flag-plant**: Gaia DR3 3802130935635096832 front-filtered by
+- **Smith (2026) object**: Gaia DR3 3802130935635096832 front-filtered by
   exact source_id match (RNAAS 10, 25, "A High-amplitude Radial Velocity
   Variable in DESI DR1" -- single-object note, DeltaRV~146-151 km/s over
   38.9 days, itself flagged by its author as needing resolved follow-up to

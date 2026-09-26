@@ -1,0 +1,361 @@
+100568930 5671975077144346112 Gaia DR3 5671975077144346112 55 tables
+    B/vsx/vsx {'Type': 'WD', 'Sp': 'O'}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/327/cmc15 {}
+    I/331/apop {'Type': '4'}
+    I/345/gaia2 {'Teff': '--'}
+    I/346/fs {}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/epphot {}
+    I/355/gaiadr3 {'MCMCGSP': '1', 'Teff': '17253.2'}
+    I/355/paramp {'Teff': '17253.244'}
+    I/355/paramsup {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/358/varisum {}
+    I/358/vclassre {'Classifier': 'nTransits:5+', 'Class': 'WD'}
+    I/360/syntphot {}
+    II/313/table3 {}
+    II/335/galex_ais {}
+    II/336/apass9 {}
+    II/349/ps1 {}
+    II/358/smss {'ClassStar': '0.975'}
+    II/359/vhs_dr4 {'H-Kspnt': '--', 'J-Kspnt': '--', 'Mclass': '1', 'Kspmag': '--', 'Ksperrbits': '0'}
+    II/363/unwise {}
+    II/365/catwise {}
+    II/367/vhs_dr5 {'H-Kspnt': '--', 'J-Kspnt': '--', 'Mclass': '1', 'Kspmag': '--', 'Ksperrbits': '0'}
+    II/379/smssdr4 {'ClassStar': '0.984'}
+    II/380/splusdr4 {}
+    II/381/hlsp_ps1_tm {}
+    II/389/ps1_dr2 {}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/674/A25/vspursig {'spearmanCorrExfgFoV': '0.294261', 'spearmanCorrIPDgFoV': '0.529064', 'spearmanCorrExfBP': '0.138584', 'spearmanCorrIPDBP': '0.458675', 'spearmanCorrExfRP': '-0.691087', 'spearmanCorrIPDRP': '0.316239'}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/A+A/693/A268/tablea5 {'Type': 'Unclear'}
+    J/A+A/693/A306/dwarfdr4 {'TeffGAL': '4180.076', 'f_TeffGAL': '18', 'TeffAPO': '4408.4', 'f_TeffAPO': '10', 'TeffLMR': '2395.0579', 'f_TeffLMR': '1'}
+    J/A+A/712/A243/tablea1 {'Class': '---'}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/ApJ/984/58/table1 {'logTeff': '4.667', 'e_logTeff': '0.008'}
+    J/ApJS/281/52/table1 {'Teff': '17253.2', 'OType': 'Red Giant', 'SpType': 'O'}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/160/shboost {'logTeff': '4.565355'}
+    VI/42/out {}
+74510696 3090786872841030016 SDSS J081413.43+022524.7 52 tables
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/304/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/327/cmc15 {}
+    I/329/urat1 {}
+    I/345/gaia2 {'Teff': '--'}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '0', 'Teff': '--'}
+    I/355/paramp {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/312/ais {}
+    II/335/galex_ais {}
+    II/349/ps1 {}
+    II/374/table2 {'objtype': '0'}
+    II/379/smssdr4 {'ClassStar': '0.974'}
+    II/381/hlsp_ps1_tm {}
+    II/389/ps1_dr2 {}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/621/A38/catalog {'SpTypeSim': '', 'SpTypeSD': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/A+A/698/A322/catalog {'Teff': '6062.659', 'e_Teff': '60.5162'}
+    J/A+A/705/A247/catalog {'predInitClass': 'nonvar-star', 'predInitClassProb': '0.707', 'predVarClass': 'None', 'predVarClassProb': '--', 'predClass': 'nonvar-star', 'predClassProb': '0.707'}
+    J/AJ/141/189/table4 {'Typer': '6', 'Type': '6'}
+    J/AJ/170/94/table4 {}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/ApJ/984/58/table1 {'logTeff': '4.655', 'e_logTeff': '0.012'}
+    J/MNRAS/411/2770/gr5-ais {'Sp': '0'}
+    J/MNRAS/417/1210/phot {'Teff': '60000'}
+    J/MNRAS/448/2260/catalog {'Class': '', 'Cl13': '', 'Cl15': ''}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/139/sdss9 {'cl': '6', 'zsp': '--'}
+    V/147/sdss12 {'class': '6', 'zsp': '--'}
+    V/154/sdss16 {'class': '6', 'clean': '0', 'zsp': '--', 'e_zsp': '--', 'f_zsp': '--', 'Sp-ID': ''}
+    V/160/shboost {'logTeff': '4.617407'}
+    V/162/dr11il {'spID': '4', 'objType': 'Star', 'magType': 'ugrizFuvUv', 'FiberType': 'Obj'}
+    VI/42/out {}
+    VII/292/south {'type': 'PSF', 'fclean': '1'}
+102043792 5803795977174249344 GALEX J174009.9-721444 43 tables
+    B/denis/denis {}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/345/gaia2 {'Teff': '8868.67'}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '0', 'Teff': '--'}
+    I/355/paramp {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/335/galex_ais {}
+    II/358/smss {'ClassStar': '0.977'}
+    II/363/unwise {}
+    II/365/catwise {}
+    II/367/vhs_dr5 {'H-Kspnt': '--', 'J-Kspnt': '-0.3942', 'Mclass': '-1', 'Kspmag': '17.3916', 'Ksperrbits': '0'}
+    II/374/table2 {'objtype': '0'}
+    II/379/smssdr4 {'ClassStar': '0.985'}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/621/A38/catalog {'SpTypeSim': '', 'SpTypeSD': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/677/A137/catalog {'VarClass': '', 'SimSpType': ''}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/ApJ/867/105/refcat2 {'Teff': '8868'}
+    J/ApJ/984/58/table1 {'logTeff': '4.65', 'e_logTeff': '0.003'}
+    J/ApJS/281/52/table1 {'Teff': '--', 'OType': '', 'SpType': 'O'}
+    J/MNRAS/479/111/snsurvey {}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/488/2892/table2 {}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/160/shboost {'logTeff': '4.67837'}
+    VI/137/gum_mw {'Teff': '3349', 'Vtype': ''}
+    VI/42/out {}
+102152010 5811791728816787584 Gaia DR3 5811791728816787584 44 tables
+    B/denis/denis {}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/319/xpm {}
+    I/320/spm4 {'SPMID': '730739038'}
+    I/324/igsl3 {}
+    I/337/gaia {}
+    I/339/hsoy {'Clone': '--'}
+    I/345/gaia2 {'Teff': '8868.67'}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '0', 'Teff': '--'}
+    I/355/paramp {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/246/out {}
+    II/358/smss {'ClassStar': '0.979'}
+    II/359/vhs_dr4 {'H-Kspnt': '--', 'J-Kspnt': '-0.1824', 'Mclass': '-1', 'Kspmag': '17.2552', 'Ksperrbits': '0'}
+    II/367/vhs_dr5 {'H-Kspnt': '--', 'J-Kspnt': '-0.1793', 'Mclass': '-1', 'Kspmag': '17.2572', 'Ksperrbits': '0'}
+    II/374/table2 {'objtype': '0'}
+    II/379/smssdr4 {'ClassStar': '0.984'}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/621/A38/catalog {'SpTypeSim': '', 'SpTypeSD': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/674/A33/gspc-wd {'WDType': ''}
+    J/A+A/677/A137/catalog {'VarClass': '', 'SimSpType': ''}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/ApJ/867/105/refcat2 {'Teff': '8868'}
+    J/ApJ/984/58/table1 {'logTeff': '4.647', 'e_logTeff': '0.005'}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/488/2892/table2 {}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/160/shboost {'logTeff': '4.729358'}
+    VI/42/out {}
+80998734 4036084504408126976 Gaia DR3 4036084504408126976 34 tables
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '3'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/345/gaia2 {'Teff': '--'}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '0', 'Teff': '--'}
+    I/355/paramp {'Teff': '--'}
+    I/355/paramsup {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/337/vvv1 {'mClass': '-1', 'Ksperrbits': '0'}
+    II/348/vvv2 {'mClass': '-1', 'Ksperrbits': '0'}
+    II/363/unwise {}
+    II/365/catwise {}
+    II/374/table2 {'objtype': '0'}
+    II/376/vvv4 {'Clst': '-3.3807', 'Cl': '-1'}
+    II/379/smssdr4 {'ClassStar': '0.982'}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/ApJ/984/58/table1 {'logTeff': '4.639', 'e_logTeff': '0.017'}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/160/shboost {'logTeff': '4.642773'}
+    VI/137/gum_mw {'Teff': '0', 'Vtype': ''}
+    VI/42/out {}
+73346836 2995107164834343680 GALEX J055029.7-155446 48 tables
+    B/denis/denis {}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/345/gaia2 {'Teff': '--'}
+    I/346/fs {}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '1', 'Teff': '11388.8'}
+    I/355/paramp {'Teff': '11388.814'}
+    I/355/paramsup {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/312/ais {}
+    II/328/allwise {}
+    II/335/galex_ais {}
+    II/349/ps1 {}
+    II/363/unwise {}
+    II/365/catwise {}
+    II/367/vhs_dr5 {'H-Kspnt': '--', 'J-Kspnt': '--', 'Mclass': '-1', 'Kspmag': '--', 'Ksperrbits': '0'}
+    II/369/vexasps {'CLASS': '0'}
+    II/374/table2 {'objtype': '0'}
+    II/379/smssdr4 {'ClassStar': '0.982'}
+    II/381/hlsp_ps1_tm {}
+    II/389/ps1_dr2 {}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/A+A/698/A322/catalog {'Teff': '5688.842', 'e_Teff': '45.2429'}
+    J/A+A/705/A247/catalog {'predInitClass': 'nonvar-star', 'predInitClassProb': '0.583', 'predVarClass': 'None', 'predVarClassProb': '--', 'predClass': 'nonvar-star', 'predClassProb': '0.583'}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/ApJ/984/58/table1 {'logTeff': '4.627', 'e_logTeff': '0.013'}
+    J/ApJS/281/52/table1 {'Teff': '11388.8', 'OType': 'Main Sequence', 'SpType': 'O'}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '133585.537912', 'TeffHe': '--'}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/529/1802/targets {'Teff': '11388.8'}
+    V/160/shboost {'logTeff': '4.578993'}
+    VI/42/out {}
+99327334 5570041179495992704 GALEX J062928.9-415857 41 tables
+    B/denis/denis {}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '0'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/337/gaia {}
+    I/339/hsoy {'Clone': '--'}
+    I/345/gaia2 {'Teff': '--'}
+    I/347/gaia2dis {}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '0', 'Teff': '--'}
+    I/355/paramp {'Teff': '--'}
+    I/355/xpcont {}
+    I/355/xpsummary {}
+    I/360/syntphot {}
+    II/312/ais {}
+    II/335/galex_ais {}
+    II/358/smss {'ClassStar': '0.95'}
+    II/374/table2 {'objtype': '0'}
+    II/379/smssdr4 {'ClassStar': '0.983'}
+    II/391/ks4dr1 {}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/621/A38/catalog {'SpTypeSim': '', 'SpTypeSD': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/A+A/692/A115/pristine_ca {}
+    J/A+A/692/A115/pristine_gaia {}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/ApJ/984/58/table1 {'logTeff': '4.647', 'e_logTeff': '0.016'}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/488/2892/table2 {}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    V/160/shboost {'logTeff': '4.667229'}
+    VI/137/gum_mw {'Teff': '4073', 'Vtype': ''}
+    VI/42/out {}
+109787602 6365804611201098368 GALEX J190659.9-755815 36 tables
+    B/denis/denis {}
+    I/243/out {}
+    I/252/out {}
+    I/284/out {}
+    I/297/out {}
+    I/305/out {'Class': '3'}
+    I/317/sample {}
+    I/324/igsl3 {}
+    I/331/apop {'Type': '0'}
+    I/337/gaia {}
+    I/339/hsoy {'Clone': '--'}
+    I/345/gaia2 {'Teff': '--'}
+    I/347/gaia2dis {}
+    I/349/starhorse {'teff50': '22277.59'}
+    I/350/gaiaedr3 {'Tefftemp': '--'}
+    I/352/gedr3dis {}
+    I/353/gsc242 {'Class': '0'}
+    I/355/gaiadr3 {'MCMCGSP': '1', 'Teff': '16527.3'}
+    I/355/paramp {'Teff': '16527.29'}
+    I/355/paramsup {'Teff': '--'}
+    II/312/ais {}
+    II/335/galex_ais {}
+    II/358/smss {'ClassStar': '0.629'}
+    II/367/vhs_dr5 {'H-Kspnt': '--', 'J-Kspnt': '--', 'Mclass': '1', 'Kspmag': '--', 'Ksperrbits': '0'}
+    II/379/smssdr4 {'ClassStar': '0.982'}
+    IV/38/tic {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    IV/39/tic82 {'Teff': '--', 's_Teff': '--', 'LClass': '', 'e_Teff': '--', 'E_Teff': '--', 'r_Teff': ''}
+    J/A+A/621/A38/catalog {'SpTypeSim': '', 'SpTypeSD': ''}
+    J/A+A/662/A40/hotsd {}
+    J/A+A/674/A22/catalog {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+    J/ApJ/867/105/refcat2 {'Teff': '--'}
+    J/MNRAS/482/4570/gaia2wd {'Sp': '', 'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/499/5508/table7 {}
+    J/MNRAS/508/3877/maincat {'TeffH': '--', 'TeffHe': '--'}
+    J/MNRAS/519/2486/table11 {}
+    VI/42/out {}

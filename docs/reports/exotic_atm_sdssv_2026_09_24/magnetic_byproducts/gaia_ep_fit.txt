@@ -1,0 +1,6 @@
+G: n 29, span -93.5-829.1; GLS top 13.92950 c/d (power 0.867); top-5 peaks [13.9295, 14.0155, 26.5835, 42.7915, 26.6475]
+    at f1: power 0.947 (permutation p 0.0000); amp 6.9 +- 0.2 %, phase 99 deg; rms 5.5 %, median err 0.8 %
+BP: n 27, span -93.5-829.1; GLS top 13.32800 c/d (power 0.592); top-5 peaks [13.328, 24.877, 24.8185, 17.79, 25.3935]
+    at f1: power 0.337 (permutation p 0.0090); amp 5.5 +- 0.7 %, phase 106 deg; rms 7.0 %, median err 2.4 %
+RP: n 28, span -93.5-829.1; GLS top 29.43600 c/d (power 0.521); top-5 peaks [29.436, 40.37, 28.161, 11.951, 39.939]
+    at f1: power 0.283 (permutation p 0.0190); amp 8.9 +- 1.4 %, phase 89 deg; rms 13.6 %, median err 4.8 %

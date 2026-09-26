@@ -4,8 +4,8 @@ export const meta = {
   whenToUse: 'After any change to consumer_v2.py / filters / thresholds, or as a pre-release gate, to confirm the engine still works. args: {} (optional).',
   phases: [{ title: 'Run' }, { title: 'Score' }],
 }
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const R = { type: 'object', properties: { set: { type: 'string' }, n: { type: 'integer' }, correct: { type: 'integer' }, rate: { type: 'string' }, misses: { type: 'array', items: { type: 'string' } } }, required: ['set', 'rate'], additionalProperties: true }
 
 phase('Run')

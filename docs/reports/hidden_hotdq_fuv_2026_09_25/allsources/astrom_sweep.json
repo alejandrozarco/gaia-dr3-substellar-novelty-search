@@ -1,0 +1,750 @@
+{
+ "5208047381438507520": {
+  "gaia_dr3": {
+   "parallax": 10.375960576659141,
+   "parallax_error": 0.04342111945152283,
+   "pmra": 5.6414604881322905,
+   "pmra_error": 0.05755336210131645,
+   "pmdec": -7.907127404516959,
+   "pmdec_error": 0.059945471584796906,
+   "ruwe": 0.9733708500862122,
+   "astrometric_excess_noise": 0.24369198083877563,
+   "astrometric_excess_noise_sig": 3.444448947906494,
+   "phot_g_mean_mag": 16.5643367767334
+  },
+  "dr2_vs_dr3_pm": {
+   "dpmra": 0.06408224293953957,
+   "dpmdec": -0.21713900069447245,
+   "sig_ra": 0.5481652585303954,
+   "sig_de": -1.6667101746625954,
+   "dr2_plx": 10.243793726645995,
+   "dr2_plx_err": 0.05541973030288009
+  },
+  "catalogues": [
+   {
+    "cat": "UCAC4",
+    "vizier": "I/322A/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC5",
+    "vizier": "I/340/ucac5",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "PPMXL",
+    "vizier": "I/317/sample",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.24,
+    "pmra": -3.7,
+    "pmdec": -13.8,
+    "e_pmra": 16.399999618530273,
+    "e_pmdec": 16.399999618530273,
+    "mag_imag": 17.219999313354492,
+    "dpm_total": 11.04485543037716
+   },
+   {
+    "cat": "HSOY",
+    "vizier": "I/339/hsoy",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "NOMAD1",
+    "vizier": "I/297/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.18,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "e_pmra": 0.0,
+    "e_pmdec": 0.0,
+    "mag_Bmag": 16.360000610351562,
+    "dpm_total": 9.713327968848828
+   },
+   {
+    "cat": "USNO-B1",
+    "vizier": "I/284/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.18,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "e_pmra": 0.0,
+    "e_pmdec": 0.0,
+    "epoch_col": "Epoch",
+    "epoch_val": 1987.0,
+    "mag_R1mag": 16.479999542236328,
+    "dpm_total": 9.713327968848828
+   },
+   {
+    "cat": "SPM4",
+    "vizier": "I/320/spm4",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GSC2.4.2",
+    "vizier": "I/353/gsc242",
+    "status": "match",
+    "n_within_12": 3,
+    "sep_arcsec": 0.15,
+    "pmra": 5.577,
+    "pmdec": -7.69,
+    "e_pmra": 0.102,
+    "e_pmdec": 0.116,
+    "epoch_col": "Epoch",
+    "epoch_val": 2015.5,
+    "mag_Gmag": 16.592669,
+    "dpm_total": 0.22649385051811888
+   },
+   {
+    "cat": "GSC2.3",
+    "vizier": "I/305/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.28,
+    "epoch_col": "Epoch",
+    "epoch_val": 1992.984,
+    "mag_Fmag": 16.75
+   },
+   {
+    "cat": "URAT1",
+    "vizier": "I/329/urat1",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UPC-south",
+    "vizier": "I/344/upcs",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "APOP",
+    "vizier": "I/331/apop",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "XPM",
+    "vizier": "I/319/xpm",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GPS1",
+    "vizier": "I/343/gps1",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GPS1+",
+    "vizier": "I/351/gps1_p",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "2MASS",
+    "vizier": "II/246/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "AllWISE",
+    "vizier": "II/328/allwise",
+    "status": "match",
+    "n_within_12": 2,
+    "sep_arcsec": 3.49,
+    "pmra": 354.0,
+    "pmdec": -624.0,
+    "e_pmra": 814.0,
+    "e_pmdec": 791.0,
+    "mag_W1mag": 16.820999145507812,
+    "dpm_total": 707.759916718795
+   },
+   {
+    "cat": "CatWISE2020",
+    "vizier": "II/365/catwise",
+    "status": "match",
+    "n_within_12": 4,
+    "sep_arcsec": 0.31,
+    "pmra": 0.01661,
+    "pmdec": -0.08749,
+    "e_pmra": 0.0564,
+    "e_pmdec": 0.0522,
+    "epoch_col": "MJD",
+    "epoch_val": 57134.614846,
+    "dpm_total": 9.63253196994242
+   },
+   {
+    "cat": "unWISE",
+    "vizier": "II/363/unwise",
+    "status": "match",
+    "n_within_12": 5,
+    "sep_arcsec": 0.22
+   },
+   {
+    "cat": "PS1-DR1",
+    "vizier": "II/349/ps1",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "SkyMapper-DR1.1",
+    "vizier": "II/358/smss",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.05
+   },
+   {
+    "cat": "DENIS",
+    "vizier": "B/denis/denis",
+    "status": "match",
+    "n_within_12": 3,
+    "sep_arcsec": 0.26,
+    "mag_Bmag": 16.299999237060547
+   },
+   {
+    "cat": "USNO-A2",
+    "vizier": "I/252/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.52,
+    "epoch_col": "Epoch",
+    "epoch_val": 1981.05,
+    "mag_Bmag": 16.299999237060547
+   },
+   {
+    "cat": "VHS-DR5",
+    "vizier": "II/367/vhs_dr5",
+    "status": "match",
+    "n_within_12": 3,
+    "sep_arcsec": 0.11
+   },
+   {
+    "cat": "Tycho-2",
+    "vizier": "I/259/tyc2",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "HIP2",
+    "vizier": "I/311/hip2",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "HGCA",
+    "vizier": "J/ApJS/254/42/hgca_edr3",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC3",
+    "vizier": "I/315/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC2",
+    "vizier": "I/289/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "CMC15",
+    "vizier": "I/327/cmc15",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "PPMX",
+    "vizier": "I/312/sample",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "ASCC-2.5",
+    "vizier": "I/280B/ascc",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GF21-WD",
+    "vizier": "J/MNRAS/508/3877/maincat",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.16,
+    "pmra": 5.641,
+    "pmdec": -7.907,
+    "e_pmra": 0.057999998331069946,
+    "e_pmdec": 0.05990000069141388,
+    "epoch_col": "Epoch",
+    "epoch_val": 2016.0,
+    "mag_Gmag": 16.564300537109375,
+    "dpm_total": 0.00047778785137531164
+   },
+   {
+    "cat": "GaiaSynPhot",
+    "vizier": "I/360/syntphot",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.0,
+    "mag_Vmag": 16.627468
+   }
+  ],
+  "wide_companion_search": {
+   "radius_deg": 0.5944987494366968,
+   "n_parallax_matched": 7,
+   "comoving": [],
+   "all_sorted": [
+    {
+     "source_id": "5208125103167165568",
+     "sep_arcsec": 1767.8,
+     "sep_au": 170372,
+     "G": 18.6,
+     "bp_rp": 3.62,
+     "plx": 10.516,
+     "dv_tan_kms": 10.78,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5207270198516724352",
+     "sep_arcsec": 1725.5,
+     "sep_au": 166295,
+     "G": 18.58,
+     "bp_rp": 0.38,
+     "plx": 10.431,
+     "dv_tan_kms": 13.73,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5208790380717277056",
+     "sep_arcsec": 1708.2,
+     "sep_au": 164633,
+     "G": 11.7,
+     "bp_rp": 1.6,
+     "plx": 10.462,
+     "dv_tan_kms": 19.1,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5208790376420706432",
+     "sep_arcsec": 1710.1,
+     "sep_au": 164816,
+     "G": 8.84,
+     "bp_rp": 0.72,
+     "plx": 11.524,
+     "dv_tan_kms": 24.61,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5208001442468766464",
+     "sep_arcsec": 1689.2,
+     "sep_au": 162800,
+     "G": 20.48,
+     "bp_rp": 2.43,
+     "plx": 12.16,
+     "dv_tan_kms": 25.83,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5208073597918452224",
+     "sep_arcsec": 1256.7,
+     "sep_au": 121116,
+     "G": 12.13,
+     "bp_rp": 1.72,
+     "plx": 10.966,
+     "dv_tan_kms": 30.85,
+     "bound_ok": false
+    },
+    {
+     "source_id": "5208049550396751104",
+     "sep_arcsec": 628.9,
+     "sep_au": 60616,
+     "G": 19.92,
+     "bp_rp": 3.34,
+     "plx": 11.321,
+     "dv_tan_kms": 92.69,
+     "bound_ok": false
+    }
+   ]
+  },
+  "elbadry2021": "0 rows (as primary 0, secondary 0)"
+ },
+ "6886051830805052288": {
+  "gaia_dr3": {
+   "parallax": 5.340783542268106,
+   "parallax_error": 0.1072135642170906,
+   "pmra": 50.67317300704249,
+   "pmra_error": 0.11285874247550964,
+   "pmdec": -77.53915418625043,
+   "pmdec_error": 0.10401281714439392,
+   "ruwe": 0.9578913450241089,
+   "astrometric_excess_noise": 0.0,
+   "astrometric_excess_noise_sig": 0.0,
+   "phot_g_mean_mag": 17.54798698425293
+  },
+  "dr2_vs_dr3_pm": {
+   "dpmra": 0.018868597902894635,
+   "dpmdec": -0.09821337620788029,
+   "sig_ra": 0.07278677144019222,
+   "sig_de": -0.4848254186704593,
+   "dr2_plx": 5.376154023239631,
+   "dr2_plx_err": 0.14421407886854792
+  },
+  "catalogues": [
+   {
+    "cat": "UCAC4",
+    "vizier": "I/322A/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC5",
+    "vizier": "I/340/ucac5",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "PPMXL",
+    "vizier": "I/317/sample",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.33,
+    "pmra": 55.9,
+    "pmdec": -80.6,
+    "e_pmra": 9.199999809265137,
+    "e_pmdec": 9.199999809265137,
+    "mag_imag": 17.8700008392334,
+    "dpm_total": 6.0571030625091264
+   },
+   {
+    "cat": "HSOY",
+    "vizier": "I/339/hsoy",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "NOMAD1",
+    "vizier": "I/297/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.5,
+    "pmra": 52.0,
+    "pmdec": -76.0,
+    "e_pmra": 5.0,
+    "e_pmdec": 4.0,
+    "mag_Bmag": 17.010000228881836,
+    "dpm_total": 2.0321086285661205
+   },
+   {
+    "cat": "USNO-B1",
+    "vizier": "I/284/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.5,
+    "pmra": 52.0,
+    "pmdec": -76.0,
+    "e_pmra": 5.0,
+    "e_pmdec": 4.0,
+    "epoch_col": "Epoch",
+    "epoch_val": 1977.300048828125,
+    "dpm_total": 2.0321086285661205
+   },
+   {
+    "cat": "SPM4",
+    "vizier": "I/320/spm4",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GSC2.4.2",
+    "vizier": "I/353/gsc242",
+    "status": "match",
+    "n_within_12": 3,
+    "sep_arcsec": 0.25,
+    "epoch_col": "Epoch",
+    "epoch_val": 2012.0,
+    "mag_Jmag": 18.103
+   },
+   {
+    "cat": "GSC2.3",
+    "vizier": "I/305/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 3.13,
+    "epoch_col": "Epoch",
+    "epoch_val": 1985.482,
+    "mag_Bmag": 17.09000015258789
+   },
+   {
+    "cat": "URAT1",
+    "vizier": "I/329/urat1",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UPC-south",
+    "vizier": "I/344/upcs",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "APOP",
+    "vizier": "I/331/apop",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.22,
+    "pmra": 54.3,
+    "pmdec": -70.4,
+    "e_pmra": 3.200000047683716,
+    "e_pmdec": 2.0,
+    "mag_Bmag": 17.416,
+    "dpm_total": 8.007583688722967
+   },
+   {
+    "cat": "XPM",
+    "vizier": "I/319/xpm",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GPS1",
+    "vizier": "I/343/gps1",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.45,
+    "pmra": 49.229,
+    "pmdec": -80.008,
+    "e_pmra": 2.947,
+    "e_pmdec": 3.373,
+    "mag_gmag": 17.408,
+    "dpm_total": 2.8602159579896975
+   },
+   {
+    "cat": "GPS1+",
+    "vizier": "I/351/gps1_p",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "2MASS",
+    "vizier": "II/246/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "AllWISE",
+    "vizier": "II/328/allwise",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "CatWISE2020",
+    "vizier": "II/365/catwise",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.83,
+    "pmra": 0.32832,
+    "pmdec": -0.31454,
+    "e_pmra": 0.2375,
+    "e_pmdec": 0.258,
+    "epoch_col": "MJD",
+    "epoch_val": 57009.144711,
+    "dpm_total": 92.18592767074564
+   },
+   {
+    "cat": "unWISE",
+    "vizier": "II/363/unwise",
+    "status": "match",
+    "n_within_12": 2,
+    "sep_arcsec": 1.29
+   },
+   {
+    "cat": "PS1-DR1",
+    "vizier": "II/349/ps1",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.3,
+    "epoch_col": "Epoch",
+    "epoch_val": 56211.578125,
+    "mag_gmag": 17.4076
+   },
+   {
+    "cat": "SkyMapper-DR1.1",
+    "vizier": "II/358/smss",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.18
+   },
+   {
+    "cat": "DENIS",
+    "vizier": "B/denis/denis",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "USNO-A2",
+    "vizier": "I/252/out",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 5.88,
+    "epoch_col": "Epoch",
+    "epoch_val": 1954.572,
+    "mag_Bmag": 16.600000381469727
+   },
+   {
+    "cat": "VHS-DR5",
+    "vizier": "II/367/vhs_dr5",
+    "status": "match",
+    "n_within_12": 2,
+    "sep_arcsec": 0.2
+   },
+   {
+    "cat": "Tycho-2",
+    "vizier": "I/259/tyc2",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "HIP2",
+    "vizier": "I/311/hip2",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "HGCA",
+    "vizier": "J/ApJS/254/42/hgca_edr3",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC3",
+    "vizier": "I/315/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "UCAC2",
+    "vizier": "I/289/out",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "CMC15",
+    "vizier": "I/327/cmc15",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "PPMX",
+    "vizier": "I/312/sample",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "ASCC-2.5",
+    "vizier": "I/280B/ascc",
+    "status": "no source within 12 arcsec"
+   },
+   {
+    "cat": "GF21-WD",
+    "vizier": "J/MNRAS/508/3877/maincat",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 1.48,
+    "pmra": 50.673,
+    "pmdec": -77.539,
+    "e_pmra": 0.11299999803304672,
+    "e_pmdec": 0.10400000214576721,
+    "epoch_col": "Epoch",
+    "epoch_val": 2016.0,
+    "mag_Gmag": 17.54800033569336,
+    "dpm_total": 0.00023174303996507516
+   },
+   {
+    "cat": "GaiaSynPhot",
+    "vizier": "I/360/syntphot",
+    "status": "match",
+    "n_within_12": 1,
+    "sep_arcsec": 0.0,
+    "mag_Vmag": 17.598167
+   }
+  ],
+  "wide_companion_search": {
+   "radius_deg": 0.3060043562648922,
+   "n_parallax_matched": 15,
+   "comoving": [],
+   "all_sorted": [
+    {
+     "source_id": "6883041505409623552",
+     "sep_arcsec": 851.7,
+     "sep_au": 159473,
+     "G": 20.63,
+     "bp_rp": 2.29,
+     "plx": 6.861,
+     "dv_tan_kms": 19.06,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6883143317606296832",
+     "sep_arcsec": 833.0,
+     "sep_au": 155965,
+     "G": 18.41,
+     "bp_rp": 2.06,
+     "plx": 5.967,
+     "dv_tan_kms": 32.83,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6886146393100286720",
+     "sep_arcsec": 410.3,
+     "sep_au": 76815,
+     "G": 12.57,
+     "bp_rp": 1.28,
+     "plx": 4.91,
+     "dv_tan_kms": 33.42,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6886051384133236736",
+     "sep_arcsec": 387.9,
+     "sep_au": 72639,
+     "G": 19.59,
+     "bp_rp": 2.66,
+     "plx": 4.401,
+     "dv_tan_kms": 35.2,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6883043055891323264",
+     "sep_arcsec": 822.6,
+     "sep_au": 154029,
+     "G": 11.95,
+     "bp_rp": 1.04,
+     "plx": 5.313,
+     "dv_tan_kms": 43.27,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6883041750221233152",
+     "sep_arcsec": 1077.8,
+     "sep_au": 201805,
+     "G": 17.6,
+     "bp_rp": 2.95,
+     "plx": 5.277,
+     "dv_tan_kms": 44.38,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6886149622915702016",
+     "sep_arcsec": 373.8,
+     "sep_au": 69984,
+     "G": 17.29,
+     "bp_rp": 2.65,
+     "plx": 4.666,
+     "dv_tan_kms": 52.41,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6886157864963147776",
+     "sep_arcsec": 976.6,
+     "sep_au": 182854,
+     "G": 18.68,
+     "bp_rp": 2.96,
+     "plx": 5.04,
+     "dv_tan_kms": 56.57,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6883043502566466304",
+     "sep_arcsec": 789.4,
+     "sep_au": 147800,
+     "G": 18.22,
+     "bp_rp": 2.8,
+     "plx": 3.395,
+     "dv_tan_kms": 63.87,
+     "bound_ok": false
+    },
+    {
+     "source_id": "6886150786851810688",
+     "sep_arcsec": 579.4,
+     "sep_au": 108485,
+     "G": 20.1,
+     "bp_rp": 2.61,
+     "plx": 4.19,
+     "dv_tan_kms": 68.69,
+     "bound_ok": false
+    }
+   ]
+  },
+  "elbadry2021": "0 rows (as primary 0, secondary 0)"
+ }
+}

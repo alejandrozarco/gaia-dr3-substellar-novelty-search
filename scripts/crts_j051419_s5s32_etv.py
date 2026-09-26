@@ -19,7 +19,7 @@ result. We state detectability per sector BEFORE any timing claim and never manu
 an O-C from noise.
 
 Run:
-  /Users/legbatterij/claude_projects/ostinato/.venv/bin/python \
+  ~/claude_projects/ostinato/.venv/bin/python \
       scripts/crts_j051419_s5s32_etv.py
 Outputs:
   /tmp/crts_j051419_s5s32_*.json,  /tmp/crts_j051419_s5s32_*.png,

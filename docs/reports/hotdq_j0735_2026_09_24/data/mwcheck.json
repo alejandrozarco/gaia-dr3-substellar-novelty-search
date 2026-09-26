@@ -1,0 +1,348 @@
+[
+ {
+  "group": "radio",
+  "catalogue": "NVSS 1.4 GHz",
+  "vizier": "VIII/65",
+  "radius_arcsec": 30,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "FIRST 1.4 GHz",
+  "vizier": "VIII/92",
+  "radius_arcsec": 5,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "VLASS QL ep1 3 GHz",
+  "vizier": "J/ApJS/255/30",
+  "radius_arcsec": 5,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "RACS-low 888 MHz",
+  "vizier": "J/other/PASA/38.58",
+  "radius_arcsec": 15,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 6,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "SUMSS 843 MHz",
+  "vizier": "VIII/81",
+  "radius_arcsec": 30,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "TGSS 150 MHz",
+  "vizier": "J/A+A/598/A78",
+  "radius_arcsec": 25,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "GLEAM 200 MHz",
+  "vizier": "VIII/100",
+  "radius_arcsec": 90,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 60
+ },
+ {
+  "group": "radio",
+  "catalogue": "LoTSS-DR2 144 MHz",
+  "vizier": "J/A+A/659/A1",
+  "radius_arcsec": 10,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "radio",
+  "catalogue": "ATNF pulsars",
+  "vizier": "B/psr",
+  "radius_arcsec": 60,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 600
+ },
+ {
+  "group": "xray",
+  "catalogue": "ROSAT 2RXS",
+  "vizier": "J/A+A/588/A103",
+  "radius_arcsec": 30,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 60
+ },
+ {
+  "group": "xray",
+  "catalogue": "eRASS1 (main+hard+supp)",
+  "vizier": "J/A+A/682/A34",
+  "radius_arcsec": 15,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 7,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "xray",
+  "catalogue": "eRASS:3 (DR2)",
+  "vizier": "J/A+A/712/A171",
+  "radius_arcsec": 15,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 20,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "xray",
+  "catalogue": "XMM 4XMM-DR13",
+  "vizier": "IX/69",
+  "radius_arcsec": 10,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "xray",
+  "catalogue": "Swift 2SXPS",
+  "vizier": "IX/58",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 6,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "xray",
+  "catalogue": "Chandra CSC2",
+  "vizier": "IX/57",
+  "radius_arcsec": 5,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "gamma",
+  "catalogue": "Fermi 4FGL-DR4",
+  "vizier": "IX/72",
+  "radius_arcsec": 600,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 300
+ },
+ {
+  "group": "uv",
+  "catalogue": "GALEX AIS (GUVcat)",
+  "vizier": "II/335",
+  "radius_arcsec": 5,
+  "verdict": "MATCH",
+  "n": 1,
+  "nearest_arcsec": 0.9,
+  "table": "II/335/galex_ais",
+  "first": {
+   "_r": "0.898",
+   "RAJ2000": "113.767568",
+   "DEJ2000": "-79.736082",
+   "Name": "GALEX J073504.",
+   "objid": "63859043259174",
+   "phID": "63859043259142",
+   "Cat": "AIS",
+   "RAfdeg": "113.370168",
+   "DEfdeg": "-79.945307",
+   "FUVexp": "256.0",
+   "NUVexp": "256.0",
+   "GLON": "291.8237"
+  }
+ },
+ {
+  "group": "uv",
+  "catalogue": "GALEX GR5",
+  "vizier": "II/312",
+  "radius_arcsec": 5,
+  "verdict": "MATCH",
+  "n": 1,
+  "nearest_arcsec": 0.46,
+  "table": "II/312/ais",
+  "first": {
+   "_r": "0.464",
+   "RAJ2000": "113.767142",
+   "DEJ2000": "-79.736182",
+   "FUV": "15.914",
+   "e_FUV": "0.019",
+   "NUV": "15.605",
+   "e_NUV": "0.009",
+   "objid": "63859043259132",
+   "tile": "50426",
+   "img": "833",
+   "sv": "26",
+   "r.fov": "0.220492"
+  }
+ },
+ {
+  "group": "var",
+  "catalogue": "VSX",
+  "vizier": "B/vsx/vsx",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "var",
+  "catalogue": "Gaia DR3 vari classification",
+  "vizier": "I/358/vclassre",
+  "radius_arcsec": 3,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "var",
+  "catalogue": "ZTF periodic (Chen+2020)",
+  "vizier": "J/ApJS/249/18",
+  "radius_arcsec": 5,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "var",
+  "catalogue": "ATLAS variables",
+  "vizier": "J/AJ/156/241",
+  "radius_arcsec": 5,
+  "verdict": "NO_COVER",
+  "n": 0,
+  "coverage_rows": 0,
+  "coverage_arcmin": 30
+ },
+ {
+  "group": "var",
+  "catalogue": "ASAS-SN variables (bare II/366)",
+  "vizier": "II/366",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 60
+ },
+ {
+  "group": "var",
+  "catalogue": "Gaia known variables (Gavras+2023)",
+  "vizier": "J/A+A/674/A22",
+  "radius_arcsec": 5,
+  "verdict": "MATCH",
+  "n": 1,
+  "nearest_arcsec": 0.13,
+  "table": "J/A+A/674/A22/catalog",
+  "first": {
+   "_r": "0.132",
+   "recno": "2732962",
+   "GaiaDR3": "52080473814385",
+   "ONames": "WDJ073504.07-7",
+   "OPos": "113.767099_-07",
+   "RAJ2000": "113.767099",
+   "DEJ2000": "-79.736336",
+   "Omags": "16.592669",
+   "Dists": "0",
+   "psuperclass": "CST",
+   "pvarTypes": "WD",
+   "VarTypes": "WD"
+  }
+ },
+ {
+  "group": "cv",
+  "catalogue": "Ritter-Kolb (CV/LMXB/pre-CV)",
+  "vizier": "B/cb",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 600
+ },
+ {
+  "group": "cv",
+  "catalogue": "Downes CVs",
+  "vizier": "V/123A",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 3,
+  "coverage_arcmin": 600
+ },
+ {
+  "group": "cv",
+  "catalogue": "eRASS1 CVs (Rodriguez+2025)",
+  "vizier": "J/PASP/137/A4201",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 6,
+  "coverage_arcmin": 600
+ },
+ {
+  "group": "cv",
+  "catalogue": "eRASS1 CV catalogue",
+  "vizier": "J/A+A/698/A321",
+  "radius_arcsec": 10,
+  "verdict": "ABSENT",
+  "n": 0,
+  "coverage_rows": 5,
+  "coverage_arcmin": 600
+ },
+ {
+  "group": "wd",
+  "catalogue": "Gentile Fusillo+2021 WDs",
+  "vizier": "J/MNRAS/508/3877",
+  "radius_arcsec": 5,
+  "verdict": "MATCH",
+  "n": 1,
+  "nearest_arcsec": 0.14,
+  "table": "J/MNRAS/508/3877/maincat",
+  "first": {
+   "_r": "0.136",
+   "recno": "166349",
+   "WDJname": "WDJ073504.07-7",
+   "GaiaEDR3": "52080473814385",
+   "GaiaDR2": "52080473814385",
+   "EDR3Name": "Gaia EDR3 5208",
+   "RA_ICRS": "113.7671036203",
+   "e_RA_ICRS": "0.04423",
+   "DE_ICRS": "-79.7363366700",
+   "e_DE_ICRS": "0.045909",
+   "Plx": "10.376",
+   "e_Plx": "0.0434"
+  }
+ }
+]

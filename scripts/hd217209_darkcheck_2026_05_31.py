@@ -28,13 +28,14 @@ acceleration inversion (acceleration_inversion.py).
 Outputs: /tmp/hd217209_darkcheck.json  +  /tmp/hd217209_darkcheck_report.md
 """
 from __future__ import annotations
+import os
 import json, math, sys, warnings
 import numpy as np
 
 warnings.filterwarnings('ignore')
 
-sys.path.insert(0, '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts')
-sys.path.insert(0, '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27/scripts/streaming/v3_acceleration')
+sys.path.insert(0, os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27/scripts'))
+sys.path.insert(0, os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27/scripts/streaming/v3_acceleration'))
 
 from astropy.coordinates import SkyCoord
 import astropy.units as u

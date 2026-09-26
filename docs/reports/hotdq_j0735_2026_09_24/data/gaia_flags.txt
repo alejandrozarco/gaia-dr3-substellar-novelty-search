@@ -1,0 +1,29 @@
+  source_id: 5208047381438507520
+  parallax: 10.37596057665914
+  parallax_error: 0.04342112
+  parallax_over_error: 238.96115
+  pmra: 5.6414604881322905
+  pmdec: -7.907127404516959
+  ruwe: 0.97337085
+  astrometric_excess_noise: 0.24369198
+  astrometric_excess_noise_sig: 3.444449
+  ipd_frac_multi_peak: 0
+  ipd_gof_harmonic_amplitude: 0.012954492
+  ipd_frac_odd_win: 0
+  duplicated_source: False
+  visibility_periods_used: 25
+  phot_g_mean_mag: 16.564337
+  phot_bp_mean_mag: 16.432446
+  phot_rp_mean_mag: 16.840282
+  phot_bp_rp_excess_factor: 1.145355
+  phot_g_n_obs: 381
+  phot_g_mean_flux_over_error: 1242.6549
+  phot_bp_mean_flux_over_error: 270.61044
+  phot_rp_mean_flux_over_error: 148.8679
+  phot_variable_flag: NOT_AVAILABLE
+  has_xp_continuous: True
+  has_xp_sampled: False
+  has_epoch_photometry: False
+  astrometric_params_solved: 31
+  per-observation G scatter proxy (sqrt(n_obs)/(flux_over_error)): 0.0157
+  tangential velocity 4.44 km/s; distance 96.4 pc

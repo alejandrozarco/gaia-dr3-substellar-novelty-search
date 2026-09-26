@@ -12,8 +12,8 @@ const A = (typeof args === 'string') ? (() => { try { return JSON.parse(args.tri
 const SID = String(A.source_id || '').trim()
 const Pmin = Number(A.claimed_period_min)
 if (!/^\d{5,}$/.test(SID) || !(Pmin > 0)) throw new Error('pass args: {source_id:"<id string>", claimed_period_min:<number>}')
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const D = { type: 'object', properties: { detected: { type: 'boolean' }, finding: { type: 'string' }, values: { type: 'object' } }, required: ['detected', 'finding'], additionalProperties: true }
 
 phase('Detect')

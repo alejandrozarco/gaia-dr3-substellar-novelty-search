@@ -47,7 +47,7 @@ or solution types). Adapting to it is **one edit**: fill in the `dr4` profile in
 
 3. **Run the re-hunt:**
    ```bash
-   PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+   PY=~/claude_projects/ostinato/.venv/bin/python
    cd scripts/dr4_pipeline/rehunt
    $PY rehunt.py --table /path/to/dr4_nss.parquet --profile dr4 \
        --out /tmp/dr4_rehunt.parquet

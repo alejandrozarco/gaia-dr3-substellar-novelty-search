@@ -127,7 +127,7 @@ that; the cascade itself lives in the sibling `rehunt/`).
 ## How to run
 
 ```bash
-PY=/Users/legbatterij/claude_projects/ostinato/.venv/bin/python
+PY=~/claude_projects/ostinato/.venv/bin/python
 
 # Tests (end-to-end, synthetic) — proves the pipeline works today:
 cd scripts/dr4_pipeline/refit

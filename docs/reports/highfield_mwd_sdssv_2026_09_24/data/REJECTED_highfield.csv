@@ -1,0 +1,13 @@
+gaia_dr3,sdss_id,name,reason
+5866831043215711488,103241993,UPM J1414-6023B,"7000-7350 A depression with sharp edges over masked/interpolated pixels, no Hb counterpart, estimator at FP level; WD+M wide binary; likely instrumental/contamination"
+4792264314911712512,92721625,,hot 38 kK; weak features inconsistent between visits; FP level
+4848192279527227648,93096973,,"features 6700-7300 A, but Gaia C*=1.05 and DES/2MASS source (g=16.6, FWHM 4"") within 3"": fibre contaminated by bright extended source"
+2549747574820347136,70377567,,'split H-alpha' = XCSAO artefact (one visit v=+9488 km/s); normal DA after correction
+4946799467308444544,93687523,,XCSAO artefact (+5624 km/s); normal DA
+6712920500806628864,112619591,,XCSAO artefact (-20204 km/s); DA
+5498982938447885824,98521454,,XCSAO artefact (-3809 km/s); DA
+1431176943768691328,61266339,EGGR 258 (WD 1633+572),"no Gaia id in SW table (PM 1.6""/yr); known DQ, shifted Swan bands"
+4359722208685335552,88501537,LP 687-16,no Gaia id in SW table; known DQ
+3981067343429208960,80699214,SDSS J113656.24+234541.3,QSO (Mg II emission 5430 A; SDSS DR12-16Q)
+2546243976722685952,70357755,[VV2006] J001047.5+001900,QSO
+2560009007603950720,70430628,PHL 3418,known WD + ultracool companion; red features = companion

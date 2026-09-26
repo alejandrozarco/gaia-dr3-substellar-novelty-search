@@ -11,8 +11,8 @@ export const meta = {
 const A = (typeof args === 'string') ? (() => { const s = args.trim(); try { return (s[0] === '{' || s[0] === '[') ? JSON.parse(s) : { source_id: s } } catch (e) { return { source_id: s } } })() : (args || {})
 const SID = String(A.source_id || A.sid || '').trim()
 if (!/^\d{5,}$/.test(SID)) throw new Error('pass args: {source_id: "<Gaia DR3 id as a string>"} (19-digit id; must be a string to avoid float truncation)')
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 const S = { type: 'object', properties: { finding: { type: 'string' }, values: { type: 'object' } }, required: ['finding'], additionalProperties: true }
 const ga = (label, prompt) => agent(prompt, { label, phase: 'Gather', agentType: 'general-purpose', schema: S })
 

@@ -1,0 +1,492 @@
+{
+ "4198738558061020928": {
+  "ids": [
+   "GALEX J190543.6-114356",
+   "Gaia DR2 4198738558061020928",
+   "Gaia DR3 4198738558061020928"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "5807585134758743040": {
+  "ids": [
+   "Gaia DR2 5807585134758743040",
+   "Gaia DR3 5807585134758743040"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019AJ....158..122K",
+    "Untangling the Galaxy. I. Local structure and star formation history of the Milky Way."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "50526755482496000": {
+  "ids": [
+   "Cl* Melotte   25  REIDA     503",
+   "Gaia DR2 50526755482496000",
+   "Gaia DR3 50526755482496000"
+  ],
+  "refs": [
+   [
+    "1992MNRAS.257..257R",
+    "Proper motions from Schmidt plates. II. The Hyades."
+   ],
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "604881311110788864": {
+  "ids": [
+   "GALEX J085704.7+122227",
+   "Gaia DR2 604881311110788864",
+   "Gaia DR3 604881311110788864",
+   "SDSS J085704.62+122226.4",
+   "SDSS J085704.63+122226.4",
+   "SDSS J085704.64+122226.5",
+   "SDSS J085704.64+122226.6",
+   "SDSS J085704.65+122226.7"
+  ],
+  "refs": [
+   [
+    "2011MNRAS.417.1210G",
+    "DA white dwarfs in Sloan Digital Sky Survey Data Release 7 and a search  for infrared excess emission."
+   ],
+   [
+    "2013ApJS..204....5K",
+    "SDSS DR7 white dwarf catalog."
+   ],
+   [
+    "2015MNRAS.448.2260G",
+    "A photometric selection of white dwarf candidates in Sloan Digital Sky Survey Data Release 10."
+   ],
+   [
+    "2017MNRAS.469.2102A",
+    "The kinematics of the white dwarf population from the SDSS DR12."
+   ],
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.482.5222T",
+    "Fundamental parameter accuracy of DA and DB white dwarfs in Gaia Data Release 2."
+   ],
+   [
+    "2019MNRAS.486.2169K",
+    "White dwarf and subdwarf stars in the Sloan Digital Sky Survey Data Release 14."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "894999926685547520": {
+  "ids": [
+   "GALEX J074839.1+362755",
+   "Gaia DR2 894999926685547520",
+   "Gaia DR3 894999926685547520",
+   "SDSS J074839.06+362755.2",
+   "SDSS J074839.06+362755.3",
+   "WD 0745+365"
+  ],
+  "refs": [
+   [
+    "2004ApJ...607..426K",
+    "A catalog of spectroscopically identified white dwarf stars in the first data release of the Sloan Digital Sky Survey."
+   ],
+   [
+    "2006ApJS..167...40E",
+    "A catalog of spectroscopically confirmed white dwarfs from the Sloan Digital Sky Survey Data Release 4."
+   ],
+   [
+    "2009yCat....1.2023S",
+    "Catalogue of stellar spectral classifications."
+   ],
+   [
+    "2011MNRAS.417.1210G",
+    "DA white dwarfs in Sloan Digital Sky Survey Data Release 7 and a search  for infrared excess emission."
+   ],
+   [
+    "2013ApJS..204....5K",
+    "SDSS DR7 white dwarf catalog."
+   ],
+   [
+    "2015MNRAS.448.2260G",
+    "A photometric selection of white dwarf candidates in Sloan Digital Sky Survey Data Release 10."
+   ],
+   [
+    "2016yCat....1.2035M",
+    "A Catalogue of Spectroscopically Identified White Dwarfs"
+   ],
+   [
+    "2017MNRAS.469.2102A",
+    "The kinematics of the white dwarf population from the SDSS DR12."
+   ],
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.486.2169K",
+    "White dwarf and subdwarf stars in the Sloan Digital Sky Survey Data Release 14."
+   ],
+   [
+    "2021MNRAS.507.4646K",
+    "White dwarf and subdwarf stars in the Sloan Digital Sky Survey Data Release 16."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "2833867392391927936": {
+  "ids": [
+   "GALEX J224743.1+202608",
+   "Gaia DR2 2833867392391927936",
+   "Gaia DR3 2833867392391927936"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019ApJ...886..100C",
+    "A cooling anomaly of high-mass white dwarfs."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "600396471902522624": {
+  "ids": [
+   "Gaia DR2 600396471902522624",
+   "Gaia DR3 600396471902522624",
+   "SDSS J081823.57+091420.9"
+  ],
+  "refs": [
+   [
+    "2011MNRAS.417.1210G",
+    "DA white dwarfs in Sloan Digital Sky Survey Data Release 7 and a search  for infrared excess emission."
+   ],
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "3116503861402179328": {
+  "ids": [
+   "Gaia DR2 3116503861402179328",
+   "Gaia DR3 3116503861402179328"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019ApJ...886..100C",
+    "A cooling anomaly of high-mass white dwarfs."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "4767225652008399104": {
+  "ids": [
+   "GALEX J055635.3-561006",
+   "Gaia DR2 4767225652008399104",
+   "Gaia DR3 4767225652008399104"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2020ApJ...902..127X",
+    "Infrared excesses around bright white dwarfs from Gaia and unWISE. I."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...679A.127G",
+    "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   ],
+   [
+    "2023MNRAS.518.5106J",
+    "Spectral classification of the 100 pc white dwarf population from Gaia-DR3 and the virtual observatory."
+   ],
+   [
+    "2023MNRAS.526.5800S",
+    "An {\\em HST} COS ultraviolet spectroscopic survey of 311 DA white dwarfs - I. Fundamental parameters and comparative studies."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "5004981258963810176": {
+  "ids": [
+   "GALEX J002412.6-354825",
+   "Gaia DR2 5004981258963810176",
+   "Gaia DR3 5004981258963810176"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "6509200198978273152": {
+  "ids": [
+   "GALEX J220111.1-542042",
+   "Gaia DR2 6509200198978273152",
+   "Gaia DR3 6509200198978273152"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "4236474381214232704": {
+  "ids": [
+   "Gaia DR2 4236474381214232704",
+   "Gaia DR3 4236474381214232704"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ },
+ "4241409569220727424": {
+  "ids": [
+   "GALEX J195006.0+015739",
+   "Gaia DR2 4241409569220727424",
+   "Gaia DR3 4241409569220727424"
+  ],
+  "refs": [
+   [
+    "2018MNRAS.480.4505J",
+    "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   ],
+   [
+    "2019MNRAS.482.4570G",
+    "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   ],
+   [
+    "2019MNRAS.485.5573T",
+    "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   ],
+   [
+    "2021A&A...649A...6G",
+    "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   ],
+   [
+    "2021MNRAS.508.3877G",
+    "A catalogue of white dwarfs in Gaia EDR3."
+   ],
+   [
+    "2023A&A...677A.159T",
+    "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   ],
+   [
+    "2024A&A...682A...5V",
+    "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   ]
+  ]
+ }
+}

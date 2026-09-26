@@ -1,0 +1,69 @@
+{
+ "178685757799822080": {
+  "simbad": {
+   "main_id": "GALEX J043613.3+383720",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "GALEX J043613.3+383720",
+    "Gaia DR3 178685757799822080",
+    "Gaia DR2 178685757799822080"
+   ]
+  },
+  "simbad_refs": [
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 53,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "178685757799822080": [],
+   "GALEX J043613.3+383720": [],
+   "Gaia DR2 178685757799822080": [],
+   "Gaia DR3 178685757799822080": [],
+   "J0436+3837": []
+  }
+ },
+ "437628614520520320": {
+  "simbad": {
+   "main_id": "Gaia DR3 437628614520520320",
+   "otype": "WD*",
+   "sp_type": "DA",
+   "ids": [
+    "Gaia DR3 437628614520520320",
+    "Gaia DR2 437628614520520320"
+   ]
+  },
+  "simbad_refs": [
+   "2018MNRAS.480.4505J",
+   "2019MNRAS.482.4570G",
+   "2019MNRAS.485.5573T",
+   "2021MNRAS.508.3877G",
+   "2023A&A...677A.159T",
+   "2024A&A...682A...5V"
+  ],
+  "mwdd": "DA",
+  "vizier": {
+   "n_tables": 52,
+   "magnetic_type_hits": []
+  },
+  "desi_amorim": "columns? ['#Name', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']",
+  "desi_swan": "no id column",
+  "arxiv_src_hits": [],
+  "ads": {
+   "437628614520520320": [],
+   "Gaia DR2 437628614520520320": [],
+   "Gaia DR3 437628614520520320": [],
+   "J0255+4758": []
+  }
+ }
+}

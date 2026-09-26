@@ -4,8 +4,8 @@ export const meta = {
   whenToUse: 'Before cutting any GitHub/Zenodo release. args: {} (optional).',
   phases: [{ title: 'Checks' }, { title: 'Gate' }],
 }
-const PY = '/Users/legbatterij/claude_projects/ostinato/.venv/bin/python'
-const CWD = '/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27'
+const PY = '~/claude_projects/ostinato/.venv/bin/python'
+const CWD = '~/claude_projects/gaia-recovered-2026-05-27'
 
 phase('Checks')
 const [overclaims, tests, gitst, consistency, journals] = await parallel([

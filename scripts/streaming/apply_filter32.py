@@ -15,12 +15,13 @@ Also recomputes the defensible-after-all-filters list and writes new
 defensible_*_post32.parquet artifacts.
 """
 from __future__ import annotations
+import os
 import math, sys, warnings
 warnings.filterwarnings('ignore')
 from pathlib import Path
 import polars as pl
 
-ROOT = Path('/Users/legbatterij/claude_projects/gaia-recovered-2026-05-27')
+ROOT = Path(os.path.expanduser('~/claude_projects/gaia-recovered-2026-05-27'))
 
 
 def K1_kms_safe(P_d, e, M1, M2, sini):

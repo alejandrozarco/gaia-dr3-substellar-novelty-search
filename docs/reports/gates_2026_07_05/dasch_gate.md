@@ -92,8 +92,8 @@ verified survivor count (13-18) sits below the referee's GO threshold and only r
 of MARGINAL with an unverifiable ZTF extrapolation. Options, in order of preference:
 (a) **shrink scope** to a fast 1-3 day mini-campaign on the 13 clean ASAS-SN single-dip survivors
     only (skip ZTF entirely until its table is public) -- this is cheap (DASCH throughput ~30-40s/obj)
-    and low-risk, but should be framed honestly as a small, bounded exercise, not the
-    headline-grade ~25-100 object paper originally envisioned;
+    and low-risk, but should be framed as a small, bounded exercise, not the
+    ~25-100 object sample originally envisioned;
 (b) **wait** for the ZTF paper's ApJ machine-readable table to post (it is already accepted/in
     production per the ApJ 991, 118 citation found), then re-run this exact gate with the full
     81-row table and the VSX lane fixed -- likely raises the count meaningfully if the ZTF bright
