@@ -2005,3 +2005,39 @@ pre-polar); test = phase-resolved optical/near-IR spectrum.
 - Periods from a common-phase fit over ZTF, TESS and Gaia G (each data set scaled by its own amplitude): 97.703, 130.182, 81.493 and 117.319 min; chi2 difference to the next alias 4918, 4206, 84 and 1366.
 - Correction to the first version of the release script: its "joint" fit let each data set keep its own phase, so it did not constrain the cycle count between data sets; the released script uses a shared phase.
 - Infrared excess (pure-H model scaled at Gaia G): companion M_W1 9.25, 9.28, 9.82 and 9.33. DESI H-alpha emission of WDJ205249.27-032419.53: +189 +- 8 km/s at phase 0.82; delta chi2 = 211 against the tile/petal calibration-residual template.
+
+## 2026-09-27 13:17 UTC — Ranaivomanana+2025 short-period objects between the main sequence and the WD sequence: WDJ194901.41+673005.59
+- **Method (docs/reports/valley_eb1_2026_09_27/):** Ranaivomanana et al. (2025, A&A 704, A70) table A2 (13,405 Gaia DR3 short-timescale variables). Blue (BP-RP < 0.4), M_G > 7.5, P < 180 min: 32 in cluster EB1 and 127 in the other clusters. Gaia DR3 epoch photometry G/BP/RP semi-amplitudes at the catalogue period; CatWISE2020 W1 excess against pure-H model colours.
+- EB1 contains WDJ070106.16-534811.37, GALEX J040444.3-395043, WDJ212738.67+593755.72 and GALEX J005615.1-661732; most other EB1 objects are known binaries (Steen+2024, VSX R/E types, Barlow+2022, Kosakowski+2025) or have periods only as unclassified Gaia VSX entries.
+- **WDJ194901.41+673005.59 (Gaia DR3 2249098833310553728):** P = 63.680 min; Gaia G 15.9%, RP/BP 1.8; TESS 120 s in 13 sectors (2022-2024) confirms the period, with a constant phase and no eclipse; G 18.03, 739 pc, M_G 8.68, GF21 16.8 kK / 0.14 Msun. No infrared measurement (the WISE source 3.5" away is a separate red Pan-STARRS object), no spectrum, no X-ray or radio counterpart. Journal.
+- The other clusters (mostly CVs and short-period Gaia signals) gave no comparable case.
+
+## 2026-09-27 13:39 UTC — Gaia DR3 short-timescale variables among GF21 white dwarfs
+- **Method (docs/reports/gaia_vst_wd_2026_09_27/):** Gaia DR3 vari_short_timescale x GF21 (1"): 586 objects; 222 with Pwd > 0.5 and a characteristic period of 20-200 min; 153 not examined in the earlier lanes. Gaia G Lomb-Scargle (5-100 c/d) and G/BP/RP amplitudes at the peak.
+- Most objects have 11-12 kK temperatures (ZZ Ceti range); 14 have a Gaia G period with FAP < 1e-3, of which three are overluminous with periods of 40-200 min.
+- WDJ164724.03-715406.79 (Gaia DR3 5805974895683236608): P 148.36 min confirmed by TESS (S101, S102); W1/Ks excess of about 0.8 mag (companion M_W1 ~7.8). WDJ152024.38-515434.69: Gaia 78.5 min, not detected in TESS FFIs. GALEX J110317.9-401545: in Steen+2024. Registered.
+
+## 2026-09-27 15:13 UTC — Hot white dwarfs with Gaia periods of 5-32 h: triage of the unregistered ones
+- **Sample:** 53 GF21 white dwarfs, Pwd > 0.75, TeffH > 40 kK or (BP-RP < -0.35 and M_G < 9.5), Gaia GLS 0.25-5 c/d with FAP < 1e-2 (from gaia_wd_periods_2026_09_24/data/wd_vspur_gf21.csv). 36 had no register row; 6 of those already had journals.
+- **Method:** docs/reports/hot_periodic_wd_2026_09_27/ (triage.py, tess_check.py, ztf_check.py, novelty_gate.py). Gaia G/BP/RP amplitudes and colour-phase; VSX, SIMBAD, Jestin+2026, Chen+2020; TESS FFI; ZTF; VizieR all-table, MWDD, ADS.
+- **Result:**
+  - 26 have a published or catalogued period (VSX incl. Gaia DR3 auto-entries, Jestin+2026, Gao+2025, Wang+2025, Reindl+2021) -> register rows.
+  - 2 new periods, now journaled:
+    - SDSS J091748.20+001041.6: hot DO/DB (45 kK, Kilic+2026a), 29.49 h, ZTF FAP 1e-100.
+    - WDJ043832.74+003117.01: DO (105.6 kK), 26.09 h, ZTF FAP 1e-98.
+    Jestin+2026 lists both as not variable, and it also lists HS 2027+0651 (period published by Reindl+2021) as not variable.
+  - 1 re-found (WDJ094809.07-280038.55, journal of 24 Sept). ZTF now also confirms it, and a common-phase fit removes the 1-c/d alias. That makes four data sets.
+  - 2 pending ATLAS (2311285729210966144, 3365371721281530880).
+  - WDJ0438+0031 carries Gaia spurious-signal flags; ZTF shows the same period.
+- **Prior art:** the class of spotted, day-period hot white dwarfs is known (Reindl+2021 for UHE white dwarfs; Maoz+2015 for Kepler). These results are new periods for individual stars, not a new phenomenon.
+- **Also today:** ATLAS 2015-2026 confirms WDJ1949+6730 on the Gaia/TESS ephemeris (phase within 0.01 in every 3-year block; o/c amplitude 1.52).
+
+## 2026-09-27 15:50 UTC — Correction: two hot-WD periods are published (Oliveira da Rosa+2024)
+- Oliveira da Rosa et al. 2024 (ApJ 974, 314; arXiv:2407.05214) list 318 TESS 2-min white-dwarf periods up to sector 69. Their table includes:
+  - TIC 875311151 = WDJ094809.07-280038.55, 11.053 h;
+  - TIC 804378446 = SDSS J091748.20+001041.6, 29.44 h;
+  - TIC 650999219 = Gaia DR3 4846154678323893248, 24.6 h;
+  - TIC 160119816 = FBS 1552+879, 21.453 h.
+- The table is in the arXiv source (copied to docs/reports/hot_periodic_wd_2026_09_27/prior_art/).
+- WDJ0948 and SDSS J0917 become recoveries; journals updated. WDJ043832.74+003117.01 (2-min data only in S98) and WDJ080026.64+633414.85 (no 2-min data) are not in the table.
+- Of the public period objects, WDJ072009.19+464840.48 (TIC 407569944, 19.185 h) is also in the table; the public page cites it.
