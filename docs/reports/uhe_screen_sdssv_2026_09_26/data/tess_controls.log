@@ -1,0 +1,42 @@
+=== EC04534-5931
+sectors: [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(32), np.int64(33), np.int64(35), np.int64(36), np.int64(37), np.int64(38), np.int64(39), np.int64(61), np.int64(62), np.int64(63), np.int64(64), np.int64(65), np.int64(66), np.int64(67), np.int64(68), np.int64(69), np.int64(87), np.int64(88), np.int64(89), np.int64(90), np.int64(93), np.int64(94), np.int64(95), np.int64(96), np.int64(97), np.int64(98)]
+S1: n=1256 top [np.float64(7.789), np.float64(7.788), np.float64(7.79)] rms 5.41%
+S2: n=1196 top [np.float64(7.783), np.float64(7.784), np.float64(7.782)] rms 3.71%
+S3: n=1076 top [np.float64(7.775), np.float64(7.776), np.float64(7.774)] rms 2.97%
+S4: n=1008 top [np.float64(7.79), np.float64(7.791), np.float64(7.789)] rms 4.27%
+S5: n=1176 top [np.float64(7.789), np.float64(7.79), np.float64(7.788)] rms 4.96%
+S6: n=972 top [np.float64(7.788), np.float64(7.787), np.float64(7.789)] rms 4.47%
+S7: n=1086 top [np.float64(7.79), np.float64(7.791), np.float64(7.789)] rms 2.84%
+S8: n=924 top [np.float64(1.004), np.float64(1.003), np.float64(1.005)] rms 3.75%
+joint top peaks: [np.float64(7.7895), np.float64(7.7794), np.float64(7.7995), np.float64(7.7623), np.float64(7.7186)] FAP 8.6e-289
+   amplitude at 2.023: 0.334% (aperture fraction), power 0.0032
+   amplitude at 1.023: 0.175% (aperture fraction), power 0.0009
+   amplitude at 1.9826: 0.039% (aperture fraction), power 0.0000
+=== CTRL1
+sectors: [np.int64(1), np.int64(2), np.int64(28), np.int64(29), np.int64(68), np.int64(69), np.int64(95), np.int64(96)]
+S1: n=1262 top [np.float64(13.584), np.float64(13.585), np.float64(13.583)] rms 1.22%
+S2: n=1196 top [np.float64(24.001), np.float64(5.729), np.float64(5.73)] rms 1.78%
+S28: n=3446 top [np.float64(1.167), np.float64(1.168), np.float64(1.166)] rms 3.14%
+S29: n=3567 top [np.float64(1.353), np.float64(1.352), np.float64(1.354)] rms 4.04%
+S68: n=11206 top [np.float64(1.136), np.float64(1.137), np.float64(1.135)] rms 1.97%
+69 fail ('Connection aborted.', RemoteDisconnected('Remote end close
+S95: n=9894 top [np.float64(0.692), np.float64(0.693), np.float64(0.691)] rms 2.63%
+S96: n=9954 top [np.float64(0.076), np.float64(0.077), np.float64(0.075)] rms 5.18%
+joint top peaks: [np.float64(0.696), np.float64(0.685), np.float64(0.0758), np.float64(0.1539), np.float64(1.0725)] FAP 1.1e-30
+   amplitude at 2.023: 0.061% (aperture fraction), power 0.0002
+   amplitude at 1.023: 0.044% (aperture fraction), power 0.0001
+   amplitude at 1.9826: 0.058% (aperture fraction), power 0.0001
+=== CTRL2
+sectors: [np.int64(1), np.int64(2), np.int64(28), np.int64(29), np.int64(68), np.int64(69), np.int64(95), np.int64(96)]
+S1: n=1231 top [np.float64(1.605), np.float64(1.604), np.float64(1.606)] rms 0.41%
+S2: n=1192 top [np.float64(0.427), np.float64(0.426), np.float64(0.428)] rms 0.54%
+S28: n=3447 top [np.float64(0.988), np.float64(0.987), np.float64(0.989)] rms 1.09%
+S29: n=3565 top [np.float64(0.654), np.float64(1.557), np.float64(0.653)] rms 0.56%
+S68: n=11211 top [np.float64(0.502), np.float64(0.501), np.float64(0.503)] rms 1.61%
+S69: n=9351 top [np.float64(1.348), np.float64(1.349), np.float64(1.347)] rms 0.83%
+S95: n=9849 top [np.float64(0.848), np.float64(0.849), np.float64(0.847)] rms 1.22%
+S96: n=10040 top [np.float64(0.692), np.float64(0.691), np.float64(0.693)] rms 1.23%
+joint top peaks: [np.float64(0.8407), np.float64(0.6878), np.float64(0.3038), np.float64(0.8526), np.float64(0.8697)] FAP 6.3e-42
+   amplitude at 2.023: 0.002% (aperture fraction), power 0.0000
+   amplitude at 1.023: 0.015% (aperture fraction), power 0.0001
+   amplitude at 1.9826: 0.032% (aperture fraction), power 0.0004

@@ -1916,3 +1916,92 @@ pre-polar); test = phase-resolved optical/near-IR spectrum.
 - This log and 37 object journals were rewritten in neutral wording. Dates, identifiers, measurements, verdicts, corrections and references are unchanged; per section, the headings and table rows are the same.
 - The journal subtitle line is now "Append-only." in all journals, in the template and in scripts/journal/journal.py.
 - The SMOKA request id is masked as P06USER0925100419FT, and the checksum file was renamed to request.md5.
+
+## 2026-09-26 21:52 UTC — UHE, AM CVn and double-white-dwarf screens of SDSS-V DR20 (and DESI DR1 for UHE)
+- **Prior art:**
+  - UHE white dwarfs: Reindl+2021 (A&A 647, A184; 16 UHE and 8 He II-problem stars, UHE line positions in Fig. B.1, UHE box in the Gaia HRD, variability 0.22-2.93 d with no red-rising amplitude); Reindl+2023 (A&A 677, A29); Werner+2023 (A&A 678, A89); DESI DR1 white-dwarf catalogue (arXiv:2609.04314; nine UHE objects shown).
+  - AM CVn: Green & van Roestel 2025 (A&A 700, A107).
+  - Double white dwarfs: SDSS-V DR19 candidates (arXiv:2509.02906); ELM Survey papers.
+- **UHE screen (docs/reports/uhe_screen_sdssv_2026_09_26/):**
+  - Sample: 1,876 hot SnowWhite objects (1,874 measured).
+  - Line equivalent widths at 5280 and 5665 A (plus 4495, 4941 and 6198 A).
+  - The known DA/DAO UHE stars in SDSS-V have 5280 A 0.4-1.6 A and 5665 A 0.3-0.8 A; normal hot white dwarfs are within about ±0.3 A.
+- **New UHE candidates:**
+  - WDJ0958-1758, EC 01395-6452, GALEX J0412-3754, GALEX J1913-5330, PG 1201-049 (also in DESI), GALEX J0311-4854 and Gaia DR3 4866851575967878144 (SDSS-V).
+  - FBS 0614+639 and GALEX J1833+4829 (DESI DR1; 710 hot DESI white dwarfs measured, nine known UHE stars recovered).
+  - All lie in or near the Reindl+2021 UHE box.
+- **Periods:**
+  - New: EC 01395-6452, 11.864 h (ATLAS + TESS; two control stars show no signal); Gaia DR3 4866851575967878144, 0.716 d (ATLAS).
+  - Published earlier: WDJ0958-1758 (3.2672 d, confirmed in ATLAS), PG 1201-049 (18.52 h), GALEX J0311-4854 (0.3954 d, confirmed in TESS), GALEX J1833+4829 (0.9118 d).
+  - Not confirmed: GALEX J1913-5330 (ATLAS 2.2258 c/d only).
+- **Excluded:** EC 04534-5931 (DOZ; its 4655 A feature is C IV) and the A66 21 central star (PG1159 lines).
+- **ATLAS amplitude normalisation:** fractional amplitudes normalised by the Gaia G flux overstate c relative to o for very blue stars (Rayleigh-Jeans factor about 1.46 in c, 0.89 in o). After correction, the amplitudes are nearly equal in both bands.
+- **AM CVn screen (docs/reports/amcvn_screen_sdssv_2026_09_26/):**
+  - 2,005 SDSS-V objects with CV/DB/DO classes.
+  - Two known AM CVn stars recovered.
+  - New candidate: CRTS J205436.5-541810, a catalogued dwarf nova with He I emission and no H-alpha emission, and a long Gaia outburst.
+- **Double-white-dwarf sweep (docs/reports/dwd_sweep_sdssv_2026_09_26/):**
+  - BOSS per-exposure RVs for 1,749 low-mass DA white dwarfs.
+  - Four known ELM binaries recovered (J1112+1117, J0650-4925, J1236-0444, J2104+1712).
+  - The remaining candidates are faint or rest on one or two exposures and are registered as unconfirmed.
+
+## 2026-09-26 23:26 UTC — White dwarf + irradiated companion search in ZTF; LAMOST DR11 UHE screen
+- **WD + irradiated companion (docs/reports/wdbd_ztf_2026_09_27/):**
+  - Sample: 124 GF21 white dwarfs (Pwd > 0.75, Dec > -28) with a Gaia DR3 vari_spurious_signals GLS frequency of 3-40 c/d (FAP < 0.05).
+  - ZTF DR light curves (catflags 0); joint g+r Lomb-Scargle near the Gaia frequency; sinusoid + first harmonic per band.
+  - 118 measured, 62 with a significant ZTF signal (FAP < 1e-5, > 5 sigma), 16 blue objects (BP-RP < -0.15) with r/g amplitude ratio >= 1.5.
+  - All 16 are catalogued, with published periods or classifications (VSX, ZTF periodic catalogue, ATLAS, Ranaivomanana+2025 A&A 704 A70, Steen+2024, Barlow+2022, Reindl+2023), apart from SDSS J1022+1611 (docs/object_journals/3890059941364406144.md).
+  - SDSS J015843.74-150226.0 (Gaia DR3 5148800025576590464): low-mass DA (GF21 0.24 Msun); period 0.136387 d in Ranaivomanana+2025 and VSX; ZTF r/g amplitude ratio 3.40. Jestin+2026 lists it as not variable.
+  - VSX lists GALEX J183243.4+354518 (M_G 9.59, r/g 2.58) as DSCT.
+- **LAMOST DR11 UHE screen (docs/reports/lamost_uhe_2026_09_27/):**
+  - Sample: 496 LAMOST DR11 white dwarfs (V/162/dr11wdl) with Teff > 45 kK or an O in the class, snr_g > 8 (390 DA).
+  - Same line windows as the SDSS-V screen (5280 and 5665 A, controls 5100, 5480 and 5740 A); significance against the control-window scatter per S/N bin.
+  - 9 known UHE stars in the sample; 3 pass the flag criteria (HS 0713+3958, SDSS J025403.75+005854.5, SDSS J014636.73+323614.3).
+  - Two unknown stars flagged (Gaia DR3 124105523855366272, 978604724981696768). No feature is visible in either spectrum; their significance is within the range of the control windows. Rejected.
+  - A median stack of 384 unflagged DA spectra is flat at 5280 and 5665 A.
+  - Result: null; sensitivity at LAMOST S/N is limited to the strongest UHE stars.
+
+## 2026-09-27 00:07 UTC — Radio, X-ray and gamma-ray counterparts of the UHE candidates
+- **Method:** scripts/mwcheck/mwcheck.py (ROSAT 2RXS, eRASS1, eRASS:3, 4XMM-DR13, 2SXPS, CSC2, radio surveys, 4FGL-DR4, CV catalogues) for the 10 UHE candidates and, as controls, 37 known UHE stars (docs/reports/uhe_screen_sdssv_2026_09_26/data/known_uhe_all.csv, de-duplicated within 3", plus KPD 0005+5106).
+- **Candidates:** no radio, X-ray or gamma-ray counterpart. Seven lie in the eROSITA-DE sky and are absent from eRASS1 and eRASS:3; FBS 0614+639, GALEX J1833+4829 and GALEX J0141+3202 are covered by ROSAT only (absent).
+- **Controls:** KPD 0005+5106 is recovered (2RXS 3.2", 4XMM 0.8", CSC2 0.4"). None of the other 36 known UHE stars has an X-ray counterpart; the 4XMM source 9.3" from WD 0101-182 has a 1.8" position error and is unrelated.
+- **Result:** X-ray non-detection is the norm for known UHE stars in these surveys; the candidates are not distinguished by it.
+- Outputs: docs/reports/uhe_screen_sdssv_2026_09_26/xray_2026_09_27/ (summary.csv, per-object reports, run.sh).
+
+## 2026-09-27 01:13 UTC — WDJ205249.27-032419.53: 97.7-min white dwarf with an irradiated companion candidate
+- **Trigger:** blind ZTF periodogram of the 715 white dwarfs marked "Variable False" by Jestin+2026 (A&A 712, A243; run in progress, first 161 light curves).
+- **Object:** Gaia DR3 6914922055508553984 = GALEX J205249.1-032418 = ZTF J205249.27-032419.6; G 17.47, 334 pc; DA, 18357 K, log g 7.26, 0.36 Msun (Kilic+2026).
+- **Photometry:** P = 97.7033 min (f 14.7384981 +- 0.0000040 c/d) in ZTF, Gaia DR3 GLS and TESS S55/S81 (120 s and 20 s). Semi-amplitude g 2.9%, r 7.0%, TESS ~10%; peaked maximum, flat minimum, no eclipse.
+- **Infrared:** against pure-H model photometry scaled to SDSS griz, Ks x2.2, W1 x3.6, W2 x4.2 (excess 9-20 sigma); companion M_Ks ~10.0, ~M9-L1.
+- **Spectrum:** DESI DR1 single 494-s exposure: H-alpha emission at +189 +- 8 km/s at photometric phase 0.83.
+- **Prior art:** period catalogued as DSCT (Chen+2020 ZTF periodic catalogue, VSX) and in the Wang+2025 TESS flare catalogue; DESI DR1 classes DAe (Amorim+2026) and WD+MS (Swan DR1 catalogue); Madurga Favieres+2024 list no infrared excess; Jestin+2026 list it as not variable. No publication of the companion interpretation found. Hole: Huang+2026 (ApJS 286, 24) not machine-readable.
+- **Status:** candidate white dwarf + irradiated late-M/L companion; confirmation needs phase-resolved spectroscopy.
+- Journal: docs/object_journals/6914922055508553984.md; scripts and data: docs/reports/wdbd_ztf_2026_09_27/j2052/.
+
+## 2026-09-27 02:02 UTC — White dwarfs in the ZTF periodic-variable catalogue: WDJ212738.67+593755.72
+- **Method (docs/reports/chen_wd_2026_09_27/):** Chen+2020 (J/ApJS/249/18, tables 2 and 3) x Gentile Fusillo+2021, 1.5": 727 matches. 169 have Pwd > 0.75 and P < 12 h; 55 have r/g amplitude ratio > 1.5. For P < 6 h, r/g > 1.4, G < 19.5: CatWISE2020 W1/W2 excess against pure-H model photometry at the GF21 Teff/log g.
+- Most short-period red-rising white dwarfs have a W1 excess of 1-2 mag (irradiated companions); estimated companion M_W1 ranges from ~7.6 (M dwarfs) to ~9.3-9.7.
+- **WDJ212738.67+593755.72 (Gaia DR3 2191618770599895296):** 241 pc, GF21 13.8 kK / 0.26 Msun; P 130.18 min in ZTF (Chen+2020 type DSCT), Gaia DR3 and TESS sectors 76/77/83/84 (120 s and 20 s; FAP 1e-58 to 1e-168); r/g 2.5; W1/W2 x3.7/x3.6 above the WD model, companion M_W1 9.27 (~M8-M9). No spectrum in SDSS, BOSS, DESI DR1, SDSS-V or LAMOST DR11. Prior art: DSCT in Chen+2020 and VSX; periodic in Jestin+2026; excess in Madurga Favieres+2024 ('Only Mag'). No publication of the companion. Journal: docs/object_journals/2191618770599895296.md.
+- **Known or with period in the literature (register):** GALEX J183243.4+354518 (Steen+2024 likely binary; companion M_W1 ~9.7), Ton 57 (VSX R), CSO 572 (DP; VSX R), GALEX J051348.7+721752 (VSX, Ranaivomanana+2025).
+
+## 2026-09-27 02:10 UTC — Southern short-period white dwarfs: Gaia BP/RP amplitudes, infrared excess, TESS
+- **Method (docs/reports/south_wd_companions_2026_09_27/):** 28 GF21 white dwarfs south of Dec -28 (outside ZTF) with a Gaia DR3 GLS frequency of 3-40 c/d (FAP < 1e-3). Gaia DR3 epoch photometry: sinusoid at the GLS frequency in G, BP and RP. CatWISE2020 and VHS DR5 excess against pure-H model photometry. TESS FFI cutouts for the shortest periods.
+- 16 of 28 have RP/BP amplitude ratios above 1.7; most have a W1 excess (companion M_W1 6.7-10.4). Periods of most stars are in VSX (Gaia DR3, unclassified) and several are Steen+2024 "likely binary"; registered.
+- **WDJ070106.16-534811.37 (Gaia DR3 5503429908930455808):** P 81.49 min, RP/BP 2.5, companion M_W1 ~9.8; TESS sectors 88-98 confirm the period (joint FAP 6e-107).
+- **GALEX J040444.3-395043 (Gaia DR3 4844023064578952320):** P 117.32 min, RP/BP 5.1, companion M_W1 ~9.3; TESS sectors 106-107 confirm (joint FAP 2e-143).
+- **GALEX J005615.1-661732 (Gaia DR3 4705562733524591232):** Gaia P 73.52 min, RP/BP 3.3, companion M_W1 ~10.4 (W1 at the survey limit); TESS joint periodogram marginal (FAP 8e-4). Period unconfirmed.
+- None of the three has a published companion interpretation. Journals: docs/object_journals/{5503429908930455808,4844023064578952320,4705562733524591232}.md.
+
+## 2026-09-27 02:20 UTC — CRTS periodic-variable catalogues x white dwarfs; southern weak-period and colour-cut follow-ups
+- **CRTS (docs/reports/crts_wd_2026_09_27/):** Drake+2014 CSS and Drake+2017 SSS x GF21 (2"): 30 + 11 matches, 11 + 3 with Pwd > 0.75, periods 2.9-83 h, all bright (G < 18) and mostly known variables (UHE stars, PCEBs). No short-period low-amplitude candidate. Registered.
+- **Southern Gaia periods with FAP 1e-3 to 5e-2:** 14 stars; Gaia epoch photometry gives no convincing red-rising case; several cluster near 12 c/d (a Gaia scan-law harmonic). Null.
+- **2026-09-26 WD+BD ZTF search, colour cut:** the BP-RP < -0.15 cut excluded 13 red-rising detections, including WDJ205249.27-032419.53 and WDJ212738.67+593755.72 (both now journals), MGAB-V1240 (known, VSX R) and SDSS J113732.32+405458.3 (known AM CVn). Registered.
+- **GALEX J040444.3-395043:** one SDSS-V DR20 LCO visit (S/N 14), H-alpha region noise-dominated.
+- **TESS 20-s eclipse search:** no eclipse in WDJ205249.27-032419.53 (depth limit ~15% in 0.65-min bins) or WDJ212738.67+593755.72 (~6% in 0.43-min bins).
+- **WDJ080026.64+633414.85 (Gaia DR3 1094376947131876352):** hot DOA (DESI DR1, 78 kK) inside the Reindl+2021 UHE box, new ZTF period 21.42 h (g 2.4%, r 1.6%); no UHE line at DESI S/N 18. Journal.
+
+## 2026-09-27 11:27 UTC — Public release of four white dwarfs with irradiated companions
+- sdssv-white-dwarfs-2026 commit ebfd07c: WDJ205249.27-032419.53, WDJ212738.67+593755.72, WDJ070106.16-534811.37 and WDJ040444.35-395043.1 (docs/irradiated_companions.md; scripts irradiated_companions.py and desi_halpha_6914922055508553984.py).
+- Periods from a common-phase fit over ZTF, TESS and Gaia G (each data set scaled by its own amplitude): 97.703, 130.182, 81.493 and 117.319 min; chi2 difference to the next alias 4918, 4206, 84 and 1366.
+- Correction to the first version of the release script: its "joint" fit let each data set keep its own phase, so it did not constrain the cycle count between data sets; the released script uses a shared phase.
+- Infrared excess (pure-H model scaled at Gaia G): companion M_W1 9.25, 9.28, 9.82 and 9.33. DESI H-alpha emission of WDJ205249.27-032419.53: +189 +- 8 km/s at phase 0.82; delta chi2 = 211 against the tile/petal calibration-residual template.

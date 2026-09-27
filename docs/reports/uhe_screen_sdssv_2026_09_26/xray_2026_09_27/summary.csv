@@ -1,0 +1,48 @@
+set,name,xray_match,xray_absent,holes
+candidate,Gaia DR3 1008280341952767232,,ROSAT 2RXS,0
+candidate,Gaia DR3 2120335400240968448,,ROSAT 2RXS; Swift 2SXPS,0
+candidate,Gaia DR3 303909583762954368,,ROSAT 2RXS,0
+candidate,Gaia DR3 3597350571454888448,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); Swift 2SXPS,0
+candidate,Gaia DR3 4711031463842628736,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); Swift 2SXPS,0
+candidate,Gaia DR3 4749559145849819008,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+candidate,Gaia DR3 4844689579080133248,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); XMM 4XMM-DR13,0
+candidate,Gaia DR3 4866851575967878144,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+candidate,Gaia DR3 5671975077144346112,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+candidate,Gaia DR3 6644780943442193664,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),SDSSJ003213.14+160434.8,,ROSAT 2RXS,0
+control (known UHE),WD0101-182,"XMM 4XMM-DR13 nearest 9.29""",ROSAT 2RXS,0
+control (known UHE),SDSSJ014636.73+323614.3,,ROSAT 2RXS; Swift 2SXPS,0
+control (known UHE),HS 0158+2335,,ROSAT 2RXS; Swift 2SXPS,0
+control (known UHE),SDSSJ025403.75+005854.5,,ROSAT 2RXS,0
+control (known UHE),HE 0504-2408,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); XMM 4XMM-DR13; Swift 2SXPS,0
+control (known UHE),HS 0713+3958,,ROSAT 2RXS; XMM 4XMM-DR13,0
+control (known UHE),HS 0727+6003,,ROSAT 2RXS,0
+control (known UHE),HS 0742+6520,,ROSAT 2RXS; XMM 4XMM-DR13; Swift 2SXPS,0
+control (known UHE),SDSSJ090023.89+234353.2,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),SDSSJ105956.00+404332.4,,ROSAT 2RXS; XMM 4XMM-DR13; Swift 2SXPS; Chandra CSC2,0
+control (known UHE),SDSSJ121523.08+120300.7,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); Chandra CSC2,0
+control (known UHE),SDSSJ125724.04+422054.2,,ROSAT 2RXS,0
+control (known UHE),SDSSJ151026.48+610656.9,,ROSAT 2RXS,0
+control (known UHE),HS 2027+0651,,ROSAT 2RXS; XMM 4XMM-DR13,0
+control (known UHE),HS 2115+1148,,ROSAT 2RXS,0
+control (known UHE),SDSSJ082134.59+173919.4,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),SDSSJ082724.44+585851.7,,ROSAT 2RXS,0
+control (known UHE),SDSSJ094722.49+101523.6,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); XMM 4XMM-DR13; Chandra CSC2,0
+control (known UHE),SDSSJ102907.31+254008.3,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); Swift 2SXPS,0
+control (known UHE),HE1314+0018,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),SDSSJ151215.72+065156.3,,ROSAT 2RXS; XMM 4XMM-DR13; Swift 2SXPS; Chandra CSC2,0
+control (known UHE),HS 1517+7403,,ROSAT 2RXS,0
+control (known UHE),SDSSJ155356.81+483228.6,,ROSAT 2RXS; XMM 4XMM-DR13; Swift 2SXPS,0
+control (known UHE),WDJ070204.29+051420.56,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),WDJ070647.52+613350.31,,ROSAT 2RXS; Chandra CSC2,0
+control (known UHE),WDJ093559.83+685201.55,,ROSAT 2RXS; Swift 2SXPS,0
+control (known UHE),WDJ125627.43+775301.37,,ROSAT 2RXS,0
+control (known UHE),WDJ210110.17-052751.14,,ROSAT 2RXS; XMM 4XMM-DR13,0
+control (known UHE),WDJ210132.69+135622.59,,ROSAT 2RXS,0
+control (known UHE),WDJ211532.62-615849.50,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2),0
+control (known UHE),WD J022517.08+031218.43,,ROSAT 2RXS; XMM 4XMM-DR13,0
+control (known UHE),WD J173934.39+212331.58,,ROSAT 2RXS,0
+control (known UHE),WD J174154.46+135930.03,,ROSAT 2RXS; Swift 2SXPS,0
+control (known UHE),WD J211400.67+085601.04,,ROSAT 2RXS,0
+control (known UHE),WD J081251.35+042744.09,,ROSAT 2RXS; eRASS1 (main+hard+supp); eRASS:3 (DR2); Swift 2SXPS,0
+control (known UHE),KPD 0005+5106,"ROSAT 2RXS nearest 3.16""; XMM 4XMM-DR13 nearest 0.76""; Chandra CSC2 nearest 0.43""",Swift 2SXPS,0
