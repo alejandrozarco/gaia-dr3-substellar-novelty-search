@@ -2041,3 +2041,53 @@ pre-polar); test = phase-resolved optical/near-IR spectrum.
 - The table is in the arXiv source (copied to docs/reports/hot_periodic_wd_2026_09_27/prior_art/).
 - WDJ0948 and SDSS J0917 become recoveries; journals updated. WDJ043832.74+003117.01 (2-min data only in S98) and WDJ080026.64+633414.85 (no 2-min data) are not in the table.
 - Of the public period objects, WDJ072009.19+464840.48 (TIC 407569944, 19.185 h) is also in the table; the public page cites it.
+
+## 2026-09-27 16:50 UTC — Jestin+2026 "Variable False" ZTF sweep: full run and triage
+- **Sample:** the 716 white dwarfs marked Variable = False by Jestin+2026 (A&A 712, A243, table A1). 653 usable ZTF light curves; 60 IRSA holes (recorded as holes, one EMPTY, one too few points).
+- **Detection:** joint g+r Lomb-Scargle 0.5-50 c/d (1/2/3 c/d masked), FAP < 1e-8 and amplitude > 5 sigma -> 102 detections; 20 alias-flagged. Consistency: top frequency recovered in >= 3 of 4 subsets (g, r, halves). Shared-frequency clusters (>= 3 stars within 0.003 c/d, e.g. 0.966 and 1.969 c/d) excluded as systematics.
+- **Novelty gate** (docs/reports/jestin_ztf_2026_09_27/gate/period_gate.py; template-tested on three known-period controls): VizieR all-table period columns, TIC x Oliveira da Rosa+2024 arXiv source table, MWDD, SIMBAD.
+- **Result:** 21 clean new periods. 4 were already on the public pages (WDJ0800+6334, WDJ0438+0031, SDSS J1022+1611, WDJ0037+1901); **17 journaled as new**, including 7 hot He-atmosphere stars (DO/DOZ 50-106 kK: 1038176780370360576 27.2 h, 1157401396015448960 5.4 h, 1879989790567353344 18.5 h, 920621124593362816 20.8 h, 953685015492787456 14.7 h, 5157333438398813824 (DA 107 kK) 28.5 h, 1415911839725510528 (DA 68 kK) 30.1 h), a DZ (1428369955006868352, 5.5 h), a He-sdO (1267342736203088128, 38.6 h) and four red-rising binaries (2198121724740033408 6.1 h, 2672992211134257152 7.3 h, 4234317757878747776 9.6 h, 4511443341484192256 2.8 h). 44 register rows (known periods, clusters, unconfirmed).
+- The catalogue's Variable = False label again does not exclude 1-5% day-scale signals (cf. HS 2027+0651).
+
+## 2026-09-27 16:50 UTC — DESI DR1 DAe white dwarfs: ZTF periods (new lane)
+- **Sample:** Amorim+2026 DESI DR1 classes DAe/DAE/DA+ x Gaia (21 with ZTF); CatWISE W1 excess 1.8-3.5 mag over the pure-H model for the detected ones (M-dwarf companions).
+- **Result:** 12 ZTF detections at FAP < 1e-6; **9 journaled as new periods** (2.0-13.5 h, most red-rising, r/g up to 3.6): irradiation/reflection periods of WD+dM binaries with emission-line spectra. None has a period in VizieR, MWDD, Oliveira da Rosa+2024, Chen+2020 or VSX. docs/reports/dae_ztf_2026_09_27/.
+- These are orbital-period measurements for spectroscopically confirmed post-common-envelope candidates; DR4 epoch RVs (Dec 2026) can confirm them.
+
+## 2026-09-27 16:50 UTC — ATLAS confirms the last two hot-periodic candidates
+- 2311285729210966144 (GALEX J234931.8-353916, SnowWhite DA): ATLAS 2015-2026 top peak 0.90637 c/d in both bands (P 26.48 h), at the Gaia GLS frequency; amplitude larger in c than o.
+- 3365371721281530880: ATLAS top peak 1.18978 c/d in both bands (P 20.17 h), at the Gaia vari_spurious_signals frequency; larger in c than o. Both journaled as new periods (docs/reports/hot_periodic_wd_2026_09_27/atlas_fold2.py).
+
+## 2026-09-27 16:55 UTC — Prior-art scan (literature agents) and Filiz+2026 overlap check
+- Filiz, Reindl et al. 2026 (A&A; arXiv:2601.11191): archival light-curve periods of 19 DA + 13 DAO white dwarfs above 60 kK (4/32 variable; WD 0232+035 4.23 d, WD 1342+443 1.87 d with an irradiated-companion interpretation). None of our period objects is in its object list (arXiv source checked). Added to the period-novelty references.
+- Jestin+2026 measured periods with ZTF multiband Lomb-Scargle on their Gaia-scatter selection; Gaia GLS frequencies, ATLAS and post-S69 TESS remain outside published sweeps.
+- No published detached WD+BD below 68.2 min (Casewell+2018); ZTF J0038+2030 got a JWST phase curve (arXiv:2606.30112). No DAe/PCEB ZTF-period paper for DESI DR1 yet; Swan+2026 DESI DR1 WD catalogue is arXiv:2609.04314 (Sept 2026), and arXiv:2412.15153 flags DESI PCEBs as a next target.
+
+## 2026-09-27 16:58 UTC — 2026 catalogue additions to the period-novelty gate
+- TARS (arXiv:2603.05586; TESS FFI rotation periods, default catalogue T < 16 and d < 100 pc) and the TESS CV period catalogue (arXiv:2607.08727; literature-known CVs) checked: none of the project's period objects appears in either (TARS excludes them by its magnitude/distance cuts; the CV catalogue by its input lists). Both added to the gate references, with Filiz+2026.
+- eROSITA DR2 (2026-07-31; cumulative eRASS:1-3, ~1.9M sources; arXiv:2607.27772) supersedes eRASS1 for X-ray checks; a DR2 re-check of the X-ray-relevant objects is queued.
+
+## 2026-09-27 17:15 UTC — Public release: hot-white-dwarf periods and emission-line-DA periods
+- sdssv-white-dwarfs-2026 f59f077: docs/hot_wd_periods.md (9 stars: 7 Jestin-sample ZTF + 2 Gaia/ATLAS) and docs/dae_wd_periods.md (7 DESI DAe/DAE/DA+ stars with ZTF periods and CatWISE excesses), with data, scripts (hot_dae_wd_periods.py), tables and figures.
+- Two DAe candidates (3860905978237289600, 3848590795171195776) were excluded before release: the public pipeline chose a different daily alias / peak, so the period is not settled; journaled as held back.
+
+## 2026-09-27 17:31 UTC — Correction: two released hot-WD periods are in Reindl+2021
+- WDJ151215.73+065156.43 (= J1512+0651, UHE DOZ) and KUV 07523+4017 (DOZ/PG 1159): periods 0.226022 d and 0.866092 d are in the Reindl+2021 period tables (arXiv source only; not VizieR; matched by GALEX/KUV alias, not WDJ name). Both equal our values. Public page corrected the same evening (4c52a06); journals updated to recovery.
+- Gate change: the Reindl+2021 source tables (all three, including the non-UHE "He II line problem" and DA tables) are now grepped by every name alias for any hot-WD period claim; the known-UHE list membership is checked before release. All other released and journaled period objects re-scanned against those tables: no further matches.
+
+## 2026-09-27 17:35 UTC — eROSITA DR2 (eRASS:1-3) counterpart check of the portfolio
+- 80 objects checked against Ramos-Ceja+2026 (J/A+A/712/A171) and eRASS1 (docs/reports/erosita_dr2_2026_09_27/): 38 lie in the DE hemisphere; 3 detections, 35 non-detections at three-survey depth.
+- Detections: Object B (position now favours the blue star over the G-dwarf neighbour: 2.1 vs 5.9 arcsec at posErr 1.4 arcsec); CRTS J2054-5418 (persistent, DetLike 50.6); 2MASS J0353-5502 (already recorded on 2026-09-24 via mwcheck, which includes this catalogue).
+- Non-detections at eRASS:1-3 depth: every covered UHE star and UHE candidate (12), the covered hot-white-dwarf period stars, emission-line DAs, irradiated-companion systems and gas-disc stars. This deepens the earlier X-ray-dark statements by roughly the cumulative exposure (about 3 surveys).
+- mwcheck.py already carries J/A+A/712/A171; this run adds the uniform portfolio sweep and the Object B position comparison.
+
+## 2026-09-27 18:07 UTC — TESS sweep: northern A-tier attribution checks
+- Per-star ZTF light curves for the 7 northern A-tier candidates of the partial hot sweep: 5 signals are not attributable to the white dwarf (flat ZTF at the TESS frequency while the crowding-corrected amplitude requires more), including the PHL 241/242 double-degenerate pair (LDS 6383; the 12.44-h signal belongs to a field star) and the 124.6-kK and 83-kK DAs.
+- 1 blind recovery that validates the whole chain: PG 2257+162 (WD 2257+162) — TESS and ZTF independently give P = 7.76 h with a red-rising reflection signal, IR excess (companion M_W1 8.5) and a UV excess over the companion-biased GF21 fit; Inight+2021 list the RV orbital period 7.7352 h (Ashley+2019) and Teff 25.45 kK. Uncued rediscovery with the right period, companion class and WD temperature. No VSX entry; a photometric-period VSX submission is optional user business.
+- At G 16-17.5 most single-aperture TESS signals are field contamination; the full triage therefore requires ZTF/ATLAS attribution before any claim.
+
+## 2026-09-27 20:16 UTC — TESS 2-min S70-106 hot sweep: full triage and A-tier attribution
+- Full hot selection (TeffH > 12 kK, G < 17.5; 8,617 two-minute light curves) triaged with triage.py + bulk_gate.py (docs/reports/tess_2min_s70s106_2026_09_27/candidates_gated.csv): 346 candidate stars = 123 known periods recovered / 11 already-journaled project objects / 192 contaminated-or-systematic / 11 B / 9 A-tier.
+- A-tier attribution status: 1 confirmed on-star — WDJ145922.70-781949.04 (DO, 6.28 h; TESS 4/4 sectors + ATLAS o FAP 9e-25; journaled, VSX revision case; the 4.2-arcsec neighbour's own ATLAS photometry is queued as the final check). 3 killed tonight and registered: WDJ081626.19-701639.83 and WDJ075643.91-545348.89 (ATLAS forced photometry flat at the TESS frequency, limits 0.3-1.3% and 0.4-0.5% vs required 42% and 3.4%), WDJ193805.86+382529.76 (ZTF flat/marginal vs required 46%). 5 pending: the 86-min and 81-min candidates and the hot DB WDJ014647.14+420702.14 (ATLAS batch re-queued), plus the 15.1-h sdB and one more in the first batch.
+- WDJ014647.14+420702.14 (DB): IRSA ZTF returned an empty/short reply twice at a position ZTF covers — recorded as a hole, not a null; ATLAS queued as the decisive test.
+- Bonus: ATLAS o-band independently confirms the PG 2257+162 reflection period (top peak P 465.63 min, FAP 3e-12), tightening the earlier TESS+ZTF blind recovery.

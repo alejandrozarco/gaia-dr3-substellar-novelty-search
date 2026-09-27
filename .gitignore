@@ -60,3 +60,5 @@ data/external_catalogs
 
 # APOGEE DR17 ASPCAP bulk catalog (1.7 GB, re-downloadable from SDSS SAS)
 data/external_catalogs/apogee_dr17/*.fits
+docs/reports/hot_periodic_wd_2026_09_27/cache/
+docs/reports/jestin_ztf_2026_09_27/ztf
