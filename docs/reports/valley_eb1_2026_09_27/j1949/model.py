@@ -31,7 +31,7 @@ m = np.isfinite(g.TimeG) & np.isfinite(g.FG) & (g.FG > 0) & (g.GrVFlag == 0)
 t = g.TimeG[m].values + 2455197.5; y = g.FG[m].values / np.median(g.FG[m]) - 1; e = g.e_FG[m].values / np.median(g.FG[m])
 ph, eph, _ = phase_fit(t, y, e); rows.append(("Gaia G", t.mean(), ph, eph))
 # TESS sectors
-for p in sorted(glob.glob("../sdssv-white-dwarfs-2026/data/cache/mastDownload/TESS/*1884345742*/*_lc.fits")):
+for p in sorted(glob.glob("../white-dwarfs-2026/data/cache/mastDownload/TESS/*1884345742*/*_lc.fits")):
     h = fits.open(p); d = h[1].data; sec = h[0].header["SECTOR"]; q = (d["QUALITY"] == 0) & np.isfinite(d["PDCSAP_FLUX"])
     t = d["TIME"][q] + 2457000.0; f = d["PDCSAP_FLUX"][q]; y = f / np.median(f) - 1; e = d["PDCSAP_FLUX_ERR"][q] / np.median(f)
     ph, eph, _ = phase_fit(t, y, e); rows.append((f"TESS S{sec}", t.mean(), ph, eph))
