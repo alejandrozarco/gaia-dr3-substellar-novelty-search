@@ -1,9 +1,9 @@
 """Magnitude ranges for the VSX drafts (2026-09-29). Out-of-eclipse levels from ATLAS-REFCAT2 (o ~ (r+i)/2, c ~ (g+r)/2, as for
-2MASS J03531244-5502363), corrected to phase 0 with the fitted harmonics; eclipse minima from the fitted depths (eclipse_fit.json).
+2MASS J03531244-5502363), corrected to phase 0 with the fitted harmonics; eclipse minima from the depths fitted at the refined period (shape_at_refined.json).
 WDJ1438: outburst peaks from the ATLAS nightly medians (difference flux added to the quiescent level) and outburst episodes
 (nights > 5 robust sigma above quiescence with median point S/N > 5, frames with errors > 3x the median dropped, grouped with 15-day gaps). Output: magnitudes.json."""
 import numpy as np, json
-F = json.load(open("eclipse_fit.json")); V = json.load(open("vsx_fields.json")); out = {}
+F = json.load(open("shape_at_refined.json")); V = json.load(open("vsx_fields.json")); out = {}   # depths and harmonics at the refined period
 def mag(fl): return -2.5 * np.log10(fl / 3631e6)
 for name in F:
     r = F[name]; rc = V[name]["refcat2"]; g, rr, ii = float(rc["gmag"]), float(rc["rmag"]), float(rc["imag"])

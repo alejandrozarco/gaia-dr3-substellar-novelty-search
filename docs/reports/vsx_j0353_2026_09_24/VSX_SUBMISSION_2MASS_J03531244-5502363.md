@@ -1,6 +1,6 @@
 # VSX submission package — 2MASS J03531244-5502363
 
-Status: prepared, not submitted.
+Status: prepared 2026-09-24, updated 2026-09-29 (independent refit and catalogue re-check; values unchanged except the period's last digit), not submitted.
 
 ![ATLAS phase plot](2MASS_J03531244-5502363_ATLAS_phase.png)
 
@@ -15,7 +15,7 @@ Status: prepared, not submitted.
 | Type | EA/WD (EA if a white-dwarf component is not accepted without a spectrum) |
 | Spectral type | not given |
 | Magnitude range | 18.29 – 18.67 o (primary eclipse; see remarks for the calibration) |
-| Period | 0.1478697 d |
+| Period | 0.14786972 d |
 | Epoch | HJD 2460670.3826 (primary minimum; BJD_TDB 2460670.38336) |
 | Eclipse duration | 5.0% of the period (10.6 min) |
 | Discoverer | (submitter) |
@@ -25,7 +25,7 @@ Status: prepared, not submitted.
 ## Remarks (to submit)
 
 ATLAS forced photometry from 2021 December to 2026 shows a flat-bottomed eclipse lasting 10.6 min (5.0% of the period)
-once per 0.1478697 d (3.549 h). The eclipse removes about 30% of the o-band and 57% of the c-band flux. No secondary
+once per 0.14786972 d (3.549 h). The eclipse removes about 30% of the o-band and 57% of the c-band flux. No secondary
 eclipse is detected. Half this period (0.0739 d) is rejected: on the full period alternate dips have depths of 48 and
 6 uJy in o. Gaia DR3 parallax
 9.10 ± 0.11 mas (110 pc); the star lies 2.1 mag below the main sequence for its colour (M_G 13.17, BP−RP 2.82).
@@ -57,6 +57,23 @@ Gaia DR3, moved to epoch J2000.0.
   cool-dwarf catalogue (J/AJ/155/180, Teff 3393 K).
 - X-ray: eRASS:3 (4.9″), 4XMM-DR13 (1.5″; XMM ObsID 0651580601, 2011, flux 4.5e-14 erg/s/cm2 in 0.2–12 keV). Automated
   classifications of the XMM source: AGN (Tranin+2022, flagged as an outlier) and QSO (J/MNRAS/503/5263).
+
+## Update 2026-09-29
+
+- Independent refit (docs/reports/vsx_wdj1438_wdj1118_2026_09_29/eclipse_fit.py, period_refine.py): the same ATLAS data
+  and cleaning, a model with first and second orbital harmonics, and an eclipse centre searched over the full phase.
+  Fine period pass with the eclipse shape fixed: P = 0.147869716 ± 0.000000028 d, agreeing with 0.14786971 ± 0.00000004 d
+  above; mid-eclipse BJD_TDB 2460670.38336 (HJD 2460670.3826), unchanged. First-to-last contact 11.1 ± 1.2 min (5.2%),
+  flat fraction 0.5; depth 52.1 ± 3.4 uJy (o) and 33.1 ± 5.9 uJy (c). Out-of-eclipse harmonics are at most 3 uJy
+  (about 1% of the flux): no reflection or ellipsoidal modulation is detected.
+- The two-sided outlier clip used on 2026-09-24 removed no in-eclipse points (clip thresholds 162 uJy in o and 89 uJy
+  in c, above the eclipse depth).
+- VSX live API 2026-09-29: still nothing within 36 arcsec.
+- Additional VizieR tables at this position (all-table cone): DES RR Lyrae search (Stringer+2019, J/AJ/158/16):
+  RRab probability 0.0002, trial periods 0.508, 0.706 and 0.500 d (none related to 0.1479 d); XMM flare catalogue
+  (J/A+A/708/A224, 2026): flare probability 0.0002; 4XMM-DR11 spectral fit (J/A+A/704/A16): absorbed power law,
+  photon index 2.0 (1.7-3.0), log flux -13.18; Legacy Survey DR10 counterpart (J/A+A/704/A344) at 1.8 arcsec;
+  Milliquas/MORX lists the XMM source as an X-ray object. No published period or classification of the star.
 
 ## Catalogue checks (2026-09-24)
 

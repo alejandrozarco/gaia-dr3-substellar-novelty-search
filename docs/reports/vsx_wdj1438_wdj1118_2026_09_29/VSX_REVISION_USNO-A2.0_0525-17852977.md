@@ -11,8 +11,8 @@ Status: prepared, not submitted. Filed as a revision request on the star's VSX p
 | Name | USNO-A2.0 0525-17852977 | unchanged |
 | Type | UG: | **UG+E** |
 | Range | 16.9 – 18.5 CV | unchanged (ATLAS outburst maxima o 17.08, c 17.14 agree with the listed maximum) |
-| Period | none | **0.06289900 d** (90.5746 min) |
-| Epoch | none | **HJD 2459833.5235** (mid-eclipse; BJD_TDB 2459833.52434) |
+| Period | none | **0.06289901 d** (90.5746 min) |
+| Epoch | none | **HJD 2459833.5234** (mid-eclipse; BJD_TDB 2459833.52418) |
 | Eclipse duration | none | **22% of the period** (see remarks) |
 | Discoverer | Taichi Kato | unchanged |
 | Other names to add | — | Gaia DR3 6217118886429978112; WDJ143844.65-305148.24; 2MASS J14384464-3051480; TIC 379593642; 3eRASS J143844.5-305149 |
@@ -21,9 +21,9 @@ Status: prepared, not submitted. Filed as a revision request on the star's VSX p
 
 ## Remarks (to submit)
 
-Eclipsing dwarf nova. ATLAS forced photometry (2016-2026, quiescent data) shows eclipses once per 0.06289900 d
+Eclipsing dwarf nova. ATLAS forced photometry (2016-2026, quiescent data) shows eclipses once per 0.06289901 d
 (90.5746 min): a V-shaped eclipse that removes 25% of the quiescent flux in o and 41% in c, and a double-humped
-modulation between eclipses. First-to-last contact is 13-28% of the period depending on band and method; 22% is the
+modulation between eclipses. First-to-last contact is 16-28% of the period depending on band and method; 22% is the
 o-band width where the flux is more than 3 sigma below the out-of-eclipse level. TESS sector 102 (120 s) shows the
 same double-humped modulation (highest peak at twice the orbital frequency). ATLAS records 8 outbursts to o 17.1 and
 c 17.1 between 2024 January and 2025 September (episodes separated by more than 15 days); the 2017-2023 seasons (45-118 nights per year) show none above 5 sigma.
@@ -35,11 +35,13 @@ Gaia DR3 parallax 4.33 ± 0.19 mas; X-ray source 3eRASS J143844.5-305149.
   chi/N >= 10 or error above 3x the band median, removing outburst nights (330 points, nightly median > 5 robust
   sigma above quiescence, plus 5 days), subtracting per-season medians and clipping bright outliers (uJy, never m).
 - Joint fit, both bands: offset + first and second orbital harmonics + trapezoid eclipse.
-  P = 0.062898995 ± 0.000000017 d (delta chi2 = 1 after scaling chi2_r = 2.63 to 1); mid-eclipse BJD_TDB
-  2459833.52434 ± 0.19 min (bootstrap over nights); depth 57.7 ± 4.5 uJy (o), 64.4 ± 6.4 uJy (c); trapezoid
-  first-to-last contact 25.4 ± 1.0 min (28% of P).
+  grid period 0.062898995 d. Refitted at the refined period (`shape_at_refined.py`, 100-resample bootstrap over nights):
+  mid-eclipse ± 0.18 min; depth 58.9 ± 4.0 uJy (o), 63.8 ± 6.4 uJy (c); trapezoid first-to-last contact 25.4 ± 0.8 min
+  (28% of P), flat fraction 0.25.
+- Fine period pass (`period_refine.py`, eclipse shape fixed, 81 periods, centre free): P = 0.062899012 ±
+  0.000000006 d (delta chi2 = 1 after scaling chi2_r to 1); mid-eclipse BJD_TDB 2459833.52418.
 - Model-light duration (bins of 0.01 in phase more than 3 sigma below the out-of-eclipse model): o -0.12 to +0.10
-  (22%, 19.9 min), c -0.07 to +0.06 (13%, 11.8 min); half-depth widths 14% (o) and 10% (c).
+  (22%, 19.9 min), c -0.07 to +0.09 (16%, 14.5 min); half-depth widths 16% (o) and 13% (c).
 - Quiescent levels from ATLAS-REFCAT2 (o = (r+i)/2 = 18.04, c = (g+r)/2 = 18.37); eclipse minima o 18.30, c 18.99.
 - Outbursts (frames with errors above 3x the median dropped; nights with median point S/N > 5 and > 5 robust sigma
   above quiescence): o 47 nights in 5 episodes, c 12 nights in 6 episodes, starting MJD 60324-60935; brightest

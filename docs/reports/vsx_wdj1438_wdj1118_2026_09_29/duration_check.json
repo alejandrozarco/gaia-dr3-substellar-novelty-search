@@ -4,35 +4,35 @@
    "first_bin": -0.11999999999999988,
    "last_bin": 0.10000000000000031,
    "duration_phase": 0.2200000000000002,
-   "duration_min": 19.92640164587794,
-   "half_depth_width_phase": 0.14000000000000012,
-   "depth_uJy": 59.220247529100455
+   "duration_min": 19.926407152844178,
+   "half_depth_width_phase": 0.16000000000000014,
+   "depth_uJy": 58.67885140993501
   },
   "c": {
    "first_bin": -0.06999999999999984,
-   "last_bin": 0.060000000000000275,
-   "duration_phase": 0.13000000000000012,
-   "duration_min": 11.774691881655146,
-   "half_depth_width_phase": 0.10000000000000009,
-   "depth_uJy": 38.9491048773665
+   "last_bin": 0.0900000000000003,
+   "duration_phase": 0.16000000000000014,
+   "duration_min": 14.491932474795762,
+   "half_depth_width_phase": 0.13000000000000012,
+   "depth_uJy": 37.007034187459425
   }
  },
  "WDJ1118-5442": {
   "o": {
    "first_bin": -0.029999999999999805,
-   "last_bin": 0.04000000000000026,
-   "duration_phase": 0.07000000000000006,
-   "duration_min": 9.464098709410512,
+   "last_bin": 0.03000000000000025,
+   "duration_phase": 0.06000000000000005,
+   "duration_min": 8.11207822361378,
    "half_depth_width_phase": 0.040000000000000036,
-   "depth_uJy": 273.96512591330156
+   "depth_uJy": 273.0828998180823
   },
   "c": {
    "first_bin": -0.019999999999999796,
-   "last_bin": 0.02000000000000024,
-   "duration_phase": 0.040000000000000036,
-   "duration_min": 5.408056405377436,
+   "last_bin": 0.03000000000000025,
+   "duration_phase": 0.050000000000000044,
+   "duration_min": 6.760065186344816,
    "half_depth_width_phase": 0.040000000000000036,
-   "depth_uJy": 372.54399509355994
+   "depth_uJy": 375.8446325716872
   }
  }
 }

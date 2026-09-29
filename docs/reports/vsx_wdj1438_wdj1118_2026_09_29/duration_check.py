@@ -3,7 +3,7 @@ reference is the fitted offset + harmonics (no eclipse term); the duration is th
 weighted mean lies more than 3 sigma below that reference, requiring both bands to agree within one bin. Also the half-depth width."""
 import numpy as np, json
 exec(open("eclipse_fit.py").read().split("CEN = ")[0])
-F = json.load(open("eclipse_fit.json")); out = {}
+F = json.load(open("period_refine.json")); out = {}   # refined period and epoch
 for name, s in STARS.items():
     r = F[name]; D, _ = load(s); P, T0 = r["P"], r["T0_BJD_TDB"]; res = {}
     for b in ("o", "c"):

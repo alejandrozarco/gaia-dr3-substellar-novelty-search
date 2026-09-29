@@ -1,6 +1,8 @@
 """VSX values for two eclipsing white-dwarf binaries from ATLAS forced photometry (o, c; uJy difference fluxes), 2026-09-29.
   WDJ143844.65-305148.24 = Gaia DR3 6217118886429978112 (dwarf nova; P near 0.0628990 d)
   WDJ111803.09-544218.04 = Gaia DR3 5346312514819760896 (white dwarf + M dwarf; P near 0.0938896 d)
+  2MASS J03531244-5502363 = Gaia DR3 4731701084150029824 (update of the 2026-09-24 VSX package; P near 0.1478697 d)
+Select stars with the environment variable STARS (comma-separated; default the first two).
 Cleaning as for 2MASS J03531244-5502363 (docs/reports/track1_wd_binaries_2026_09_23/atlas_south/j0353_eclipse.py): duJy > 0,
 err == 0, chi/N < 10, duJy < 3x the band median. For the dwarf nova, outburst nights (nightly median > 5 robust sigma above the
 quiescent level) and 5 days after them are removed first. Per-season medians are subtracted, then points more than 5 robust sigma (+3 median errors) above the
@@ -16,7 +18,10 @@ from astropy.coordinates import SkyCoord, EarthLocation
 import astropy.units as u
 H = os.path.dirname(os.path.abspath(__file__)); geo = EarthLocation.from_geocentric(0, 0, 0, unit="m")
 STARS = {"WDJ1438-3051": dict(gaia="6217118886429978112", ra=219.68603, dec=-30.86347, P0=1 / 15.898512, T0=2460000.52013, dn=True),
-         "WDJ1118-5442": dict(gaia="5346312514819760896", ra=169.51289, dec=-54.70501, P0=1 / 10.650777, T0=2459999.47136, dn=False)}
+         "WDJ1118-5442": dict(gaia="5346312514819760896", ra=169.51289, dec=-54.70501, P0=1 / 10.650777, T0=2459999.47136, dn=False),
+         "J0353-5502": dict(gaia="4731701084150029824", ra=58.30184, dec=-55.04399, P0=0.14786971, T0=2460670.38336, dn=False)}
+SEL = [x for x in os.environ.get("STARS", "WDJ1438-3051,WDJ1118-5442").split(",") if x]; STARS = {k: v for k, v in STARS.items() if k in SEL}
+SUFFIX = "" if SEL == ["WDJ1438-3051", "WDJ1118-5442"] else "_" + "_".join(SEL)
 def load(s):
     c0 = SkyCoord(s["ra"] * u.deg, s["dec"] * u.deg)
     L = [l for l in open(os.path.join(H, "atlas_raw", s["gaia"] + ".txt")).read().splitlines() if l.strip()]
@@ -109,4 +114,4 @@ for name, s in STARS.items():
             ax.plot(x, design(x, trap(x, T, fr)) @ par[b], color="tab:red", lw=1); ax.set_xlim(-xl, xl); ax.set_xlabel("orbital phase"); ax.set_ylabel("ATLAS difference flux (uJy)")
             ax.set_title(f"{name} ATLAS {b} (n={len(d['t'])}), P = {P:.8f} d, phase 0 = BJD_TDB {T0:.5f}", fontsize=7)
     plt.tight_layout(); plt.savefig(os.path.join(H, f"{name}_fold.png"), dpi=100); plt.close()
-json.dump(out, open(os.path.join(H, "eclipse_fit.json"), "w"), indent=1, default=float)
+json.dump(out, open(os.path.join(H, f"eclipse_fit{SUFFIX}.json"), "w"), indent=1, default=float)
