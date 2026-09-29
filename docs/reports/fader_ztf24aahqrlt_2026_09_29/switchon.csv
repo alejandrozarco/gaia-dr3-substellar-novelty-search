@@ -1,0 +1,121 @@
+oid,set,vsx_type,G,firstmjd,ndet,band,n_before,n_after,med_before,med_after,delta,frac_bright,frac_faint,after_span,verdict
+ZTF24aabgawm,candidate,,12.760459,60319.117083299905,622,zr,751.0,758.0,12.82,12.75,0.07,0.0,0.0,649.0,no sustained change
+ZTF24aaikjyd,candidate,,19.045115,60404.42306709988,252,zr,661.0,105.0,18.89,19.36,-0.46,0.0,0.06,547.0,no sustained change
+ZTF24aahqrlt,candidate,,16.315704,60391.50600690022,185,zg,126.0,62.0,17.21,18.35,-1.14,0.0,0.55,538.0,faded
+ZTF24abfojgu,candidate,,20.350534,60558.481053200085,182,zg,237.0,48.0,20.31,18.76,1.55,0.92,0.0,387.0,SWITCH-ON
+ZTF23abojhzu,candidate,,13.725653,60223.18646989995,176,zr,744.0,176.0,13.7,13.69,0.01,0.0,0.06,746.0,no sustained change
+ZTF25aalvqwo,candidate,,18.910088,60770.47201390006,119,,,,,,,,,,insufficient DR data
+ZTF24aahghvb,candidate,,12.961479,60388.2104282002,119,zg,125.0,32.0,13.13,13.09,0.03,0.0,0.0,383.0,no sustained change
+ZTF23aagetvz,candidate,,19.030716,60029.499548600055,114,zr,958.0,236.0,19.0,19.31,-0.31,0.0,0.0,937.0,no sustained change
+ZTF25abbaaya,candidate,,16.938086,60867.234375,112,zr,395.0,50.0,17.56,17.69,-0.13,0.0,0.0,93.0,no sustained change
+ZTF24abgnsui,candidate,,12.632113,60554.4578009001,105,zg,277.0,54.0,13.11,13.07,0.05,0.0,0.0,410.0,no sustained change
+ZTF24abpzvmd,candidate,,19.098166,60592.35484950011,105,zg,260.0,113.0,19.09,19.44,-0.35,0.0,0.0,373.0,no sustained change
+ZTF23aalyiah,candidate,,17.591827,60061.47853010008,104,zr,356.0,166.0,17.8,17.98,-0.18,0.0,0.0,887.0,no sustained change
+ZTF24aarejwm,candidate,,18.593382,60494.44796299981,102,zg,164.0,80.0,18.99,19.09,-0.1,0.0,0.0,475.0,no sustained change
+ZTF25abfmaps,candidate,,17.053274,60858.356053200085,100,zr,592.0,93.0,17.2,17.05,0.15,0.0,0.0,108.0,no sustained change
+ZTF23aaasrex,candidate,,18.094807,59967.15785880014,96,zr,709.0,205.0,17.84,18.03,-0.18,0.0,0.0,997.0,no sustained change
+ZTF24aapzlns,candidate,,20.149897,60462.41349539999,95,zr,239.0,101.0,20.01,20.54,-0.53,0.0,0.08,505.0,faded
+ZTF23aamskaq,candidate,,16.064722,60072.48486110009,92,zr,916.0,277.0,15.94,15.95,-0.02,0.0,0.0,896.0,no sustained change
+ZTF24aaijtcu,candidate,,18.046497,60404.4235417,92,zg,186.0,123.0,18.54,18.18,0.36,0.0,0.0,549.0,no sustained change
+ZTF24abhxcnh,candidate,,20.328466,60591.5010879999,91,,,,,,,,,,insufficient DR data
+ZTF23abondkc,candidate,,16.144428,60242.48108799989,90,zg,97.0,53.0,16.53,16.6,-0.08,0.0,0.0,519.0,no sustained change
+ZTF24aakvkrv,candidate,,15.496611,60422.40392359998,83,zr,1182.0,144.0,15.45,15.39,0.07,0.0,0.0,541.0,no sustained change
+ZTF24aahipck,candidate,,19.035471,60388.4449306,75,zg,268.0,73.0,19.22,20.09,-0.87,0.0,0.73,531.0,faded
+ZTF23abnspub,candidate,,12.486414,60532.48878470017,74,zr,67.0,27.0,12.48,12.26,0.22,0.0,0.0,373.0,no sustained change
+ZTF24aabairj,candidate,,18.096722,60317.40136570018,73,zr,611.0,236.0,18.06,17.93,0.13,0.0,0.0,651.0,no sustained change
+ZTF23abdhycj,candidate,,19.263699,60201.46956019988,71,zg,358.0,98.0,19.29,19.47,-0.18,0.0,0.0,750.0,no sustained change
+ZTF26aaqocrv,candidate,,18.526215,61127.45452550007,71,,,,,,,,,,insufficient DR data
+ZTF23aabbkxa,candidate,,12.957195,59969.27188660018,71,zg,98.0,61.0,12.97,12.92,0.04,0.0,0.0,801.0,no sustained change
+ZTF23abqgyng,candidate,,16.369522,60260.11098380014,65,zr,693.0,381.0,16.44,16.46,-0.03,0.0,0.0,684.0,no sustained change
+ZTF24aahegbc,candidate,,16.566553,61124.51681709988,62,,,,,,,,,,insufficient DR data
+ZTF24aavbekt,candidate,,12.703513,60501.37868059985,59,zr,512.0,119.0,12.89,12.92,-0.03,0.0,0.0,456.0,no sustained change
+ZTF25ablxatl,candidate,,20.5829,60913.25799770001,59,zr,553.0,10.0,20.7,19.67,1.03,0.8,0.0,32.0,brightened
+ZTF24abttjic,candidate,,19.4891,60608.425786999986,58,zr,520.0,45.0,19.6,20.07,-0.48,0.0,0.02,358.0,no sustained change
+ZTF23abtnvyd,candidate,,18.879597,60356.55817130022,56,zr,791.0,95.0,19.3,19.84,-0.54,0.0,0.08,592.0,faded
+ZTF24aauhtew,candidate,,17.861074,60476.339062499814,52,,,,,,,,,,HOLE
+ZTF25aabknzh,candidate,,12.55826,60663.2204167,51,zg,728.0,55.0,13.06,12.94,0.12,0.0,0.0,288.0,no sustained change
+ZTF24aafvdlb,candidate,,14.833664,60368.476956000086,50,zr,996.0,146.0,14.79,14.75,0.05,0.0,0.0,599.0,no sustained change
+ZTF23aaopkgx,candidate,,20.480335,60113.32173610013,50,,,,,,,,,,HOLE
+ZTF25aacxmhp,candidate,,15.161745,60698.151493099984,49,zr,499.0,25.0,15.12,15.12,0.01,0.0,0.0,245.0,no sustained change
+ZTF24aacfmom,candidate,,12.880919,60324.33681710018,49,zg,106.0,36.0,13.22,13.2,0.02,0.0,0.0,435.0,no sustained change
+ZTF23absjqai,candidate,,15.979652,60433.46490739984,48,zr,966.0,113.0,15.95,15.96,-0.01,0.0,0.05,508.0,no sustained change
+ZTF25aagvwvw,candidate,,19.42858,60729.48871529987,47,zr,999.0,67.0,19.42,19.8,-0.38,0.0,0.0,231.0,no sustained change
+ZTF25aalmxmx,candidate,,18.49459,60761.51236109994,47,,,,,,,,,,insufficient DR data
+ZTF24aarvpwb,candidate,,15.983642,60473.45694439998,46,zg,727.0,131.0,16.44,16.49,-0.06,0.0,0.0,496.0,no sustained change
+ZTF24abqndxd,candidate,,15.948615,60593.141944400035,45,zr,611.0,72.0,15.96,16.1,-0.14,0.0,0.0,355.0,no sustained change
+ZTF25abazuwz,candidate,,15.792662,60840.33409720007,44,zr,534.0,58.0,16.75,16.83,-0.07,0.0,0.0,102.0,no sustained change
+ZTF25abbgpzc,candidate,,13.151121,60843.31443289993,44,zr,357.0,55.0,13.11,13.07,0.03,0.0,0.0,90.0,no sustained change
+ZTF23aagqjlv,candidate,,12.784015,60591.407199100126,44,zr,461.0,68.0,12.47,12.42,0.04,0.0,0.0,370.0,no sustained change
+ZTF23aaaxcmy,candidate,,16.055698,60207.44467590004,43,zr,354.0,51.0,15.96,16.03,-0.07,0.0,0.0,752.0,no sustained change
+ZTF24aaqdaqw,candidate,,18.417015,60463.37495370023,43,zr,972.0,126.0,18.52,18.7,-0.18,0.0,0.0,499.0,no sustained change
+ZTF23aamphor,candidate,,20.190754,60087.43870369997,41,zr,412.0,81.0,19.73,20.17,-0.43,0.0,0.14,872.0,no sustained change
+ZTF23abhytbi,candidate,,12.965252,60404.175150500145,41,zr,762.0,64.0,13.13,13.03,0.1,0.0,0.0,543.0,no sustained change
+ZTF24aangomz,candidate,,12.910916,60414.46087960014,40,zg,196.0,119.0,13.64,13.58,0.06,0.0,0.0,536.0,no sustained change
+ZTF24aaafxbw,candidate,,12.520267,60314.23747690022,40,zr,671.0,725.0,12.48,12.47,0.01,0.0,0.0,649.0,no sustained change
+ZTF25aatljyb,candidate,,16.35622,60880.26519680023,39,zr,1159.0,33.0,16.88,16.93,-0.05,0.0,0.0,89.0,no sustained change
+ZTF23aahtcil,candidate,,14.317344,60059.46148149995,39,zr,545.0,154.0,14.3,14.31,-0.01,0.0,0.0,862.0,no sustained change
+ZTF24aaayepp,candidate,,13.667809,60317.30809029983,38,zr,640.0,443.0,13.6,13.59,0.02,0.0,0.0,651.0,no sustained change
+ZTF25abbkdob,candidate,,17.76835,60871.255937499925,37,zr,574.0,47.0,17.73,17.83,-0.1,0.0,0.0,80.0,no sustained change
+ZTF23abtsnxg,candidate,,14.919048,60291.35597220017,37,zg,110.0,65.0,15.21,15.22,-0.01,0.0,0.0,677.0,no sustained change
+ZTF25abbtowj,candidate,,17.070055,60873.2573032002,37,zr,398.0,47.0,17.1,17.2,-0.09,0.0,0.0,87.0,no sustained change
+ZTF24aaofxcr,candidate,,20.184683,60433.44337960007,36,zr,393.0,23.0,20.66,21.35,-0.7,0.0,0.39,524.0,faded
+ZTF24aaxsymb,candidate,,19.738615,60535.21094910009,36,zg,233.0,100.0,14.54,14.55,-0.01,0.0,0.0,432.0,no sustained change
+ZTF24aamtnue,candidate,,13.301755,60439.44238429982,35,zg,51.0,87.0,13.79,13.79,0.0,0.0,0.0,491.0,no sustained change
+ZTF23aamgecm,candidate,,17.061914,60077.484247699846,35,zr,786.0,223.0,17.01,17.1,-0.09,0.0,0.0,891.0,no sustained change
+ZTF24abizjxi,candidate,,18.151407,60756.516018500086,34,zr,1079.0,59.0,18.33,18.75,-0.42,0.0,0.0,209.0,no sustained change
+ZTF25abstpze,candidate,,14.992725,60924.24770830013,34,zr,785.0,16.0,14.95,14.97,-0.02,0.0,0.0,43.0,no sustained change
+ZTF23aavhkts,candidate,,14.591479,60154.3463773001,33,zr,531.0,441.0,14.56,14.56,-0.0,0.0,0.0,792.0,no sustained change
+ZTF25aavtpqw,candidate,,15.038031,60823.34104169998,32,zg,404.0,54.0,15.67,15.68,-0.02,0.0,0.0,145.0,no sustained change
+ZTF25aayqdsi,candidate,,15.792441,60832.39737269981,32,zr,593.0,103.0,15.77,15.77,-0.0,0.0,0.0,135.0,no sustained change
+ZTF26aaspzbu,candidate,,19.335562,61123.49508100003,31,,,,,,,,,,insufficient DR data
+ZTF26aapjliq,candidate,,17.9336,61123.49508100003,31,,,,,,,,,,insufficient DR data
+ZTF24aajqxlq,candidate,,15.700776,60525.33960650023,30,zg,510.0,103.0,16.16,16.16,0.0,0.0,0.0,442.0,no sustained change
+ZTF26aaetahe,candidate,,16.245468,61073.56732639996,29,,,,,,,,,,insufficient DR data
+ZTF24aaulnxp,candidate,,18.194347,60476.339062499814,29,zr,1005.0,368.0,19.03,19.24,-0.2,0.0,0.0,472.0,no sustained change
+ZTF23aajpdbe,candidate,,17.310913,60061.47759260005,29,zr,328.0,198.0,17.33,17.38,-0.05,0.0,0.0,896.0,no sustained change
+ZTF25aaozrfk,candidate,,15.251049,60771.47368060006,29,zg,676.0,59.0,15.82,15.89,-0.06,0.0,0.0,193.0,no sustained change
+ZTF25aarwjet,candidate,,20.179808,60794.39597220021,28,zr,569.0,16.0,20.25,20.88,-0.62,0.0,0.12,173.0,faded
+ZTF24aaehgng,candidate,,14.671421,60357.26902779983,28,zr,101.0,51.0,14.82,14.82,-0.0,0.0,0.0,418.0,no sustained change
+ZTF24aaseyze,candidate,,15.47886,60756.52537039993,27,zr,1062.0,54.0,15.46,15.53,-0.07,0.0,0.0,196.0,no sustained change
+ZTF25abbjqog,candidate,,16.737852,60871.255937499925,27,zg,219.0,42.0,18.31,18.3,0.0,0.0,0.0,78.0,no sustained change
+ZTF24aabieov,candidate,,15.394535,60319.23016199982,24,zr,777.0,553.0,15.44,15.47,-0.03,0.0,0.0,629.0,no sustained change
+ZTF24absyfsg,candidate,,13.556049,60611.45942129986,23,zg,238.0,53.0,13.99,13.96,0.03,0.0,0.0,353.0,no sustained change
+ZTF24abmeqnb,candidate,,16.129364,60594.46043979982,23,zg,155.0,38.0,16.19,16.19,-0.0,0.0,0.0,375.0,no sustained change
+ZTF25abhxcfb,candidate,,13.351361,60880.21075229999,23,zg,281.0,39.0,15.88,15.9,-0.02,0.0,0.0,76.0,no sustained change
+ZTF23abovpyc,candidate,,15.031558,60442.48959490005,23,zg,224.0,115.0,16.07,16.03,0.04,0.0,0.0,509.0,no sustained change
+ZTF24aatsfik,candidate,,13.386654,60489.368784700055,23,zr,415.0,63.0,13.34,13.31,0.03,0.0,0.0,435.0,no sustained change
+ZTF25accijlk,candidate,,16.654615,60952.188472200185,23,zr,123.0,6.0,16.66,16.69,-0.02,0.0,0.0,15.0,no sustained change
+ZTF23aagvxdg,candidate,,19.772718,60055.471469900105,23,zr,337.0,132.0,20.15,20.17,-0.02,0.0,0.02,881.0,no sustained change
+ZTF25aamklew,candidate,,19.521957,60754.50377310021,22,,,,,,,,,,insufficient DR data
+ZTF25aauakyv,candidate,,19.390694,60824.46317130001,22,zg,249.0,73.0,19.7,20.05,-0.35,0.0,0.0,123.0,no sustained change
+ZTF23abvqcwz,candidate,,15.318693,60306.34597219992,22,zr,791.0,107.0,15.34,15.34,-0.0,0.0,0.0,654.0,no sustained change
+ZTF24abzzwre,candidate,,12.957195,60647.44048610004,22,zg,131.0,24.0,12.96,12.92,0.04,0.0,0.0,123.0,no sustained change
+ZTF23aayekco,candidate,,15.362297,60172.2308565001,22,zr,490.0,145.0,15.38,15.41,-0.04,0.0,0.01,787.0,no sustained change
+ZTF23abgomkl,candidate,,15.514522,60198.168182900175,22,zr,374.0,155.0,16.13,16.17,-0.04,0.0,0.0,759.0,no sustained change
+ZTF24aaoszki,candidate,,16.476109,60446.42222219985,22,zr,1029.0,137.0,16.43,16.43,0.0,0.0,0.0,523.0,no sustained change
+ZTF26aajavgz,candidate,,16.35334,61100.54517359985,21,,,,,,,,,,insufficient DR data
+ZTF24abwxqfp,candidate,,12.919223,60649.386088000145,21,zg,230.0,31.0,13.36,13.35,0.01,0.0,0.0,316.0,no sustained change
+ZTF23aafoieb,candidate,,19.364513,60032.3369907001,21,zr,92.0,51.0,19.34,19.69,-0.34,0.0,0.0,804.0,no sustained change
+ZTF23aacjplw,candidate,,17.031836,59972.27829860011,21,zr,405.0,186.0,17.0,17.0,-0.0,0.0,0.0,971.0,no sustained change
+ZTF25aalwznp,candidate,,17.804386,60770.46671300009,21,zr,1108.0,66.0,17.75,17.77,-0.01,0.0,0.0,195.0,no sustained change
+ZTF25aaytths,candidate,,16.700989,60857.33532410022,21,zr,756.0,47.0,16.82,16.88,-0.06,0.0,0.0,74.0,no sustained change
+ZTF25aakoqmr,candidate,,16.284027,60758.49709489988,20,zr,774.0,73.0,16.56,16.59,-0.03,0.0,0.0,175.0,no sustained change
+ZTF23aailgnp,candidate,,16.536556,60708.5599769,20,,,,,,,,,,insufficient DR data
+ZTF26aatqrfk,candidate,,18.027273,61138.503611099906,20,,,,,,,,,,insufficient DR data
+ZTF25abbagae,candidate,,17.207277,60867.2348495,20,zr,386.0,56.0,17.51,17.6,-0.09,0.0,0.0,93.0,no sustained change
+ZTF23abnthkh,candidate,,18.668427,60391.484606499784,20,zr,653.0,118.0,19.04,19.29,-0.25,0.0,0.01,559.0,no sustained change
+ZTF23aaccehr,control,NL+E,17.040081,59984.24800929986,287,zr,676.0,133.0,16.93,16.96,-0.03,0.0,0.14,948.0,no sustained change
+ZTF25aagvjel,control,UGWZ,18.970242,60732.38302080007,276,zg,266.0,29.0,19.22,18.84,0.38,0.0,0.0,118.0,no sustained change
+ZTF25aafezyk,control,UGWZ,17.488775,60685.20604170021,225,zg,462.0,66.0,17.57,17.28,0.3,0.0,0.0,275.0,no sustained change
+ZTF24aamredf,control,AM,16.43754,60554.49734950019,209,zr,780.0,72.0,15.71,16.65,-0.94,0.0,0.61,411.0,faded
+ZTF26aajuqsn,control,UGZ+VY,14.825953,61105.544803199824,161,,,,,,,,,,insufficient DR data
+ZTF23abppbmf,control,UGWZ,20.175241,60258.11869210005,152,zr,830.0,172.0,20.26,19.58,0.67,0.37,0.0,709.0,brightened
+ZTF24aaapdnw,control,AM+ELL,15.954804,60315.29626160022,129,zr,419.0,51.0,15.83,17.36,-1.52,0.2,0.61,646.0,faded
+ZTF24aaupvjb,control,UGWZ,20.006433,60502.39182869997,117,zg,327.0,71.0,20.12,19.08,1.04,0.77,0.0,447.0,SWITCH-ON
+ZTF23absboyh,control,AM+E,18.16056,60285.22966440022,115,zg,82.0,50.0,18.12,15.35,2.77,1.0,0.0,679.0,SWITCH-ON
+ZTF24aaadpke,control,NL:,17.143553,60430.44729170017,108,zr,434.0,117.0,17.19,17.1,0.09,0.0,0.0,536.0,no sustained change
+ZTF24aacayea,control,NL+UGZ,17.54681,60539.308576399926,107,zr,1381.0,98.0,17.62,17.31,0.31,0.0,0.02,421.0,no sustained change
+ZTF25aaghzly,control,AM+E,18.802084,60727.20282409992,75,zr,926.0,32.0,18.61,18.66,-0.05,0.0,0.03,241.0,no sustained change
+ZTF23aabrfve,control,AM+E,16.558996,59957.40753469989,72,zg,477.0,166.0,17.01,16.66,0.34,0.25,0.07,859.0,no sustained change
+ZTF25aaguzft,control,UGWZ,19.268707,60729.38108799979,66,zr,170.0,16.0,19.27,17.94,1.33,0.75,0.0,88.0,brightened
+ZTF26aabkttd,control,NL+E,16.981903,61051.584409699775,63,,,,,,,,,,insufficient DR data
