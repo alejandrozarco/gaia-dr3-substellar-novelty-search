@@ -1,0 +1,65 @@
+{
+ "WDJ1438-3051": {
+  "o": {
+   "mean_mag": 18.040999999999997,
+   "mean_uJy": 220.61053555099508,
+   "phase0_uJy": 231.8604647023031,
+   "depth_uJy": 57.714481234529195,
+   "frac": 0.2489190268320717,
+   "min_mag": 18.29778196661009,
+   "min_mag_limit": null,
+   "outburst_episodes": 5,
+   "outburst_nights": 47,
+   "peak_nightly_uJy": 326.5,
+   "peak_mag": 17.080987760552922,
+   "episode_starts_mjd": [
+    60325,
+    60505,
+    60783,
+    60893,
+    60919
+   ]
+  },
+  "c": {
+   "mean_mag": 18.3705,
+   "mean_uJy": 162.86443196960994,
+   "phase0_uJy": 156.18759154470112,
+   "depth_uJy": 64.36188674679516,
+   "frac": 0.41208066601356547,
+   "min_mag": 18.992654946260362,
+   "min_mag_limit": null,
+   "outburst_episodes": 6,
+   "outburst_nights": 12,
+   "peak_nightly_uJy": 339.0,
+   "peak_mag": 17.143204491486713,
+   "episode_starts_mjd": [
+    60324,
+    60376,
+    60517,
+    60821,
+    60878,
+    60935
+   ]
+  }
+ },
+ "WDJ1118-5442": {
+  "o": {
+   "mean_mag": 17.600499999999997,
+   "mean_uJy": 330.9986701455833,
+   "phase0_uJy": 308.1494337631974,
+   "depth_uJy": 256.38958911638383,
+   "frac": 0.832030051086872,
+   "min_mag": 19.61508321187931,
+   "min_mag_limit": null
+  },
+  "c": {
+   "mean_mag": 17.426,
+   "mean_uJy": 388.71047922689405,
+   "phase0_uJy": 375.4528810519904,
+   "depth_uJy": 382.46531120728133,
+   "frac": 1.0186772575446554,
+   "min_mag": null,
+   "min_mag_limit": 20.84522602435161
+  }
+ }
+}
