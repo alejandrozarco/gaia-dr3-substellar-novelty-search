@@ -48,3 +48,9 @@ unrecognised DZ), 57901998 (0.5-arcsec neighbour, RUWE 2.6), 112581220 (G 10.2 s
 - Most top anomalies are known peculiar types (DAH, CV, DQ, DZ, DA+M).
 - Among stars with a plain class, the strongest are narrow detector spikes, camera-join steps, or two stars published by Kilic et al. (2026, ApJ 1000, 216): WDJ071711.24+354706.50 (class DB; DQH, 28.2 kK) and WDJ011731.77+160239.28 (class DA; DAQ, 16.0 kK) (results/desi_anomaly_inspect.png, desi_anomaly_zoom.png).
 - The nine DAQs of Kilic et al. (2026) span 13,242-17,385 K.
+
+## Complete DESI DR1 CH sweep (2026-09-29)
+`desi_wd_full.py` took all 4,827,137 DESI DR1 STAR spectra (SPARCL, no failed strips), matched them to Gentile Fusillo et al. (2021) white dwarfs with Pwd > 0.5 within 1.5 arcsec (48,918 spectra of 40,087 white dwarfs), and measured the CH index on the 1,551 cool (TeffH < 9000 K) spectra outside the DESI class table (results/desi_full_ch_new.csv, desi_full_ch_top.png).
+- LP 133-754 is recovered at 7.8 sigma (rank 2).
+- Rank 1 is the known DZ SDSS J082303.82+054656.1 (LP 545-12). The next two are normal DAs whose broad H-gamma wings enter the index window.
+- No new CH-band white dwarf.
