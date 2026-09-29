@@ -1,0 +1,2 @@
+source_id,oid,G,group,vsx_type,ra,dec,range_g,npts,n_pos,neg_frac,corrected,amp_max,n_ob_pts,n_ep,ep_len_med,gr_peak,peak_mag,span_d,first_ep
+2049668757132382720,ZTF18abcxayn,18.963785,vsx_nonCV,RRAB,289.8152906126772,35.147275404435184,2.9751241,814,434,0.467,True,2.26,267.0,39.0,8.0,-0.09,16.7,2722.0,58329.4
