@@ -1,0 +1,4 @@
+ATLAS high state (MJD >= 60582): 913 points (o 728, c 185)
+max power per test window: 17.8592 c/d 0.0270, 18.8619 c/d 0.2426, 19.8647 c/d 0.0167
+alias-triplet statistic 0.2426; random-triplet median 0.0174; empirical p = 0.0010
+best frequency 18.86206 c/d = 76.344 min; bootstrap sigma 0.00006 c/d (0.0 s); semi-amplitude 25.0 uJy = 0.24 of the high-state median difference flux (104 uJy)

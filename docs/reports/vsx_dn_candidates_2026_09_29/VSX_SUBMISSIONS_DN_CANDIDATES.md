@@ -38,7 +38,8 @@ Suggested filing order (strongest evidence first): 1 ZTF20aaxughc, 2 ZTF21abuysm
 Remarks: Two outbursts in ZTF (2023 January 13, 11 d, peak g 15.60 / r 16.07; 2025 March 19, 7 d), 4.1 mag above quiescence
 (median g 19.66, r 19.56; data-release light curve 2018 March to 2025 July). No orbital period in quiescence (ZTF,
 flickering-dominated). Gaia DR3 G 19.65, BP-RP 0.46, parallax 1.60 ± 0.43 mas, proper motion 16 mas/yr (37.8 sigma).
-X-ray source 3eRASS J133837.5-201542 (4.8 arcsec).
+X-ray source 3eRASS J133837.5-201542 (4.8 arcsec). ATLAS forced photometry (2016 January to 2026 September) shows seven
+outburst episodes (2017 Feb 19, 2018 Jun 16, 2022 Feb 8, 2023 Jan 10 (11 d, peak c 16.1), 2023 Dec 31, 2025 Mar 11, 2025 Dec 14).
 
 ## 2. 2MASS J19140190+0843438 = ZTF21abuysmk
 

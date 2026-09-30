@@ -1,0 +1,8 @@
+o before MJD 60578: n 2042, median 1.0 uJy, error of median 0.6
+o after MJD 60580: n 734, median 104.5 uJy, error of median 1.9
+o yearly medians (uJy): {2015.0: -2.0, 2016.0: 3.5, 2017.0: 2.0, 2018.0: 2.0, 2019.0: 1.5, 2020.0: 1.0, 2021.0: 1.0, 2022.0: 2.0, 2023.0: 2.0, 2024.0: 20.0, 2025.0: 95.0, 2026.0: 119.5}
+c before MJD 60578: n 661, median 4.0 uJy, error of median 0.8
+c after MJD 60580: n 195, median 99.0 uJy, error of median 4.1
+c yearly medians (uJy): {2015.0: 6.5, 2016.0: 2.0, 2017.0: 3.0, 2018.0: 5.0, 2019.0: 6.0, 2020.0: 2.0, 2021.0: 2.0, 2022.0: 6.0, 2023.0: 1.0, 2024.0: 68.0, 2025.0: 92.0, 2026.0: 144.0}
+o step night (5-night running median stays above 50 uJy): MJD 60582 = 2024-09-29
+last o night before the step: MJD 60575 = 2024-09-22 (nightly median 4.0 uJy)
