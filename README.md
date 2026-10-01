@@ -5,6 +5,12 @@
 
 Filter-cascade pipeline that derives companion-mass estimates from the Gaia DR3 NSS Orbital, AstroSpectroSB1, OrbitalAlternative, and Acceleration channels, cross-references them against published catalogs, and surfaces candidate dormant black holes, neutron stars, sub-Chandrasekhar white dwarfs, brown dwarfs, and exoplanets.
 
+> [!IMPORTANT]
+> **Produced by AI models** under the direction of the repository owner; not peer reviewed, and not checked by a
+> professional astronomer. See [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md). Candidates are leads for independent follow-up,
+> not discoveries; credit for confirming or refuting any of them belongs to whoever does that work. Questions, checks
+> and corrections: [GitHub issues](https://github.com/alejandrozarco/gaia-dr3-substellar-novelty-search/issues).
+
 > Experimental. Confirmed candidates are those with **independent second-method evidence** from archival data. All other candidates require follow-up before any discovery claim.
 
 ## What's in this repo
