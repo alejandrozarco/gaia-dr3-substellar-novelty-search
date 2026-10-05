@@ -1,0 +1,7 @@
+tag,gaia_dr3,spec_file,reason
+C2,736093077399500032,spec-103112-60659-63050394822298365,"Ton 534 (known DBA WD, 133 pc): Ha 'emission' is an artefact - run of ivar=0 pixels 6540-6557 A filled with interpolated high flux plus adjacent hot pixels; pipeline class GALAXY zwarning 4"
+C6,477013365844970496,spec-103761-59895-27021597887889619,"NGC 1569 super star cluster A (extragalactic; spurious Gaia parallax 2.2+-0.46)"
+C7,1609276107820385920,spec-100323-60440-63050394852135407,"M101 HII region / 2XMM HXB (extragalactic)"
+-,various,field 107964 (MJD 60319/60320),"HII-region field: several nebular-contaminated spectra"
+-,various,many faint mwm_wd_* spectra,"unresolved Ha (+[N II]) spikes = diffuse Galactic emission/sky residual, not intrinsic"
+-,various,bp_rp<1.5 broad-Ha set,"QSOs with spurious 3-4 sigma Gaia parallaxes (broad lines at z>0)"

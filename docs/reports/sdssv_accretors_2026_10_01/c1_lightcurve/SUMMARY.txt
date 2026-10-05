@@ -1,0 +1,63 @@
+C1 = Gaia DR3 2101985070870393856 (RA 290.516500, Dec +42.259050, G=18.90): ZTF forced photometry on difference images
+Written 2026-10-01T10:46Z (date -u). Own code: phot.py / analyze.py / episode.py / period.py in this directory.
+
+COVERAGE (IRSA IBE sci metadata, anonymous)
+- 2027 science epochs cover C1: 742 g, 1260 r, 25 i; 2018-03-27 to 2026-02-04; fields 727 (1990) and 1766 (37).
+- Products retrieved (140" cutouts of scimrefdiffimg + full diffimgpsf + sciimg cutout): 1867 g/r epochs complete.
+- HOLES (verified 404, not zero coverage): 112 epochs have no products at all at IBE (mostly 2022-11..2024-05: 2023-07..10 alone 49);
+  48 epochs have a science image but no difference image (all 25 i-band: no field-727 i reference; 23 g/r).
+- Quality cuts (infobits=0, seeing<4", maglimit>19.5, fit chi2nu<500): 1612 epochs used (549 g, 1063 r). The chi2 cut removes 26 epochs whose
+  difference image has large masked-block artefacts over KIC 6773282 (chi2nu 3e3-1e6; clear gap from the rest, which are <160).
+- No external photometry separates C1 from the neighbour: PS1 DR2 lists only KIC 6773282 within 2.9" (hole).
+
+METHOD
+- Fixed-position PSF fit (diffimgpsf, cubic-spline subpixel shift), 15x15 px box, per-pixel variance = diff-image background + Poisson from sci image.
+- Positions: Gaia DR3 propagated with proper motion to each epoch, plus per-epoch shift from 11 bright-star centroids in the sci cutout (median |shift| ~0.1 px).
+- KIC 6773282 (G=13.78, 2.56" N of C1) leaves a large residual in every difference image: its proper motion (24 mas/yr, almost exactly toward C1)
+  since the 2018 reference produces a growing dipole (fitted y-dipole term grows 0 -> ~2000 uJy*px from 2018 to 2025), plus PSF-shape mismatch.
+  Final model: PSF(C1) + PSF(KIC) + 1st and 2nd PSF derivatives at KIC + constant. Without the derivative terms C1 shows a spurious +100..+450 uJy trend.
+- Errors: formal * sqrt(chi2nu) * k, k = 2.8 (g) / 3.1 (r) set so KIC-ring control pulls have unit robust scatter. Median C1 error 72 uJy (g), 107 uJy (r).
+
+CONTROLS (robust std per epoch)
+- Blank sky x3: 2.8-3.8 uJy, pulls ~1.0 -> pipeline is clean away from KIC.
+- Constant stars G=18.30/18.69/18.68: 4.1-5.9 uJy, pulls 1.1-1.5.
+- Points at the same 2.56" separation around KIC (7 azimuths 90-270 deg from the C1 direction; also mirror/rot90/rot270 without C1 in the model):
+  48-95 uJy. This is the noise floor at C1: ~65 uJy (g) / ~90 uJy (r) per epoch, comparable to C1's whole quiescent flux (~91 uJy for G=18.90 -> AB 19.0).
+- Leakage check: C1 flux correlates with the mirror control (Spearman -0.30) and with KIC's own diff flux (-0.29) -> residual KIC structure leaks into C1
+  at the tens-of-uJy level; slow seasonal drift of C1 (season medians +2..+87 uJy, rising to ~+70 in 2023-25) is NOT separable from this systematic.
+
+RESULTS
+1. No large outburst: zero epochs >5 sigma and >+58 uJy (0.5 mag above F_ref) with quiet controls; per-epoch pulls are symmetric (7 above +3 sigma, 7 below -3).
+   The largest single-epoch values are +250..+400 uJy (3-4.6 sigma). A dwarf-nova outburst of >=2 mag (>= +480 uJy) on any sampled night would have been
+   detected at >=4.5 sigma (r) / >=6.7 sigma (g) per epoch; none is seen in 1612 epochs / ~690 nights (seasonal gaps remain; 2022-11..2024-05 partly lost to the archive hole).
+2. Low-amplitude multi-night brightenings. Using 9-day windows (>=2 nights), C1 vs the 7 ring controls (555 windows each):
+   ring controls max window mean 112 uJy (3885 windows, none >5 robust sigma positive); C1 has 6 windows >5 robust sigma:
+   - 2021-08-23..29 (MJD 59458-59464): 8 epochs, 4 nights, both bands: g +240+-35, r +198+-45 uJy (window mean 201 uJy, 7.6 robust sigma);
+     before (59440-59455) g 51+-31, r -20+-51; after (59466-59480) g 42+-29, r 18+-37. Implied ~17.6 (g) / 17.75 (r) mag, i.e. ~1.3-1.4 mag above F_ref.
+     Duration ~6-10 d. Ring controls quiet in this window. Strongest candidate.
+   - 2019-07-17..19 (MJD 58674-58676): r +224+-27 (15 epochs, 3 nights), g +332+-77 (1 epoch); back to baseline by 58677. Mean ~1.35 mag above F_ref.
+     Window mean 123 uJy (just above control maximum 112); several epochs on these nights have elevated control pulls -> weaker.
+   - 2021-04-10..16 (g +176+-45, r +137+-57) and 2020-03-07 (one night, g +396+-105, r +226+-94): 2-3.5 sigma, single/two nights, not significant alone.
+   These look like recurrent ~1-1.5 mag, ~week-long brightenings (consistent with small dwarf-nova outbursts or similar), but each rests on 2-7 sigma
+   measurements next to a residual 110x brighter than C1; treat as candidates, not detections. F_ref (C1 at 2018 reference) is assumed = Gaia G flux;
+   if C1's true ZTF reference flux differs, the mag amplitudes scale accordingly.
+3. ALeRCE: one alert object within 10", ZTF23abgawfo, single g detection 2023-09-22 (MJD 60209.156), magpsf 17.70 (~300 uJy), 0.9" from C1 / 1.8" from KIC,
+   rb 0.29, drb 0.003 (bogus-like). Our forced fit at that epoch: g 112, r 158 uJy (formal +-14/11, scaled ~+-55) -> modest excess only; not confirmatory.
+4. Periodicity (quiescent data, per-filter-season medians removed, episode nights excluded, N=1567): no significant peak. Highest peaks 0.491 h (near the
+   50 c/d grid edge), 24.0 h and 12.0 h (daily aliases); shuffle FAP = 1.00 (100 shuffles); per-filter: g FAP 0.90, r 1.00. (Without seasonal detrending
+   the 24.0 h / 12.0 h aliases reach FAP 0.01 - a trend artefact, also present in KIC's own residual at 12.0 h.)
+   Injection-recovery (sinusoids, P 0.5 h-2 d, recovered = right frequency and above the 1% shuffle threshold):
+   semi-amplitude 50 uJy: 100%; 30 uJy: 13-53%; 20 uJy: 0%. With F_ref ~91 uJy, only modulations >~0.55 of the quiescent flux (semi-amplitude,
+   ~1 mag peak-to-peak) are excluded. Orbital humps/ellipsoidal (0.1-0.3 mag) and eclipses (depth <= ~91 uJy, ~1 sigma per epoch, few % duty cycle)
+   are NOT constrained by these data.
+
+QUIESCENT ABSOLUTE MAGNITUDE (anchor Gaia G=18.90)
+- C1 and KIC 6773282 share proper motion ((-10.50,-21.38) vs (-10.94,-21.34) mas/yr) and parallax (1.05+-0.24 vs 1.181+-0.013 mas): likely a physical
+  wide pair (2.56" ~ 2200 au at 847 pc). Using KIC's parallax: DM = 9.64; SFD/S&F total E(B-V) = 0.093 (upper limit at b=+12.6) -> A_G <= 0.24.
+  M_G(quiescence) ~ 9.0-9.3. (C1's own parallax gives d ~ 950 pc, M_G ~ 8.8-9.0.) C1's Gaia BP/RP are contaminated (excess factor 2.70); G may also be.
+
+FILES
+- c1_ztf_forced_diffphot.csv : final light curve (1612 epochs) with controls
+- c1_ztf_forced_diffphot.png : light curve, controls, episode zooms, periodogram
+- forced_lc_raw.csv (all 2027 epochs incl. status), c1_lc_clean_full.csv, episode_windows.csv, episode_stats.txt, period_out.txt, injection_recovery.csv
+- sci_meta.tbl, ref_meta.csv, download_log.txt, missing_diff_tags.txt ; cutouts in cut/ (397 MB)

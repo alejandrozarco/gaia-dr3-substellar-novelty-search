@@ -1,0 +1,12 @@
+== ZTF26abwacec: 3908 points, 980 nights, MJD 57222-61311; median 1 uJy
+2026-09 nights: 61284 o >19.66; 61286 o >19.33; 61290 o >20.06; 61292 o >19.96; 61293 c >20.01; 61299 o >19.73; 61305 o 18.39; 61308 o >18.45; 61311 o >19.13
+earlier outburst nights: 0
+== ZTF26abtpoev: 4155 points, 978 nights, MJD 57222-61311; median -4 uJy
+2026-09 nights: 61284 o >19.60; 61286 o >19.63; 61290 o >19.84; 61292 o >19.92; 61293 c >19.92; 61298 o 19.33; 61299 o 18.72; 61305 o >18.94; 61311 o >19.07
+earlier outburst nights: 0
+== ZTF26abwqsgt: 4372 points, 1058 nights, MJD 57228-61311; median 4 uJy
+2026-09 nights: 61280 o >18.88; 61284 o >19.48; 61286 o >19.23; 61290 c >20.21; 61290 o >19.66; 61292 o >19.73; 61293 c >19.80; 61298 o >19.45; 61299 o >19.48; 61305 o 18.24; 61308 o >18.18; 61311 o >19.26
+earlier outburst nights: 0
+== ZTF26abtoqyd: 4613 points, 1129 nights, MJD 57230-61311; median 2 uJy
+2026-09 nights: 61280 o >19.30; 61283 o >19.38; 61284 o >19.35; 61286 o >19.92; 61290 o >19.70; 61292 o >19.70; 61298 o 18.78; 61299 o 18.60; 61305 o >19.03; 61311 o >19.05
+earlier outburst nights: 0

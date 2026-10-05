@@ -1,0 +1,70 @@
+ 
+ 
+ 
+ LT Archive results 
+ 
+ 
+function popup(){window.alert('This data is still private.\nYou need to fill in a password.');}
+function rehref(){location.href='#passhere';}
+function validate(object) {
+ if (object.value.length > 0)
+ return true;
+ else {
+ popup();
+ rehref();
+ return false;
+ }
+ }
+ 
+ 
+ 
+ 
+ 
+ Query Results 
+The search criteria provided did not match any LT observations.
+Return to the search form to try again.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ The plain text table of search results is ready for download: cat1842119586.txt . 
+ A web accessible directory contains all the results from this search and in the following links they are subdivided by proposal. 
+ 
+ 
+ Publicly accessible data: 
+ No public data matched your search criteria 
+ 
+ 
+ 
+ Proprietary data (password required): 
+ No proprietary data matched your search criteria 
+ 
+This search returned data from 0 proposal(s). 
+ 
+ 
+ 

@@ -1,0 +1,12 @@
+Fresh-night ZTF sweep for TNS-unreported transients - run 2026-10-01 01:22-02:56 UTC
+Data through ZTF night MJD 61313 (2026-09-30 UT; latest alert MJD 61313.53). No ZTF alerts with first detection on MJD 61310-61311 in ALeRCE or Lasair (hole or no observing).
+
+Pipeline: ALeRCE objects firstmjd >= now-5 d, ndet >= 2 (2183) -> detections (12 holes retried, all moving) -> >= 2 positive dets drb >= 0.8 (1707)
+-> stationarity + SkyBoT (I41; 15" cone, 0.3 deg re-query where the small cone returned empty/SIGBUS) -> all 442 pair-only (41-s pairs) with sep<0.3" are known asteroids;
+long-span objects: 68 known asteroids incl. slow movers at stationary points and TNO (229762) for ZTF26abxzywl; 1999 JR21 for ZTF26abxzsuq; Columbianus for ZTF26abydbtu.
+-> Lasair cross-check (833 objects, 34 TNS-joined), TNS cone 10" with positive control SN 2026adff, VSX/SIMBAD/CBAT TOCP, PS1/Gaia/2MASS/unWISE/LS DR10.
+
+FILE-READY (TNS 'none' at the times in tns_check.csv): ZTF26abycxez, ZTF26abyalli, ZTF26abxpksn, ZTF26abxwnlk, ZTF26abxwpty; weaker: ZTF26abxwrvx.
+Already in TNS: ZTF26abyamea = AT 2026adje (ZTF), ZTF26abxxeev = AT 2026adhb (ZTF, GOTO), plus Lasair-joined abyczrf=2026adha, abxwlic=2026adhd, abxwrmm=2026adgn, abxwsuv=2026adfv, abxydtt=2026adff, abyamcg=2026acpp.
+Files: disc_values.md (TNS form values), tns_check.csv, lcctx1.txt, cand_lcsummary.txt, stamps/montage.png, skybot_merged.csv, screen1.csv, oldids_lc.txt.
+HOLE: ATLAS forced photometry queue stalled (jobs from 01:53 UTC unstarted at 02:55 UTC; own job deleted); no ATLAS confirmation obtained.

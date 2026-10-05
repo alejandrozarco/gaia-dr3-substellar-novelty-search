@@ -1,0 +1,92 @@
+spitzer.sings_irs_spec | SINGS IRS Spectra
+spitzer.sings_mipssed_spec | SINGS MIPSSED Spectra
+spitzer.sings_opt_spec | The Spitzer Infrared Nearby Galaxies Survey (SINGS) OPT Spectra
+spitzer.goals_irs_spec | GOALS IRS Spectra
+spitzer.goals_spatprof_spec | GOALS Spatial Profiles
+irts.irts_mirspsc | IRTS MIR Spectra
+iso.sws_allspsc | ISO Short Wavelength Spectrometer (SWS) Atlas
+caom.observation | CAOM Observation Table
+caom.plane | CAOM Plane Table
+caom.artifact | CAOM Artifact Table
+ivoa.obscore | List of observations curated by IRSA in the IVOA ObsCore data model: Beta release
+sofia.observation | SOFIA CAOM Observation Table
+sofia.plane | SOFIA Archive
+sofia.artifact | SOFIA CAOM Artifact Table
+sofia.ancillary_artifacts | SOFIA Ancillary Artifacts
+sofia.observation_aors | SOFIA AOR to Observation Mapping Table
+sofia.observation_missions | SOFIA MISSN-ID to Observation Mapping Table
+sofia.proposals | SOFIA Proposal/Abstract Table
+sofia.science_keyphrases | SOFIA Science Keywords Table
+sofia.publications | SOFIA Publications Table
+sofia.publication_proposals | SOFIA Publication/Proposal Mapping Table
+sofia.proposals_with_publications | List of SOFIA proposals with associated publications
+sofia.qa_comments | SOFIA Comments Table
+caom.observation_irtf | IRTF CAOM Observation Table
+caom.plane_irtf | IRTF Archive
+caom.plane_artifact_mapping_irtf | IRTF CAOM Plane Artifact Mapping Table
+caom.artifact_irtf | IRTF CAOM Artifact Table
+irtf.mearth_spectra | IRTF MEarth Spectra
+spitzer.ssgss_irs_hires | SSGSS IRS Hires Spectra
+spitzer.ssgss_irs_ll | SSGSS IRS LL Spectra
+spitzer.ssgss_irs_ll_ab_combined | SSGSS IRS LL AB Combined Spectra
+spitzer.ssgss_irs_ll_ab_uncombined | SSGSS IRS LL AB Uncombined Spectra
+spitzer.ssgss_irs_lores | SSGSS IRS Lores Spectra
+spitzer.ssgss_irs_sh | SSGSS IRS SH Spectra
+spitzer.ssgss_irs_sl | SSGSS IRS SL Spectra
+spitzer.ssgss_irs_sl_ab_combined | SSGSS IRS SL AB Combined Spectra
+spitzer.ssgss_irs_sl_ab_uncombined | SSGSS IRS SL AB Uncombined Spectra
+spitzer.ssgss_irs_sl_ll | SSGSS IRS SL LL Spectra
+euclid.objectid_spectrafile_association_q1 | Euclid Q1 Object ID to Spectral File Association Table
+spherex.obscore | IRSA ObsCore table of SPHEREx products
+herschel.hexos_spectra | HEXOS Spectra
+herschel.got_cplus_spectra | GOT_Cplus Spectra
+herschel.hifistars_spectra | HIFISTARS Spectra
+herschel.hop_spectra | HOP Spectra
+herschel.hops_irs_spectra | HOPS IRS Spectra
+herschel.hpdp_spectra | HIFI HPDP Spectra
+herschel.hpdp_spectral_scans | HIFI HPDP Spectral Scans
+herschel.ppdisks_spectral | PPDISKS Spectra
+herschel.shpdp_spectra | SPIRE HPDP Spectra
+herschel.vngs_spectra | VNGS Spectra
+herschel.magcloudscplus_spectra | MAGCLOUDSCPLUS Images
+herschel.v838mon_spectra | V838Mon Spectra
+goodsnirs16 | GOODS-N IRS 16 micron Photometry Catalog
+goodssirs16 | GOODS-S IRS 16 micron Photometry Catalog
+irs_enhv211 | IRS Enhanced Products
+fls_release_v2_mmt_spectra | FLS MMT/Hectospec Spectroscopic Catalog (V2)
+fls_release_v2_sdss_spectra | FLS SDSS Spectroscopic Catalog (V2)
+irts_nirspsc | IRTS NIRS Point Source Catalogue
+isogal_psc | ISOGAL Point Source Catalog
+irsa_groups | IRSA Group Table
+irsa_group_columns | IRSA Group Column Table
+irsa_serv_descriptors | IRSA DataLink Service Descriptiors
+irsa_serv_descriptor_cols | IRSA DataLink Service Descriptor Columns
+irsa_annotators | IRSA Annotators Table
+irsa_directory | Directory table for new Atlas
+sofia_sfgc | SOFIA FORCAST Galactic Center Source Catalog
+swire_lhisod | SWIRE Lockman Hole ISOCAM Deep Field Catalog
+swire_lhisos | SWIRE Lockman Hole ISOCAM Shallow Field Catalog
+euclid_q1_spectro_zcatalog_spe_quality | Euclid Q1 SPE Redshift Catalog - Quality
+euclid_q1_spectro_zcatalog_spe_classification | Euclid Q1 SPE Redshift Catalog - Classification
+euclid_q1_spectro_zcatalog_spe_galaxy_candidates | Euclid Q1 SPE Redshift Catalog - Galaxy Candidates
+euclid_q1_spectro_zcatalog_spe_star_candidates | Euclid Q1 SPE Redshift Catalog - Star Candidates
+euclid_q1_spectro_zcatalog_spe_qso_candidates | Euclid Q1 SPE Redshift Catalog - QSO Candidates
+euclid_q1_spectro_model_catalog_spe_lines_catalog | Euclid Q1 SPE Models Catalog - Lines
+euclid_q1_spectro_model_catalog_spe_star_models | Euclid Q1 SPE Star Models Catalog
+spitzer.c2d_irac_iv_caom_core | Spitzer C2D IRAC Image (Image/per Band) Metadata
+spitzer.c2d_mips_caom_nofilter | Spitzer C2D MIPS (Image/Per Band) Image Metadata
+spitzer.c2d_irs_cubes | Spitzer C2D IRS Cubes
+spitzer.c2d_irs_spec | C2D IRS Spectra
+spitzer.disks_sh_spectra | Disks_SH Spectra
+spitzer.feps_spectra_v5 | FEPS Spectra V5
+spitzer.fivemuses_spectra | The 5 mJy Unbiased Spitzer Extragalactic Survey (5MUSES) Spectra
+spitzer.fls_v2_mmt_spectra | Extragalactic FLS MMT/Hectospec Spectra
+spitzer.sgoods_irs_spitzer | Spitzer GOODS IRS Image Metadata
+spitzer.irs_std_spectra | Spitzer Spectra of IRS Standard Stars
+spitzer.s5_spectra | S5 Spectra
+spitzer.sage_irs | SAGE-Spec IRS Spectra
+spitzer.sage_irs_nods | SAGE IRS NODS
+spitzer.sage_spec_cubes | Spitzer SAGE SPEC Cubes
+cosmos.zcosmos_bright_v3_5_spec | COSMOS Bright V3.5 Spectra
+cosmos.cosmos_magellan_opt_spec_30 | COSMOS Magellan Spectra
+cosmos.cosmos_irs | COSMOS IRS Spectra

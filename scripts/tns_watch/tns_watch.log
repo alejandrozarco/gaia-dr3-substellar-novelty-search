@@ -1,0 +1,37 @@
+2026-09-30 17:52:59 2026adjg baseline type ---, rows 17, spectra True
+2026-09-30 17:52:59 2026adjh baseline type ---, rows 14, spectra True
+2026-09-30 17:52:59 2026adji baseline type ---, rows 14, spectra True
+2026-09-30 17:52:59 2026adjj baseline type ---, rows 11, spectra True
+2026-09-30 17:52:59 2026adjk baseline type ---, rows 12, spectra True
+2026-09-30 17:52:59 2026adjl baseline type ---, rows 14, spectra True
+2026-09-30 17:52:59 checked 6; changes: none
+2026-09-30 17:54:48 2026adjg CHANGED type SN TEST -> ---; rows 17 -> 17; Classification Reports | No Data | Comments | Log in | or | register | to post comments
+2026-09-30 17:54:48 checked 6; changes: 2026adjg
+2026-09-30 17:56:39 NOTE: the 17:54:48 CHANGED line above was a deliberate positive-control test (state edited by hand), not a real change
+2026-09-30 18:01:18 checked 6; changes: none
+2026-09-30 18:01:18 VSX Gaia DR3 5182404743053707904 (ZTF24abfojgu) baseline []
+2026-09-30 18:01:18 VSX TYC 3477-27-1 baseline []
+2026-09-30 18:01:18 VSX 2MASS J22342534+0806596 baseline []
+2026-09-30 18:03:11 checked 6; changes: none
+2026-09-30 18:03:11 VSX TYC 3477-27-1 CHANGED ['POSITIVE CONTROL'] -> []
+2026-09-30 18:04:48 NOTE: the VSX CHANGED line above was a deliberate positive-control test (state edited by hand)
+2026-09-30 22:56:50 checked 6; changes: none
+2026-09-30 22:58:37 checked 6; changes: none
+2026-09-30 22:58:37 VSX checked 3 (control ok); changes: none
+2026-10-01 02:32:01 checked 6; changes: none
+2026-10-01 02:32:01 VSX checked 3 (control ok); changes: none
+2026-10-01 08:00:14 checked 6; changes: none
+2026-10-01 08:00:14 VSX checked 3 (control ok); changes: none
+2026-10-02 08:00:08 2026admn baseline type ---, rows 8
+2026-10-02 08:00:08 2026admo baseline type ---, rows 8
+2026-10-02 08:00:08 2026admp baseline type ---, rows 8
+2026-10-02 08:00:08 2026admq baseline type ---, rows 8
+2026-10-02 08:00:08 2026admr baseline type ---, rows 7
+2026-10-02 08:00:08 checked 11; changes: none
+2026-10-02 08:00:08 VSX checked 3 (control ok); changes: none
+2026-10-03 08:00:05 checked 11; changes: none
+2026-10-03 08:00:05 VSX checked 3 (control ok); changes: none
+2026-10-04 08:05:17 checked 11; changes: none
+2026-10-04 08:05:17 VSX checked 3 (control ok); changes: none
+2026-10-05 08:00:05 checked 11; changes: none
+2026-10-05 08:00:05 VSX checked 3 (control ok); changes: none

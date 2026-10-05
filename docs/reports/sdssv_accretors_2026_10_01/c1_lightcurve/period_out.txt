@@ -1,0 +1,34 @@
+quiescent N: 1567 {'zr': np.int64(1030), 'zg': np.int64(537)}
+grid 714830 freqs; top peak f=48.900004 c/d P=0.4908 h power=0.0459
+  f=48.90000 P=  0.4908 h  pow=0.0459
+  f=0.99995 P= 24.0012 h  pow=0.0457
+  f=1.99994 P= 12.0004 h  pow=0.0406
+  f=49.89999 P=  0.4810 h  pow=0.0398
+  f=44.89357 P=  0.5346 h  pow=0.0388
+  f=46.95679 P=  0.5111 h  pow=0.0380
+  f=8.96283 P=  2.6777 h  pow=0.0378
+  f=46.89634 P=  0.5118 h  pow=0.0377
+shuffle FAP (100 shuffles): 1.000; 1%-threshold power 0.1548, 5% 0.1405
+zg: N=537 peak P=2.5740 h pow=0.0858; shuffle FAP(60)=0.900 (40 shuffles)
+zr: N=1030 peak P=24.0990 h pow=0.0564; shuffle FAP(60)=1.000 (40 shuffles)
+control ring180_f: peak P=23.9443 h pow=0.0234
+control ring90_f: peak P=0.4884 h pow=0.0174
+control ring270_f: peak P=0.4986 h pow=0.0213
+control KIC_f: peak P=0.5431 h pow=0.0744
+
+injection-recovery (sinusoid semi-amplitude A uJy; recovered = peak within 0.5% of f_inj and power > 1% shuffle threshold):
+  A= 10 uJy P 0.5-2 h : 0/15
+  A= 10 uJy P 2-6 h   : 0/15
+  A= 10 uJy P 6 h-2 d : 0/15
+  A= 20 uJy P 0.5-2 h : 0/15
+  A= 20 uJy P 2-6 h   : 0/15
+  A= 20 uJy P 6 h-2 d : 0/15
+  A= 30 uJy P 0.5-2 h : 8/15
+  A= 30 uJy P 2-6 h   : 2/15
+  A= 30 uJy P 6 h-2 d : 6/15
+  A= 50 uJy P 0.5-2 h : 15/15
+  A= 50 uJy P 2-6 h   : 15/15
+  A= 50 uJy P 6 h-2 d : 15/15
+  A= 80 uJy P 0.5-2 h : 15/15
+  A= 80 uJy P 2-6 h   : 15/15
+  A= 80 uJy P 6 h-2 d : 15/15

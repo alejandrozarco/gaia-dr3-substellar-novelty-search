@@ -1,0 +1,31 @@
+KOA tables ['koa_deimos', 'koa_esi', 'koa_guider', 'koa_hires', 'koa_kcwi', 'koa_kpf', 'koa_lris', 'koa_lws', 'koa_mosfire', 'koa_nirc', 'koa_nirc2', 'koa_nires', 'koa_nirspec', 'koa_osiris', 'koa_reduced_data']
+koa_deimos FU Ori 0 
+koa_deimos target 0 
+koa_esi FU Ori 0 
+koa_esi target 0 
+koa_guider FU Ori ERR Input query [select koaid,instrume,targname,date_obs from koa_guider where ((0.062982564472*x)+(0.985485700217*y)+(0.157
+koa_guider target ERR Input query [select koaid,instrume,targname,date_obs from koa_guider where ((0.451796854844*x)+(-0.629654176152*y)+(0.63
+koa_hires FU Ori 25 ['29  FU Ori', '29  FU Ori', '13 FU Ori', '13 FU Ori', '13 FU Ori']
+koa_hires target 0 
+koa_kcwi FU Ori 32 ['FU Ori', 'FU Ori', 'FU Ori', 'FU Ori', 'FU Ori']
+koa_kcwi target 0 
+koa_kpf FU Ori 6 ['', '', '', '', '']
+koa_kpf target 0 
+koa_lris FU Ori 6 ['FU Ori', 'FU Ori', 'FU Ori', 'FU Ori', 'FU Ori']
+koa_lris target 0 
+koa_lws FU Ori 6 ['FU Ori', 'FU Ori', 'FU Ori', 'FU Ori', 'FU Ori']
+koa_lws target 0 
+koa_mosfire FU Ori 0 
+koa_mosfire target 0 
+koa_nirc FU Ori 5 ['FU ORI', 'FU ORI', 'FU ORI', 'FU ORI', 'FU ORI']
+koa_nirc target 0 
+koa_nirc2 FU Ori 21 ['FU Ori', 'FU Ori', 'FU Ori', 'FU Ori', 'FU Ori']
+koa_nirc2 target 0 
+koa_nires FU Ori 0 
+koa_nires target 0 
+koa_nirspec FU Ori 822 ['FU Ori', 'FU Ori', 'FU Ori', 'FU Ori', 'FU Ori']
+koa_nirspec target 0 
+koa_osiris FU Ori 0 
+koa_osiris target 0 
+koa_reduced_data FU Ori ERR Input query [select koaid,instrume,targname,date_obs from koa_reduced_data where ((0.062982564472*x)+(0.985485700217*y)+
+koa_reduced_data target ERR Input query [select koaid,instrume,targname,date_obs from koa_reduced_data where ((0.451796854844*x)+(-0.629654176152*y)

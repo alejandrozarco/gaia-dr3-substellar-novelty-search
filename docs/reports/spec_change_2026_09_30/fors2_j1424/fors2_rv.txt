@@ -1,0 +1,3 @@
+ADP.2023-10-24T10:05:59.464.fits MJD(mid) 58221.3332 SPECSYS TOPOCENT S/N 44: H-alpha centre 6565.488 +- 0.117 A -> 122.8 +- 5.3 km/s (frame); sky [O I] offset -1.2 km/s; barycentric corr 3.4; v_bary (sky-corrected) 127.5 km/s
+ADP.2023-10-24T10:06:40.183.fits MJD(mid) 58222.2183 SPECSYS TOPOCENT S/N 41: H-alpha centre 6560.987 +- 0.114 A -> -82.8 +- 5.2 km/s (frame); sky [O I] offset 5.2 km/s; barycentric corr 3.3; v_bary (sky-corrected) -84.7 km/s
+ADP.2023-10-24T10:25:41.365.fits MJD(mid) 58227.2632 SPECSYS TOPOCENT S/N 41: H-alpha centre 6558.813 +- 0.130 A -> -182.1 +- 6.0 km/s (frame); sky [O I] offset 2.5 km/s; barycentric corr 0.8; v_bary (sky-corrected) -183.8 km/s

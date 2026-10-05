@@ -1,0 +1,13 @@
+total 4140 {'o': 3308, 'c': 832} MJD 57233-61266
+c N 821 wmean -2.8+-0.4 uJy (diff flux; star ~67 uJy) med err 11 uJy rms 17 chi2r 1.31
+  after per-season median subtraction: rms 16.5 chi2r 1.18
+  nfreq 3481546 best f 95.74200 c/d (P 0.2507 h) power 0.0315 semi-amp 2.9 uJy (4.3% of mean) permFAP 0.980 thr99 0.0479 (411s)
+   inj semi-amp 3% of flux: 0/20
+   inj semi-amp 5% of flux: 4/20
+   inj semi-amp 8% of flux: 18/20
+o N 2889 wmean -6.4+-0.3 uJy (diff flux; star ~74 uJy) med err 18 uJy rms 30 chi2r 1.41
+  after per-season median subtraction: rms 28.8 chi2r 1.22
+  nfreq 3617707 best f 157.37252 c/d (P 0.1525 h) power 0.0129 semi-amp 2.8 uJy (3.8% of mean) permFAP 0.608 thr99 0.0150 (466s)
+   inj semi-amp 3% of flux: 2/20
+   inj semi-amp 5% of flux: 13/20
+   inj semi-amp 8% of flux: 20/20

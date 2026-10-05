@@ -1,0 +1,65 @@
+# Prior-art screen (arXiv) -- query: 'APOGEE radial velocity dark companion SDSS-V'
+# arXiv totalResults ~ 0; showing 0
+
+NO MATCHES in this window -- WEAK evidence of method-novelty
+(arXiv-only screen; broaden the query and read more before claiming novel).
+
+# STRICT (all-terms AND) found nothing -> BROAD (any-term OR) relevance-ranked fallback:
+# Prior-art screen (arXiv) -- query: 'APOGEE radial velocity dark companion SDSS-V  [BROAD/OR]'
+# arXiv totalResults ~ 221952; showing 10
+
+[1] 2017-11-09  SDSS-V: Pioneering Panoptic Spectroscopy
+     Juna A. Kollmeier, Gail Zasowski, Hans-Walter Rix et al.
+     http://arxiv.org/abs/1711.03234v1  [astro-ph.GA]
+     SDSS-V will be an all-sky, multi-epoch spectroscopic survey of over six million objects. It is designed to decode the history of the Milky Way, trace the emergence of the chemical elements, reveal the inner workings of stars, and investigate the origin of planets. It will also cr...
+
+[2] 2011-01-03  Radial velocity follow-up of CoRoT transiting exoplanets
+     A. Santerne, M. Endl, A. Hatzes et al.
+     http://arxiv.org/abs/1101.0463v1  [astro-ph.EP]
+     We report on the results from the radial-velocity follow-up program performed to establish the planetary nature and to characterize the transiting candidates discovered by the space mission CoRoT. We use the SOPHIE at OHP, HARPS at ESO and the HIRES at Keck spectrographs to colle...
+
+[3] 2024-08-13  Improving Radial Velocities by Marginalizing over Stars and Sky: Achieving 30 m/s RV Precision for APOGEE in the Plate Era
+     Andrew K. Saydjari, Douglas P. Finkbeiner, Adam J. Wheeler et al.
+     http://arxiv.org/abs/2408.07126v1  [astro-ph.IM, astro-ph.SR]
+     The radial velocity catalog from the Apache Point Observatory Galactic Evolution Experiment (APOGEE) is unique in its simultaneously large volume and high precision as a result of its decade-long survey duration, multiplexing (600 fibers), and spectral resolution of $R \sim 22,50...
+
+[4] 2013-12-10  Friends of Hot Jupiters I: A Radial Velocity Search for Massive, Long-Period Companions to Close-In Gas Giant Planets
+     Heather A. Knutson, Benjamin J. Fulton, Benjamin T. Montet et al.
+     http://arxiv.org/abs/1312.2954v2  [astro-ph.EP]
+     In this paper we search for distant massive companions to known transiting gas giant planets that may have influenced the dynamical evolution of these systems. We present new radial velocity observations for a sample of 51 planets obtained using the Keck HIRES instrument, and fin...
+
+[5] 2022-06-08  The missing radial velocities of Gaia: blind predictions for DR3
+     Aneesh Naik, Axel Widmark
+     http://arxiv.org/abs/2206.04102v2  [astro-ph.GA]
+     While Gaia has observed the phase space coordinates of over a billion stars in the Galaxy, in the overwhelming majority of cases it has only obtained five of the six coordinates, the missing dimension being the radial (line-of-sight) velocity. Using a realistic mock dataset, we s...
+
+[6] 2018-06-18  A new catalogue of radial velocity standard stars from the APOGEE data
+     Yang Huang, Xiaowei Liu, Bingqiu Chen et al.
+     http://arxiv.org/abs/1806.06475v1  [astro-ph.SR, astro-ph.GA, astro-ph.IM]
+     We present a new catalogue of 18 080 radial velocity standard stars selected from the APOGEE data. These RV standard stars are observed at least three times and have a median stability ($3σ_{\rm RV}$) around 240 m s$^{-1}$ over a time baseline longer than 200 days. They are large...
+
+[7] 2026-07-29  An Exploratory Analysis of New Large Gaia-informed Quasar Samples in SDSS-V
+     Shir Aviram, Benny Trakhtenbrot, Tom Dwelly et al.
+     http://arxiv.org/abs/2607.27329v1  [astro-ph.GA]
+     Quasars are luminous objects that provide insights into the physics and evolution of supermassive black holes (SMBHs) and their accretion flows, galaxy evolution, and even cosmology. In this study, we present an exploratory study based on the ongoing fifth generation of the Sloan...
+
+[8] 2005-10-12  The Dark Energy Survey
+      The Dark Energy Survey Collaboration
+     http://arxiv.org/abs/astro-ph/0510346v1  [astro-ph]
+     We describe the Dark Energy Survey (DES), a proposed optical-near infrared survey of 5000 sq. deg of the South Galactic Cap to ~24th magnitude in SDSS griz, that would use a new 3 sq. deg CCD camera to be mounted on the Blanco 4-m telescope at Cerro Telolo Inter-American Observat...
+
+[9] 2021-08-26  Final Targeting Strategy for the SDSS-IV APOGEE-2S Survey
+     Felipe A. Santana, Rachael L. Beaton, Kevin R. Covey et al.
+     http://arxiv.org/abs/2108.11908v1  [astro-ph.GA]
+     APOGEE is a high-resolution (R sim 22,000), near-infrared, multi-epoch, spectroscopic survey of the Milky Way. The second generation of the APOGEE project, APOGEE-2, includes an expansion of the survey to the Southern Hemisphere called APOGEE-2S. This expansion enabled APOGEE to ...
+
+[10] 2025-09-01  III. Interacting Dark Energy: Summary of Models, Pathologies, and Constraints
+     Marcel van der Westhuizen, Amare Abebe, Eleonora Di Valentino
+     http://arxiv.org/abs/2509.04496v3  [gr-qc, astro-ph.CO]
+     We present an overview of the main results from our two companion papers that are relevant for observational constraints on interacting dark energy (IDE) models. We provide analytical solutions for the dark matter and dark energy densities, $ρ_{\rm dm}$ and $ρ_{\rm de}$, as well ...
+
+REMINDER: a hit means the method is (partly) published -> record the ref in
+docs/RESEARCH_LOG.md, front-filter candidates against that paper's list, and
+frame the lane as method-validation, NOT novel discovery. Absence != novelty.
+# ^ strict-novel but broad-related work EXISTS: read these before calling the lane novel.
+# ALSO run a plain WebSearch on the method: the arXiv strict-match misses papers that use different wording (a WebSearch found a DESI-RV scoop note this arXiv gate had missed, 2026-07-05).

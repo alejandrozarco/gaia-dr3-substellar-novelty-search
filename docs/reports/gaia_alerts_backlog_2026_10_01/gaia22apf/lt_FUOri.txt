@@ -1,0 +1,89 @@
+ 
+ 
+ 
+ LT Archive results 
+ 
+ 
+function popup(){window.alert('This data is still private.\nYou need to fill in a password.');}
+function rehref(){location.href='#passhere';}
+function validate(object) {
+ if (object.value.length > 0)
+ return true;
+ else {
+ popup();
+ rehref();
+ return false;
+ }
+ }
+ 
+ 
+ 
+ 
+ 
+ Query Results 
+ [Software release version: 2026-09-15] Search returned 213 frames 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ The plain text table of search results is ready for download: cat1374455093.txt . 
+ A web accessible directory contains all the results from this search and in the following links they are subdivided by proposal. 
+ 
+ 
+ Publicly accessible data: 
+ JL13A08 
+ Create tarball of these reduced data: 
+ [FITS] 
+ [JPEG] 
+ [BOTH] 
+ JL13B01 
+ Create tarball of these reduced data: 
+ [FITS] 
+ [JPEG] 
+ [BOTH] 
+ JL14A04 
+ Create tarball of these reduced data: 
+ [FITS] 
+ [JPEG] 
+ [BOTH] 
+ JL15A03 
+ Create tarball of these reduced data: 
+ [FITS] 
+ [JPEG] 
+ [BOTH] 
+ 
+ 
+ 
+ 
+ Proprietary data (password required): 
+ No proprietary data matched your search criteria 
+ 
+This search returned data from 4 proposal(s). 
+ 
+ 
+ 

@@ -1,0 +1,11 @@
+Episode stats (C1 difference flux vs 2018 reference; base = per-filter-season median; F_ref assumed 91 uJy from Gaia G=18.90 -> AB 19.00)
+2019-07-17..19  zg N= 1 nights=1 mean diff flux    332+-  77 uJy (season base   48); (mean-base)/err= 3.7; implied mean mag 17.34 (dm -1.67 vs F_ref)  max single 332
+2019-07-17..19  zr N=15 nights=3 mean diff flux    224+-  27 uJy (season base   27); (mean-base)/err= 7.2; implied mean mag 17.65 (dm -1.35 vs F_ref)  max single 401
+2020-03-07      zg N= 1 nights=1 mean diff flux    396+- 105 uJy (season base   24); (mean-base)/err= 3.5; implied mean mag 17.18 (dm -1.82 vs F_ref)  max single 396
+2020-03-07      zr N= 1 nights=1 mean diff flux    226+-  94 uJy (season base   11); (mean-base)/err= 2.3; implied mean mag 17.65 (dm -1.35 vs F_ref)  max single 226
+2021-04-10..16  zg N= 2 nights=2 mean diff flux    176+-  45 uJy (season base   25); (mean-base)/err= 3.4; implied mean mag 17.83 (dm -1.17 vs F_ref)  max single 235
+2021-04-10..16  zr N= 2 nights=2 mean diff flux    137+-  57 uJy (season base   20); (mean-base)/err= 2.1; implied mean mag 18.00 (dm -1.00 vs F_ref)  max single 158
+2021-08-23..29  zg N= 4 nights=4 mean diff flux    240+-  35 uJy (season base   25); (mean-base)/err= 6.1; implied mean mag 17.60 (dm -1.40 vs F_ref)  max single 257
+2021-08-23..29  zr N= 4 nights=4 mean diff flux    198+-  45 uJy (season base   20); (mean-base)/err= 4.0; implied mean mag 17.75 (dm -1.26 vs F_ref)  max single 351
+2021-08 pre (59440-59455) {'zg': '51+-31 (N=6)', 'zr': '-20+-51 (N=4)'}
+2021-08 post (59466-59480) {'zg': '42+-29 (N=6)', 'zr': '18+-37 (N=6)'}

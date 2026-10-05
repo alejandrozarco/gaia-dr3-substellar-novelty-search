@@ -1,0 +1,77 @@
+{
+ "gid": 4645751847890110208,
+ "sectors": [
+  {
+   "sector": 96,
+   "cad_s": 200,
+   "n": 9939,
+   "f_peak": 0.14509,
+   "P_peak_h": 165.4177,
+   "fap": 0.0,
+   "pow": 0.3365,
+   "bkg_pow_same_f": 0.1566,
+   "amp_pct": 0.158,
+   "med_flux": 8461.9,
+   "rms_pct": 0.2
+  },
+  {
+   "sector": 95,
+   "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without"
+  },
+  {
+   "sector": 94,
+   "cad_s": 200,
+   "n": 9736,
+   "f_peak": 0.15047,
+   "P_peak_h": 159.4963,
+   "fap": 1.4e-207,
+   "pow": 0.0951,
+   "bkg_pow_same_f": 0.1218,
+   "amp_pct": 0.063,
+   "med_flux": 8299.0,
+   "rms_pct": 0.14
+  },
+  {
+   "sector": 90,
+   "cad_s": 200,
+   "n": 11559,
+   "f_peak": 0.14389,
+   "P_peak_h": 166.7938,
+   "fap": 1.4e-257,
+   "pow": 0.0989,
+   "bkg_pow_same_f": 0.3825,
+   "amp_pct": 0.061,
+   "med_flux": 8311.0,
+   "rms_pct": 0.13
+  }
+ ],
+ "n_sectors_available": 4,
+ "all": {
+  "n": 31234,
+  "peaks": [
+   [
+    0.15726,
+    152.6166,
+    0.1308
+   ],
+   [
+    0.30768,
+    78.003,
+    0.0519
+   ],
+   [
+    0.101,
+    237.6296,
+    0.0468
+   ],
+   [
+    0.2181,
+    110.0389,
+    0.0157
+   ]
+  ],
+  "fap": 0.0,
+  "bkg_peak_f": 0.1361,
+  "bkg_peak_pow": 0.116
+ }
+}

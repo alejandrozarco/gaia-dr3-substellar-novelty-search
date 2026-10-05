@@ -1,0 +1,31 @@
+Name,RAdeg,DEdeg,Comment,reason
+Gaia24cet,268.32460712466,-30.96374116713,1.5 mag outburst in Gaia source,OGLE/KMT: KMT-2024-BLG-1783(0.10);OGLE-2024-BLG-1047(0.09)
+Gaia24bbx,270.57060392796,-33.06401274914,~1.5 mag rise in Gaia source,OGLE/KMT: KMT-2024-BLG-3172(0.08);OGLE-2024-BLG-0109(0.08)
+Gaia24bay,262.53080370779,-27.94472881864,red  gal.plane source candidate microlensing event rises by 1.4 mag,OGLE/KMT: KMT-2024-BLG-0046(0.05);OGLE-2024-BLG-0040(0.13)
+Gaia24ban,260.9204454431,-27.59422907278,bright red  gal.plane source rises by 2.1 mag,OGLE/KMT: KMT-2024-BLG-2907(0.15);OGLE-2024-BLG-0077(0.13)
+Gaia24ant,271.77566507789,-32.06960731752,gal.plane source candidate microlensing event rises by 2.1 mag,OGLE/KMT: KMT-2024-BLG-3168(0.10)
+Gaia24anm,269.85837933289,-27.08456449522,bright very red  gal.plane source candidate microlensing event rises by 1.4 mag,OGLE/KMT: KMT-2024-BLG-2839(0.02)
+Gaia24ahr,172.31548663735,-19.5109373291,Brightening in erratic Gaia and GALEX source,quasar/galaxy: PQSO=0.78 PGal=0.03
+Gaia23btt,269.09076481096,-38.20832002833,Almost 2 mag rise in Gaia source,OGLE/KMT: OGLE-2023-BLG-0147(0.07)
+Gaia23brd,263.52721301963,-29.8332081288,red  gal.plane source candidate microlensing event rises by 1.8 mag,OGLE/KMT: KMT-2023-BLG-0032(0.02);OGLE-2023-BLG-0222(0.19)
+Gaia23bnx,265.79240744539,-32.88021266908,1.4 mag outburst in Gaia source,OGLE/KMT: KMT-2023-BLG-0038(0.05);OGLE-2023-BLG-0083(0.04)
+Gaia23bnc,265.85798089278,-26.41382644889,red  gal.plane source rises by 1.4 mag,OGLE/KMT: KMT-2023-BLG-0042(0.07);OGLE-2023-BLG-0075(0.10)
+Gaia23bmo,264.89189837392,-20.81484088299,~1.6 mag brightening in Gaia source,OGLE/KMT: OGLE-2023-BLG-0162(0.07)
+Gaia23bbl,274.87812333333,-21.93169533799,red galactic bulge source rises by 1.6 mag - candidate microlensing event,OGLE/KMT: OGLE-2023-BLG-0214(0.10)
+Gaia22env,269.52027258125,-35.66258978354,bright  gal.plane source candidate microlensing event rises by 1.4 mag,OGLE/KMT: KMT-2022-BLG-1430(0.06)
+Gaia22edr,268.29559372129,-32.64173800373,,OGLE/KMT: KMT-2022-BLG-1751(0.12);OGLE-2022-BLG-0357(0.18)
+Gaia22dsr,268.46217227149,-31.19249513066,gal.plane source candidate microlensing event rises by 1.1 mag,OGLE/KMT: KMT-2022-BLG-0600(0.23);OGLE-2022-BLG-0132(0.08)
+Gaia22dsl,269.99642063446,-32.57320090848,bright bulge source rises by 2.1 mag - candidate microlensing event,OGLE/KMT: KMT-2022-BLG-0569(0.12);OGLE-2022-BLG-0351(0.12);OGLE-2022-BLG-0353(0.12)
+Gaia22bij,262.53278227151,-26.89478864951,~1.5 mag brightening in Gaia source,OGLE/KMT: KMT-2022-BLG-0049(0.11)
+Gaia22bgo,268.95739423856,-22.00400287169,very red  gal.plane source candidate microlensing event rises by 1.4 mag,OGLE/KMT: KMT-2022-BLG-0145(0.22)
+Gaia22avq,272.87563133352,-25.05310579882,gal.plane source candidate microlensing event rises by 1.3 mag,OGLE/KMT: KMT-2022-BLG-0118(0.15); SIMBAD: MOA  2022-BLG-33b [Pl?]; MOA  2022-BLG-33 [*]
+Gaia21eju,263.88722612778,-26.36385828934,"2 mag rise in a faint Gaia source towards galactic centre, candidate microlensing event",OGLE/KMT: KMT-2021-BLG-2181(0.08)
+Gaia20ezb,330.92234792569,31.98118281202,long term rise (2 mag in <5 years) in Gaia source coincident with galaxy WISEA J220341.38+315852.7,quasar/galaxy: PQSO=0.00 PGal=1.00
+Gaia20eqj,263.7745613243,-28.05796516948,2mag brightening of a very red source in the Galactic bulge - candidate microlensing event,OGLE/KMT: KMT-2020-BLG-0764(0.06)
+Gaia20ecz,269.65223357901,-28.18555005878,1.5 mag rise in Galactic bulge source - candidate microlensing event,OGLE/KMT: KMT-2020-BLG-0695(0.09)
+Gaia20dta,86.21772557595,33.50267592159,long term rise of ~1.5 mags in Gaia source coincident with galaxy WISEA J054452.25+333009.5,SIMBAD: V* V890 Aur [Y*O]
+Gaia19bii,269.50165414573,-33.71317051378,"Galactic bulge source brightens by 3 mag, candidate microlensing event, aka 2019-BLG-0087",OGLE/KMT: KMT-2019-BLG-2781(0.04);OGLE-2019-BLG-0087(0.04)
+Gaia19ayp,265.85239635079,-34.90372648609,red star in the Galactic plane brightens by 2 mag,OGLE/KMT: KMT-2019-BLG-0016(0.06);OGLE-2019-BLG-0223(0.06)
+Gaia19ayo,265.21671140546,-36.03953940039,star in the Galactic plane brightens by 2.5 mag,OGLE/KMT: KMT-2019-BLG-2909(0.01)
+Gaia19apu,96.64967348714,3.98132664927,erratic source brightens by >2.5 mag over 1 year,quasar/galaxy: PQSO=1.00 PGal=0.00
+Gaia16amk,122.59270849231,-22.80749943533,blue transient next to DSS source,quasar/galaxy: PQSO=0.89 PGal=0.00

@@ -63,6 +63,7 @@ method-level twin of the "known ⇒ not novel" object gate.
 | `docs/CANDIDATES.md` | Authoritative current roster + verdicts. |
 | `docs/object_journals/` | **Per-object append-only history + cross-check ledgers.** |
 | `docs/RESEARCH_LOG.md` | **Per-project lab notebook** (lanes, sidesteps, iterations, insight catalog). |
+| `docs/DATA_SOURCES.md` | **Data-source registry**: every archive/service tried, status, access quirks. Read before a search; append after one. |
 | `docs/dossiers/` | Per-target deep snapshots (current understanding; carry superseding banners). |
 | `docs/METHODOLOGY.md` | The v2 cascade corrections. |
 | `docs/dr4_preregistration_2026_06_01.md` | Falsifiable DR4 confirm/refute thresholds. |

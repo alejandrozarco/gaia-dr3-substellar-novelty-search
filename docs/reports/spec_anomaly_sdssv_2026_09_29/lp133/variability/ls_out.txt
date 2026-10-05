@@ -1,0 +1,33 @@
+PS1 i points:
+         obsTime        mag       err
+70  56766.515633  18.976933  0.062477
+67  56766.475268  19.115973  0.037140
+60  56842.285466  19.162672  0.022631
+68  56766.488723  19.176708  0.033039
+47  56405.414663  19.190062  0.026096
+7   55671.455914  19.206629  0.025194
+28  56029.534159  19.217145  0.024950
+59  56842.271158  19.223971  0.022426
+69  56766.502201  19.224930  0.035814
+6   55671.444657  19.225518  0.025622
+62  56842.314112  19.229772  0.022103
+61  56842.299781  19.235760  0.028286
+36  56380.577316  19.247195  0.060084
+46  56405.403396  19.254657  0.026878
+37  56380.588514  19.261410  0.051881
+ZTF zr N 35 med 19.203 std 0.053 MADrms 0.067 mederr 0.081
+chi2r 0.43
+ZTF_r N 35 T 1587 d nfreq 1427644
+  best f 249.14542 c/d (P=0.0963 h) power 0.602 semi-amp 0.066 mag  permFAP 0.373  99%thr 0.698  (288s)
+  top peaks c/d: [np.float64(249.1454), np.float64(296.8543), np.float64(114.5381), np.float64(19.8324), np.float64(273.2703)]
+   inj semi-amp 0.03: recovered 0/40
+   inj semi-amp 0.05: recovered 0/40
+   inj semi-amp 0.08: recovered 0/40
+   inj semi-amp 0.12: recovered 22/40
+   inj semi-amp 0.20: recovered 37/40
+ZTF_r+PS1_griz N 91 T 4832 d nfreq 4347028
+  best f 294.70735 c/d (P=0.0814 h) power 0.277 semi-amp 0.029 mag  permFAP 0.941  99%thr 0.346  (634s)
+  top peaks c/d: [np.float64(294.7073), np.float64(293.5081), np.float64(196.2916), np.float64(294.5109), np.float64(299.1052)]
+   inj semi-amp 0.03: recovered 1/20
+   inj semi-amp 0.05: recovered 12/20
+   inj semi-amp 0.08: recovered 17/20
