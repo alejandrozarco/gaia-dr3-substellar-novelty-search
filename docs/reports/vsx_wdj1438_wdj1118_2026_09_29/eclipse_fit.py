@@ -39,7 +39,7 @@ def load(s):
         season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
         for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
         thr = 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e); clip = (f < thr) & (f > -thr - 600)  # one-sided: deep eclipse points must survive
-        t = Time(mjd[clip], format="mjd", scale="utc", location=geo)
+        t = Time(mjd[clip] + 15.0 / 86400.0, format="mjd", scale="utc", location=geo)  # ATLAS MJD = exposure start; +15 s = mid-exposure
         D[b] = dict(t=(t.tdb + t.light_travel_time(c0)).jd, f=f[clip], e=e[clip])
     return D, nout
 def trap(x, T, fr):

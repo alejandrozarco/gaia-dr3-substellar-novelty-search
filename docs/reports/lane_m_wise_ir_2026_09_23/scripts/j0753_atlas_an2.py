@@ -16,7 +16,7 @@ rng = np.random.default_rng(4)
 for b, fstar in (("o", 3631e6 * 10 ** (-0.4 * 19.62)), ("c", 3631e6 * 10 ** (-0.4 * 20.55))):
     s = [x for x in ok if x["F"] == b]
     mjd = np.array([float(x["MJD"]) for x in s]); f = np.array([float(x["uJy"]) for x in s]); e = np.array([float(x["duJy"]) for x in s])
-    t = bjd(mjd); ph = (t / P) % 1
+    t = bjd(mjd + 15.0 / 86400.0); ph = (t / P) % 1
     season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)            # observing seasons (target at RA 118: season break ~ June)
     for sv in np.unique(season):
         m = season == sv; f[m] -= np.median(f[m])

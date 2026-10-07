@@ -16,7 +16,7 @@ for b in ("o", "c"):
     season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
     for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
     clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e)
-    t = Time(mjd[clip], format="mjd", scale="utc", location=geo); D[b] = dict(t=(t.tdb + t.light_travel_time(c0)).jd, f=f[clip], e=e[clip], sv=season[clip], mjd=mjd[clip])
+    t = Time(mjd[clip] + 15.0 / 86400.0, format="mjd", scale="utc", location=geo); D[b] = dict(t=(t.tdb + t.light_travel_time(c0)).jd, f=f[clip], e=e[clip], sv=season[clip], mjd=mjd[clip])
 P0 = 0.0739348; centres = np.linspace(0, 1, 300, endpoint=False); widths = np.array([0.02, 0.03, 0.04, 0.06, 0.08])
 def score(P, fl):
     tot = np.zeros((len(widths), len(centres)))

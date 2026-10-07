@@ -22,7 +22,7 @@ for b, g in R.groupby("F"):
         mad = 1.4826 * np.median(np.abs(y - np.median(y))); k = np.abs(y - np.median(y)) < 5 * mad
         parts.append(pd.DataFrame(dict(t=h.MJD[k], y=y[k], e=e[k], F=b)))
 d = pd.concat(parts)
-t = Time(d.t.values + 2400000.5, format="jd", scale="utc", location=GEO)
+t = Time(d.t.values + 2400000.5 + 15.0 / 86400.0, format="jd", scale="utc", location=GEO)
 bjd = (t.tdb + t.light_travel_time(c0, kind="barycentric")).jd
 d["bjd"] = bjd
 print(sid, "n", len(d), {b: int((d.F == b).sum()) for b in d.F.unique()}, "median err %", round(100 * np.median(d.e), 2), "rms %", round(100 * np.std(d.y), 2))

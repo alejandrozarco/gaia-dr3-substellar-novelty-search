@@ -1,0 +1,14 @@
+ZTF26absimmf ra 98.57866 dec -6.02497 ndet 4 peak 16.65 last det MJD 61313.50 i 18.69; dets>=61318:  | nondets>=61318: none
+ZTF26abwacec ra 288.92826 dec -4.04147 ndet 15 peak 17.47 last det MJD 61312.21 r 19.10; dets>=61318:  | nondets>=61318: none
+ZTF26abtpoev ra 289.34141 dec -3.24887 ndet 16 peak 17.83 last det MJD 61303.13 i 19.21; dets>=61318:  | nondets>=61318: none
+ZTF26abwqsgt ra 284.93743 dec -10.57877 ndet 8 peak 18.15 last det MJD 61308.19 g 18.98; dets>=61318:  | nondets>=61318: none
+ZTF26abtoqyd ra 292.35178 dec 8.25006 ndet 20 peak 18.52 last det MJD 61312.12 g 19.61; dets>=61318:  | nondets>=61318: none
+ZTF26abycxez ra 291.35583 dec -7.16467 ndet 6 peak 18.57 last det MJD 61317.12 i 19.13; dets>=61318:  | nondets>=61318: none
+ZTF26abyalli ra 117.24982 dec -9.45729 ndet 2 peak 17.27 last det MJD 61313.51 i 17.70; dets>=61318:  | nondets>=61318: none
+ZTF26abxpksn ra 280.15606 dec 7.98834 ndet 10 peak 18.58 last det MJD 61318.14 g 19.66; dets>=61318: 61318.14g19.66 | nondets>=61318: 61318.13i>19.9
+ZTF26abxwnlk ra 294.48171 dec -7.75427 ndet 8 peak 18.83 last det MJD 61318.17 r 20.19; dets>=61318: 61318.17r20.19 | nondets>=61318: 61318.12i>19.7
+ZTF26abxwpty ra 286.80087 dec -3.30540 ndet 7 peak 18.97 last det MJD 61315.13 g 19.75; dets>=61318:  | nondets>=61318: none
+ZTF26abzajhy ra 75.89620 dec 23.12925 ndet 10 peak 19.18 last det MJD 61320.46 r 19.18; dets>=61318: 61318.43g19.85; 61318.51r19.29; 61319.34g19.69; 61319.44r19.33; 61320.39g19.64; 61320.46r19.18 | nondets>=61318: 61318.35i>19.8 61319.41i>20.0 61320.42i>19.9
+ZTF26abzlyby ra 67.94123 dec -13.08054 ndet 12 peak 19.71 last det MJD 61320.46 r 19.79; dets>=61318: 61318.34i19.98; 61318.41g20.03; 61318.46r19.90; 61319.35g19.82; 61319.44i19.79; 61320.41i20.01; 61320.44g19.71; 61320.46r19.79 | nondets>=61318: none
+ZTF26abygbnu ra 109.05473 dec -20.55848 ndet 2 peak 18.24 last det MJD 61316.50 i 18.42; dets>=61318:  | nondets>=61318: none
+ZTF26abzbudn ra 285.19217 dec 11.11936 ndet 3 peak 19.24 last det MJD 61317.15 r 19.24; dets>=61318:  | nondets>=61318: none

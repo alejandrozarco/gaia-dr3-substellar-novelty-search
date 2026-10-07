@@ -1,0 +1,168 @@
+%% LaTeX template for the DDT, science, and technical justification and
+%% feasibility to be submitted for short-cadence TESS observations under
+%% the Director's Discretionary Targets program. This template is based on
+%% the TESS GI template.
+%%
+%% TESS Guest Investigator Proposal DDT template 
+%% (based on the Cycle 1 template)
+%% V1.0
+%% 2018-10-19
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DOCUMENT FORMAT %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The default font was chosen to be easily readable while allowing
+%% sufficient material to be included.
+
+%% Please note that the proposal will be printed on US Letter size paper,
+%% 8.5 in x 11 in, and that formatting the text for other sizes will
+%% generally cause layout problems and may result in text being cut
+%% off near the edges. PLEASE DO NOT CHANGE THE 'LETTERPAPER' OPTION
+%% IN THE DOCUMENTCLASS COMMAND.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Default format: 11pt single column %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% NOTE: NASA ROSES requires body font size to be no smaller than 15 
+%% characters per inch (equivalent to Times Roman 12 point).
+%%
+%% Minimum margin size is 1 inch from top, bottom, and sides.
+
+\documentclass[letterpaper,11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HOW TO INCLUDE FIGURES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Please see the ``Included packages'' section below.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Included packages %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphics,graphicx}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{urlcolor=blue}
+\usepackage{cleveref}
+
+%% Feel free to modify the included packages list to use your
+%% favorite packages. 
+
+%% In the graphics and graphicx packages, Postscript and eps figures
+%% can be included using the \includegraphics command. The graphics
+%% package is part of standard LaTeX2e and provides a basic way of including a
+%% figure. The graphicx package is not standard, but extends the
+%% \includegraphics command to make it more user-friendly. If graphicx
+%% is not available on your system please remove it from the list of
+%% included packages above.  
+
+%% Syntax:
+%% In the graphics package:
+%%
+%% \begin{figure}
+%% \includegraphics[llx,lly][urx,ury]{file}
+%% \end{figure}
+%%
+%% where ll denotes 'lower left' and ur 'upper right' and the x and y
+%% values are the coordinates of the PostScript bounding box in
+%% points. There are 72 points in an inch.
+%%
+%% In the graphicx package:
+%% 
+%% \begin{figure}
+%% \includegraphics[key=val,key=val,...]{file}
+%% \end{figure}
+%%
+%% where some of the useful keys are: angle, width, height,
+%% keepaspectratio (='true' or 'false') and scale. Bounding box values
+%% can be given as [bb=llx lly urx ury].
+%%
+%% In either case you have to use LaTeX figure placement commands to
+%% position the figure on the page; \includegraphics will not do
+%% that. Both these commands also have other options that are listed
+%% in the LaTeX manual (for the graphics package) and in 'The LaTeX
+%% Graphics Companion' (for the graphicx package).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Page dimensions %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\textwidth}{6.5in} 
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in} 
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in} 
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in} 
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Section heading format %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\renewcommand{\section}{\@startsection%
+{section}{1}{0mm}{-\baselineskip}%
+{0.5\baselineskip}{\normalfont\Large\bfseries}}%
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Some Useful Abbreviations %%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tess}{{\it TESS}}
+\newcommand{\jwst}{{\it JWST}}
+\newcommand{\kepler}{{\it Kepler}}
+\newcommand{\ktwo}{{K2}}
+\newcommand{\hst}{{\it HST}}
+\newcommand{\msun}{$M_{\odot}$}
+\newcommand{\rsun}{$R_{\odot}$}
+\newcommand{\lsun}{$L_{\odot}$}
+\newcommand{\re}{$R_{\oplus}$}
+\newcommand{\me}{$M_{\oplus}$}
+\newcommand{\rj}{$R_{\textrm{\scriptsize Jup}}$}
+\newcommand{\mj}{$M_{\textrm{\scriptsize Jup}}$}
+\newcommand{\ms}{m~s$^{-1}$}
+
+
+\title{20-s cadence of two new compact variables: the eclipsing WD+dM binary WDJ111803.09$-$544218.04 ($P=2.25$\,h) and a 6.3-min hot-subdwarf pulsator candidate}
+\author{<PI> (Independent researcher $|$ <email>)}
+\date{}
+\begin{document}
+\pagestyle{plain}
+\pagenumbering{arabic}
+\maketitle
+\vspace{-2em}
+\noindent Cadence: 20\,s. Sectors: 111--114. Targets: 2 (TIC 450781262, Sects.~1--3; TIC 21821402, Sect.~4).
+
+\section{DDT Justification}
+TIC 450781262 (Gaia DR3 5346312514819760896; $G=17.38$, $T=17.41$) was identified on 2026 September 29 as a totally eclipsing post-common-envelope binary with $P=0.093889794(2)$\,d, after the Cycle~9 GI deadline. It falls in Sectors 111--114, before any Cycle~10 observations. No period, eclipse or binary classification is published for it to our knowledge (VSX, SIMBAD, MWDD, VizieR, ADS full text). Earlier 2-min (S90, S99) and 20-s (S90) data come from GI white-dwarf surveys (G07092; G08002/G08062). The target may therefore again be on 2-min lists in S111--S114, which have not yet been released. We request \textbf{20-s cadence only}, which is what resolves the white dwarf's ingress and egress (Sect.~3).
+
+\section{Scientific Justification}
+The system is a low-mass DA white dwarf (Gaia XP fit of Vincent et al.\ 2024: $14.9\pm0.4$\,kK, $\log g=7.05\pm0.03$, $0.254\pm0.008$\,\msun; the photometric fit of Gentile Fusillo et al.\ 2021 gives 10.8\,kK, 0.19\,\msun; both ignore the companion's light and are indicative) with a mid-M companion (2MASS $J=16.69\pm0.15$, $H=15.99\pm0.15$; AllWISE $W1=15.52\pm0.05$, $M_{W1}\approx8.2$) at $297\pm7$\,pc (Gaia DR3 $\varpi=3.370\pm0.080$\,mas). ATLAS forced photometry (2015--2026) shows a red-dominated reflection modulation ($o$ 8.3\%, $c$ 4.6\%) and a flat-bottomed eclipse at reflection phase 0.5 that hides the hot component ($c$-band depth $102\pm2$\%; first-to-last contact $7.6\pm0.2$\,min; mid-eclipse BJD$_{\rm TDB}$ $2460684.83517\pm0.00004$, exposure mid-times). Eclipsing white dwarf + M dwarf binaries with resolved ingress/egress give model-independent white-dwarf radii (e.g.\ Parsons et al.\ 2017), and $\sim$0.25\,\msun\ He-core white dwarfs are scarce among them. For $M_2=0.10$--0.20\,\msun\ ($a=0.61$--0.67\,\rsun) the ingress lasts $\tau\approx70$--105\,s for $R_{\rm WD}=0.018$--0.026\,\rsun\ ($i=90^\circ$), shorter than one 2-min exposure. The total duration $T_{14}$ constrains the companion radius and inclination jointly, and many eclipses give mid-eclipse times for a period-change baseline with ATLAS and TESS FFI data (S10, S37, S63, S64, S100) plus S90 and S99. Masses require radial velocities, which these data do not provide. The product is a photometric radius constraint and an ephemeris. Ground-based high-speed photometry measures single eclipses more precisely; TESS adds $\sim$1100 consecutive eclipses.
+
+\section{Target Justification and Feasibility}
+tess-point (0.9.5.post1; Year~9 pointings match tess.mit.edu) places the target on silicon in S111 (cam 4/CCD 3), S112 (4/2), S113 (3/2) and S114 (2/1). We folded the archival SPOC SAP light curves on the ATLAS ephemeris and fitted a trapezoid with exposure smearing. Errors are 16--84\% ranges of a bootstrap over whole eclipses, which is wider than prayer-bead or white-noise errors (time-averaging $\beta\le1.03$ on 1--10\,min) because $\tau$ and $T_{14}$ are degenerate:
+\begin{itemize}\itemsep0pt
+\item S90 20\,s: depth $0.93\pm0.04$\% of aperture flux, $T_{14}=382$ (353--441)\,s, $\tau=\mathbf{70}$ (39--116)\,s
+\item S90 2\,min (same photons): $T_{14}=456$ (399--502)\,s, $\tau=122$ (72--169)\,s
+\item S99 2\,min: $T_{14}=436$ (408--466)\,s, $\tau=120$ (90--149)\,s; joint S90 20\,s + S99: $\tau=105$ (82--125)\,s
+\end{itemize}
+Mid-eclipse times agree with the ATLAS epoch ($-1\pm4$\,s in S90, $-12\pm5$\,s in S99, joint $-8\pm3$\,s; epoch error 3.6\,s). The 2-min fits are degenerate between ingress and exposure smearing, and the 20-s fit removes this. A replay of the S90 20-s residuals with independent shifts predicts $\sigma_\tau\approx8$--10\,s, $\sigma_{T_{14}}\approx8$--11\,s and $\pm2$\,s stacked timing for S90 plus four further 20-s sectors. That is a 10--15\% constraint on $R_{\rm WD}$ at fixed geometry, or $\sim$20\% if the extra eclipse-to-eclipse scatter in the S90 bootstrap persists. Individual eclipses have S/N\,$\approx$\,1.5--3, so the result relies on stacking. The field is crowded ($b=+5.7^\circ$; CROWDSAP 0.008--0.021; neighbours $T=19.6$ at 2.7\,arcsec and 18.7 at 5.8\,arcsec). Dilution scales the depth only: timing, $T_{14}$ and $\tau$ come from the eclipse shape. Contaminating flux sets the noise (about 2$\times$ the in-aperture target flux per 20-s point, included in the forecast). No sources brighter than $T=7$.
+
+\section{Target 2: TIC 21821402, a 6.3-min pulsator candidate}
+TIC 21821402 (GALEX J120559.0$-$473137, Gaia DR3 6130942326140307712; $G=15.15$, $T=15.48$, $G_{\rm BP}-G_{\rm RP}=-0.34$, $\varpi=0.60\pm0.04$\,mas, $M_G=4.05$) is a hot-subdwarf candidate (Geier et al.\ 2019; Culpan et al.\ 2022) without a spectrum; Gaia XP gives $T_{\rm eff}\approx30.5$\,kK, $\log g\approx5.7$ (Huson et al.\ 2025). It has no 2-min or 20-s data. A 200-s FFI search on 2026 October 7 found two coherent signals in all four 200-s sectors (S64, S99--S101; shuffle FAP\,$<0.003$ per sector). They appear at 203.40 and 206.75\,c/d, below the 216\,c/d Nyquist frequency, but the barycentric drift of the time stamps differs between sectors ($-0.6$ to $+6.3$\,s/d) and shifts a reflected image by up to 0.03\,c/d. The super-Nyquist values are constant across the four sectors, $228.5714\pm0.0010$ and $225.2212\pm0.0012$\,c/d ($P=6.300$ and 6.394\,min; $\chi^2=3.5$ and 6.2 for 3 d.o.f.), whereas the sub-Nyquist images are not ($\chi^2=115$ and 74). A weaker third signal lies at 225.37\,c/d, 0.15\,c/d from the second. Observed amplitudes are $\approx$0.5--0.6\% of the expected target flux, $\approx$1\% after correcting for 200-s smearing (factor 0.60). Per-pixel amplitude maps centre on the target in every sector (1--6\,arcsec) and fit worse at all Gaia neighbours ($\Delta\chi^2\ge36$; $G=17.5$ at 18\,arcsec, 16.4 at 29\,arcsec, 13.3 at 41\,arcsec). Gaia DR3 lists a short-timescale variable (65.1\,c/d; VSX: VAR, $P=0.0154$\,d); no source we checked gives the TESS frequencies (SIMBAD, VSX, VizieR, ADS full text, TESS sdBV survey papers). Periods near 6\,min at $\sim$1\% are typical of p-mode sdBV pulsators. \textbf{Decisive test:} 20-s data (Nyquist 2160\,c/d, $<1$\% smearing) show directly whether the signals lie at 228.57/225.22 or 203.40/206.75\,c/d. Expected S/N\,$\approx15$ per mode per sector (FFI noise, unsmeared amplitude); four sectors test whether the 0.15\,c/d spacing is a rotational multiplet. tess-point places it on silicon in S111 (4/4), S112 (4/1), S113 (3/1) and S114 (2/1). The target is background-limited ($\approx$100\,e$^-$/s; sky 100--130\,e$^-$/s/pixel). Its sdB class needs spectroscopy.
+
+\section{References}
+{\small Burke C.~J.\ et al.\ 2020, ASCL 2003.001 (tess-point); Culpan R.\ et al.\ 2022, A\&A 662, A40;
+Gaia Collaboration 2023, A\&A 674, A1;
+Geier S.\ et al.\ 2019, A\&A 621, A38; Gentile Fusillo N.~P.\ et al.\ 2021, MNRAS 508, 3877; Huson D.\ et al.\ 2025, ApJ 984, 58;
+Parsons S.~G.\ et al.\ 2017, MNRAS 470, 4473;
+Tonry J.~L.\ et al.\ 2018, PASP 130, 064505;
+Vincent O.\ et al.\ 2024, A\&A 682, A5.}
+\end{document}

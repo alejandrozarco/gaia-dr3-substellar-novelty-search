@@ -20,7 +20,7 @@ def load(i):
         season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
         for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
         clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e)
-        t = Time(mjd[clip], format="mjd", scale="utc", location=GEO); T += list((t.tdb + t.light_travel_time(c0)).jd); Y += list(f[clip] / REF); E += list(e[clip] / REF); B += [b] * clip.sum()
+        t = Time(mjd[clip] + 15.0 / 86400.0, format="mjd", scale="utc", location=GEO); T += list((t.tdb + t.light_travel_time(c0)).jd); Y += list(f[clip] / REF); E += list(e[clip] / REF); B += [b] * clip.sum()
     return map(np.array, (T, Y, E, B))
 def fit(t, y, e, f, B=None):
     cols = [np.ones_like(t)] + ([(B == "c").astype(float)] if B is not None and len(set(B)) > 1 else []); k = len(cols)

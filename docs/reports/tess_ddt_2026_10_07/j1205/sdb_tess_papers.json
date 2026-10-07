@@ -1,0 +1,506 @@
+[
+{
+"b": "2024A&A...684A.118U",
+"fa": "Uzundag, Murat",
+"t": "A comprehensive search for hot subdwarf stars using Gaia and TESS. I. Pulsating hot subdwarf B stars",
+"ax": "2401.17707"
+},
+{
+"b": "2022ApJ...928...20B",
+"fa": "Barlow, Brad N.",
+"t": "New Variable Hot Subdwarf Stars Identified from Anomalous Gaia Flux Errors, Observed by TESS, and Classified via Fourier Diagnostics",
+"ax": "2112.11463"
+},
+{
+"b": "2025A&A...700A..71K",
+"fa": "Krzesinski, Jurek",
+"t": "A comprehensive search for hot subdwarf stars using Gaia and TESS: II. Uncovering new pulsators and close binary systems",
+"ax": null
+},
+{
+"b": "2023A&A...669A..48B",
+"fa": "Baran, A. S.",
+"t": "Short-period pulsating hot-subdwarf stars observed by TESS. I. Southern ecliptic hemisphere",
+"ax": "2211.09137"
+},
+{
+"b": "2024A&A...686A..65B",
+"fa": "Baran, A. S.",
+"t": "Short-period pulsating hot subdwarf stars observed by TESS. II. Northern ecliptic hemisphere",
+"ax": "2403.02384"
+},
+{
+"b": "2022A&A...663A..45K",
+"fa": "Krzesinski, J.",
+"t": "Discovery of new TESS pulsating hot subdwarfs",
+"ax": "2204.01604"
+},
+{
+"b": "2024arXiv241011663H",
+"fa": "Heber, Ulrich",
+"t": "Hot Subdwarf Stars",
+"ax": "2410.11663"
+},
+{
+"b": "2021A&A...651A.121U",
+"fa": "Uzundag, Murat",
+"t": "Asteroseismic analysis of variable hot subdwarf stars observed with TESS. I. The mean g-mode period spacings in hot subdwarf B stars",
+"ax": "2105.15137"
+},
+{
+"b": "2023A&A...673A..90S",
+"fa": "Schaffenroth, V.",
+"t": "Hot subdwarfs in close binaries observed from space. II. Analyses of the light variations",
+"ax": "2302.12507"
+},
+{
+"b": "2022MNRAS.516.1509K",
+"fa": "Krzesinski, J.",
+"t": "A search for hot subdwarf binaries in data from the Transiting Exoplanet Survey Satellite",
+"ax": null
+},
+{
+"b": "2021AAS...23755001C",
+"fa": "Corcoran, K. A.",
+"t": "A TESS Cycle 2 Survey of Candidate Variable Hot Subdwarf Stars Identified from Anomalous Gaia DR2 Flux Errors",
+"ax": null
+},
+{
+"b": "2020A&A...642A.180P",
+"fa": "Pelisoli, Ingrid",
+"t": "Alone but not lonely: Observational evidence that binary interaction is always required to form hot subdwarf stars",
+"ax": "2008.07522"
+},
+{
+"b": "2022yCat..36630045K",
+"fa": "Krzesinski, J.",
+"t": "VizieR Online Data Catalog: Discovery of new TESS pulsating hot subdwarfs (Krzesinski+, 2022)",
+"ax": null
+},
+{
+"b": "2025tasc.confE..85P",
+"fa": "Pigulski, Andrzej",
+"t": "Magnetic blue large-amplitude pulsators (BLAPs)",
+"ax": null
+},
+{
+"b": "2023AAS...24233706D",
+"fa": "Del Vecchio, Gabriana",
+"t": "Rotational Splitting of Pulsating Hot Subdwarfs Observed by TESS",
+"ax": null
+},
+{
+"b": "2024yCat..19280020B",
+"fa": "Barlow, B. N.",
+"t": "VizieR Online Data Catalog: Variable hot subdwarf from Gaia DR2 and TESS (Barlow+, 2022)",
+"ax": null
+},
+{
+"b": "2024PASA...41...41S",
+"fa": "Sahoo, S. K.",
+"t": "Mode identification and period fitting in six pulsating hot subdwarfs",
+"ax": null
+},
+{
+"b": "2025tasc.confE..65U",
+"fa": "Uzundag, Murat",
+"t": "Unveiling the Pulsating and Variable Nature of Hot Subdwarfs: A Combined Observational and Machine Learning Approach",
+"ax": null
+},
+{
+"b": "2020MNRAS.496..718J",
+"fa": "Jeffery, C. Simon",
+"t": "TESS photometry of helium-rich hot subdwarfs: r modes in BD+37\u00b0442 and BD+37\u00b01977",
+"ax": "2006.00950"
+},
+{
+"b": "2024A&A...686A.126B",
+"fa": "Barlow, B. N.",
+"t": "Hot subdwarfs in close binaries observed from space. III. Reflection effect asymmetry induced by relativistic beaming",
+"ax": "2402.13396"
+},
+{
+"b": "2022ApJ...939...57S",
+"fa": "Smith, Bryce A.",
+"t": "Pulse Timing Discovery of a Three-day Companion to the Hot Subdwarf BPM 36430",
+"ax": "2209.09909"
+},
+{
+"b": "2022A&A...663A..62P",
+"fa": "Pigulski, A.",
+"t": "HD 133729: A blue large-amplitude pulsator in orbit around a main-sequence B-type star",
+"ax": "2203.11789"
+},
+{
+"b": "2024tkas.confE.105U",
+"fa": "Uzundag, Murat",
+"t": "Analysing interior characteristics of pulsating hot subdwarf B stars",
+"ax": null
+},
+{
+"b": "2019A&A...632A..90C",
+"fa": "Charpinet, S.",
+"t": "TESS first look at evolved compact pulsators. Discovery and asteroseismic probing of the g-mode hot B subdwarf pulsator EC 21494-7018",
+"ax": "1910.04234"
+},
+{
+"b": "2025ApJ...989..177C",
+"fa": "Campelo, J. P. S.",
+"t": "Rotation Signatures of TESS B-type Stars: Enlarging the Sample",
+"ax": null
+},
+{
+"b": "2022ApJ...936..123J",
+"fa": "Jayaraman, Rahul",
+"t": "TIC 5724661: A Long-period Binary with a Pulsating sdB Star and \u03b4 Scuti Variable",
+"ax": "2111.12098"
+},
+{
+"b": "2022MNRAS.511.2201S",
+"fa": "Silvotti, Roberto",
+"t": "Filling the gap between synchronized and non-synchronized sdBs in short-period sdBV+dM binaries with TESS: TIC 137608661, a new system with a well-defined rotational splitting",
+"ax": "2201.06559"
+},
+{
+"b": "2023eas..conf.2257V",
+"fa": "Van Grootel, Valerie",
+"t": "Are there planets around hot subdwarfs?",
+"ax": null
+},
+{
+"b": "2025AJ....170..199O",
+"fa": "Otani, Tomomi",
+"t": "A Search for Subdwarf B Binaries Using Pulsation Timing from TESS",
+"ax": null
+},
+{
+"b": "2026PASA...43..106B",
+"fa": "Baran, Andrzej",
+"t": "Short-period pulsating hot-subdwarf stars observed by TESS in Sectors 61-97",
+"ax": null
+},
+{
+"b": "2023BSRSL..9211278S",
+"fa": "Snowdon, E. J.",
+"t": "The close binary fraction of He-rich hot subdwarfs from SALT and TESS",
+"ax": null
+},
+{
+"b": "2021MNRAS.503.3828B",
+"fa": "Baran, A. S.",
+"t": "A search for variable subdwarf B stars in TESS Full Frame Images - II. Variable objects in the northern ecliptic hemisphere",
+"ax": "2105.01077"
+},
+{
+"b": "2020MNRAS.493.5162R",
+"fa": "Reed, M. D.",
+"t": "TESS observations of pulsating subdwarf B stars: extraordinarily short-period gravity modes in CD-28\u00b0 1974",
+"ax": null
+},
+{
+"b": "2023BSRSL..9211251P",
+"fa": "Pozuelos, Francisco J.",
+"t": "The search for transiting planets around hot subdwarf",
+"ax": null
+},
+{
+"b": "2025arXiv250802181O",
+"fa": "Otani, Tomomi",
+"t": "Binary Systems Search with TESS",
+"ax": "2508.02181"
+},
+{
+"b": "2019OAst...28...61P",
+"fa": "Prins, Saskia",
+"t": "A small survey of UV-bright stars around the northern ecliptic pole: seeking new p-mode sdB variables for the TESS mission",
+"ax": null
+},
+{
+"b": "2025MNRAS.537.2079S",
+"fa": "Snowdon, E. J.",
+"t": "A search for close binary systems in the SALT survey of hydrogen-deficient stars using TESS",
+"ax": "2501.13656"
+},
+{
+"b": "2025arXiv250209444S",
+"fa": "Shibahashi, Hiromoto",
+"t": "The orbital parameters of the binary BLAP HD133729 : advantages of the frequency modulation method",
+"ax": "2502.09444"
+},
+{
+"b": "2020MNRAS.495.2844S",
+"fa": "Sahoo, S. K.",
+"t": "Mode identification in three pulsating hot subdwarfs observed with TESS satellite",
+"ax": "2006.04126"
+},
+{
+"b": "2025A&A...693A.268R",
+"fa": "Ranaivomanana, P.",
+"t": "Variability in hot sub-luminous stars and binaries: Machine-learning analysis of Gaia DR3 multi-epoch photometry",
+"ax": "2411.18609"
+},
+{
+"b": "2023RNAAS...7..255K",
+"fa": "Kirby, Bennett C.",
+"t": "Pulsational Velocity Variations of the Radial Mode sdBV Star BPM 36430",
+"ax": null
+},
+{
+"b": "2022yCat..36690048B",
+"fa": "Baran, A. S.",
+"t": "VizieR Online Data Catalog: Southern short-period pulsating hot-subdwarf stars (Baran+, 2023)",
+"ax": null
+},
+{
+"b": "2023MNRAS.525.1342R",
+"fa": "Reed, M. D.",
+"t": "TESS photometry of the pulsating hot subdwarf star V585 Peg",
+"ax": null
+},
+{
+"b": "2023JApA...44...86M",
+"fa": "Ma, Xiao-Yu",
+"t": "Pulsation properties in hot B subdwarf star TIC 293165262 from TESS photometry",
+"ax": null
+},
+{
+"b": "2020MNRAS.499.5508S",
+"fa": "Sahoo, S. K.",
+"t": "A search for variable subdwarf B stars in TESS full frame images - I. Variable objects in the southern ecliptic hemisphere",
+"ax": "2011.03465"
+},
+{
+"b": "2026yCat..51700199O",
+"fa": "Otani, T.",
+"t": "VizieR Online Data Catalog: Pulsation timing of two sdB binaries from TESS (Otani+, 2025)",
+"ax": null
+},
+{
+"b": "2026ApJS..284...72H",
+"fa": "Huang, Guanda",
+"t": "A Search for High-frequency Oscillations in TESS Cycle 7",
+"ax": "2605.03323"
+},
+{
+"b": "2023BSRSL..9211294U",
+"fa": "Uzundag, Murat",
+"t": "Asteroseismology of hot subdwarf B stars observed with TESS: discovery of two new gravity mode pulsating stars",
+"ax": "2212.02950"
+},
+{
+"b": "2025ApJ...995..188Y",
+"fa": "Yang, Taozhi",
+"t": "Pulsation Mode Identification and Classification of 46 High-amplitude \u03b4 Scuti Stars from 50 Candidates with TESS Observations",
+"ax": "2510.24444"
+},
+{
+"b": "2024AAS...24430302K",
+"fa": "Kawaler, Steven",
+"t": "FFI photometry of PG 1605+072: Constraining pulsational evolution of a hot subdwarf B star",
+"ax": null
+},
+{
+"b": "2023MNRAS.519.2486S",
+"fa": "Sahoo, S. K.",
+"t": "A search for variable subdwarf B stars in TESS Full Frame Images III. An update on variable targets in both ecliptic hemispheres - contamination analysis and new sdB pulsators",
+"ax": "2301.01082"
+},
+{
+"b": "2025A&A...696A..13G",
+"fa": "Guyot, N.",
+"t": "The theoretical pulsation spectra of hot B subdwarfs: Static and evolutionary STELUM models",
+"ax": "2503.16046"
+},
+{
+"b": "2020A&A...643A..22D",
+"fa": "Dorsch, M.",
+"t": "Heavy-metal enrichment of intermediate He-sdOB stars: the pulsators Feige 46 and LS IV-14\u00b0116 revisited",
+"ax": "2009.09032"
+},
+{
+"b": "2020NatAs...4...67M",
+"fa": "Miller Bertolami, M. M.",
+"t": "Asteroseismic signatures of the helium core flash",
+"ax": "2005.02070"
+},
+{
+"b": "2020BAAA...61C..78U",
+"fa": "Uzundag, M.",
+"t": "Asteroseismic analysis of subdwarf B variable stars: what we have learned from the recent space missions",
+"ax": null
+},
+{
+"b": "2023BSRSL..9211266R",
+"fa": "Reed, M. D.",
+"t": "Kepler, K2, and TESS observations: ensemble and comparative asteroseismology",
+"ax": null
+},
+{
+"b": "2024yCat..36930268R",
+"fa": "Ranaivomanana, P.",
+"t": "VizieR Online Data Catalog: Hot sub-luminous and binaries variability (Ranaivomanana+, 2025)",
+"ax": null
+},
+{
+"b": "2024tkas.confE..36U",
+"fa": "Uzundag, Murat",
+"t": "Asteroseismology of compact pulsating stars",
+"ax": null
+},
+{
+"b": "2023yCat..74995508S",
+"fa": "Sahoo, S. K.",
+"t": "VizieR Online Data Catalog: Search for variable subdwarf B stars in TESS I (Sahoo+, 2020)",
+"ax": null
+},
+{
+"b": "2025AAS...24530901J",
+"fa": "Jolivette, Rebecca",
+"t": "Asteroseismology of Hot Horizontal Branch Stars using K2 and TESS Data",
+"ax": null
+},
+{
+"b": "2022AJ....164...11D",
+"fa": "Devarapalli, Shanti Priya",
+"t": "Probing TYC 3315-1807-1, An sdB+dM Binary Displaying Strong Period Variation and Reflection Effect",
+"ax": null
+},
+{
+"b": "2024ApJ...972...13Q",
+"fa": "Qian, S.-B.",
+"t": "A Brown Dwarf Orbiting around the Planetary-nebula Central Binary KV Vel",
+"ax": "2409.02480"
+},
+{
+"b": "2024MNRAS.530.1666J",
+"fa": "Jeffery, C. S.",
+"t": "EC 19529-4430: SALT identifies the most carbon- and metal-poor extreme helium star",
+"ax": "2404.03972"
+},
+{
+"b": "2023AAS...24212902C",
+"fa": "Clark, Julia",
+"t": "Searching for subdwarf B single stars and binary systems using TESS",
+"ax": null
+},
+{
+"b": "2026AAS...24722105J",
+"fa": "Jolivette, Rebecca",
+"t": "Final Seismic Analyses of Pulsating Subdwarf B Stars Observed with K2",
+"ax": null
+},
+{
+"b": "2024A&A...690A..36S",
+"fa": "Su, Wenchao",
+"t": "TIC 441725813: A new bright hybrid hot B subdwarf pulsator with differential core versus envelope rotation",
+"ax": "2407.17887"
+},
+{
+"b": "2023AAS...24130311R",
+"fa": "Reed, Michael",
+"t": "Examining Group Properties of Pulsating Subdwarf B Stars observed with Kepler and TESS",
+"ax": null
+},
+{
+"b": "2022ApJ...928L..14J",
+"fa": "Jayaraman, Rahul",
+"t": "Tidally Tilted Pulsations in HD 265435, a Subdwarf B Star with a Close White Dwarf Companion",
+"ax": "2203.04970"
+},
+{
+"b": "2026yCat..75192486S",
+"fa": "Sahoo, S. K.",
+"t": "VizieR Online Data Catalog: Variables and sdBs stars in NEH/SEH TESS FFI III (Sahoo+, 2023)",
+"ax": null
+},
+{
+"b": "2021AAS...23831406O",
+"fa": "Otani, T.",
+"t": "Searching for long period subdwarf B systems using TESS data",
+"ax": null
+},
+{
+"b": "2023eas..conf..958A",
+"fa": "Anitha Kumari, Goutham",
+"t": "Light curves analysis of newly found subdwarf B-type binary candidates using TESS and ground based observations",
+"ax": null
+},
+{
+"b": "2026AAS...24715405R",
+"fa": "Reed, Michael",
+"t": "Kepler, K2, and TESS observations of pulsating subdwarf B stars: What we have found and model ambitions",
+"ax": null
+},
+{
+"b": "2021MNRAS.507.4178R",
+"fa": "Reed, M. D.",
+"t": "Pulsating subdwarf B stars observed with K2 during Campaign 7 and an examination of seismic group properties",
+"ax": "2108.07145"
+},
+{
+"b": "2021tsc2.confE..37R",
+"fa": "Reed, M. D.",
+"t": "Asteroseismology of extreme horizontal branch (subdwarf B) stars with TESS data",
+"ax": null
+},
+{
+"b": "2020hst..prop16224P",
+"fa": "Parsons, Steven Gary",
+"t": "Pathways to compact white dwarf binaries",
+"ax": null
+},
+{
+"b": "2024AAS...24320703S",
+"fa": "Spence, Lindsay",
+"t": "Automation code to determine subdwarf B binary systems using pulsation timing method",
+"ax": null
+},
+{
+"b": "2022AAS...24041501J",
+"fa": "Jayaraman, Rahul",
+"t": "Tidally Tilted Pulsations in Close Eclipsing Binaries",
+"ax": null
+},
+{
+"b": "2025AAS...24633604G",
+"fa": "Gokuldass, Priyadarshini",
+"t": "Probing Long Orbital Period Companions to Subdwarf B stars using the Pulsation Timing Method",
+"ax": null
+},
+{
+"b": "2021tsc2.confE.172O",
+"fa": "Otani, Tomomi",
+"t": "Pulsations to the rescue! TIC47377536 (PG1047+003) might harbor a planet",
+"ax": null
+},
+{
+"b": "2026RNAAS..10..134C",
+"fa": "Clark, Julia M.",
+"t": "A Comparative Analysis of the Frequency Modulation Method and Pulsation Timing Method for Pulsating sdB Binary Systems",
+"ax": null
+},
+{
+"b": "2025AAS...24540321L",
+"fa": "Lombardi, Christopher",
+"t": "Oscillations and Magnetic Activity of Solar-Type Stars",
+"ax": null
+},
+{
+"b": "2024eas..conf.2397P",
+"fa": "Petralia, Antonino",
+"t": "A model for stellar surface: from the Sun to active stars",
+"ax": null
+},
+{
+"b": "2022ecip.prop...20M",
+"fa": "Monsue, Teresa",
+"t": "A study of oscillations in stellar and solar flares.",
+"ax": null
+},
+{
+"b": "2025tasc.confE.123G",
+"fa": "Grootel Val\u00e9rie, Van",
+"t": "The theoretical spectra of g-modes in subdwarf B stars",
+"ax": null
+}
+]

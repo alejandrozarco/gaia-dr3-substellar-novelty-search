@@ -1,0 +1,22 @@
+control [(np.str_('2MASS J02424012-0000523'), masked), (np.str_('2CXO J024240.1-000053'), masked), (np.str_('SDSS J024240.17-000042.0'), np.float64(0.004195))]
+ZTF26abzgfkm | WISEA J014924.82+003706.4 G sep2.2" z=-- 
+ZTF26abzhagv | WISEA J054334.78-203436.3 IrS sep2.4" z=-- ; WISEA J054335.00-203432.3 G sep5.9" z=0.05245 SLS
+ZTF26abzhizd | WISEA J035722.87-030450.4 IrS sep3.9" z=-- ; WISEA J035723.47-030452.1 IrS sep7.6" z=-- 
+ZTF26abzicfm | none<8"
+ZTF26abzidlp | WISEA J201626.18-010120.0 IrS sep0.4" z=-- 
+ZTF26abziszp | WISEA J215544.24-120910.8 G sep0.5" z=-- 
+ZTF26abzjzcp | WISEA J002226.22+162752.2 IrS sep2.7" z=-- ; WISEA J002226.41+162755.3 G sep0.7" z=0.093955 SLS
+ZTF26abzkyxt | WISEA J234024.22-092721.1 G sep2.2" z=-- 
+ZTF26abzlnxi | WISEA J014900.98+164936.3 IrS sep0.4" z=-- 
+ZTF26abzlwuj | WISEA J034721.15+172758.7 IrS sep2.9" z=-- 
+ZTF26abznozb | WISEA J101423.88+415551.8 G sep1.8" z=0.092035 SLS
+ZTF26abznpco | none<8"
+ZTF26abznrxy | WISEA J192347.51-123600.0 IrS sep6.9" z=-- ; WISEA J192348.21-123601.2 IrS sep4.7" z=-- 
+ZTF26abzonmo | 2MASS J22233289-2017213 G sep2.3" z=-- 
+ZTF26abzwbww | WISEA J203919.41-014805.0 IrS sep1.6" z=-- 
+ZTF26abzxtfg | none<8"
+ZTF26acaaglg | WISEA J030001.76+031027.8 IrS sep5.4" z=-- 
+ZTF26acaddjo | none<8"
+ZTF26acaddnd | none<8"
+ZTF26abznizn | WISEA J063755.08+300526.7 IrS sep0.1" z=-- 
+ZTF26academn | WISEA J052208.02+193534.1 G sep1.6" z=0.089846 PUN

@@ -1,0 +1,12 @@
+ZTF26abzajhy last constraining (fainter than 19.98): 2026-09-26 10:56:27 ZTF-r >20.02 (7.0 d before)
+ZTF26abzlyby last constraining (fainter than 20.22): 2026-09-22 12:07:25 ZTF-r >20.75 (10.9 d before)
+ZTF26abygbnu last constraining (fainter than 18.24): 2026-09-29 12:04:31 ZTF-i >18.73 (1.0 d before)
+ZTF26abzbudn last constraining (fainter than 20.04): 2026-10-02 03:08:02 ZTF-g >20.59 (1.0 d before)
+ZTF26abygbsz last constraining (fainter than 19.13): none in alert history
+ZTF26abymuhl last constraining (fainter than 20.00): 2026-09-24 09:24:31 ZTF-r >20.15 (7.0 d before)
+ZTF26abyuhcm last constraining (fainter than 20.15): 2026-09-22 09:31:51 ZTF-g >20.57 (9.0 d before)
+ZTF26abzcate last constraining (fainter than 20.68): 2026-09-16 05:35:36 ZTF-g >20.70 (15.9 d before)
+ZTF26abzalwo last constraining (fainter than 20.09): 2026-09-24 11:06:20 ZTF-g >20.23 (9.0 d before)
+ZTF26abyplgc last constraining (fainter than 20.52): 2026-09-16 05:26:47 ZTF-g >20.54 (15.0 d before)
+ZTF26abzhqza last constraining (fainter than 20.24): 2026-09-24 11:34:07 ZTF-r >20.72 (7.9 d before)
+ZTF26abzhnwn last constraining (fainter than 20.36): 2026-09-24 11:37:31 ZTF-r >20.63 (8.9 d before)

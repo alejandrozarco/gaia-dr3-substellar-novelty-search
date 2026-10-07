@@ -35,3 +35,12 @@
 2026-10-04 08:05:17 VSX checked 3 (control ok); changes: none
 2026-10-05 08:00:05 checked 11; changes: none
 2026-10-05 08:00:05 VSX checked 3 (control ok); changes: none
+2026-10-06 08:00:06 2026aejn baseline type ---, rows 8
+2026-10-06 08:00:06 2026aejo baseline type ---, rows 8
+2026-10-06 08:00:06 2026aejp baseline type ---, rows 6
+2026-10-06 08:00:06 2026aejr baseline type ---, rows 6
+2026-10-06 08:00:06 checked 15; changes: none
+2026-10-06 08:00:06 VSX checked 3 (control ok); changes: none
+2026-10-07 08:00:05 2026admq CHANGED type --- -> ---; rows 8 -> 15; Classification Reports | No Data | Comments | Log in | or | register | to post comments
+2026-10-07 08:00:05 checked 15; changes: 2026admq
+2026-10-07 08:00:05 VSX checked 3 (control ok); changes: none

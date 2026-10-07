@@ -16,7 +16,7 @@ Status: prepared, not submitted (new entry).
 | Spectral type | not given |
 | Magnitude range | 17.60 – 20.26 o (primary eclipse; see remarks for the calibration) |
 | Period | 0.09388979 d |
-| Epoch | HJD 2460684.8342 (primary minimum; BJD_TDB 2460684.83498) |
+| Epoch | HJD 2460684.8343 (primary minimum; BJD_TDB 2460684.83517; corrected 2026-10-07 for the ATLAS mid-exposure offset of +15 s) |
 | Eclipse duration | 5.6% of the period (7.6 min) |
 | Discoverer | (submitter) |
 | References | Tonry, J. L.; et al., 2018, ATLAS: A High-cadence All-sky Survey System — 2018PASP..130f4505T; Shingles, L.; et al., 2021, Release of the ATLAS Forced Photometry server for public use — 2021TNSAN...7....1S |
@@ -41,7 +41,7 @@ than 21.05. Position from Gaia DR3, moved to epoch J2000.0.
   Refitted at the refined period (`shape_at_refined.py`, 100-resample bootstrap over nights): mid-eclipse ± 0.06 min;
   first-to-last contact 7.6 ± 0.2 min (5.6% of P), flat fraction 0.5; depth 280.1 ± 5.1 uJy (o), 384.9 ± 6.9 uJy (c).
 - Fine period pass (`period_refine.py`, eclipse shape fixed, 81 periods, centre free): P = 0.093889794 ±
-  0.000000002 d (delta chi2 = 1 after scaling chi2_r to 1); mid-eclipse BJD_TDB 2460684.83498. The grid period of
+  0.000000002 d (delta chi2 = 1 after scaling chi2_r to 1); mid-eclipse BJD_TDB 2460684.83517 (ATLAS MJD is the exposure start; +15 s applied 2026-10-07). The grid period of
   eclipse_fit.py is 0.000000074 d longer; its grid step (8e-7 d) is too coarse for a 6%-wide eclipse over 4.6 years.
 - Model-light duration (0.01-phase bins more than 3 sigma below the out-of-eclipse model): o -0.03 to +0.03 (6%, 8.1 min),
   c -0.02 to +0.03 (5%, 6.8 min); half-depth width 4% in both bands.

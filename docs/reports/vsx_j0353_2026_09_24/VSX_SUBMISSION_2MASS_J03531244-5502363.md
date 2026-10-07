@@ -16,7 +16,7 @@ Status: prepared 2026-09-24, updated 2026-09-29 (independent refit and catalogue
 | Spectral type | not given |
 | Magnitude range | 18.29 – 18.67 o (primary eclipse; see remarks for the calibration) |
 | Period | 0.14786972 d |
-| Epoch | HJD 2460670.3826 (primary minimum; BJD_TDB 2460670.38336) |
+| Epoch | HJD 2460670.3827 (primary minimum; BJD_TDB 2460670.38354) |
 | Eclipse duration | 5.0% of the period (10.6 min) |
 | Discoverer | (submitter) |
 | References | Tonry, J. L.; et al., 2018, ATLAS: A High-cadence All-sky Survey System — 2018PASP..130f4505T; Shingles, L.; et al., 2021, Release of the ATLAS Forced Photometry server for public use — 2021TNSAN...7....1S |
@@ -38,7 +38,7 @@ Gaia DR3, moved to epoch J2000.0.
 - Joint trapezoid fit to ATLAS o (1936 epochs) and c (571 epochs), BJD_TDB 2459578–2461307, after dropping frames
   with err flags, chi/N >= 10 or error above 3x the band median, and subtracting per-season medians (uJy, never m):
   P = 0.14786971 ± 0.00000004 d (delta chi2 = 1 after scaling chi2_r = 1.52 to 1); primary minimum BJD_TDB
-  2460670.38336 (bootstrap over nights ± 0.20 min); first-to-fourth contact 10.6 ± 0.9 min; flat bottom about half
+  2460670.38354 (bootstrap over nights ± 0.20 min); first-to-fourth contact 10.6 ± 0.9 min; flat bottom about half
   of that; depth 52.6 ± 3.1 uJy (o) and 29.8 ± 6.0 uJy (c).
 - Screen detection at half the period (0.0739348 d; box search delta chi2 435 against a maximum of 76 in 100
   within-season permutations of flux and error pairs, p < 0.01). At the full period the two dips differ:
@@ -63,7 +63,7 @@ Gaia DR3, moved to epoch J2000.0.
 - Independent refit (docs/reports/vsx_wdj1438_wdj1118_2026_09_29/eclipse_fit.py, period_refine.py): the same ATLAS data
   and cleaning, a model with first and second orbital harmonics, and an eclipse centre searched over the full phase.
   Fine period pass with the eclipse shape fixed: P = 0.147869716 ± 0.000000028 d, agreeing with 0.14786971 ± 0.00000004 d
-  above; mid-eclipse BJD_TDB 2460670.38336 (HJD 2460670.3826), unchanged. First-to-last contact 11.1 ± 1.2 min (5.2%),
+  above; mid-eclipse BJD_TDB 2460670.38354 (HJD 2460670.3827), unchanged. First-to-last contact 11.1 ± 1.2 min (5.2%),
   flat fraction 0.5; depth 52.1 ± 3.4 uJy (o) and 33.1 ± 5.9 uJy (c). Out-of-eclipse harmonics are at most 3 uJy
   (about 1% of the flux): no reflection or ellipsoidal modulation is detected.
 - The two-sided outlier clip used on 2026-09-24 removed no in-eclipse points (clip thresholds 162 uJy in o and 89 uJy

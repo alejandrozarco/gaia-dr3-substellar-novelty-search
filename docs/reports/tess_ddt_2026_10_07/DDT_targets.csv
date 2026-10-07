@@ -1,0 +1,16 @@
+# DDT PI: <PI>
+# Cadence: 20s
+# Subject: 20-s cadence of two new compact variables: eclipsing WD+dM WDJ111803.09-544218.04 (P = 2.25 h) and 6.3-min hot-subdwarf pulsator candidate TIC 21821402
+# DDT: <to be supplied by TESS team>
+#
+# Original filename: DDT_targets.csv
+# Created by: <PI>
+# Created on: 2026-10-07
+# Number of targets: 2
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+21821402,1.0,GALEX J120559.0-473137;Gaia DR3 6130942326140307712;hot subdwarf candidate;sdBV p-mode pulsator candidate;f=228.571 c/d and 225.221 c/d (super-Nyquist in 200-s FFIs);sectors 111-114
+450781262,0.8,WDJ111803.09-544218.04;Gaia DR3 5346312514819760896;eclipsing white dwarf;post-common-envelope binary;P=0.093889794 d;sectors 111-114

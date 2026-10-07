@@ -1,0 +1,168 @@
+#### ZTF26abzbxoh 319.06129 -10.72807 b=-37.0 distnr=0.3
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzfeqs 41.36221 18.04382 b=-37.0 distnr=6.9
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzfgnu 306.89165 1.68855 b=-20.4 distnr=1.0
+II/349/ps1: r=0.99 gmag=17.2116 rmag=16.7947 imag=16.6361
+I/355/gaiadr3: r=0.97 Gmag=16.806864 BP-RP=0.8934 Plx=0.3897 e_Plx=0.06300000101327896 pmRA=-6.652 pmDE=-8.042
+LS DR10: 1.0" PSF r16.74 rhalf0.0 zp0.112[0.01,0.41] zs-99
+#### ZTF26abzfgnv 306.58633 1.68082 b=-20.2 distnr=1.3
+II/349/ps1: r=1.52 gmag=19.1054 rmag=17.9266 imag=16.7961
+I/355/gaiadr3: r=1.44 Gmag=17.47164 BP-RP=2.421255 Plx=3.4546 e_Plx=0.10450000315904617 pmRA=-45.6 pmDE=-36.517
+LS DR10: 1.5" PSF r17.73 rhalf0.0 zp0.033[0.01,0.16] zs-99; 5.5" DEV r21.59 rhalf0.9 zp0.776[0.75,0.81] zs-99
+#### ZTF26abzgfkm 27.35296 0.61885 b=-58.9 distnr=1.8
+II/349/ps1: r=2.01 gmag=20.0632 rmag=19.6219 imag=19.3595
+I/355/gaiadr3: r=1.94 Gmag=21.421368 BP-RP=0.880711 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: 2.0" SER r19.17 rhalf0.6 zp0.185[0.14,0.22] zs-99; 2.4" REX r23.38 rhalf1.6 zp0.775[0.40,1.38] zs-99; 5.3" REX r24.1 rhalf0.4 zp0.732[0.53,1.14] zs-99
+#### ZTF26abzhagv 85.89432 -20.57641 b=-23.8 distnr=3.2
+II/349/ps1: r=2.94 gmag=-- rmag=19.7152 imag=--
+I/355/gaiadr3: none<3"
+LS DR10: 3.6" SER r16.02 rhalf5.0 zp0.051[0.04,0.06] zs-99; 3.6" DUP rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abzhizd 59.34579 -3.08165 b=-39.5 distnr=3.9
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 1.0" REX r24.9 rhalf0.3 zp0.989[0.84,1.16] zs-99; 3.8" REX r20.07 rhalf0.3 zp0.149[0.12,0.20] zs-99
+#### ZTF26abzhkdb 61.06577 16.50326 b=-26.1 distnr=4.6
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzicfm 294.24690 -12.72101 b=-15.8 distnr=5.0
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 5.1" PSF rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abzicyv 279.59740 -7.65468 b=-0.6 distnr=0.3
+II/349/ps1: r=0.16 gmag=22.711 rmag=18.767 imag=19.5658
+I/355/gaiadr3: r=0.16 Gmag=18.786125 BP-RP=3.487173 Plx=0.3788 e_Plx=0.33309999108314514 pmRA=-0.097 pmDE=-0.825
+LS DR10: none<6"
+#### ZTF26abzidlp 304.10917 -1.02218 b=-19.3 distnr=0.2
+II/349/ps1: r=0.41 gmag=19.6875 rmag=19.4251 imag=19.3365
+I/355/gaiadr3: none<3"
+LS DR10: 0.4" EXP rnan rhalf2.3 zp-99.000[-99.00,-99.00] zs-99; 3.8" EXP rnan rhalf1.9 zp-99.000[-99.00,-99.00] zs-99; 4.2" PSF rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abziszp 328.93425 -12.15309 b=-46.3 distnr=0.4
+II/349/ps1: r=0.36 gmag=19.5715 rmag=19.481 imag=19.3141
+I/355/gaiadr3: none<3"
+LS DR10: 0.4" SER r17.99 rhalf2.2 zp0.097[0.08,0.13] zs-99; 3.0" DEV r22.12 rhalf1.0 zp0.351[0.11,0.78] zs-99; 4.5" REX r21.92 rhalf1.8 zp0.824[0.38,1.15] zs-99
+#### ZTF26abzjzcp 5.60964 16.46519 b=-45.8 distnr=0.7
+II/349/ps1 HOLE
+I/355/gaiadr3: r=0.68 Gmag=19.484152 BP-RP=1.507168 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: 0.7" DUP rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99.0; 0.7" SER r16.16 rhalf2.8 zp0.084[0.08,0.09] zs0.0939499
+#### ZTF26abzkyxt 355.10033 -9.45578 b=-65.6 distnr=2.0
+II/349/ps1: r=2.07 gmag=19.9097 rmag=19.6024 imag=19.681
+I/355/gaiadr3: none<3"
+LS DR10: 0.9" EXP r22.96 rhalf1.2 zp0.181[0.11,0.28] zs-99; 2.0" SER r18.1 rhalf2.3 zp0.106[0.09,0.12] zs-99
+#### ZTF26abzlewl 66.23015 26.28433 b=-15.9 distnr=12.3
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzlnxi 27.25400 16.82672 b=-43.9 distnr=0.7
+II/349/ps1: r=0.55 gmag=20.206 rmag=19.6864 imag=19.5589
+I/355/gaiadr3: none<3"
+LS DR10: 0.6" REX r19.16 rhalf0.8 zp0.168[0.14,0.20] zs-99; 2.4" REX r22.92 rhalf1.3 zp0.868[0.65,1.08] zs-99; 3.2" REX r23.55 rhalf0.7 zp0.641[0.38,1.12] zs-99
+#### ZTF26abzlwez 56.29347 13.92740 b=-31.2 distnr=8.6
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzlwuj 56.83793 17.46549 b=-28.3 distnr=3.1
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzmclg 80.75459 -8.77164 b=-23.6 distnr=3.3
+II/349/ps1: r=0.17 gmag=19.729 rmag=21.0468 imag=18.5279
+I/355/gaiadr3: r=0.12 Gmag=19.135218 BP-RP=3.748938 Plx=5.9911 e_Plx=0.27090001106262207 pmRA=8.966 pmDE=-11.749
+LS DR10: 0.1" PSF r20.66 rhalf0.0 zp-99.000[-99.00,-99.00] zs-99; 5.6" EXP rnan rhalf1.7 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abznizn 99.47949 30.09077 b=10.6 distnr=0.1
+II/349/ps1: r=0.11 gmag=19.3493 rmag=18.4147 imag=18.0438
+I/355/gaiadr3: r=0.04 Gmag=19.973904 BP-RP=1.610308 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: none<6"
+#### ZTF26abznojy 129.72661 -12.02085 b=17.4 distnr=2.5
+II/349/ps1: r=2.36 gmag=18.3374 rmag=18.4076 imag=17.9392
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abznozb 153.59887 41.93100 b=54.8 distnr=1.5
+II/349/ps1: r=1.52 gmag=19.8713 rmag=19.5013 imag=18.934
+I/355/gaiadr3: none<3"
+LS DR10: 1.7" SER r17.28 rhalf3.4 zpnan[nan,nan] zsnan
+#### ZTF26abznpco 157.48874 42.12012 b=57.6 distnr=3.8
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 0.3" REX r20.71 rhalf0.7 zpnan[nan,nan] zsnan
+#### ZTF26abznrxy 290.94970 -12.60094 b=-12.8 distnr=4.4
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 4.3" PSF rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99; 4.3" PSF rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99; 4.3" REX rnan rhalf0.3 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abzonmo 335.88664 -20.28876 b=-55.6 distnr=2.2
+II/349/ps1: r=2.27 gmag=19.1548 rmag=18.2579 imag=17.8978
+I/355/gaiadr3: r=2.27 Gmag=20.481615 BP-RP=1.472839 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: 2.3" DUP rnan rhalf0.0 zp-99.000[-99.00,-99.00] zs-99; 2.3" SER rnan rhalf4.7 zp-99.000[-99.00,-99.00] zs-99
+#### ZTF26abzqhek 1.48723 0.01861 b=-60.7 distnr=6.1
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzsuhd 71.50800 19.94145 b=-16.2 distnr=9.4
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzswkt 70.81841 19.27140 b=-17.2 distnr=4.9
+II/349/ps1: r=1.91 gmag=-- rmag=-- imag=21.1412
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzujxe 68.27723 25.14524 b=-15.3 distnr=11.1
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzwbww 309.83083 -1.80185 b=-24.7 distnr=1.4
+II/349/ps1: r=2.10 gmag=-- rmag=21.5012 imag=--; r=1.31 gmag=20.7979 rmag=20.2754 imag=20.1397
+I/355/gaiadr3: none<3"
+LS DR10: 1.4" SER r19.49 rhalf1.1 zp0.151[0.13,0.18] zs-99
+#### ZTF26abzwcyq 332.79877 -18.71361 b=-52.3 distnr=13.3
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26abzwpbr 351.51583 -6.22575 b=-60.9 distnr=8.7
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 4.5" PSF r24.01 rhalf0.0 zp0.806[0.58,1.08] zs-99
+#### ZTF26abzxgsr 11.61426 -17.69238 b=-80.5 distnr=3.4
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 0.1" PSF r24.52 rhalf0.0 zp1.228[0.90,1.53] zs-99; 3.5" PSF r21.48 rhalf0.0 zp1.329[0.82,2.00] zs-99
+#### ZTF26abzxtfg 18.14842 10.71228 b=-51.8 distnr=4.0
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 5.4" PSF r22.07 rhalf0.0 zp0.802[0.19,2.03] zs-99
+#### ZTF26abzymwl 7.23047 2.78351 b=-59.6 distnr=5.3
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 3.0" PSF r26.21 rhalf0.0 zp1.276[1.01,1.58] zs-99; 5.2" REX r21.32 rhalf0.5 zp0.601[0.56,0.63] zs-99
+#### ZTF26acaaglg 45.00724 3.17292 b=-46.6 distnr=2.9
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: 1.8" EXP r22.81 rhalf0.8 zp0.552[0.25,1.28] zs-99; 3.3" EXP r22.52 rhalf0.9 zp0.182[0.12,0.31] zs-99; 4.6" REX r18.97 rhalf2.5 zp0.072[0.04,0.12] zs-99
+#### ZTF26acabmep 83.21148 -2.39504 b=-18.5 distnr=0.1
+II/349/ps1: r=0.10 gmag=20.2268 rmag=18.9855 imag=17.2117
+I/355/gaiadr3: r=0.10 Gmag=17.93162 BP-RP=3.124542 Plx=2.6106 e_Plx=0.1347000002861023 pmRA=0.966 pmDE=-1.076
+LS DR10: none<6"
+#### ZTF26acaddjo 100.46328 21.89944 b=7.8 distnr=1.5
+II/349/ps1: r=2.28 gmag=21.4337 rmag=21.0253 imag=20.5804; r=2.52 gmag=21.0226 rmag=20.7539 imag=20.426
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26acaddnd 105.57845 18.08104 b=10.5 distnr=7.3
+II/349/ps1 HOLE
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26academn 80.53337 19.59326 b=-9.5 distnr=1.5
+II/349/ps1: r=1.48 gmag=19.5017 rmag=18.2701 imag=17.6609
+I/355/gaiadr3: r=1.46 Gmag=20.572876 BP-RP=1.91415 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: none<6"
+#### ZTF26acadmhl 33.60620 8.80328 b=-48.8 distnr=7.4
+II/349/ps1: none<3"
+I/355/gaiadr3: none<3"
+LS DR10: none<6"
+#### ZTF26acaegqm 134.82599 10.96284 b=33.3 distnr=0.1
+II/349/ps1: r=0.19 gmag=20.8974 rmag=19.4605 imag=18.9757
+I/355/gaiadr3: r=0.18 Gmag=21.296204 BP-RP=1.862896 Plx=-- e_Plx=-- pmRA=-- pmDE=--
+LS DR10: 0.2" DEV r18.69 rhalf0.9 zp0.327[0.30,0.35] zs0.30139336

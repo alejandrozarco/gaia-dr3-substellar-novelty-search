@@ -1,0 +1,4 @@
+2026-10-07T19:22:43Z QLP S105 pilot stopped after batches 0-19 (4,000 of 80,578 T<=11.5 stars; 1,971 K/M dwarfs <100 pc first).
+Resume search: nice -n 19 venv/bin/python search.py 105 lists/queue_s0105.csv 20 99999   (DONE markers in res/s0105/)
+Resume recovery: rm STOP_REC; nice -n 19 venv/bin/python recdrive.py
+Results: shortlist_s0105_vet.csv, recsum_s0105.txt, rec/*.json, gate/*.json, inj_s0105.csv

@@ -39,7 +39,7 @@ for p in sorted(glob.glob("../white-dwarfs-2026/data/cache/mastDownload/TESS/*18
 from astropy.time import Time; from astropy.coordinates import SkyCoord, EarthLocation; import astropy.units as u
 d = pd.read_csv("atlas_fp_J1949.txt", sep=r"\s+"); d.columns = [c.lstrip("#") for c in d.columns]
 d = d[(d.duJy > 0) & (d["chi/N"] < 3) & (d.mag5sig > 17.5)].copy()
-c0 = SkyCoord(297.25575940, 67.50155413, unit="deg"); tt = Time(d.MJD.values, format="mjd", scale="utc", location=EarthLocation.of_site("greenwich"))
+c0 = SkyCoord(297.25575940, 67.50155413, unit="deg"); tt = Time(d.MJD.values + 15.0 / 86400.0, format="mjd", scale="utc", location=EarthLocation.of_site("greenwich"))
 d["bjd"] = (tt.tdb + tt.light_travel_time(c0)).jd; d["y"] = np.nan
 for b in "co":
     m = d.F == b; tv = d.loc[m, "bjd"].values; br = np.r_[0, np.where(np.diff(tv) > 60)[0] + 1, m.sum()]; idx = d.index[m]

@@ -1,0 +1,11 @@
+ZTF26absimmf ra 98.57866 dec -6.02497 ndet 4 peak 16.65 last det MJD 61313.50 i 18.69; dets since 61313: 61313.50i18.69 | nondets since 61313: none
+ZTF26abwacec ra 288.92826 dec -4.04147 ndet 15 peak 17.47 last det MJD 61312.21 r 19.10; dets since 61313:  | nondets since 61313: none
+ZTF26abtpoev ra 289.34141 dec -3.24887 ndet 16 peak 17.83 last det MJD 61303.13 i 19.21; dets since 61313:  | nondets since 61313: none
+ZTF26abwqsgt ra 284.93743 dec -10.57877 ndet 8 peak 18.15 last det MJD 61308.19 g 18.98; dets since 61313:  | nondets since 61313: none
+ZTF26abtoqyd ra 292.35178 dec 8.25006 ndet 20 peak 18.52 last det MJD 61312.12 g 19.61; dets since 61313:  | nondets since 61313: none
+ZTF26abycxez ra 291.35583 dec -7.16467 ndet 6 peak 18.57 last det MJD 61317.12 i 19.13; dets since 61313: 61313.15g18.73; 61313.19r18.57; 61314.19g18.96; 61315.13g19.11; 61316.13g19.24; 61317.12i19.13 | nondets since 61313: 61314.24i>19.3 61315.26r>19.3
+ZTF26abyalli ra 117.24982 dec -9.45729 ndet 2 peak 17.27 last det MJD 61313.51 i 17.70; dets since 61313: 61313.51i17.70 | nondets since 61313: none
+ZTF26abxpksn ra 280.15606 dec 7.98834 ndet 10 peak 18.58 last det MJD 61318.14 g 19.66; dets since 61313: 61313.13g19.29; 61314.15g19.36; 61315.13g19.59; 61316.14g19.51; 61317.13g19.80; 61318.14g19.66 | nondets since 61313: 61313.17r>19.8 61314.24i>19.2 61315.12r>20.4 61317.15r>19.9 61318.13i>19.9
+ZTF26abxwnlk ra 294.48171 dec -7.75427 ndet 8 peak 18.83 last det MJD 61318.17 r 20.19; dets since 61313: 61313.15g19.21; 61313.19r19.30; 61314.19g19.58; 61314.24i19.46; 61316.13g19.81; 61318.17r20.19 | nondets since 61313: 61315.13g>20.3 61315.26r>19.4 61317.12i>19.5 61317.13g>20.1 61317.15r>20.0 61318.12i>19.7
+ZTF26abxwpty ra 286.80087 dec -3.30540 ndet 7 peak 18.97 last det MJD 61315.13 g 19.75; dets since 61313: 61313.13g19.59; 61313.17r19.02; 61314.15g19.65; 61315.12r19.32; 61315.13g19.75 | nondets since 61313: 61314.24i>19.5
+AT2026adjg cone 3as: []

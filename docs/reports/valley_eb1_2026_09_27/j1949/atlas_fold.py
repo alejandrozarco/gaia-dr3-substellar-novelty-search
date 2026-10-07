@@ -10,7 +10,7 @@ import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 F0, T0 = 22.6130201, 2459000.00061; MEAN = {"c": 205.0, "o": 183.0}
 d = pd.read_csv("atlas_fp_J1949.txt", sep=r"\s+"); d.columns = [c.lstrip("#") for c in d.columns]
 n0 = len(d); d = d[(d.duJy > 0) & (d["chi/N"] < 3) & (d.mag5sig > 17.5)].copy()
-c = SkyCoord(297.25575940, 67.50155413, unit="deg"); t = Time(d.MJD.values, format="mjd", scale="utc", location=EarthLocation.of_site("greenwich"))
+c = SkyCoord(297.25575940, 67.50155413, unit="deg"); t = Time(d.MJD.values + 15.0 / 86400.0, format="mjd", scale="utc", location=EarthLocation.of_site("greenwich"))
 d["bjd"] = (t.tdb + t.light_travel_time(c)).jd; d["y"] = np.nan
 for b in "co":
     m = d.F == b; tt = d.loc[m, "bjd"].values; br = np.r_[0, np.where(np.diff(tt) > 60)[0] + 1, m.sum()]; idx = d.index[m]

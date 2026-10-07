@@ -26,7 +26,7 @@ res = {"object": "VarWISE J075330.99-004209.7 = Gaia DR3 3082614748370926848", "
 rng = np.random.default_rng(9)
 for b, fstar in (("o", 3631e6 * 10 ** (-0.4 * 19.62)), ("c", 3631e6 * 10 ** (-0.4 * 20.55))):   # approx. total flux: o ~ (r+i)/2 PS1, c ~ (g+r)/2
     s = [x for x in ok if x["F"] == b]
-    t = bjd(np.array([float(x["MJD"]) for x in s])); f = np.array([float(x["uJy"]) for x in s]); e = np.array([float(x["duJy"]) for x in s])
+    t = bjd(np.array([float(x["MJD"]) for x in s]) + 15.0 / 86400.0); f = np.array([float(x["uJy"]) for x in s]); e = np.array([float(x["duJy"]) for x in s])
     f = f - np.median(f); ph = (t / P) % 1
     clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e); t, f, e, ph = t[clip], f[clip], e[clip], ph[clip]
     w = 1 / e

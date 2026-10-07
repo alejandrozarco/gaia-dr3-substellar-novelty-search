@@ -22,7 +22,7 @@ for sid, (ra, dec, G, fg) in T.items():
             y = (h.uJy - np.median(h.uJy)) / REF; e = h.duJy / REF
             mad = 1.4826 * np.median(np.abs(y - np.median(y))); k = np.abs(y - np.median(y)) < 8 * mad
             parts.append(pd.DataFrame(dict(t=h.MJD[k], y=y[k], e=e[k], F=b)))
-    d = pd.concat(parts); tt = Time(d.t.values + 2400000.5, format="jd", scale="utc", location=GEO)
+    d = pd.concat(parts); tt = Time(d.t.values + 2400000.5 + 15.0 / 86400.0, format="jd", scale="utc", location=GEO)
     d["bjd"] = (tt.tdb + tt.light_travel_time(SkyCoord(ra * u.deg, dec * u.deg), kind="barycentric")).jd
     fr = np.arange(0.05, 50, 0.1 / (d.bjd.max() - d.bjd.min())); ls = LombScargle(d.bjd, d.y, d.e); p = ls.power(fr, method="fast")
     top = fr[np.argmax(p)]; fap = ls.false_alarm_probability(p.max(), minimum_frequency=0.05, maximum_frequency=50, method="baluev")

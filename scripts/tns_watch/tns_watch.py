@@ -5,7 +5,7 @@ tns_watch.log. A failed fetch is logged as HOLE and never counts as a change (st
 Usage: python tns_watch.py   (TNSWATCH_TEST=1 posts a labelled test notification only)."""
 import os, re, json, time, hashlib, subprocess, requests
 H = os.path.dirname(os.path.abspath(__file__)); ST = os.path.join(H, "tns_watch_state.json"); LOG = os.path.join(H, "tns_watch.log")
-OBJECTS = ["2026adjg", "2026adjh", "2026adji", "2026adjj", "2026adjk", "2026adjl", "2026admn", "2026admo", "2026admp", "2026admq", "2026admr"]
+OBJECTS = ["2026adjg", "2026adjh", "2026adji", "2026adjj", "2026adjk", "2026adjl", "2026admn", "2026admo", "2026admp", "2026admq", "2026admr", "2026aejn", "2026aejo", "2026aejp", "2026aejr", "2026aesl", "2026aesm", "2026aesn", "2026aeso", "2026aesp", "2026aesq", "2026aesr"]
 def note(msg, title="TNS watch"):
     subprocess.run(["osascript", "-e", f'display notification "{msg}" with title "{title}"'], check=False)
 if os.environ.get("TNSWATCH_TEST"): note("TEST only: the TNS watch alarm works", "TNS watch (test)"); raise SystemExit

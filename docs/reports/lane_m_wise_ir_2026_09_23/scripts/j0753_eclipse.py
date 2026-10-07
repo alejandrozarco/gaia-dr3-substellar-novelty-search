@@ -17,7 +17,7 @@ def prep(b):
     season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
     for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
     clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e)
-    return mjd[clip], (bjd(mjd[clip]) / P) % 1, f[clip], e[clip]
+    return mjd[clip], (bjd(mjd[clip] + 15.0 / 86400.0) / P) % 1, f[clip], e[clip]
 def base(ph, K=2): return np.vstack([np.ones_like(ph)] + [fn(2 * np.pi * k * ph) for k in range(1, K + 1) for fn in (np.cos, np.sin)]).T
 def scan(ph, f, e, centres=np.linspace(0, 1, 200, endpoint=False), widths=(0.02, 0.03, 0.04, 0.06, 0.08)):
     w = 1 / e; X0 = base(ph); b0, *_ = np.linalg.lstsq(X0 * w[:, None], f * w, rcond=None); r0 = (f - X0 @ b0) * w; chi0 = r0 @ r0

@@ -27,7 +27,7 @@ for a, (b, fstar, col) in zip(ax[1:], (("o", 3631e6 * 10 ** (-0.4 * 19.62), "tab
     season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
     for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
     clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e)
-    ph = (bjd(mjd[clip]) / P) % 1; bb = binned(ph, f[clip] / fstar + 1, (fstar / e[clip]) ** 2)
+    ph = (bjd(mjd[clip] + 15.0 / 86400.0) / P) % 1; bb = binned(ph, f[clip] / fstar + 1, (fstar / e[clip]) ** 2)
     for k in (0, 1): a.errorbar(mids + k, bb[:, 0], bb[:, 1], fmt="s-", color=col, ms=4)
     a.set_ylabel(f"ATLAS {b} flux / star (approx.)")
 ax[2].set_xlabel("phase (P = 0.1053647 d)"); plt.tight_layout(); plt.savefig("../figures/j0753_optir.png", dpi=110); print("saved")

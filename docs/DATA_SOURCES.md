@@ -84,3 +84,20 @@ reply or a timeout is a HOLE, never a null.
 ## Access not used (would need a new account - user decision)
 
 S-PLUS DR5, Lasair-LSST personal token, Rubin data-rights products (DP2/EDP2), LAMOST beyond the public release.
+
+## Notes 2026-10-05 (fresh transient sweep)
+
+- SkyBoT: object names can contain "|" (e.g. G!kún||'hòmdímà), which breaks a pipe-split parse - take the separation as the 5th field from the right. The service can crash on a request (SIGBUS) while other requests answer.
+- ALeRCE: detections from an alert's previous-detection history carry no drb score, so a drb >= 0.8 cut drops them; stamps at `avro.alerce.online/get_stamp?oid=&candid=&type=&format=png|fits`; the `/forced_photometry` endpoint returns 404; non-detections after the last alert are not reported (coverage unknown).
+- Lasair-ZTF: `jdmin` is the first alert inside its ~30-day window, not the true first detection (old AGN/variables appear "fresh"); its TNS join missed 15 of 37 reported objects in this sweep.
+- TNS search: 20 s between requests drew 429s with 5-min waits; 30 s ran clean (~31 s per object).
+- ATLAS forced photometry: jobs waited 13-21 h on 2026-10-01; not usable for same-day vetting.
+
+## Note 2026-10-07: ATLAS times are exposure START
+
+- ATLAS forced-photometry `MJD` is "Modified Julian date of the start of the exposure (all exposures are 30s). [Not corrected to Solar System barycentre]" (fallingstar-data.com/forcedphot/resultdesc/). Add +15 s before barycentring. Periods are unaffected; epochs/eclipse times from ATLAS-only fits are 15 s early. Found by a leave-one-season-out test (WDJ0303-4206: ATLAS eclipses 8-25 s early vs TESS until corrected). Affected epochs to re-derive: WDJ1118-5442 (corrected 2026-10-07), WDJ0303-4206 (public white-dwarfs-2026 eclipse script), J0353, J0753, J1949 (valley EB), and any other ATLAS-based T0.
+- 2026-10-07 follow-ups: Gaia epoch-photometry `TimeG + 2455197.5` is BJD in TCB, not TDB (~19 s offset at present); ZTF IRSA light-curve `mjd` start/mid convention not yet verified.
+- 2026-10-07 sweep quirks: SkyBoT returns HTTP 204 with an empty body when no asteroid is in the cone (not a failure); NED redshift flag "PUN" is not treated as spectroscopic; TNS discovery dates can precede the first ZTF alert (other surveys' detections count).
+- 2026-10-07 planet-search quirks: VSX API returns a Cloudflare 403 to Python requests with a browser User-Agent but works with the default python-requests User-Agent; NASA Exoplanet Archive TAP rejects `contains(point, circle)` (403 HTML) - use RA/Dec boxes; QLP HLSP files at hlsps/qlp/sNNNN/<tic16 split 4/4/4/4>/..._llc.fits (S105: 200 s, DET_FLUX), target lists in target_lists/; TESS-SPOC HLSP stops at S85, SPOC 2-min at S107 (2026-10); large TAPVizieR uploads to IV/39 hang - use MAST Catalogs.query_criteria(ID=list) in chunks of 2,000; ExoFOP TOI table newest alert 2026-08-27 (QLP TOIs to S98, SPOC to S102).
+- 2026-10-07 alert streams: Fink reachable again at new hosts api.ztf.fink-portal.org (ZTF nights to 20261007) and api.lsst.fink-portal.org (LSST last night 20260714) - supersedes the 2026-10-01 "Fink FAIL"; ANTARES REST api.antares.noirlab.edu/v1/loci works anonymously (ZTF + LSST ids only); LS4 alerts not public (SCiMMA/Hopskotch account needed, no broker carries them, 0 LS4 TNS reports in 2026) - re-check monthly (ANTARES survey ids, BOOM src/alert/ls4.rs, TNS group); BlackGEM, GOTO, ATLAS, WFST have no public streams and auto-report to TNS (no first-filer credit there).
+- 2026-10-07 (evening): VSX API returned Cloudflare 403 to Python requests even for the AM Her control (both User-Agent variants failing at times); the browser at vsx.aavso.org worked. Treat VSX API failures as HOLES and fall back to the browser or the VizieR B/vsx copy. Several VizieR ids for 2024-2026 sdB pulsator papers do not exist and return all-catalogue dumps (J/A+A/686/A65, 700/A71, 673/A90, 686/A126, 651/A121, J/PASA/43/106).

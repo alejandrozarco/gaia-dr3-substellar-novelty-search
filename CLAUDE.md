@@ -97,6 +97,12 @@ method-level twin of the "known ⇒ not novel" object gate.
   submissions, TNS, pro-team pickup of a posted candidate). Still NO telescope
   owned or scheduled by us; strict archive-only remains the gold standard where
   available. Adopted with the 2026-07-07 pivot menu (see RESEARCH_LOG).
+  **Amended 2026-10-07 (user decision): requesting telescope time is allowed for
+  promising targets** — e.g. TESS DDT/GI, or a proposal or follow-up request to an
+  observatory or team. The search itself stays archival. Requests are drafted here
+  (claims neutral, decisive test stated) and sent by the user; nothing is submitted
+  without the user's OK. A lane is no longer parked solely because confirmation needs
+  a telescope: it can be parked *or* routed to a time request.
 - **Compact ≠ cascade mass** — defer to Shahaf AMRF for triple-vs-compact.
 - **No sin-i inflation** for dark companions (photocentric mass function is direct).
 - **Single-phase ≠ corroboration**; **photometry FPs** need masked periodograms + permutation FAP.

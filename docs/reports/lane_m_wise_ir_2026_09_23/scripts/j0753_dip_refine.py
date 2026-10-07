@@ -39,7 +39,7 @@ for b in ("o", "c"):
     season = np.floor((mjd - 57000) / 365.25 + 0.3).astype(int)
     for sv in np.unique(season): f[season == sv] -= np.median(f[season == sv])
     clip = np.abs(f) < 5 * 1.4826 * np.median(np.abs(f)) + 3 * np.median(e)
-    data[b] = dict(mjd=mjd[clip], t=bjd(mjd[clip]), f=f[clip], e=e[clip], season=season[clip])
+    data[b] = dict(mjd=mjd[clip], t=bjd(mjd[clip] + 15.0 / 86400.0), f=f[clip], e=e[clip], season=season[clip])
 centres = np.linspace(0, 1, 400, endpoint=False); widths = np.array([0.015, 0.02, 0.03, 0.04, 0.06])
 Pscan = Pw + np.linspace(-6, 6, 121) * sigPw
 def base(ph): return np.vstack([np.ones_like(ph)] + [fn(2 * np.pi * k * ph) for k in (1, 2) for fn in (np.cos, np.sin)]).T
