@@ -16,7 +16,7 @@ out = {}
 fig, ax = plt.subplots(3, 1, figsize=(6.4, 7.6), sharex=True)
 for a, b, col in zip(ax, ("zi", "zr", "zg"), ("C3", "C1", "C2")):
     X = [x for x in Z if x["filtercode"] == b]
-    t = Time(np.array([float(x["mjd"]) for x in X]), format="mjd", scale="utc", location=pal)
+    t = Time(np.array([float(x["mjd"]) + float(x["exptime"]) / 2 / 86400 for x in X]), format="mjd", scale="utc", location=pal)  # mjd = exposure start
     bj = (t.tdb + t.light_travel_time(c, kind="barycentric")).jd
     m = np.array([float(x["mag"]) for x in X]); e = np.array([float(x["magerr"]) for x in X]); oid = np.array([x["oid"] for x in X])
     # use the field/oid with most points to avoid inter-field offsets in absolute magnitudes

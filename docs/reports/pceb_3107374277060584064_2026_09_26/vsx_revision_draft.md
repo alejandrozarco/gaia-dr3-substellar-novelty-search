@@ -12,7 +12,7 @@ discoverer Gaia collaboration, no period.
 | Type | R (reflection effect; hot white dwarf + irradiated companion) |
 | Magnitude range | 17.41 - 17.70 r (ZTF, 2018-2024, binned phased light curve; single points 17.37-17.81) |
 | Period | 0.5928858 d |
-| Epoch | BJD_TDB 2459300.1744 (maximum light, ZTF r) |
+| Epoch | BJD_TDB 2459300.1752 (maximum light, ZTF r; corrected 2026-10-07 from 2459300.1744: ZTF hjd is HJD_UTC, not BJD_TDB) |
 | Spectral type | leave as is |
 | File | `pceb_summary.png` |
 

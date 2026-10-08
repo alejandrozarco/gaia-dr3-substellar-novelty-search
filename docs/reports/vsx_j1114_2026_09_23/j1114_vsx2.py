@@ -13,7 +13,7 @@ pal = EarthLocation.of_site("Palomar")
 D = {}
 for b in ("zi", "zr"):
     X = [x for x in Z if x["filtercode"] == b]
-    t = Time(np.array([float(x["mjd"]) for x in X]), format="mjd", scale="utc", location=pal)
+    t = Time(np.array([float(x["mjd"]) + float(x["exptime"]) / 2 / 86400 for x in X]), format="mjd", scale="utc", location=pal)  # mjd = exposure start
     bj = (t.tdb + t.light_travel_time(c, kind="barycentric")).jd
     m = np.array([float(x["mag"]) for x in X]); e = np.array([float(x["magerr"]) for x in X]); oid = np.array([x["oid"] for x in X])
     for o in set(oid): m[oid == o] -= np.median(m[oid == o])

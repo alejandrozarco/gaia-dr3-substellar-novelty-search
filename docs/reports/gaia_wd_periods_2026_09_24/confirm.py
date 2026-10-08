@@ -44,7 +44,8 @@ for fn in sorted(glob.glob("atlas_*.txt")):
     out["ctrl_med"] = round(np.median(ctrl), 2); out["ctrl_max"] = round(ctrl.max(), 2)
     # Gaia fold at the ATLAS frequency
     try:
-        g = pd.read_csv(f"epphot_{i}.csv"); g = g[(g.GrVFlag == 0) & np.isfinite(g.FG)]; tg = g.TimeG.values + 2455197.5; yg = g.FG.values / np.median(g.FG) - 1; eg = g.e_FG.values / np.median(g.FG)
+        g = pd.read_csv(f"epphot_{i}.csv"); g = g[(g.GrVFlag == 0) & np.isfinite(g.FG)]; tg = Time(np.full(len(g), 2455197.5), g.TimeG.values, format="jd", scale="tcb").tdb.jd;  # TimeG = BJD_TCB - 2455197.5
+        yg = g.FG.values / np.median(g.FG) - 1; eg = g.e_FG.values / np.median(g.FG)
         a, ea, tm = fit(tg, yg, eg, out["f_atlas"]) if "f_atlas" in out else (np.nan, np.nan, np.nan); out["gaia_amp_at_fatlas"] = round(a, 2); out["gaia_eamp"] = round(ea, 2); out["gaia_tmax"] = round(tm, 4)
     except Exception as ex: out["gaia_err"] = str(ex)[:40]
     rows.append(out); print(out, flush=True)

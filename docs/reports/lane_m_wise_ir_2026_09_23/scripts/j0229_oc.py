@@ -8,7 +8,7 @@ ra, de = RA + 28.6*5/3.6e6/np.cos(np.radians(DE)), DE - 14.1*5/3.6e6
 q = subprocess.run(["curl", "-sL", "--max-time", "600", f"https://irsa.ipac.caltech.edu/cgi-bin/ZTF/nph_light_curves?POS=CIRCLE%20{ra}%20{de}%200.000833&BANDNAME=g,r&FORMAT=CSV"], capture_output=True, text=True).stdout
 Z = [x for x in csv.DictReader(io.StringIO(q)) if x["catflags"] == "0" and float(x["mag"]) < float(x["limitmag"]) - 0.1]
 pal = EarthLocation.of_site("Palomar")
-t = Time(np.array([float(x["mjd"]) for x in Z]), format="mjd", scale="utc", location=pal); bjd = (t.tdb + t.light_travel_time(c, kind="barycentric")).jd
+t = Time(np.array([float(x["mjd"]) + float(x["exptime"]) / 2 / 86400 for x in Z]), format="mjd", scale="utc", location=pal); bjd = (t.tdb + t.light_travel_time(c, kind="barycentric")).jd
 m = np.array([float(x["mag"]) for x in Z]); b = np.array([x["filtercode"] for x in Z]); e = np.array([float(x["magerr"]) for x in Z]); expt = np.array([float(x["exptime"]) for x in Z])
 med = {bb: np.median(m[b == bb]) for bb in ("zg", "zr")}
 dm = np.array([mm - med[bb] for mm, bb in zip(m, b)])

@@ -1,13 +1,15 @@
 """WDJ2052-0324 ephemeris from ZTF (g+r, per oid/filter normalised) and TESS S55/S81 (120 s): frequency by LS refinement,
-time of maximum light (sinusoid + harmonic fit, phase of the fitted maximum), bootstrap errors. Times in BJD_TDB (ZTF hjd is HJD_UTC-based; the
-~70 s HJD/BJD offset is 0.0008 cycles)."""
+time of maximum light (sinusoid + harmonic fit, phase of the fitted maximum), bootstrap errors. Times in BJD_TDB (ZTF mjd = exposure start in UTC,
++ exptime/2, barycentred at Palomar; the hjd column is HJD_UTC, about 70 s = 0.012 cycles earlier)."""
 import glob, numpy as np, pandas as pd
 from astropy.io import fits; from astropy.timeseries import LombScargle
 d = pd.read_csv("ztf_6914922055508553984.csv"); d = d[(d.catflags == 0) & (d.magerr < 0.25)]
 t, y, e = [], [], []
 for (o, f), s in d.groupby(["oid", "filtercode"]):
     if len(s) < 15: continue
-    fl = 10 ** (-0.4 * (s.mag - np.median(s.mag))) - 1; t += list(s.hjd); y += list(fl - fl.mean()); e += list(0.921 * s.magerr * (fl + 1))
+    from astropy.time import Time as _T; from astropy.coordinates import SkyCoord as _C, EarthLocation as _E; import astropy.units as _u
+    _tm = _T(s.mjd.values + s.exptime.values / 2 / 86400, format="mjd", scale="utc", location=_E.from_geodetic(-116.8597 * _u.deg, 33.3563 * _u.deg, 1712 * _u.m))
+    fl = 10 ** (-0.4 * (s.mag - np.median(s.mag))) - 1; t += list((_tm.tdb + _tm.light_travel_time(_C(np.median(s.ra) * _u.deg, np.median(s.dec) * _u.deg))).jd); y += list(fl - fl.mean()); e += list(0.921 * s.magerr * (fl + 1))
 t, y, e = map(np.array, (t, y, e))
 for f in glob.glob("tess/mastDownload/TESS/*-s/*lc.fits"):
     h = fits.open(f)[1].data; q = (h["QUALITY"] == 0) & np.isfinite(h["PDCSAP_FLUX"]); tt = h["TIME"][q] + 2457000; yy = h["PDCSAP_FLUX"][q]; yy = yy / np.median(yy) - 1

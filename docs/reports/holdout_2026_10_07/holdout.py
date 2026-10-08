@@ -59,7 +59,7 @@ if C["ztf"]:
         for s in np.unique(x.season):
             m = x.season == s; mm = x[m]; y = 10 ** (-0.4 * (mm.mag.values - np.median(mm.mag.values))) - 1; e = 0.921 * mm.magerr.values * (1 + y)
             k = robust_clip(y, False)
-            for tt, yy, ee in zip(bjd(mm.mjd.values)[k], y[k], e[k]): rows.append((tt, yy, ee, f"ZTF_{b[1]}", f"ZTF_s{s}"))
+            for tt, yy, ee in zip(bjd(mm.mjd.values + mm.exptime.values / 2 / 86400)[k], y[k], e[k]): rows.append((tt, yy, ee, f"ZTF_{b[1]}", f"ZTF_s{s}"))  # mjd = exposure start
 # ---- TESS
 for grp in C["tess_groups"]:
     for sec in grp:

@@ -17,7 +17,7 @@ TYC 3477-27-1); queue order: ATO J218.9547-17.7889 first.
 | Spectral type | not given |
 | Magnitude range | 19.11 – 19.26 r |
 | Period | 0.0691424 d |
-| Epoch | BJD 2459700.0020 (maximum) |
+| Epoch | HJD 2459700.0013 (maximum; = BJD_TDB 2459700.0022; corrected 2026-10-07 for the ZTF exposure-start time) |
 | Discoverer | A. Keur |
 | Reference | Bellm, E. C.; et al., 2019, The Zwicky Transient Facility: System Overview, Performance, and First Results — 2019PASP..131a8002B |
 | File | `2MASS_J11143206+1316279_ZTF_phase.png` ("ZTF phase plot") |
@@ -33,7 +33,7 @@ unconfirmed; no spectrum. Position from Gaia DR3, moved to epoch J2000.0.
 ## Measurements
 
 - Period from a two-harmonic fit to ZTF r and i together: 0.06914237 ± 0.00000004 d (1,040 epochs); a joint fit
-  including NEOWISE W1 gives 0.06914240 d. Epoch of maximum (i band): BJD_TDB 2459700.0020 ± 0.0009.
+  including NEOWISE W1 gives 0.06914240 d. Epoch of maximum (i band): BJD_TDB 2459700.0022 ± 0.0009.
 - Two-harmonic peak-to-peak amplitudes (main ZTF field per band): i 0.22 mag (17.68–17.90; ZTF i reads ~0.25 mag
   brighter than PS1/SDSS i for this red star), r 0.15 mag (19.11–19.26), g 0.05 mag (19.82–19.87); NEOWISE W1 0.14 mag.
 - Yearly median magnitudes constant to 0.03 mag over 2018–2025.

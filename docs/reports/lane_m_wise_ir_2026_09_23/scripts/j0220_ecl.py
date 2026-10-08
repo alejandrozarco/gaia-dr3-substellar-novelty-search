@@ -15,7 +15,7 @@ def bjd(mjd):
 D = {}
 for b in ("zg", "zr"):
     X = [x for x in Z if x["filtercode"] == b]
-    t = bjd(np.array([float(x["mjd"]) for x in X])); m = np.array([float(x["mag"]) for x in X]); e = np.array([float(x["magerr"]) for x in X])
+    t = bjd(np.array([float(x["mjd"]) + float(x["exptime"]) / 2 / 86400 for x in X]));  # mjd = exposure start; m = np.array([float(x["mag"]) for x in X]); e = np.array([float(x["magerr"]) for x in X])
     D[b] = (t, m, e)
 # in-eclipse points: > 0.4 mag below the median in either band
 tin = []; 

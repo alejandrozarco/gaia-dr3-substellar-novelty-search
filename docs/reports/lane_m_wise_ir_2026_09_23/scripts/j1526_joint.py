@@ -11,7 +11,8 @@ url = (f"https://irsa.ipac.caltech.edu/cgi-bin/ZTF/nph_light_curves?POS=CIRCLE%2
 q = subprocess.run(["curl", "-sL", "--max-time", "600", url], capture_output=True, text=True).stdout
 assert q.startswith("oid"), q[:200]
 Z = [x for x in csv.DictReader(io.StringIO(q)) if x["catflags"] == "0" and abs(float(x["sharp"])) < 0.5]
-zt = np.array([float(x["mjd"]) for x in Z]); zm = np.array([float(x["mag"]) for x in Z]); ze = np.array([float(x["magerr"]) for x in Z]); zb = np.array([x["filtercode"] for x in Z])
+zt = np.array([float(x["mjd"]) + float(x["exptime"]) / 2 / 86400 for x in Z])  # mjd = exposure start
+zm = np.array([float(x["mag"]) for x in Z]); ze = np.array([float(x["magerr"]) for x in Z]); zb = np.array([x["filtercode"] for x in Z])
 zo = np.array([x["oid"] for x in Z])
 for o in set(zo): zm[zo == o] -= np.median(zm[zo == o])
 def bjd(mjd, site):
