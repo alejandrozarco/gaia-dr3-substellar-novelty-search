@@ -268,3 +268,30 @@ Anchors: plx=1.166±0.218 (5.34σ), pmdec=−8.176±0.225 (36σ), RUWE 1.159, M_
 - **REFUTE (re-open extragalactic/artefact):** DR4 parallax consistent with 0 at < 3σ, or the solution degrades (RUWE > 1.4 with AEN_sig ≫ 2 without an NSS solution → blend/systematic suspect).
 - **Support channels (pre-registered as support, NOT confirmation):** DR4 epoch photometry (first un-blended light curve of the blue star): outburst ≥ 1 mag, eclipses, or a period at permutation-FAP < 1% → accretor/close-binary support; a null is inconclusive at G=18.6 **[new 06-10]**. has_xp_continuous flipping True → XP continuum Teff for the WD-vs-composite split. A DR4 NSS/epoch-RV entry (unexpected at this G) would be decisive for binarity.
 - **Honesty clause:** the subtype (CV / pre-CV / WD+dM / ELM) **remains telescope-gated** — DR4 can *refute* (kill the parallax) but can only *strengthen, never confirm*, the accretor claim. The ~20% X-ray-ID ambiguity closes only with Chandra/XMM or a spectrum.
+
+---
+
+## Addendum C (2026-10-29) — TOI-905 b host: astrometric test of the TESS timing curvature
+
+> **Dated addendum, fixed before the DR4 drop.** Thresholds of the original candidates and of Addenda A and B are untouched. Same refit engine and statistics (`scripts/dr4_pipeline/refit`: ΔBIC > +10 strong, accel-SNR > 5σ significant, F2 ≤ +2 clean / > +5 unreliable).
+
+**Object.** TOI-905 (TIC 261867566, Gaia DR3 5795534040654879744, TYC 9266-362-1); G5 V, G = 11.08, ϖ = 6.3626 ± 0.0132 mas, RUWE = 0.834, no DR3 NSS solution. Hot Jupiter TOI-905 b, P = 3.7395 d (Davis et al. 2020). Wide co-moving M dwarf at 2.28″ (about 358 au); its acceleration of the host is about 0.3 m s⁻¹ yr⁻¹.
+
+**Anchor (TESS only).** 58 transit mid-times from 10 TESS sectors (2019–2026). A quadratic ephemeris is preferred over a linear one: $\dot P = -202 \pm 30$ ms yr⁻¹. Interpreted as a light-travel-time (Rømer) effect, this is a line-of-sight acceleration of the host
+
+$$\dot v_r = c\,\frac{\dot P}{P} = -188 \pm 28\ \mathrm{m\,s^{-1}\,yr^{-1}}\quad(6.7\sigma),$$
+
+which requires an unseen companion. For a circular orbit of period $P_c$ the peak line-of-sight acceleration is $(2\pi/P_c)^2\,a_1\sin i$, so
+
+$$a_1 \sin i \;\ge\; |\dot v_r|\,\left(\frac{P_c}{2\pi}\right)^2 ,$$
+
+i.e. a photocentre semi-major axis of at least 0.25, 0.64, 1.4 and 5.8 mas for $P_c$ = 6.25, 10, 15 and 30 yr. Published RVs (Davis et al. 2020, a 40-day window in 2019) do not constrain the trend at this level. Absolute RV anchor: HARPS 2019.70, γ = 42.159 km s⁻¹ (planet removed; ESO programme 0103.C-0548(A)); Gaia DR3 RV 41.989 ± 0.442 km s⁻¹.
+
+**Expected DR4 signal.** Simulation `scripts/dr4_pipeline/prereg_toi905/dr4_floor.py` (output `dr4_floor_output.txt`): 70 along-scan epochs 2014.57–2020.05, σ_AL = 0.10 mas, random scan angles, isotropic inclination, random node and phase, orbit at the $a_1\sin i$ floor above. Probability that a 4-parameter (position + proper motion) fit leaves an acceleration term at Δχ² > 25: 0.87 / 0.91 / 0.93 / 0.94 / 0.96 for $P_c$ = 6.25 / 8 / 10 / 15 / 30 yr at $|\dot v_r|$ = 188 m s⁻¹ yr⁻¹, and 0.72–0.90 at the 2σ-low value (132 m s⁻¹ yr⁻¹). Rough model (no Gaia scan law, parallax not fitted); the floor is conservative because the TESS-era acceleration need not be the orbital peak.
+
+**Thresholds.**
+- **CONFIRM companion:** DR4 publishes an acceleration (7/9-parameter) or orbital NSS solution, or the refit of the DR4 epoch astrometry gives accel-SNR > 5 (ΔBIC > +10 against the 5-parameter model). Consistency: an orbital solution with $P_c \ge 5$ yr, or an acceleration solution, whose implied $a_1$ meets the floor above for its period.
+- **DISFAVOUR companion:** clean 5-parameter DR4 solution (RUWE < 1.2, no NSS solution) AND refit accel-SNR < 3. Under the simulation this outcome has probability ≤ 0.14 for $P_c$ = 6.25–100 yr if the companion exists ($|\dot v_r|$ = 188 m s⁻¹ yr⁻¹), so the Rømer interpretation is then disfavoured at about 90 % confidence and the timing curvature is attributed to another cause (e.g. orbital decay, apsidal precession or a systematic).
+- **Inconclusive:** accel-SNR 3–5, or an acceleration whose implied $a_1$ falls below the floor by more than 3σ.
+- **Support channel only:** DR4 epoch RVs (G_RVS ≈ 10.4; per-transit precision of order 2 km s⁻¹) are expected to constrain an RV slope only to about ±0.2 km s⁻¹ yr⁻¹; a slope consistent with −0.19 km s⁻¹ yr⁻¹ or with zero does not decide.
+- **DR4 cannot decide:** $P_c \lesssim 5$ yr (already disfavoured by the 2019 RVs and the DR3 RUWE); geometries in which the 2014–2020 acceleration lies almost entirely along the line of sight. A ground RV epoch against the HARPS 2019.70 anchor remains the independent test (zero acceleration predicts Δγ = 0 ± 0.01 km s⁻¹).
