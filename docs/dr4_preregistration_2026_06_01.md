@@ -295,3 +295,23 @@ i.e. a photocentre semi-major axis of at least 0.25, 0.64, 1.4 and 5.8 mas for $
 - **Inconclusive:** accel-SNR 3–5, or an acceleration whose implied $a_1$ falls below the floor by more than 3σ.
 - **Support channel only:** DR4 epoch RVs (G_RVS ≈ 10.4; per-transit precision of order 2 km s⁻¹) are expected to constrain an RV slope only to about ±0.2 km s⁻¹ yr⁻¹; a slope consistent with −0.19 km s⁻¹ yr⁻¹ or with zero does not decide.
 - **DR4 cannot decide:** $P_c \lesssim 5$ yr (already disfavoured by the 2019 RVs and the DR3 RUWE); geometries in which the 2014–2020 acceleration lies almost entirely along the line of sight. A ground RV epoch against the HARPS 2019.70 anchor remains the independent test (zero acceleration predicts Δγ = 0 ± 0.01 km s⁻¹).
+
+---
+
+## Addendum D (2026-10-29) — UCAC4 313-025977: prior publications and corrected mass relation (supersedes section 4 thresholds)
+
+**Prior publications.** Gaia DR3 5612039087715504640 is listed in Shahaf et al. (2023, MNRAS 518, 2991; table 1, AMRF class I, $M_{2,\min} = 0.0137\,M_\odot$), Pérez-Couto et al. (2024, A&A 682, A12; ESMORGA, two-M-dwarf model) and Bailer-Jones & Kreidberg (2026, A&A 708, A249; $M_2 = 0.0104^{+0.0124}_{-0.0101}\,M_\odot$ at $M_1 = 0.181\,M_\odot$).
+
+**Correction.** Section 4 treats the companion mass as $M_2 \propto 1/\sin i$ with the inclination undetermined. For an Orbital (Thiele–Innes) solution, $A, B, F, G$ determine both the photocentre semi-major axis $a_0$ and the inclination. From the DR3 values: $a_0 = 1.317$ mas and $i = 138^\circ$ (16th–84th percentile 130°–148°; independent Thiele–Innes errors, correlations not included). With $\varpi = 30.871$ mas and $P = 592.32$ d, a non-luminous companion satisfies
+
+$$\frac{M_2^3}{(M_1+M_2)^2} = \frac{(a_0/\varpi)^3}{P^2},$$
+
+giving $M_2 = 12.6\,M_J$ at $M_1 = 0.23\,M_\odot$ (11.5–14.0 $M_J$ for $M_1 = 0.20$–$0.27\,M_\odot$), with no $\sin i$ factor. DR3 goodness_of_fit = 12.48. The section 4 inclination thresholds ($\sin i \ge 0.85$ confirm; $i \le 45^\circ$ refute) are withdrawn.
+
+**Remaining degeneracy.** The same photocentre orbit is produced by a luminous companion with a larger mass (e.g. a near-equal-brightness M-dwarf pair, as in the ESMORGA model). Astrometry alone does not separate the two cases.
+
+**Replacement thresholds.**
+- **Orbit confirmed:** DR4 period within 3σ of 592.32 ± 3.29 d, $a_0$ within 3σ of 1.317 mas, F2 ≤ +5, and no acceleration or second period above 5σ. **Orbit refuted:** no significant DR4 orbit, or a period shift above 5σ.
+- **Dark-companion mass:** recomputed from the DR4 elements at the DR4 primary mass; expected $12.6 \pm 1.5\,M_J$ if the companion is non-luminous.
+- **Luminous companion (stellar):** if DR4 epoch RVs are published for this source, $K_1 > 3$ km s⁻¹ or a second line system. Expected for a non-luminous 12.6 $M_J$ companion at $i = 138^\circ$: $K_1 \approx 0.5$ km s⁻¹; for a near-equal M-dwarf pair: $K \approx 6$ km s⁻¹ per component.
+- **DR4 cannot decide** the flux ratio from astrometry alone; a high-resolution spectrum (SB2 test) decides.
