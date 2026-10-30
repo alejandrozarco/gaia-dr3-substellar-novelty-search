@@ -315,3 +315,33 @@ giving $M_2 = 12.6\,M_J$ at $M_1 = 0.23\,M_\odot$ (11.5–14.0 $M_J$ for $M_1 = 
 - **Dark-companion mass:** recomputed from the DR4 elements at the DR4 primary mass; expected $12.6 \pm 1.5\,M_J$ if the companion is non-luminous.
 - **Luminous companion (stellar):** if DR4 epoch RVs are published for this source, $K_1 > 3$ km s⁻¹ or a second line system. Expected for a non-luminous 12.6 $M_J$ companion at $i = 138^\circ$: $K_1 \approx 0.5$ km s⁻¹; for a near-equal M-dwarf pair: $K \approx 6$ km s⁻¹ per component.
 - **DR4 cannot decide** the flux ratio from astrometry alone; a high-resolution spectrum (SB2 test) decides.
+
+---
+
+## Addendum E (2026-10-30) — operational definitions for the day-one evaluation (no threshold values changed)
+
+> **Dated addendum, fixed before the DR4 drop.** A dry run of the refit engine on synthetic DR4-format data found terms in the thresholds above that are not fully specified. This addendum fixes one reading for each before any DR4 data are seen. No threshold value of the original document or of Addenda A–D is changed. Items E.9 and E.10 replace two tests that are not well defined as written; this is stated there.
+
+**E.1 Goodness of fit (F2).** Where DR4 publishes a non-single-star solution for the object, the DR4 `goodness_of_fit` of that solution is used for every F2 threshold (the same quantity as the DR3 anchors). Where it does not, F2 is computed by the refit engine from the CCD-level along-scan data (`used_by_agis_al` true, SM excluded) with the published per-CCD uncertainty `centroid_pos_error_al` (no excess-noise term, no rescaling), as the Wilson–Hilferty transform of the fit $\chi^2$. The value obtained with a magnitude-dependent rescaling of the uncertainties is reported alongside; if the two give different verdict categories, the verdict is INCONCLUSIVE (F2 scale).
+
+**E.2 Fit-quality bands (all objects with an orbit).** F2 ≤ +2: clean. +2 < F2 ≤ +5: the object-specific CONFIRM condition is not met and the verdict is INCONCLUSIVE unless an object-specific REFUTE branch applies. F2 > +5: unreliable; where the text gives no F2 > +5 branch (e.g. WDJ060042), the verdict is UNRELIABLE (parked).
+
+**E.3 Significant orbit or period.** An orbit (or period) counts as detected when $a_0/\sigma_{a_0} > 5$ and the orbital model improves on the single-star model by ΔBIC > +10.
+
+**E.4 Orbit not reproduced.** For an object pre-registered from a DR3 orbit, if the DR4 data contain no orbit by E.3 and no acceleration or second period above 5σ, the verdict is REFUTE (DR3 orbit not reproduced). This applies to every object with a DR3 orbit, including WG 26, A.2 and A.3.
+
+**E.5 "Within 3σ" and "shift above 5σ".** The comparison uses $\sigma = \sqrt{\sigma_\mathrm{DR3}^2 + \sigma_\mathrm{DR4}^2}$. $\sigma_\mathrm{DR3}$ is the uncertainty quoted in this document where one is given (e.g. 1.32 ± 0.12 mas in section 4 and Addendum D; 1.166 ± 0.218 mas in A.5); otherwise the DR3 NSS uncertainty of that parameter, and for $a_0$ without a quoted uncertainty $a_0/\mathrm{significance}$ of the DR3 solution. $\sigma_\mathrm{DR4}$ is the uncertainty of the DR4 (or refit) value.
+
+**E.6 Mass thresholds.** Companion-mass thresholds are evaluated on the full Thiele–Innes-covariance Monte Carlo (Addendum B) at the DR4 elements and the DR4 primary mass. A statement "M₂ > X" holds when P(M₂ > X) ≥ 0.95, and "M₂ < X" when P(M₂ < X) ≥ 0.95. Otherwise the outcome is the intermediate branch (for WDJ060042: companion mass straddles 1.33–1.40 M⊙). The median and the 16th–84th percentiles are reported with every verdict.
+
+**E.7 WDJ060042 parallax.** "π tension resolved" is reported, not used as a gate: the masses use the DR4 parallax of the orbital solution, and the DR4 single-star parallax is listed beside it.
+
+**E.8 A.2.** The REFUTE rule is applied as written (ΔBIC > +10 OR accel-SNR > 5σ). P(compact | A, M₁) is computed with the Shahaf et al. (2023) calibration at the DR4 values of $A$ and $M_1$; if it cannot be computed on day one, the verdict is PENDING.
+
+**E.9 A.4 (HD 157033) direction test — replaced.** The proper-motion anomaly is a velocity offset and the DR4 acceleration is its time derivative; for an orbit the two need not point the same way, so "acceleration PA consistent with the PMa PA" is not a valid test. It is replaced by: an orbit with $P$ = 5–20 yr fitted jointly to the DR4 epoch astrometry and the Hipparcos–Gaia proper-motion anomaly is acceptable (χ² probability > 0.01). The CONFIRM condition of A.4 (an acceleration or long-period orbit above 5σ in DR4) is unchanged.
+
+**E.10 Addendum C (TOI-905) floor — replaced for acceleration solutions.** The floor in Addendum C bounds $a_1 \sin i$ from the line-of-sight acceleration; it gives no lower bound on the sky-plane acceleration, so the Addendum C "Inconclusive" condition for an acceleration below the floor is not a valid test. For a DR4 acceleration solution the floor test is therefore not applied, and an acceleration above 5σ is CONFIRM. For a DR4 orbital solution, $a_1 \sin i$ from the solution is compared with the floor at the fitted $P_c$, using E.5.
+
+**E.11 RUWE.** The DR4 catalogue RUWE is used (A.5, Addendum C).
+
+**E.12 Radial-velocity branches** (A.1, A.3, A.4, Addendum D) are evaluated from the DR4 epoch radial velocities where they are published, with the thresholds as written; where they are not, those branches are reported as PENDING.
